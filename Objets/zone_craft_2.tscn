@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://6ijxocubpicj"]
+
+[ext_resource type="Script" uid="uid://dpf5ijxxcjqr8" path="res://Scripts/area_2d_zct2.gd" id="1_1kll0"]
+[ext_resource type="Texture2D" uid="uid://bvj5eff5ijnul" path="res://Ressources/zone_craft.png" id="1_tggk4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1kll0"]
+radius = 31.0
+
+[node name="zoneCraft2" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("1_1kll0")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+texture_filter = 1
+texture = ExtResource("1_tggk4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, -1)
+shape = SubResource("CircleShape2D_1kll0")

@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bu21lo77yf5io"]
+
+[ext_resource type="Script" uid="uid://dufv2fbiik60u" path="res://Scripts/gui_bouclier_3.gd" id="1_eptnb"]
+[ext_resource type="Texture2D" uid="uid://bxcurwj0q30db" path="res://Ressources/Icons.png" id="1_hcy0p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eptnb"]
+atlas = ExtResource("1_hcy0p")
+region = Rect2(455, 327, 17, 17)
+
+[node name="gui_bouclier3" type="CanvasLayer"]
+script = ExtResource("1_eptnb")
+
+[node name="textureBouclier3" type="TextureRect" parent="."]
+texture_filter = 1
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("AtlasTexture_eptnb")

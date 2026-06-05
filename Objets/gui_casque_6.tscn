@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3avhunbvnjgk"]
+
+[ext_resource type="Texture2D" uid="uid://bxcurwj0q30db" path="res://Ressources/Icons.png" id="1_cbdde"]
+[ext_resource type="Script" uid="uid://bymba8c7gv4iu" path="res://Scripts/gui_casque_6.gd" id="1_v0kkc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v0kkc"]
+atlas = ExtResource("1_cbdde")
+region = Rect2(23, 135, 17, 17)
+
+[node name="gui_casque6" type="CanvasLayer"]
+script = ExtResource("1_v0kkc")
+
+[node name="textureCasque6" type="TextureRect" parent="."]
+texture_filter = 1
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("AtlasTexture_v0kkc")

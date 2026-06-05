@@ -1,0 +1,124 @@
+[gd_scene load_steps=19 format=3 uid="uid://cjixxqa6ps5bf"]
+
+[ext_resource type="Texture2D" uid="uid://cefxk2ohawwae" path="res://Ressources/Smith_forge_full.png" id="1_0orsb"]
+[ext_resource type="Script" uid="uid://cgdhml8he8vjf" path="res://Scripts/vendeur_forgeron.gd" id="1_aam8d"]
+[ext_resource type="Script" uid="uid://c0prqg6nemhyp" path="res://Scripts/area_2d_vf.gd" id="2_7fbos"]
+[ext_resource type="Texture2D" uid="uid://iu54efxjw788" path="res://Ressources/Smith_forge_idle_full.png" id="2_aam8d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7fbos"]
+atlas = ExtResource("1_0orsb")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kj5f1"]
+atlas = ExtResource("1_0orsb")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wpn7j"]
+atlas = ExtResource("1_0orsb")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p4viw"]
+atlas = ExtResource("1_0orsb")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b1min"]
+atlas = ExtResource("1_0orsb")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p682s"]
+atlas = ExtResource("1_0orsb")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mbdvd"]
+atlas = ExtResource("2_aam8d")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_phcf2"]
+atlas = ExtResource("2_aam8d")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1n8y3"]
+atlas = ExtResource("2_aam8d")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_af42q"]
+atlas = ExtResource("2_aam8d")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lwxko"]
+atlas = ExtResource("2_aam8d")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mn4xe"]
+atlas = ExtResource("2_aam8d")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w4ids"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7fbos")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kj5f1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wpn7j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p4viw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b1min")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p682s")
+}],
+"loop": true,
+"name": &"actif",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mbdvd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_phcf2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1n8y3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_af42q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lwxko")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mn4xe")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ltdtd"]
+radius = 11.0
+height = 40.0
+
+[node name="vendeurForgeron" type="Node2D"]
+script = ExtResource("1_aam8d")
+
+[node name="Area2D_vForgeron" type="Area2D" parent="."]
+script = ExtResource("2_7fbos")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D_vForgeron"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_w4ids")
+animation = &"idle"
+autoplay = "idle"
+speed_scale = 0.7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D_vForgeron"]
+position = Vector2(2, 5)
+shape = SubResource("CapsuleShape2D_ltdtd")

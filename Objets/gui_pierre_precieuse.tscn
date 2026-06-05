@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsfh36n287s4g"]
+
+[ext_resource type="Texture2D" uid="uid://7ajdca723sb7" path="res://Ressources/Top_cell.png" id="1_n0apn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_csjed"]
+atlas = ExtResource("1_n0apn")
+region = Rect2(201, 227, 13, 17)
+
+[node name="gui_pierre_precieuse" type="CanvasLayer"]
+
+[node name="texturePierrePrecieuse" type="TextureRect" parent="."]
+texture_filter = 1
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("AtlasTexture_csjed")

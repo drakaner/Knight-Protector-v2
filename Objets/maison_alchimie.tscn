@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://if7tq77klhoq"]
+
+[ext_resource type="Texture2D" uid="uid://b2sp0qer7fnrl" path="res://Ressources/objects_1.png" id="1_nm420"]
+[ext_resource type="Script" uid="uid://cs84nikslv70i" path="res://Scripts/maison_alchimie.gd" id="1_utgis"]
+[ext_resource type="Script" uid="uid://yuxplnnvcpma" path="res://Scripts/area_2d_ma.gd" id="2_gqi37"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_utgis"]
+atlas = ExtResource("1_nm420")
+region = Rect2(0, 387, 120, 129)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gqi37"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_utgis")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ahwe4"]
+size = Vector2(101, 103)
+
+[node name="maisonAlchimie" type="Node2D"]
+script = ExtResource("1_utgis")
+
+[node name="Area2D_mAlchimie" type="Area2D" parent="."]
+script = ExtResource("2_gqi37")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D_mAlchimie"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_gqi37")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D_mAlchimie"]
+position = Vector2(-2.5, 12.5)
+shape = SubResource("RectangleShape2D_ahwe4")

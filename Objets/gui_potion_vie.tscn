@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjje6slx34tfg"]
+
+[ext_resource type="Texture2D" uid="uid://7ajdca723sb7" path="res://Ressources/Top_cell.png" id="1_b52un"]
+[ext_resource type="Script" uid="uid://duqwcuhsa0nv6" path="res://Scripts/gui_potion_vie.gd" id="1_je3ni"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_je3ni"]
+atlas = ExtResource("1_b52un")
+region = Rect2(299, 3, 10, 16)
+
+[node name="gui_potion_vie" type="CanvasLayer"]
+script = ExtResource("1_je3ni")
+
+[node name="texturePotionVie" type="TextureRect" parent="."]
+texture_filter = 1
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("AtlasTexture_je3ni")

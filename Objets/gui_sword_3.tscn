@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://uhbtq8g1alpt"]
+
+[ext_resource type="Texture2D" uid="uid://bxcurwj0q30db" path="res://Ressources/Icons.png" id="1_gdhyk"]
+[ext_resource type="Script" uid="uid://dnugktu47s661" path="res://Scripts/gui_sword_3.gd" id="1_tpwbt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tpwbt"]
+atlas = ExtResource("1_gdhyk")
+region = Rect2(503, 199, 17, 17)
+
+[node name="gui_sword3" type="CanvasLayer"]
+script = ExtResource("1_tpwbt")
+
+[node name="textureSword3" type="TextureRect" parent="."]
+texture_filter = 1
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("AtlasTexture_tpwbt")

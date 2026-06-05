@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://cyd8byq7d6opx"]
+
+[ext_resource type="Texture2D" uid="uid://bq3kjvwwesaxk" path="res://Ressources/hud_coffre_stockage_3.png" id="1_kbqex"]
+[ext_resource type="Script" uid="uid://ppt00v7shxhm" path="res://Scripts/gui_hud_coffre_stockage.gd" id="1_mxcox"]
+[ext_resource type="Texture2D" uid="uid://cxlrjl7h7j8xa" path="res://Ressources/hud_coffre_stockage_2.png" id="2_mxcox"]
+[ext_resource type="Texture2D" uid="uid://b0is1tpxsgk5e" path="res://Ressources/hud_coffre_stockage_1.png" id="3_mtiiv"]
+
+[node name="gui_hudCoffreStockage" type="CanvasLayer"]
+script = ExtResource("1_mxcox")
+
+[node name="hud_coffreStockageLv1" type="TextureRect" parent="."]
+texture_filter = 1
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_kbqex")
+
+[node name="hud_coffreStockageLv2" type="TextureRect" parent="."]
+visible = false
+texture_filter = 1
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_mxcox")
+
+[node name="hud_coffreStockageLv3" type="TextureRect" parent="."]
+visible = false
+texture_filter = 1
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_mtiiv")
+
+[node name="panel_retour" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 255.0
+offset_top = 9.0
+offset_right = 289.0
+offset_bottom = 43.0
+
+[connection signal="gui_input" from="panel_retour" to="." method="_on_panel_retour_gui_input"]

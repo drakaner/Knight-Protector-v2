@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2t5iegc4y2qm"]
+
+[ext_resource type="Texture2D" uid="uid://dmu6e3aotfs07" path="res://Ressources/hud_statue.png" id="1_7tktv"]
+[ext_resource type="Script" uid="uid://bx27da60e412m" path="res://Scripts/gui_hud_statue.gd" id="1_jcsek"]
+
+[node name="gui_hudStatue" type="CanvasLayer"]
+script = ExtResource("1_jcsek")
+
+[node name="hud_statue" type="TextureRect" parent="."]
+texture_filter = 1
+offset_right = 118.0
+offset_bottom = 233.31819
+texture = ExtResource("1_7tktv")
+
+[node name="panel_retour" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 253.0
+offset_top = 17.0
+offset_right = 288.0
+offset_bottom = 53.0
+
+[connection signal="gui_input" from="panel_retour" to="." method="_on_panel_retour_gui_input"]

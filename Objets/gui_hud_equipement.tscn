@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgn18n3otkmwt"]
+
+[ext_resource type="Texture2D" uid="uid://c3qewbd8ex6u1" path="res://Ressources/hud_equipement.png" id="1_3n1m8"]
+[ext_resource type="Script" uid="uid://bfrrumki8x0dv" path="res://Scripts/gui_hud_equipement.gd" id="1_jhhft"]
+
+[node name="gui_hud_equipement" type="CanvasLayer"]
+script = ExtResource("1_jhhft")
+
+[node name="hud_equipement" type="TextureRect" parent="."]
+texture_filter = 1
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_3n1m8")
+
+[node name="panel_retour" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 261.0
+offset_top = 4.0
+offset_right = 283.0
+offset_bottom = 26.0
+
+[connection signal="gui_input" from="panel_retour" to="." method="_on_panel_retour_gui_input"]

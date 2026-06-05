@@ -1,0 +1,125 @@
+[gd_scene load_steps=9 format=3 uid="uid://2chgdojf5l1j"]
+
+[ext_resource type="Script" uid="uid://c84l7eaf6bk3o" path="res://Scripts/gui_boutique_items.gd" id="1_1jhjy"]
+[ext_resource type="Texture2D" uid="uid://cqwskrwaa5esc" path="res://Ressources/hud_shop_items.png" id="1_3au2k"]
+[ext_resource type="FontFile" uid="uid://ctqrt6cnu67ho" path="res://Fonts/Alkhemikal.ttf" id="3_oluud"]
+[ext_resource type="Script" uid="uid://cgypm47as1dg1" path="res://Scripts/gui_button_buy_4.gd" id="4_a2aq1"]
+[ext_resource type="Texture2D" uid="uid://sfi4a50dlrq4" path="res://Ressources/button_pressed_buy.png" id="4_rhatn"]
+[ext_resource type="Script" uid="uid://bb3ycumsqn2v5" path="res://Scripts/gui_button_buy_3.gd" id="6_1xook"]
+[ext_resource type="Script" uid="uid://2ets7l32347" path="res://Scripts/gui_button_buy_2.gd" id="7_r8nkn"]
+[ext_resource type="Script" uid="uid://c10a83fqpblxk" path="res://Scripts/gui_button_buy_1.gd" id="8_3u1yo"]
+
+[node name="gui_boutique_items" type="CanvasLayer"]
+layer = 0
+script = ExtResource("1_1jhjy")
+
+[node name="hud_boutiqueItems" type="TextureRect" parent="."]
+texture_filter = 1
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_3au2k")
+
+[node name="panel_retour" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 254.0
+offset_top = 14.0
+offset_right = 283.0
+offset_bottom = 40.0
+
+[node name="label_prix_bague1" type="Label" parent="."]
+texture_filter = 1
+offset_left = 48.0
+offset_top = 106.0
+offset_right = 93.0
+offset_bottom = 130.0
+theme_override_colors/font_color = Color(1, 0.30980393, 0.03529412, 1)
+theme_override_fonts/font = ExtResource("3_oluud")
+theme_override_font_sizes/font_size = 23
+text = "6000"
+
+[node name="label_prix_collier1" type="Label" parent="."]
+texture_filter = 1
+offset_left = 128.0
+offset_top = 106.0
+offset_right = 173.0
+offset_bottom = 130.0
+theme_override_colors/font_color = Color(1, 0.30980393, 0.03529412, 1)
+theme_override_fonts/font = ExtResource("3_oluud")
+theme_override_font_sizes/font_size = 23
+text = "9000"
+
+[node name="label_prix_potionVie" type="Label" parent="."]
+texture_filter = 1
+offset_left = 210.0
+offset_top = 106.0
+offset_right = 255.0
+offset_bottom = 130.0
+theme_override_colors/font_color = Color(1, 0.30980393, 0.03529412, 1)
+theme_override_fonts/font = ExtResource("3_oluud")
+theme_override_font_sizes/font_size = 23
+text = "85"
+
+[node name="label_prix_potionMana" type="Label" parent="."]
+texture_filter = 1
+offset_left = 54.0
+offset_top = 242.0
+offset_right = 99.0
+offset_bottom = 266.0
+theme_override_colors/font_color = Color(1, 0.30980393, 0.03529412, 1)
+theme_override_fonts/font = ExtResource("3_oluud")
+theme_override_font_sizes/font_size = 23
+text = "40"
+
+[node name="gui_button_buy_4" type="CanvasLayer" parent="."]
+script = ExtResource("4_a2aq1")
+
+[node name="hud_button_85" type="TextureRect" parent="gui_button_buy_4"]
+texture_filter = 1
+offset_left = 193.0
+offset_top = 128.0
+offset_right = 258.0
+offset_bottom = 168.0
+texture = ExtResource("4_rhatn")
+expand_mode = 1
+
+[node name="gui_button_buy_3" type="CanvasLayer" parent="."]
+script = ExtResource("6_1xook")
+
+[node name="hud_button_40" type="TextureRect" parent="gui_button_buy_3"]
+texture_filter = 1
+offset_left = 36.0
+offset_top = 265.0
+offset_right = 101.0
+offset_bottom = 305.0
+texture = ExtResource("4_rhatn")
+expand_mode = 1
+
+[node name="gui_button_buy_2" type="CanvasLayer" parent="."]
+script = ExtResource("7_r8nkn")
+
+[node name="hud_button_6000" type="TextureRect" parent="gui_button_buy_2"]
+texture_filter = 1
+offset_left = 36.0
+offset_top = 128.0
+offset_right = 101.0
+offset_bottom = 168.0
+texture = ExtResource("4_rhatn")
+expand_mode = 1
+
+[node name="gui_button_buy_1" type="CanvasLayer" parent="."]
+script = ExtResource("8_3u1yo")
+
+[node name="hud_button_9000" type="TextureRect" parent="gui_button_buy_1"]
+texture_filter = 1
+offset_left = 115.0
+offset_top = 128.0
+offset_right = 180.0
+offset_bottom = 168.0
+texture = ExtResource("4_rhatn")
+expand_mode = 1
+
+[connection signal="gui_input" from="panel_retour" to="." method="_on_panel_retour_gui_input"]
+[connection signal="gui_input" from="gui_button_buy_4/hud_button_85" to="gui_button_buy_4" method="_on_hud_button_85_gui_input"]
+[connection signal="gui_input" from="gui_button_buy_3/hud_button_40" to="gui_button_buy_3" method="_on_hud_button_40_gui_input"]
+[connection signal="gui_input" from="gui_button_buy_2/hud_button_6000" to="gui_button_buy_2" method="_on_hud_button_6000_gui_input"]
+[connection signal="gui_input" from="gui_button_buy_1/hud_button_9000" to="gui_button_buy_1" method="_on_hud_button_9000_gui_input"]

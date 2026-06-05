@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cc8akm1lymtud"]
+
+[ext_resource type="Script" uid="uid://d14iagfdf6cjc" path="res://Scripts/gui_collier_1.gd" id="1_cvpig"]
+[ext_resource type="Texture2D" uid="uid://7ajdca723sb7" path="res://Ressources/Top_cell.png" id="1_f0to2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cvpig"]
+atlas = ExtResource("1_f0to2")
+region = Rect2(265, 3, 13, 17)
+
+[node name="gui_collier1" type="CanvasLayer"]
+script = ExtResource("1_cvpig")
+
+[node name="textureCollier1" type="TextureRect" parent="."]
+texture_filter = 1
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("AtlasTexture_cvpig")

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cienj4pf4d3wn"]
+
+[ext_resource type="Texture2D" uid="uid://balpbfc2g5l37" path="res://Ressources/rempart_1.png" id="1_w4ux2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l4k34"]
+size = Vector2(112, 98)
+
+[node name="rempart1" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+texture_filter = 1
+texture = ExtResource("1_w4ux2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_l4k34")

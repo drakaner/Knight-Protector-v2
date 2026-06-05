@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bbieyvw3xlynx"]
+
+[ext_resource type="Script" uid="uid://dohgsn402ksrf" path="res://Scripts/area_2d_rtd4.gd" id="1_7n8v5"]
+[ext_resource type="Texture2D" uid="uid://ix1cg38w8wfn" path="res://Ressources/rempart_top-down_4.png" id="1_pvfh5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7n8v5"]
+size = Vector2(113, 100)
+
+[node name="rempartTopDown4" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("1_7n8v5")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+texture_filter = 1
+texture = ExtResource("1_pvfh5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_7n8v5")

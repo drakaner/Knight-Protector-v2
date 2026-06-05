@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dt84egal6laxf"]
+
+[ext_resource type="FontFile" uid="uid://ctqrt6cnu67ho" path="res://Fonts/Alkhemikal.ttf" id="1_vfcp4"]
+
+[node name="gui_text_fenetre" type="CanvasLayer"]
+layer = 3
+
+[node name="labelGuiTextFenetre" type="Label" parent="."]
+texture_filter = 1
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("1_vfcp4")

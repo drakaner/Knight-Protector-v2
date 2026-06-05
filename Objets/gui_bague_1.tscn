@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0oqrk3461xap"]
+
+[ext_resource type="Texture2D" uid="uid://7ajdca723sb7" path="res://Ressources/Top_cell.png" id="1_o5soc"]
+[ext_resource type="Script" uid="uid://f8mhkuaepadc" path="res://Scripts/gui_bague_1.gd" id="1_trrc6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_trrc6"]
+atlas = ExtResource("1_o5soc")
+region = Rect2(231, 3, 17, 17)
+
+[node name="gui_bague1" type="CanvasLayer"]
+script = ExtResource("1_trrc6")
+
+[node name="textureBague1" type="TextureRect" parent="."]
+texture_filter = 1
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("AtlasTexture_trrc6")

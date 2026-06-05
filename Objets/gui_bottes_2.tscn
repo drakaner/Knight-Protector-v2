@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxxxvdtadccwf"]
+
+[ext_resource type="Script" uid="uid://dusi5jfnlsx1e" path="res://Scripts/gui_bottes_2.gd" id="1_giuw4"]
+[ext_resource type="Texture2D" uid="uid://bxcurwj0q30db" path="res://Ressources/Icons.png" id="1_xtc2d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_giuw4"]
+atlas = ExtResource("1_xtc2d")
+region = Rect2(263, 7, 17, 17)
+
+[node name="gui_bottes2" type="CanvasLayer"]
+script = ExtResource("1_giuw4")
+
+[node name="textureBottes2" type="TextureRect" parent="."]
+texture_filter = 1
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("AtlasTexture_giuw4")

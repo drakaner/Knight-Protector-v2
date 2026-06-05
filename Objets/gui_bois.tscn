@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7rfh0oge15hr"]
+
+[ext_resource type="Texture2D" uid="uid://cwq2rwmx34rjk" path="res://Ressources/object_2.png" id="1_7ngxv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ss2to"]
+atlas = ExtResource("1_7ngxv")
+region = Rect2(224, 246, 14, 24)
+
+[node name="gui_bois" type="CanvasLayer"]
+
+[node name="textureBois" type="TextureRect" parent="."]
+texture_filter = 1
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("AtlasTexture_ss2to")

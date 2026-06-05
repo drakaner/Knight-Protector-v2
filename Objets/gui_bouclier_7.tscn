@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctbju0iqa421k"]
+
+[ext_resource type="Texture2D" uid="uid://bxcurwj0q30db" path="res://Ressources/Icons.png" id="1_sx3rr"]
+[ext_resource type="Script" uid="uid://d1s0e1bo2e61k" path="res://Scripts/gui_bouclier_7.gd" id="1_v86pe"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v86pe"]
+atlas = ExtResource("1_sx3rr")
+region = Rect2(362, 327, 12, 17)
+
+[node name="gui_bouclier7" type="CanvasLayer"]
+script = ExtResource("1_v86pe")
+
+[node name="textureBouclier7" type="TextureRect" parent="."]
+texture_filter = 1
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("AtlasTexture_v86pe")

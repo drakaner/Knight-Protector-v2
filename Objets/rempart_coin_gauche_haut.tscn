@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://b11kxl5m2xkrd"]
+
+[ext_resource type="Texture2D" uid="uid://cykfgbetcklqs" path="res://Ressources/rempart_coin_gauche_haut.png" id="1_5ohfp"]
+[ext_resource type="Script" uid="uid://c0dibe1feh24g" path="res://Scripts/area_2d_rcgh.gd" id="1_s8x1d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s8x1d"]
+size = Vector2(155, 129)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gj8f6"]
+size = Vector2(42, 62)
+
+[node name="rempart_coin_gauche_haut" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("1_s8x1d")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+texture_filter = 1
+texture = ExtResource("1_5ohfp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.5, -29.5)
+shape = SubResource("RectangleShape2D_s8x1d")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(56, 61)
+shape = SubResource("RectangleShape2D_gj8f6")

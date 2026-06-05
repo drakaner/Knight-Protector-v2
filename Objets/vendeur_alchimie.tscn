@@ -1,0 +1,90 @@
+[gd_scene load_steps=14 format=3 uid="uid://d0yo16nrv6j2w"]
+
+[ext_resource type="Script" uid="uid://bnm4yjvpa1l2k" path="res://Scripts/vendeur_alchimie.gd" id="1_453n3"]
+[ext_resource type="Texture2D" uid="uid://cwfgb0cqliapj" path="res://Ressources/vendeuse_alchimie.png" id="1_q50cg"]
+[ext_resource type="Script" uid="uid://5r6kxdgefycr" path="res://Scripts/area_2d_va.gd" id="2_mshgb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_453n3"]
+atlas = ExtResource("1_q50cg")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mshgb"]
+atlas = ExtResource("1_q50cg")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ijsc2"]
+atlas = ExtResource("1_q50cg")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c7jv3"]
+atlas = ExtResource("1_q50cg")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d867x"]
+atlas = ExtResource("1_q50cg")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xknpu"]
+atlas = ExtResource("1_q50cg")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lky8c"]
+atlas = ExtResource("1_q50cg")
+region = Rect2(288, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jpy3t"]
+atlas = ExtResource("1_q50cg")
+region = Rect2(336, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7hchg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_453n3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mshgb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ijsc2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c7jv3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d867x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xknpu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lky8c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jpy3t")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5tq2o"]
+radius = 8.0
+
+[node name="vendeurAlchimie" type="Node2D"]
+script = ExtResource("1_453n3")
+
+[node name="Area2D_vAlchimie" type="Area2D" parent="."]
+script = ExtResource("2_mshgb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D_vAlchimie"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_7hchg")
+autoplay = "default"
+frame = 1
+frame_progress = 0.43355495
+speed_scale = 0.7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D_vAlchimie"]
+position = Vector2(1, -5)
+shape = SubResource("CapsuleShape2D_5tq2o")

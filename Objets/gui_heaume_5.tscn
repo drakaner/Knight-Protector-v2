@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://62pcbjs52hxy"]
+
+[ext_resource type="Script" uid="uid://bfemjn7b60ys8" path="res://Scripts/gui_heaume_5.gd" id="1_5cbpp"]
+[ext_resource type="Texture2D" uid="uid://bxcurwj0q30db" path="res://Ressources/Icons.png" id="1_k11k2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5cbpp"]
+atlas = ExtResource("1_k11k2")
+region = Rect2(359, 135, 17, 17)
+
+[node name="gui_heaume5" type="CanvasLayer"]
+script = ExtResource("1_5cbpp")
+
+[node name="textureHeaume5" type="TextureRect" parent="."]
+texture_filter = 1
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("AtlasTexture_5cbpp")

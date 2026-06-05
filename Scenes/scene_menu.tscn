@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3n8qcohmxc7k"]
+
+[ext_resource type="Script" uid="uid://clyqgwj5p44wh" path="res://Scripts/scene_menu.gd" id="1_1sf67"]
+
+[node name="scene_menu" type="Node2D"]
+script = ExtResource("1_1sf67")
+
+[node name="button_play" type="Button" parent="."]
+texture_filter = 1
+offset_left = 462.0
+offset_top = 488.0
+offset_right = 634.0
+offset_bottom = 519.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Appuyer pour jouer ! "
+
+[node name="button_quit" type="Button" parent="."]
+texture_filter = 1
+offset_left = 512.0
+offset_top = 547.0
+offset_right = 576.0
+offset_bottom = 578.0
+text = "Quitter"
+
+[connection signal="button_down" from="button_play" to="." method="_on_button_play_button_down"]

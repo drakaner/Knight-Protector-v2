@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://bp402v1khri81"]
+
+[ext_resource type="Texture2D" uid="uid://tq2hnmiqbnmq" path="res://Ressources/hud_hero.png" id="1_1p1pl"]
+[ext_resource type="Script" uid="uid://bxmgxwj5mrjuf" path="res://Scripts/gui_hud_hero.gd" id="1_co7mt"]
+[ext_resource type="Texture2D" uid="uid://dpo5kqlif3ig0" path="res://Ressources/hud_barre_vie.png" id="2_co7mt"]
+[ext_resource type="Texture2D" uid="uid://j5vq86ndrvdo" path="res://Ressources/hud_barre_mana.png" id="3_40eub"]
+[ext_resource type="Texture2D" uid="uid://besl1tj2ohcal" path="res://Ressources/hud_barre_endurance.png" id="4_44sdq"]
+
+[node name="gui_hudHero" type="CanvasLayer"]
+script = ExtResource("1_co7mt")
+
+[node name="hud_hero" type="TextureRect" parent="."]
+texture_filter = 1
+offset_right = 249.75
+offset_bottom = 111.0
+texture = ExtResource("1_1p1pl")
+
+[node name="hud_barreVie" type="TextureRect" parent="."]
+texture_filter = 1
+offset_left = 84.0
+offset_top = 31.0
+offset_right = 232.0
+offset_bottom = 55.0
+texture = ExtResource("2_co7mt")
+expand_mode = 1
+
+[node name="hud_barreMana" type="TextureRect" parent="."]
+texture_filter = 1
+offset_left = 87.0
+offset_top = 45.0
+offset_right = 213.0
+offset_bottom = 67.0
+texture = ExtResource("3_40eub")
+expand_mode = 1
+
+[node name="hud_barreEndurance" type="TextureRect" parent="."]
+texture_filter = 1
+offset_left = 84.0
+offset_top = 63.0
+offset_right = 196.0
+offset_bottom = 81.0
+texture = ExtResource("4_44sdq")
+expand_mode = 1
+
+[node name="panel_stats-equipements" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 13.0
+offset_top = 19.0
+offset_right = 83.0
+offset_bottom = 100.0
+
+[connection signal="gui_input" from="panel_stats-equipements" to="." method="_on_panel_statsequipements_gui_input"]

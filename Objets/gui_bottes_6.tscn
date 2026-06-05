@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://0aehfw7loxvd"]
+
+[ext_resource type="Texture2D" uid="uid://bxcurwj0q30db" path="res://Ressources/Icons.png" id="1_5nffe"]
+[ext_resource type="Script" uid="uid://b0y180ady00r4" path="res://Scripts/gui_bottes_6.gd" id="1_qxnjj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qxnjj"]
+atlas = ExtResource("1_5nffe")
+region = Rect2(121, 135, 15, 17)
+
+[node name="gui_bottes6" type="CanvasLayer"]
+script = ExtResource("1_qxnjj")
+
+[node name="textureBottes6" type="TextureRect" parent="."]
+texture_filter = 1
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("AtlasTexture_qxnjj")

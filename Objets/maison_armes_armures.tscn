@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://crlqtcsg6vuu1"]
+
+[ext_resource type="Script" uid="uid://cdpaq8d64nxqu" path="res://Scripts/maison_armes_armures.gd" id="1_011gv"]
+[ext_resource type="Texture2D" uid="uid://b2sp0qer7fnrl" path="res://Ressources/objects_1.png" id="1_utm5v"]
+[ext_resource type="Script" uid="uid://c3kdvkilcqi58" path="res://Scripts/area_2d_maa.gd" id="2_mxsh7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_011gv"]
+atlas = ExtResource("1_utm5v")
+region = Rect2(0, 0, 148, 139)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mxsh7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_011gv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l4vvi"]
+size = Vector2(127, 137)
+
+[node name="maisonArmesArmures" type="Node2D"]
+script = ExtResource("1_011gv")
+
+[node name="Area2D_mArmeArmure" type="Area2D" parent="."]
+script = ExtResource("2_mxsh7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D_mArmeArmure"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_mxsh7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D_mArmeArmure"]
+position = Vector2(2.5, -1.5)
+shape = SubResource("RectangleShape2D_l4vvi")

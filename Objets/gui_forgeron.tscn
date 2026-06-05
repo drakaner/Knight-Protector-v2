@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bh6w6agwf22r1"]
+
+[ext_resource type="Texture2D" uid="uid://dtyyd45flxaos" path="res://Ressources/hud_forge.png" id="1_eegbk"]
+[ext_resource type="Script" uid="uid://bsodi64dpxh22" path="res://Scripts/gui_forgeron.gd" id="1_pspur"]
+
+[node name="gui_forgeron" type="CanvasLayer"]
+script = ExtResource("1_pspur")
+
+[node name="hud_forge" type="TextureRect" parent="."]
+texture_filter = 1
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_eegbk")
+
+[node name="panel_retour" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 260.0
+offset_top = 10.0
+offset_right = 285.0
+offset_bottom = 35.0
+
+[connection signal="gui_input" from="panel_retour" to="." method="_on_panel_retour_gui_input"]

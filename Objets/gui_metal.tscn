@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://0xeadifsbvgm"]
+
+[ext_resource type="Texture2D" uid="uid://7ajdca723sb7" path="res://Ressources/Top_cell.png" id="1_oig1a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kjnln"]
+atlas = ExtResource("1_oig1a")
+region = Rect2(199, 35, 17, 16)
+
+[node name="gui_metal" type="CanvasLayer"]
+
+[node name="textureMetal" type="TextureRect" parent="."]
+texture_filter = 1
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("AtlasTexture_kjnln")

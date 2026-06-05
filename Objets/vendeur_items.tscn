@@ -1,0 +1,76 @@
+[gd_scene load_steps=12 format=3 uid="uid://en8sxb7ibsbb"]
+
+[ext_resource type="Texture2D" uid="uid://dvbux7vyhna7n" path="res://Ressources/vendeur_items.png" id="1_dfsx6"]
+[ext_resource type="Script" uid="uid://5y6gi00oilp8" path="res://Scripts/vendeur_items.gd" id="1_u48a5"]
+[ext_resource type="Script" uid="uid://tv0g5matfm20" path="res://Scripts/area_2d_vi.gd" id="2_j32ei"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u48a5"]
+atlas = ExtResource("1_dfsx6")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j32ei"]
+atlas = ExtResource("1_dfsx6")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qewdn"]
+atlas = ExtResource("1_dfsx6")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_us5ul"]
+atlas = ExtResource("1_dfsx6")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pvhp1"]
+atlas = ExtResource("1_dfsx6")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uta62"]
+atlas = ExtResource("1_dfsx6")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cnxpk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u48a5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j32ei")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qewdn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_us5ul")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pvhp1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uta62")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4858w"]
+radius = 7.0
+height = 28.0
+
+[node name="vendeurItems" type="Node2D"]
+script = ExtResource("1_u48a5")
+
+[node name="Area2D_vItems" type="Area2D" parent="."]
+script = ExtResource("2_j32ei")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D_vItems"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_cnxpk")
+autoplay = "default"
+frame_progress = 0.48411524
+speed_scale = 0.7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D_vItems"]
+position = Vector2(9, -2)
+shape = SubResource("CapsuleShape2D_4858w")

@@ -1,0 +1,163 @@
+[gd_scene load_steps=3 format=3 uid="uid://doo3hnofwwivc"]
+
+[ext_resource type="Texture2D" uid="uid://clkuumcnj81cg" path="res://Ressources/test.png" id="1_jfye6"]
+[ext_resource type="Script" uid="uid://cdnbnsoh8ggm3" path="res://Scripts/gui_inventaire.gd" id="1_o88rv"]
+
+[node name="guiInventaire" type="CanvasLayer"]
+script = ExtResource("1_o88rv")
+
+[node name="hud_inventaire" type="TextureRect" parent="."]
+texture_filter = 1
+offset_right = 500.0
+offset_bottom = 514.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_jfye6")
+
+[node name="panel_retour" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 212.0
+offset_top = 8.0
+offset_right = 240.0
+offset_bottom = 36.0
+
+[node name="panel_slot1" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 32.0
+offset_top = 47.0
+offset_right = 66.0
+offset_bottom = 82.0
+
+[node name="panel_slot2" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 70.0
+offset_top = 47.0
+offset_right = 104.0
+offset_bottom = 82.0
+
+[node name="panel_slot3" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 108.0
+offset_top = 47.0
+offset_right = 142.0
+offset_bottom = 82.0
+
+[node name="panel_slot4" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 147.0
+offset_top = 47.0
+offset_right = 181.0
+offset_bottom = 82.0
+
+[node name="panel_slot5" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 186.0
+offset_top = 47.0
+offset_right = 220.0
+offset_bottom = 82.0
+
+[node name="panel_slot6" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 31.0
+offset_top = 86.0
+offset_right = 65.0
+offset_bottom = 121.0
+
+[node name="panel_slot7" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 70.0
+offset_top = 86.0
+offset_right = 104.0
+offset_bottom = 121.0
+
+[node name="panel_slot8" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 108.0
+offset_top = 86.0
+offset_right = 142.0
+offset_bottom = 121.0
+
+[node name="panel_slot9" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 147.0
+offset_top = 86.0
+offset_right = 181.0
+offset_bottom = 121.0
+
+[node name="panel_slot10" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 186.0
+offset_top = 86.0
+offset_right = 220.0
+offset_bottom = 121.0
+
+[node name="panel_slot11" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 31.0
+offset_top = 124.0
+offset_right = 65.0
+offset_bottom = 159.0
+
+[node name="panel_slot12" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 70.0
+offset_top = 125.0
+offset_right = 104.0
+offset_bottom = 160.0
+
+[node name="panel_slot13" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 108.0
+offset_top = 125.0
+offset_right = 142.0
+offset_bottom = 160.0
+
+[node name="panel_slot14" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 147.0
+offset_top = 125.0
+offset_right = 181.0
+offset_bottom = 160.0
+
+[node name="panel_slot15" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 186.0
+offset_top = 125.0
+offset_right = 220.0
+offset_bottom = 160.0
+
+[node name="panel_slot16" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 31.0
+offset_top = 163.0
+offset_right = 65.0
+offset_bottom = 198.0
+
+[node name="panel_slot17" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 70.0
+offset_top = 163.0
+offset_right = 104.0
+offset_bottom = 198.0
+
+[node name="panel_slot18" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 108.0
+offset_top = 163.0
+offset_right = 142.0
+offset_bottom = 198.0
+
+[node name="panel_slot19" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 147.0
+offset_top = 163.0
+offset_right = 181.0
+offset_bottom = 198.0
+
+[node name="panel_slot20" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 186.0
+offset_top = 163.0
+offset_right = 220.0
+offset_bottom = 198.0
+
+[connection signal="gui_input" from="panel_retour" to="." method="_on_panel_retour_gui_input"]

@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://clkk6y6u2nva6"]
+
+[ext_resource type="Texture2D" uid="uid://bxcurwj0q30db" path="res://Ressources/Icons.png" id="1_q0gwh"]
+[ext_resource type="Script" uid="uid://b8i5vvx1wb8ea" path="res://Scripts/gui_heaume_3.gd" id="1_t601s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t601s"]
+atlas = ExtResource("1_q0gwh")
+region = Rect2(503, 135, 17, 17)
+
+[node name="gui_heaume3" type="CanvasLayer"]
+script = ExtResource("1_t601s")
+
+[node name="textureHeaume3" type="TextureRect" parent="."]
+texture_filter = 1
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("AtlasTexture_t601s")

@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://be4e18momgrtt"]
+
+[ext_resource type="Texture2D" uid="uid://dcfvouxpwqm3w" path="res://Ressources/objects_3.png" id="1_oucr2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e07iu"]
+atlas = ExtResource("1_oucr2")
+region = Rect2(96, 140, 32, 35)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bqepr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e07iu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lar8w"]
+size = Vector2(23, 23)
+
+[node name="coffreNormal" type="Node2D"]
+
+[node name="Area2D_coffreNormal" type="Area2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D_coffreNormal"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_bqepr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D_coffreNormal"]
+position = Vector2(-1.5, 2.5)
+shape = SubResource("RectangleShape2D_lar8w")

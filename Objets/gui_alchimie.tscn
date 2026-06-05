@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnu3im1aiup7n"]
+
+[ext_resource type="Texture2D" uid="uid://ck7bn6kso12o" path="res://Ressources/hud_alchimie.png" id="1_qajvc"]
+[ext_resource type="Script" uid="uid://fm7b1gr0w1my" path="res://Scripts/gui_alchimie.gd" id="1_w8xfe"]
+
+[node name="gui_alchimie" type="CanvasLayer"]
+script = ExtResource("1_w8xfe")
+
+[node name="hud_alchimie" type="TextureRect" parent="."]
+texture_filter = 1
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_qajvc")
+
+[node name="panel_retour" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 263.0
+offset_top = 8.0
+offset_right = 282.0
+offset_bottom = 33.0
+
+[connection signal="gui_input" from="panel_retour" to="." method="_on_panel_retour_gui_input"]

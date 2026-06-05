@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://de3i4w2pjm8de"]
+
+[ext_resource type="Texture2D" uid="uid://b0kffvumgy8y7" path="res://Ressources/statue_ressurection.png" id="1_8f5eu"]
+[ext_resource type="Script" uid="uid://dfk73t7r10mm3" path="res://Scripts/statue_ressurection.gd" id="1_8373m"]
+[ext_resource type="Script" uid="uid://bvnfdhhgyw7f0" path="res://Scripts/area_2d_sr.gd" id="2_1aa0h"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8373m"]
+radius = 40.0
+height = 138.0
+
+[node name="StatueRessurection" type="Node2D"]
+script = ExtResource("1_8373m")
+
+[node name="Area2D_statue" type="Area2D" parent="."]
+script = ExtResource("2_1aa0h")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D_statue"]
+texture_filter = 1
+texture = ExtResource("1_8f5eu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D_statue"]
+shape = SubResource("CapsuleShape2D_8373m")

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cf51lsvw4b1hk"]
+
+[ext_resource type="Texture2D" uid="uid://d0h1o6ahwcvwy" path="res://Ressources/rempart_right-left_1.png" id="1_t2mnj"]
+[ext_resource type="Script" uid="uid://byyu6ynw47hph" path="res://Scripts/area_2d_rrl.gd" id="1_votn3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_votn3"]
+size = Vector2(98, 192)
+
+[node name="rempartRightLeft1" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("1_votn3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+texture_filter = 1
+texture = ExtResource("1_t2mnj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_votn3")

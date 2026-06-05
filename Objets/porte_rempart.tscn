@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://j30doxcebx6b"]
+
+[ext_resource type="Script" uid="uid://cm2gh8gwn81w0" path="res://Scripts/area_2d_pr.gd" id="1_2560u"]
+[ext_resource type="Texture2D" uid="uid://b88gedmc2pkiq" path="res://Ressources/Gate2.png" id="1_rglqi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rglqi"]
+size = Vector2(69, 194)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2560u"]
+size = Vector2(68, 194)
+
+[node name="porteRempart" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("1_2560u")
+
+[node name="AnimatedSprite2D" type="Sprite2D" parent="Area2D"]
+texture_filter = 1
+texture = ExtResource("1_rglqi")
+
+[node name="collideRempart1" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-80.5, -1)
+shape = SubResource("RectangleShape2D_rglqi")
+
+[node name="collideRempart2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(80, -1)
+shape = SubResource("RectangleShape2D_2560u")

@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dk6rf85ycgp1g"]
+
+[ext_resource type="Script" uid="uid://c72xtv4lt5ckg" path="res://Scripts/gui_collier_2.gd" id="1_eo7n0"]
+[ext_resource type="Texture2D" uid="uid://7ajdca723sb7" path="res://Ressources/Top_cell.png" id="1_lk4nx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eo7n0"]
+atlas = ExtResource("1_lk4nx")
+region = Rect2(264, 35, 15, 17)
+
+[node name="gui_collier2" type="CanvasLayer"]
+script = ExtResource("1_eo7n0")
+
+[node name="textureCollier2" type="TextureRect" parent="."]
+texture_filter = 1
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("AtlasTexture_eo7n0")
