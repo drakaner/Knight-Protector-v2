@@ -1,5 +1,7 @@
 extends Node
 
+#FAIRE UNE ADDITION DE TOUTE LES DATA ITEMS GENRE POTION + SWORD ET TOUT PUIS FAIRE LE TOTAL AVEC UNE NOUVELLE VARIABLE DATASAVE PUIS SI JAMAIS CEST EGAL A SE NOMBRE ALORS LINVENTAIRE EST PLEIN
+
 var hero = { gold = 500 }
 var items_posession = { potionVie = 0, potionMana = 0, bague1 = 0, bague2 = 0, bague3 = 0, bottes1 = 0,
 bottes2 = 0, bottes3 = 0, bottes4 = 0, bottes5 = 0, bottes6 = 0, bouclier1 = 0, bouclier2 = 0,

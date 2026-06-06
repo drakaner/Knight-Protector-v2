@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://cdnbnsoh8ggm3" path="res://Scripts/gui_inventaire.gd" id="1_o88rv"]
 
 [node name="guiInventaire" type="CanvasLayer"]
+layer = 0
 script = ExtResource("1_o88rv")
 
 [node name="hud_inventaire" type="TextureRect" parent="."]
