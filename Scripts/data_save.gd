@@ -10,6 +10,9 @@ casque3 = 0, casque4 = 0, casque5 = 0, casque6 = 0, collier1 = 0, collier2 = 0, 
 heaume2 = 0, heaume3 = 0, heaume4 = 0, heaume5 = 0, heaume6 = 0, sword1 = 0, sword2 = 0, sword3 = 0, 
 sword4 = 0, sword5 = 0, sword6 = 0, sword7 = 0, sword8 = 0, potionElixir = 0 }
 
+var nbTotalItemsInventaire = 0 
+var nbTotalItemsEquipements = 0
+
 const  SAVE_PATH = "user://settings.cfg"
 
 # Called when the node enters the scene tree for the first time.
@@ -68,6 +71,8 @@ func load_data():
 	items_posession.sword6 = config.get_value("items", "sword_6", 0)
 	items_posession.sword7 = config.get_value("items", "sword_7", 0)
 	items_posession.sword8 = config.get_value("items", "sword_8", 0)
+	nbTotalItemsInventaire = config.get_value("inventaire", "all", 0)
+	nbTotalItemsEquipements = config.get_value("inventaire", "equipements", 0)
 
 
 func save_data():
@@ -115,6 +120,8 @@ func save_data():
 	config.set_value("items", "sword_6", items_posession.sword6)
 	config.set_value("items", "sword_7", items_posession.sword7)
 	config.set_value("items", "sword_8", items_posession.sword8)
+	config.set_value("inventaire", "all", nbTotalItemsInventaire)
+	config.set_value("inventaire", "equipements", nbTotalItemsEquipements)
 	
 	
 	config.save(SAVE_PATH)

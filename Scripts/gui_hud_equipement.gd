@@ -694,8 +694,349 @@ func _on_mouse_entered_casque6():
 		if gui_casque6[n] != null:
 			childGuiTxtStat2.text = "Défense : + " + str(gui_casque6[n].nb_defense)
 
-#RESTE ENCORE DAUTRE COPIER COLLER A FAIRE : COLLIER HEAUME SWORD ET AUTRE JE CROIS ...
-#total 3 commentaires a lire 
+func _on_mouse_entered_collier1():
+	gui_fenetre = GuiFenetre.instantiate()
+	add_child(gui_fenetre)
+	txt_titre = GuiTextUi.instantiate()
+	add_child(txt_titre)
+	var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+	for n in range(16):
+		if gui_collier1[n] != null:
+			childGuiTxtNameItem.text = gui_collier1[n].txt_name
+	nbDecaleTextName = 5
+	txt_stat_1 = GuiTextUi.instantiate()
+	add_child(txt_stat_1)
+	var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+	for n in range(16):
+		if gui_collier1[n] != null:
+			childGuiTxtStat1.text = "Puissance : + " + str(gui_collier1[n].nb_puissance)
+	txt_stat_2 = GuiTextUi.instantiate()
+	add_child(txt_stat_2)
+	var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+	for n in range(16):
+		if gui_collier1[n] != null:
+			childGuiTxtStat2.text = "Endurance : + " + str(gui_collier1[n].nb_endurance)
+
+func _on_mouse_entered_collier2():
+	gui_fenetre = GuiFenetre.instantiate()
+	add_child(gui_fenetre)
+	txt_titre = GuiTextUi.instantiate()
+	add_child(txt_titre)
+	var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+	for n in range(16):
+		if gui_collier2[n] != null:
+			childGuiTxtNameItem.text = gui_collier2[n].txt_name
+	nbDecaleTextName = 30
+	txt_stat_1 = GuiTextUi.instantiate()
+	add_child(txt_stat_1)
+	var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+	for n in range(16):
+		if gui_collier2[n] != null:
+			childGuiTxtStat1.text = "Puissance : + " + str(gui_collier2[n].nb_puissance)
+	txt_stat_2 = GuiTextUi.instantiate()
+	add_child(txt_stat_2)
+	var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+	for n in range(16):
+		if gui_collier2[n] != null:
+			childGuiTxtStat2.text = "Endurance : + " + str(gui_collier2[n].nb_endurance)
+
+func _on_mouse_entered_collier3():
+	gui_fenetre = GuiFenetre.instantiate()
+	add_child(gui_fenetre)
+	txt_titre = GuiTextUi.instantiate()
+	add_child(txt_titre)
+	var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+	for n in range(16):
+		if gui_collier3[n] != null:
+			childGuiTxtNameItem.text = gui_collier3[n].txt_name
+	nbDecaleTextName = 20
+	txt_stat_1 = GuiTextUi.instantiate()
+	add_child(txt_stat_1)
+	var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+	for n in range(16):
+		if gui_collier3[n] != null:
+			childGuiTxtStat1.text = "Puissance : + " + str(gui_collier3[n].nb_puissance)
+	txt_stat_2 = GuiTextUi.instantiate()
+	add_child(txt_stat_2)
+	var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+	for n in range(16):
+		if gui_collier3[n] != null:
+			childGuiTxtStat2.text = "Endurance : + " + str(gui_collier3[n].nb_endurance)
+
+func _on_mouse_entered_heaume1():
+	gui_fenetre = GuiFenetre.instantiate()
+	add_child(gui_fenetre)
+	txt_titre = GuiTextUi.instantiate()
+	add_child(txt_titre)
+	var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+	for n in range(16):
+		if gui_heaume1[n] != null:
+			childGuiTxtNameItem.text = gui_heaume1[n].txt_name
+	nbDecaleTextName = 35
+	txt_stat_1 = GuiTextUi.instantiate()
+	add_child(txt_stat_1)
+	var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+	for n in range(16):
+		if gui_heaume1[n] != null:
+			childGuiTxtStat1.text = "Vie : + " + str(gui_heaume1[n].nb_vie)
+	txt_stat_2 = GuiTextUi.instantiate()
+	add_child(txt_stat_2)
+	var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+	for n in range(16):
+		if gui_heaume1[n] != null:
+			childGuiTxtStat2.text = "Défense : + " + str(gui_heaume1[n].nb_defense)
+
+func _on_mouse_entered_heaume2():
+	gui_fenetre = GuiFenetre.instantiate()
+	add_child(gui_fenetre)
+	txt_titre = GuiTextUi.instantiate()
+	add_child(txt_titre)
+	var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+	for n in range(16):
+		if gui_heaume2[n] != null:
+			childGuiTxtNameItem.text = gui_heaume2[n].txt_name
+	nbDecaleTextName = 20
+	txt_stat_1 = GuiTextUi.instantiate()
+	add_child(txt_stat_1)
+	var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+	for n in range(16):
+		if gui_heaume2[n] != null:
+			childGuiTxtStat1.text = "Vie : + " + str(gui_heaume2[n].nb_vie)
+	txt_stat_2 = GuiTextUi.instantiate()
+	add_child(txt_stat_2)
+	var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+	for n in range(16):
+		if gui_heaume2[n] != null:
+			childGuiTxtStat2.text = "Défense : + " + str(gui_heaume2[n].nb_defense)
+
+func _on_mouse_entered_heaume3():
+	gui_fenetre = GuiFenetre.instantiate()
+	add_child(gui_fenetre)
+	txt_titre = GuiTextUi.instantiate()
+	add_child(txt_titre)
+	var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+	for n in range(16):
+		if gui_heaume3[n] != null:
+			childGuiTxtNameItem.text = gui_heaume3[n].txt_name
+	nbDecaleTextName = 35
+	txt_stat_1 = GuiTextUi.instantiate()
+	add_child(txt_stat_1)
+	var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+	for n in range(16):
+		if gui_heaume3[n] != null:
+			childGuiTxtStat1.text = "Vie : + " + str(gui_heaume3[n].nb_vie)
+	txt_stat_2 = GuiTextUi.instantiate()
+	add_child(txt_stat_2)
+	var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+	for n in range(16):
+		if gui_heaume3[n] != null:
+			childGuiTxtStat2.text = "Défense : + " + str(gui_heaume3[n].nb_defense)
+
+func _on_mouse_entered_heaume4():
+	gui_fenetre = GuiFenetre.instantiate()
+	add_child(gui_fenetre)
+	txt_titre = GuiTextUi.instantiate()
+	add_child(txt_titre)
+	var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+	for n in range(16):
+		if gui_heaume4[n] != null:
+			childGuiTxtNameItem.text = gui_heaume4[n].txt_name
+	nbDecaleTextName = 20
+	txt_stat_1 = GuiTextUi.instantiate()
+	add_child(txt_stat_1)
+	var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+	for n in range(16):
+		if gui_heaume4[n] != null:
+			childGuiTxtStat1.text = "Vie : + " + str(gui_heaume4[n].nb_vie)
+	txt_stat_2 = GuiTextUi.instantiate()
+	add_child(txt_stat_2)
+	var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+	for n in range(16):
+		if gui_heaume4[n] != null:
+			childGuiTxtStat2.text = "Défense : + " + str(gui_heaume4[n].nb_defense)
+
+func _on_mouse_entered_heaume5():
+	gui_fenetre = GuiFenetre.instantiate()
+	add_child(gui_fenetre)
+	txt_titre = GuiTextUi.instantiate()
+	add_child(txt_titre)
+	var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+	for n in range(16):
+		if gui_heaume5[n] != null:
+			childGuiTxtNameItem.text = gui_heaume5[n].txt_name
+	nbDecaleTextName = 20
+	txt_stat_1 = GuiTextUi.instantiate()
+	add_child(txt_stat_1)
+	var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+	for n in range(16):
+		if gui_heaume5[n] != null:
+			childGuiTxtStat1.text = "Vie : + " + str(gui_heaume5[n].nb_vie)
+	txt_stat_2 = GuiTextUi.instantiate()
+	add_child(txt_stat_2)
+	var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+	for n in range(16):
+		if gui_heaume5[n] != null:
+			childGuiTxtStat2.text = "Défense : + " + str(gui_heaume5[n].nb_defense)
+
+func _on_mouse_entered_heaume6():
+	gui_fenetre = GuiFenetre.instantiate()
+	add_child(gui_fenetre)
+	txt_titre = GuiTextUi.instantiate()
+	add_child(txt_titre)
+	var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+	for n in range(16):
+		if gui_heaume6[n] != null:
+			childGuiTxtNameItem.text = gui_heaume6[n].txt_name
+	nbDecaleTextName = 20
+	txt_stat_1 = GuiTextUi.instantiate()
+	add_child(txt_stat_1)
+	var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+	for n in range(16):
+		if gui_heaume6[n] != null:
+			childGuiTxtStat1.text = "Vie : + " + str(gui_heaume6[n].nb_vie)
+	txt_stat_2 = GuiTextUi.instantiate()
+	add_child(txt_stat_2)
+	var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+	for n in range(16):
+		if gui_heaume6[n] != null:
+			childGuiTxtStat2.text = "Défense : + " + str(gui_heaume6[n].nb_defense)
+
+func _on_mouse_entered_sword1():
+	gui_fenetre = GuiFenetre.instantiate()
+	add_child(gui_fenetre)
+	txt_titre = GuiTextUi.instantiate()
+	add_child(txt_titre)
+	var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+	for n in range(16):
+		if gui_sword1[n] != null:
+			childGuiTxtNameItem.text = gui_sword1[n].txt_name
+	nbDecaleTextName = 30
+	txt_stat_1 = GuiTextUi.instantiate()
+	add_child(txt_stat_1)
+	var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+	for n in range(16):
+		if gui_sword1[n] != null:
+			childGuiTxtStat1.text = "Attaque : + " + str(gui_sword1[n].nb_attaque)
+
+func _on_mouse_entered_sword2():
+	gui_fenetre = GuiFenetre.instantiate()
+	add_child(gui_fenetre)
+	txt_titre = GuiTextUi.instantiate()
+	add_child(txt_titre)
+	var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+	for n in range(16):
+		if gui_sword2[n] != null:
+			childGuiTxtNameItem.text = gui_sword2[n].txt_name
+	nbDecaleTextName = 30
+	txt_stat_1 = GuiTextUi.instantiate()
+	add_child(txt_stat_1)
+	var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+	for n in range(16):
+		if gui_sword2[n] != null:
+			childGuiTxtStat1.text = "Attaque : + " + str(gui_sword2[n].nb_attaque)
+
+func _on_mouse_entered_sword3():
+	gui_fenetre = GuiFenetre.instantiate()
+	add_child(gui_fenetre)
+	txt_titre = GuiTextUi.instantiate()
+	add_child(txt_titre)
+	var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+	for n in range(16):
+		if gui_sword3[n] != null:
+			childGuiTxtNameItem.text = gui_sword3[n].txt_name
+	nbDecaleTextName = 1
+	txt_stat_1 = GuiTextUi.instantiate()
+	add_child(txt_stat_1)
+	var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+	for n in range(16):
+		if gui_sword3[n] != null:
+			childGuiTxtStat1.text = "Attaque : + " + str(gui_sword3[n].nb_attaque)
+
+func _on_mouse_entered_sword4():
+	gui_fenetre = GuiFenetre.instantiate()
+	add_child(gui_fenetre)
+	txt_titre = GuiTextUi.instantiate()
+	add_child(txt_titre)
+	var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+	for n in range(16):
+		if gui_sword4[n] != null:
+			childGuiTxtNameItem.text = gui_sword4[n].txt_name
+	nbDecaleTextName = 30
+	txt_stat_1 = GuiTextUi.instantiate()
+	add_child(txt_stat_1)
+	var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+	for n in range(16):
+		if gui_sword4[n] != null:
+			childGuiTxtStat1.text = "Attaque : + " + str(gui_sword4[n].nb_attaque)
+
+func _on_mouse_entered_sword5():
+	gui_fenetre = GuiFenetre.instantiate()
+	add_child(gui_fenetre)
+	txt_titre = GuiTextUi.instantiate()
+	add_child(txt_titre)
+	var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+	for n in range(16):
+		if gui_sword5[n] != null:
+			childGuiTxtNameItem.text = gui_sword5[n].txt_name
+	nbDecaleTextName = 30
+	txt_stat_1 = GuiTextUi.instantiate()
+	add_child(txt_stat_1)
+	var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+	for n in range(16):
+		if gui_sword5[n] != null:
+			childGuiTxtStat1.text = "Attaque : + " + str(gui_sword5[n].nb_attaque)
+
+func _on_mouse_entered_sword6():
+	gui_fenetre = GuiFenetre.instantiate()
+	add_child(gui_fenetre)
+	txt_titre = GuiTextUi.instantiate()
+	add_child(txt_titre)
+	var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+	for n in range(16):
+		if gui_sword6[n] != null:
+			childGuiTxtNameItem.text = gui_sword6[n].txt_name
+	nbDecaleTextName = 50
+	txt_stat_1 = GuiTextUi.instantiate()
+	add_child(txt_stat_1)
+	var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+	for n in range(16):
+		if gui_sword6[n] != null:
+			childGuiTxtStat1.text = "Attaque : + " + str(gui_sword6[n].nb_attaque)
+
+func _on_mouse_entered_sword7():
+	gui_fenetre = GuiFenetre.instantiate()
+	add_child(gui_fenetre)
+	txt_titre = GuiTextUi.instantiate()
+	add_child(txt_titre)
+	var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+	for n in range(16):
+		if gui_sword7[n] != null:
+			childGuiTxtNameItem.text = gui_sword7[n].txt_name
+	nbDecaleTextName = 30
+	txt_stat_1 = GuiTextUi.instantiate()
+	add_child(txt_stat_1)
+	var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+	for n in range(16):
+		if gui_sword7[n] != null:
+			childGuiTxtStat1.text = "Attaque : + " + str(gui_sword7[n].nb_attaque)
+
+func _on_mouse_entered_sword8():
+	gui_fenetre = GuiFenetre.instantiate()
+	add_child(gui_fenetre)
+	txt_titre = GuiTextUi.instantiate()
+	add_child(txt_titre)
+	var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+	for n in range(16):
+		if gui_sword8[n] != null:
+			childGuiTxtNameItem.text = gui_sword8[n].txt_name
+	nbDecaleTextName = 45
+	txt_stat_1 = GuiTextUi.instantiate()
+	add_child(txt_stat_1)
+	var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+	for n in range(16):
+		if gui_sword8[n] != null:
+			childGuiTxtStat1.text = "Attaque : + " + str(gui_sword8[n].nb_attaque)
+#a tester
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#print("data item : ",DataSave.items_posession.potionVie)
@@ -767,6 +1108,20 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
+	var mouse_pos = get_viewport().get_mouse_position()
+	if gui_fenetre != null:
+		gui_fenetre.offset.x = mouse_pos.x+10
+		gui_fenetre.offset.y = mouse_pos.y+13
+	if txt_titre != null:
+		txt_titre.offset.x = mouse_pos.x+10+nbDecaleTextName
+		txt_titre.offset.y = mouse_pos.y+13
+	if txt_stat_1 != null:
+		txt_stat_1.offset.x = mouse_pos.x+10
+		txt_stat_1.offset.y = mouse_pos.y+40
+	if txt_stat_2 != null:
+		txt_stat_2.offset.x = mouse_pos.x+10
+		txt_stat_2.offset.y = mouse_pos.y+55
+	
 	for n in range(16):	
 		if DataSave.items_posession.bague1 != nbCompteurBague1 and txtItemType[n] == "vide":
 					gui_bague1[n] = GuiBague1.instantiate()
@@ -810,9 +1165,9 @@ func _process(delta: float) -> void:
 		if DataSave.items_posession.bottes1 != nbCompteurBottes1 and txtItemType[n] == "vide":
 				gui_bottes1[n] = GuiBottes1.instantiate()
 				add_child(gui_bottes1[n])
-				#var child_bottes1 = gui_bottes1[n].get_node("textureBottes1")
-				#child_bottes1.connect("mouse_entered", Callable(self, "_on_mouse_entered_bottes1"))
-				#child_bottes1.connect("mouse_exited", Callable(self, "_on_mouse_exited_bottes"))
+				var child_bottes1 = gui_bottes1[n].get_node("textureBottes1")
+				child_bottes1.connect("mouse_entered", Callable(self, "_on_mouse_entered_bottes1"))
+				child_bottes1.connect("mouse_exited", Callable(self, "_on_mouse_exited_bottes"))
 				gui_bottes1[n].scale = Vector2(0.6, 0.7)
 				gui_bottes1[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_bottes1[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
@@ -823,9 +1178,9 @@ func _process(delta: float) -> void:
 		if DataSave.items_posession.bottes2 != nbCompteurBottes2 and txtItemType[n] == "vide":
 				gui_bottes2[n] = GuiBottes2.instantiate()
 				add_child(gui_bottes2[n])
-				#var child_bottes2 = gui_bottes2[n].get_node("textureBottes2")
-				#child_bottes2.connect("mouse_entered", Callable(self, "_on_mouse_entered_bottes2"))
-				#child_bottes2.connect("mouse_exited", Callable(self, "_on_mouse_exited_bottes"))
+				var child_bottes2 = gui_bottes2[n].get_node("textureBottes2")
+				child_bottes2.connect("mouse_entered", Callable(self, "_on_mouse_entered_bottes2"))
+				child_bottes2.connect("mouse_exited", Callable(self, "_on_mouse_exited_bottes"))
 				gui_bottes2[n].scale = Vector2(0.6, 0.7)
 				gui_bottes2[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_bottes2[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
@@ -836,9 +1191,9 @@ func _process(delta: float) -> void:
 		if DataSave.items_posession.bottes3 != nbCompteurBottes3 and txtItemType[n] == "vide":
 				gui_bottes3[n] = GuiBottes3.instantiate()
 				add_child(gui_bottes3[n])
-				#var child_bottes3 = gui_bottes3[n].get_node("textureBottes3")
-				#child_bottes3.connect("mouse_entered", Callable(self, "_on_mouse_entered_bottes3"))
-				#child_bottes3.connect("mouse_exited", Callable(self, "_on_mouse_exited_bottes"))
+				var child_bottes3 = gui_bottes3[n].get_node("textureBottes3")
+				child_bottes3.connect("mouse_entered", Callable(self, "_on_mouse_entered_bottes3"))
+				child_bottes3.connect("mouse_exited", Callable(self, "_on_mouse_exited_bottes"))
 				gui_bottes3[n].scale = Vector2(0.6, 0.7)
 				gui_bottes3[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_bottes3[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
@@ -849,9 +1204,9 @@ func _process(delta: float) -> void:
 		if DataSave.items_posession.bottes4 != nbCompteurBottes4 and txtItemType[n] == "vide":
 				gui_bottes4[n] = GuiBottes4.instantiate()
 				add_child(gui_bottes4[n])
-				#var child_bottes4 = gui_bottes4[n].get_node("textureBottes4")
-				#child_bottes4.connect("mouse_entered", Callable(self, "_on_mouse_entered_bottes4"))
-				#child_bottes4.connect("mouse_exited", Callable(self, "_on_mouse_exited_bottes"))
+				var child_bottes4 = gui_bottes4[n].get_node("textureBottes4")
+				child_bottes4.connect("mouse_entered", Callable(self, "_on_mouse_entered_bottes4"))
+				child_bottes4.connect("mouse_exited", Callable(self, "_on_mouse_exited_bottes"))
 				gui_bottes4[n].scale = Vector2(0.6, 0.7)
 				gui_bottes4[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_bottes4[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
@@ -862,9 +1217,9 @@ func _process(delta: float) -> void:
 		if DataSave.items_posession.bottes5 != nbCompteurBottes5 and txtItemType[n] == "vide":
 				gui_bottes5[n] = GuiBottes5.instantiate()
 				add_child(gui_bottes5[n])
-				#var child_bottes5 = gui_bottes5[n].get_node("textureBottes5")
-				#child_bottes5.connect("mouse_entered", Callable(self, "_on_mouse_entered_bottes5"))
-				#child_bottes5.connect("mouse_exited", Callable(self, "_on_mouse_exited_bottes"))
+				var child_bottes5 = gui_bottes5[n].get_node("textureBottes5")
+				child_bottes5.connect("mouse_entered", Callable(self, "_on_mouse_entered_bottes5"))
+				child_bottes5.connect("mouse_exited", Callable(self, "_on_mouse_exited_bottes"))
 				gui_bottes5[n].scale = Vector2(0.6, 0.7)
 				gui_bottes5[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_bottes5[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
@@ -875,9 +1230,9 @@ func _process(delta: float) -> void:
 		if DataSave.items_posession.bottes6 != nbCompteurBottes6 and txtItemType[n] == "vide":
 				gui_bottes6[n] = GuiBottes6.instantiate()
 				add_child(gui_bottes6[n])
-				#var child_bottes6 = gui_bottes6[n].get_node("textureBottes6")
-				#child_bottes6.connect("mouse_entered", Callable(self, "_on_mouse_entered_bottes6"))
-				#child_bottes6.connect("mouse_exited", Callable(self, "_on_mouse_exited_bottes"))
+				var child_bottes6 = gui_bottes6[n].get_node("textureBottes6")
+				child_bottes6.connect("mouse_entered", Callable(self, "_on_mouse_entered_bottes6"))
+				child_bottes6.connect("mouse_exited", Callable(self, "_on_mouse_exited_bottes"))
 				gui_bottes6[n].scale = Vector2(0.6, 0.7)
 				gui_bottes6[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_bottes6[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
@@ -888,9 +1243,9 @@ func _process(delta: float) -> void:
 		if DataSave.items_posession.bouclier1 != nbCompteurBouclier1 and txtItemType[n] == "vide":
 				gui_bouclier1[n] = GuiBouclier1.instantiate()
 				add_child(gui_bouclier1[n])
-				#var child_bouclier1 = gui_bouclier1[n].get_node("textureBouclier1")
-				#child_bouclier1.connect("mouse_entered", Callable(self, "_on_mouse_entered_bouclier1"))
-				#child_bouclier1.connect("mouse_exited", Callable(self, "_on_mouse_exited_bouclier"))
+				var child_bouclier1 = gui_bouclier1[n].get_node("textureBouclier1")
+				child_bouclier1.connect("mouse_entered", Callable(self, "_on_mouse_entered_bouclier1"))
+				child_bouclier1.connect("mouse_exited", Callable(self, "_on_mouse_exited_bouclier"))
 				gui_bouclier1[n].scale = Vector2(0.6, 0.7)
 				gui_bouclier1[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_bouclier1[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
@@ -901,9 +1256,9 @@ func _process(delta: float) -> void:
 		if DataSave.items_posession.bouclier2 != nbCompteurBouclier2 and txtItemType[n] == "vide":
 				gui_bouclier2[n] = GuiBouclier2.instantiate()
 				add_child(gui_bouclier2[n])
-				#var child_bouclier2 = gui_bouclier2[n].get_node("textureBouclier2")
-				#child_bouclier2.connect("mouse_entered", Callable(self, "_on_mouse_entered_bouclier2"))
-				#child_bouclier2.connect("mouse_exited", Callable(self, "_on_mouse_exited_bouclier"))
+				var child_bouclier2 = gui_bouclier2[n].get_node("textureBouclier2")
+				child_bouclier2.connect("mouse_entered", Callable(self, "_on_mouse_entered_bouclier2"))
+				child_bouclier2.connect("mouse_exited", Callable(self, "_on_mouse_exited_bouclier"))
 				gui_bouclier2[n].scale = Vector2(0.6, 0.7)
 				gui_bouclier2[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_bouclier2[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
@@ -914,9 +1269,9 @@ func _process(delta: float) -> void:
 		if DataSave.items_posession.bouclier3 != nbCompteurBouclier3 and txtItemType[n] == "vide":
 				gui_bouclier3[n] = GuiBouclier3.instantiate()
 				add_child(gui_bouclier3[n])
-				#var child_bouclier3 = gui_bouclier3[n].get_node("textureBouclier3")
-				#child_bouclier3.connect("mouse_entered", Callable(self, "_on_mouse_entered_bouclier3"))
-				#child_bouclier3.connect("mouse_exited", Callable(self, "_on_mouse_exited_bouclier"))
+				var child_bouclier3 = gui_bouclier3[n].get_node("textureBouclier3")
+				child_bouclier3.connect("mouse_entered", Callable(self, "_on_mouse_entered_bouclier3"))
+				child_bouclier3.connect("mouse_exited", Callable(self, "_on_mouse_exited_bouclier"))
 				gui_bouclier3[n].scale = Vector2(0.6, 0.7)
 				gui_bouclier3[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_bouclier3[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
@@ -927,9 +1282,9 @@ func _process(delta: float) -> void:
 		if DataSave.items_posession.bouclier4 != nbCompteurBouclier4 and txtItemType[n] == "vide":
 				gui_bouclier4[n] = GuiBouclier4.instantiate()
 				add_child(gui_bouclier4[n])
-				#var child_bouclier4 = gui_bouclier4[n].get_node("textureBouclier4")
-				#child_bouclier4.connect("mouse_entered", Callable(self, "_on_mouse_entered_bouclier4"))
-				#child_bouclier4.connect("mouse_exited", Callable(self, "_on_mouse_exited_bouclier"))
+				var child_bouclier4 = gui_bouclier4[n].get_node("textureBouclier4")
+				child_bouclier4.connect("mouse_entered", Callable(self, "_on_mouse_entered_bouclier4"))
+				child_bouclier4.connect("mouse_exited", Callable(self, "_on_mouse_exited_bouclier"))
 				gui_bouclier4[n].scale = Vector2(0.6, 0.7)
 				gui_bouclier4[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_bouclier4[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
@@ -940,9 +1295,9 @@ func _process(delta: float) -> void:
 		if DataSave.items_posession.bouclier5 != nbCompteurBouclier5 and txtItemType[n] == "vide":
 				gui_bouclier5[n] = GuiBouclier5.instantiate()
 				add_child(gui_bouclier5[n])
-				#var child_bouclier5 = gui_bouclier5[n].get_node("textureBouclier5")
-				#child_bouclier5.connect("mouse_entered", Callable(self, "_on_mouse_entered_bouclier5"))
-				#child_bouclier5.connect("mouse_exited", Callable(self, "_on_mouse_exited_bouclier"))
+				var child_bouclier5 = gui_bouclier5[n].get_node("textureBouclier5")
+				child_bouclier5.connect("mouse_entered", Callable(self, "_on_mouse_entered_bouclier5"))
+				child_bouclier5.connect("mouse_exited", Callable(self, "_on_mouse_exited_bouclier"))
 				gui_bouclier5[n].scale = Vector2(0.6, 0.7)
 				gui_bouclier5[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_bouclier5[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
@@ -953,9 +1308,9 @@ func _process(delta: float) -> void:
 		if DataSave.items_posession.bouclier6 != nbCompteurBouclier6 and txtItemType[n] == "vide":
 				gui_bouclier6[n] = GuiBouclier6.instantiate()
 				add_child(gui_bouclier6[n])
-				#var child_bouclier6 = gui_bouclier6[n].get_node("textureBouclier6")
-				#child_bouclier6.connect("mouse_entered", Callable(self, "_on_mouse_entered_bouclier6"))
-				#child_bouclier6.connect("mouse_exited", Callable(self, "_on_mouse_exited_bouclier"))
+				var child_bouclier6 = gui_bouclier6[n].get_node("textureBouclier6")
+				child_bouclier6.connect("mouse_entered", Callable(self, "_on_mouse_entered_bouclier6"))
+				child_bouclier6.connect("mouse_exited", Callable(self, "_on_mouse_exited_bouclier"))
 				gui_bouclier6[n].scale = Vector2(0.6, 0.7)
 				gui_bouclier6[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_bouclier6[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
@@ -966,9 +1321,9 @@ func _process(delta: float) -> void:
 		if DataSave.items_posession.bouclier7 != nbCompteurBouclier7 and txtItemType[n] == "vide":
 				gui_bouclier7[n] = GuiBouclier7.instantiate()
 				add_child(gui_bouclier7[n])
-				#var child_bouclier7 = gui_bouclier7[n].get_node("textureBouclier7")
-				#child_bouclier7.connect("mouse_entered", Callable(self, "_on_mouse_entered_bouclier7"))
-				#child_bouclier7.connect("mouse_exited", Callable(self, "_on_mouse_exited_bouclier"))
+				var child_bouclier7 = gui_bouclier7[n].get_node("textureBouclier7")
+				child_bouclier7.connect("mouse_entered", Callable(self, "_on_mouse_entered_bouclier7"))
+				child_bouclier7.connect("mouse_exited", Callable(self, "_on_mouse_exited_bouclier"))
 				gui_bouclier7[n].scale = Vector2(0.6, 0.7)
 				gui_bouclier7[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_bouclier7[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
@@ -979,9 +1334,9 @@ func _process(delta: float) -> void:
 		if DataSave.items_posession.casque1 != nbCompteurCasque1 and txtItemType[n] == "vide":
 				gui_casque1[n] = GuiCasque1.instantiate()
 				add_child(gui_casque1[n])
-				#var child_casque1 = gui_casque1[n].get_node("textureCasque1")
-				#child_casque1.connect("mouse_entered", Callable(self, "_on_mouse_entered_casque1"))
-				#child_casque1.connect("mouse_exited", Callable(self, "_on_mouse_exited_casque"))
+				var child_casque1 = gui_casque1[n].get_node("textureCasque1")
+				child_casque1.connect("mouse_entered", Callable(self, "_on_mouse_entered_casque1"))
+				child_casque1.connect("mouse_exited", Callable(self, "_on_mouse_exited_casque"))
 				gui_casque1[n].scale = Vector2(0.6, 0.7)
 				gui_casque1[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_casque1[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
@@ -992,9 +1347,9 @@ func _process(delta: float) -> void:
 		if DataSave.items_posession.casque2 != nbCompteurCasque2 and txtItemType[n] == "vide":
 				gui_casque2[n] = GuiCasque2.instantiate()
 				add_child(gui_casque2[n])
-				#var child_casque2 = gui_casque2[n].get_node("textureCasque2")
-				#child_casque2.connect("mouse_entered", Callable(self, "_on_mouse_entered_casque2"))
-				#child_casque2.connect("mouse_exited", Callable(self, "_on_mouse_exited_casque"))
+				var child_casque2 = gui_casque2[n].get_node("textureCasque2")
+				child_casque2.connect("mouse_entered", Callable(self, "_on_mouse_entered_casque2"))
+				child_casque2.connect("mouse_exited", Callable(self, "_on_mouse_exited_casque"))
 				gui_casque2[n].scale = Vector2(0.6, 0.7)
 				gui_casque2[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_casque2[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
@@ -1005,9 +1360,9 @@ func _process(delta: float) -> void:
 		if DataSave.items_posession.casque3 != nbCompteurCasque3 and txtItemType[n] == "vide":
 				gui_casque3[n] = GuiCasque3.instantiate()
 				add_child(gui_casque3[n])
-				#var child_casque3 = gui_casque3[n].get_node("textureCasque3")
-				#child_casque3.connect("mouse_entered", Callable(self, "_on_mouse_entered_casque3"))
-				#child_casque3.connect("mouse_exited", Callable(self, "_on_mouse_exited_casque"))
+				var child_casque3 = gui_casque3[n].get_node("textureCasque3")
+				child_casque3.connect("mouse_entered", Callable(self, "_on_mouse_entered_casque3"))
+				child_casque3.connect("mouse_exited", Callable(self, "_on_mouse_exited_casque"))
 				gui_casque3[n].scale = Vector2(0.6, 0.7)
 				gui_casque3[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_casque3[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
@@ -1018,9 +1373,9 @@ func _process(delta: float) -> void:
 		if DataSave.items_posession.casque4 != nbCompteurCasque4 and txtItemType[n] == "vide":
 				gui_casque4[n] = GuiCasque4.instantiate()
 				add_child(gui_casque4[n])
-				#var child_casque4 = gui_casque4[n].get_node("textureCasque4")
-				#child_casque4.connect("mouse_entered", Callable(self, "_on_mouse_entered_casque4"))
-				#child_casque4.connect("mouse_exited", Callable(self, "_on_mouse_exited_casque"))
+				var child_casque4 = gui_casque4[n].get_node("textureCasque4")
+				child_casque4.connect("mouse_entered", Callable(self, "_on_mouse_entered_casque4"))
+				child_casque4.connect("mouse_exited", Callable(self, "_on_mouse_exited_casque"))
 				gui_casque4[n].scale = Vector2(0.6, 0.7)
 				gui_casque4[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_casque4[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
@@ -1031,9 +1386,9 @@ func _process(delta: float) -> void:
 		if DataSave.items_posession.casque5 != nbCompteurCasque5 and txtItemType[n] == "vide":
 				gui_casque5[n] = GuiCasque5.instantiate()
 				add_child(gui_casque5[n])
-				#var child_casque5 = gui_casque5[n].get_node("textureCasque5")
-				#child_casque5.connect("mouse_entered", Callable(self, "_on_mouse_entered_casque5"))
-				#child_casque5.connect("mouse_exited", Callable(self, "_on_mouse_exited_casque"))
+				var child_casque5 = gui_casque5[n].get_node("textureCasque5")
+				child_casque5.connect("mouse_entered", Callable(self, "_on_mouse_entered_casque5"))
+				child_casque5.connect("mouse_exited", Callable(self, "_on_mouse_exited_casque"))
 				gui_casque5[n].scale = Vector2(0.6, 0.7)
 				gui_casque5[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_casque5[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
@@ -1044,9 +1399,9 @@ func _process(delta: float) -> void:
 		if DataSave.items_posession.casque6 != nbCompteurCasque6 and txtItemType[n] == "vide":
 				gui_casque6[n] = GuiCasque6.instantiate()
 				add_child(gui_casque6[n])
-				#var child_casque6 = gui_casque6[n].get_node("textureCasque6")
-				#child_casque6.connect("mouse_entered", Callable(self, "_on_mouse_entered_casque6"))
-				#child_casque6.connect("mouse_exited", Callable(self, "_on_mouse_exited_casque"))
+				var child_casque6 = gui_casque6[n].get_node("textureCasque6")
+				child_casque6.connect("mouse_entered", Callable(self, "_on_mouse_entered_casque6"))
+				child_casque6.connect("mouse_exited", Callable(self, "_on_mouse_exited_casque"))
 				gui_casque6[n].scale = Vector2(0.6, 0.7)
 				gui_casque6[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_casque6[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
@@ -1057,9 +1412,9 @@ func _process(delta: float) -> void:
 		if DataSave.items_posession.collier1 != nbCompteurCollier1 and txtItemType[n] == "vide":
 				gui_collier1[n] = GuiCollier1.instantiate()
 				add_child(gui_collier1[n])
-				#var child_collier1 = gui_collier1[n].get_node("textureCollier1")
-				#child_collier1.connect("mouse_entered", Callable(self, "_on_mouse_entered_collier1"))
-				#child_collier1.connect("mouse_exited", Callable(self, "_on_mouse_exited_collier"))
+				var child_collier1 = gui_collier1[n].get_node("textureCollier1")
+				child_collier1.connect("mouse_entered", Callable(self, "_on_mouse_entered_collier1"))
+				child_collier1.connect("mouse_exited", Callable(self, "_on_mouse_exited_collier"))
 				gui_collier1[n].scale = Vector2(0.6, 0.7)
 				gui_collier1[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_collier1[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
@@ -1070,9 +1425,9 @@ func _process(delta: float) -> void:
 		if DataSave.items_posession.collier2 != nbCompteurCollier2 and txtItemType[n] == "vide":
 				gui_collier2[n] = GuiCollier2.instantiate()
 				add_child(gui_collier2[n])
-				#var child_collier2 = gui_collier2[n].get_node("textureCollier2")
-				#child_collier2.connect("mouse_entered", Callable(self, "_on_mouse_entered_collier2"))
-				#child_collier2.connect("mouse_exited", Callable(self, "_on_mouse_exited_collier"))
+				var child_collier2 = gui_collier2[n].get_node("textureCollier2")
+				child_collier2.connect("mouse_entered", Callable(self, "_on_mouse_entered_collier2"))
+				child_collier2.connect("mouse_exited", Callable(self, "_on_mouse_exited_collier"))
 				gui_collier2[n].scale = Vector2(0.6, 0.7)
 				gui_collier2[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_collier2[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
@@ -1083,9 +1438,9 @@ func _process(delta: float) -> void:
 		if DataSave.items_posession.collier3 != nbCompteurCollier3 and txtItemType[n] == "vide":
 				gui_collier3[n] = GuiCollier3.instantiate()
 				add_child(gui_collier3[n])
-				#var child_collier3 = gui_collier3[n].get_node("textureCollier3")
-				#child_collier3.connect("mouse_entered", Callable(self, "_on_mouse_entered_collier3"))
-				#child_collier3.connect("mouse_exited", Callable(self, "_on_mouse_exited_collier"))
+				var child_collier3 = gui_collier3[n].get_node("textureCollier3")
+				child_collier3.connect("mouse_entered", Callable(self, "_on_mouse_entered_collier3"))
+				child_collier3.connect("mouse_exited", Callable(self, "_on_mouse_exited_collier"))
 				gui_collier3[n].scale = Vector2(0.6, 0.7)
 				gui_collier3[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_collier3[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
@@ -1096,9 +1451,9 @@ func _process(delta: float) -> void:
 		if DataSave.items_posession.heaume1 != nbCompteurHeaume1 and txtItemType[n] == "vide":
 				gui_heaume1[n] = GuiHeaume1.instantiate()
 				add_child(gui_heaume1[n])
-				#var child_heaume1 = gui_heaume1[n].get_node("textureHeaume1")
-				#child_heaume1.connect("mouse_entered", Callable(self, "_on_mouse_entered_heaume1"))
-				#child_heaume1.connect("mouse_exited", Callable(self, "_on_mouse_exited_heaume"))
+				var child_heaume1 = gui_heaume1[n].get_node("textureHeaume1")
+				child_heaume1.connect("mouse_entered", Callable(self, "_on_mouse_entered_heaume1"))
+				child_heaume1.connect("mouse_exited", Callable(self, "_on_mouse_exited_heaume"))
 				gui_heaume1[n].scale = Vector2(0.6, 0.7)
 				gui_heaume1[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_heaume1[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
@@ -1109,9 +1464,9 @@ func _process(delta: float) -> void:
 		if DataSave.items_posession.heaume2 != nbCompteurHeaume2 and txtItemType[n] == "vide":
 				gui_heaume2[n] = GuiHeaume2.instantiate()
 				add_child(gui_heaume2[n])
-				#var child_heaume2 = gui_heaume2[n].get_node("textureHeaume2")
-				#child_heaume2.connect("mouse_entered", Callable(self, "_on_mouse_entered_heaume2"))
-				#child_heaume2.connect("mouse_exited", Callable(self, "_on_mouse_exited_heaume"))
+				var child_heaume2 = gui_heaume2[n].get_node("textureHeaume2")
+				child_heaume2.connect("mouse_entered", Callable(self, "_on_mouse_entered_heaume2"))
+				child_heaume2.connect("mouse_exited", Callable(self, "_on_mouse_exited_heaume"))
 				gui_heaume2[n].scale = Vector2(0.6, 0.7)
 				gui_heaume2[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_heaume2[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
@@ -1122,9 +1477,9 @@ func _process(delta: float) -> void:
 		if DataSave.items_posession.heaume3 != nbCompteurHeaume3 and txtItemType[n] == "vide":
 				gui_heaume3[n] = GuiHeaume3.instantiate()
 				add_child(gui_heaume3[n])
-				#var child_heaume3 = gui_heaume3[n].get_node("textureHeaume3")
-				#child_heaume3.connect("mouse_entered", Callable(self, "_on_mouse_entered_heaume3"))
-				#child_heaume3.connect("mouse_exited", Callable(self, "_on_mouse_exited_heaume"))
+				var child_heaume3 = gui_heaume3[n].get_node("textureHeaume3")
+				child_heaume3.connect("mouse_entered", Callable(self, "_on_mouse_entered_heaume3"))
+				child_heaume3.connect("mouse_exited", Callable(self, "_on_mouse_exited_heaume"))
 				gui_heaume3[n].scale = Vector2(0.6, 0.7)
 				gui_heaume3[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_heaume3[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
@@ -1135,9 +1490,9 @@ func _process(delta: float) -> void:
 		if DataSave.items_posession.heaume4 != nbCompteurHeaume4 and txtItemType[n] == "vide":
 				gui_heaume4[n] = GuiHeaume4.instantiate()
 				add_child(gui_heaume4[n])
-				#var child_heaume4 = gui_heaume4[n].get_node("textureHeaume4")
-				#child_heaume4.connect("mouse_entered", Callable(self, "_on_mouse_entered_heaume4"))
-				#child_heaume4.connect("mouse_exited", Callable(self, "_on_mouse_exited_heaume"))
+				var child_heaume4 = gui_heaume4[n].get_node("textureHeaume4")
+				child_heaume4.connect("mouse_entered", Callable(self, "_on_mouse_entered_heaume4"))
+				child_heaume4.connect("mouse_exited", Callable(self, "_on_mouse_exited_heaume"))
 				gui_heaume4[n].scale = Vector2(0.6, 0.7)
 				gui_heaume4[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_heaume4[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
@@ -1148,9 +1503,9 @@ func _process(delta: float) -> void:
 		if DataSave.items_posession.heaume5 != nbCompteurHeaume5 and txtItemType[n] == "vide":
 				gui_heaume5[n] = GuiHeaume5.instantiate()
 				add_child(gui_heaume5[n])
-				#var child_heaume5 = gui_heaume5[n].get_node("textureHeaume5")
-				#child_heaume5.connect("mouse_entered", Callable(self, "_on_mouse_entered_heaume5"))
-				#child_heaume5.connect("mouse_exited", Callable(self, "_on_mouse_exited_heaume"))
+				var child_heaume5 = gui_heaume5[n].get_node("textureHeaume5")
+				child_heaume5.connect("mouse_entered", Callable(self, "_on_mouse_entered_heaume5"))
+				child_heaume5.connect("mouse_exited", Callable(self, "_on_mouse_exited_heaume"))
 				gui_heaume5[n].scale = Vector2(0.6, 0.7)
 				gui_heaume5[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_heaume5[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
@@ -1161,9 +1516,9 @@ func _process(delta: float) -> void:
 		if DataSave.items_posession.heaume6 != nbCompteurHeaume6 and txtItemType[n] == "vide":
 				gui_heaume6[n] = GuiHeaume6.instantiate()
 				add_child(gui_heaume6[n])
-				#var child_heaume6 = gui_heaume6[n].get_node("textureHeaume6")
-				#child_heaume6.connect("mouse_entered", Callable(self, "_on_mouse_entered_heaume6"))
-				#child_heaume6.connect("mouse_exited", Callable(self, "_on_mouse_exited_heaume"))
+				var child_heaume6 = gui_heaume6[n].get_node("textureHeaume6")
+				child_heaume6.connect("mouse_entered", Callable(self, "_on_mouse_entered_heaume6"))
+				child_heaume6.connect("mouse_exited", Callable(self, "_on_mouse_exited_heaume"))
 				gui_heaume6[n].scale = Vector2(0.6, 0.7)
 				gui_heaume6[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_heaume6[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
@@ -1174,9 +1529,9 @@ func _process(delta: float) -> void:
 		if DataSave.items_posession.sword1 != nbCompteurSword1 and txtItemType[n] == "vide":
 				gui_sword1[n] = GuiSword1.instantiate()
 				add_child(gui_sword1[n])
-				#var child_sword1 = gui_sword1[n].get_node("textureSword1")
-				#child_sword1.connect("mouse_entered", Callable(self, "_on_mouse_entered_sword1"))
-				#child_sword1.connect("mouse_exited", Callable(self, "_on_mouse_exited_sword"))
+				var child_sword1 = gui_sword1[n].get_node("textureSword1")
+				child_sword1.connect("mouse_entered", Callable(self, "_on_mouse_entered_sword1"))
+				child_sword1.connect("mouse_exited", Callable(self, "_on_mouse_exited_sword"))
 				gui_sword1[n].scale = Vector2(0.6, 0.7)
 				gui_sword1[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_sword1[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
@@ -1187,9 +1542,9 @@ func _process(delta: float) -> void:
 		if DataSave.items_posession.sword2 != nbCompteurSword2 and txtItemType[n] == "vide":
 				gui_sword2[n] = GuiSword2.instantiate()
 				add_child(gui_sword2[n])
-				#var child_sword2 = gui_sword2[n].get_node("textureSword2")
-				#child_sword2.connect("mouse_entered", Callable(self, "_on_mouse_entered_sword2"))
-				#child_sword2.connect("mouse_exited", Callable(self, "_on_mouse_exited_sword"))
+				var child_sword2 = gui_sword2[n].get_node("textureSword2")
+				child_sword2.connect("mouse_entered", Callable(self, "_on_mouse_entered_sword2"))
+				child_sword2.connect("mouse_exited", Callable(self, "_on_mouse_exited_sword"))
 				gui_sword2[n].scale = Vector2(0.6, 0.7)
 				gui_sword2[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_sword2[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
@@ -1200,9 +1555,9 @@ func _process(delta: float) -> void:
 		if DataSave.items_posession.sword3 != nbCompteurSword3 and txtItemType[n] == "vide":
 				gui_sword3[n] = GuiSword3.instantiate()
 				add_child(gui_sword3[n])
-				#var child_sword3 = gui_sword3[n].get_node("textureSword3")
-				#child_sword3.connect("mouse_entered", Callable(self, "_on_mouse_entered_sword3"))
-				#child_sword3.connect("mouse_exited", Callable(self, "_on_mouse_exited_sword"))
+				var child_sword3 = gui_sword3[n].get_node("textureSword3")
+				child_sword3.connect("mouse_entered", Callable(self, "_on_mouse_entered_sword3"))
+				child_sword3.connect("mouse_exited", Callable(self, "_on_mouse_exited_sword"))
 				gui_sword3[n].scale = Vector2(0.6, 0.7)
 				gui_sword3[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_sword3[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
@@ -1213,9 +1568,9 @@ func _process(delta: float) -> void:
 		if DataSave.items_posession.sword4 != nbCompteurSword4 and txtItemType[n] == "vide":
 				gui_sword4[n] = GuiSword4.instantiate()
 				add_child(gui_sword4[n])
-				#var child_sword4 = gui_sword4[n].get_node("textureSword4")
-				#child_sword4.connect("mouse_entered", Callable(self, "_on_mouse_entered_sword4"))
-				#child_sword4.connect("mouse_exited", Callable(self, "_on_mouse_exited_sword"))
+				var child_sword4 = gui_sword4[n].get_node("textureSword4")
+				child_sword4.connect("mouse_entered", Callable(self, "_on_mouse_entered_sword4"))
+				child_sword4.connect("mouse_exited", Callable(self, "_on_mouse_exited_sword"))
 				gui_sword4[n].scale = Vector2(0.6, 0.7)
 				gui_sword4[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_sword4[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
@@ -1226,9 +1581,9 @@ func _process(delta: float) -> void:
 		if DataSave.items_posession.sword5 != nbCompteurSword5 and txtItemType[n] == "vide":
 				gui_sword5[n] = GuiSword5.instantiate()
 				add_child(gui_sword5[n])
-				#var child_sword5 = gui_sword5[n].get_node("textureSword5")
-				#child_sword5.connect("mouse_entered", Callable(self, "_on_mouse_entered_sword5"))
-				#child_sword5.connect("mouse_exited", Callable(self, "_on_mouse_exited_sword"))
+				var child_sword5 = gui_sword5[n].get_node("textureSword5")
+				child_sword5.connect("mouse_entered", Callable(self, "_on_mouse_entered_sword5"))
+				child_sword5.connect("mouse_exited", Callable(self, "_on_mouse_exited_sword"))
 				gui_sword5[n].scale = Vector2(0.6, 0.7)
 				gui_sword5[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_sword5[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
@@ -1239,9 +1594,9 @@ func _process(delta: float) -> void:
 		if DataSave.items_posession.sword6 != nbCompteurSword6 and txtItemType[n] == "vide":
 				gui_sword6[n] = GuiSword6.instantiate()
 				add_child(gui_sword6[n])
-				#var child_sword6 = gui_sword6[n].get_node("textureSword6")
-				#child_sword6.connect("mouse_entered", Callable(self, "_on_mouse_entered_sword6"))
-				#child_sword6.connect("mouse_exited", Callable(self, "_on_mouse_exited_sword"))
+				var child_sword6 = gui_sword6[n].get_node("textureSword6")
+				child_sword6.connect("mouse_entered", Callable(self, "_on_mouse_entered_sword6"))
+				child_sword6.connect("mouse_exited", Callable(self, "_on_mouse_exited_sword"))
 				gui_sword6[n].scale = Vector2(0.6, 0.7)
 				gui_sword6[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_sword6[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
@@ -1252,9 +1607,9 @@ func _process(delta: float) -> void:
 		if DataSave.items_posession.sword7 != nbCompteurSword7 and txtItemType[n] == "vide":
 				gui_sword7[n] = GuiSword7.instantiate()
 				add_child(gui_sword7[n])
-				#var child_sword7 = gui_sword7[n].get_node("textureSword7")
-				#child_sword7.connect("mouse_entered", Callable(self, "_on_mouse_entered_sword7"))
-				#child_sword7.connect("mouse_exited", Callable(self, "_on_mouse_exited_sword"))
+				var child_sword7 = gui_sword7[n].get_node("textureSword7")
+				child_sword7.connect("mouse_entered", Callable(self, "_on_mouse_entered_sword7"))
+				child_sword7.connect("mouse_exited", Callable(self, "_on_mouse_exited_sword"))
 				gui_sword7[n].scale = Vector2(0.6, 0.7)
 				gui_sword7[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_sword7[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
@@ -1265,9 +1620,9 @@ func _process(delta: float) -> void:
 		if DataSave.items_posession.sword8 != nbCompteurSword8 and txtItemType[n] == "vide":
 				gui_sword8[n] = GuiSword8.instantiate()
 				add_child(gui_sword8[n])
-				#var child_sword8 = gui_sword8[n].get_node("textureSword8")
-				#child_sword8.connect("mouse_entered", Callable(self, "_on_mouse_entered_sword8"))
-				#child_sword8.connect("mouse_exited", Callable(self, "_on_mouse_exited_sword"))
+				var child_sword8 = gui_sword8[n].get_node("textureSword8")
+				child_sword8.connect("mouse_entered", Callable(self, "_on_mouse_entered_sword8"))
+				child_sword8.connect("mouse_exited", Callable(self, "_on_mouse_exited_sword"))
 				gui_sword8[n].scale = Vector2(0.6, 0.7)
 				gui_sword8[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_sword8[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1

@@ -1213,14 +1213,14 @@ func _ready() -> void:
 	DataSave.items_posession.potionVie = 3
 	DataSave.items_posession.potionMana = 1
 	DataSave.items_posession.potionElixir = 3
-	DataSave.items_posession.bague3 = 1
+	DataSave.items_posession.bague2 = 1
 	DataSave.items_posession.bottes6 = 1
 	DataSave.items_posession.bouclier7 = 1
 	DataSave.items_posession.casque6 = 1
 	DataSave.items_posession.collier3 = 2
 	DataSave.items_posession.heaume6 = 2
+	DataSave.items_posession.sword7 = 3
 	DataSave.items_posession.sword8 = 3
-	DataSave.items_posession.bague1 = 3
 	
 	for n in range(20):
 		isSlot_libre[n] = true
