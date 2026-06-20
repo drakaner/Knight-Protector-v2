@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://yvnlimo6ykfc"]
+
+[ext_resource type="Texture2D" uid="uid://cpmeufivx03un" path="res://Ressources/button_off.png" id="1_471ny"]
+
+[node name="gui_button_off" type="CanvasLayer"]
+layer = 3
+
+[node name="textureButtonOff" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_471ny")

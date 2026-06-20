@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnthm4gy4gdgn"]
+
+[ext_resource type="Texture2D" uid="uid://bl0q2ydf2bs5y" path="res://Ressources/pop_up.png" id="1_i65x1"]
+
+[node name="gui_popUp" type="CanvasLayer"]
+layer = 2
+
+[node name="texturePopUp" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_i65x1")

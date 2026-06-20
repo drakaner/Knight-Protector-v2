@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgmedhm2b5nl4"]
+
+[ext_resource type="Texture2D" uid="uid://d0qobqd07cy7t" path="res://Ressources/button_on.png" id="1_kppid"]
+
+[node name="gui_button_on" type="CanvasLayer"]
+
+[node name="textureButtonOn" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_kppid")

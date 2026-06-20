@@ -188,6 +188,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	var mouse_pos = get_viewport().get_mouse_position()
+	
 	if guiFenetre != null:
 		guiFenetre.offset.x = mouse_pos.x+10
 		guiFenetre.offset.y = mouse_pos.y+13
