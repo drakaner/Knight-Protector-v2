@@ -10,6 +10,13 @@ casque3 = 0, casque4 = 0, casque5 = 0, casque6 = 0, collier1 = 0, collier2 = 0, 
 heaume2 = 0, heaume3 = 0, heaume4 = 0, heaume5 = 0, heaume6 = 0, sword1 = 0, sword2 = 0, sword3 = 0, 
 sword4 = 0, sword5 = 0, sword6 = 0, sword7 = 0, sword8 = 0, potionElixir = 0 }
 
+var items_equiper = { bague1 = 0, bague2 = 0, bague3 = 0, bottes1 = 0,
+bottes2 = 0, bottes3 = 0, bottes4 = 0, bottes5 = 0, bottes6 = 0, bouclier1 = 0, bouclier2 = 0,
+bouclier3 = 0, bouclier4 = 0, bouclier5 = 0, bouclier6 = 0, bouclier7 = 0, casque1 = 0, casque2 = 0, 
+casque3 = 0, casque4 = 0, casque5 = 0, casque6 = 0, collier1 = 0, collier2 = 0, collier3 = 0, heaume1 = 0,
+heaume2 = 0, heaume3 = 0, heaume4 = 0, heaume5 = 0, heaume6 = 0, sword1 = 0, sword2 = 0, sword3 = 0, 
+sword4 = 0, sword5 = 0, sword6 = 0, sword7 = 0, sword8 = 0 }
+
 var nbTotalItemsInventaire = 0 
 var nbTotalItemsEquipements = 0
 
@@ -73,7 +80,46 @@ func load_data():
 	items_posession.sword8 = config.get_value("items", "sword_8", 0)
 	nbTotalItemsInventaire = config.get_value("inventaire", "all", 0)
 	nbTotalItemsEquipements = config.get_value("inventaire", "equipements", 0)
-
+	items_equiper.bague1 = config.get_value("equiper", "bague_1", 0)
+	items_equiper.bague2 = config.get_value("equiper", "bague_2", 0)
+	items_equiper.bague3 = config.get_value("equiper", "bague_3", 0)
+	items_equiper.bottes1 = config.get_value("equiper", "bottes_1", 0)
+	items_equiper.bottes2 = config.get_value("equiper", "bottes_2", 0)
+	items_equiper.bottes3 = config.get_value("equiper", "bottes_3", 0)
+	items_equiper.bottes4 = config.get_value("equiper", "bottes_4", 0)
+	items_equiper.bottes5 = config.get_value("equiper", "bottes_5", 0)
+	items_equiper.bottes6 = config.get_value("equiper", "bottes_6", 0)
+	items_equiper.bouclier1 = config.get_value("equiper", "bouclier_1", 0)
+	items_equiper.bouclier2 = config.get_value("equiper", "bouclier_2", 0)
+	items_equiper.bouclier3 = config.get_value("equiper", "bouclier_3", 0)
+	items_equiper.bouclier4 = config.get_value("equiper", "bouclier_4", 0)
+	items_equiper.bouclier5 = config.get_value("equiper", "bouclier_5", 0)
+	items_equiper.bouclier6 = config.get_value("equiper", "bouclier_6", 0)
+	items_equiper.bouclier7 = config.get_value("equiper", "bouclier_7", 0)
+	items_equiper.casque1 = config.get_value("equiper", "casque_1", 0)
+	items_equiper.casque2 = config.get_value("equiper", "casque_2", 0)
+	items_equiper.casque3 = config.get_value("equiper", "casque_3", 0)
+	items_equiper.casque4 = config.get_value("equiper", "casque_4", 0)
+	items_equiper.casque5 = config.get_value("equiper", "casque_5", 0)
+	items_equiper.casque6 = config.get_value("equiper", "casque_6", 0)
+	items_equiper.collier1 = config.get_value("equiper", "collier_1", 0)
+	items_equiper.collier2 = config.get_value("equiper", "collier_2", 0)
+	items_equiper.collier3 = config.get_value("equiper", "collier_3", 0)
+	items_equiper.heaume1 = config.get_value("equiper", "heaume_1", 0)
+	items_equiper.heaume2 = config.get_value("equiper", "heaume_2", 0)
+	items_equiper.heaume3 = config.get_value("equiper", "heaume_3", 0)
+	items_equiper.heaume4 = config.get_value("equiper", "heaume_4", 0)
+	items_equiper.heaume5 = config.get_value("equiper", "heaume_5", 0)
+	items_equiper.heaume6 = config.get_value("equiper", "heaume_6", 0)
+	items_equiper.sword1 = config.get_value("equiper", "sword_1", 0)
+	items_equiper.sword2 = config.get_value("equiper", "sword_2", 0)
+	items_equiper.sword3 = config.get_value("equiper", "sword_3", 0)
+	items_equiper.sword4 = config.get_value("equiper", "sword_4", 0)
+	items_equiper.sword5 = config.get_value("equiper", "sword_5", 0)
+	items_equiper.sword6 = config.get_value("equiper", "sword_6", 0)
+	items_equiper.sword7 = config.get_value("equiper", "sword_7", 0)
+	items_equiper.sword8 = config.get_value("equiper", "sword_8", 0)
+	
 
 func save_data():
 	var config = ConfigFile.new()
@@ -122,7 +168,45 @@ func save_data():
 	config.set_value("items", "sword_8", items_posession.sword8)
 	config.set_value("inventaire", "all", nbTotalItemsInventaire)
 	config.set_value("inventaire", "equipements", nbTotalItemsEquipements)
-	
+	config.set_value("equiper", "bague_1", items_equiper.bague1)
+	config.set_value("equiper", "bague_2", items_equiper.bague2)
+	config.set_value("equiper", "bague_3", items_equiper.bague3)
+	config.set_value("equiper", "bottes_1", items_equiper.bottes1)
+	config.set_value("equiper", "bottes_2", items_equiper.bottes2)
+	config.set_value("equiper", "bottes_3", items_equiper.bottes3)
+	config.set_value("equiper", "bottes_4", items_equiper.bottes4)
+	config.set_value("equiper", "bottes_5", items_equiper.bottes5)
+	config.set_value("equiper", "bottes_6", items_equiper.bottes6)
+	config.set_value("equiper", "bouclier_1", items_equiper.bouclier1)
+	config.set_value("equiper", "bouclier_2", items_equiper.bouclier2)
+	config.set_value("equiper", "bouclier_3", items_equiper.bouclier3)
+	config.set_value("equiper", "bouclier_4", items_equiper.bouclier4)
+	config.set_value("equiper", "bouclier_5", items_equiper.bouclier5)
+	config.set_value("equiper", "bouclier_6", items_equiper.bouclier6)
+	config.set_value("equiper", "bouclier_7", items_equiper.bouclier7)
+	config.set_value("equiper", "casque_1", items_equiper.casque1)
+	config.set_value("equiper", "casque_2", items_equiper.casque2)
+	config.set_value("equiper", "casque_3", items_equiper.casque3)
+	config.set_value("equiper", "casque_4", items_equiper.casque4)
+	config.set_value("equiper", "casque_5", items_equiper.casque5)
+	config.set_value("equiper", "casque_6", items_equiper.casque6)
+	config.set_value("equiper", "collier_1", items_equiper.collier1)
+	config.set_value("equiper", "collier_2", items_equiper.collier2)
+	config.set_value("equiper", "collier_3", items_equiper.collier3)
+	config.set_value("equiper", "heaume_1", items_equiper.heaume1)
+	config.set_value("equiper", "heaume_2", items_equiper.heaume2)
+	config.set_value("equiper", "heaume_3", items_equiper.heaume3)
+	config.set_value("equiper", "heaume_4", items_equiper.heaume4)
+	config.set_value("equiper", "heaume_5", items_equiper.heaume5)
+	config.set_value("equiper", "heaume_6", items_equiper.heaume6)
+	config.set_value("equiper", "sword_1", items_equiper.sword1)
+	config.set_value("equiper", "sword_2", items_equiper.sword2)
+	config.set_value("equiper", "sword_3", items_equiper.sword3)
+	config.set_value("equiper", "sword_4", items_equiper.sword4)
+	config.set_value("equiper", "sword_5", items_equiper.sword5)
+	config.set_value("equiper", "sword_6", items_equiper.sword6)
+	config.set_value("equiper", "sword_7", items_equiper.sword7)
+	config.set_value("equiper", "sword_8", items_equiper.sword8)
 	
 	config.save(SAVE_PATH)
 

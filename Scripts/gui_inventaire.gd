@@ -1213,7 +1213,7 @@ func _ready() -> void:
 	DataSave.items_posession.potionVie = 3
 	DataSave.items_posession.potionMana = 1
 	DataSave.items_posession.potionElixir = 3
-	DataSave.items_posession.bague2 = 1
+	DataSave.items_posession.bague1 = 1
 	DataSave.items_posession.bottes6 = 1
 	DataSave.items_posession.bouclier7 = 1
 	DataSave.items_posession.casque6 = 1

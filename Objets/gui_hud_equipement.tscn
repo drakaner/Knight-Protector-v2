@@ -132,4 +132,53 @@ offset_top = 127.0
 offset_right = 264.0
 offset_bottom = 155.0
 
+[node name="panel_equip_casque" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 52.0
+offset_top = 34.0
+offset_right = 79.0
+offset_bottom = 61.0
+
+[node name="panel_equip_heaume" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 52.0
+offset_top = 65.0
+offset_right = 79.0
+offset_bottom = 92.0
+
+[node name="panel_equip_bouclier" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 21.0
+offset_top = 65.0
+offset_right = 48.0
+offset_bottom = 92.0
+
+[node name="panel_equip_sword" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 83.0
+offset_top = 65.0
+offset_right = 110.0
+offset_bottom = 92.0
+
+[node name="panel_equip_jambes" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 52.0
+offset_top = 96.0
+offset_right = 79.0
+offset_bottom = 123.0
+
+[node name="panel_equip_bague" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 22.0
+offset_top = 127.0
+offset_right = 49.0
+offset_bottom = 154.0
+
+[node name="panel_equip_collier" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 83.0
+offset_top = 127.0
+offset_right = 110.0
+offset_bottom = 154.0
+
 [connection signal="gui_input" from="panel_retour" to="." method="_on_panel_retour_gui_input"]

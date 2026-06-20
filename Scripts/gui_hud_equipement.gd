@@ -5,6 +5,7 @@ extends CanvasLayer
 
 @onready var nodeParent = get_node(".")
 @onready var childSlot = []
+@onready var childSlotEquip = []
 
 var GuiBague1 = preload("res://Objets/gui_bague_1.tscn")
 var GuiBague2 = preload("res://Objets/gui_bague_2.tscn")
@@ -1082,6 +1083,15 @@ func _ready() -> void:
 	txtItemType.resize(16)
 	isSlot_libre.resize(16)
 	childSlot.resize(16)
+	childSlotEquip.resize(7)
+	
+	childSlotEquip[0] = nodeParent.get_node("panel_equip_casque")
+	childSlotEquip[1] = nodeParent.get_node("panel_equip_heaume")
+	childSlotEquip[2] = nodeParent.get_node("panel_equip_bouclier")
+	childSlotEquip[3] = nodeParent.get_node("panel_equip_sword")
+	childSlotEquip[4] = nodeParent.get_node("panel_equip_jambes")
+	childSlotEquip[5] = nodeParent.get_node("panel_equip_bague")
+	childSlotEquip[6] = nodeParent.get_node("panel_equip_collier")
 	
 	childSlot[0] = nodeParent.get_node("panel_slot_1")
 	childSlot[1] = nodeParent.get_node("panel_slot_2")
@@ -1109,6 +1119,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	
 	var mouse_pos = get_viewport().get_mouse_position()
+	#----
 	if gui_fenetre != null:
 		gui_fenetre.offset.x = mouse_pos.x+10
 		gui_fenetre.offset.y = mouse_pos.y+13
@@ -1633,3 +1644,32 @@ func _process(delta: float) -> void:
 func _on_panel_retour_gui_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("button_left"):
 		isPanelClose = true
+
+func _input(event):
+	
+	var mouse_pos = get_viewport().get_mouse_position()
+	var slot_posX = []
+	var slot_posY = []
+	
+	slot_posX.resize(16)
+	slot_posY.resize(16)
+	
+	#Interaction avec les items 
+	for n in range(16):
+		slot_posX[n] = childSlot[n].position.x + nodeParent.offset.x
+		slot_posY[n] = childSlot[n].position.y + nodeParent.offset.y
+		if Input.is_action_just_pressed("button_left"):
+			if mouse_pos.x >= slot_posX[n] and mouse_pos.x <= slot_posX[n] + childSlot[n].size.x-1 and mouse_pos.y >= slot_posY[n] and mouse_pos.y <= slot_posY[n] + childSlot[n].size.y-1:
+				
+				if txtItemType[n] == "bague_1":
+					if gui_bague1[n] != null:
+						if n == n:
+							print("coucou c'est la bague du chaos !",n)
+							gui_bague1[n].offset.x = childSlotEquip[5].position.x + nodeParent.offset.x
+							gui_bague1[n].offset.y = childSlotEquip[5].position.y + nodeParent.offset.y
+							gui_bague1[n].queue_free()
+							txtItemType[n] = "vide"
+							DataSave.items_posession.bague1 -= 1
+							nbCompteurBague1 -= 1
+							isSlot_libre[n] = true
+	
