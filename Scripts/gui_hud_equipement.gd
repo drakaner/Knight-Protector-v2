@@ -1118,7 +1118,45 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
+	
 	var mouse_pos = get_viewport().get_mouse_position()
+	var slot_posX = []
+	var slot_posY = []
+	
+	slot_posX.resize(16)
+	slot_posY.resize(16)
+	
+	#Interaction avec les items 
+	for n in range(16):
+		slot_posX[n] = childSlot[n].position.x + nodeParent.offset.x
+		slot_posY[n] = childSlot[n].position.y + nodeParent.offset.y
+		if Input.is_action_just_pressed("button_left"):
+			if mouse_pos.x >= slot_posX[n] and mouse_pos.x <= slot_posX[n] + childSlot[n].size.x-1 and mouse_pos.y >= slot_posY[n] and mouse_pos.y <= slot_posY[n] + childSlot[n].size.y-1:
+				
+				if txtItemType[n] == "bague_1" and DataSave.items_equiper.bague1 == 0:
+					if gui_bague1[n] != null:
+						if n == n:
+							print("coucou c'est la bague du chaos !",n)
+							gui_bague1[n].queue_free()
+							txtItemType[n] = "vide"
+							DataSave.items_posession.bague1 -= 1
+							DataSave.items_equiper.bague1 = 1
+							if DataSave.items_equiper.bague1 == 1:
+								gui_bague1[n] = GuiBague1.instantiate()
+								add_child(gui_bague1[n])
+								gui_bague1[n].offset.x = childSlotEquip[5].position.x + nodeParent.offset.x
+								gui_bague1[n].offset.y = childSlotEquip[5].position.y + nodeParent.offset.y
+								gui_bague1[n].scale = Vector2(0.6, 0.7)
+								
+							if DataSave.items_equiper.bague2 != 0:
+								DataSave.items_equiper.bague2 = 0
+								DataSave.items_posession.bague2 += 1
+							if DataSave.items_equiper.bague3 != 0:
+								DataSave.items_equiper.bague3 = 0
+								DataSave.items_posession.bague3 += 1
+							nbCompteurBague1 -= 1
+							isSlot_libre[n] = true
+	
 	#----
 	if gui_fenetre != null:
 		gui_fenetre.offset.x = mouse_pos.x+10
@@ -1646,30 +1684,5 @@ func _on_panel_retour_gui_input(event: InputEvent) -> void:
 		isPanelClose = true
 
 func _input(event):
-	
-	var mouse_pos = get_viewport().get_mouse_position()
-	var slot_posX = []
-	var slot_posY = []
-	
-	slot_posX.resize(16)
-	slot_posY.resize(16)
-	
-	#Interaction avec les items 
-	for n in range(16):
-		slot_posX[n] = childSlot[n].position.x + nodeParent.offset.x
-		slot_posY[n] = childSlot[n].position.y + nodeParent.offset.y
-		if Input.is_action_just_pressed("button_left"):
-			if mouse_pos.x >= slot_posX[n] and mouse_pos.x <= slot_posX[n] + childSlot[n].size.x-1 and mouse_pos.y >= slot_posY[n] and mouse_pos.y <= slot_posY[n] + childSlot[n].size.y-1:
-				
-				if txtItemType[n] == "bague_1":
-					if gui_bague1[n] != null:
-						if n == n:
-							print("coucou c'est la bague du chaos !",n)
-							gui_bague1[n].offset.x = childSlotEquip[5].position.x + nodeParent.offset.x
-							gui_bague1[n].offset.y = childSlotEquip[5].position.y + nodeParent.offset.y
-							gui_bague1[n].queue_free()
-							txtItemType[n] = "vide"
-							DataSave.items_posession.bague1 -= 1
-							nbCompteurBague1 -= 1
-							isSlot_libre[n] = true
+	pass
 	
