@@ -1118,45 +1118,314 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
+	if DataSave.items_equiper.bague1 == 1:
+		gui_bague1[0] = GuiBague1.instantiate()
+		add_child(gui_bague1[0])
+		gui_bague1[0].offset.x = childSlotEquip[5].position.x + nodeParent.offset.x
+		gui_bague1[0].offset.y = childSlotEquip[5].position.y + nodeParent.offset.y
+		gui_bague1[0].scale = Vector2(0.6, 0.7)
+		
+		if DataSave.items_equiper.bague2 != 0:
+			gui_bague2[0].queue_free()
+			DataSave.items_equiper.bague2 = 0
+			DataSave.items_posession.bague2 += 1
+			
+		if DataSave.items_equiper.bague3 != 0:
+			gui_bague3[0].queue_free()
+			DataSave.items_equiper.bague3 = 0
+			DataSave.items_posession.bague3 += 1
+			
+		
+	
+	if DataSave.items_equiper.bague2 == 1:
+		gui_bague2[0] = GuiBague2.instantiate()
+		add_child(gui_bague2[0])
+		gui_bague2[0].offset.x = childSlotEquip[5].position.x + nodeParent.offset.x
+		gui_bague2[0].offset.y = childSlotEquip[5].position.y + nodeParent.offset.y
+		gui_bague2[0].scale = Vector2(0.6, 0.7)
+		
+		if DataSave.items_equiper.bague1 != 0:
+			gui_bague1[0].queue_free()
+			DataSave.items_equiper.bague1 = 0
+			DataSave.items_posession.bague1 += 1
+			
+		if DataSave.items_equiper.bague3 != 0:
+			gui_bague3[0].queue_free()
+			DataSave.items_equiper.bague3 = 0
+			DataSave.items_posession.bague3 += 1
+			
+	
+	if DataSave.items_equiper.bague3 == 1:
+		gui_bague3[0] = GuiBague3.instantiate()
+		add_child(gui_bague3[0])
+		gui_bague3[0].offset.x = childSlotEquip[5].position.x + nodeParent.offset.x
+		gui_bague3[0].offset.y = childSlotEquip[5].position.y + nodeParent.offset.y
+		gui_bague3[0].scale = Vector2(0.6, 0.7)
+		
+		if DataSave.items_equiper.bague1 != 0:
+			gui_bague1[0].queue_free()
+			DataSave.items_equiper.bague1 = 0
+			DataSave.items_posession.bague1 += 1
+			
+		if DataSave.items_equiper.bague2 != 0:
+			gui_bague2[0].queue_free()
+			DataSave.items_equiper.bague2 = 0
+			DataSave.items_posession.bague2 += 1
+			
+	
+	if DataSave.items_equiper.bottes1 == 1:
+		gui_bottes1[0] = GuiBottes1.instantiate()
+		add_child(gui_bottes1[0])
+		gui_bottes1[0].offset.x = childSlotEquip[4].position.x + nodeParent.offset.x
+		gui_bottes1[0].offset.y = childSlotEquip[4].position.y + nodeParent.offset.y
+		gui_bottes1[0].scale = Vector2(0.6, 0.7)
+	
+	if DataSave.items_equiper.bottes2 == 1:
+		gui_bottes2[0] = GuiBottes2.instantiate()
+		add_child(gui_bottes2[0])
+		gui_bottes2[0].offset.x = childSlotEquip[4].position.x + nodeParent.offset.x
+		gui_bottes2[0].offset.y = childSlotEquip[4].position.y + nodeParent.offset.y
+		gui_bottes2[0].scale = Vector2(0.6, 0.7)
+	
+	if DataSave.items_equiper.bottes3 == 1:
+		gui_bottes3[0] = GuiBottes3.instantiate()
+		add_child(gui_bottes3[0])
+		gui_bottes3[0].offset.x = childSlotEquip[4].position.x + nodeParent.offset.x
+		gui_bottes3[0].offset.y = childSlotEquip[4].position.y + nodeParent.offset.y
+		gui_bottes3[0].scale = Vector2(0.6, 0.7)
+	
+	if DataSave.items_equiper.bottes4 == 1:
+		gui_bottes4[0] = GuiBottes4.instantiate()
+		add_child(gui_bottes4[0])
+		gui_bottes4[0].offset.x = childSlotEquip[4].position.x + nodeParent.offset.x
+		gui_bottes4[0].offset.y = childSlotEquip[4].position.y + nodeParent.offset.y
+		gui_bottes4[0].scale = Vector2(0.6, 0.7)
+	
+	if DataSave.items_equiper.bottes5 == 1:
+		gui_bottes5[0] = GuiBottes5.instantiate()
+		add_child(gui_bottes5[0])
+		gui_bottes5[0].offset.x = childSlotEquip[4].position.x + nodeParent.offset.x
+		gui_bottes5[0].offset.y = childSlotEquip[4].position.y + nodeParent.offset.y
+		gui_bottes5[0].scale = Vector2(0.6, 0.7)
+	
+	if DataSave.items_equiper.bottes6 == 1:
+		gui_bottes6[0] = GuiBottes6.instantiate()
+		add_child(gui_bottes6[0])
+		gui_bottes6[0].offset.x = childSlotEquip[4].position.x + nodeParent.offset.x
+		gui_bottes6[0].offset.y = childSlotEquip[4].position.y + nodeParent.offset.y
+		gui_bottes6[0].scale = Vector2(0.6, 0.7)
+	
+	if DataSave.items_equiper.bouclier1 == 1:
+		gui_bouclier1[0] = GuiBouclier1.instantiate()
+		add_child(gui_bouclier1[0])
+		gui_bouclier1[0].offset.x = childSlotEquip[2].position.x + nodeParent.offset.x
+		gui_bouclier1[0].offset.y = childSlotEquip[2].position.y + nodeParent.offset.y
+		gui_bouclier1[0].scale = Vector2(0.6, 0.7)
+	
+	if DataSave.items_equiper.bouclier2 == 1:
+		gui_bouclier2[0] = GuiBouclier2.instantiate()
+		add_child(gui_bouclier2[0])
+		gui_bouclier2[0].offset.x = childSlotEquip[2].position.x + nodeParent.offset.x
+		gui_bouclier2[0].offset.y = childSlotEquip[2].position.y + nodeParent.offset.y
+		gui_bouclier2[0].scale = Vector2(0.6, 0.7)
+	
+	if DataSave.items_equiper.bouclier3 == 1:
+		gui_bouclier3[0] = GuiBouclier3.instantiate()
+		add_child(gui_bouclier3[0])
+		gui_bouclier3[0].offset.x = childSlotEquip[2].position.x + nodeParent.offset.x
+		gui_bouclier3[0].offset.y = childSlotEquip[2].position.y + nodeParent.offset.y
+		gui_bouclier3[0].scale = Vector2(0.6, 0.7)
+	
+	if DataSave.items_equiper.bouclier4 == 1:
+		gui_bouclier4[0] = GuiBouclier4.instantiate()
+		add_child(gui_bouclier4[0])
+		gui_bouclier4[0].offset.x = childSlotEquip[2].position.x + nodeParent.offset.x
+		gui_bouclier4[0].offset.y = childSlotEquip[2].position.y + nodeParent.offset.y
+		gui_bouclier4[0].scale = Vector2(0.6, 0.7)
+	
+	if DataSave.items_equiper.bouclier5 == 1:
+		gui_bouclier5[0] = GuiBouclier5.instantiate()
+		add_child(gui_bouclier5[0])
+		gui_bouclier5[0].offset.x = childSlotEquip[2].position.x + nodeParent.offset.x
+		gui_bouclier5[0].offset.y = childSlotEquip[2].position.y + nodeParent.offset.y
+		gui_bouclier5[0].scale = Vector2(0.6, 0.7)
+	
+	if DataSave.items_equiper.bouclier6 == 1:
+		gui_bouclier6[0] = GuiBouclier6.instantiate()
+		add_child(gui_bouclier6[0])
+		gui_bouclier6[0].offset.x = childSlotEquip[2].position.x + nodeParent.offset.x
+		gui_bouclier6[0].offset.y = childSlotEquip[2].position.y + nodeParent.offset.y
+		gui_bouclier6[0].scale = Vector2(0.6, 0.7)
+	
+	if DataSave.items_equiper.bouclier7 == 1:
+		gui_bouclier7[0] = GuiBouclier7.instantiate()
+		add_child(gui_bouclier7[0])
+		gui_bouclier7[0].offset.x = childSlotEquip[2].position.x + nodeParent.offset.x
+		gui_bouclier7[0].offset.y = childSlotEquip[2].position.y + nodeParent.offset.y
+		gui_bouclier7[0].scale = Vector2(0.6, 0.7)
+	
+	if DataSave.items_equiper.casque1 == 1:
+		gui_casque1[0] = GuiCasque1.instantiate()
+		add_child(gui_casque1[0])
+		gui_casque1[0].offset.x = childSlotEquip[0].position.x + nodeParent.offset.x
+		gui_casque1[0].offset.y = childSlotEquip[0].position.y + nodeParent.offset.y
+		gui_casque1[0].scale = Vector2(0.6, 0.7)
+	
+	if DataSave.items_equiper.casque2 == 1:
+		gui_casque2[0] = GuiCasque2.instantiate()
+		add_child(gui_casque2[0])
+		gui_casque2[0].offset.x = childSlotEquip[0].position.x + nodeParent.offset.x
+		gui_casque2[0].offset.y = childSlotEquip[0].position.y + nodeParent.offset.y
+		gui_casque2[0].scale = Vector2(0.6, 0.7)
+	
+	if DataSave.items_equiper.casque3 == 1:
+		gui_casque3[0] = GuiCasque3.instantiate()
+		add_child(gui_casque3[0])
+		gui_casque3[0].offset.x = childSlotEquip[0].position.x + nodeParent.offset.x
+		gui_casque3[0].offset.y = childSlotEquip[0].position.y + nodeParent.offset.y
+		gui_casque3[0].scale = Vector2(0.6, 0.7)
+	
+	if DataSave.items_equiper.casque4 == 1:
+		gui_casque4[0] = GuiCasque4.instantiate()
+		add_child(gui_casque4[0])
+		gui_casque4[0].offset.x = childSlotEquip[0].position.x + nodeParent.offset.x
+		gui_casque4[0].offset.y = childSlotEquip[0].position.y + nodeParent.offset.y
+		gui_casque4[0].scale = Vector2(0.6, 0.7)
+	
+	if DataSave.items_equiper.casque5 == 1:
+		gui_casque5[0] = GuiCasque5.instantiate()
+		add_child(gui_casque5[0])
+		gui_casque5[0].offset.x = childSlotEquip[0].position.x + nodeParent.offset.x
+		gui_casque5[0].offset.y = childSlotEquip[0].position.y + nodeParent.offset.y
+		gui_casque5[0].scale = Vector2(0.6, 0.7)
+	
+	if DataSave.items_equiper.casque6 == 1:
+		gui_casque6[0] = GuiCasque6.instantiate()
+		add_child(gui_casque6[0])
+		gui_casque6[0].offset.x = childSlotEquip[0].position.x + nodeParent.offset.x
+		gui_casque6[0].offset.y = childSlotEquip[0].position.y + nodeParent.offset.y
+		gui_casque6[0].scale = Vector2(0.6, 0.7)
+	
+	if DataSave.items_equiper.collier1 == 1:
+		gui_collier1[0] = GuiCollier1.instantiate()
+		add_child(gui_collier1[0])
+		gui_collier1[0].offset.x = childSlotEquip[6].position.x + nodeParent.offset.x
+		gui_collier1[0].offset.y = childSlotEquip[6].position.y + nodeParent.offset.y
+		gui_collier1[0].scale = Vector2(0.6, 0.7)
+	
+	if DataSave.items_equiper.collier2 == 1:
+		gui_collier2[0] = GuiCollier2.instantiate()
+		add_child(gui_collier2[0])
+		gui_collier2[0].offset.x = childSlotEquip[6].position.x + nodeParent.offset.x
+		gui_collier2[0].offset.y = childSlotEquip[6].position.y + nodeParent.offset.y
+		gui_collier2[0].scale = Vector2(0.6, 0.7)
+	
+	if DataSave.items_equiper.collier3 == 1:
+		gui_collier3[0] = GuiCollier3.instantiate()
+		add_child(gui_collier3[0])
+		gui_collier3[0].offset.x = childSlotEquip[6].position.x + nodeParent.offset.x
+		gui_collier3[0].offset.y = childSlotEquip[6].position.y + nodeParent.offset.y
+		gui_collier3[0].scale = Vector2(0.6, 0.7)
+	
+	if DataSave.items_equiper.heaume1 == 1:
+		gui_heaume1[0] = GuiHeaume1.instantiate()
+		add_child(gui_heaume1[0])
+		gui_heaume1[0].offset.x = childSlotEquip[1].position.x + nodeParent.offset.x
+		gui_heaume1[0].offset.y = childSlotEquip[1].position.y + nodeParent.offset.y
+		gui_heaume1[0].scale = Vector2(0.6, 0.7)
+	
+	if DataSave.items_equiper.heaume2 == 1:
+		gui_heaume2[0] = GuiHeaume2.instantiate()
+		add_child(gui_heaume2[0])
+		gui_heaume2[0].offset.x = childSlotEquip[1].position.x + nodeParent.offset.x
+		gui_heaume2[0].offset.y = childSlotEquip[1].position.y + nodeParent.offset.y
+		gui_heaume2[0].scale = Vector2(0.6, 0.7)
+	
+	if DataSave.items_equiper.heaume3 == 1:
+		gui_heaume3[0] = GuiHeaume3.instantiate()
+		add_child(gui_heaume3[0])
+		gui_heaume3[0].offset.x = childSlotEquip[1].position.x + nodeParent.offset.x
+		gui_heaume3[0].offset.y = childSlotEquip[1].position.y + nodeParent.offset.y
+		gui_heaume3[0].scale = Vector2(0.6, 0.7)
+	
+	if DataSave.items_equiper.heaume4 == 1:
+		gui_heaume4[0] = GuiHeaume4.instantiate()
+		add_child(gui_heaume4[0])
+		gui_heaume4[0].offset.x = childSlotEquip[1].position.x + nodeParent.offset.x
+		gui_heaume4[0].offset.y = childSlotEquip[1].position.y + nodeParent.offset.y
+		gui_heaume4[0].scale = Vector2(0.6, 0.7)
+	
+	if DataSave.items_equiper.heaume5 == 1:
+		gui_heaume5[0] = GuiHeaume5.instantiate()
+		add_child(gui_heaume5[0])
+		gui_heaume5[0].offset.x = childSlotEquip[1].position.x + nodeParent.offset.x
+		gui_heaume5[0].offset.y = childSlotEquip[1].position.y + nodeParent.offset.y
+		gui_heaume5[0].scale = Vector2(0.6, 0.7)
+	
+	if DataSave.items_equiper.heaume6 == 1:
+		gui_heaume6[0] = GuiHeaume6.instantiate()
+		add_child(gui_heaume6[0])
+		gui_heaume6[0].offset.x = childSlotEquip[1].position.x + nodeParent.offset.x
+		gui_heaume6[0].offset.y = childSlotEquip[1].position.y + nodeParent.offset.y
+		gui_heaume6[0].scale = Vector2(0.6, 0.7)
+	
+	if DataSave.items_equiper.sword1 == 1:
+		gui_sword1[0] = GuiSword1.instantiate()
+		add_child(gui_sword1[0])
+		gui_sword1[0].offset.x = childSlotEquip[3].position.x + nodeParent.offset.x
+		gui_sword1[0].offset.y = childSlotEquip[3].position.y + nodeParent.offset.y
+		gui_sword1[0].scale = Vector2(0.6, 0.7)
+	
+	if DataSave.items_equiper.sword2 == 1:
+		gui_sword2[0] = GuiSword2.instantiate()
+		add_child(gui_sword2[0])
+		gui_sword2[0].offset.x = childSlotEquip[3].position.x + nodeParent.offset.x
+		gui_sword2[0].offset.y = childSlotEquip[3].position.y + nodeParent.offset.y
+		gui_sword2[0].scale = Vector2(0.6, 0.7)
+	
+	if DataSave.items_equiper.sword3 == 1:
+		gui_sword3[0] = GuiSword3.instantiate()
+		add_child(gui_sword3[0])
+		gui_sword3[0].offset.x = childSlotEquip[3].position.x + nodeParent.offset.x
+		gui_sword3[0].offset.y = childSlotEquip[3].position.y + nodeParent.offset.y
+		gui_sword3[0].scale = Vector2(0.6, 0.7)
+	
+	if DataSave.items_equiper.sword4 == 1:
+		gui_sword4[0] = GuiSword4.instantiate()
+		add_child(gui_sword4[0])
+		gui_sword4[0].offset.x = childSlotEquip[3].position.x + nodeParent.offset.x
+		gui_sword4[0].offset.y = childSlotEquip[3].position.y + nodeParent.offset.y
+		gui_sword4[0].scale = Vector2(0.6, 0.7)
+	
+	if DataSave.items_equiper.sword5 == 1:
+		gui_sword5[0] = GuiSword5.instantiate()
+		add_child(gui_sword5[0])
+		gui_sword5[0].offset.x = childSlotEquip[3].position.x + nodeParent.offset.x
+		gui_sword5[0].offset.y = childSlotEquip[3].position.y + nodeParent.offset.y
+		gui_sword5[0].scale = Vector2(0.6, 0.7)
+	
+	if DataSave.items_equiper.sword6 == 1:
+		gui_sword6[0] = GuiSword6.instantiate()
+		add_child(gui_sword6[0])
+		gui_sword6[0].offset.x = childSlotEquip[3].position.x + nodeParent.offset.x
+		gui_sword6[0].offset.y = childSlotEquip[3].position.y + nodeParent.offset.y
+		gui_sword6[0].scale = Vector2(0.6, 0.7)
+	
+	if DataSave.items_equiper.sword7 == 1:
+		gui_sword7[0] = GuiSword7.instantiate()
+		add_child(gui_sword7[0])
+		gui_sword7[0].offset.x = childSlotEquip[3].position.x + nodeParent.offset.x
+		gui_sword7[0].offset.y = childSlotEquip[3].position.y + nodeParent.offset.y
+		gui_sword7[0].scale = Vector2(0.6, 0.7)
+	
+	if DataSave.items_equiper.sword8 == 1:
+		gui_sword8[0] = GuiSword8.instantiate()
+		add_child(gui_sword8[0])
+		gui_sword8[0].offset.x = childSlotEquip[3].position.x + nodeParent.offset.x
+		gui_sword8[0].offset.y = childSlotEquip[3].position.y + nodeParent.offset.y
+		gui_sword8[0].scale = Vector2(0.6, 0.7)
 	
 	var mouse_pos = get_viewport().get_mouse_position()
-	var slot_posX = []
-	var slot_posY = []
-	
-	slot_posX.resize(16)
-	slot_posY.resize(16)
-	
-	#Interaction avec les items 
-	for n in range(16):
-		slot_posX[n] = childSlot[n].position.x + nodeParent.offset.x
-		slot_posY[n] = childSlot[n].position.y + nodeParent.offset.y
-		if Input.is_action_just_pressed("button_left"):
-			if mouse_pos.x >= slot_posX[n] and mouse_pos.x <= slot_posX[n] + childSlot[n].size.x-1 and mouse_pos.y >= slot_posY[n] and mouse_pos.y <= slot_posY[n] + childSlot[n].size.y-1:
-				
-				if txtItemType[n] == "bague_1" and DataSave.items_equiper.bague1 == 0:
-					if gui_bague1[n] != null:
-						if n == n:
-							print("coucou c'est la bague du chaos !",n)
-							gui_bague1[n].queue_free()
-							txtItemType[n] = "vide"
-							DataSave.items_posession.bague1 -= 1
-							DataSave.items_equiper.bague1 = 1
-							if DataSave.items_equiper.bague1 == 1:
-								gui_bague1[n] = GuiBague1.instantiate()
-								add_child(gui_bague1[n])
-								gui_bague1[n].offset.x = childSlotEquip[5].position.x + nodeParent.offset.x
-								gui_bague1[n].offset.y = childSlotEquip[5].position.y + nodeParent.offset.y
-								gui_bague1[n].scale = Vector2(0.6, 0.7)
-								
-							if DataSave.items_equiper.bague2 != 0:
-								DataSave.items_equiper.bague2 = 0
-								DataSave.items_posession.bague2 += 1
-							if DataSave.items_equiper.bague3 != 0:
-								DataSave.items_equiper.bague3 = 0
-								DataSave.items_posession.bague3 += 1
-							nbCompteurBague1 -= 1
-							isSlot_libre[n] = true
-	
 	#----
 	if gui_fenetre != null:
 		gui_fenetre.offset.x = mouse_pos.x+10
@@ -1684,5 +1953,56 @@ func _on_panel_retour_gui_input(event: InputEvent) -> void:
 		isPanelClose = true
 
 func _input(event):
-	pass
+	var mouse_pos = get_viewport().get_mouse_position()
+	var slot_posX = []
+	var slot_posY = []
+	
+	slot_posX.resize(16)
+	slot_posY.resize(16)
+	
+	#Interaction avec les items 
+	for n in range(16):
+		slot_posX[n] = childSlot[n].position.x + nodeParent.offset.x
+		slot_posY[n] = childSlot[n].position.y + nodeParent.offset.y
+		if Input.is_action_just_pressed("button_left"):
+			if mouse_pos.x >= slot_posX[n] and mouse_pos.x <= slot_posX[n] + childSlot[n].size.x-1 and mouse_pos.y >= slot_posY[n] and mouse_pos.y <= slot_posY[n] + childSlot[n].size.y-1:
+				
+				if txtItemType[n] == "bague_1" and DataSave.items_equiper.bague1 == 0:
+					if gui_bague1[n] != null:
+						if n == n:
+							print("coucou c'est la bague du chaos !",n)
+							gui_bague1[n].queue_free()
+							txtItemType[n] = "vide"
+							DataSave.items_posession.bague1 -= 1
+							DataSave.items_equiper.bague1 = 1
+								
+							
+							nbCompteurBague1 -= 1
+							isSlot_libre[n] = true
+				
+				if txtItemType[n] == "bague_2" and DataSave.items_equiper.bague2 == 0:
+					if gui_bague2[n] != null:
+						if n == n:
+							print("coucou c'est la bague du deuxieme !",n)
+							gui_bague2[n].queue_free()
+							txtItemType[n] = "vide"
+							DataSave.items_posession.bague2 -= 1
+							DataSave.items_equiper.bague2 = 1
+								
+							
+							nbCompteurBague2 -= 1
+							isSlot_libre[n] = true
+				
+				if txtItemType[n] == "bague_3" and DataSave.items_equiper.bague3 == 0:
+					if gui_bague3[n] != null:
+						if n == n:
+							print("coucou c'est la bague du trois !",n)
+							gui_bague3[n].queue_free()
+							txtItemType[n] = "vide"
+							DataSave.items_posession.bague3 -= 1
+							DataSave.items_equiper.bague3 = 1
+								
+							
+							nbCompteurBague3 -= 1
+							isSlot_libre[n] = true
 	
