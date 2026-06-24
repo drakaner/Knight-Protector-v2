@@ -1249,46 +1249,256 @@ func _process(delta: float) -> void:
 			interrupteur_Bague[2] = false
 	
 	if DataSave.items_equiper.bottes1 == 1:
-		gui_bottes1[0] = GuiBottes1.instantiate()
-		add_child(gui_bottes1[0])
-		gui_bottes1[0].offset.x = childSlotEquip[4].position.x + nodeParent.offset.x
-		gui_bottes1[0].offset.y = childSlotEquip[4].position.y + nodeParent.offset.y
-		gui_bottes1[0].scale = Vector2(0.6, 0.7)
+		if bCreationBottes[0] == false:
+			gui_equiper.bottes_1 = GuiBottes1.instantiate()
+			add_child(gui_equiper.bottes_1)
+			bCreationBottes[0] = true 
+		gui_equiper.bottes_1.offset.x = childSlotEquip[4].position.x + nodeParent.offset.x
+		gui_equiper.bottes_1.offset.y = childSlotEquip[4].position.y + nodeParent.offset.y
+		gui_equiper.bottes_1.scale = Vector2(0.6, 0.7)
+		
+		if interrupteur_Bottes[0] == true:
+			if DataSave.items_equiper.bottes2 != 0:
+				gui_equiper.bottes_2.queue_free()
+				DataSave.items_equiper.bottes2 = 0
+				DataSave.items_posession.bottes2 += 1
+				bCreationBottes[1] = false
+				
+			if DataSave.items_equiper.bottes3 != 0:
+				gui_equiper.bottes_3.queue_free()
+				DataSave.items_equiper.bottes3 = 0
+				DataSave.items_posession.bottes3 += 1
+				bCreationBottes[2] = false
+			
+			if DataSave.items_equiper.bottes4 != 0:
+				gui_equiper.bottes_4.queue_free()
+				DataSave.items_equiper.bottes4 = 0
+				DataSave.items_posession.bottes4 += 1
+				bCreationBottes[3] = false
+			
+			if DataSave.items_equiper.bottes5 != 0:
+				gui_equiper.bottes_5.queue_free()
+				DataSave.items_equiper.bottes5 = 0
+				DataSave.items_posession.bottes5 += 1
+				bCreationBottes[4] = false
+			
+			if DataSave.items_equiper.bottes6 != 0:
+				gui_equiper.bottes_6.queue_free()
+				DataSave.items_equiper.bottes6 = 0
+				DataSave.items_posession.bottes6 += 1
+				bCreationBottes[5] = false
+			
+			interrupteur_Bottes[0] = false
 	
 	if DataSave.items_equiper.bottes2 == 1:
-		gui_bottes2[0] = GuiBottes2.instantiate()
-		add_child(gui_bottes2[0])
-		gui_bottes2[0].offset.x = childSlotEquip[4].position.x + nodeParent.offset.x
-		gui_bottes2[0].offset.y = childSlotEquip[4].position.y + nodeParent.offset.y
-		gui_bottes2[0].scale = Vector2(0.6, 0.7)
+		if bCreationBottes[1] == false:
+			gui_equiper.bottes_2 = GuiBottes2.instantiate()
+			add_child(gui_equiper.bottes_2)
+			bCreationBottes[1] = true 
+		gui_equiper.bottes_2.offset.x = childSlotEquip[4].position.x + nodeParent.offset.x
+		gui_equiper.bottes_2.offset.y = childSlotEquip[4].position.y + nodeParent.offset.y
+		gui_equiper.bottes_2.scale = Vector2(0.6, 0.7)
+		
+		if interrupteur_Bottes[1] == true:
+			if DataSave.items_equiper.bottes1 != 0:
+				gui_equiper.bottes_1.queue_free()
+				DataSave.items_equiper.bottes1 = 0
+				DataSave.items_posession.bottes1 += 1
+				bCreationBottes[0] = false
+				
+			if DataSave.items_equiper.bottes3 != 0:
+				gui_equiper.bottes_3.queue_free()
+				DataSave.items_equiper.bottes3 = 0
+				DataSave.items_posession.bottes3 += 1
+				bCreationBottes[2] = false
+			
+			if DataSave.items_equiper.bottes4 != 0:
+				gui_equiper.bottes_4.queue_free()
+				DataSave.items_equiper.bottes4 = 0
+				DataSave.items_posession.bottes4 += 1
+				bCreationBottes[3] = false
+			
+			if DataSave.items_equiper.bottes5 != 0:
+				gui_equiper.bottes_5.queue_free()
+				DataSave.items_equiper.bottes5 = 0
+				DataSave.items_posession.bottes5 += 1
+				bCreationBottes[4] = false
+			
+			if DataSave.items_equiper.bottes6 != 0:
+				gui_equiper.bottes_6.queue_free()
+				DataSave.items_equiper.bottes6 = 0
+				DataSave.items_posession.bottes6 += 1
+				bCreationBottes[5] = false
+			
+			interrupteur_Bottes[1] = false
 	
 	if DataSave.items_equiper.bottes3 == 1:
-		gui_bottes3[0] = GuiBottes3.instantiate()
-		add_child(gui_bottes3[0])
-		gui_bottes3[0].offset.x = childSlotEquip[4].position.x + nodeParent.offset.x
-		gui_bottes3[0].offset.y = childSlotEquip[4].position.y + nodeParent.offset.y
-		gui_bottes3[0].scale = Vector2(0.6, 0.7)
+		if bCreationBottes[2] == false:
+			gui_equiper.bottes_3 = GuiBottes3.instantiate()
+			add_child(gui_equiper.bottes_3)
+			bCreationBottes[2] = true
+		gui_equiper.bottes_3.offset.x = childSlotEquip[4].position.x + nodeParent.offset.x
+		gui_equiper.bottes_3.offset.y = childSlotEquip[4].position.y + nodeParent.offset.y
+		gui_equiper.bottes_3.scale = Vector2(0.6, 0.7)
+		
+		if interrupteur_Bottes[2] == true:
+			if DataSave.items_equiper.bottes1 != 0:
+				gui_equiper.bottes_1.queue_free()
+				DataSave.items_equiper.bottes1 = 0
+				DataSave.items_posession.bottes1 += 1
+				bCreationBottes[0] = false
+				
+			if DataSave.items_equiper.bottes2 != 0:
+				gui_equiper.bottes_2.queue_free()
+				DataSave.items_equiper.bottes2 = 0
+				DataSave.items_posession.bottes2 += 1
+				bCreationBottes[1] = false
+			
+			if DataSave.items_equiper.bottes4 != 0:
+				gui_equiper.bottes_4.queue_free()
+				DataSave.items_equiper.bottes4 = 0
+				DataSave.items_posession.bottes4 += 1
+				bCreationBottes[3] = false
+			
+			if DataSave.items_equiper.bottes5 != 0:
+				gui_equiper.bottes_5.queue_free()
+				DataSave.items_equiper.bottes5 = 0
+				DataSave.items_posession.bottes5 += 1
+				bCreationBottes[4] = false
+			
+			if DataSave.items_equiper.bottes6 != 0:
+				gui_equiper.bottes_6.queue_free()
+				DataSave.items_equiper.bottes6 = 0
+				DataSave.items_posession.bottes6 += 1
+				bCreationBottes[5] = false
+			
+			interrupteur_Bottes[2] = false
 	
 	if DataSave.items_equiper.bottes4 == 1:
-		gui_bottes4[0] = GuiBottes4.instantiate()
-		add_child(gui_bottes4[0])
-		gui_bottes4[0].offset.x = childSlotEquip[4].position.x + nodeParent.offset.x
-		gui_bottes4[0].offset.y = childSlotEquip[4].position.y + nodeParent.offset.y
-		gui_bottes4[0].scale = Vector2(0.6, 0.7)
+		if bCreationBottes[3] == false:
+			gui_equiper.bottes_4 = GuiBottes4.instantiate()
+			add_child(gui_equiper.bottes_4)
+			bCreationBottes[3] = true
+		gui_equiper.bottes_4.offset.x = childSlotEquip[4].position.x + nodeParent.offset.x
+		gui_equiper.bottes_4.offset.y = childSlotEquip[4].position.y + nodeParent.offset.y
+		gui_equiper.bottes_4.scale = Vector2(0.6, 0.7)
+		
+		if interrupteur_Bottes[3] == true:
+			if DataSave.items_equiper.bottes1 != 0:
+				gui_equiper.bottes_1.queue_free()
+				DataSave.items_equiper.bottes1 = 0
+				DataSave.items_posession.bottes1 += 1
+				bCreationBottes[0] = false
+				
+			if DataSave.items_equiper.bottes2 != 0:
+				gui_equiper.bottes_2.queue_free()
+				DataSave.items_equiper.bottes2 = 0
+				DataSave.items_posession.bottes2 += 1
+				bCreationBottes[1] = false
+			
+			if DataSave.items_equiper.bottes3 != 0:
+				gui_equiper.bottes_3.queue_free()
+				DataSave.items_equiper.bottes3 = 0
+				DataSave.items_posession.bottes3 += 1
+				bCreationBottes[2] = false
+			
+			if DataSave.items_equiper.bottes5 != 0:
+				gui_equiper.bottes_5.queue_free()
+				DataSave.items_equiper.bottes5 = 0
+				DataSave.items_posession.bottes5 += 1
+				bCreationBottes[4] = false
+			
+			if DataSave.items_equiper.bottes6 != 0:
+				gui_equiper.bottes_6.queue_free()
+				DataSave.items_equiper.bottes6 = 0
+				DataSave.items_posession.bottes6 += 1
+				bCreationBottes[5] = false
+			
+			interrupteur_Bottes[3] = false
 	
 	if DataSave.items_equiper.bottes5 == 1:
-		gui_bottes5[0] = GuiBottes5.instantiate()
-		add_child(gui_bottes5[0])
-		gui_bottes5[0].offset.x = childSlotEquip[4].position.x + nodeParent.offset.x
-		gui_bottes5[0].offset.y = childSlotEquip[4].position.y + nodeParent.offset.y
-		gui_bottes5[0].scale = Vector2(0.6, 0.7)
+		if bCreationBottes[4] == false:
+			gui_equiper.bottes_5 = GuiBottes5.instantiate()
+			add_child(gui_equiper.bottes_5)
+			bCreationBottes[4] = true 
+		gui_equiper.bottes_5.offset.x = childSlotEquip[4].position.x + nodeParent.offset.x
+		gui_equiper.bottes_5.offset.y = childSlotEquip[4].position.y + nodeParent.offset.y
+		gui_equiper.bottes_5.scale = Vector2(0.6, 0.7)
+		
+		if interrupteur_Bottes[4] == true:
+			if DataSave.items_equiper.bottes1 != 0:
+				gui_equiper.bottes_1.queue_free()
+				DataSave.items_equiper.bottes1 = 0
+				DataSave.items_posession.bottes1 += 1
+				bCreationBottes[0] = false
+				
+			if DataSave.items_equiper.bottes2 != 0:
+				gui_equiper.bottes_2.queue_free()
+				DataSave.items_equiper.bottes2 = 0
+				DataSave.items_posession.bottes2 += 1
+				bCreationBottes[1] = false
+			
+			if DataSave.items_equiper.bottes3 != 0:
+				gui_equiper.bottes_3.queue_free()
+				DataSave.items_equiper.bottes3 = 0
+				DataSave.items_posession.bottes3 += 1
+				bCreationBottes[2] = false
+			
+			if DataSave.items_equiper.bottes4 != 0:
+				gui_equiper.bottes_4.queue_free()
+				DataSave.items_equiper.bottes4 = 0
+				DataSave.items_posession.bottes4 += 1
+				bCreationBottes[3] = false
+			
+			if DataSave.items_equiper.bottes6 != 0:
+				gui_equiper.bottes_6.queue_free()
+				DataSave.items_equiper.bottes6 = 0
+				DataSave.items_posession.bottes6 += 1
+				bCreationBottes[5] = false
+			
+			interrupteur_Bottes[4] = false
 	
 	if DataSave.items_equiper.bottes6 == 1:
-		gui_bottes6[0] = GuiBottes6.instantiate()
-		add_child(gui_bottes6[0])
-		gui_bottes6[0].offset.x = childSlotEquip[4].position.x + nodeParent.offset.x
-		gui_bottes6[0].offset.y = childSlotEquip[4].position.y + nodeParent.offset.y
-		gui_bottes6[0].scale = Vector2(0.6, 0.7)
+		if bCreationBottes[5] == false:
+			gui_equiper.bottes_6 = GuiBottes6.instantiate()
+			add_child(gui_equiper.bottes_6)
+			bCreationBottes[5] = true 
+		gui_equiper.bottes_6.offset.x = childSlotEquip[4].position.x + nodeParent.offset.x
+		gui_equiper.bottes_6.offset.y = childSlotEquip[4].position.y + nodeParent.offset.y
+		gui_equiper.bottes_6.scale = Vector2(0.6, 0.7)
+		
+		if interrupteur_Bottes[5] == true:
+			if DataSave.items_equiper.bottes1 != 0:
+				gui_equiper.bottes_1.queue_free()
+				DataSave.items_equiper.bottes1 = 0
+				DataSave.items_posession.bottes1 += 1
+				bCreationBottes[0] = false
+				
+			if DataSave.items_equiper.bottes2 != 0:
+				gui_equiper.bottes_2.queue_free()
+				DataSave.items_equiper.bottes2 = 0
+				DataSave.items_posession.bottes2 += 1
+				bCreationBottes[1] = false
+			
+			if DataSave.items_equiper.bottes3 != 0:
+				gui_equiper.bottes_3.queue_free()
+				DataSave.items_equiper.bottes3 = 0
+				DataSave.items_posession.bottes3 += 1
+				bCreationBottes[2] = false
+			
+			if DataSave.items_equiper.bottes4 != 0:
+				gui_equiper.bottes_4.queue_free()
+				DataSave.items_equiper.bottes4 = 0
+				DataSave.items_posession.bottes4 += 1
+				bCreationBottes[3] = false
+			
+			if DataSave.items_equiper.bottes5 != 0:
+				gui_equiper.bottes_5.queue_free()
+				DataSave.items_equiper.bottes5 = 0
+				DataSave.items_posession.bottes5 += 1
+				bCreationBottes[4] = false
+			
+			interrupteur_Bottes[5] = false
 	
 	if DataSave.items_equiper.bouclier1 == 1:
 		gui_bouclier1[0] = GuiBouclier1.instantiate()
@@ -2249,5 +2459,305 @@ func _input(event):
 							interrupteur_Bouclier[6] = true
 							
 							nbCompteurBouclier7 -= 1
+							isSlot_libre[n] = true
+				
+				
+				if txtItemType[n] == "casque_1" and DataSave.items_equiper.casque1 == 0:
+					if gui_casque1[n] != null:
+						if n == n:
+							#print("coucou c'est la bottes !",n)
+							gui_casque1[n].queue_free()
+							txtItemType[n] = "vide"
+							DataSave.items_posession.casque1 -= 1
+							DataSave.items_equiper.casque1 = 1
+							interrupteur_Casque[0] = true
+							
+							nbCompteurCasque1 -= 1
+							isSlot_libre[n] = true
+				
+				if txtItemType[n] == "casque_2" and DataSave.items_equiper.casque2 == 0:
+					if gui_casque2[n] != null:
+						if n == n:
+							#print("coucou c'est la bottes !",n)
+							gui_casque2[n].queue_free()
+							txtItemType[n] = "vide"
+							DataSave.items_posession.casque2 -= 1
+							DataSave.items_equiper.casque2 = 1
+							interrupteur_Casque[1] = true
+							
+							nbCompteurCasque2 -= 1
+							isSlot_libre[n] = true
+				
+				if txtItemType[n] == "casque_3" and DataSave.items_equiper.casque3 == 0:
+					if gui_casque3[n] != null:
+						if n == n:
+							#print("coucou c'est la bottes !",n)
+							gui_casque3[n].queue_free()
+							txtItemType[n] = "vide"
+							DataSave.items_posession.casque3 -= 1
+							DataSave.items_equiper.casque3 = 1
+							interrupteur_Casque[2] = true
+							
+							nbCompteurCasque3 -= 1
+							isSlot_libre[n] = true
+				
+				if txtItemType[n] == "casque_4" and DataSave.items_equiper.casque4 == 0:
+					if gui_casque4[n] != null:
+						if n == n:
+							#print("coucou c'est la bottes !",n)
+							gui_casque4[n].queue_free()
+							txtItemType[n] = "vide"
+							DataSave.items_posession.casque4 -= 1
+							DataSave.items_equiper.casque4 = 1
+							interrupteur_Casque[3] = true
+							
+							nbCompteurCasque4 -= 1
+							isSlot_libre[n] = true
+				
+				if txtItemType[n] == "casque_5" and DataSave.items_equiper.casque5 == 0:
+					if gui_casque5[n] != null:
+						if n == n:
+							#print("coucou c'est la bottes !",n)
+							gui_casque5[n].queue_free()
+							txtItemType[n] = "vide"
+							DataSave.items_posession.casque5 -= 1
+							DataSave.items_equiper.casque5 = 1
+							interrupteur_Casque[4] = true
+							
+							nbCompteurCasque5 -= 1
+							isSlot_libre[n] = true
+				
+				if txtItemType[n] == "casque_6" and DataSave.items_equiper.casque6 == 0:
+					if gui_casque6[n] != null:
+						if n == n:
+							#print("coucou c'est la bottes !",n)
+							gui_casque6[n].queue_free()
+							txtItemType[n] = "vide"
+							DataSave.items_posession.casque6 -= 1
+							DataSave.items_equiper.casque6 = 1
+							interrupteur_Casque[5] = true
+							
+							nbCompteurCasque6 -= 1
+							isSlot_libre[n] = true
+				
+				if txtItemType[n] == "collier_1" and DataSave.items_equiper.collier1 == 0:
+					if gui_collier1[n] != null:
+						if n == n:
+							#print("coucou c'est la bottes !",n)
+							gui_collier1[n].queue_free()
+							txtItemType[n] = "vide"
+							DataSave.items_posession.collier1 -= 1
+							DataSave.items_equiper.collier1 = 1
+							interrupteur_Collier[0] = true
+							
+							nbCompteurCollier1 -= 1
+							isSlot_libre[n] = true
+				
+				if txtItemType[n] == "collier_2" and DataSave.items_equiper.collier2 == 0:
+					if gui_collier2[n] != null:
+						if n == n:
+							#print("coucou c'est la bottes !",n)
+							gui_collier2[n].queue_free()
+							txtItemType[n] = "vide"
+							DataSave.items_posession.collier2 -= 1
+							DataSave.items_equiper.collier2 = 1
+							interrupteur_Collier[1] = true
+							
+							nbCompteurCollier2 -= 1
+							isSlot_libre[n] = true
+				
+				if txtItemType[n] == "collier_3" and DataSave.items_equiper.collier3 == 0:
+					if gui_collier3[n] != null:
+						if n == n:
+							#print("coucou c'est la bottes !",n)
+							gui_collier3[n].queue_free()
+							txtItemType[n] = "vide"
+							DataSave.items_posession.collier3 -= 1
+							DataSave.items_equiper.collier3 = 1
+							interrupteur_Collier[2] = true
+							
+							nbCompteurCollier3 -= 1
+							isSlot_libre[n] = true
+				
+				if txtItemType[n] == "heaume_1" and DataSave.items_equiper.heaume1 == 0:
+					if gui_heaume1[n] != null:
+						if n == n:
+							#print("coucou c'est la bottes !",n)
+							gui_heaume1[n].queue_free()
+							txtItemType[n] = "vide"
+							DataSave.items_posession.heaume1 -= 1
+							DataSave.items_equiper.heaume1 = 1
+							interrupteur_Heaume[0] = true
+							
+							nbCompteurHeaume1 -= 1
+							isSlot_libre[n] = true
+				
+				if txtItemType[n] == "heaume_2" and DataSave.items_equiper.heaume2 == 0:
+					if gui_heaume2[n] != null:
+						if n == n:
+							#print("coucou c'est la bottes !",n)
+							gui_heaume2[n].queue_free()
+							txtItemType[n] = "vide"
+							DataSave.items_posession.heaume2 -= 1
+							DataSave.items_equiper.heaume2 = 1
+							interrupteur_Heaume[1] = true
+							
+							nbCompteurHeaume2 -= 1
+							isSlot_libre[n] = true
+				
+				if txtItemType[n] == "heaume_3" and DataSave.items_equiper.heaume3 == 0:
+					if gui_heaume3[n] != null:
+						if n == n:
+							#print("coucou c'est la bottes !",n)
+							gui_heaume3[n].queue_free()
+							txtItemType[n] = "vide"
+							DataSave.items_posession.heaume3 -= 1
+							DataSave.items_equiper.heaume3 = 1
+							interrupteur_Heaume[2] = true
+							
+							nbCompteurHeaume3 -= 1
+							isSlot_libre[n] = true
+				
+				if txtItemType[n] == "heaume_4" and DataSave.items_equiper.heaume4 == 0:
+					if gui_heaume4[n] != null:
+						if n == n:
+							#print("coucou c'est la bottes !",n)
+							gui_heaume4[n].queue_free()
+							txtItemType[n] = "vide"
+							DataSave.items_posession.heaume4 -= 1
+							DataSave.items_equiper.heaume4 = 1
+							interrupteur_Heaume[3] = true
+							
+							nbCompteurHeaume4 -= 1
+							isSlot_libre[n] = true
+				
+				if txtItemType[n] == "heaume_5" and DataSave.items_equiper.heaume5 == 0:
+					if gui_heaume5[n] != null:
+						if n == n:
+							#print("coucou c'est la bottes !",n)
+							gui_heaume5[n].queue_free()
+							txtItemType[n] = "vide"
+							DataSave.items_posession.heaume5 -= 1
+							DataSave.items_equiper.heaume5 = 1
+							interrupteur_Heaume[4] = true
+							
+							nbCompteurHeaume5 -= 1
+							isSlot_libre[n] = true
+				
+				if txtItemType[n] == "heaume_6" and DataSave.items_equiper.heaume6 == 0:
+					if gui_heaume6[n] != null:
+						if n == n:
+							#print("coucou c'est la bottes !",n)
+							gui_heaume6[n].queue_free()
+							txtItemType[n] = "vide"
+							DataSave.items_posession.heaume6 -= 1
+							DataSave.items_equiper.heaume6 = 1
+							interrupteur_Heaume[5] = true
+							
+							nbCompteurHeaume6 -= 1
+							isSlot_libre[n] = true
+				
+				if txtItemType[n] == "sword_1" and DataSave.items_equiper.sword1 == 0:
+					if gui_sword1[n] != null:
+						if n == n:
+							#print("coucou c'est la bottes !",n)
+							gui_sword1[n].queue_free()
+							txtItemType[n] = "vide"
+							DataSave.items_posession.sword1 -= 1
+							DataSave.items_equiper.sword1 = 1
+							interrupteur_Sword[0] = true
+							
+							nbCompteurSword1 -= 1
+							isSlot_libre[n] = true
+				
+				if txtItemType[n] == "sword_2" and DataSave.items_equiper.sword2 == 0:
+					if gui_sword2[n] != null:
+						if n == n:
+							#print("coucou c'est la bottes !",n)
+							gui_sword2[n].queue_free()
+							txtItemType[n] = "vide"
+							DataSave.items_posession.sword2 -= 1
+							DataSave.items_equiper.sword2 = 1
+							interrupteur_Sword[1] = true
+							
+							nbCompteurSword2 -= 1
+							isSlot_libre[n] = true
+				
+				if txtItemType[n] == "sword_3" and DataSave.items_equiper.sword3 == 0:
+					if gui_sword3[n] != null:
+						if n == n:
+							#print("coucou c'est la bottes !",n)
+							gui_sword3[n].queue_free()
+							txtItemType[n] = "vide"
+							DataSave.items_posession.sword3 -= 1
+							DataSave.items_equiper.sword3 = 1
+							interrupteur_Sword[2] = true
+							
+							nbCompteurSword3 -= 1
+							isSlot_libre[n] = true
+				
+				if txtItemType[n] == "sword_4" and DataSave.items_equiper.sword4 == 0:
+					if gui_sword4[n] != null:
+						if n == n:
+							#print("coucou c'est la bottes !",n)
+							gui_sword4[n].queue_free()
+							txtItemType[n] = "vide"
+							DataSave.items_posession.sword4 -= 1
+							DataSave.items_equiper.sword4 = 1
+							interrupteur_Sword[3] = true
+							
+							nbCompteurSword4 -= 1
+							isSlot_libre[n] = true
+				
+				if txtItemType[n] == "sword_5" and DataSave.items_equiper.sword5 == 0:
+					if gui_sword5[n] != null:
+						if n == n:
+							#print("coucou c'est la bottes !",n)
+							gui_sword5[n].queue_free()
+							txtItemType[n] = "vide"
+							DataSave.items_posession.sword5 -= 1
+							DataSave.items_equiper.sword5 = 1
+							interrupteur_Sword[4] = true
+							
+							nbCompteurSword5 -= 1
+							isSlot_libre[n] = true
+				
+				if txtItemType[n] == "sword_6" and DataSave.items_equiper.sword6 == 0:
+					if gui_sword6[n] != null:
+						if n == n:
+							#print("coucou c'est la bottes !",n)
+							gui_sword6[n].queue_free()
+							txtItemType[n] = "vide"
+							DataSave.items_posession.sword6 -= 1
+							DataSave.items_equiper.sword6 = 1
+							interrupteur_Sword[5] = true
+							
+							nbCompteurSword6 -= 1
+							isSlot_libre[n] = true
+				
+				if txtItemType[n] == "sword_7" and DataSave.items_equiper.sword7 == 0:
+					if gui_sword7[n] != null:
+						if n == n:
+							#print("coucou c'est la bottes !",n)
+							gui_sword7[n].queue_free()
+							txtItemType[n] = "vide"
+							DataSave.items_posession.sword7 -= 1
+							DataSave.items_equiper.sword7 = 1
+							interrupteur_Sword[6] = true
+							
+							nbCompteurSword7 -= 1
+							isSlot_libre[n] = true
+				
+				if txtItemType[n] == "sword_8" and DataSave.items_equiper.sword8 == 0:
+					if gui_sword8[n] != null:
+						if n == n:
+							#print("coucou c'est la bottes !",n)
+							gui_sword8[n].queue_free()
+							txtItemType[n] = "vide"
+							DataSave.items_posession.sword8 -= 1
+							DataSave.items_equiper.sword8 = 1
+							interrupteur_Sword[7] = true
+							
+							nbCompteurSword8 -= 1
 							isSlot_libre[n] = true
 	
