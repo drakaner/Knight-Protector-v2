@@ -1506,6 +1506,39 @@ func _process(delta: float) -> void:
 		gui_bouclier1[0].offset.x = childSlotEquip[2].position.x + nodeParent.offset.x
 		gui_bouclier1[0].offset.y = childSlotEquip[2].position.y + nodeParent.offset.y
 		gui_bouclier1[0].scale = Vector2(0.6, 0.7)
+		
+		if interrupteur_Bouclier[0] == true:
+			if DataSave.items_equiper.bouclier2 != 0:
+				gui_equiper.bottes_1.queue_free()
+				DataSave.items_equiper.bottes1 = 0
+				DataSave.items_posession.bottes1 += 1
+				bCreationBottes[0] = false
+				
+			if DataSave.items_equiper.bottes2 != 0:
+				gui_equiper.bottes_2.queue_free()
+				DataSave.items_equiper.bottes2 = 0
+				DataSave.items_posession.bottes2 += 1
+				bCreationBottes[1] = false
+			
+			if DataSave.items_equiper.bottes3 != 0:
+				gui_equiper.bottes_3.queue_free()
+				DataSave.items_equiper.bottes3 = 0
+				DataSave.items_posession.bottes3 += 1
+				bCreationBottes[2] = false
+			
+			if DataSave.items_equiper.bottes4 != 0:
+				gui_equiper.bottes_4.queue_free()
+				DataSave.items_equiper.bottes4 = 0
+				DataSave.items_posession.bottes4 += 1
+				bCreationBottes[3] = false
+			
+			if DataSave.items_equiper.bottes5 != 0:
+				gui_equiper.bottes_5.queue_free()
+				DataSave.items_equiper.bottes5 = 0
+				DataSave.items_posession.bottes5 += 1
+				bCreationBottes[4] = false
+			
+			interrupteur_Bouclier[0] = false
 	
 	if DataSave.items_equiper.bouclier2 == 1:
 		gui_bouclier2[0] = GuiBouclier2.instantiate()
