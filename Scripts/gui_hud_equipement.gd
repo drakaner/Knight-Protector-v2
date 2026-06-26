@@ -1501,198 +1501,970 @@ func _process(delta: float) -> void:
 			interrupteur_Bottes[5] = false
 	
 	if DataSave.items_equiper.bouclier1 == 1:
-		gui_bouclier1[0] = GuiBouclier1.instantiate()
-		add_child(gui_bouclier1[0])
-		gui_bouclier1[0].offset.x = childSlotEquip[2].position.x + nodeParent.offset.x
-		gui_bouclier1[0].offset.y = childSlotEquip[2].position.y + nodeParent.offset.y
-		gui_bouclier1[0].scale = Vector2(0.6, 0.7)
+		if bCreationBouclier[0] == false:
+			gui_equiper.bouclier_1 = GuiBouclier1.instantiate()
+			add_child(gui_equiper.bouclier_1)
+			bCreationBouclier[0] = true
+		gui_equiper.bouclier_1.offset.x = childSlotEquip[2].position.x + nodeParent.offset.x
+		gui_equiper.bouclier_1.offset.y = childSlotEquip[2].position.y + nodeParent.offset.y
+		gui_equiper.bouclier_1.scale = Vector2(0.6, 0.7)
 		
 		if interrupteur_Bouclier[0] == true:
 			if DataSave.items_equiper.bouclier2 != 0:
-				gui_equiper.bottes_1.queue_free()
-				DataSave.items_equiper.bottes1 = 0
-				DataSave.items_posession.bottes1 += 1
-				bCreationBottes[0] = false
+				gui_equiper.bouclier_2.queue_free()
+				DataSave.items_equiper.bouclier2 = 0
+				DataSave.items_posession.bouclier2 += 1
+				bCreationBouclier[1] = false
 				
-			if DataSave.items_equiper.bottes2 != 0:
-				gui_equiper.bottes_2.queue_free()
-				DataSave.items_equiper.bottes2 = 0
-				DataSave.items_posession.bottes2 += 1
-				bCreationBottes[1] = false
+			if DataSave.items_equiper.bouclier3 != 0:
+				gui_equiper.bouclier_3.queue_free()
+				DataSave.items_equiper.bouclier3 = 0
+				DataSave.items_posession.bouclier3 += 1
+				bCreationBouclier[2] = false
 			
-			if DataSave.items_equiper.bottes3 != 0:
-				gui_equiper.bottes_3.queue_free()
-				DataSave.items_equiper.bottes3 = 0
-				DataSave.items_posession.bottes3 += 1
-				bCreationBottes[2] = false
+			if DataSave.items_equiper.bouclier4 != 0:
+				gui_equiper.bouclier_4.queue_free()
+				DataSave.items_equiper.bouclier4 = 0
+				DataSave.items_posession.bouclier4 += 1
+				bCreationBouclier[3] = false
 			
-			if DataSave.items_equiper.bottes4 != 0:
-				gui_equiper.bottes_4.queue_free()
-				DataSave.items_equiper.bottes4 = 0
-				DataSave.items_posession.bottes4 += 1
-				bCreationBottes[3] = false
+			if DataSave.items_equiper.bouclier5 != 0:
+				gui_equiper.bouclier_5.queue_free()
+				DataSave.items_equiper.bouclier5 = 0
+				DataSave.items_posession.bouclier5 += 1
+				bCreationBouclier[4] = false
 			
-			if DataSave.items_equiper.bottes5 != 0:
-				gui_equiper.bottes_5.queue_free()
-				DataSave.items_equiper.bottes5 = 0
-				DataSave.items_posession.bottes5 += 1
-				bCreationBottes[4] = false
+			if DataSave.items_equiper.bouclier6 != 0:
+				gui_equiper.bouclier_6.queue_free()
+				DataSave.items_equiper.bouclier6 = 0
+				DataSave.items_posession.bouclier6 += 1
+				bCreationBouclier[5] = false
+			
+			if DataSave.items_equiper.bouclier7 != 0:
+				gui_equiper.bouclier_7.queue_free()
+				DataSave.items_equiper.bouclier7 = 0
+				DataSave.items_posession.bouclier7 += 1
+				bCreationBouclier[6] = false
 			
 			interrupteur_Bouclier[0] = false
 	
 	if DataSave.items_equiper.bouclier2 == 1:
-		gui_bouclier2[0] = GuiBouclier2.instantiate()
-		add_child(gui_bouclier2[0])
-		gui_bouclier2[0].offset.x = childSlotEquip[2].position.x + nodeParent.offset.x
-		gui_bouclier2[0].offset.y = childSlotEquip[2].position.y + nodeParent.offset.y
-		gui_bouclier2[0].scale = Vector2(0.6, 0.7)
+		if bCreationBouclier[1] == false:
+			gui_equiper.bouclier_2 = GuiBouclier2.instantiate()
+			add_child(gui_equiper.bouclier_2)
+			bCreationBouclier[1] = true
+		gui_equiper.bouclier_2.offset.x = childSlotEquip[2].position.x + nodeParent.offset.x
+		gui_equiper.bouclier_2.offset.y = childSlotEquip[2].position.y + nodeParent.offset.y
+		gui_equiper.bouclier_2.scale = Vector2(0.6, 0.7)
+		
+		if interrupteur_Bouclier[1] == true:
+			if DataSave.items_equiper.bouclier1 != 0:
+				gui_equiper.bouclier_1.queue_free()
+				DataSave.items_equiper.bouclier1 = 0
+				DataSave.items_posession.bouclier1 += 1
+				bCreationBouclier[0] = false
+				
+			if DataSave.items_equiper.bouclier3 != 0:
+				gui_equiper.bouclier_3.queue_free()
+				DataSave.items_equiper.bouclier3 = 0
+				DataSave.items_posession.bouclier3 += 1
+				bCreationBouclier[2] = false
+			
+			if DataSave.items_equiper.bouclier4 != 0:
+				gui_equiper.bouclier_4.queue_free()
+				DataSave.items_equiper.bouclier4 = 0
+				DataSave.items_posession.bouclier4 += 1
+				bCreationBouclier[3] = false
+			
+			if DataSave.items_equiper.bouclier5 != 0:
+				gui_equiper.bouclier_5.queue_free()
+				DataSave.items_equiper.bouclier5 = 0
+				DataSave.items_posession.bouclier5 += 1
+				bCreationBouclier[4] = false
+			
+			if DataSave.items_equiper.bouclier6 != 0:
+				gui_equiper.bouclier_6.queue_free()
+				DataSave.items_equiper.bouclier6 = 0
+				DataSave.items_posession.bouclier6 += 1
+				bCreationBouclier[5] = false
+			
+			if DataSave.items_equiper.bouclier7 != 0:
+				gui_equiper.bouclier_7.queue_free()
+				DataSave.items_equiper.bouclier7 = 0
+				DataSave.items_posession.bouclier7 += 1
+				bCreationBouclier[6] = false
+			
+			interrupteur_Bouclier[1] = false
 	
 	if DataSave.items_equiper.bouclier3 == 1:
-		gui_bouclier3[0] = GuiBouclier3.instantiate()
-		add_child(gui_bouclier3[0])
-		gui_bouclier3[0].offset.x = childSlotEquip[2].position.x + nodeParent.offset.x
-		gui_bouclier3[0].offset.y = childSlotEquip[2].position.y + nodeParent.offset.y
-		gui_bouclier3[0].scale = Vector2(0.6, 0.7)
+		if bCreationBouclier[2] == false:
+			gui_equiper.bouclier_3 = GuiBouclier3.instantiate()
+			add_child(gui_equiper.bouclier_3)
+			bCreationBouclier[2] = true
+		gui_equiper.bouclier_3.offset.x = childSlotEquip[2].position.x + nodeParent.offset.x
+		gui_equiper.bouclier_3.offset.y = childSlotEquip[2].position.y + nodeParent.offset.y
+		gui_equiper.bouclier_3.scale = Vector2(0.6, 0.7)
+		
+		if interrupteur_Bouclier[2] == true:
+			if DataSave.items_equiper.bouclier1 != 0:
+				gui_equiper.bouclier_1.queue_free()
+				DataSave.items_equiper.bouclier1 = 0
+				DataSave.items_posession.bouclier1 += 1
+				bCreationBouclier[0] = false
+				
+			if DataSave.items_equiper.bouclier2 != 0:
+				gui_equiper.bouclier_2.queue_free()
+				DataSave.items_equiper.bouclier2 = 0
+				DataSave.items_posession.bouclier2 += 1
+				bCreationBouclier[1] = false
+			
+			if DataSave.items_equiper.bouclier4 != 0:
+				gui_equiper.bouclier_4.queue_free()
+				DataSave.items_equiper.bouclier4 = 0
+				DataSave.items_posession.bouclier4 += 1
+				bCreationBouclier[3] = false
+			
+			if DataSave.items_equiper.bouclier5 != 0:
+				gui_equiper.bouclier_5.queue_free()
+				DataSave.items_equiper.bouclier5 = 0
+				DataSave.items_posession.bouclier5 += 1
+				bCreationBouclier[4] = false
+			
+			if DataSave.items_equiper.bouclier6 != 0:
+				gui_equiper.bouclier_6.queue_free()
+				DataSave.items_equiper.bouclier6 = 0
+				DataSave.items_posession.bouclier6 += 1
+				bCreationBouclier[5] = false
+			
+			if DataSave.items_equiper.bouclier7 != 0:
+				gui_equiper.bouclier_7.queue_free()
+				DataSave.items_equiper.bouclier7 = 0
+				DataSave.items_posession.bouclier7 += 1
+				bCreationBouclier[6] = false
+			
+			interrupteur_Bouclier[2] = false
 	
 	if DataSave.items_equiper.bouclier4 == 1:
-		gui_bouclier4[0] = GuiBouclier4.instantiate()
-		add_child(gui_bouclier4[0])
-		gui_bouclier4[0].offset.x = childSlotEquip[2].position.x + nodeParent.offset.x
-		gui_bouclier4[0].offset.y = childSlotEquip[2].position.y + nodeParent.offset.y
-		gui_bouclier4[0].scale = Vector2(0.6, 0.7)
+		if bCreationBouclier[3] == false:
+			gui_equiper.bouclier_4 = GuiBouclier4.instantiate()
+			add_child(gui_equiper.bouclier_4)
+			bCreationBouclier[3] = true
+		gui_equiper.bouclier_4.offset.x = childSlotEquip[2].position.x + nodeParent.offset.x
+		gui_equiper.bouclier_4.offset.y = childSlotEquip[2].position.y + nodeParent.offset.y
+		gui_equiper.bouclier_4.scale = Vector2(0.6, 0.7)
+		
+		if interrupteur_Bouclier[3] == true:
+			if DataSave.items_equiper.bouclier1 != 0:
+				gui_equiper.bouclier_1.queue_free()
+				DataSave.items_equiper.bouclier1 = 0
+				DataSave.items_posession.bouclier1 += 1
+				bCreationBouclier[0] = false
+				
+			if DataSave.items_equiper.bouclier2 != 0:
+				gui_equiper.bouclier_2.queue_free()
+				DataSave.items_equiper.bouclier2 = 0
+				DataSave.items_posession.bouclier2 += 1
+				bCreationBouclier[1] = false
+			
+			if DataSave.items_equiper.bouclier3 != 0:
+				gui_equiper.bouclier_3.queue_free()
+				DataSave.items_equiper.bouclier3 = 0
+				DataSave.items_posession.bouclier3 += 1
+				bCreationBouclier[2] = false
+			
+			if DataSave.items_equiper.bouclier5 != 0:
+				gui_equiper.bouclier_5.queue_free()
+				DataSave.items_equiper.bouclier5 = 0
+				DataSave.items_posession.bouclier5 += 1
+				bCreationBouclier[4] = false
+			
+			if DataSave.items_equiper.bouclier6 != 0:
+				gui_equiper.bouclier_6.queue_free()
+				DataSave.items_equiper.bouclier6 = 0
+				DataSave.items_posession.bouclier6 += 1
+				bCreationBouclier[5] = false
+			
+			if DataSave.items_equiper.bouclier7 != 0:
+				gui_equiper.bouclier_7.queue_free()
+				DataSave.items_equiper.bouclier7 = 0
+				DataSave.items_posession.bouclier7 += 1
+				bCreationBouclier[6] = false
+			
+			interrupteur_Bouclier[3] = false
 	
 	if DataSave.items_equiper.bouclier5 == 1:
-		gui_bouclier5[0] = GuiBouclier5.instantiate()
-		add_child(gui_bouclier5[0])
-		gui_bouclier5[0].offset.x = childSlotEquip[2].position.x + nodeParent.offset.x
-		gui_bouclier5[0].offset.y = childSlotEquip[2].position.y + nodeParent.offset.y
-		gui_bouclier5[0].scale = Vector2(0.6, 0.7)
+		if bCreationBouclier[4] == false:
+			gui_equiper.bouclier_5 = GuiBouclier5.instantiate()
+			add_child(gui_equiper.bouclier_5)
+			bCreationBouclier[4] = true
+		gui_equiper.bouclier_5.offset.x = childSlotEquip[2].position.x + nodeParent.offset.x
+		gui_equiper.bouclier_5.offset.y = childSlotEquip[2].position.y + nodeParent.offset.y
+		gui_equiper.bouclier_5.scale = Vector2(0.6, 0.7)
+		
+		if interrupteur_Bouclier[4] == true:
+			if DataSave.items_equiper.bouclier1 != 0:
+				gui_equiper.bouclier_1.queue_free()
+				DataSave.items_equiper.bouclier1 = 0
+				DataSave.items_posession.bouclier1 += 1
+				bCreationBouclier[0] = false
+				
+			if DataSave.items_equiper.bouclier2 != 0:
+				gui_equiper.bouclier_2.queue_free()
+				DataSave.items_equiper.bouclier2 = 0
+				DataSave.items_posession.bouclier2 += 1
+				bCreationBouclier[1] = false
+			
+			if DataSave.items_equiper.bouclier3 != 0:
+				gui_equiper.bouclier_3.queue_free()
+				DataSave.items_equiper.bouclier3 = 0
+				DataSave.items_posession.bouclier3 += 1
+				bCreationBouclier[2] = false
+			
+			if DataSave.items_equiper.bouclier4 != 0:
+				gui_equiper.bouclier_4.queue_free()
+				DataSave.items_equiper.bouclier4 = 0
+				DataSave.items_posession.bouclier4 += 1
+				bCreationBouclier[3] = false
+			
+			if DataSave.items_equiper.bouclier6 != 0:
+				gui_equiper.bouclier_6.queue_free()
+				DataSave.items_equiper.bouclier6 = 0
+				DataSave.items_posession.bouclier6 += 1
+				bCreationBouclier[5] = false
+			
+			if DataSave.items_equiper.bouclier7 != 0:
+				gui_equiper.bouclier_7.queue_free()
+				DataSave.items_equiper.bouclier7 = 0
+				DataSave.items_posession.bouclier7 += 1
+				bCreationBouclier[6] = false
+			
+			interrupteur_Bouclier[4] = false
 	
 	if DataSave.items_equiper.bouclier6 == 1:
-		gui_bouclier6[0] = GuiBouclier6.instantiate()
-		add_child(gui_bouclier6[0])
-		gui_bouclier6[0].offset.x = childSlotEquip[2].position.x + nodeParent.offset.x
-		gui_bouclier6[0].offset.y = childSlotEquip[2].position.y + nodeParent.offset.y
-		gui_bouclier6[0].scale = Vector2(0.6, 0.7)
+		if bCreationBouclier[5] == false:
+			gui_equiper.bouclier_6 = GuiBouclier6.instantiate()
+			add_child(gui_equiper.bouclier_6)
+			bCreationBouclier[5] = true
+		gui_equiper.bouclier_6.offset.x = childSlotEquip[2].position.x + nodeParent.offset.x
+		gui_equiper.bouclier_6.offset.y = childSlotEquip[2].position.y + nodeParent.offset.y
+		gui_equiper.bouclier_6.scale = Vector2(0.6, 0.7)
+		
+		if interrupteur_Bouclier[5] == true:
+			if DataSave.items_equiper.bouclier1 != 0:
+				gui_equiper.bouclier_1.queue_free()
+				DataSave.items_equiper.bouclier1 = 0
+				DataSave.items_posession.bouclier1 += 1
+				bCreationBouclier[0] = false
+				
+			if DataSave.items_equiper.bouclier2 != 0:
+				gui_equiper.bouclier_2.queue_free()
+				DataSave.items_equiper.bouclier2 = 0
+				DataSave.items_posession.bouclier2 += 1
+				bCreationBouclier[1] = false
+			
+			if DataSave.items_equiper.bouclier3 != 0:
+				gui_equiper.bouclier_3.queue_free()
+				DataSave.items_equiper.bouclier3 = 0
+				DataSave.items_posession.bouclier3 += 1
+				bCreationBouclier[2] = false
+			
+			if DataSave.items_equiper.bouclier4 != 0:
+				gui_equiper.bouclier_4.queue_free()
+				DataSave.items_equiper.bouclier4 = 0
+				DataSave.items_posession.bouclier4 += 1
+				bCreationBouclier[3] = false
+			
+			if DataSave.items_equiper.bouclier5 != 0:
+				gui_equiper.bouclier_5.queue_free()
+				DataSave.items_equiper.bouclier5 = 0
+				DataSave.items_posession.bouclier5 += 1
+				bCreationBouclier[4] = false
+			
+			if DataSave.items_equiper.bouclier7 != 0:
+				gui_equiper.bouclier_7.queue_free()
+				DataSave.items_equiper.bouclier7 = 0
+				DataSave.items_posession.bouclier7 += 1
+				bCreationBouclier[6] = false
+			
+			interrupteur_Bouclier[5] = false
 	
 	if DataSave.items_equiper.bouclier7 == 1:
-		gui_bouclier7[0] = GuiBouclier7.instantiate()
-		add_child(gui_bouclier7[0])
-		gui_bouclier7[0].offset.x = childSlotEquip[2].position.x + nodeParent.offset.x
-		gui_bouclier7[0].offset.y = childSlotEquip[2].position.y + nodeParent.offset.y
-		gui_bouclier7[0].scale = Vector2(0.6, 0.7)
+		if bCreationBouclier[6] == false:
+			gui_equiper.bouclier_7 = GuiBouclier7.instantiate()
+			add_child(gui_equiper.bouclier_7)
+			bCreationBouclier[6] = true
+		gui_equiper.bouclier_7.offset.x = childSlotEquip[2].position.x + nodeParent.offset.x
+		gui_equiper.bouclier_7.offset.y = childSlotEquip[2].position.y + nodeParent.offset.y
+		gui_equiper.bouclier_7.scale = Vector2(0.6, 0.7)
+		
+		if interrupteur_Bouclier[6] == true:
+			if DataSave.items_equiper.bouclier1 != 0:
+				gui_equiper.bouclier_1.queue_free()
+				DataSave.items_equiper.bouclier1 = 0
+				DataSave.items_posession.bouclier1 += 1
+				bCreationBouclier[0] = false
+				
+			if DataSave.items_equiper.bouclier2 != 0:
+				gui_equiper.bouclier_2.queue_free()
+				DataSave.items_equiper.bouclier2 = 0
+				DataSave.items_posession.bouclier2 += 1
+				bCreationBouclier[1] = false
+			
+			if DataSave.items_equiper.bouclier3 != 0:
+				gui_equiper.bouclier_3.queue_free()
+				DataSave.items_equiper.bouclier3 = 0
+				DataSave.items_posession.bouclier3 += 1
+				bCreationBouclier[2] = false
+			
+			if DataSave.items_equiper.bouclier4 != 0:
+				gui_equiper.bouclier_4.queue_free()
+				DataSave.items_equiper.bouclier4 = 0
+				DataSave.items_posession.bouclier4 += 1
+				bCreationBouclier[3] = false
+			
+			if DataSave.items_equiper.bouclier5 != 0:
+				gui_equiper.bouclier_5.queue_free()
+				DataSave.items_equiper.bouclier5 = 0
+				DataSave.items_posession.bouclier5 += 1
+				bCreationBouclier[4] = false
+			
+			if DataSave.items_equiper.bouclier6 != 0:
+				gui_equiper.bouclier_6.queue_free()
+				DataSave.items_equiper.bouclier6 = 0
+				DataSave.items_posession.bouclier6 += 1
+				bCreationBouclier[5] = false
+			
+			interrupteur_Bouclier[6] = false
 	
 	if DataSave.items_equiper.casque1 == 1:
-		gui_casque1[0] = GuiCasque1.instantiate()
-		add_child(gui_casque1[0])
-		gui_casque1[0].offset.x = childSlotEquip[0].position.x + nodeParent.offset.x
-		gui_casque1[0].offset.y = childSlotEquip[0].position.y + nodeParent.offset.y
-		gui_casque1[0].scale = Vector2(0.6, 0.7)
+		if bCreationCasque[0] == false:
+			gui_equiper.casque_1 = GuiCasque1.instantiate()
+			add_child(gui_equiper.casque_1)
+			bCreationCasque[0] = true
+		gui_equiper.casque_1.offset.x = childSlotEquip[0].position.x + nodeParent.offset.x
+		gui_equiper.casque_1.offset.y = childSlotEquip[0].position.y + nodeParent.offset.y
+		gui_equiper.casque_1.scale = Vector2(0.6, 0.7)
+		
+		if interrupteur_Casque[0] == true:
+			if DataSave.items_equiper.casque2 != 0:
+				gui_equiper.casque_2.queue_free()
+				DataSave.items_equiper.casque2 = 0
+				DataSave.items_posession.casque2 += 1
+				bCreationCasque[1] = false
+				
+			if DataSave.items_equiper.casque3 != 0:
+				gui_equiper.casque_3.queue_free()
+				DataSave.items_equiper.casque3 = 0
+				DataSave.items_posession.casque3 += 1
+				bCreationCasque[2] = false
+			
+			if DataSave.items_equiper.casque4 != 0:
+				gui_equiper.casque_4.queue_free()
+				DataSave.items_equiper.casque4 = 0
+				DataSave.items_posession.casque4 += 1
+				bCreationCasque[3] = false
+			
+			if DataSave.items_equiper.casque5 != 0:
+				gui_equiper.casque_5.queue_free()
+				DataSave.items_equiper.casque5 = 0
+				DataSave.items_posession.casque5 += 1
+				bCreationCasque[4] = false
+			
+			if DataSave.items_equiper.casque6 != 0:
+				gui_equiper.casque_6.queue_free()
+				DataSave.items_equiper.casque6 = 0
+				DataSave.items_posession.casque6 += 1
+				bCreationCasque[5] = false
+			
+			interrupteur_Casque[0] = false
 	
 	if DataSave.items_equiper.casque2 == 1:
-		gui_casque2[0] = GuiCasque2.instantiate()
-		add_child(gui_casque2[0])
-		gui_casque2[0].offset.x = childSlotEquip[0].position.x + nodeParent.offset.x
-		gui_casque2[0].offset.y = childSlotEquip[0].position.y + nodeParent.offset.y
-		gui_casque2[0].scale = Vector2(0.6, 0.7)
+		if bCreationCasque[1] == false:
+			gui_equiper.casque_2 = GuiCasque2.instantiate()
+			add_child(gui_equiper.casque_2)
+			bCreationCasque[1] = true
+		gui_equiper.casque_2.offset.x = childSlotEquip[0].position.x + nodeParent.offset.x
+		gui_equiper.casque_2.offset.y = childSlotEquip[0].position.y + nodeParent.offset.y
+		gui_equiper.casque_2.scale = Vector2(0.6, 0.7)
+		
+		if interrupteur_Casque[1] == true:
+			if DataSave.items_equiper.casque1 != 0:
+				gui_equiper.casque_1.queue_free()
+				DataSave.items_equiper.casque1 = 0
+				DataSave.items_posession.casque1 += 1
+				bCreationCasque[0] = false
+				
+			if DataSave.items_equiper.casque3 != 0:
+				gui_equiper.casque_3.queue_free()
+				DataSave.items_equiper.casque3 = 0
+				DataSave.items_posession.casque3 += 1
+				bCreationCasque[2] = false
+			
+			if DataSave.items_equiper.casque4 != 0:
+				gui_equiper.casque_4.queue_free()
+				DataSave.items_equiper.casque4 = 0
+				DataSave.items_posession.casque4 += 1
+				bCreationCasque[3] = false
+			
+			if DataSave.items_equiper.casque5 != 0:
+				gui_equiper.casque_5.queue_free()
+				DataSave.items_equiper.casque5 = 0
+				DataSave.items_posession.casque5 += 1
+				bCreationCasque[4] = false
+			
+			if DataSave.items_equiper.casque6 != 0:
+				gui_equiper.casque_6.queue_free()
+				DataSave.items_equiper.casque6 = 0
+				DataSave.items_posession.casque6 += 1
+				bCreationCasque[5] = false
+			
+			interrupteur_Casque[1] = false
 	
 	if DataSave.items_equiper.casque3 == 1:
-		gui_casque3[0] = GuiCasque3.instantiate()
-		add_child(gui_casque3[0])
-		gui_casque3[0].offset.x = childSlotEquip[0].position.x + nodeParent.offset.x
-		gui_casque3[0].offset.y = childSlotEquip[0].position.y + nodeParent.offset.y
-		gui_casque3[0].scale = Vector2(0.6, 0.7)
+		if bCreationCasque[2] == false:
+			gui_equiper.casque_3 = GuiCasque3.instantiate()
+			add_child(gui_equiper.casque_3)
+			bCreationCasque[2] = true
+		gui_equiper.casque_3.offset.x = childSlotEquip[0].position.x + nodeParent.offset.x
+		gui_equiper.casque_3.offset.y = childSlotEquip[0].position.y + nodeParent.offset.y
+		gui_equiper.casque_3.scale = Vector2(0.6, 0.7)
+		
+		if interrupteur_Casque[2] == true:
+			if DataSave.items_equiper.casque1 != 0:
+				gui_equiper.casque_1.queue_free()
+				DataSave.items_equiper.casque1 = 0
+				DataSave.items_posession.casque1 += 1
+				bCreationCasque[0] = false
+				
+			if DataSave.items_equiper.casque2 != 0:
+				gui_equiper.casque_2.queue_free()
+				DataSave.items_equiper.casque2 = 0
+				DataSave.items_posession.casque2 += 1
+				bCreationCasque[1] = false
+			
+			if DataSave.items_equiper.casque4 != 0:
+				gui_equiper.casque_4.queue_free()
+				DataSave.items_equiper.casque4 = 0
+				DataSave.items_posession.casque4 += 1
+				bCreationCasque[3] = false
+			
+			if DataSave.items_equiper.casque5 != 0:
+				gui_equiper.casque_5.queue_free()
+				DataSave.items_equiper.casque5 = 0
+				DataSave.items_posession.casque5 += 1
+				bCreationCasque[4] = false
+			
+			if DataSave.items_equiper.casque6 != 0:
+				gui_equiper.casque_6.queue_free()
+				DataSave.items_equiper.casque6 = 0
+				DataSave.items_posession.casque6 += 1
+				bCreationCasque[5] = false
+			
+			interrupteur_Casque[2] = false
 	
 	if DataSave.items_equiper.casque4 == 1:
-		gui_casque4[0] = GuiCasque4.instantiate()
-		add_child(gui_casque4[0])
-		gui_casque4[0].offset.x = childSlotEquip[0].position.x + nodeParent.offset.x
-		gui_casque4[0].offset.y = childSlotEquip[0].position.y + nodeParent.offset.y
-		gui_casque4[0].scale = Vector2(0.6, 0.7)
+		if bCreationCasque[3] == false:
+			gui_equiper.casque_4 = GuiCasque4.instantiate()
+			add_child(gui_equiper.casque_4)
+			bCreationCasque[3] = true
+		gui_equiper.casque_4.offset.x = childSlotEquip[0].position.x + nodeParent.offset.x
+		gui_equiper.casque_4.offset.y = childSlotEquip[0].position.y + nodeParent.offset.y
+		gui_equiper.casque_4.scale = Vector2(0.6, 0.7)
+		
+		if interrupteur_Casque[3] == true:
+			if DataSave.items_equiper.casque1 != 0:
+				gui_equiper.casque_1.queue_free()
+				DataSave.items_equiper.casque1 = 0
+				DataSave.items_posession.casque1 += 1
+				bCreationCasque[0] = false
+				
+			if DataSave.items_equiper.casque2 != 0:
+				gui_equiper.casque_2.queue_free()
+				DataSave.items_equiper.casque2 = 0
+				DataSave.items_posession.casque2 += 1
+				bCreationCasque[1] = false
+			
+			if DataSave.items_equiper.casque3 != 0:
+				gui_equiper.casque_3.queue_free()
+				DataSave.items_equiper.casque3 = 0
+				DataSave.items_posession.casque3 += 1
+				bCreationCasque[2] = false
+			
+			if DataSave.items_equiper.casque5 != 0:
+				gui_equiper.casque_5.queue_free()
+				DataSave.items_equiper.casque5 = 0
+				DataSave.items_posession.casque5 += 1
+				bCreationCasque[4] = false
+			
+			if DataSave.items_equiper.casque6 != 0:
+				gui_equiper.casque_6.queue_free()
+				DataSave.items_equiper.casque6 = 0
+				DataSave.items_posession.casque6 += 1
+				bCreationCasque[5] = false
+			
+			interrupteur_Casque[3] = false
 	
 	if DataSave.items_equiper.casque5 == 1:
-		gui_casque5[0] = GuiCasque5.instantiate()
-		add_child(gui_casque5[0])
-		gui_casque5[0].offset.x = childSlotEquip[0].position.x + nodeParent.offset.x
-		gui_casque5[0].offset.y = childSlotEquip[0].position.y + nodeParent.offset.y
-		gui_casque5[0].scale = Vector2(0.6, 0.7)
+		if bCreationCasque[4] == false:
+			gui_equiper.casque_5 = GuiCasque5.instantiate()
+			add_child(gui_equiper.casque_5)
+			bCreationCasque[4] = true
+		gui_equiper.casque_5.offset.x = childSlotEquip[0].position.x + nodeParent.offset.x
+		gui_equiper.casque_5.offset.y = childSlotEquip[0].position.y + nodeParent.offset.y
+		gui_equiper.casque_5.scale = Vector2(0.6, 0.7)
+		
+		if interrupteur_Casque[4] == true:
+			if DataSave.items_equiper.casque1 != 0:
+				gui_equiper.casque_1.queue_free()
+				DataSave.items_equiper.casque1 = 0
+				DataSave.items_posession.casque1 += 1
+				bCreationCasque[0] = false
+				
+			if DataSave.items_equiper.casque2 != 0:
+				gui_equiper.casque_2.queue_free()
+				DataSave.items_equiper.casque2 = 0
+				DataSave.items_posession.casque2 += 1
+				bCreationCasque[1] = false
+			
+			if DataSave.items_equiper.casque3 != 0:
+				gui_equiper.casque_3.queue_free()
+				DataSave.items_equiper.casque3 = 0
+				DataSave.items_posession.casque3 += 1
+				bCreationCasque[2] = false
+			
+			if DataSave.items_equiper.casque4 != 0:
+				gui_equiper.casque_4.queue_free()
+				DataSave.items_equiper.casque4 = 0
+				DataSave.items_posession.casque4 += 1
+				bCreationCasque[3] = false
+			
+			if DataSave.items_equiper.casque6 != 0:
+				gui_equiper.casque_6.queue_free()
+				DataSave.items_equiper.casque6 = 0
+				DataSave.items_posession.casque6 += 1
+				bCreationCasque[5] = false
+			
+			interrupteur_Casque[4] = false
 	
 	if DataSave.items_equiper.casque6 == 1:
-		gui_casque6[0] = GuiCasque6.instantiate()
-		add_child(gui_casque6[0])
-		gui_casque6[0].offset.x = childSlotEquip[0].position.x + nodeParent.offset.x
-		gui_casque6[0].offset.y = childSlotEquip[0].position.y + nodeParent.offset.y
-		gui_casque6[0].scale = Vector2(0.6, 0.7)
+		if bCreationCasque[5] == false:
+			gui_equiper.casque_6 = GuiCasque6.instantiate()
+			add_child(gui_equiper.casque_6)
+			bCreationCasque[5] = true
+		gui_equiper.casque_6.offset.x = childSlotEquip[0].position.x + nodeParent.offset.x
+		gui_equiper.casque_6.offset.y = childSlotEquip[0].position.y + nodeParent.offset.y
+		gui_equiper.casque_6.scale = Vector2(0.6, 0.7)
+		
+		if interrupteur_Casque[5] == true:
+			if DataSave.items_equiper.casque1 != 0:
+				gui_equiper.casque_1.queue_free()
+				DataSave.items_equiper.casque1 = 0
+				DataSave.items_posession.casque1 += 1
+				bCreationCasque[0] = false
+				
+			if DataSave.items_equiper.casque2 != 0:
+				gui_equiper.casque_2.queue_free()
+				DataSave.items_equiper.casque2 = 0
+				DataSave.items_posession.casque2 += 1
+				bCreationCasque[1] = false
+			
+			if DataSave.items_equiper.casque3 != 0:
+				gui_equiper.casque_3.queue_free()
+				DataSave.items_equiper.casque3 = 0
+				DataSave.items_posession.casque3 += 1
+				bCreationCasque[2] = false
+			
+			if DataSave.items_equiper.casque4 != 0:
+				gui_equiper.casque_4.queue_free()
+				DataSave.items_equiper.casque4 = 0
+				DataSave.items_posession.casque4 += 1
+				bCreationCasque[3] = false
+			
+			if DataSave.items_equiper.casque5 != 0:
+				gui_equiper.casque_5.queue_free()
+				DataSave.items_equiper.casque5 = 0
+				DataSave.items_posession.casque5 += 1
+				bCreationCasque[4] = false
+			
+			interrupteur_Casque[5] = false
 	
 	if DataSave.items_equiper.collier1 == 1:
-		gui_collier1[0] = GuiCollier1.instantiate()
-		add_child(gui_collier1[0])
-		gui_collier1[0].offset.x = childSlotEquip[6].position.x + nodeParent.offset.x
-		gui_collier1[0].offset.y = childSlotEquip[6].position.y + nodeParent.offset.y
-		gui_collier1[0].scale = Vector2(0.6, 0.7)
+		if bCreationCollier[0] == false:
+			gui_equiper.collier_1 = GuiCollier1.instantiate()
+			add_child(gui_equiper.collier_1)
+			bCreationCollier[0] = true
+		gui_equiper.collier_1.offset.x = childSlotEquip[6].position.x + nodeParent.offset.x
+		gui_equiper.collier_1.offset.y = childSlotEquip[6].position.y + nodeParent.offset.y
+		gui_equiper.collier_1.scale = Vector2(0.6, 0.7)
+		
+		if interrupteur_Collier[0] == true:
+			if DataSave.items_equiper.collier2 != 0:
+				gui_equiper.collier_2.queue_free()
+				DataSave.items_equiper.collier2 = 0
+				DataSave.items_posession.collier2 += 1
+				bCreationCollier[1] = false
+				
+			if DataSave.items_equiper.collier3 != 0:
+				gui_equiper.collier_3.queue_free()
+				DataSave.items_equiper.collier3 = 0
+				DataSave.items_posession.collier3 += 1
+				bCreationCollier[2] = false
+			
+			interrupteur_Collier[0] = false
 	
 	if DataSave.items_equiper.collier2 == 1:
-		gui_collier2[0] = GuiCollier2.instantiate()
-		add_child(gui_collier2[0])
-		gui_collier2[0].offset.x = childSlotEquip[6].position.x + nodeParent.offset.x
-		gui_collier2[0].offset.y = childSlotEquip[6].position.y + nodeParent.offset.y
-		gui_collier2[0].scale = Vector2(0.6, 0.7)
+		if bCreationCollier[1] == false:
+			gui_equiper.collier_2 = GuiCollier2.instantiate()
+			add_child(gui_equiper.collier_2)
+			bCreationCollier[1] = true
+		gui_equiper.collier_2.offset.x = childSlotEquip[6].position.x + nodeParent.offset.x
+		gui_equiper.collier_2.offset.y = childSlotEquip[6].position.y + nodeParent.offset.y
+		gui_equiper.collier_2.scale = Vector2(0.6, 0.7)
+		
+		if interrupteur_Collier[1] == true:
+			if DataSave.items_equiper.collier1 != 0:
+				gui_equiper.collier_1.queue_free()
+				DataSave.items_equiper.collier1 = 0
+				DataSave.items_posession.collier1 += 1
+				bCreationCollier[0] = false
+				
+			if DataSave.items_equiper.collier3 != 0:
+				gui_equiper.collier_3.queue_free()
+				DataSave.items_equiper.collier3 = 0
+				DataSave.items_posession.collier3 += 1
+				bCreationCollier[2] = false
+			
+			interrupteur_Collier[1] = false
 	
 	if DataSave.items_equiper.collier3 == 1:
-		gui_collier3[0] = GuiCollier3.instantiate()
-		add_child(gui_collier3[0])
-		gui_collier3[0].offset.x = childSlotEquip[6].position.x + nodeParent.offset.x
-		gui_collier3[0].offset.y = childSlotEquip[6].position.y + nodeParent.offset.y
-		gui_collier3[0].scale = Vector2(0.6, 0.7)
+		if bCreationCollier[2] == false:
+			gui_equiper.collier_3 = GuiCollier3.instantiate()
+			add_child(gui_equiper.collier_3)
+			bCreationCollier[2] = true
+		gui_equiper.collier_3.offset.x = childSlotEquip[6].position.x + nodeParent.offset.x
+		gui_equiper.collier_3.offset.y = childSlotEquip[6].position.y + nodeParent.offset.y
+		gui_equiper.collier_3.scale = Vector2(0.6, 0.7)
+		
+		if interrupteur_Collier[2] == true:
+			if DataSave.items_equiper.collier1 != 0:
+				gui_equiper.collier_1.queue_free()
+				DataSave.items_equiper.collier1 = 0
+				DataSave.items_posession.collier1 += 1
+				bCreationCollier[0] = false
+				
+			if DataSave.items_equiper.collier2 != 0:
+				gui_equiper.collier_2.queue_free()
+				DataSave.items_equiper.collier2 = 0
+				DataSave.items_posession.collier2 += 1
+				bCreationCollier[1] = false
+			
+			interrupteur_Collier[2] = false
 	
 	if DataSave.items_equiper.heaume1 == 1:
-		gui_heaume1[0] = GuiHeaume1.instantiate()
-		add_child(gui_heaume1[0])
-		gui_heaume1[0].offset.x = childSlotEquip[1].position.x + nodeParent.offset.x
-		gui_heaume1[0].offset.y = childSlotEquip[1].position.y + nodeParent.offset.y
-		gui_heaume1[0].scale = Vector2(0.6, 0.7)
+		if bCreationHeaume[0] == false:
+			gui_equiper.heaume_1 = GuiHeaume1.instantiate()
+			add_child(gui_equiper.heaume_1)
+			bCreationHeaume[0] = true
+		gui_equiper.heaume_1.offset.x = childSlotEquip[1].position.x + nodeParent.offset.x
+		gui_equiper.heaume_1.offset.y = childSlotEquip[1].position.y + nodeParent.offset.y
+		gui_equiper.heaume_1.scale = Vector2(0.6, 0.7)
+		
+		if interrupteur_Heaume[0] == true:
+			if DataSave.items_equiper.heaume2 != 0:
+				gui_equiper.heaume_2.queue_free()
+				DataSave.items_equiper.heaume2 = 0
+				DataSave.items_posession.heaume2 += 1
+				bCreationHeaume[1] = false
+				
+			if DataSave.items_equiper.heaume3 != 0:
+				gui_equiper.heaume_3.queue_free()
+				DataSave.items_equiper.heaume3 = 0
+				DataSave.items_posession.heaume3 += 1
+				bCreationHeaume[2] = false
+			
+			if DataSave.items_equiper.heaume4 != 0:
+				gui_equiper.heaume_4.queue_free()
+				DataSave.items_equiper.heaume4 = 0
+				DataSave.items_posession.heaume4 += 1
+				bCreationHeaume[3] = false
+			
+			if DataSave.items_equiper.heaume5 != 0:
+				gui_equiper.heaume_5.queue_free()
+				DataSave.items_equiper.heaume5 = 0
+				DataSave.items_posession.heaume5 += 1
+				bCreationHeaume[4] = false
+			
+			if DataSave.items_equiper.heaume6 != 0:
+				gui_equiper.heaume_6.queue_free()
+				DataSave.items_equiper.heaume6 = 0
+				DataSave.items_posession.heaume6 += 1
+				bCreationHeaume[5] = false
+			
+			interrupteur_Heaume[0] = false
 	
 	if DataSave.items_equiper.heaume2 == 1:
-		gui_heaume2[0] = GuiHeaume2.instantiate()
-		add_child(gui_heaume2[0])
-		gui_heaume2[0].offset.x = childSlotEquip[1].position.x + nodeParent.offset.x
-		gui_heaume2[0].offset.y = childSlotEquip[1].position.y + nodeParent.offset.y
-		gui_heaume2[0].scale = Vector2(0.6, 0.7)
+		if bCreationHeaume[1] == false:
+			gui_equiper.heaume_2 = GuiHeaume2.instantiate()
+			add_child(gui_equiper.heaume_2)
+			bCreationHeaume[1] = true 
+		gui_equiper.heaume_2.offset.x = childSlotEquip[1].position.x + nodeParent.offset.x
+		gui_equiper.heaume_2.offset.y = childSlotEquip[1].position.y + nodeParent.offset.y
+		gui_equiper.heaume_2.scale = Vector2(0.6, 0.7)
+		
+		if interrupteur_Heaume[1] == true:
+			if DataSave.items_equiper.heaume1 != 0:
+				gui_equiper.heaume_1.queue_free()
+				DataSave.items_equiper.heaume1 = 0
+				DataSave.items_posession.heaume1 += 1
+				bCreationHeaume[0] = false
+				
+			if DataSave.items_equiper.heaume3 != 0:
+				gui_equiper.heaume_3.queue_free()
+				DataSave.items_equiper.heaume3 = 0
+				DataSave.items_posession.heaume3 += 1
+				bCreationHeaume[2] = false
+			
+			if DataSave.items_equiper.heaume4 != 0:
+				gui_equiper.heaume_4.queue_free()
+				DataSave.items_equiper.heaume4 = 0
+				DataSave.items_posession.heaume4 += 1
+				bCreationHeaume[3] = false
+			
+			if DataSave.items_equiper.heaume5 != 0:
+				gui_equiper.heaume_5.queue_free()
+				DataSave.items_equiper.heaume5 = 0
+				DataSave.items_posession.heaume5 += 1
+				bCreationHeaume[4] = false
+			
+			if DataSave.items_equiper.heaume6 != 0:
+				gui_equiper.heaume_6.queue_free()
+				DataSave.items_equiper.heaume6 = 0
+				DataSave.items_posession.heaume6 += 1
+				bCreationHeaume[5] = false
+			
+			interrupteur_Heaume[1] = false
 	
 	if DataSave.items_equiper.heaume3 == 1:
-		gui_heaume3[0] = GuiHeaume3.instantiate()
-		add_child(gui_heaume3[0])
-		gui_heaume3[0].offset.x = childSlotEquip[1].position.x + nodeParent.offset.x
-		gui_heaume3[0].offset.y = childSlotEquip[1].position.y + nodeParent.offset.y
-		gui_heaume3[0].scale = Vector2(0.6, 0.7)
+		if bCreationHeaume[2] == false:
+			gui_equiper.heaume_3 = GuiHeaume3.instantiate()
+			add_child(gui_equiper.heaume_3)
+			bCreationHeaume[2] = true 
+		gui_equiper.heaume_3.offset.x = childSlotEquip[1].position.x + nodeParent.offset.x
+		gui_equiper.heaume_3.offset.y = childSlotEquip[1].position.y + nodeParent.offset.y
+		gui_equiper.heaume_3.scale = Vector2(0.6, 0.7)
+		
+		if interrupteur_Heaume[2] == true:
+			if DataSave.items_equiper.heaume1 != 0:
+				gui_equiper.heaume_1.queue_free()
+				DataSave.items_equiper.heaume1 = 0
+				DataSave.items_posession.heaume1 += 1
+				bCreationHeaume[0] = false
+				
+			if DataSave.items_equiper.heaume2 != 0:
+				gui_equiper.heaume_2.queue_free()
+				DataSave.items_equiper.heaume2 = 0
+				DataSave.items_posession.heaume2 += 1
+				bCreationHeaume[1] = false
+			
+			if DataSave.items_equiper.heaume4 != 0:
+				gui_equiper.heaume_4.queue_free()
+				DataSave.items_equiper.heaume4 = 0
+				DataSave.items_posession.heaume4 += 1
+				bCreationHeaume[3] = false
+			
+			if DataSave.items_equiper.heaume5 != 0:
+				gui_equiper.heaume_5.queue_free()
+				DataSave.items_equiper.heaume5 = 0
+				DataSave.items_posession.heaume5 += 1
+				bCreationHeaume[4] = false
+			
+			if DataSave.items_equiper.heaume6 != 0:
+				gui_equiper.heaume_6.queue_free()
+				DataSave.items_equiper.heaume6 = 0
+				DataSave.items_posession.heaume6 += 1
+				bCreationHeaume[5] = false
+			
+			interrupteur_Heaume[2] = false
 	
 	if DataSave.items_equiper.heaume4 == 1:
-		gui_heaume4[0] = GuiHeaume4.instantiate()
-		add_child(gui_heaume4[0])
-		gui_heaume4[0].offset.x = childSlotEquip[1].position.x + nodeParent.offset.x
-		gui_heaume4[0].offset.y = childSlotEquip[1].position.y + nodeParent.offset.y
-		gui_heaume4[0].scale = Vector2(0.6, 0.7)
+		if bCreationHeaume[3] == false:
+			gui_equiper.heaume_4 = GuiHeaume4.instantiate()
+			add_child(gui_equiper.heaume_4)
+			bCreationHeaume[3] = true
+		gui_equiper.heaume_4.offset.x = childSlotEquip[1].position.x + nodeParent.offset.x
+		gui_equiper.heaume_4.offset.y = childSlotEquip[1].position.y + nodeParent.offset.y
+		gui_equiper.heaume_4.scale = Vector2(0.6, 0.7)
+		
+		if interrupteur_Heaume[3] == true:
+			if DataSave.items_equiper.heaume1 != 0:
+				gui_equiper.heaume_1.queue_free()
+				DataSave.items_equiper.heaume1 = 0
+				DataSave.items_posession.heaume1 += 1
+				bCreationHeaume[0] = false
+				
+			if DataSave.items_equiper.heaume2 != 0:
+				gui_equiper.heaume_2.queue_free()
+				DataSave.items_equiper.heaume2 = 0
+				DataSave.items_posession.heaume2 += 1
+				bCreationHeaume[1] = false
+			
+			if DataSave.items_equiper.heaume3 != 0:
+				gui_equiper.heaume_3.queue_free()
+				DataSave.items_equiper.heaume3 = 0
+				DataSave.items_posession.heaume3 += 1
+				bCreationHeaume[2] = false
+			
+			if DataSave.items_equiper.heaume5 != 0:
+				gui_equiper.heaume_5.queue_free()
+				DataSave.items_equiper.heaume5 = 0
+				DataSave.items_posession.heaume5 += 1
+				bCreationHeaume[4] = false
+			
+			if DataSave.items_equiper.heaume6 != 0:
+				gui_equiper.heaume_6.queue_free()
+				DataSave.items_equiper.heaume6 = 0
+				DataSave.items_posession.heaume6 += 1
+				bCreationHeaume[5] = false
+			
+			interrupteur_Heaume[3] = false
 	
 	if DataSave.items_equiper.heaume5 == 1:
-		gui_heaume5[0] = GuiHeaume5.instantiate()
-		add_child(gui_heaume5[0])
-		gui_heaume5[0].offset.x = childSlotEquip[1].position.x + nodeParent.offset.x
-		gui_heaume5[0].offset.y = childSlotEquip[1].position.y + nodeParent.offset.y
-		gui_heaume5[0].scale = Vector2(0.6, 0.7)
+		if bCreationHeaume[4] == false:
+			gui_equiper.heaume_5 = GuiHeaume5.instantiate()
+			add_child(gui_equiper.heaume_5)
+			bCreationHeaume[4] = true
+		gui_equiper.heaume_5.offset.x = childSlotEquip[1].position.x + nodeParent.offset.x
+		gui_equiper.heaume_5.offset.y = childSlotEquip[1].position.y + nodeParent.offset.y
+		gui_equiper.heaume_5.scale = Vector2(0.6, 0.7)
+		
+		if interrupteur_Heaume[4] == true:
+			if DataSave.items_equiper.heaume1 != 0:
+				gui_equiper.heaume_1.queue_free()
+				DataSave.items_equiper.heaume1 = 0
+				DataSave.items_posession.heaume1 += 1
+				bCreationHeaume[0] = false
+				
+			if DataSave.items_equiper.heaume2 != 0:
+				gui_equiper.heaume_2.queue_free()
+				DataSave.items_equiper.heaume2 = 0
+				DataSave.items_posession.heaume2 += 1
+				bCreationHeaume[1] = false
+			
+			if DataSave.items_equiper.heaume3 != 0:
+				gui_equiper.heaume_3.queue_free()
+				DataSave.items_equiper.heaume3 = 0
+				DataSave.items_posession.heaume3 += 1
+				bCreationHeaume[2] = false
+			
+			if DataSave.items_equiper.heaume4 != 0:
+				gui_equiper.heaume_4.queue_free()
+				DataSave.items_equiper.heaume4 = 0
+				DataSave.items_posession.heaume4 += 1
+				bCreationHeaume[3] = false
+			
+			if DataSave.items_equiper.heaume6 != 0:
+				gui_equiper.heaume_6.queue_free()
+				DataSave.items_equiper.heaume6 = 0
+				DataSave.items_posession.heaume6 += 1
+				bCreationHeaume[5] = false
+			
+			interrupteur_Heaume[4] = false
 	
 	if DataSave.items_equiper.heaume6 == 1:
-		gui_heaume6[0] = GuiHeaume6.instantiate()
-		add_child(gui_heaume6[0])
-		gui_heaume6[0].offset.x = childSlotEquip[1].position.x + nodeParent.offset.x
-		gui_heaume6[0].offset.y = childSlotEquip[1].position.y + nodeParent.offset.y
-		gui_heaume6[0].scale = Vector2(0.6, 0.7)
+		if bCreationHeaume[5] == false:
+			gui_equiper.heaume_6 = GuiHeaume6.instantiate()
+			add_child(gui_equiper.heaume_6)
+			bCreationHeaume[5] = true
+		gui_equiper.heaume_6.offset.x = childSlotEquip[1].position.x + nodeParent.offset.x
+		gui_equiper.heaume_6.offset.y = childSlotEquip[1].position.y + nodeParent.offset.y
+		gui_equiper.heaume_6.scale = Vector2(0.6, 0.7)
+		
+		if interrupteur_Heaume[5] == true:
+			if DataSave.items_equiper.heaume1 != 0:
+				gui_equiper.heaume_1.queue_free()
+				DataSave.items_equiper.heaume1 = 0
+				DataSave.items_posession.heaume1 += 1
+				bCreationHeaume[0] = false
+				
+			if DataSave.items_equiper.heaume2 != 0:
+				gui_equiper.heaume_2.queue_free()
+				DataSave.items_equiper.heaume2 = 0
+				DataSave.items_posession.heaume2 += 1
+				bCreationHeaume[1] = false
+			
+			if DataSave.items_equiper.heaume3 != 0:
+				gui_equiper.heaume_3.queue_free()
+				DataSave.items_equiper.heaume3 = 0
+				DataSave.items_posession.heaume3 += 1
+				bCreationHeaume[2] = false
+			
+			if DataSave.items_equiper.heaume4 != 0:
+				gui_equiper.heaume_4.queue_free()
+				DataSave.items_equiper.heaume4 = 0
+				DataSave.items_posession.heaume4 += 1
+				bCreationHeaume[3] = false
+			
+			if DataSave.items_equiper.heaume5 != 0:
+				gui_equiper.heaume_5.queue_free()
+				DataSave.items_equiper.heaume5 = 0
+				DataSave.items_posession.heaume5 += 1
+				bCreationHeaume[4] = false
+			
+			interrupteur_Heaume[5] = false
 	
 	if DataSave.items_equiper.sword1 == 1:
-		gui_sword1[0] = GuiSword1.instantiate()
-		add_child(gui_sword1[0])
-		gui_sword1[0].offset.x = childSlotEquip[3].position.x + nodeParent.offset.x
-		gui_sword1[0].offset.y = childSlotEquip[3].position.y + nodeParent.offset.y
-		gui_sword1[0].scale = Vector2(0.6, 0.7)
+		if bCreationSword[0] == false:
+			gui_equiper.sword_1 = GuiSword1.instantiate()
+			add_child(gui_equiper.sword_1)
+			bCreationSword[0] = true
+		gui_equiper.sword_1.offset.x = childSlotEquip[3].position.x + nodeParent.offset.x
+		gui_equiper.sword_1.offset.y = childSlotEquip[3].position.y + nodeParent.offset.y
+		gui_equiper.sword_1.scale = Vector2(0.6, 0.7)
+		
+		if interrupteur_Sword[0] == true:
+			if DataSave.items_equiper.sword2 != 0:
+				gui_equiper.sword_2.queue_free()
+				DataSave.items_equiper.sword2 = 0
+				DataSave.items_posession.sword2 += 1
+				bCreationSword[1] = false
+				
+			if DataSave.items_equiper.sword3 != 0:
+				gui_equiper.sword_3.queue_free()
+				DataSave.items_equiper.sword3 = 0
+				DataSave.items_posession.sword3 += 1
+				bCreationSword[2] = false
+			
+			if DataSave.items_equiper.sword4 != 0:
+				gui_equiper.sword_4.queue_free()
+				DataSave.items_equiper.sword4 = 0
+				DataSave.items_posession.sword4 += 1
+				bCreationSword[3] = false
+			
+			if DataSave.items_equiper.sword5 != 0:
+				gui_equiper.sword_5.queue_free()
+				DataSave.items_equiper.sword5 = 0
+				DataSave.items_posession.sword5 += 1
+				bCreationSword[4] = false
+			
+			if DataSave.items_equiper.sword6 != 0:
+				gui_equiper.sword_6.queue_free()
+				DataSave.items_equiper.sword6 = 0
+				DataSave.items_posession.sword6 += 1
+				bCreationSword[5] = false
+			
+			if DataSave.items_equiper.sword7 != 0:
+				gui_equiper.sword_7.queue_free()
+				DataSave.items_equiper.sword7 = 0
+				DataSave.items_posession.sword7 += 1
+				bCreationSword[6] = false
+			
+			if DataSave.items_equiper.sword8 != 0:
+				gui_equiper.sword_8.queue_free()
+				DataSave.items_equiper.sword8 = 0
+				DataSave.items_posession.sword8 += 1
+				bCreationSword[7] = false
+			
+			interrupteur_Sword[0] = false
 	
 	if DataSave.items_equiper.sword2 == 1:
 		gui_sword2[0] = GuiSword2.instantiate()
