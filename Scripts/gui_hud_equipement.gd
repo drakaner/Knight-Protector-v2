@@ -141,6 +141,17 @@ var txt_stat_1
 var txt_stat_2
 var gui_fenetre
 
+var gui_txt_stat_vie
+var gui_txt_stat_vieMax
+var gui_txt_stat_mana
+var gui_txt_stat_manaMax
+var gui_txt_stat_puissance
+var gui_txt_stat_endurance
+var gui_txt_stat_regeneEndurance
+var gui_txt_stat_attaque
+var gui_txt_stat_defense
+
+
 var interrupteur_Bague = [] 
 var interrupteur_Bottes = []
 var interrupteur_Bouclier = []
@@ -1058,6 +1069,7 @@ func _on_mouse_entered_sword8():
 #a tester
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	DataSave.items_posession.bottes2 = 2
 	#print("data item : ",DataSave.items_posession.potionVie)
 	gui_bague1.resize(16)
 	gui_bague2.resize(16)
@@ -1141,6 +1153,54 @@ func _ready() -> void:
 	childSlot[13] = nodeParent.get_node("panel_slot_14")
 	childSlot[14] = nodeParent.get_node("panel_slot_15")
 	childSlot[15] = nodeParent.get_node("panel_slot_16")
+	
+	gui_txt_stat_vie = GuiTextUi.instantiate()
+	add_child(gui_txt_stat_vie)
+	var childStatVie = gui_txt_stat_vie.get_node("labelGuiTextFenetre")
+	childStatVie.text = "Vie : " + str(DataSave.hero.vie) + "/" + str(DataSave.hero.vieMax)
+	childStatVie.add_theme_color_override("font_color", Color(0, 0, 0))
+	gui_txt_stat_vie.offset.x = nodeParent.offset.x + 570
+	gui_txt_stat_vie.offset.y = nodeParent.offset.y + 260
+	
+	gui_txt_stat_mana = GuiTextUi.instantiate()
+	add_child(gui_txt_stat_mana)
+	var childStatMana = gui_txt_stat_mana.get_node("labelGuiTextFenetre")
+	childStatMana.text = "Mana : " + str(DataSave.hero.mana) + "/" + str(DataSave.hero.manaMax)
+	childStatMana.add_theme_color_override("font_color", Color(0, 0, 0))
+	gui_txt_stat_mana.offset.x = nodeParent.offset.x + 570
+	gui_txt_stat_mana.offset.y = nodeParent.offset.y + 280
+	
+	gui_txt_stat_puissance = GuiTextUi.instantiate()
+	add_child(gui_txt_stat_puissance)
+	var childStatPuissance = gui_txt_stat_puissance.get_node("labelGuiTextFenetre")
+	childStatPuissance.text = "Puissance : " + str(DataSave.hero.puissance)
+	childStatPuissance.add_theme_color_override("font_color", Color(0, 0, 0))
+	gui_txt_stat_puissance.offset.x = nodeParent.offset.x + 570
+	gui_txt_stat_puissance.offset.y = nodeParent.offset.y + 300
+	
+	gui_txt_stat_endurance = GuiTextUi.instantiate()
+	add_child(gui_txt_stat_endurance)
+	var childStatEndurance = gui_txt_stat_endurance.get_node("labelGuiTextFenetre")
+	childStatEndurance.text = "Endurance : " + str(DataSave.hero.endurance)
+	childStatEndurance.add_theme_color_override("font_color", Color(0, 0, 0))
+	gui_txt_stat_endurance.offset.x = nodeParent.offset.x + 570
+	gui_txt_stat_endurance.offset.y = nodeParent.offset.y + 320
+	
+	gui_txt_stat_attaque = GuiTextUi.instantiate()
+	add_child(gui_txt_stat_attaque)
+	var childStatAttaque = gui_txt_stat_attaque.get_node("labelGuiTextFenetre")
+	childStatAttaque.text = "Attaque : " + str(DataSave.hero.attaque)
+	childStatAttaque.add_theme_color_override("font_color", Color(0, 0, 0))
+	gui_txt_stat_attaque.offset.x = nodeParent.offset.x + 570
+	gui_txt_stat_attaque.offset.y = nodeParent.offset.y + 340
+	
+	gui_txt_stat_defense = GuiTextUi.instantiate()
+	add_child(gui_txt_stat_defense)
+	var childStatDefense = gui_txt_stat_defense.get_node("labelGuiTextFenetre")
+	childStatDefense.text = "Defense : " + str(DataSave.hero.defense)
+	childStatDefense.add_theme_color_override("font_color", Color(0, 0, 0))
+	gui_txt_stat_defense.offset.x = nodeParent.offset.x + 570
+	gui_txt_stat_defense.offset.y = nodeParent.offset.y + 360
 	
 	for n in range(16):
 		isSlot_libre[n] = true
@@ -2467,53 +2527,382 @@ func _process(delta: float) -> void:
 			interrupteur_Sword[0] = false
 	
 	if DataSave.items_equiper.sword2 == 1:
-		gui_sword2[0] = GuiSword2.instantiate()
-		add_child(gui_sword2[0])
-		gui_sword2[0].offset.x = childSlotEquip[3].position.x + nodeParent.offset.x
-		gui_sword2[0].offset.y = childSlotEquip[3].position.y + nodeParent.offset.y
-		gui_sword2[0].scale = Vector2(0.6, 0.7)
+		if bCreationSword[1] == false:
+			gui_equiper.sword_2 = GuiSword2.instantiate()
+			add_child(gui_equiper.sword_2)
+			bCreationSword[1] = true
+		gui_equiper.sword_2.offset.x = childSlotEquip[3].position.x + nodeParent.offset.x
+		gui_equiper.sword_2.offset.y = childSlotEquip[3].position.y + nodeParent.offset.y
+		gui_equiper.sword_2.scale = Vector2(0.6, 0.7)
+		
+		if interrupteur_Sword[1] == true:
+			if DataSave.items_equiper.sword1 != 0:
+				gui_equiper.sword_1.queue_free()
+				DataSave.items_equiper.sword1 = 0
+				DataSave.items_posession.sword1 += 1
+				bCreationSword[0] = false
+				
+			if DataSave.items_equiper.sword3 != 0:
+				gui_equiper.sword_3.queue_free()
+				DataSave.items_equiper.sword3 = 0
+				DataSave.items_posession.sword3 += 1
+				bCreationSword[2] = false
+			
+			if DataSave.items_equiper.sword4 != 0:
+				gui_equiper.sword_4.queue_free()
+				DataSave.items_equiper.sword4 = 0
+				DataSave.items_posession.sword4 += 1
+				bCreationSword[3] = false
+			
+			if DataSave.items_equiper.sword5 != 0:
+				gui_equiper.sword_5.queue_free()
+				DataSave.items_equiper.sword5 = 0
+				DataSave.items_posession.sword5 += 1
+				bCreationSword[4] = false
+			
+			if DataSave.items_equiper.sword6 != 0:
+				gui_equiper.sword_6.queue_free()
+				DataSave.items_equiper.sword6 = 0
+				DataSave.items_posession.sword6 += 1
+				bCreationSword[5] = false
+			
+			if DataSave.items_equiper.sword7 != 0:
+				gui_equiper.sword_7.queue_free()
+				DataSave.items_equiper.sword7 = 0
+				DataSave.items_posession.sword7 += 1
+				bCreationSword[6] = false
+			
+			if DataSave.items_equiper.sword8 != 0:
+				gui_equiper.sword_8.queue_free()
+				DataSave.items_equiper.sword8 = 0
+				DataSave.items_posession.sword8 += 1
+				bCreationSword[7] = false
+			
+			interrupteur_Sword[1] = false
 	
 	if DataSave.items_equiper.sword3 == 1:
-		gui_sword3[0] = GuiSword3.instantiate()
-		add_child(gui_sword3[0])
-		gui_sword3[0].offset.x = childSlotEquip[3].position.x + nodeParent.offset.x
-		gui_sword3[0].offset.y = childSlotEquip[3].position.y + nodeParent.offset.y
-		gui_sword3[0].scale = Vector2(0.6, 0.7)
+		if bCreationSword[2] == false:
+			gui_equiper.sword_3 = GuiSword3.instantiate()
+			add_child(gui_equiper.sword_3)
+			bCreationSword[2] = true
+		gui_equiper.sword_3.offset.x = childSlotEquip[3].position.x + nodeParent.offset.x
+		gui_equiper.sword_3.offset.y = childSlotEquip[3].position.y + nodeParent.offset.y
+		gui_equiper.sword_3.scale = Vector2(0.6, 0.7)
+		
+		if interrupteur_Sword[2] == true:
+			if DataSave.items_equiper.sword1 != 0:
+				gui_equiper.sword_1.queue_free()
+				DataSave.items_equiper.sword1 = 0
+				DataSave.items_posession.sword1 += 1
+				bCreationSword[0] = false
+				
+			if DataSave.items_equiper.sword2 != 0:
+				gui_equiper.sword_2.queue_free()
+				DataSave.items_equiper.sword2 = 0
+				DataSave.items_posession.sword2 += 1
+				bCreationSword[1] = false
+			
+			if DataSave.items_equiper.sword4 != 0:
+				gui_equiper.sword_4.queue_free()
+				DataSave.items_equiper.sword4 = 0
+				DataSave.items_posession.sword4 += 1
+				bCreationSword[3] = false
+			
+			if DataSave.items_equiper.sword5 != 0:
+				gui_equiper.sword_5.queue_free()
+				DataSave.items_equiper.sword5 = 0
+				DataSave.items_posession.sword5 += 1
+				bCreationSword[4] = false
+			
+			if DataSave.items_equiper.sword6 != 0:
+				gui_equiper.sword_6.queue_free()
+				DataSave.items_equiper.sword6 = 0
+				DataSave.items_posession.sword6 += 1
+				bCreationSword[5] = false
+			
+			if DataSave.items_equiper.sword7 != 0:
+				gui_equiper.sword_7.queue_free()
+				DataSave.items_equiper.sword7 = 0
+				DataSave.items_posession.sword7 += 1
+				bCreationSword[6] = false
+			
+			if DataSave.items_equiper.sword8 != 0:
+				gui_equiper.sword_8.queue_free()
+				DataSave.items_equiper.sword8 = 0
+				DataSave.items_posession.sword8 += 1
+				bCreationSword[7] = false
+			
+			interrupteur_Sword[2] = false
 	
 	if DataSave.items_equiper.sword4 == 1:
-		gui_sword4[0] = GuiSword4.instantiate()
-		add_child(gui_sword4[0])
-		gui_sword4[0].offset.x = childSlotEquip[3].position.x + nodeParent.offset.x
-		gui_sword4[0].offset.y = childSlotEquip[3].position.y + nodeParent.offset.y
-		gui_sword4[0].scale = Vector2(0.6, 0.7)
+		if bCreationSword[3] == false:
+			gui_equiper.sword_4 = GuiSword4.instantiate()
+			add_child(gui_equiper.sword_4)
+			bCreationSword[3] = true
+		gui_equiper.sword_4.offset.x = childSlotEquip[3].position.x + nodeParent.offset.x
+		gui_equiper.sword_4.offset.y = childSlotEquip[3].position.y + nodeParent.offset.y
+		gui_equiper.sword_4.scale = Vector2(0.6, 0.7)
+		
+		if interrupteur_Sword[3] == true:
+			if DataSave.items_equiper.sword1 != 0:
+				gui_equiper.sword_1.queue_free()
+				DataSave.items_equiper.sword1 = 0
+				DataSave.items_posession.sword1 += 1
+				bCreationSword[0] = false
+				
+			if DataSave.items_equiper.sword2 != 0:
+				gui_equiper.sword_2.queue_free()
+				DataSave.items_equiper.sword2 = 0
+				DataSave.items_posession.sword2 += 1
+				bCreationSword[1] = false
+			
+			if DataSave.items_equiper.sword3 != 0:
+				gui_equiper.sword_3.queue_free()
+				DataSave.items_equiper.sword3 = 0
+				DataSave.items_posession.sword3 += 1
+				bCreationSword[2] = false
+			
+			if DataSave.items_equiper.sword5 != 0:
+				gui_equiper.sword_5.queue_free()
+				DataSave.items_equiper.sword5 = 0
+				DataSave.items_posession.sword5 += 1
+				bCreationSword[4] = false
+			
+			if DataSave.items_equiper.sword6 != 0:
+				gui_equiper.sword_6.queue_free()
+				DataSave.items_equiper.sword6 = 0
+				DataSave.items_posession.sword6 += 1
+				bCreationSword[5] = false
+			
+			if DataSave.items_equiper.sword7 != 0:
+				gui_equiper.sword_7.queue_free()
+				DataSave.items_equiper.sword7 = 0
+				DataSave.items_posession.sword7 += 1
+				bCreationSword[6] = false
+			
+			if DataSave.items_equiper.sword8 != 0:
+				gui_equiper.sword_8.queue_free()
+				DataSave.items_equiper.sword8 = 0
+				DataSave.items_posession.sword8 += 1
+				bCreationSword[7] = false
+			
+			interrupteur_Sword[3] = false
 	
 	if DataSave.items_equiper.sword5 == 1:
-		gui_sword5[0] = GuiSword5.instantiate()
-		add_child(gui_sword5[0])
-		gui_sword5[0].offset.x = childSlotEquip[3].position.x + nodeParent.offset.x
-		gui_sword5[0].offset.y = childSlotEquip[3].position.y + nodeParent.offset.y
-		gui_sword5[0].scale = Vector2(0.6, 0.7)
+		if bCreationSword[4] == false:
+			gui_equiper.sword_5 = GuiSword5.instantiate()
+			add_child(gui_equiper.sword_5)
+			bCreationSword[4] = true
+		gui_equiper.sword_5.offset.x = childSlotEquip[3].position.x + nodeParent.offset.x
+		gui_equiper.sword_5.offset.y = childSlotEquip[3].position.y + nodeParent.offset.y
+		gui_equiper.sword_5.scale = Vector2(0.6, 0.7)
+		
+		if interrupteur_Sword[4] == true:
+			if DataSave.items_equiper.sword1 != 0:
+				gui_equiper.sword_1.queue_free()
+				DataSave.items_equiper.sword1 = 0
+				DataSave.items_posession.sword1 += 1
+				bCreationSword[0] = false
+				
+			if DataSave.items_equiper.sword2 != 0:
+				gui_equiper.sword_2.queue_free()
+				DataSave.items_equiper.sword2 = 0
+				DataSave.items_posession.sword2 += 1
+				bCreationSword[1] = false
+			
+			if DataSave.items_equiper.sword3 != 0:
+				gui_equiper.sword_3.queue_free()
+				DataSave.items_equiper.sword3 = 0
+				DataSave.items_posession.sword3 += 1
+				bCreationSword[2] = false
+			
+			if DataSave.items_equiper.sword4 != 0:
+				gui_equiper.sword_4.queue_free()
+				DataSave.items_equiper.sword4 = 0
+				DataSave.items_posession.sword4 += 1
+				bCreationSword[3] = false
+			
+			if DataSave.items_equiper.sword6 != 0:
+				gui_equiper.sword_6.queue_free()
+				DataSave.items_equiper.sword6 = 0
+				DataSave.items_posession.sword6 += 1
+				bCreationSword[5] = false
+			
+			if DataSave.items_equiper.sword7 != 0:
+				gui_equiper.sword_7.queue_free()
+				DataSave.items_equiper.sword7 = 0
+				DataSave.items_posession.sword7 += 1
+				bCreationSword[6] = false
+			
+			if DataSave.items_equiper.sword8 != 0:
+				gui_equiper.sword_8.queue_free()
+				DataSave.items_equiper.sword8 = 0
+				DataSave.items_posession.sword8 += 1
+				bCreationSword[7] = false
+			
+			interrupteur_Sword[4] = false
 	
 	if DataSave.items_equiper.sword6 == 1:
-		gui_sword6[0] = GuiSword6.instantiate()
-		add_child(gui_sword6[0])
-		gui_sword6[0].offset.x = childSlotEquip[3].position.x + nodeParent.offset.x
-		gui_sword6[0].offset.y = childSlotEquip[3].position.y + nodeParent.offset.y
-		gui_sword6[0].scale = Vector2(0.6, 0.7)
+		if bCreationSword[5] == false:
+			gui_equiper.sword_6 = GuiSword6.instantiate()
+			add_child(gui_equiper.sword_6)
+			bCreationSword[5] = true
+		gui_equiper.sword_6.offset.x = childSlotEquip[3].position.x + nodeParent.offset.x
+		gui_equiper.sword_6.offset.y = childSlotEquip[3].position.y + nodeParent.offset.y
+		gui_equiper.sword_6.scale = Vector2(0.6, 0.7)
+		
+		if interrupteur_Sword[5] == true:
+			if DataSave.items_equiper.sword1 != 0:
+				gui_equiper.sword_1.queue_free()
+				DataSave.items_equiper.sword1 = 0
+				DataSave.items_posession.sword1 += 1
+				bCreationSword[0] = false
+				
+			if DataSave.items_equiper.sword2 != 0:
+				gui_equiper.sword_2.queue_free()
+				DataSave.items_equiper.sword2 = 0
+				DataSave.items_posession.sword2 += 1
+				bCreationSword[1] = false
+			
+			if DataSave.items_equiper.sword3 != 0:
+				gui_equiper.sword_3.queue_free()
+				DataSave.items_equiper.sword3 = 0
+				DataSave.items_posession.sword3 += 1
+				bCreationSword[2] = false
+			
+			if DataSave.items_equiper.sword4 != 0:
+				gui_equiper.sword_4.queue_free()
+				DataSave.items_equiper.sword4 = 0
+				DataSave.items_posession.sword4 += 1
+				bCreationSword[3] = false
+			
+			if DataSave.items_equiper.sword5 != 0:
+				gui_equiper.sword_5.queue_free()
+				DataSave.items_equiper.sword5 = 0
+				DataSave.items_posession.sword5 += 1
+				bCreationSword[4] = false
+			
+			if DataSave.items_equiper.sword7 != 0:
+				gui_equiper.sword_7.queue_free()
+				DataSave.items_equiper.sword7 = 0
+				DataSave.items_posession.sword7 += 1
+				bCreationSword[6] = false
+			
+			if DataSave.items_equiper.sword8 != 0:
+				gui_equiper.sword_8.queue_free()
+				DataSave.items_equiper.sword8 = 0
+				DataSave.items_posession.sword8 += 1
+				bCreationSword[7] = false
+			
+			interrupteur_Sword[5] = false
 	
 	if DataSave.items_equiper.sword7 == 1:
-		gui_sword7[0] = GuiSword7.instantiate()
-		add_child(gui_sword7[0])
-		gui_sword7[0].offset.x = childSlotEquip[3].position.x + nodeParent.offset.x
-		gui_sword7[0].offset.y = childSlotEquip[3].position.y + nodeParent.offset.y
-		gui_sword7[0].scale = Vector2(0.6, 0.7)
+		if bCreationSword[6] == false:
+			gui_equiper.sword_7 = GuiSword7.instantiate()
+			add_child(gui_equiper.sword_7)
+			bCreationSword[6] = true
+		gui_equiper.sword_7.offset.x = childSlotEquip[3].position.x + nodeParent.offset.x
+		gui_equiper.sword_7.offset.y = childSlotEquip[3].position.y + nodeParent.offset.y
+		gui_equiper.sword_7.scale = Vector2(0.6, 0.7)
+		
+		if interrupteur_Sword[6] == true:
+			if DataSave.items_equiper.sword1 != 0:
+				gui_equiper.sword_1.queue_free()
+				DataSave.items_equiper.sword1 = 0
+				DataSave.items_posession.sword1 += 1
+				bCreationSword[0] = false
+				
+			if DataSave.items_equiper.sword2 != 0:
+				gui_equiper.sword_2.queue_free()
+				DataSave.items_equiper.sword2 = 0
+				DataSave.items_posession.sword2 += 1
+				bCreationSword[1] = false
+			
+			if DataSave.items_equiper.sword3 != 0:
+				gui_equiper.sword_3.queue_free()
+				DataSave.items_equiper.sword3 = 0
+				DataSave.items_posession.sword3 += 1
+				bCreationSword[2] = false
+			
+			if DataSave.items_equiper.sword4 != 0:
+				gui_equiper.sword_4.queue_free()
+				DataSave.items_equiper.sword4 = 0
+				DataSave.items_posession.sword4 += 1
+				bCreationSword[3] = false
+			
+			if DataSave.items_equiper.sword5 != 0:
+				gui_equiper.sword_5.queue_free()
+				DataSave.items_equiper.sword5 = 0
+				DataSave.items_posession.sword5 += 1
+				bCreationSword[4] = false
+			
+			if DataSave.items_equiper.sword6 != 0:
+				gui_equiper.sword_6.queue_free()
+				DataSave.items_equiper.sword6 = 0
+				DataSave.items_posession.sword6 += 1
+				bCreationSword[5] = false
+			
+			if DataSave.items_equiper.sword8 != 0:
+				gui_equiper.sword_8.queue_free()
+				DataSave.items_equiper.sword8 = 0
+				DataSave.items_posession.sword8 += 1
+				bCreationSword[7] = false
+			
+			interrupteur_Sword[6] = false
 	
 	if DataSave.items_equiper.sword8 == 1:
-		gui_sword8[0] = GuiSword8.instantiate()
-		add_child(gui_sword8[0])
-		gui_sword8[0].offset.x = childSlotEquip[3].position.x + nodeParent.offset.x
-		gui_sword8[0].offset.y = childSlotEquip[3].position.y + nodeParent.offset.y
-		gui_sword8[0].scale = Vector2(0.6, 0.7)
+		if bCreationSword[7] == false:
+			gui_equiper.sword_8 = GuiSword8.instantiate()
+			add_child(gui_equiper.sword_8)
+			bCreationSword[7] = true
+		gui_equiper.sword_8.offset.x = childSlotEquip[3].position.x + nodeParent.offset.x
+		gui_equiper.sword_8.offset.y = childSlotEquip[3].position.y + nodeParent.offset.y
+		gui_equiper.sword_8.scale = Vector2(0.6, 0.7)
+		
+		if interrupteur_Sword[7] == true:
+			if DataSave.items_equiper.sword1 != 0:
+				gui_equiper.sword_1.queue_free()
+				DataSave.items_equiper.sword1 = 0
+				DataSave.items_posession.sword1 += 1
+				bCreationSword[0] = false
+				
+			if DataSave.items_equiper.sword2 != 0:
+				gui_equiper.sword_2.queue_free()
+				DataSave.items_equiper.sword2 = 0
+				DataSave.items_posession.sword2 += 1
+				bCreationSword[1] = false
+			
+			if DataSave.items_equiper.sword3 != 0:
+				gui_equiper.sword_3.queue_free()
+				DataSave.items_equiper.sword3 = 0
+				DataSave.items_posession.sword3 += 1
+				bCreationSword[2] = false
+			
+			if DataSave.items_equiper.sword4 != 0:
+				gui_equiper.sword_4.queue_free()
+				DataSave.items_equiper.sword4 = 0
+				DataSave.items_posession.sword4 += 1
+				bCreationSword[3] = false
+			
+			if DataSave.items_equiper.sword5 != 0:
+				gui_equiper.sword_5.queue_free()
+				DataSave.items_equiper.sword5 = 0
+				DataSave.items_posession.sword5 += 1
+				bCreationSword[4] = false
+			
+			if DataSave.items_equiper.sword6 != 0:
+				gui_equiper.sword_6.queue_free()
+				DataSave.items_equiper.sword6 = 0
+				DataSave.items_posession.sword6 += 1
+				bCreationSword[5] = false
+			
+			if DataSave.items_equiper.sword7 != 0:
+				gui_equiper.sword_7.queue_free()
+				DataSave.items_equiper.sword7 = 0
+				DataSave.items_posession.sword7 += 1
+				bCreationSword[6] = false
+			
+			interrupteur_Sword[7] = false
 	
 	var mouse_pos = get_viewport().get_mouse_position()
 	#----
@@ -3041,6 +3430,12 @@ func _process(delta: float) -> void:
 func _on_panel_retour_gui_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("button_left"):
 		isPanelClose = true
+		gui_txt_stat_vie.queue_free()
+		gui_txt_stat_mana.queue_free()
+		gui_txt_stat_endurance.queue_free()
+		gui_txt_stat_puissance.queue_free()
+		gui_txt_stat_attaque.queue_free()
+		gui_txt_stat_defense.queue_free()
 
 func _input(event):
 	var mouse_pos = get_viewport().get_mouse_position()

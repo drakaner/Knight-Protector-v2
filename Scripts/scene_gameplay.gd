@@ -78,12 +78,39 @@ func demarreJeu():
 	if hero.rnd == 1:
 		hero.img[0] = HeroScene1.instantiate()
 		hero.current = 0
+		DataSave.hero.vieMax = 50
+		DataSave.hero.vie = DataSave.hero.vieMax
+		DataSave.hero.manaMax = 15
+		DataSave.hero.mana = DataSave.hero.manaMax
+		DataSave.hero.puissance = 10
+		DataSave.hero.endurance = 70
+		DataSave.hero.regene_endurance = 2
+		DataSave.hero.attaque = 9
+		DataSave.hero.defense = 9
 	elif hero.rnd == 2:
 		hero.img[1] = HeroScene2.instantiate()
 		hero.current = 1
+		DataSave.hero.vieMax = 100
+		DataSave.hero.vie = DataSave.hero.vieMax
+		DataSave.hero.manaMax = 15
+		DataSave.hero.mana = DataSave.hero.manaMax
+		DataSave.hero.puissance = 10
+		DataSave.hero.endurance = 25
+		DataSave.hero.regene_endurance = 1
+		DataSave.hero.attaque = 5
+		DataSave.hero.defense = 15
 	elif hero.rnd == 3:
 		hero.img[2] = HeroScene3.instantiate()
 		hero.current = 2
+		DataSave.hero.vieMax = 35
+		DataSave.hero.vie = DataSave.hero.vieMax
+		DataSave.hero.manaMax = 15
+		DataSave.hero.mana = DataSave.hero.manaMax
+		DataSave.hero.puissance = 20
+		DataSave.hero.endurance = 90
+		DataSave.hero.regene_endurance = 3
+		DataSave.hero.attaque = 15
+		DataSave.hero.defense = 5
 	
 	$YSortHeros.add_child(hero.img[hero.current])
 	print("Le hero rnd choisie est : ",hero.rnd)
