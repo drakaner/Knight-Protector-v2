@@ -1920,7 +1920,7 @@ func _input(event): #l'équivalent de keypressed dans love2D
 	if Input.is_action_just_pressed("button_left"):
 		#print("BB : ", slot_posY[7]) // surement ajouter une autre variable qui dit quel item a dans telle slot dans lupdate 
 		for n in range(20):
-			#print("NNNNNNN : ", n)
+			#finalement rester uniquement sur clik gauche et afficher 3 options : - utiliser , coffret , jeter
 			if mouse_pos.x >= slot_posX[n] and mouse_pos.x <= slot_posX[n] + childSlot[n].size.x-1 and mouse_pos.y >= slot_posY[n] and mouse_pos.y <= slot_posY[n] + childSlot[n].size.y-1:
 				#print("Je clic sur la potion", n)
 				if txtItemType[n] == "potion_vie":

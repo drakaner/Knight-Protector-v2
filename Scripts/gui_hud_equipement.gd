@@ -2,6 +2,7 @@ extends CanvasLayer
 
 # Faire le pop up puis dès que c'est fini vérifier tout les items si tout est ok dans équipement
 
+signal majStatsPerso
 
 @onready var nodeParent = get_node(".")
 @onready var childSlot = []
@@ -169,6 +170,14 @@ var bCreationHeaume = []
 var bCreationSword = []
 
 var nbDecaleTextName = 0
+
+func _clean_stats_gui():
+	gui_txt_stat_vie.queue_free()
+	gui_txt_stat_mana.queue_free()
+	gui_txt_stat_endurance.queue_free()
+	gui_txt_stat_puissance.queue_free()
+	gui_txt_stat_attaque.queue_free()
+	gui_txt_stat_defense.queue_free()
 
 func _on_mouse_exited_bague():
 	gui_fenetre.queue_free()
@@ -1066,7 +1075,58 @@ func _on_mouse_entered_sword8():
 	for n in range(16):
 		if gui_sword8[n] != null:
 			childGuiTxtStat1.text = "Attaque : + " + str(gui_sword8[n].nb_attaque)
-#a tester
+
+func _maj_stat_hero():
+	gui_txt_stat_vie = GuiTextUi.instantiate()
+	add_child(gui_txt_stat_vie)
+	var childStatVie = gui_txt_stat_vie.get_node("labelGuiTextFenetre")
+	childStatVie.text = "Vie : " + str(DataSave.hero.vie + DataSave.addStatVie) + "/" + str(DataSave.hero.vieMax + DataSave.addStatVie)
+	childStatVie.add_theme_color_override("font_color", Color(0, 0, 0))
+	gui_txt_stat_vie.offset.x = 570
+	gui_txt_stat_vie.offset.y = 260
+	
+	gui_txt_stat_mana = GuiTextUi.instantiate()
+	add_child(gui_txt_stat_mana)
+	var childStatMana = gui_txt_stat_mana.get_node("labelGuiTextFenetre")
+	childStatMana.text = "Mana : " + str(DataSave.hero.mana + DataSave.addStatMana) + "/" + str(DataSave.hero.manaMax + DataSave.addStatMana)
+	childStatMana.add_theme_color_override("font_color", Color(0, 0, 0))
+	gui_txt_stat_mana.offset.x = 570
+	gui_txt_stat_mana.offset.y = 280
+	
+	gui_txt_stat_puissance = GuiTextUi.instantiate()
+	add_child(gui_txt_stat_puissance)
+	var childStatPuissance = gui_txt_stat_puissance.get_node("labelGuiTextFenetre")
+	childStatPuissance.text = "Puissance : " + str(DataSave.hero.puissance + DataSave.addStatPuissance)
+	childStatPuissance.add_theme_color_override("font_color", Color(0, 0, 0))
+	gui_txt_stat_puissance.offset.x = 570
+	gui_txt_stat_puissance.offset.y = 300
+	
+	gui_txt_stat_endurance = GuiTextUi.instantiate()
+	add_child(gui_txt_stat_endurance)
+	var childStatEndurance = gui_txt_stat_endurance.get_node("labelGuiTextFenetre")
+	childStatEndurance.text = "Endurance : " + str(DataSave.hero.endurance + DataSave.addStatEndurance)
+	childStatEndurance.add_theme_color_override("font_color", Color(0, 0, 0))
+	gui_txt_stat_endurance.offset.x = 570
+	gui_txt_stat_endurance.offset.y = 320
+	
+	gui_txt_stat_attaque = GuiTextUi.instantiate()
+	add_child(gui_txt_stat_attaque)
+	var childStatAttaque = gui_txt_stat_attaque.get_node("labelGuiTextFenetre")
+	childStatAttaque.text = "Attaque : " + str(DataSave.hero.attaque + DataSave.addStatAttaque)
+	childStatAttaque.add_theme_color_override("font_color", Color(0, 0, 0))
+	gui_txt_stat_attaque.offset.x = 570
+	gui_txt_stat_attaque.offset.y = 340
+	
+	gui_txt_stat_defense = GuiTextUi.instantiate()
+	add_child(gui_txt_stat_defense)
+	var childStatDefense = gui_txt_stat_defense.get_node("labelGuiTextFenetre")
+	childStatDefense.text = "Defense : " + str(DataSave.hero.defense + DataSave.addStatDefense)
+	childStatDefense.add_theme_color_override("font_color", Color(0, 0, 0))
+	gui_txt_stat_defense.offset.x = 570#nodeParent.offset.x + 570
+	gui_txt_stat_defense.offset.y = 360
+	
+	print("je suis appelé je m'appelle func majStatsHero !!!",nodeParent.offset.y)
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	DataSave.items_posession.bottes2 = 2
@@ -1154,53 +1214,9 @@ func _ready() -> void:
 	childSlot[14] = nodeParent.get_node("panel_slot_15")
 	childSlot[15] = nodeParent.get_node("panel_slot_16")
 	
-	gui_txt_stat_vie = GuiTextUi.instantiate()
-	add_child(gui_txt_stat_vie)
-	var childStatVie = gui_txt_stat_vie.get_node("labelGuiTextFenetre")
-	childStatVie.text = "Vie : " + str(DataSave.hero.vie) + "/" + str(DataSave.hero.vieMax)
-	childStatVie.add_theme_color_override("font_color", Color(0, 0, 0))
-	gui_txt_stat_vie.offset.x = nodeParent.offset.x + 570
-	gui_txt_stat_vie.offset.y = nodeParent.offset.y + 260
-	
-	gui_txt_stat_mana = GuiTextUi.instantiate()
-	add_child(gui_txt_stat_mana)
-	var childStatMana = gui_txt_stat_mana.get_node("labelGuiTextFenetre")
-	childStatMana.text = "Mana : " + str(DataSave.hero.mana) + "/" + str(DataSave.hero.manaMax)
-	childStatMana.add_theme_color_override("font_color", Color(0, 0, 0))
-	gui_txt_stat_mana.offset.x = nodeParent.offset.x + 570
-	gui_txt_stat_mana.offset.y = nodeParent.offset.y + 280
-	
-	gui_txt_stat_puissance = GuiTextUi.instantiate()
-	add_child(gui_txt_stat_puissance)
-	var childStatPuissance = gui_txt_stat_puissance.get_node("labelGuiTextFenetre")
-	childStatPuissance.text = "Puissance : " + str(DataSave.hero.puissance)
-	childStatPuissance.add_theme_color_override("font_color", Color(0, 0, 0))
-	gui_txt_stat_puissance.offset.x = nodeParent.offset.x + 570
-	gui_txt_stat_puissance.offset.y = nodeParent.offset.y + 300
-	
-	gui_txt_stat_endurance = GuiTextUi.instantiate()
-	add_child(gui_txt_stat_endurance)
-	var childStatEndurance = gui_txt_stat_endurance.get_node("labelGuiTextFenetre")
-	childStatEndurance.text = "Endurance : " + str(DataSave.hero.endurance)
-	childStatEndurance.add_theme_color_override("font_color", Color(0, 0, 0))
-	gui_txt_stat_endurance.offset.x = nodeParent.offset.x + 570
-	gui_txt_stat_endurance.offset.y = nodeParent.offset.y + 320
-	
-	gui_txt_stat_attaque = GuiTextUi.instantiate()
-	add_child(gui_txt_stat_attaque)
-	var childStatAttaque = gui_txt_stat_attaque.get_node("labelGuiTextFenetre")
-	childStatAttaque.text = "Attaque : " + str(DataSave.hero.attaque)
-	childStatAttaque.add_theme_color_override("font_color", Color(0, 0, 0))
-	gui_txt_stat_attaque.offset.x = nodeParent.offset.x + 570
-	gui_txt_stat_attaque.offset.y = nodeParent.offset.y + 340
-	
-	gui_txt_stat_defense = GuiTextUi.instantiate()
-	add_child(gui_txt_stat_defense)
-	var childStatDefense = gui_txt_stat_defense.get_node("labelGuiTextFenetre")
-	childStatDefense.text = "Defense : " + str(DataSave.hero.defense)
-	childStatDefense.add_theme_color_override("font_color", Color(0, 0, 0))
-	gui_txt_stat_defense.offset.x = nodeParent.offset.x + 570
-	gui_txt_stat_defense.offset.y = nodeParent.offset.y + 360
+	#_maj_stat_hero()
+	connect("majStatsPerso", Callable(self, "_maj_stat_hero"))
+	emit_signal("majStatsPerso")
 	
 	for n in range(16):
 		isSlot_libre[n] = true
@@ -1242,6 +1258,9 @@ func _process(delta: float) -> void:
 		
 		if interrupteur_Bague[0] == true:
 			if DataSave.items_equiper.bague2 != 0:
+				DataSave.addStatPuissance -= gui_equiper.bague_2.nb_puissance
+				DataSave.addStatMana -= gui_equiper.bague_2.nb_mana
+				#print("ccc", DataSave.addStatPuissance)
 				gui_equiper.bague_2.queue_free()
 				DataSave.items_equiper.bague2 = 0
 				DataSave.items_posession.bague2 += 1
@@ -1249,12 +1268,18 @@ func _process(delta: float) -> void:
 				
 			if DataSave.items_equiper.bague3 != 0:
 				#print(is_instance_valid(gui_equiper.bague_3))
+				DataSave.addStatPuissance -= gui_equiper.bague_3.nb_puissance
+				DataSave.addStatMana -= gui_equiper.bague_3.nb_mana
+				#print("ccc", DataSave.addStatPuissance)
 				gui_equiper.bague_3.queue_free()
 				#print(is_instance_valid(gui_equiper.bague_3))
 				#print("JE VIENS DE SUPPRIMER LE COLLIER 3 LA ON EST APRES QUEUE FREE : ", gui_equiper.bague_3)
 				DataSave.items_equiper.bague3 = 0
 				DataSave.items_posession.bague3 += 1
 				bCreationBague[2] = false
+			
+			_clean_stats_gui()
+			emit_signal("majStatsPerso")
 			
 			interrupteur_Bague[0] = false
 		
@@ -1270,16 +1295,23 @@ func _process(delta: float) -> void:
 		
 		if interrupteur_Bague[1] == true:
 			if DataSave.items_equiper.bague1 != 0:
+				DataSave.addStatPuissance -= gui_equiper.bague_1.nb_puissance
+				DataSave.addStatMana -= gui_equiper.bague_1.nb_mana
 				gui_equiper.bague_1.queue_free()
 				DataSave.items_equiper.bague1 = 0
 				DataSave.items_posession.bague1 += 1
 				bCreationBague[0] = false
 				
 			if DataSave.items_equiper.bague3 != 0:
+				DataSave.addStatPuissance -= gui_equiper.bague_3.nb_puissance
+				DataSave.addStatMana -= gui_equiper.bague_3.nb_mana
 				gui_equiper.bague_3.queue_free()
 				DataSave.items_equiper.bague3 = 0
 				DataSave.items_posession.bague3 += 1
 				bCreationBague[2] = false
+			
+			_clean_stats_gui()
+			emit_signal("majStatsPerso")
 			
 			interrupteur_Bague[1] = false
 	
@@ -1295,16 +1327,23 @@ func _process(delta: float) -> void:
 		gui_equiper.bague_3.scale = Vector2(0.6, 0.7)
 		if interrupteur_Bague[2] == true:
 			if DataSave.items_equiper.bague1 != 0:
+				DataSave.addStatPuissance -= gui_equiper.bague_1.nb_puissance
+				DataSave.addStatMana -= gui_equiper.bague_1.nb_mana
 				gui_equiper.bague_1.queue_free()
 				DataSave.items_equiper.bague1 = 0
 				DataSave.items_posession.bague1 += 1
 				bCreationBague[0] = false
 				
 			if DataSave.items_equiper.bague2 != 0:
+				DataSave.addStatPuissance -= gui_equiper.bague_2.nb_puissance
+				DataSave.addStatMana -= gui_equiper.bague_2.nb_mana
 				gui_equiper.bague_2.queue_free()
 				DataSave.items_equiper.bague2 = 0
 				DataSave.items_posession.bague2 += 1
 				bCreationBague[1] = false
+			
+			_clean_stats_gui()
+			emit_signal("majStatsPerso")
 			
 			interrupteur_Bague[2] = false
 	
@@ -1319,34 +1358,47 @@ func _process(delta: float) -> void:
 		
 		if interrupteur_Bottes[0] == true:
 			if DataSave.items_equiper.bottes2 != 0:
+				DataSave.addStatVie -= gui_equiper.bottes_2.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bottes_2.nb_defense
 				gui_equiper.bottes_2.queue_free()
 				DataSave.items_equiper.bottes2 = 0
 				DataSave.items_posession.bottes2 += 1
 				bCreationBottes[1] = false
 				
 			if DataSave.items_equiper.bottes3 != 0:
+				DataSave.addStatVie -= gui_equiper.bottes_3.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bottes_3.nb_defense
 				gui_equiper.bottes_3.queue_free()
 				DataSave.items_equiper.bottes3 = 0
 				DataSave.items_posession.bottes3 += 1
 				bCreationBottes[2] = false
 			
 			if DataSave.items_equiper.bottes4 != 0:
+				DataSave.addStatVie -= gui_equiper.bottes_4.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bottes_4.nb_defense
 				gui_equiper.bottes_4.queue_free()
 				DataSave.items_equiper.bottes4 = 0
 				DataSave.items_posession.bottes4 += 1
 				bCreationBottes[3] = false
 			
 			if DataSave.items_equiper.bottes5 != 0:
+				DataSave.addStatVie -= gui_equiper.bottes_5.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bottes_5.nb_defense
 				gui_equiper.bottes_5.queue_free()
 				DataSave.items_equiper.bottes5 = 0
 				DataSave.items_posession.bottes5 += 1
 				bCreationBottes[4] = false
 			
 			if DataSave.items_equiper.bottes6 != 0:
+				DataSave.addStatVie -= gui_equiper.bottes_6.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bottes_6.nb_defense
 				gui_equiper.bottes_6.queue_free()
 				DataSave.items_equiper.bottes6 = 0
 				DataSave.items_posession.bottes6 += 1
 				bCreationBottes[5] = false
+			
+			_clean_stats_gui()
+			emit_signal("majStatsPerso")
 			
 			interrupteur_Bottes[0] = false
 	
@@ -1361,34 +1413,47 @@ func _process(delta: float) -> void:
 		
 		if interrupteur_Bottes[1] == true:
 			if DataSave.items_equiper.bottes1 != 0:
+				DataSave.addStatVie -= gui_equiper.bottes_1.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bottes_1.nb_defense
 				gui_equiper.bottes_1.queue_free()
 				DataSave.items_equiper.bottes1 = 0
 				DataSave.items_posession.bottes1 += 1
 				bCreationBottes[0] = false
 				
 			if DataSave.items_equiper.bottes3 != 0:
+				DataSave.addStatVie -= gui_equiper.bottes_3.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bottes_3.nb_defense
 				gui_equiper.bottes_3.queue_free()
 				DataSave.items_equiper.bottes3 = 0
 				DataSave.items_posession.bottes3 += 1
 				bCreationBottes[2] = false
 			
 			if DataSave.items_equiper.bottes4 != 0:
+				DataSave.addStatVie -= gui_equiper.bottes_4.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bottes_4.nb_defense
 				gui_equiper.bottes_4.queue_free()
 				DataSave.items_equiper.bottes4 = 0
 				DataSave.items_posession.bottes4 += 1
 				bCreationBottes[3] = false
 			
 			if DataSave.items_equiper.bottes5 != 0:
+				DataSave.addStatVie -= gui_equiper.bottes_5.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bottes_5.nb_defense
 				gui_equiper.bottes_5.queue_free()
 				DataSave.items_equiper.bottes5 = 0
 				DataSave.items_posession.bottes5 += 1
 				bCreationBottes[4] = false
 			
 			if DataSave.items_equiper.bottes6 != 0:
+				DataSave.addStatVie -= gui_equiper.bottes_6.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bottes_6.nb_defense
 				gui_equiper.bottes_6.queue_free()
 				DataSave.items_equiper.bottes6 = 0
 				DataSave.items_posession.bottes6 += 1
 				bCreationBottes[5] = false
+			
+			_clean_stats_gui()
+			emit_signal("majStatsPerso")
 			
 			interrupteur_Bottes[1] = false
 	
@@ -1403,34 +1468,47 @@ func _process(delta: float) -> void:
 		
 		if interrupteur_Bottes[2] == true:
 			if DataSave.items_equiper.bottes1 != 0:
+				DataSave.addStatVie -= gui_equiper.bottes_1.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bottes_1.nb_defense
 				gui_equiper.bottes_1.queue_free()
 				DataSave.items_equiper.bottes1 = 0
 				DataSave.items_posession.bottes1 += 1
 				bCreationBottes[0] = false
 				
 			if DataSave.items_equiper.bottes2 != 0:
+				DataSave.addStatVie -= gui_equiper.bottes_2.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bottes_2.nb_defense
 				gui_equiper.bottes_2.queue_free()
 				DataSave.items_equiper.bottes2 = 0
 				DataSave.items_posession.bottes2 += 1
 				bCreationBottes[1] = false
 			
 			if DataSave.items_equiper.bottes4 != 0:
+				DataSave.addStatVie -= gui_equiper.bottes_4.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bottes_4.nb_defense
 				gui_equiper.bottes_4.queue_free()
 				DataSave.items_equiper.bottes4 = 0
 				DataSave.items_posession.bottes4 += 1
 				bCreationBottes[3] = false
 			
 			if DataSave.items_equiper.bottes5 != 0:
+				DataSave.addStatVie -= gui_equiper.bottes_5.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bottes_5.nb_defense
 				gui_equiper.bottes_5.queue_free()
 				DataSave.items_equiper.bottes5 = 0
 				DataSave.items_posession.bottes5 += 1
 				bCreationBottes[4] = false
 			
 			if DataSave.items_equiper.bottes6 != 0:
+				DataSave.addStatVie -= gui_equiper.bottes_6.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bottes_6.nb_defense
 				gui_equiper.bottes_6.queue_free()
 				DataSave.items_equiper.bottes6 = 0
 				DataSave.items_posession.bottes6 += 1
 				bCreationBottes[5] = false
+			
+			_clean_stats_gui()
+			emit_signal("majStatsPerso")
 			
 			interrupteur_Bottes[2] = false
 	
@@ -1445,34 +1523,47 @@ func _process(delta: float) -> void:
 		
 		if interrupteur_Bottes[3] == true:
 			if DataSave.items_equiper.bottes1 != 0:
+				DataSave.addStatVie -= gui_equiper.bottes_1.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bottes_1.nb_defense
 				gui_equiper.bottes_1.queue_free()
 				DataSave.items_equiper.bottes1 = 0
 				DataSave.items_posession.bottes1 += 1
 				bCreationBottes[0] = false
 				
 			if DataSave.items_equiper.bottes2 != 0:
+				DataSave.addStatVie -= gui_equiper.bottes_2.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bottes_2.nb_defense
 				gui_equiper.bottes_2.queue_free()
 				DataSave.items_equiper.bottes2 = 0
 				DataSave.items_posession.bottes2 += 1
 				bCreationBottes[1] = false
 			
 			if DataSave.items_equiper.bottes3 != 0:
+				DataSave.addStatVie -= gui_equiper.bottes_3.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bottes_3.nb_defense
 				gui_equiper.bottes_3.queue_free()
 				DataSave.items_equiper.bottes3 = 0
 				DataSave.items_posession.bottes3 += 1
 				bCreationBottes[2] = false
 			
 			if DataSave.items_equiper.bottes5 != 0:
+				DataSave.addStatVie -= gui_equiper.bottes_5.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bottes_5.nb_defense
 				gui_equiper.bottes_5.queue_free()
 				DataSave.items_equiper.bottes5 = 0
 				DataSave.items_posession.bottes5 += 1
 				bCreationBottes[4] = false
 			
 			if DataSave.items_equiper.bottes6 != 0:
+				DataSave.addStatVie -= gui_equiper.bottes_6.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bottes_6.nb_defense
 				gui_equiper.bottes_6.queue_free()
 				DataSave.items_equiper.bottes6 = 0
 				DataSave.items_posession.bottes6 += 1
 				bCreationBottes[5] = false
+			
+			_clean_stats_gui()
+			emit_signal("majStatsPerso")
 			
 			interrupteur_Bottes[3] = false
 	
@@ -1487,34 +1578,47 @@ func _process(delta: float) -> void:
 		
 		if interrupteur_Bottes[4] == true:
 			if DataSave.items_equiper.bottes1 != 0:
+				DataSave.addStatVie -= gui_equiper.bottes_1.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bottes_1.nb_defense
 				gui_equiper.bottes_1.queue_free()
 				DataSave.items_equiper.bottes1 = 0
 				DataSave.items_posession.bottes1 += 1
 				bCreationBottes[0] = false
 				
 			if DataSave.items_equiper.bottes2 != 0:
+				DataSave.addStatVie -= gui_equiper.bottes_2.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bottes_2.nb_defense
 				gui_equiper.bottes_2.queue_free()
 				DataSave.items_equiper.bottes2 = 0
 				DataSave.items_posession.bottes2 += 1
 				bCreationBottes[1] = false
 			
 			if DataSave.items_equiper.bottes3 != 0:
+				DataSave.addStatVie -= gui_equiper.bottes_3.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bottes_3.nb_defense
 				gui_equiper.bottes_3.queue_free()
 				DataSave.items_equiper.bottes3 = 0
 				DataSave.items_posession.bottes3 += 1
 				bCreationBottes[2] = false
 			
 			if DataSave.items_equiper.bottes4 != 0:
+				DataSave.addStatVie -= gui_equiper.bottes_4.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bottes_4.nb_defense
 				gui_equiper.bottes_4.queue_free()
 				DataSave.items_equiper.bottes4 = 0
 				DataSave.items_posession.bottes4 += 1
 				bCreationBottes[3] = false
 			
 			if DataSave.items_equiper.bottes6 != 0:
+				DataSave.addStatVie -= gui_equiper.bottes_6.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bottes_6.nb_defense
 				gui_equiper.bottes_6.queue_free()
 				DataSave.items_equiper.bottes6 = 0
 				DataSave.items_posession.bottes6 += 1
 				bCreationBottes[5] = false
+			
+			_clean_stats_gui()
+			emit_signal("majStatsPerso")
 			
 			interrupteur_Bottes[4] = false
 	
@@ -1529,34 +1633,47 @@ func _process(delta: float) -> void:
 		
 		if interrupteur_Bottes[5] == true:
 			if DataSave.items_equiper.bottes1 != 0:
+				DataSave.addStatVie -= gui_equiper.bottes_1.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bottes_1.nb_defense
 				gui_equiper.bottes_1.queue_free()
 				DataSave.items_equiper.bottes1 = 0
 				DataSave.items_posession.bottes1 += 1
 				bCreationBottes[0] = false
 				
 			if DataSave.items_equiper.bottes2 != 0:
+				DataSave.addStatVie -= gui_equiper.bottes_2.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bottes_2.nb_defense
 				gui_equiper.bottes_2.queue_free()
 				DataSave.items_equiper.bottes2 = 0
 				DataSave.items_posession.bottes2 += 1
 				bCreationBottes[1] = false
 			
 			if DataSave.items_equiper.bottes3 != 0:
+				DataSave.addStatVie -= gui_equiper.bottes_3.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bottes_3.nb_defense
 				gui_equiper.bottes_3.queue_free()
 				DataSave.items_equiper.bottes3 = 0
 				DataSave.items_posession.bottes3 += 1
 				bCreationBottes[2] = false
 			
 			if DataSave.items_equiper.bottes4 != 0:
+				DataSave.addStatVie -= gui_equiper.bottes_4.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bottes_4.nb_defense
 				gui_equiper.bottes_4.queue_free()
 				DataSave.items_equiper.bottes4 = 0
 				DataSave.items_posession.bottes4 += 1
 				bCreationBottes[3] = false
 			
 			if DataSave.items_equiper.bottes5 != 0:
+				DataSave.addStatVie -= gui_equiper.bottes_5.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bottes_5.nb_defense
 				gui_equiper.bottes_5.queue_free()
 				DataSave.items_equiper.bottes5 = 0
 				DataSave.items_posession.bottes5 += 1
 				bCreationBottes[4] = false
+			
+			_clean_stats_gui()
+			emit_signal("majStatsPerso")
 			
 			interrupteur_Bottes[5] = false
 	
@@ -1571,40 +1688,55 @@ func _process(delta: float) -> void:
 		
 		if interrupteur_Bouclier[0] == true:
 			if DataSave.items_equiper.bouclier2 != 0:
+				DataSave.addStatVie -= gui_equiper.bouclier_2.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bouclier_2.nb_defense
 				gui_equiper.bouclier_2.queue_free()
 				DataSave.items_equiper.bouclier2 = 0
 				DataSave.items_posession.bouclier2 += 1
 				bCreationBouclier[1] = false
 				
 			if DataSave.items_equiper.bouclier3 != 0:
+				DataSave.addStatVie -= gui_equiper.bouclier_3.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bouclier_3.nb_defense
 				gui_equiper.bouclier_3.queue_free()
 				DataSave.items_equiper.bouclier3 = 0
 				DataSave.items_posession.bouclier3 += 1
 				bCreationBouclier[2] = false
 			
 			if DataSave.items_equiper.bouclier4 != 0:
+				DataSave.addStatVie -= gui_equiper.bouclier_4.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bouclier_4.nb_defense
 				gui_equiper.bouclier_4.queue_free()
 				DataSave.items_equiper.bouclier4 = 0
 				DataSave.items_posession.bouclier4 += 1
 				bCreationBouclier[3] = false
 			
 			if DataSave.items_equiper.bouclier5 != 0:
+				DataSave.addStatVie -= gui_equiper.bouclier_5.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bouclier_5.nb_defense
 				gui_equiper.bouclier_5.queue_free()
 				DataSave.items_equiper.bouclier5 = 0
 				DataSave.items_posession.bouclier5 += 1
 				bCreationBouclier[4] = false
 			
 			if DataSave.items_equiper.bouclier6 != 0:
+				DataSave.addStatVie -= gui_equiper.bouclier_6.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bouclier_6.nb_defense
 				gui_equiper.bouclier_6.queue_free()
 				DataSave.items_equiper.bouclier6 = 0
 				DataSave.items_posession.bouclier6 += 1
 				bCreationBouclier[5] = false
 			
 			if DataSave.items_equiper.bouclier7 != 0:
+				DataSave.addStatVie -= gui_equiper.bouclier_7.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bouclier_7.nb_defense
 				gui_equiper.bouclier_7.queue_free()
 				DataSave.items_equiper.bouclier7 = 0
 				DataSave.items_posession.bouclier7 += 1
 				bCreationBouclier[6] = false
+			
+			_clean_stats_gui()
+			emit_signal("majStatsPerso")
 			
 			interrupteur_Bouclier[0] = false
 	
@@ -1619,40 +1751,55 @@ func _process(delta: float) -> void:
 		
 		if interrupteur_Bouclier[1] == true:
 			if DataSave.items_equiper.bouclier1 != 0:
+				DataSave.addStatVie -= gui_equiper.bouclier_1.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bouclier_1.nb_defense
 				gui_equiper.bouclier_1.queue_free()
 				DataSave.items_equiper.bouclier1 = 0
 				DataSave.items_posession.bouclier1 += 1
 				bCreationBouclier[0] = false
 				
 			if DataSave.items_equiper.bouclier3 != 0:
+				DataSave.addStatVie -= gui_equiper.bouclier_3.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bouclier_3.nb_defense
 				gui_equiper.bouclier_3.queue_free()
 				DataSave.items_equiper.bouclier3 = 0
 				DataSave.items_posession.bouclier3 += 1
 				bCreationBouclier[2] = false
 			
 			if DataSave.items_equiper.bouclier4 != 0:
+				DataSave.addStatVie -= gui_equiper.bouclier_4.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bouclier_4.nb_defense
 				gui_equiper.bouclier_4.queue_free()
 				DataSave.items_equiper.bouclier4 = 0
 				DataSave.items_posession.bouclier4 += 1
 				bCreationBouclier[3] = false
 			
 			if DataSave.items_equiper.bouclier5 != 0:
+				DataSave.addStatVie -= gui_equiper.bouclier_5.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bouclier_5.nb_defense
 				gui_equiper.bouclier_5.queue_free()
 				DataSave.items_equiper.bouclier5 = 0
 				DataSave.items_posession.bouclier5 += 1
 				bCreationBouclier[4] = false
 			
 			if DataSave.items_equiper.bouclier6 != 0:
+				DataSave.addStatVie -= gui_equiper.bouclier_6.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bouclier_6.nb_defense
 				gui_equiper.bouclier_6.queue_free()
 				DataSave.items_equiper.bouclier6 = 0
 				DataSave.items_posession.bouclier6 += 1
 				bCreationBouclier[5] = false
 			
 			if DataSave.items_equiper.bouclier7 != 0:
+				DataSave.addStatVie -= gui_equiper.bouclier_7.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bouclier_7.nb_defense
 				gui_equiper.bouclier_7.queue_free()
 				DataSave.items_equiper.bouclier7 = 0
 				DataSave.items_posession.bouclier7 += 1
 				bCreationBouclier[6] = false
+			
+			_clean_stats_gui()
+			emit_signal("majStatsPerso")
 			
 			interrupteur_Bouclier[1] = false
 	
@@ -1667,40 +1814,55 @@ func _process(delta: float) -> void:
 		
 		if interrupteur_Bouclier[2] == true:
 			if DataSave.items_equiper.bouclier1 != 0:
+				DataSave.addStatVie -= gui_equiper.bouclier_1.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bouclier_1.nb_defense
 				gui_equiper.bouclier_1.queue_free()
 				DataSave.items_equiper.bouclier1 = 0
 				DataSave.items_posession.bouclier1 += 1
 				bCreationBouclier[0] = false
 				
 			if DataSave.items_equiper.bouclier2 != 0:
+				DataSave.addStatVie -= gui_equiper.bouclier_2.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bouclier_2.nb_defense
 				gui_equiper.bouclier_2.queue_free()
 				DataSave.items_equiper.bouclier2 = 0
 				DataSave.items_posession.bouclier2 += 1
 				bCreationBouclier[1] = false
 			
 			if DataSave.items_equiper.bouclier4 != 0:
+				DataSave.addStatVie -= gui_equiper.bouclier_4.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bouclier_4.nb_defense
 				gui_equiper.bouclier_4.queue_free()
 				DataSave.items_equiper.bouclier4 = 0
 				DataSave.items_posession.bouclier4 += 1
 				bCreationBouclier[3] = false
 			
 			if DataSave.items_equiper.bouclier5 != 0:
+				DataSave.addStatVie -= gui_equiper.bouclier_5.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bouclier_5.nb_defense
 				gui_equiper.bouclier_5.queue_free()
 				DataSave.items_equiper.bouclier5 = 0
 				DataSave.items_posession.bouclier5 += 1
 				bCreationBouclier[4] = false
 			
 			if DataSave.items_equiper.bouclier6 != 0:
+				DataSave.addStatVie -= gui_equiper.bouclier_6.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bouclier_6.nb_defense
 				gui_equiper.bouclier_6.queue_free()
 				DataSave.items_equiper.bouclier6 = 0
 				DataSave.items_posession.bouclier6 += 1
 				bCreationBouclier[5] = false
 			
 			if DataSave.items_equiper.bouclier7 != 0:
+				DataSave.addStatVie -= gui_equiper.bouclier_7.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bouclier_7.nb_defense
 				gui_equiper.bouclier_7.queue_free()
 				DataSave.items_equiper.bouclier7 = 0
 				DataSave.items_posession.bouclier7 += 1
 				bCreationBouclier[6] = false
+			
+			_clean_stats_gui()
+			emit_signal("majStatsPerso")
 			
 			interrupteur_Bouclier[2] = false
 	
@@ -1715,40 +1877,55 @@ func _process(delta: float) -> void:
 		
 		if interrupteur_Bouclier[3] == true:
 			if DataSave.items_equiper.bouclier1 != 0:
+				DataSave.addStatVie -= gui_equiper.bouclier_1.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bouclier_1.nb_defense
 				gui_equiper.bouclier_1.queue_free()
 				DataSave.items_equiper.bouclier1 = 0
 				DataSave.items_posession.bouclier1 += 1
 				bCreationBouclier[0] = false
 				
 			if DataSave.items_equiper.bouclier2 != 0:
+				DataSave.addStatVie -= gui_equiper.bouclier_2.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bouclier_2.nb_defense
 				gui_equiper.bouclier_2.queue_free()
 				DataSave.items_equiper.bouclier2 = 0
 				DataSave.items_posession.bouclier2 += 1
 				bCreationBouclier[1] = false
 			
 			if DataSave.items_equiper.bouclier3 != 0:
+				DataSave.addStatVie -= gui_equiper.bouclier_3.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bouclier_3.nb_defense
 				gui_equiper.bouclier_3.queue_free()
 				DataSave.items_equiper.bouclier3 = 0
 				DataSave.items_posession.bouclier3 += 1
 				bCreationBouclier[2] = false
 			
 			if DataSave.items_equiper.bouclier5 != 0:
+				DataSave.addStatVie -= gui_equiper.bouclier_5.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bouclier_5.nb_defense
 				gui_equiper.bouclier_5.queue_free()
 				DataSave.items_equiper.bouclier5 = 0
 				DataSave.items_posession.bouclier5 += 1
 				bCreationBouclier[4] = false
 			
 			if DataSave.items_equiper.bouclier6 != 0:
+				DataSave.addStatVie -= gui_equiper.bouclier_6.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bouclier_6.nb_defense
 				gui_equiper.bouclier_6.queue_free()
 				DataSave.items_equiper.bouclier6 = 0
 				DataSave.items_posession.bouclier6 += 1
 				bCreationBouclier[5] = false
 			
 			if DataSave.items_equiper.bouclier7 != 0:
+				DataSave.addStatVie -= gui_equiper.bouclier_7.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bouclier_7.nb_defense
 				gui_equiper.bouclier_7.queue_free()
 				DataSave.items_equiper.bouclier7 = 0
 				DataSave.items_posession.bouclier7 += 1
 				bCreationBouclier[6] = false
+			
+			_clean_stats_gui()
+			emit_signal("majStatsPerso")
 			
 			interrupteur_Bouclier[3] = false
 	
@@ -1763,40 +1940,55 @@ func _process(delta: float) -> void:
 		
 		if interrupteur_Bouclier[4] == true:
 			if DataSave.items_equiper.bouclier1 != 0:
+				DataSave.addStatVie -= gui_equiper.bouclier_1.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bouclier_1.nb_defense
 				gui_equiper.bouclier_1.queue_free()
 				DataSave.items_equiper.bouclier1 = 0
 				DataSave.items_posession.bouclier1 += 1
 				bCreationBouclier[0] = false
 				
 			if DataSave.items_equiper.bouclier2 != 0:
+				DataSave.addStatVie -= gui_equiper.bouclier_2.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bouclier_2.nb_defense
 				gui_equiper.bouclier_2.queue_free()
 				DataSave.items_equiper.bouclier2 = 0
 				DataSave.items_posession.bouclier2 += 1
 				bCreationBouclier[1] = false
 			
 			if DataSave.items_equiper.bouclier3 != 0:
+				DataSave.addStatVie -= gui_equiper.bouclier_3.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bouclier_3.nb_defense
 				gui_equiper.bouclier_3.queue_free()
 				DataSave.items_equiper.bouclier3 = 0
 				DataSave.items_posession.bouclier3 += 1
 				bCreationBouclier[2] = false
 			
 			if DataSave.items_equiper.bouclier4 != 0:
+				DataSave.addStatVie -= gui_equiper.bouclier_4.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bouclier_4.nb_defense
 				gui_equiper.bouclier_4.queue_free()
 				DataSave.items_equiper.bouclier4 = 0
 				DataSave.items_posession.bouclier4 += 1
 				bCreationBouclier[3] = false
 			
 			if DataSave.items_equiper.bouclier6 != 0:
+				DataSave.addStatVie -= gui_equiper.bouclier_6.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bouclier_6.nb_defense
 				gui_equiper.bouclier_6.queue_free()
 				DataSave.items_equiper.bouclier6 = 0
 				DataSave.items_posession.bouclier6 += 1
 				bCreationBouclier[5] = false
 			
 			if DataSave.items_equiper.bouclier7 != 0:
+				DataSave.addStatVie -= gui_equiper.bouclier_7.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bouclier_7.nb_defense
 				gui_equiper.bouclier_7.queue_free()
 				DataSave.items_equiper.bouclier7 = 0
 				DataSave.items_posession.bouclier7 += 1
 				bCreationBouclier[6] = false
+			
+			_clean_stats_gui()
+			emit_signal("majStatsPerso")
 			
 			interrupteur_Bouclier[4] = false
 	
@@ -1811,40 +2003,55 @@ func _process(delta: float) -> void:
 		
 		if interrupteur_Bouclier[5] == true:
 			if DataSave.items_equiper.bouclier1 != 0:
+				DataSave.addStatVie -= gui_equiper.bouclier_1.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bouclier_1.nb_defense
 				gui_equiper.bouclier_1.queue_free()
 				DataSave.items_equiper.bouclier1 = 0
 				DataSave.items_posession.bouclier1 += 1
 				bCreationBouclier[0] = false
 				
 			if DataSave.items_equiper.bouclier2 != 0:
+				DataSave.addStatVie -= gui_equiper.bouclier_2.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bouclier_2.nb_defense
 				gui_equiper.bouclier_2.queue_free()
 				DataSave.items_equiper.bouclier2 = 0
 				DataSave.items_posession.bouclier2 += 1
 				bCreationBouclier[1] = false
 			
 			if DataSave.items_equiper.bouclier3 != 0:
+				DataSave.addStatVie -= gui_equiper.bouclier_3.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bouclier_3.nb_defense
 				gui_equiper.bouclier_3.queue_free()
 				DataSave.items_equiper.bouclier3 = 0
 				DataSave.items_posession.bouclier3 += 1
 				bCreationBouclier[2] = false
 			
 			if DataSave.items_equiper.bouclier4 != 0:
+				DataSave.addStatVie -= gui_equiper.bouclier_4.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bouclier_4.nb_defense
 				gui_equiper.bouclier_4.queue_free()
 				DataSave.items_equiper.bouclier4 = 0
 				DataSave.items_posession.bouclier4 += 1
 				bCreationBouclier[3] = false
 			
 			if DataSave.items_equiper.bouclier5 != 0:
+				DataSave.addStatVie -= gui_equiper.bouclier_5.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bouclier_5.nb_defense
 				gui_equiper.bouclier_5.queue_free()
 				DataSave.items_equiper.bouclier5 = 0
 				DataSave.items_posession.bouclier5 += 1
 				bCreationBouclier[4] = false
 			
 			if DataSave.items_equiper.bouclier7 != 0:
+				DataSave.addStatVie -= gui_equiper.bouclier_7.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bouclier_7.nb_defense
 				gui_equiper.bouclier_7.queue_free()
 				DataSave.items_equiper.bouclier7 = 0
 				DataSave.items_posession.bouclier7 += 1
 				bCreationBouclier[6] = false
+			
+			_clean_stats_gui()
+			emit_signal("majStatsPerso")
 			
 			interrupteur_Bouclier[5] = false
 	
@@ -1859,40 +2066,55 @@ func _process(delta: float) -> void:
 		
 		if interrupteur_Bouclier[6] == true:
 			if DataSave.items_equiper.bouclier1 != 0:
+				DataSave.addStatVie -= gui_equiper.bouclier_1.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bouclier_1.nb_defense
 				gui_equiper.bouclier_1.queue_free()
 				DataSave.items_equiper.bouclier1 = 0
 				DataSave.items_posession.bouclier1 += 1
 				bCreationBouclier[0] = false
 				
 			if DataSave.items_equiper.bouclier2 != 0:
+				DataSave.addStatVie -= gui_equiper.bouclier_2.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bouclier_2.nb_defense
 				gui_equiper.bouclier_2.queue_free()
 				DataSave.items_equiper.bouclier2 = 0
 				DataSave.items_posession.bouclier2 += 1
 				bCreationBouclier[1] = false
 			
 			if DataSave.items_equiper.bouclier3 != 0:
+				DataSave.addStatVie -= gui_equiper.bouclier_3.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bouclier_3.nb_defense
 				gui_equiper.bouclier_3.queue_free()
 				DataSave.items_equiper.bouclier3 = 0
 				DataSave.items_posession.bouclier3 += 1
 				bCreationBouclier[2] = false
 			
 			if DataSave.items_equiper.bouclier4 != 0:
+				DataSave.addStatVie -= gui_equiper.bouclier_4.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bouclier_4.nb_defense
 				gui_equiper.bouclier_4.queue_free()
 				DataSave.items_equiper.bouclier4 = 0
 				DataSave.items_posession.bouclier4 += 1
 				bCreationBouclier[3] = false
 			
 			if DataSave.items_equiper.bouclier5 != 0:
+				DataSave.addStatVie -= gui_equiper.bouclier_5.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bouclier_5.nb_defense
 				gui_equiper.bouclier_5.queue_free()
 				DataSave.items_equiper.bouclier5 = 0
 				DataSave.items_posession.bouclier5 += 1
 				bCreationBouclier[4] = false
 			
 			if DataSave.items_equiper.bouclier6 != 0:
+				DataSave.addStatVie -= gui_equiper.bouclier_6.nb_vie
+				DataSave.addStatDefense -= gui_equiper.bouclier_6.nb_defense
 				gui_equiper.bouclier_6.queue_free()
 				DataSave.items_equiper.bouclier6 = 0
 				DataSave.items_posession.bouclier6 += 1
 				bCreationBouclier[5] = false
+			
+			_clean_stats_gui()
+			emit_signal("majStatsPerso")
 			
 			interrupteur_Bouclier[6] = false
 	
@@ -1907,34 +2129,47 @@ func _process(delta: float) -> void:
 		
 		if interrupteur_Casque[0] == true:
 			if DataSave.items_equiper.casque2 != 0:
+				DataSave.addStatVie -= gui_equiper.casque_2.nb_vie
+				DataSave.addStatDefense -= gui_equiper.casque_2.nb_defense
 				gui_equiper.casque_2.queue_free()
 				DataSave.items_equiper.casque2 = 0
 				DataSave.items_posession.casque2 += 1
 				bCreationCasque[1] = false
 				
 			if DataSave.items_equiper.casque3 != 0:
+				DataSave.addStatVie -= gui_equiper.casque_3.nb_vie
+				DataSave.addStatDefense -= gui_equiper.casque_3.nb_defense
 				gui_equiper.casque_3.queue_free()
 				DataSave.items_equiper.casque3 = 0
 				DataSave.items_posession.casque3 += 1
 				bCreationCasque[2] = false
 			
 			if DataSave.items_equiper.casque4 != 0:
+				DataSave.addStatVie -= gui_equiper.casque_4.nb_vie
+				DataSave.addStatDefense -= gui_equiper.casque_4.nb_defense
 				gui_equiper.casque_4.queue_free()
 				DataSave.items_equiper.casque4 = 0
 				DataSave.items_posession.casque4 += 1
 				bCreationCasque[3] = false
 			
 			if DataSave.items_equiper.casque5 != 0:
+				DataSave.addStatVie -= gui_equiper.casque_5.nb_vie
+				DataSave.addStatDefense -= gui_equiper.casque_5.nb_defense
 				gui_equiper.casque_5.queue_free()
 				DataSave.items_equiper.casque5 = 0
 				DataSave.items_posession.casque5 += 1
 				bCreationCasque[4] = false
 			
 			if DataSave.items_equiper.casque6 != 0:
+				DataSave.addStatVie -= gui_equiper.casque_6.nb_vie
+				DataSave.addStatDefense -= gui_equiper.casque_6.nb_defense
 				gui_equiper.casque_6.queue_free()
 				DataSave.items_equiper.casque6 = 0
 				DataSave.items_posession.casque6 += 1
 				bCreationCasque[5] = false
+			
+			_clean_stats_gui()
+			emit_signal("majStatsPerso")
 			
 			interrupteur_Casque[0] = false
 	
@@ -1949,34 +2184,47 @@ func _process(delta: float) -> void:
 		
 		if interrupteur_Casque[1] == true:
 			if DataSave.items_equiper.casque1 != 0:
+				DataSave.addStatVie -= gui_equiper.casque_1.nb_vie
+				DataSave.addStatDefense -= gui_equiper.casque_1.nb_defense
 				gui_equiper.casque_1.queue_free()
 				DataSave.items_equiper.casque1 = 0
 				DataSave.items_posession.casque1 += 1
 				bCreationCasque[0] = false
 				
 			if DataSave.items_equiper.casque3 != 0:
+				DataSave.addStatVie -= gui_equiper.casque_3.nb_vie
+				DataSave.addStatDefense -= gui_equiper.casque_3.nb_defense
 				gui_equiper.casque_3.queue_free()
 				DataSave.items_equiper.casque3 = 0
 				DataSave.items_posession.casque3 += 1
 				bCreationCasque[2] = false
 			
 			if DataSave.items_equiper.casque4 != 0:
+				DataSave.addStatVie -= gui_equiper.casque_4.nb_vie
+				DataSave.addStatDefense -= gui_equiper.casque_4.nb_defense
 				gui_equiper.casque_4.queue_free()
 				DataSave.items_equiper.casque4 = 0
 				DataSave.items_posession.casque4 += 1
 				bCreationCasque[3] = false
 			
 			if DataSave.items_equiper.casque5 != 0:
+				DataSave.addStatVie -= gui_equiper.casque_5.nb_vie
+				DataSave.addStatDefense -= gui_equiper.casque_5.nb_defense
 				gui_equiper.casque_5.queue_free()
 				DataSave.items_equiper.casque5 = 0
 				DataSave.items_posession.casque5 += 1
 				bCreationCasque[4] = false
 			
 			if DataSave.items_equiper.casque6 != 0:
+				DataSave.addStatVie -= gui_equiper.casque_6.nb_vie
+				DataSave.addStatDefense -= gui_equiper.casque_6.nb_defense
 				gui_equiper.casque_6.queue_free()
 				DataSave.items_equiper.casque6 = 0
 				DataSave.items_posession.casque6 += 1
 				bCreationCasque[5] = false
+			
+			_clean_stats_gui()
+			emit_signal("majStatsPerso")
 			
 			interrupteur_Casque[1] = false
 	
@@ -1991,34 +2239,47 @@ func _process(delta: float) -> void:
 		
 		if interrupteur_Casque[2] == true:
 			if DataSave.items_equiper.casque1 != 0:
+				DataSave.addStatVie -= gui_equiper.casque_1.nb_vie
+				DataSave.addStatDefense -= gui_equiper.casque_1.nb_defense
 				gui_equiper.casque_1.queue_free()
 				DataSave.items_equiper.casque1 = 0
 				DataSave.items_posession.casque1 += 1
 				bCreationCasque[0] = false
 				
 			if DataSave.items_equiper.casque2 != 0:
+				DataSave.addStatVie -= gui_equiper.casque_2.nb_vie
+				DataSave.addStatDefense -= gui_equiper.casque_2.nb_defense
 				gui_equiper.casque_2.queue_free()
 				DataSave.items_equiper.casque2 = 0
 				DataSave.items_posession.casque2 += 1
 				bCreationCasque[1] = false
 			
 			if DataSave.items_equiper.casque4 != 0:
+				DataSave.addStatVie -= gui_equiper.casque_4.nb_vie
+				DataSave.addStatDefense -= gui_equiper.casque_4.nb_defense
 				gui_equiper.casque_4.queue_free()
 				DataSave.items_equiper.casque4 = 0
 				DataSave.items_posession.casque4 += 1
 				bCreationCasque[3] = false
 			
 			if DataSave.items_equiper.casque5 != 0:
+				DataSave.addStatVie -= gui_equiper.casque_5.nb_vie
+				DataSave.addStatDefense -= gui_equiper.casque_5.nb_defense
 				gui_equiper.casque_5.queue_free()
 				DataSave.items_equiper.casque5 = 0
 				DataSave.items_posession.casque5 += 1
 				bCreationCasque[4] = false
 			
 			if DataSave.items_equiper.casque6 != 0:
+				DataSave.addStatVie -= gui_equiper.casque_6.nb_vie
+				DataSave.addStatDefense -= gui_equiper.casque_6.nb_defense
 				gui_equiper.casque_6.queue_free()
 				DataSave.items_equiper.casque6 = 0
 				DataSave.items_posession.casque6 += 1
 				bCreationCasque[5] = false
+			
+			_clean_stats_gui()
+			emit_signal("majStatsPerso")
 			
 			interrupteur_Casque[2] = false
 	
@@ -2033,34 +2294,47 @@ func _process(delta: float) -> void:
 		
 		if interrupteur_Casque[3] == true:
 			if DataSave.items_equiper.casque1 != 0:
+				DataSave.addStatVie -= gui_equiper.casque_1.nb_vie
+				DataSave.addStatDefense -= gui_equiper.casque_1.nb_defense
 				gui_equiper.casque_1.queue_free()
 				DataSave.items_equiper.casque1 = 0
 				DataSave.items_posession.casque1 += 1
 				bCreationCasque[0] = false
 				
 			if DataSave.items_equiper.casque2 != 0:
+				DataSave.addStatVie -= gui_equiper.casque_2.nb_vie
+				DataSave.addStatDefense -= gui_equiper.casque_2.nb_defense
 				gui_equiper.casque_2.queue_free()
 				DataSave.items_equiper.casque2 = 0
 				DataSave.items_posession.casque2 += 1
 				bCreationCasque[1] = false
 			
 			if DataSave.items_equiper.casque3 != 0:
+				DataSave.addStatVie -= gui_equiper.casque_3.nb_vie
+				DataSave.addStatDefense -= gui_equiper.casque_3.nb_defense
 				gui_equiper.casque_3.queue_free()
 				DataSave.items_equiper.casque3 = 0
 				DataSave.items_posession.casque3 += 1
 				bCreationCasque[2] = false
 			
 			if DataSave.items_equiper.casque5 != 0:
+				DataSave.addStatVie -= gui_equiper.casque_5.nb_vie
+				DataSave.addStatDefense -= gui_equiper.casque_5.nb_defense
 				gui_equiper.casque_5.queue_free()
 				DataSave.items_equiper.casque5 = 0
 				DataSave.items_posession.casque5 += 1
 				bCreationCasque[4] = false
 			
 			if DataSave.items_equiper.casque6 != 0:
+				DataSave.addStatVie -= gui_equiper.casque_6.nb_vie
+				DataSave.addStatDefense -= gui_equiper.casque_6.nb_defense
 				gui_equiper.casque_6.queue_free()
 				DataSave.items_equiper.casque6 = 0
 				DataSave.items_posession.casque6 += 1
 				bCreationCasque[5] = false
+			
+			_clean_stats_gui()
+			emit_signal("majStatsPerso")
 			
 			interrupteur_Casque[3] = false
 	
@@ -2075,34 +2349,47 @@ func _process(delta: float) -> void:
 		
 		if interrupteur_Casque[4] == true:
 			if DataSave.items_equiper.casque1 != 0:
+				DataSave.addStatVie -= gui_equiper.casque_1.nb_vie
+				DataSave.addStatDefense -= gui_equiper.casque_1.nb_defense
 				gui_equiper.casque_1.queue_free()
 				DataSave.items_equiper.casque1 = 0
 				DataSave.items_posession.casque1 += 1
 				bCreationCasque[0] = false
 				
 			if DataSave.items_equiper.casque2 != 0:
+				DataSave.addStatVie -= gui_equiper.casque_2.nb_vie
+				DataSave.addStatDefense -= gui_equiper.casque_2.nb_defense
 				gui_equiper.casque_2.queue_free()
 				DataSave.items_equiper.casque2 = 0
 				DataSave.items_posession.casque2 += 1
 				bCreationCasque[1] = false
 			
 			if DataSave.items_equiper.casque3 != 0:
+				DataSave.addStatVie -= gui_equiper.casque_3.nb_vie
+				DataSave.addStatDefense -= gui_equiper.casque_3.nb_defense
 				gui_equiper.casque_3.queue_free()
 				DataSave.items_equiper.casque3 = 0
 				DataSave.items_posession.casque3 += 1
 				bCreationCasque[2] = false
 			
 			if DataSave.items_equiper.casque4 != 0:
+				DataSave.addStatVie -= gui_equiper.casque_4.nb_vie
+				DataSave.addStatDefense -= gui_equiper.casque_4.nb_defense
 				gui_equiper.casque_4.queue_free()
 				DataSave.items_equiper.casque4 = 0
 				DataSave.items_posession.casque4 += 1
 				bCreationCasque[3] = false
 			
 			if DataSave.items_equiper.casque6 != 0:
+				DataSave.addStatVie -= gui_equiper.casque_6.nb_vie
+				DataSave.addStatDefense -= gui_equiper.casque_6.nb_defense
 				gui_equiper.casque_6.queue_free()
 				DataSave.items_equiper.casque6 = 0
 				DataSave.items_posession.casque6 += 1
 				bCreationCasque[5] = false
+			
+			_clean_stats_gui()
+			emit_signal("majStatsPerso")
 			
 			interrupteur_Casque[4] = false
 	
@@ -2117,34 +2404,47 @@ func _process(delta: float) -> void:
 		
 		if interrupteur_Casque[5] == true:
 			if DataSave.items_equiper.casque1 != 0:
+				DataSave.addStatVie -= gui_equiper.casque_1.nb_vie
+				DataSave.addStatDefense -= gui_equiper.casque_1.nb_defense
 				gui_equiper.casque_1.queue_free()
 				DataSave.items_equiper.casque1 = 0
 				DataSave.items_posession.casque1 += 1
 				bCreationCasque[0] = false
 				
 			if DataSave.items_equiper.casque2 != 0:
+				DataSave.addStatVie -= gui_equiper.casque_2.nb_vie
+				DataSave.addStatDefense -= gui_equiper.casque_2.nb_defense
 				gui_equiper.casque_2.queue_free()
 				DataSave.items_equiper.casque2 = 0
 				DataSave.items_posession.casque2 += 1
 				bCreationCasque[1] = false
 			
 			if DataSave.items_equiper.casque3 != 0:
+				DataSave.addStatVie -= gui_equiper.casque_3.nb_vie
+				DataSave.addStatDefense -= gui_equiper.casque_3.nb_defense
 				gui_equiper.casque_3.queue_free()
 				DataSave.items_equiper.casque3 = 0
 				DataSave.items_posession.casque3 += 1
 				bCreationCasque[2] = false
 			
 			if DataSave.items_equiper.casque4 != 0:
+				DataSave.addStatVie -= gui_equiper.casque_4.nb_vie
+				DataSave.addStatDefense -= gui_equiper.casque_4.nb_defense
 				gui_equiper.casque_4.queue_free()
 				DataSave.items_equiper.casque4 = 0
 				DataSave.items_posession.casque4 += 1
 				bCreationCasque[3] = false
 			
 			if DataSave.items_equiper.casque5 != 0:
+				DataSave.addStatVie -= gui_equiper.casque_5.nb_vie
+				DataSave.addStatDefense -= gui_equiper.casque_5.nb_defense
 				gui_equiper.casque_5.queue_free()
 				DataSave.items_equiper.casque5 = 0
 				DataSave.items_posession.casque5 += 1
 				bCreationCasque[4] = false
+			
+			_clean_stats_gui()
+			emit_signal("majStatsPerso")
 			
 			interrupteur_Casque[5] = false
 	
@@ -2159,16 +2459,23 @@ func _process(delta: float) -> void:
 		
 		if interrupteur_Collier[0] == true:
 			if DataSave.items_equiper.collier2 != 0:
+				DataSave.addStatPuissance -= gui_equiper.collier_2.nb_puissance
+				DataSave.addStatEndurance -= gui_equiper.collier_2.nb_endurance
 				gui_equiper.collier_2.queue_free()
 				DataSave.items_equiper.collier2 = 0
 				DataSave.items_posession.collier2 += 1
 				bCreationCollier[1] = false
 				
 			if DataSave.items_equiper.collier3 != 0:
+				DataSave.addStatPuissance -= gui_equiper.collier_3.nb_puissance
+				DataSave.addStatEndurance -= gui_equiper.collier_3.nb_endurance
 				gui_equiper.collier_3.queue_free()
 				DataSave.items_equiper.collier3 = 0
 				DataSave.items_posession.collier3 += 1
 				bCreationCollier[2] = false
+			
+			_clean_stats_gui()
+			emit_signal("majStatsPerso")
 			
 			interrupteur_Collier[0] = false
 	
@@ -2183,16 +2490,23 @@ func _process(delta: float) -> void:
 		
 		if interrupteur_Collier[1] == true:
 			if DataSave.items_equiper.collier1 != 0:
+				DataSave.addStatPuissance -= gui_equiper.collier_1.nb_puissance
+				DataSave.addStatEndurance -= gui_equiper.collier_1.nb_endurance
 				gui_equiper.collier_1.queue_free()
 				DataSave.items_equiper.collier1 = 0
 				DataSave.items_posession.collier1 += 1
 				bCreationCollier[0] = false
 				
 			if DataSave.items_equiper.collier3 != 0:
+				DataSave.addStatPuissance -= gui_equiper.collier_3.nb_puissance
+				DataSave.addStatEndurance -= gui_equiper.collier_3.nb_endurance
 				gui_equiper.collier_3.queue_free()
 				DataSave.items_equiper.collier3 = 0
 				DataSave.items_posession.collier3 += 1
 				bCreationCollier[2] = false
+			
+			_clean_stats_gui()
+			emit_signal("majStatsPerso")
 			
 			interrupteur_Collier[1] = false
 	
@@ -2207,16 +2521,23 @@ func _process(delta: float) -> void:
 		
 		if interrupteur_Collier[2] == true:
 			if DataSave.items_equiper.collier1 != 0:
+				DataSave.addStatPuissance -= gui_equiper.collier_1.nb_puissance
+				DataSave.addStatEndurance -= gui_equiper.collier_1.nb_endurance
 				gui_equiper.collier_1.queue_free()
 				DataSave.items_equiper.collier1 = 0
 				DataSave.items_posession.collier1 += 1
 				bCreationCollier[0] = false
 				
 			if DataSave.items_equiper.collier2 != 0:
+				DataSave.addStatPuissance -= gui_equiper.collier_2.nb_puissance
+				DataSave.addStatEndurance -= gui_equiper.collier_2.nb_endurance
 				gui_equiper.collier_2.queue_free()
 				DataSave.items_equiper.collier2 = 0
 				DataSave.items_posession.collier2 += 1
 				bCreationCollier[1] = false
+			
+			_clean_stats_gui()
+			emit_signal("majStatsPerso")
 			
 			interrupteur_Collier[2] = false
 	
@@ -2231,34 +2552,47 @@ func _process(delta: float) -> void:
 		
 		if interrupteur_Heaume[0] == true:
 			if DataSave.items_equiper.heaume2 != 0:
+				DataSave.addStatVie -= gui_equiper.heaume_2.nb_vie
+				DataSave.addStatDefense -= gui_equiper.heaume_2.nb_defense
 				gui_equiper.heaume_2.queue_free()
 				DataSave.items_equiper.heaume2 = 0
 				DataSave.items_posession.heaume2 += 1
 				bCreationHeaume[1] = false
 				
 			if DataSave.items_equiper.heaume3 != 0:
+				DataSave.addStatVie -= gui_equiper.heaume_3.nb_vie
+				DataSave.addStatDefense -= gui_equiper.heaume_3.nb_defense
 				gui_equiper.heaume_3.queue_free()
 				DataSave.items_equiper.heaume3 = 0
 				DataSave.items_posession.heaume3 += 1
 				bCreationHeaume[2] = false
 			
 			if DataSave.items_equiper.heaume4 != 0:
+				DataSave.addStatVie -= gui_equiper.heaume_4.nb_vie
+				DataSave.addStatDefense -= gui_equiper.heaume_4.nb_defense
 				gui_equiper.heaume_4.queue_free()
 				DataSave.items_equiper.heaume4 = 0
 				DataSave.items_posession.heaume4 += 1
 				bCreationHeaume[3] = false
 			
 			if DataSave.items_equiper.heaume5 != 0:
+				DataSave.addStatVie -= gui_equiper.heaume_5.nb_vie
+				DataSave.addStatDefense -= gui_equiper.heaume_5.nb_defense
 				gui_equiper.heaume_5.queue_free()
 				DataSave.items_equiper.heaume5 = 0
 				DataSave.items_posession.heaume5 += 1
 				bCreationHeaume[4] = false
 			
 			if DataSave.items_equiper.heaume6 != 0:
+				DataSave.addStatVie -= gui_equiper.heaume_6.nb_vie
+				DataSave.addStatDefense -= gui_equiper.heaume_6.nb_defense
 				gui_equiper.heaume_6.queue_free()
 				DataSave.items_equiper.heaume6 = 0
 				DataSave.items_posession.heaume6 += 1
 				bCreationHeaume[5] = false
+			
+			_clean_stats_gui()
+			emit_signal("majStatsPerso")
 			
 			interrupteur_Heaume[0] = false
 	
@@ -2273,34 +2607,47 @@ func _process(delta: float) -> void:
 		
 		if interrupteur_Heaume[1] == true:
 			if DataSave.items_equiper.heaume1 != 0:
+				DataSave.addStatVie -= gui_equiper.heaume_1.nb_vie
+				DataSave.addStatDefense -= gui_equiper.heaume_1.nb_defense
 				gui_equiper.heaume_1.queue_free()
 				DataSave.items_equiper.heaume1 = 0
 				DataSave.items_posession.heaume1 += 1
 				bCreationHeaume[0] = false
 				
 			if DataSave.items_equiper.heaume3 != 0:
+				DataSave.addStatVie -= gui_equiper.heaume_3.nb_vie
+				DataSave.addStatDefense -= gui_equiper.heaume_3.nb_defense
 				gui_equiper.heaume_3.queue_free()
 				DataSave.items_equiper.heaume3 = 0
 				DataSave.items_posession.heaume3 += 1
 				bCreationHeaume[2] = false
 			
 			if DataSave.items_equiper.heaume4 != 0:
+				DataSave.addStatVie -= gui_equiper.heaume_4.nb_vie
+				DataSave.addStatDefense -= gui_equiper.heaume_4.nb_defense
 				gui_equiper.heaume_4.queue_free()
 				DataSave.items_equiper.heaume4 = 0
 				DataSave.items_posession.heaume4 += 1
 				bCreationHeaume[3] = false
 			
 			if DataSave.items_equiper.heaume5 != 0:
+				DataSave.addStatVie -= gui_equiper.heaume_5.nb_vie
+				DataSave.addStatDefense -= gui_equiper.heaume_5.nb_defense
 				gui_equiper.heaume_5.queue_free()
 				DataSave.items_equiper.heaume5 = 0
 				DataSave.items_posession.heaume5 += 1
 				bCreationHeaume[4] = false
 			
 			if DataSave.items_equiper.heaume6 != 0:
+				DataSave.addStatVie -= gui_equiper.heaume_6.nb_vie
+				DataSave.addStatDefense -= gui_equiper.heaume_6.nb_defense
 				gui_equiper.heaume_6.queue_free()
 				DataSave.items_equiper.heaume6 = 0
 				DataSave.items_posession.heaume6 += 1
 				bCreationHeaume[5] = false
+			
+			_clean_stats_gui()
+			emit_signal("majStatsPerso")
 			
 			interrupteur_Heaume[1] = false
 	
@@ -2315,34 +2662,47 @@ func _process(delta: float) -> void:
 		
 		if interrupteur_Heaume[2] == true:
 			if DataSave.items_equiper.heaume1 != 0:
+				DataSave.addStatVie -= gui_equiper.heaume_1.nb_vie
+				DataSave.addStatDefense -= gui_equiper.heaume_1.nb_defense
 				gui_equiper.heaume_1.queue_free()
 				DataSave.items_equiper.heaume1 = 0
 				DataSave.items_posession.heaume1 += 1
 				bCreationHeaume[0] = false
 				
 			if DataSave.items_equiper.heaume2 != 0:
+				DataSave.addStatVie -= gui_equiper.heaume_2.nb_vie
+				DataSave.addStatDefense -= gui_equiper.heaume_2.nb_defense
 				gui_equiper.heaume_2.queue_free()
 				DataSave.items_equiper.heaume2 = 0
 				DataSave.items_posession.heaume2 += 1
 				bCreationHeaume[1] = false
 			
 			if DataSave.items_equiper.heaume4 != 0:
+				DataSave.addStatVie -= gui_equiper.heaume_4.nb_vie
+				DataSave.addStatDefense -= gui_equiper.heaume_4.nb_defense
 				gui_equiper.heaume_4.queue_free()
 				DataSave.items_equiper.heaume4 = 0
 				DataSave.items_posession.heaume4 += 1
 				bCreationHeaume[3] = false
 			
 			if DataSave.items_equiper.heaume5 != 0:
+				DataSave.addStatVie -= gui_equiper.heaume_5.nb_vie
+				DataSave.addStatDefense -= gui_equiper.heaume_5.nb_defense
 				gui_equiper.heaume_5.queue_free()
 				DataSave.items_equiper.heaume5 = 0
 				DataSave.items_posession.heaume5 += 1
 				bCreationHeaume[4] = false
 			
 			if DataSave.items_equiper.heaume6 != 0:
+				DataSave.addStatVie -= gui_equiper.heaume_6.nb_vie
+				DataSave.addStatDefense -= gui_equiper.heaume_6.nb_defense
 				gui_equiper.heaume_6.queue_free()
 				DataSave.items_equiper.heaume6 = 0
 				DataSave.items_posession.heaume6 += 1
 				bCreationHeaume[5] = false
+			
+			_clean_stats_gui()
+			emit_signal("majStatsPerso")
 			
 			interrupteur_Heaume[2] = false
 	
@@ -2357,34 +2717,47 @@ func _process(delta: float) -> void:
 		
 		if interrupteur_Heaume[3] == true:
 			if DataSave.items_equiper.heaume1 != 0:
+				DataSave.addStatVie -= gui_equiper.heaume_1.nb_vie
+				DataSave.addStatDefense -= gui_equiper.heaume_1.nb_defense
 				gui_equiper.heaume_1.queue_free()
 				DataSave.items_equiper.heaume1 = 0
 				DataSave.items_posession.heaume1 += 1
 				bCreationHeaume[0] = false
 				
 			if DataSave.items_equiper.heaume2 != 0:
+				DataSave.addStatVie -= gui_equiper.heaume_2.nb_vie
+				DataSave.addStatDefense -= gui_equiper.heaume_2.nb_defense
 				gui_equiper.heaume_2.queue_free()
 				DataSave.items_equiper.heaume2 = 0
 				DataSave.items_posession.heaume2 += 1
 				bCreationHeaume[1] = false
 			
 			if DataSave.items_equiper.heaume3 != 0:
+				DataSave.addStatVie -= gui_equiper.heaume_3.nb_vie
+				DataSave.addStatDefense -= gui_equiper.heaume_3.nb_defense
 				gui_equiper.heaume_3.queue_free()
 				DataSave.items_equiper.heaume3 = 0
 				DataSave.items_posession.heaume3 += 1
 				bCreationHeaume[2] = false
 			
 			if DataSave.items_equiper.heaume5 != 0:
+				DataSave.addStatVie -= gui_equiper.heaume_5.nb_vie
+				DataSave.addStatDefense -= gui_equiper.heaume_5.nb_defense
 				gui_equiper.heaume_5.queue_free()
 				DataSave.items_equiper.heaume5 = 0
 				DataSave.items_posession.heaume5 += 1
 				bCreationHeaume[4] = false
 			
 			if DataSave.items_equiper.heaume6 != 0:
+				DataSave.addStatVie -= gui_equiper.heaume_6.nb_vie
+				DataSave.addStatDefense -= gui_equiper.heaume_6.nb_defense
 				gui_equiper.heaume_6.queue_free()
 				DataSave.items_equiper.heaume6 = 0
 				DataSave.items_posession.heaume6 += 1
 				bCreationHeaume[5] = false
+			
+			_clean_stats_gui()
+			emit_signal("majStatsPerso")
 			
 			interrupteur_Heaume[3] = false
 	
@@ -2399,34 +2772,47 @@ func _process(delta: float) -> void:
 		
 		if interrupteur_Heaume[4] == true:
 			if DataSave.items_equiper.heaume1 != 0:
+				DataSave.addStatVie -= gui_equiper.heaume_1.nb_vie
+				DataSave.addStatDefense -= gui_equiper.heaume_1.nb_defense
 				gui_equiper.heaume_1.queue_free()
 				DataSave.items_equiper.heaume1 = 0
 				DataSave.items_posession.heaume1 += 1
 				bCreationHeaume[0] = false
 				
 			if DataSave.items_equiper.heaume2 != 0:
+				DataSave.addStatVie -= gui_equiper.heaume_2.nb_vie
+				DataSave.addStatDefense -= gui_equiper.heaume_2.nb_defense
 				gui_equiper.heaume_2.queue_free()
 				DataSave.items_equiper.heaume2 = 0
 				DataSave.items_posession.heaume2 += 1
 				bCreationHeaume[1] = false
 			
 			if DataSave.items_equiper.heaume3 != 0:
+				DataSave.addStatVie -= gui_equiper.heaume_3.nb_vie
+				DataSave.addStatDefense -= gui_equiper.heaume_3.nb_defense
 				gui_equiper.heaume_3.queue_free()
 				DataSave.items_equiper.heaume3 = 0
 				DataSave.items_posession.heaume3 += 1
 				bCreationHeaume[2] = false
 			
 			if DataSave.items_equiper.heaume4 != 0:
+				DataSave.addStatVie -= gui_equiper.heaume_4.nb_vie
+				DataSave.addStatDefense -= gui_equiper.heaume_4.nb_defense
 				gui_equiper.heaume_4.queue_free()
 				DataSave.items_equiper.heaume4 = 0
 				DataSave.items_posession.heaume4 += 1
 				bCreationHeaume[3] = false
 			
 			if DataSave.items_equiper.heaume6 != 0:
+				DataSave.addStatVie -= gui_equiper.heaume_6.nb_vie
+				DataSave.addStatDefense -= gui_equiper.heaume_6.nb_defense
 				gui_equiper.heaume_6.queue_free()
 				DataSave.items_equiper.heaume6 = 0
 				DataSave.items_posession.heaume6 += 1
 				bCreationHeaume[5] = false
+			
+			_clean_stats_gui()
+			emit_signal("majStatsPerso")
 			
 			interrupteur_Heaume[4] = false
 	
@@ -2441,34 +2827,47 @@ func _process(delta: float) -> void:
 		
 		if interrupteur_Heaume[5] == true:
 			if DataSave.items_equiper.heaume1 != 0:
+				DataSave.addStatVie -= gui_equiper.heaume_1.nb_vie
+				DataSave.addStatDefense -= gui_equiper.heaume_1.nb_defense
 				gui_equiper.heaume_1.queue_free()
 				DataSave.items_equiper.heaume1 = 0
 				DataSave.items_posession.heaume1 += 1
 				bCreationHeaume[0] = false
 				
 			if DataSave.items_equiper.heaume2 != 0:
+				DataSave.addStatVie -= gui_equiper.heaume_2.nb_vie
+				DataSave.addStatDefense -= gui_equiper.heaume_2.nb_defense
 				gui_equiper.heaume_2.queue_free()
 				DataSave.items_equiper.heaume2 = 0
 				DataSave.items_posession.heaume2 += 1
 				bCreationHeaume[1] = false
 			
 			if DataSave.items_equiper.heaume3 != 0:
+				DataSave.addStatVie -= gui_equiper.heaume_3.nb_vie
+				DataSave.addStatDefense -= gui_equiper.heaume_3.nb_defense
 				gui_equiper.heaume_3.queue_free()
 				DataSave.items_equiper.heaume3 = 0
 				DataSave.items_posession.heaume3 += 1
 				bCreationHeaume[2] = false
 			
 			if DataSave.items_equiper.heaume4 != 0:
+				DataSave.addStatVie -= gui_equiper.heaume_4.nb_vie
+				DataSave.addStatDefense -= gui_equiper.heaume_4.nb_defense
 				gui_equiper.heaume_4.queue_free()
 				DataSave.items_equiper.heaume4 = 0
 				DataSave.items_posession.heaume4 += 1
 				bCreationHeaume[3] = false
 			
 			if DataSave.items_equiper.heaume5 != 0:
+				DataSave.addStatVie -= gui_equiper.heaume_5.nb_vie
+				DataSave.addStatDefense -= gui_equiper.heaume_5.nb_defense
 				gui_equiper.heaume_5.queue_free()
 				DataSave.items_equiper.heaume5 = 0
 				DataSave.items_posession.heaume5 += 1
 				bCreationHeaume[4] = false
+			
+			_clean_stats_gui()
+			emit_signal("majStatsPerso")
 			
 			interrupteur_Heaume[5] = false
 	
@@ -2483,46 +2882,56 @@ func _process(delta: float) -> void:
 		
 		if interrupteur_Sword[0] == true:
 			if DataSave.items_equiper.sword2 != 0:
+				DataSave.addStatAttaque -= gui_equiper.sword_2.nb_attaque
 				gui_equiper.sword_2.queue_free()
 				DataSave.items_equiper.sword2 = 0
 				DataSave.items_posession.sword2 += 1
 				bCreationSword[1] = false
 				
 			if DataSave.items_equiper.sword3 != 0:
+				DataSave.addStatAttaque -= gui_equiper.sword_3.nb_attaque
 				gui_equiper.sword_3.queue_free()
 				DataSave.items_equiper.sword3 = 0
 				DataSave.items_posession.sword3 += 1
 				bCreationSword[2] = false
 			
 			if DataSave.items_equiper.sword4 != 0:
+				DataSave.addStatAttaque -= gui_equiper.sword_4.nb_attaque
 				gui_equiper.sword_4.queue_free()
 				DataSave.items_equiper.sword4 = 0
 				DataSave.items_posession.sword4 += 1
 				bCreationSword[3] = false
 			
 			if DataSave.items_equiper.sword5 != 0:
+				DataSave.addStatAttaque -= gui_equiper.sword_5.nb_attaque
 				gui_equiper.sword_5.queue_free()
 				DataSave.items_equiper.sword5 = 0
 				DataSave.items_posession.sword5 += 1
 				bCreationSword[4] = false
 			
 			if DataSave.items_equiper.sword6 != 0:
+				DataSave.addStatAttaque -= gui_equiper.sword_6.nb_attaque
 				gui_equiper.sword_6.queue_free()
 				DataSave.items_equiper.sword6 = 0
 				DataSave.items_posession.sword6 += 1
 				bCreationSword[5] = false
 			
 			if DataSave.items_equiper.sword7 != 0:
+				DataSave.addStatAttaque -= gui_equiper.sword_7.nb_attaque
 				gui_equiper.sword_7.queue_free()
 				DataSave.items_equiper.sword7 = 0
 				DataSave.items_posession.sword7 += 1
 				bCreationSword[6] = false
 			
 			if DataSave.items_equiper.sword8 != 0:
+				DataSave.addStatAttaque -= gui_equiper.sword_8.nb_attaque
 				gui_equiper.sword_8.queue_free()
 				DataSave.items_equiper.sword8 = 0
 				DataSave.items_posession.sword8 += 1
 				bCreationSword[7] = false
+			
+			_clean_stats_gui()
+			emit_signal("majStatsPerso")
 			
 			interrupteur_Sword[0] = false
 	
@@ -2537,46 +2946,56 @@ func _process(delta: float) -> void:
 		
 		if interrupteur_Sword[1] == true:
 			if DataSave.items_equiper.sword1 != 0:
+				DataSave.addStatAttaque -= gui_equiper.sword_1.nb_attaque
 				gui_equiper.sword_1.queue_free()
 				DataSave.items_equiper.sword1 = 0
 				DataSave.items_posession.sword1 += 1
 				bCreationSword[0] = false
 				
 			if DataSave.items_equiper.sword3 != 0:
+				DataSave.addStatAttaque -= gui_equiper.sword_3.nb_attaque
 				gui_equiper.sword_3.queue_free()
 				DataSave.items_equiper.sword3 = 0
 				DataSave.items_posession.sword3 += 1
 				bCreationSword[2] = false
 			
 			if DataSave.items_equiper.sword4 != 0:
+				DataSave.addStatAttaque -= gui_equiper.sword_4.nb_attaque
 				gui_equiper.sword_4.queue_free()
 				DataSave.items_equiper.sword4 = 0
 				DataSave.items_posession.sword4 += 1
 				bCreationSword[3] = false
 			
 			if DataSave.items_equiper.sword5 != 0:
+				DataSave.addStatAttaque -= gui_equiper.sword_5.nb_attaque
 				gui_equiper.sword_5.queue_free()
 				DataSave.items_equiper.sword5 = 0
 				DataSave.items_posession.sword5 += 1
 				bCreationSword[4] = false
 			
 			if DataSave.items_equiper.sword6 != 0:
+				DataSave.addStatAttaque -= gui_equiper.sword_6.nb_attaque
 				gui_equiper.sword_6.queue_free()
 				DataSave.items_equiper.sword6 = 0
 				DataSave.items_posession.sword6 += 1
 				bCreationSword[5] = false
 			
 			if DataSave.items_equiper.sword7 != 0:
+				DataSave.addStatAttaque -= gui_equiper.sword_7.nb_attaque
 				gui_equiper.sword_7.queue_free()
 				DataSave.items_equiper.sword7 = 0
 				DataSave.items_posession.sword7 += 1
 				bCreationSword[6] = false
 			
 			if DataSave.items_equiper.sword8 != 0:
+				DataSave.addStatAttaque -= gui_equiper.sword_8.nb_attaque
 				gui_equiper.sword_8.queue_free()
 				DataSave.items_equiper.sword8 = 0
 				DataSave.items_posession.sword8 += 1
 				bCreationSword[7] = false
+			
+			_clean_stats_gui()
+			emit_signal("majStatsPerso")
 			
 			interrupteur_Sword[1] = false
 	
@@ -2591,46 +3010,56 @@ func _process(delta: float) -> void:
 		
 		if interrupteur_Sword[2] == true:
 			if DataSave.items_equiper.sword1 != 0:
+				DataSave.addStatAttaque -= gui_equiper.sword_1.nb_attaque
 				gui_equiper.sword_1.queue_free()
 				DataSave.items_equiper.sword1 = 0
 				DataSave.items_posession.sword1 += 1
 				bCreationSword[0] = false
 				
 			if DataSave.items_equiper.sword2 != 0:
+				DataSave.addStatAttaque -= gui_equiper.sword_2.nb_attaque
 				gui_equiper.sword_2.queue_free()
 				DataSave.items_equiper.sword2 = 0
 				DataSave.items_posession.sword2 += 1
 				bCreationSword[1] = false
 			
 			if DataSave.items_equiper.sword4 != 0:
+				DataSave.addStatAttaque -= gui_equiper.sword_4.nb_attaque
 				gui_equiper.sword_4.queue_free()
 				DataSave.items_equiper.sword4 = 0
 				DataSave.items_posession.sword4 += 1
 				bCreationSword[3] = false
 			
 			if DataSave.items_equiper.sword5 != 0:
+				DataSave.addStatAttaque -= gui_equiper.sword_5.nb_attaque
 				gui_equiper.sword_5.queue_free()
 				DataSave.items_equiper.sword5 = 0
 				DataSave.items_posession.sword5 += 1
 				bCreationSword[4] = false
 			
 			if DataSave.items_equiper.sword6 != 0:
+				DataSave.addStatAttaque -= gui_equiper.sword_6.nb_attaque
 				gui_equiper.sword_6.queue_free()
 				DataSave.items_equiper.sword6 = 0
 				DataSave.items_posession.sword6 += 1
 				bCreationSword[5] = false
 			
 			if DataSave.items_equiper.sword7 != 0:
+				DataSave.addStatAttaque -= gui_equiper.sword_7.nb_attaque
 				gui_equiper.sword_7.queue_free()
 				DataSave.items_equiper.sword7 = 0
 				DataSave.items_posession.sword7 += 1
 				bCreationSword[6] = false
 			
 			if DataSave.items_equiper.sword8 != 0:
+				DataSave.addStatAttaque -= gui_equiper.sword_8.nb_attaque
 				gui_equiper.sword_8.queue_free()
 				DataSave.items_equiper.sword8 = 0
 				DataSave.items_posession.sword8 += 1
 				bCreationSword[7] = false
+			
+			_clean_stats_gui()
+			emit_signal("majStatsPerso")
 			
 			interrupteur_Sword[2] = false
 	
@@ -2645,46 +3074,56 @@ func _process(delta: float) -> void:
 		
 		if interrupteur_Sword[3] == true:
 			if DataSave.items_equiper.sword1 != 0:
+				DataSave.addStatAttaque -= gui_equiper.sword_1.nb_attaque
 				gui_equiper.sword_1.queue_free()
 				DataSave.items_equiper.sword1 = 0
 				DataSave.items_posession.sword1 += 1
 				bCreationSword[0] = false
 				
 			if DataSave.items_equiper.sword2 != 0:
+				DataSave.addStatAttaque -= gui_equiper.sword_2.nb_attaque
 				gui_equiper.sword_2.queue_free()
 				DataSave.items_equiper.sword2 = 0
 				DataSave.items_posession.sword2 += 1
 				bCreationSword[1] = false
 			
 			if DataSave.items_equiper.sword3 != 0:
+				DataSave.addStatAttaque -= gui_equiper.sword_3.nb_attaque
 				gui_equiper.sword_3.queue_free()
 				DataSave.items_equiper.sword3 = 0
 				DataSave.items_posession.sword3 += 1
 				bCreationSword[2] = false
 			
 			if DataSave.items_equiper.sword5 != 0:
+				DataSave.addStatAttaque -= gui_equiper.sword_5.nb_attaque
 				gui_equiper.sword_5.queue_free()
 				DataSave.items_equiper.sword5 = 0
 				DataSave.items_posession.sword5 += 1
 				bCreationSword[4] = false
 			
 			if DataSave.items_equiper.sword6 != 0:
+				DataSave.addStatAttaque -= gui_equiper.sword_6.nb_attaque
 				gui_equiper.sword_6.queue_free()
 				DataSave.items_equiper.sword6 = 0
 				DataSave.items_posession.sword6 += 1
 				bCreationSword[5] = false
 			
 			if DataSave.items_equiper.sword7 != 0:
+				DataSave.addStatAttaque -= gui_equiper.sword_7.nb_attaque
 				gui_equiper.sword_7.queue_free()
 				DataSave.items_equiper.sword7 = 0
 				DataSave.items_posession.sword7 += 1
 				bCreationSword[6] = false
 			
 			if DataSave.items_equiper.sword8 != 0:
+				DataSave.addStatAttaque -= gui_equiper.sword_8.nb_attaque
 				gui_equiper.sword_8.queue_free()
 				DataSave.items_equiper.sword8 = 0
 				DataSave.items_posession.sword8 += 1
 				bCreationSword[7] = false
+			
+			_clean_stats_gui()
+			emit_signal("majStatsPerso")
 			
 			interrupteur_Sword[3] = false
 	
@@ -2699,46 +3138,56 @@ func _process(delta: float) -> void:
 		
 		if interrupteur_Sword[4] == true:
 			if DataSave.items_equiper.sword1 != 0:
+				DataSave.addStatAttaque -= gui_equiper.sword_1.nb_attaque
 				gui_equiper.sword_1.queue_free()
 				DataSave.items_equiper.sword1 = 0
 				DataSave.items_posession.sword1 += 1
 				bCreationSword[0] = false
 				
 			if DataSave.items_equiper.sword2 != 0:
+				DataSave.addStatAttaque -= gui_equiper.sword_2.nb_attaque
 				gui_equiper.sword_2.queue_free()
 				DataSave.items_equiper.sword2 = 0
 				DataSave.items_posession.sword2 += 1
 				bCreationSword[1] = false
 			
 			if DataSave.items_equiper.sword3 != 0:
+				DataSave.addStatAttaque -= gui_equiper.sword_3.nb_attaque
 				gui_equiper.sword_3.queue_free()
 				DataSave.items_equiper.sword3 = 0
 				DataSave.items_posession.sword3 += 1
 				bCreationSword[2] = false
 			
 			if DataSave.items_equiper.sword4 != 0:
+				DataSave.addStatAttaque -= gui_equiper.sword_4.nb_attaque
 				gui_equiper.sword_4.queue_free()
 				DataSave.items_equiper.sword4 = 0
 				DataSave.items_posession.sword4 += 1
 				bCreationSword[3] = false
 			
 			if DataSave.items_equiper.sword6 != 0:
+				DataSave.addStatAttaque -= gui_equiper.sword_6.nb_attaque
 				gui_equiper.sword_6.queue_free()
 				DataSave.items_equiper.sword6 = 0
 				DataSave.items_posession.sword6 += 1
 				bCreationSword[5] = false
 			
 			if DataSave.items_equiper.sword7 != 0:
+				DataSave.addStatAttaque -= gui_equiper.sword_7.nb_attaque
 				gui_equiper.sword_7.queue_free()
 				DataSave.items_equiper.sword7 = 0
 				DataSave.items_posession.sword7 += 1
 				bCreationSword[6] = false
 			
 			if DataSave.items_equiper.sword8 != 0:
+				DataSave.addStatAttaque -= gui_equiper.sword_8.nb_attaque
 				gui_equiper.sword_8.queue_free()
 				DataSave.items_equiper.sword8 = 0
 				DataSave.items_posession.sword8 += 1
 				bCreationSword[7] = false
+			
+			_clean_stats_gui()
+			emit_signal("majStatsPerso")
 			
 			interrupteur_Sword[4] = false
 	
@@ -2753,46 +3202,56 @@ func _process(delta: float) -> void:
 		
 		if interrupteur_Sword[5] == true:
 			if DataSave.items_equiper.sword1 != 0:
+				DataSave.addStatAttaque -= gui_equiper.sword_1.nb_attaque
 				gui_equiper.sword_1.queue_free()
 				DataSave.items_equiper.sword1 = 0
 				DataSave.items_posession.sword1 += 1
 				bCreationSword[0] = false
 				
 			if DataSave.items_equiper.sword2 != 0:
+				DataSave.addStatAttaque -= gui_equiper.sword_2.nb_attaque
 				gui_equiper.sword_2.queue_free()
 				DataSave.items_equiper.sword2 = 0
 				DataSave.items_posession.sword2 += 1
 				bCreationSword[1] = false
 			
 			if DataSave.items_equiper.sword3 != 0:
+				DataSave.addStatAttaque -= gui_equiper.sword_3.nb_attaque
 				gui_equiper.sword_3.queue_free()
 				DataSave.items_equiper.sword3 = 0
 				DataSave.items_posession.sword3 += 1
 				bCreationSword[2] = false
 			
 			if DataSave.items_equiper.sword4 != 0:
+				DataSave.addStatAttaque -= gui_equiper.sword_4.nb_attaque
 				gui_equiper.sword_4.queue_free()
 				DataSave.items_equiper.sword4 = 0
 				DataSave.items_posession.sword4 += 1
 				bCreationSword[3] = false
 			
 			if DataSave.items_equiper.sword5 != 0:
+				DataSave.addStatAttaque -= gui_equiper.sword_5.nb_attaque
 				gui_equiper.sword_5.queue_free()
 				DataSave.items_equiper.sword5 = 0
 				DataSave.items_posession.sword5 += 1
 				bCreationSword[4] = false
 			
 			if DataSave.items_equiper.sword7 != 0:
+				DataSave.addStatAttaque -= gui_equiper.sword_7.nb_attaque
 				gui_equiper.sword_7.queue_free()
 				DataSave.items_equiper.sword7 = 0
 				DataSave.items_posession.sword7 += 1
 				bCreationSword[6] = false
 			
 			if DataSave.items_equiper.sword8 != 0:
+				DataSave.addStatAttaque -= gui_equiper.sword_8.nb_attaque
 				gui_equiper.sword_8.queue_free()
 				DataSave.items_equiper.sword8 = 0
 				DataSave.items_posession.sword8 += 1
 				bCreationSword[7] = false
+			
+			_clean_stats_gui()
+			emit_signal("majStatsPerso")
 			
 			interrupteur_Sword[5] = false
 	
@@ -2807,46 +3266,56 @@ func _process(delta: float) -> void:
 		
 		if interrupteur_Sword[6] == true:
 			if DataSave.items_equiper.sword1 != 0:
+				DataSave.addStatAttaque -= gui_equiper.sword_1.nb_attaque
 				gui_equiper.sword_1.queue_free()
 				DataSave.items_equiper.sword1 = 0
 				DataSave.items_posession.sword1 += 1
 				bCreationSword[0] = false
 				
 			if DataSave.items_equiper.sword2 != 0:
+				DataSave.addStatAttaque -= gui_equiper.sword_2.nb_attaque
 				gui_equiper.sword_2.queue_free()
 				DataSave.items_equiper.sword2 = 0
 				DataSave.items_posession.sword2 += 1
 				bCreationSword[1] = false
 			
 			if DataSave.items_equiper.sword3 != 0:
+				DataSave.addStatAttaque -= gui_equiper.sword_3.nb_attaque
 				gui_equiper.sword_3.queue_free()
 				DataSave.items_equiper.sword3 = 0
 				DataSave.items_posession.sword3 += 1
 				bCreationSword[2] = false
 			
 			if DataSave.items_equiper.sword4 != 0:
+				DataSave.addStatAttaque -= gui_equiper.sword_4.nb_attaque
 				gui_equiper.sword_4.queue_free()
 				DataSave.items_equiper.sword4 = 0
 				DataSave.items_posession.sword4 += 1
 				bCreationSword[3] = false
 			
 			if DataSave.items_equiper.sword5 != 0:
+				DataSave.addStatAttaque -= gui_equiper.sword_5.nb_attaque
 				gui_equiper.sword_5.queue_free()
 				DataSave.items_equiper.sword5 = 0
 				DataSave.items_posession.sword5 += 1
 				bCreationSword[4] = false
 			
 			if DataSave.items_equiper.sword6 != 0:
+				DataSave.addStatAttaque -= gui_equiper.sword_6.nb_attaque
 				gui_equiper.sword_6.queue_free()
 				DataSave.items_equiper.sword6 = 0
 				DataSave.items_posession.sword6 += 1
 				bCreationSword[5] = false
 			
 			if DataSave.items_equiper.sword8 != 0:
+				DataSave.addStatAttaque -= gui_equiper.sword_8.nb_attaque
 				gui_equiper.sword_8.queue_free()
 				DataSave.items_equiper.sword8 = 0
 				DataSave.items_posession.sword8 += 1
 				bCreationSword[7] = false
+			
+			_clean_stats_gui()
+			emit_signal("majStatsPerso")
 			
 			interrupteur_Sword[6] = false
 	
@@ -2861,46 +3330,56 @@ func _process(delta: float) -> void:
 		
 		if interrupteur_Sword[7] == true:
 			if DataSave.items_equiper.sword1 != 0:
+				DataSave.addStatAttaque -= gui_equiper.sword_1.nb_attaque
 				gui_equiper.sword_1.queue_free()
 				DataSave.items_equiper.sword1 = 0
 				DataSave.items_posession.sword1 += 1
 				bCreationSword[0] = false
 				
 			if DataSave.items_equiper.sword2 != 0:
+				DataSave.addStatAttaque -= gui_equiper.sword_2.nb_attaque
 				gui_equiper.sword_2.queue_free()
 				DataSave.items_equiper.sword2 = 0
 				DataSave.items_posession.sword2 += 1
 				bCreationSword[1] = false
 			
 			if DataSave.items_equiper.sword3 != 0:
+				DataSave.addStatAttaque -= gui_equiper.sword_3.nb_attaque
 				gui_equiper.sword_3.queue_free()
 				DataSave.items_equiper.sword3 = 0
 				DataSave.items_posession.sword3 += 1
 				bCreationSword[2] = false
 			
 			if DataSave.items_equiper.sword4 != 0:
+				DataSave.addStatAttaque -= gui_equiper.sword_4.nb_attaque
 				gui_equiper.sword_4.queue_free()
 				DataSave.items_equiper.sword4 = 0
 				DataSave.items_posession.sword4 += 1
 				bCreationSword[3] = false
 			
 			if DataSave.items_equiper.sword5 != 0:
+				DataSave.addStatAttaque -= gui_equiper.sword_5.nb_attaque
 				gui_equiper.sword_5.queue_free()
 				DataSave.items_equiper.sword5 = 0
 				DataSave.items_posession.sword5 += 1
 				bCreationSword[4] = false
 			
 			if DataSave.items_equiper.sword6 != 0:
+				DataSave.addStatAttaque -= gui_equiper.sword_6.nb_attaque
 				gui_equiper.sword_6.queue_free()
 				DataSave.items_equiper.sword6 = 0
 				DataSave.items_posession.sword6 += 1
 				bCreationSword[5] = false
 			
 			if DataSave.items_equiper.sword7 != 0:
+				DataSave.addStatAttaque -= gui_equiper.sword_7.nb_attaque
 				gui_equiper.sword_7.queue_free()
 				DataSave.items_equiper.sword7 = 0
 				DataSave.items_posession.sword7 += 1
 				bCreationSword[6] = false
+			
+			_clean_stats_gui()
+			emit_signal("majStatsPerso")
 			
 			interrupteur_Sword[7] = false
 	
@@ -3430,21 +3909,473 @@ func _process(delta: float) -> void:
 func _on_panel_retour_gui_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("button_left"):
 		isPanelClose = true
-		gui_txt_stat_vie.queue_free()
-		gui_txt_stat_mana.queue_free()
-		gui_txt_stat_endurance.queue_free()
-		gui_txt_stat_puissance.queue_free()
-		gui_txt_stat_attaque.queue_free()
-		gui_txt_stat_defense.queue_free()
+		_clean_stats_gui()
 
 func _input(event):
 	var mouse_pos = get_viewport().get_mouse_position()
 	var slot_posX = []
 	var slot_posY = []
+	var slotEquipCasque_posX = 0
+	var slotEquipCasque_posY = 0
+	var slotEquipHeaume_posX = 0
+	var slotEquipHeaume_posY = 0
+	var slotEquipBouclier_posX = 0
+	var slotEquipBouclier_posY = 0
+	var slotEquipSword_posX = 0
+	var slotEquipSword_posY = 0
+	var slotEquipJambes_posX = 0
+	var slotEquipJambes_posY = 0
+	var slotEquipBague_posX = 0
+	var slotEquipBague_posY = 0
+	var slotEquipCollier_posX = 0
+	var slotEquipCollier_posY = 0
 	
 	slot_posX.resize(16)
 	slot_posY.resize(16)
 	
+	slotEquipCasque_posX = childSlotEquip[0].position.x + nodeParent.offset.x
+	slotEquipCasque_posY = childSlotEquip[0].position.y + nodeParent.offset.y
+	slotEquipHeaume_posX = childSlotEquip[1].position.x + nodeParent.offset.x
+	slotEquipHeaume_posY = childSlotEquip[1].position.y + nodeParent.offset.y
+	slotEquipBouclier_posX = childSlotEquip[2].position.x + nodeParent.offset.x
+	slotEquipBouclier_posY = childSlotEquip[2].position.y + nodeParent.offset.y
+	slotEquipSword_posX = childSlotEquip[3].position.x + nodeParent.offset.x
+	slotEquipSword_posY = childSlotEquip[3].position.y + nodeParent.offset.y
+	slotEquipJambes_posX = childSlotEquip[4].position.x + nodeParent.offset.x
+	slotEquipJambes_posY = childSlotEquip[4].position.y + nodeParent.offset.y 
+	slotEquipBague_posX = childSlotEquip[5].position.x + nodeParent.offset.x
+	slotEquipBague_posY = childSlotEquip[5].position.y + nodeParent.offset.y
+	slotEquipCollier_posX = childSlotEquip[6].position.x + nodeParent.offset.x
+	slotEquipCollier_posY = childSlotEquip[6].position.y + nodeParent.offset.y
+	
+	if Input.is_action_just_pressed("button_right"):
+			if mouse_pos.x >= slotEquipCollier_posX and mouse_pos.x <= slotEquipCollier_posX + childSlotEquip[6].size.x-1 and mouse_pos.y >= slotEquipCollier_posY and mouse_pos.y <= slotEquipCollier_posY + childSlotEquip[6].size.y-1:
+				if DataSave.items_equiper.collier1 == 1:
+					if gui_equiper.collier_1 != null:
+						DataSave.addStatPuissance -= gui_equiper.collier_1.nb_puissance
+						DataSave.addStatEndurance -= gui_equiper.collier_1.nb_endurance
+						gui_equiper.collier_1.queue_free()
+						DataSave.items_equiper.collier1 = 0
+						DataSave.items_posession.collier1 += 1
+						bCreationCollier[0] = false
+						_clean_stats_gui()
+						emit_signal("majStatsPerso")
+				
+				if DataSave.items_equiper.collier2 == 1:
+					if gui_equiper.collier_2 != null:
+						DataSave.addStatPuissance -= gui_equiper.collier_2.nb_puissance
+						DataSave.addStatEndurance -= gui_equiper.collier_2.nb_endurance
+						gui_equiper.collier_2.queue_free()
+						DataSave.items_equiper.collier2 = 0
+						DataSave.items_posession.collier2 += 1
+						bCreationCollier[1] = false
+						_clean_stats_gui()
+						emit_signal("majStatsPerso")
+				
+				if DataSave.items_equiper.collier3 == 1:
+					if gui_equiper.collier_3 != null:
+						DataSave.addStatPuissance -= gui_equiper.collier_3.nb_puissance
+						DataSave.addStatEndurance -= gui_equiper.collier_3.nb_endurance
+						gui_equiper.collier_3.queue_free()
+						DataSave.items_equiper.collier3 = 0
+						DataSave.items_posession.collier3 += 1
+						bCreationCollier[2] = false
+						_clean_stats_gui()
+						emit_signal("majStatsPerso")
+			
+			if mouse_pos.x >= slotEquipBague_posX and mouse_pos.x <= slotEquipBague_posX + childSlotEquip[5].size.x-1 and mouse_pos.y >= slotEquipBague_posY and mouse_pos.y <= slotEquipBague_posY + childSlotEquip[5].size.y-1:
+				if DataSave.items_equiper.bague1 == 1:
+					if gui_equiper.bague_1 != null:
+						DataSave.addStatPuissance -= gui_equiper.bague_1.nb_puissance
+						DataSave.addStatMana -= gui_equiper.bague_1.nb_mana
+						gui_equiper.bague_1.queue_free()
+						DataSave.items_equiper.bague1 = 0
+						DataSave.items_posession.bague1 += 1
+						bCreationBague[0] = false
+						_clean_stats_gui()
+						emit_signal("majStatsPerso")
+				
+				if DataSave.items_equiper.bague2 == 1:
+					if gui_equiper.bague_2 != null:
+						DataSave.addStatPuissance -= gui_equiper.bague_2.nb_puissance
+						DataSave.addStatMana -= gui_equiper.bague_2.nb_mana
+						gui_equiper.bague_2.queue_free()
+						DataSave.items_equiper.bague2 = 0
+						DataSave.items_posession.bague2 += 1
+						bCreationBague[1] = false
+						_clean_stats_gui()
+						emit_signal("majStatsPerso")
+				
+				if DataSave.items_equiper.bague3 == 1:
+					if gui_equiper.bague_3 != null:
+						DataSave.addStatPuissance -= gui_equiper.bague_3.nb_puissance
+						DataSave.addStatMana -= gui_equiper.bague_3.nb_mana
+						gui_equiper.bague_3.queue_free()
+						DataSave.items_equiper.bague3 = 0
+						DataSave.items_posession.bague3 += 1
+						bCreationBague[2] = false
+						_clean_stats_gui()
+						emit_signal("majStatsPerso")
+			
+			if mouse_pos.x >= slotEquipJambes_posX and mouse_pos.x <= slotEquipJambes_posX + childSlotEquip[4].size.x-1 and mouse_pos.y >= slotEquipJambes_posY and mouse_pos.y <= slotEquipJambes_posY + childSlotEquip[4].size.y-1:
+				if DataSave.items_equiper.bottes1 == 1:
+					if gui_equiper.bottes_1 != null:
+						DataSave.addStatVie -= gui_equiper.bottes_1.nb_vie
+						DataSave.addStatDefense -= gui_equiper.bottes_1.nb_defense
+						gui_equiper.bottes_1.queue_free()
+						DataSave.items_equiper.bottes1 = 0
+						DataSave.items_posession.bottes1 += 1
+						bCreationBottes[0] = false
+						_clean_stats_gui()
+						emit_signal("majStatsPerso")
+				
+				if DataSave.items_equiper.bottes2 == 1:
+					if gui_equiper.bottes_2 != null:
+						DataSave.addStatVie -= gui_equiper.bottes_2.nb_vie
+						DataSave.addStatDefense -= gui_equiper.bottes_2.nb_defense
+						gui_equiper.bottes_2.queue_free()
+						DataSave.items_equiper.bottes2 = 0
+						DataSave.items_posession.bottes2 += 1
+						bCreationBottes[1] = false
+						_clean_stats_gui()
+						emit_signal("majStatsPerso")
+				
+				if DataSave.items_equiper.bottes3 == 1:
+					if gui_equiper.bottes_3 != null:
+						DataSave.addStatVie -= gui_equiper.bottes_3.nb_vie
+						DataSave.addStatDefense -= gui_equiper.bottes_3.nb_defense
+						gui_equiper.bottes_3.queue_free()
+						DataSave.items_equiper.bottes3 = 0
+						DataSave.items_posession.bottes3 += 1
+						bCreationBottes[2] = false
+						_clean_stats_gui()
+						emit_signal("majStatsPerso")
+				
+				if DataSave.items_equiper.bottes4 == 1:
+					if gui_equiper.bottes_4 != null:
+						DataSave.addStatVie -= gui_equiper.bottes_4.nb_vie
+						DataSave.addStatDefense -= gui_equiper.bottes_4.nb_defense
+						gui_equiper.bottes_4.queue_free()
+						DataSave.items_equiper.bottes4 = 0
+						DataSave.items_posession.bottes4 += 1
+						bCreationBottes[3] = false
+						_clean_stats_gui()
+						emit_signal("majStatsPerso")
+				
+				if DataSave.items_equiper.bottes5 == 1:
+					if gui_equiper.bottes_5 != null:
+						DataSave.addStatVie -= gui_equiper.bottes_5.nb_vie
+						DataSave.addStatDefense -= gui_equiper.bottes_5.nb_defense
+						gui_equiper.bottes_5.queue_free()
+						DataSave.items_equiper.bottes5 = 0
+						DataSave.items_posession.bottes5 += 1
+						bCreationBottes[4] = false
+						_clean_stats_gui()
+						emit_signal("majStatsPerso")
+				
+				if DataSave.items_equiper.bottes6 == 1:
+					if gui_equiper.bottes_6 != null:
+						DataSave.addStatVie -= gui_equiper.bottes_6.nb_vie
+						DataSave.addStatDefense -= gui_equiper.bottes_6.nb_defense
+						gui_equiper.bottes_6.queue_free()
+						DataSave.items_equiper.bottes6 = 0
+						DataSave.items_posession.bottes6 += 1
+						bCreationBottes[5] = false
+						_clean_stats_gui()
+						emit_signal("majStatsPerso")
+			
+			if mouse_pos.x >= slotEquipSword_posX and mouse_pos.x <= slotEquipSword_posX + childSlotEquip[3].size.x-1 and mouse_pos.y >= slotEquipSword_posY and mouse_pos.y <= slotEquipSword_posY + childSlotEquip[3].size.y-1:
+				if DataSave.items_equiper.sword1 == 1:
+					if gui_equiper.sword_1 != null:
+						DataSave.addStatAttaque -= gui_equiper.sword_1.nb_attaque
+						gui_equiper.sword_1.queue_free()
+						DataSave.items_equiper.sword1 = 0
+						DataSave.items_posession.sword1 += 1
+						bCreationSword[0] = false
+						_clean_stats_gui()
+						emit_signal("majStatsPerso")
+		
+				if DataSave.items_equiper.sword2 == 1:
+					if gui_equiper.sword_2 != null:
+						DataSave.addStatAttaque -= gui_equiper.sword_2.nb_attaque
+						gui_equiper.sword_2.queue_free()
+						DataSave.items_equiper.sword2 = 0
+						DataSave.items_posession.sword2 += 1
+						bCreationSword[1] = false
+						_clean_stats_gui()
+						emit_signal("majStatsPerso")
+						
+				if DataSave.items_equiper.sword3 == 1:
+					if gui_equiper.sword_3 != null:
+						DataSave.addStatAttaque -= gui_equiper.sword_3.nb_attaque
+						gui_equiper.sword_3.queue_free()
+						DataSave.items_equiper.sword3 = 0
+						DataSave.items_posession.sword3 += 1
+						bCreationSword[2] = false
+						_clean_stats_gui()
+						emit_signal("majStatsPerso")
+				
+				if DataSave.items_equiper.sword4 == 1:
+					if gui_equiper.sword_4 != null:
+						DataSave.addStatAttaque -= gui_equiper.sword_4.nb_attaque
+						gui_equiper.sword_4.queue_free()
+						DataSave.items_equiper.sword4 = 0
+						DataSave.items_posession.sword4 += 1
+						bCreationSword[3] = false
+						_clean_stats_gui()
+						emit_signal("majStatsPerso")
+				
+				if DataSave.items_equiper.sword5 == 1:
+					if gui_equiper.sword_5 != null:
+						DataSave.addStatAttaque -= gui_equiper.sword_5.nb_attaque
+						gui_equiper.sword_5.queue_free()
+						DataSave.items_equiper.sword5 = 0
+						DataSave.items_posession.sword5 += 1
+						bCreationSword[4] = false
+						_clean_stats_gui()
+						emit_signal("majStatsPerso")
+				
+				if DataSave.items_equiper.sword6 == 1:
+					if gui_equiper.sword_6 != null:
+						DataSave.addStatAttaque -= gui_equiper.sword_6.nb_attaque
+						gui_equiper.sword_6.queue_free()
+						DataSave.items_equiper.sword6 = 0
+						DataSave.items_posession.sword6 += 1
+						bCreationSword[5] = false
+						_clean_stats_gui()
+						emit_signal("majStatsPerso")
+				
+				if DataSave.items_equiper.sword7 == 1:
+					if gui_equiper.sword_7 != null:
+						DataSave.addStatAttaque -= gui_equiper.sword_7.nb_attaque
+						gui_equiper.sword_7.queue_free()
+						DataSave.items_equiper.sword7 = 0
+						DataSave.items_posession.sword7 += 1
+						bCreationSword[6] = false
+						_clean_stats_gui()
+						emit_signal("majStatsPerso")
+			
+				if DataSave.items_equiper.sword8 == 1:
+					if gui_equiper.sword_8 != null:
+						DataSave.addStatAttaque -= gui_equiper.sword_8.nb_attaque
+						gui_equiper.sword_8.queue_free()
+						DataSave.items_equiper.sword8 = 0
+						DataSave.items_posession.sword8 += 1
+						bCreationSword[7] = false
+						_clean_stats_gui()
+						emit_signal("majStatsPerso")
+			
+			if mouse_pos.x >= slotEquipBouclier_posX and mouse_pos.x <= slotEquipBouclier_posX + childSlotEquip[2].size.x-1 and mouse_pos.y >= slotEquipBouclier_posY and mouse_pos.y <= slotEquipBouclier_posY + childSlotEquip[2].size.y-1:
+				if DataSave.items_equiper.bouclier1 == 1:
+					if gui_equiper.bouclier_1 != null:
+						DataSave.addStatVie -= gui_equiper.bouclier_1.nb_vie
+						DataSave.addStatDefense -= gui_equiper.bouclier_1.nb_defense
+						gui_equiper.bouclier_1.queue_free()
+						DataSave.items_equiper.bouclier1 = 0
+						DataSave.items_posession.bouclier1 += 1
+						bCreationBouclier[0] = false
+						_clean_stats_gui()
+						emit_signal("majStatsPerso")
+				
+				if DataSave.items_equiper.bouclier2 == 1:
+					if gui_equiper.bouclier_2 != null:
+						DataSave.addStatVie -= gui_equiper.bouclier_2.nb_vie
+						DataSave.addStatDefense -= gui_equiper.bouclier_2.nb_defense
+						gui_equiper.bouclier_2.queue_free()
+						DataSave.items_equiper.bouclier2 = 0
+						DataSave.items_posession.bouclier2 += 1
+						bCreationBouclier[1] = false
+						_clean_stats_gui()
+						emit_signal("majStatsPerso")
+				
+				if DataSave.items_equiper.bouclier3 == 1:
+					if gui_equiper.bouclier_3 != null:
+						DataSave.addStatVie -= gui_equiper.bouclier_3.nb_vie
+						DataSave.addStatDefense -= gui_equiper.bouclier_3.nb_defense
+						gui_equiper.bouclier_3.queue_free()
+						DataSave.items_equiper.bouclier3 = 0
+						DataSave.items_posession.bouclier3 += 1
+						bCreationBouclier[2] = false
+						_clean_stats_gui()
+						emit_signal("majStatsPerso")
+				
+				if DataSave.items_equiper.bouclier4 == 1:
+					if gui_equiper.bouclier_4 != null:
+						DataSave.addStatVie -= gui_equiper.bouclier_4.nb_vie
+						DataSave.addStatDefense -= gui_equiper.bouclier_4.nb_defense
+						gui_equiper.bouclier_4.queue_free()
+						DataSave.items_equiper.bouclier4 = 0
+						DataSave.items_posession.bouclier4 += 1
+						bCreationBouclier[3] = false
+						_clean_stats_gui()
+						emit_signal("majStatsPerso")
+				
+				if DataSave.items_equiper.bouclier5 == 1:
+					if gui_equiper.bouclier_5 != null:
+						DataSave.addStatVie -= gui_equiper.bouclier_5.nb_vie
+						DataSave.addStatDefense -= gui_equiper.bouclier_5.nb_defense
+						gui_equiper.bouclier_5.queue_free()
+						DataSave.items_equiper.bouclier5 = 0
+						DataSave.items_posession.bouclier5 += 1
+						bCreationBouclier[4] = false
+						_clean_stats_gui()
+						emit_signal("majStatsPerso")
+				
+				if DataSave.items_equiper.bouclier6 == 1:
+					if gui_equiper.bouclier_6 != null:
+						DataSave.addStatVie -= gui_equiper.bouclier_6.nb_vie
+						DataSave.addStatDefense -= gui_equiper.bouclier_6.nb_defense
+						gui_equiper.bouclier_6.queue_free()
+						DataSave.items_equiper.bouclier6 = 0
+						DataSave.items_posession.bouclier6 += 1
+						bCreationBouclier[5] = false
+						_clean_stats_gui()
+						emit_signal("majStatsPerso")
+				
+				if DataSave.items_equiper.bouclier7 == 1:
+					if gui_equiper.bouclier_7 != null:
+						DataSave.addStatVie -= gui_equiper.bouclier_7.nb_vie
+						DataSave.addStatDefense -= gui_equiper.bouclier_7.nb_defense
+						gui_equiper.bouclier_7.queue_free()
+						DataSave.items_equiper.bouclier7 = 0
+						DataSave.items_posession.bouclier7 += 1
+						bCreationBouclier[6] = false
+						_clean_stats_gui()
+						emit_signal("majStatsPerso")
+			
+			if mouse_pos.x >= slotEquipHeaume_posX and mouse_pos.x <= slotEquipHeaume_posX + childSlotEquip[1].size.x-1 and mouse_pos.y >= slotEquipHeaume_posY and mouse_pos.y <= slotEquipHeaume_posY + childSlotEquip[1].size.y-1:
+				if DataSave.items_equiper.heaume1 == 1:
+					if gui_equiper.heaume_1 != null:
+						DataSave.addStatVie -= gui_equiper.heaume_1.nb_vie
+						DataSave.addStatDefense -= gui_equiper.heaume_1.nb_defense
+						gui_equiper.heaume_1.queue_free()
+						DataSave.items_equiper.heaume1 = 0
+						DataSave.items_posession.heaume1 += 1
+						bCreationHeaume[0] = false
+						_clean_stats_gui()
+						emit_signal("majStatsPerso")
+			
+				if DataSave.items_equiper.heaume2 == 1:
+					if gui_equiper.heaume_2 != null:
+						DataSave.addStatVie -= gui_equiper.heaume_2.nb_vie
+						DataSave.addStatDefense -= gui_equiper.heaume_2.nb_defense
+						gui_equiper.heaume_2.queue_free()
+						DataSave.items_equiper.heaume2 = 0
+						DataSave.items_posession.heaume2 += 1
+						bCreationHeaume[1] = false
+						_clean_stats_gui()
+						emit_signal("majStatsPerso")
+			
+				if DataSave.items_equiper.heaume3 == 1:
+					if gui_equiper.heaume_3 != null:
+						DataSave.addStatVie -= gui_equiper.heaume_3.nb_vie
+						DataSave.addStatDefense -= gui_equiper.heaume_3.nb_defense
+						gui_equiper.heaume_3.queue_free()
+						DataSave.items_equiper.heaume3 = 0
+						DataSave.items_posession.heaume3 += 1
+						bCreationHeaume[2] = false
+						_clean_stats_gui()
+						emit_signal("majStatsPerso")
+			
+				if DataSave.items_equiper.heaume4 == 1:
+					if gui_equiper.heaume_4 != null:
+						DataSave.addStatVie -= gui_equiper.heaume_4.nb_vie
+						DataSave.addStatDefense -= gui_equiper.heaume_4.nb_defense
+						gui_equiper.heaume_4.queue_free()
+						DataSave.items_equiper.heaume4 = 0
+						DataSave.items_posession.heaume4 += 1
+						bCreationHeaume[3] = false
+						_clean_stats_gui()
+						emit_signal("majStatsPerso")
+			
+				if DataSave.items_equiper.heaume5 == 1:
+					if gui_equiper.heaume_5 != null:
+						DataSave.addStatVie -= gui_equiper.heaume_5.nb_vie
+						DataSave.addStatDefense -= gui_equiper.heaume_5.nb_defense
+						gui_equiper.heaume_5.queue_free()
+						DataSave.items_equiper.heaume5 = 0
+						DataSave.items_posession.heaume5 += 1
+						bCreationHeaume[4] = false
+						_clean_stats_gui()
+						emit_signal("majStatsPerso")
+			
+				if DataSave.items_equiper.heaume6 == 1:
+					if gui_equiper.heaume_6 != null:
+						DataSave.addStatVie -= gui_equiper.heaume_6.nb_vie
+						DataSave.addStatDefense -= gui_equiper.heaume_6.nb_defense
+						gui_equiper.heaume_6.queue_free()
+						DataSave.items_equiper.heaume6 = 0
+						DataSave.items_posession.heaume6 += 1
+						bCreationHeaume[5] = false
+						_clean_stats_gui()
+						emit_signal("majStatsPerso")
+			
+			if mouse_pos.x >= slotEquipCasque_posX and mouse_pos.x <= slotEquipCasque_posX + childSlotEquip[0].size.x-1 and mouse_pos.y >= slotEquipCasque_posY and mouse_pos.y <= slotEquipCasque_posY + childSlotEquip[0].size.y-1:
+				if DataSave.items_equiper.casque1 == 1:
+					if gui_equiper.casque_1 != null:
+						DataSave.addStatVie -= gui_equiper.casque_1.nb_vie
+						DataSave.addStatDefense -= gui_equiper.casque_1.nb_defense
+						gui_equiper.casque_1.queue_free()
+						DataSave.items_equiper.casque1 = 0
+						DataSave.items_posession.casque1 += 1
+						bCreationCasque[0] = false
+						_clean_stats_gui()
+						emit_signal("majStatsPerso")
+				
+				if DataSave.items_equiper.casque2 == 1:
+					if gui_equiper.casque_2 != null:
+						DataSave.addStatVie -= gui_equiper.casque_2.nb_vie
+						DataSave.addStatDefense -= gui_equiper.casque_2.nb_defense
+						gui_equiper.casque_2.queue_free()
+						DataSave.items_equiper.casque2 = 0
+						DataSave.items_posession.casque2 += 1
+						bCreationCasque[1] = false
+						_clean_stats_gui()
+						emit_signal("majStatsPerso")
+				
+				if DataSave.items_equiper.casque3 == 1:
+					if gui_equiper.casque_3 != null:
+						DataSave.addStatVie -= gui_equiper.casque_3.nb_vie
+						DataSave.addStatDefense -= gui_equiper.casque_3.nb_defense
+						gui_equiper.casque_3.queue_free()
+						DataSave.items_equiper.casque3 = 0
+						DataSave.items_posession.casque3 += 1
+						bCreationCasque[2] = false
+						_clean_stats_gui()
+						emit_signal("majStatsPerso")
+				
+				if DataSave.items_equiper.casque4 == 1:
+					if gui_equiper.casque_4 != null:
+						DataSave.addStatVie -= gui_equiper.casque_4.nb_vie
+						DataSave.addStatDefense -= gui_equiper.casque_4.nb_defense
+						gui_equiper.casque_4.queue_free()
+						DataSave.items_equiper.casque4 = 0
+						DataSave.items_posession.casque4 += 1
+						bCreationCasque[3] = false
+						_clean_stats_gui()
+						emit_signal("majStatsPerso")
+				
+				if DataSave.items_equiper.casque5 == 1:
+					if gui_equiper.casque_5 != null:
+						DataSave.addStatVie -= gui_equiper.casque_5.nb_vie
+						DataSave.addStatDefense -= gui_equiper.casque_5.nb_defense
+						gui_equiper.casque_5.queue_free()
+						DataSave.items_equiper.casque5 = 0
+						DataSave.items_posession.casque5 += 1
+						bCreationCasque[4] = false
+						_clean_stats_gui()
+						emit_signal("majStatsPerso")
+				
+				if DataSave.items_equiper.casque6 == 1:
+					if gui_equiper.casque_6 != null:
+						DataSave.addStatVie -= gui_equiper.casque_6.nb_vie
+						DataSave.addStatDefense -= gui_equiper.casque_6.nb_defense
+						gui_equiper.casque_6.queue_free()
+						DataSave.items_equiper.casque6 = 0
+						DataSave.items_posession.casque6 += 1
+						bCreationCasque[5] = false
+						_clean_stats_gui()
+						emit_signal("majStatsPerso")
 	#Interaction avec les items 
 	for n in range(16):
 		slot_posX[n] = childSlot[n].position.x + nodeParent.offset.x
@@ -3456,6 +4387,9 @@ func _input(event):
 					if gui_bague1[n] != null:
 						if n == n:
 							#print("coucou c'est la bague du chaos !",n)
+							DataSave.addStatPuissance += gui_bague1[n].nb_puissance
+							DataSave.addStatMana += gui_bague1[n].nb_mana
+							#print("jajoute de la puissance bague en mequipant de la bague a +",DataSave.addStatPuissance)
 							gui_bague1[n].queue_free()
 							
 							txtItemType[n] = "vide"
@@ -3470,6 +4404,8 @@ func _input(event):
 					if gui_bague2[n] != null:
 						if n == n:
 							print("coucou c'est la bague du deuxieme !",n)
+							DataSave.addStatPuissance += gui_bague2[n].nb_puissance
+							DataSave.addStatMana += gui_bague2[n].nb_mana
 							gui_bague2[n].queue_free()
 							txtItemType[n] = "vide"
 							DataSave.items_posession.bague2 -= 1
@@ -3483,6 +4419,8 @@ func _input(event):
 					if gui_bague3[n] != null:
 						if n == n:
 							print("coucou c'est la bague du trois !",n)
+							DataSave.addStatPuissance += gui_bague3[n].nb_puissance
+							DataSave.addStatMana += gui_bague3[n].nb_mana
 							gui_bague3[n].queue_free()
 							txtItemType[n] = "vide"
 							DataSave.items_posession.bague3 -= 1
@@ -3496,6 +4434,8 @@ func _input(event):
 					if gui_bottes1[n] != null:
 						if n == n:
 							#print("coucou c'est la bottes !",n)
+							DataSave.addStatVie += gui_bottes1[n].nb_vie
+							DataSave.addStatDefense += gui_bottes1[n].nb_defense
 							gui_bottes1[n].queue_free()
 							txtItemType[n] = "vide"
 							DataSave.items_posession.bottes1 -= 1
@@ -3509,6 +4449,8 @@ func _input(event):
 					if gui_bottes2[n] != null:
 						if n == n:
 							#print("coucou c'est la bottes !",n)
+							DataSave.addStatVie += gui_bottes2[n].nb_vie
+							DataSave.addStatDefense += gui_bottes2[n].nb_defense
 							gui_bottes2[n].queue_free()
 							txtItemType[n] = "vide"
 							DataSave.items_posession.bottes2 -= 1
@@ -3522,6 +4464,8 @@ func _input(event):
 					if gui_bottes3[n] != null:
 						if n == n:
 							#print("coucou c'est la bottes !",n)
+							DataSave.addStatVie += gui_bottes3[n].nb_vie
+							DataSave.addStatDefense += gui_bottes3[n].nb_defense
 							gui_bottes3[n].queue_free()
 							txtItemType[n] = "vide"
 							DataSave.items_posession.bottes3 -= 1
@@ -3535,6 +4479,8 @@ func _input(event):
 					if gui_bottes4[n] != null:
 						if n == n:
 							#print("coucou c'est la bottes !",n)
+							DataSave.addStatVie += gui_bottes4[n].nb_vie
+							DataSave.addStatDefense += gui_bottes4[n].nb_defense
 							gui_bottes4[n].queue_free()
 							txtItemType[n] = "vide"
 							DataSave.items_posession.bottes4 -= 1
@@ -3548,6 +4494,8 @@ func _input(event):
 					if gui_bottes5[n] != null:
 						if n == n:
 							#print("coucou c'est la bottes !",n)
+							DataSave.addStatVie += gui_bottes5[n].nb_vie
+							DataSave.addStatDefense += gui_bottes5[n].nb_defense
 							gui_bottes5[n].queue_free()
 							txtItemType[n] = "vide"
 							DataSave.items_posession.bottes5 -= 1
@@ -3561,6 +4509,8 @@ func _input(event):
 					if gui_bottes6[n] != null:
 						if n == n:
 							#print("coucou c'est la bottes !",n)
+							DataSave.addStatVie += gui_bottes6[n].nb_vie
+							DataSave.addStatDefense += gui_bottes6[n].nb_defense
 							gui_bottes6[n].queue_free()
 							txtItemType[n] = "vide"
 							DataSave.items_posession.bottes6 -= 1
@@ -3574,6 +4524,8 @@ func _input(event):
 					if gui_bouclier1[n] != null:
 						if n == n:
 							#print("coucou c'est la bottes !",n)
+							DataSave.addStatVie += gui_bouclier1[n].nb_vie
+							DataSave.addStatDefense += gui_bouclier1[n].nb_defense
 							gui_bouclier1[n].queue_free()
 							txtItemType[n] = "vide"
 							DataSave.items_posession.bouclier1 -= 1
@@ -3587,6 +4539,8 @@ func _input(event):
 					if gui_bouclier2[n] != null:
 						if n == n:
 							#print("coucou c'est la bottes !",n)
+							DataSave.addStatVie += gui_bouclier2[n].nb_vie
+							DataSave.addStatDefense += gui_bouclier2[n].nb_defense
 							gui_bouclier2[n].queue_free()
 							txtItemType[n] = "vide"
 							DataSave.items_posession.bouclier2 -= 1
@@ -3600,6 +4554,8 @@ func _input(event):
 					if gui_bouclier3[n] != null:
 						if n == n:
 							#print("coucou c'est la bottes !",n)
+							DataSave.addStatVie += gui_bouclier3[n].nb_vie
+							DataSave.addStatDefense += gui_bouclier3[n].nb_defense
 							gui_bouclier3[n].queue_free()
 							txtItemType[n] = "vide"
 							DataSave.items_posession.bouclier3 -= 1
@@ -3613,6 +4569,8 @@ func _input(event):
 					if gui_bouclier4[n] != null:
 						if n == n:
 							#print("coucou c'est la bottes !",n)
+							DataSave.addStatVie += gui_bouclier4[n].nb_vie
+							DataSave.addStatDefense += gui_bouclier4[n].nb_defense
 							gui_bouclier4[n].queue_free()
 							txtItemType[n] = "vide"
 							DataSave.items_posession.bouclier4 -= 1
@@ -3626,6 +4584,8 @@ func _input(event):
 					if gui_bouclier5[n] != null:
 						if n == n:
 							#print("coucou c'est la bottes !",n)
+							DataSave.addStatVie += gui_bouclier5[n].nb_vie
+							DataSave.addStatDefense += gui_bouclier5[n].nb_defense
 							gui_bouclier5[n].queue_free()
 							txtItemType[n] = "vide"
 							DataSave.items_posession.bouclier5 -= 1
@@ -3639,6 +4599,8 @@ func _input(event):
 					if gui_bouclier6[n] != null:
 						if n == n:
 							#print("coucou c'est la bottes !",n)
+							DataSave.addStatVie += gui_bouclier6[n].nb_vie
+							DataSave.addStatDefense += gui_bouclier6[n].nb_defense
 							gui_bouclier6[n].queue_free()
 							txtItemType[n] = "vide"
 							DataSave.items_posession.bouclier6 -= 1
@@ -3652,6 +4614,8 @@ func _input(event):
 					if gui_bouclier7[n] != null:
 						if n == n:
 							#print("coucou c'est la bottes !",n)
+							DataSave.addStatVie += gui_bouclier7[n].nb_vie
+							DataSave.addStatDefense += gui_bouclier7[n].nb_defense
 							gui_bouclier7[n].queue_free()
 							txtItemType[n] = "vide"
 							DataSave.items_posession.bouclier7 -= 1
@@ -3666,6 +4630,8 @@ func _input(event):
 					if gui_casque1[n] != null:
 						if n == n:
 							#print("coucou c'est la bottes !",n)
+							DataSave.addStatVie += gui_casque1[n].nb_vie
+							DataSave.addStatDefense += gui_casque1[n].nb_defense
 							gui_casque1[n].queue_free()
 							txtItemType[n] = "vide"
 							DataSave.items_posession.casque1 -= 1
@@ -3679,6 +4645,8 @@ func _input(event):
 					if gui_casque2[n] != null:
 						if n == n:
 							#print("coucou c'est la bottes !",n)
+							DataSave.addStatVie += gui_casque2[n].nb_vie
+							DataSave.addStatDefense += gui_casque2[n].nb_defense
 							gui_casque2[n].queue_free()
 							txtItemType[n] = "vide"
 							DataSave.items_posession.casque2 -= 1
@@ -3692,6 +4660,8 @@ func _input(event):
 					if gui_casque3[n] != null:
 						if n == n:
 							#print("coucou c'est la bottes !",n)
+							DataSave.addStatVie += gui_casque3[n].nb_vie
+							DataSave.addStatDefense += gui_casque3[n].nb_defense
 							gui_casque3[n].queue_free()
 							txtItemType[n] = "vide"
 							DataSave.items_posession.casque3 -= 1
@@ -3705,6 +4675,8 @@ func _input(event):
 					if gui_casque4[n] != null:
 						if n == n:
 							#print("coucou c'est la bottes !",n)
+							DataSave.addStatVie += gui_casque4[n].nb_vie
+							DataSave.addStatDefense += gui_casque4[n].nb_defense
 							gui_casque4[n].queue_free()
 							txtItemType[n] = "vide"
 							DataSave.items_posession.casque4 -= 1
@@ -3718,6 +4690,8 @@ func _input(event):
 					if gui_casque5[n] != null:
 						if n == n:
 							#print("coucou c'est la bottes !",n)
+							DataSave.addStatVie += gui_casque5[n].nb_vie
+							DataSave.addStatDefense += gui_casque5[n].nb_defense
 							gui_casque5[n].queue_free()
 							txtItemType[n] = "vide"
 							DataSave.items_posession.casque5 -= 1
@@ -3731,6 +4705,8 @@ func _input(event):
 					if gui_casque6[n] != null:
 						if n == n:
 							#print("coucou c'est la bottes !",n)
+							DataSave.addStatVie += gui_casque6[n].nb_vie
+							DataSave.addStatDefense += gui_casque6[n].nb_defense
 							gui_casque6[n].queue_free()
 							txtItemType[n] = "vide"
 							DataSave.items_posession.casque6 -= 1
@@ -3744,6 +4720,8 @@ func _input(event):
 					if gui_collier1[n] != null:
 						if n == n:
 							#print("coucou c'est la bottes !",n)
+							DataSave.addStatPuissance += gui_collier1[n].nb_puissance
+							DataSave.addStatEndurance += gui_collier1[n].nb_endurance
 							gui_collier1[n].queue_free()
 							txtItemType[n] = "vide"
 							DataSave.items_posession.collier1 -= 1
@@ -3757,6 +4735,8 @@ func _input(event):
 					if gui_collier2[n] != null:
 						if n == n:
 							#print("coucou c'est la bottes !",n)
+							DataSave.addStatPuissance += gui_collier2[n].nb_puissance
+							DataSave.addStatEndurance += gui_collier2[n].nb_endurance
 							gui_collier2[n].queue_free()
 							txtItemType[n] = "vide"
 							DataSave.items_posession.collier2 -= 1
@@ -3770,6 +4750,8 @@ func _input(event):
 					if gui_collier3[n] != null:
 						if n == n:
 							#print("coucou c'est la bottes !",n)
+							DataSave.addStatPuissance += gui_collier3[n].nb_puissance
+							DataSave.addStatEndurance += gui_collier3[n].nb_endurance
 							gui_collier3[n].queue_free()
 							txtItemType[n] = "vide"
 							DataSave.items_posession.collier3 -= 1
@@ -3783,6 +4765,8 @@ func _input(event):
 					if gui_heaume1[n] != null:
 						if n == n:
 							#print("coucou c'est la bottes !",n)
+							DataSave.addStatVie += gui_heaume1[n].nb_vie
+							DataSave.addStatDefense += gui_heaume1[n].nb_defense
 							gui_heaume1[n].queue_free()
 							txtItemType[n] = "vide"
 							DataSave.items_posession.heaume1 -= 1
@@ -3796,6 +4780,8 @@ func _input(event):
 					if gui_heaume2[n] != null:
 						if n == n:
 							#print("coucou c'est la bottes !",n)
+							DataSave.addStatVie += gui_heaume2[n].nb_vie
+							DataSave.addStatDefense += gui_heaume2[n].nb_defense
 							gui_heaume2[n].queue_free()
 							txtItemType[n] = "vide"
 							DataSave.items_posession.heaume2 -= 1
@@ -3809,6 +4795,8 @@ func _input(event):
 					if gui_heaume3[n] != null:
 						if n == n:
 							#print("coucou c'est la bottes !",n)
+							DataSave.addStatVie += gui_heaume3[n].nb_vie
+							DataSave.addStatDefense += gui_heaume3[n].nb_defense
 							gui_heaume3[n].queue_free()
 							txtItemType[n] = "vide"
 							DataSave.items_posession.heaume3 -= 1
@@ -3822,6 +4810,8 @@ func _input(event):
 					if gui_heaume4[n] != null:
 						if n == n:
 							#print("coucou c'est la bottes !",n)
+							DataSave.addStatVie += gui_heaume4[n].nb_vie
+							DataSave.addStatDefense += gui_heaume4[n].nb_defense
 							gui_heaume4[n].queue_free()
 							txtItemType[n] = "vide"
 							DataSave.items_posession.heaume4 -= 1
@@ -3835,6 +4825,8 @@ func _input(event):
 					if gui_heaume5[n] != null:
 						if n == n:
 							#print("coucou c'est la bottes !",n)
+							DataSave.addStatVie += gui_heaume5[n].nb_vie
+							DataSave.addStatDefense += gui_heaume5[n].nb_defense
 							gui_heaume5[n].queue_free()
 							txtItemType[n] = "vide"
 							DataSave.items_posession.heaume5 -= 1
@@ -3848,6 +4840,8 @@ func _input(event):
 					if gui_heaume6[n] != null:
 						if n == n:
 							#print("coucou c'est la bottes !",n)
+							DataSave.addStatVie += gui_heaume6[n].nb_vie
+							DataSave.addStatDefense += gui_heaume6[n].nb_defense
 							gui_heaume6[n].queue_free()
 							txtItemType[n] = "vide"
 							DataSave.items_posession.heaume6 -= 1
@@ -3861,6 +4855,7 @@ func _input(event):
 					if gui_sword1[n] != null:
 						if n == n:
 							#print("coucou c'est la bottes !",n)
+							DataSave.addStatAttaque += gui_sword1[n].nb_attaque
 							gui_sword1[n].queue_free()
 							txtItemType[n] = "vide"
 							DataSave.items_posession.sword1 -= 1
@@ -3874,6 +4869,7 @@ func _input(event):
 					if gui_sword2[n] != null:
 						if n == n:
 							#print("coucou c'est la bottes !",n)
+							DataSave.addStatAttaque += gui_sword2[n].nb_attaque
 							gui_sword2[n].queue_free()
 							txtItemType[n] = "vide"
 							DataSave.items_posession.sword2 -= 1
@@ -3887,6 +4883,7 @@ func _input(event):
 					if gui_sword3[n] != null:
 						if n == n:
 							#print("coucou c'est la bottes !",n)
+							DataSave.addStatAttaque += gui_sword3[n].nb_attaque
 							gui_sword3[n].queue_free()
 							txtItemType[n] = "vide"
 							DataSave.items_posession.sword3 -= 1
@@ -3900,6 +4897,7 @@ func _input(event):
 					if gui_sword4[n] != null:
 						if n == n:
 							#print("coucou c'est la bottes !",n)
+							DataSave.addStatAttaque += gui_sword4[n].nb_attaque
 							gui_sword4[n].queue_free()
 							txtItemType[n] = "vide"
 							DataSave.items_posession.sword4 -= 1
@@ -3913,6 +4911,7 @@ func _input(event):
 					if gui_sword5[n] != null:
 						if n == n:
 							#print("coucou c'est la bottes !",n)
+							DataSave.addStatAttaque += gui_sword5[n].nb_attaque
 							gui_sword5[n].queue_free()
 							txtItemType[n] = "vide"
 							DataSave.items_posession.sword5 -= 1
@@ -3926,6 +4925,7 @@ func _input(event):
 					if gui_sword6[n] != null:
 						if n == n:
 							#print("coucou c'est la bottes !",n)
+							DataSave.addStatAttaque += gui_sword6[n].nb_attaque
 							gui_sword6[n].queue_free()
 							txtItemType[n] = "vide"
 							DataSave.items_posession.sword6 -= 1
@@ -3939,6 +4939,7 @@ func _input(event):
 					if gui_sword7[n] != null:
 						if n == n:
 							#print("coucou c'est la bottes !",n)
+							DataSave.addStatAttaque += gui_sword7[n].nb_attaque
 							gui_sword7[n].queue_free()
 							txtItemType[n] = "vide"
 							DataSave.items_posession.sword7 -= 1
@@ -3952,6 +4953,7 @@ func _input(event):
 					if gui_sword8[n] != null:
 						if n == n:
 							#print("coucou c'est la bottes !",n)
+							DataSave.addStatAttaque += gui_sword8[n].nb_attaque
 							gui_sword8[n].queue_free()
 							txtItemType[n] = "vide"
 							DataSave.items_posession.sword8 -= 1
@@ -3960,4 +4962,6 @@ func _input(event):
 							
 							nbCompteurSword8 -= 1
 							isSlot_libre[n] = true
+			
+			
 	

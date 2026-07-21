@@ -19,6 +19,14 @@ casque3 = 0, casque4 = 0, casque5 = 0, casque6 = 0, collier1 = 0, collier2 = 0, 
 heaume2 = 0, heaume3 = 0, heaume4 = 0, heaume5 = 0, heaume6 = 0, sword1 = 0, sword2 = 0, sword3 = 0, 
 sword4 = 0, sword5 = 0, sword6 = 0, sword7 = 0, sword8 = 0 }
 
+var addStatVie = 0
+var addStatMana = 0
+var addStatPuissance = 0
+var addStatEndurance = 0
+var addStatRegeneEndurance = 0
+var addStatAttaque = 0
+var addStatDefense = 0
+
 var nbTotalItemsInventaire = 0 
 var nbTotalItemsEquipements = 0
 
@@ -130,6 +138,13 @@ func load_data():
 	items_equiper.sword6 = config.get_value("equiper", "sword_6", 0)
 	items_equiper.sword7 = config.get_value("equiper", "sword_7", 0)
 	items_equiper.sword8 = config.get_value("equiper", "sword_8", 0)
+	addStatVie = config.get_value("stat_bonus", "vie", 0)
+	addStatMana = config.get_value("stat_bonus", "mana", 0)
+	addStatPuissance = config.get_value("stat_bonus", "puissance", 0)
+	addStatEndurance = config.get_value("stat_bonus", "endurance", 0)
+	addStatRegeneEndurance = config.get_value("stat_bonus", "regene_endurance", 0)
+	addStatAttaque = config.get_value("stat_bonus", "attaque", 0)
+	addStatDefense = config.get_value("stat_bonus", "defense", 0)
 	
 
 func save_data():
@@ -227,6 +242,13 @@ func save_data():
 	config.set_value("equiper", "sword_6", items_equiper.sword6)
 	config.set_value("equiper", "sword_7", items_equiper.sword7)
 	config.set_value("equiper", "sword_8", items_equiper.sword8)
+	config.set_value("stat_bonus", "vie", addStatVie)
+	config.set_value("stat_bonus", "mana", addStatMana)
+	config.set_value("stat_bonus", "puissance", addStatPuissance)
+	config.set_value("stat_bonus", "endurance", addStatEndurance)
+	config.set_value("stat_bonus", "regene_endurance", addStatRegeneEndurance)
+	config.set_value("stat_bonus", "attaque", addStatAttaque)
+	config.set_value("stat_bonus", "defense", addStatDefense)
 	
 	config.save(SAVE_PATH)
 
