@@ -143,6 +143,8 @@ var nbCompteurSword6 = 0
 var nbCompteurSword7 = 0
 var nbCompteurSword8 = 0
 
+var txtTypeClic = ""
+
 var isPanelClose = true
 
 var nbDecaleTextName = 0
@@ -1905,7 +1907,7 @@ func _on_panel_retour_gui_input(event: InputEvent) -> void:
 			if gui_sword8[n] != null:
 				gui_sword8[n].queue_free()
 
-func _input(event): #l'équivalent de keypressed dans love2D
+func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il execute en continue comme un update
 	var mouse_pos = get_viewport().get_mouse_position()
 	var slot_posX = []
 	var slot_posY = [] 
@@ -1916,8 +1918,16 @@ func _input(event): #l'équivalent de keypressed dans love2D
 	for n in range(20):
 		slot_posX[n] = childSlot[n].position.x + nodeParent.offset.x
 		slot_posY[n] = childSlot[n].position.y + nodeParent.offset.y
+	#print("recuperation de la variable txtTypeClic : ", txtTypeClic)
 	
-	if Input.is_action_just_pressed("button_left"):
+	txtTypeClic = ""
+	if Input.is_action_just_pressed("button_left") or Input.is_action_just_pressed("button_right"): # je vais faire clic gauche ou droit et avant le prochain if mettre une variable qui dit droite ou gauche donc mettre vite fait une autre condition puis en fonction de cette variable soit sa jette soit sa utiliser 
+		if Input.is_action_just_pressed("button_left") and txtTypeClic == "": 
+			txtTypeClic = "left"
+			print("LEFTTTT")
+		if Input.is_action_just_pressed("button_right") and txtTypeClic == "":
+			txtTypeClic = "right"
+			print("RIGHTTTT")
 		#print("BB : ", slot_posY[7]) // surement ajouter une autre variable qui dit quel item a dans telle slot dans lupdate 
 		for n in range(20):
 			#finalement rester uniquement sur clik gauche et afficher 3 options : - utiliser , coffret , jeter
@@ -1926,531 +1936,958 @@ func _input(event): #l'équivalent de keypressed dans love2D
 				if txtItemType[n] == "potion_vie":
 					if gui_potion_vie[n] != null:
 						if n == 0:
-							#a tester avec des print
-							gui_potion_vie[0].queue_free()
-							txtItemType[0] = "vide"
-							DataSave.items_posession.potionVie -= 1
-							nbCompteurPotionVie -= 1
-							isSlot_libre[0] = true
+							if txtTypeClic == "left": 
+								print("on utilise l'item")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_potion_vie[0].queue_free()
+								txtItemType[0] = "vide"
+								DataSave.items_posession.potionVie -= 1
+								nbCompteurPotionVie -= 1
+								isSlot_libre[0] = true
+								txtTypeClic = ""
+								print("on supprime !!!! : ", txtTypeClic)
 						elif n == 1:
-							gui_potion_vie[1].queue_free()
-							txtItemType[1] = "vide"
-							DataSave.items_posession.potionVie -= 1
-							nbCompteurPotionVie -= 1
-							isSlot_libre[1] = true
+							if txtTypeClic == "left":
+								print("on utilise l'item")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_potion_vie[1].queue_free()
+								txtItemType[1] = "vide"
+								DataSave.items_posession.potionVie -= 1
+								nbCompteurPotionVie -= 1
+								isSlot_libre[1] = true
+								txtTypeClic = ""
+								print("on supprime !!!! : ", txtTypeClic)
 						elif n == 2:
-							gui_potion_vie[2].queue_free()
-							txtItemType[2] = "vide"
-							DataSave.items_posession.potionVie -= 1
-							nbCompteurPotionVie -= 1
-							isSlot_libre[2] = true
+							if txtTypeClic == "left":
+								print("utilise l'item")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_potion_vie[2].queue_free()
+								txtItemType[2] = "vide"
+								DataSave.items_posession.potionVie -= 1
+								nbCompteurPotionVie -= 1
+								isSlot_libre[2] = true
+								txtTypeClic = ""
+								print("on supprime !!!! : ", txtTypeClic)
 						elif n == 3:
-							gui_potion_vie[3].queue_free()
-							txtItemType[3] = "vide"
-							DataSave.items_posession.potionVie -= 1
-							nbCompteurPotionVie -= 1
-							isSlot_libre[3] = true
+							if txtTypeClic == "left":
+								print("utilise l'item")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_potion_vie[3].queue_free()
+								txtItemType[3] = "vide"
+								DataSave.items_posession.potionVie -= 1
+								nbCompteurPotionVie -= 1
+								isSlot_libre[3] = true
+								txtTypeClic = ""
 						elif n == 4:
-							gui_potion_vie[4].queue_free()
-							txtItemType[4] = "vide"
-							DataSave.items_posession.potionVie -= 1
-							nbCompteurPotionVie -= 1
-							isSlot_libre[4] = true
+							if txtTypeClic == "left":
+								print("utilise l'item")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_potion_vie[4].queue_free()
+								txtItemType[4] = "vide"
+								DataSave.items_posession.potionVie -= 1
+								nbCompteurPotionVie -= 1
+								isSlot_libre[4] = true
+								txtTypeClic = ""
 						elif n == 5:
-							gui_potion_vie[5].queue_free()
-							txtItemType[5] = "vide"
-							DataSave.items_posession.potionVie -= 1
-							nbCompteurPotionVie -= 1
-							isSlot_libre[5] = true
+							if txtTypeClic == "left":
+								print("utilise item")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_potion_vie[5].queue_free()
+								txtItemType[5] = "vide"
+								DataSave.items_posession.potionVie -= 1
+								nbCompteurPotionVie -= 1
+								isSlot_libre[5] = true
+								txtTypeClic = ""
 						elif n == 6:
-							gui_potion_vie[6].queue_free()
-							txtItemType[6] = "vide"
-							DataSave.items_posession.potionVie -= 1
-							nbCompteurPotionVie -= 1
-							isSlot_libre[6] = true
+							if txtTypeClic == "left":
+								print("utilise item")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_potion_vie[6].queue_free()
+								txtItemType[6] = "vide"
+								DataSave.items_posession.potionVie -= 1
+								nbCompteurPotionVie -= 1
+								isSlot_libre[6] = true
+								txtTypeClic = ""
 						elif n == 7:
-							gui_potion_vie[7].queue_free()
-							txtItemType[7] = "vide"
-							DataSave.items_posession.potionVie -= 1
-							nbCompteurPotionVie -= 1
-							isSlot_libre[7] = true
+							if txtTypeClic == "left":
+								print("utilise item")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_potion_vie[7].queue_free()
+								txtItemType[7] = "vide"
+								DataSave.items_posession.potionVie -= 1
+								nbCompteurPotionVie -= 1
+								isSlot_libre[7] = true
+								txtTypeClic = ""
 						elif n == 8:
-							gui_potion_vie[8].queue_free()
-							txtItemType[8] = "vide"
-							DataSave.items_posession.potionVie -= 1
-							nbCompteurPotionVie -= 1
-							isSlot_libre[8] = true
+							if txtTypeClic == "left": 
+								print("utilise item")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_potion_vie[8].queue_free()
+								txtItemType[8] = "vide"
+								DataSave.items_posession.potionVie -= 1
+								nbCompteurPotionVie -= 1
+								isSlot_libre[8] = true
+								txtTypeClic = ""
 						elif n == 9:
-							gui_potion_vie[9].queue_free()
-							txtItemType[9] = "vide"
-							DataSave.items_posession.potionVie -= 1
-							nbCompteurPotionVie -= 1
-							isSlot_libre[9] = true
+							if txtTypeClic == "left":
+								print("utilise item")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_potion_vie[9].queue_free()
+								txtItemType[9] = "vide"
+								DataSave.items_posession.potionVie -= 1
+								nbCompteurPotionVie -= 1
+								isSlot_libre[9] = true
+								txtTypeClic = ""
 						elif n == 10:
-							gui_potion_vie[10].queue_free()
-							txtItemType[10] = "vide"
-							DataSave.items_posession.potionVie -= 1
-							nbCompteurPotionVie -= 1
-							isSlot_libre[10] = true
+							if txtTypeClic == "left":
+								print("utilise item")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_potion_vie[10].queue_free()
+								txtItemType[10] = "vide"
+								DataSave.items_posession.potionVie -= 1
+								nbCompteurPotionVie -= 1
+								isSlot_libre[10] = true
+								txtTypeClic = ""
 						elif n == 11:
-							gui_potion_vie[11].queue_free()
-							txtItemType[11] = "vide"
-							DataSave.items_posession.potionVie -= 1
-							nbCompteurPotionVie -= 1
-							isSlot_libre[11] = true
+							if txtTypeClic == "left":
+								print("utilise item")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_potion_vie[11].queue_free()
+								txtItemType[11] = "vide"
+								DataSave.items_posession.potionVie -= 1
+								nbCompteurPotionVie -= 1
+								isSlot_libre[11] = true
+								txtTypeClic = ""
 						elif n == 12:
-							gui_potion_vie[12].queue_free()
-							txtItemType[12] = "vide"
-							DataSave.items_posession.potionVie -= 1
-							nbCompteurPotionVie -= 1
-							isSlot_libre[12] = true
+							if txtTypeClic == "left":
+								print("utilise item")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_potion_vie[12].queue_free()
+								txtItemType[12] = "vide"
+								DataSave.items_posession.potionVie -= 1
+								nbCompteurPotionVie -= 1
+								isSlot_libre[12] = true
+								txtTypeClic = ""
 						elif n == 13:
-							gui_potion_vie[13].queue_free()
-							txtItemType[13] = "vide"
-							DataSave.items_posession.potionVie -= 1
-							nbCompteurPotionVie -= 1
-							isSlot_libre[13] = true
+							if txtTypeClic == "left":
+								print("utilise item")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_potion_vie[13].queue_free()
+								txtItemType[13] = "vide"
+								DataSave.items_posession.potionVie -= 1
+								nbCompteurPotionVie -= 1
+								isSlot_libre[13] = true
+								txtTypeClic = ""
 						elif n == 14:
-							gui_potion_vie[14].queue_free()
-							txtItemType[14] = "vide"
-							DataSave.items_posession.potionVie -= 1
-							nbCompteurPotionVie -= 1
-							isSlot_libre[14] = true
+							if txtTypeClic == "left":
+								print("utilise item")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_potion_vie[14].queue_free()
+								txtItemType[14] = "vide"
+								DataSave.items_posession.potionVie -= 1
+								nbCompteurPotionVie -= 1
+								isSlot_libre[14] = true
+								txtTypeClic = ""
 						elif n == 15:
-							gui_potion_vie[15].queue_free()
-							txtItemType[15] = "vide"
-							DataSave.items_posession.potionVie -= 1
-							nbCompteurPotionVie -= 1
-							isSlot_libre[15] = true
+							if txtTypeClic == "left": 
+								print("utilise item")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_potion_vie[15].queue_free()
+								txtItemType[15] = "vide"
+								DataSave.items_posession.potionVie -= 1
+								nbCompteurPotionVie -= 1
+								isSlot_libre[15] = true
+								txtTypeClic = ""
 						elif n == 16:
-							gui_potion_vie[16].queue_free()
-							txtItemType[16] = "vide"
-							DataSave.items_posession.potionVie -= 1
-							nbCompteurPotionVie -= 1
-							isSlot_libre[16] = true
+							if txtTypeClic == "left":
+								print("utilise item")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_potion_vie[16].queue_free()
+								txtItemType[16] = "vide"
+								DataSave.items_posession.potionVie -= 1
+								nbCompteurPotionVie -= 1
+								isSlot_libre[16] = true
+								txtTypeClic = ""
 						elif n == 17:
-							gui_potion_vie[17].queue_free()
-							txtItemType[17] = "vide"
-							DataSave.items_posession.potionVie -= 1
-							nbCompteurPotionVie -= 1
-							isSlot_libre[17] = true
+							if txtTypeClic == "left":
+								print("utilise item")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_potion_vie[17].queue_free()
+								txtItemType[17] = "vide"
+								DataSave.items_posession.potionVie -= 1
+								nbCompteurPotionVie -= 1
+								isSlot_libre[17] = true
+								txtTypeClic = ""
 						elif n == 18:
-							gui_potion_vie[18].queue_free()
-							txtItemType[18] = "vide"
-							DataSave.items_posession.potionVie -= 1
-							nbCompteurPotionVie -= 1
-							isSlot_libre[18] = true
+							if txtTypeClic == "left":
+								print("utilise item")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_potion_vie[18].queue_free()
+								txtItemType[18] = "vide"
+								DataSave.items_posession.potionVie -= 1
+								nbCompteurPotionVie -= 1
+								isSlot_libre[18] = true
+								txtTypeClic = ""
 						elif n == 19:
-							gui_potion_vie[19].queue_free()
-							txtItemType[19] = "vide"
-							DataSave.items_posession.potionVie -= 1
-							nbCompteurPotionVie -= 1
-							isSlot_libre[19] = true
+							if txtTypeClic == "left":
+								print("utilise item")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_potion_vie[19].queue_free()
+								txtItemType[19] = "vide"
+								DataSave.items_posession.potionVie -= 1
+								nbCompteurPotionVie -= 1
+								isSlot_libre[19] = true
+								txtTypeClic = ""
 				#Potion de mana
 				if txtItemType[n] == "potion_mana":
 					if gui_potion_mana[n] != null:
 						if n == 0:
-							gui_potion_mana[0].queue_free()
-							txtItemType[0] = "vide"
-							DataSave.items_posession.potionMana -= 1
-							nbCompteurPotionMana -= 1
-							isSlot_libre[0] = true
+							if  txtTypeClic == "left":
+								print("utilise item")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_potion_mana[0].queue_free()
+								txtItemType[0] = "vide"
+								DataSave.items_posession.potionMana -= 1
+								nbCompteurPotionMana -= 1
+								isSlot_libre[0] = true
+								txtTypeClic = ""
 						elif n == 1:
-							gui_potion_mana[1].queue_free()
-							txtItemType[1] = "vide"
-							DataSave.items_posession.potionMana -= 1
-							nbCompteurPotionMana -= 1
-							isSlot_libre[1] = true
+							if txtTypeClic == "left":
+								print("utilise item")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_potion_mana[1].queue_free()
+								txtItemType[1] = "vide"
+								DataSave.items_posession.potionMana -= 1
+								nbCompteurPotionMana -= 1
+								isSlot_libre[1] = true
+								txtTypeClic = ""
 						elif n == 2:
-							gui_potion_mana[2].queue_free()
-							txtItemType[2] = "vide"
-							DataSave.items_posession.potionMana -= 1
-							nbCompteurPotionMana -= 1
-							isSlot_libre[2] = true
+							if txtTypeClic == "left":
+								print("utilise item")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_potion_mana[2].queue_free()
+								txtItemType[2] = "vide"
+								DataSave.items_posession.potionMana -= 1
+								nbCompteurPotionMana -= 1
+								isSlot_libre[2] = true
+								txtTypeClic = ""
 						elif n == 3:
-							gui_potion_mana[3].queue_free()
-							txtItemType[3] = "vide"
-							DataSave.items_posession.potionMana -= 1
-							nbCompteurPotionMana -= 1
-							isSlot_libre[3] = true
+							if txtTypeClic == "left":
+								print("utilise item")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_potion_mana[3].queue_free()
+								txtItemType[3] = "vide"
+								DataSave.items_posession.potionMana -= 1
+								nbCompteurPotionMana -= 1
+								isSlot_libre[3] = true
+								txtTypeClic = ""
 						elif n == 4:
-							gui_potion_mana[4].queue_free()
-							txtItemType[4] = "vide"
-							DataSave.items_posession.potionMana -= 1
-							nbCompteurPotionMana -= 1
-							isSlot_libre[4] = true
+							if txtTypeClic == "left":
+								print("utilise item")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_potion_mana[4].queue_free()
+								txtItemType[4] = "vide"
+								DataSave.items_posession.potionMana -= 1
+								nbCompteurPotionMana -= 1
+								isSlot_libre[4] = true
+								txtTypeClic = ""
 						elif n == 5:
-							gui_potion_mana[5].queue_free()
-							txtItemType[5] = "vide"
-							DataSave.items_posession.potionMana -= 1
-							nbCompteurPotionMana -= 1
-							isSlot_libre[5] = true
+							if txtTypeClic == "left":
+								print("utilise item")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_potion_mana[5].queue_free()
+								txtItemType[5] = "vide"
+								DataSave.items_posession.potionMana -= 1
+								nbCompteurPotionMana -= 1
+								isSlot_libre[5] = true
+								txtTypeClic = ""
 						elif n == 6:
-							gui_potion_mana[6].queue_free()
-							txtItemType[6] = "vide"
-							DataSave.items_posession.potionMana -= 1
-							nbCompteurPotionMana -= 1
-							isSlot_libre[6] = true
+							if txtTypeClic == "left":
+								print("utilise item")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_potion_mana[6].queue_free()
+								txtItemType[6] = "vide"
+								DataSave.items_posession.potionMana -= 1
+								nbCompteurPotionMana -= 1
+								isSlot_libre[6] = true
+								txtTypeClic = ""
 						elif n == 7:
-							gui_potion_mana[7].queue_free()
-							txtItemType[7] = "vide"
-							DataSave.items_posession.potionMana -= 1
-							nbCompteurPotionMana -= 1
-							isSlot_libre[7] = true
+							if txtTypeClic == "left":
+								print("utilise item")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_potion_mana[7].queue_free()
+								txtItemType[7] = "vide"
+								DataSave.items_posession.potionMana -= 1
+								nbCompteurPotionMana -= 1
+								isSlot_libre[7] = true
+								txtTypeClic = ""
 						elif n == 8:
-							gui_potion_mana[8].queue_free()
-							txtItemType[8] = "vide"
-							DataSave.items_posession.potionMana -= 1
-							nbCompteurPotionMana -= 1
-							isSlot_libre[8] = true
+							if txtTypeClic == "left":
+								print("utilise item")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_potion_mana[8].queue_free()
+								txtItemType[8] = "vide"
+								DataSave.items_posession.potionMana -= 1
+								nbCompteurPotionMana -= 1
+								isSlot_libre[8] = true
+								txtTypeClic = ""
 						elif n == 9:
-							gui_potion_mana[9].queue_free()
-							txtItemType[9] = "vide"
-							DataSave.items_posession.potionMana -= 1
-							nbCompteurPotionMana -= 1
-							isSlot_libre[9] = true
+							if txtTypeClic == "left":
+								print("utilise item")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_potion_mana[9].queue_free()
+								txtItemType[9] = "vide"
+								DataSave.items_posession.potionMana -= 1
+								nbCompteurPotionMana -= 1
+								isSlot_libre[9] = true
+								txtTypeClic = ""
 						elif n == 10:
-							gui_potion_mana[10].queue_free()
-							txtItemType[10] = "vide"
-							DataSave.items_posession.potionMana -= 1
-							nbCompteurPotionMana -= 1
-							isSlot_libre[10] = true
+							if txtTypeClic == "left":
+								print("utilise item")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_potion_mana[10].queue_free()
+								txtItemType[10] = "vide"
+								DataSave.items_posession.potionMana -= 1
+								nbCompteurPotionMana -= 1
+								isSlot_libre[10] = true
+								txtTypeClic = ""
 						elif n == 11:
-							gui_potion_mana[11].queue_free()
-							txtItemType[11] = "vide"
-							DataSave.items_posession.potionMana -= 1
-							nbCompteurPotionMana -= 1
-							isSlot_libre[11] = true
+							if txtTypeClic == "left":
+								print("utilise item")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_potion_mana[11].queue_free()
+								txtItemType[11] = "vide"
+								DataSave.items_posession.potionMana -= 1
+								nbCompteurPotionMana -= 1
+								isSlot_libre[11] = true
+								txtTypeClic = ""
 						elif n == 12:
-							gui_potion_mana[12].queue_free()
-							txtItemType[12] = "vide"
-							DataSave.items_posession.potionMana -= 1
-							nbCompteurPotionMana -= 1
-							isSlot_libre[12] = true
+							if txtTypeClic == "left":
+								print("utilise item")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_potion_mana[12].queue_free()
+								txtItemType[12] = "vide"
+								DataSave.items_posession.potionMana -= 1
+								nbCompteurPotionMana -= 1
+								isSlot_libre[12] = true
+								txtTypeClic = ""
 						elif n == 13:
-							gui_potion_mana[13].queue_free()
-							txtItemType[13] = "vide"
-							DataSave.items_posession.potionMana -= 1
-							nbCompteurPotionMana -= 1
-							isSlot_libre[13] = true
+							if txtTypeClic == "left":
+								print("utilise item")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_potion_mana[13].queue_free()
+								txtItemType[13] = "vide"
+								DataSave.items_posession.potionMana -= 1
+								nbCompteurPotionMana -= 1
+								isSlot_libre[13] = true
+								txtTypeClic = ""
 						elif n == 14:
-							gui_potion_mana[14].queue_free()
-							txtItemType[14] = "vide"
-							DataSave.items_posession.potionMana -= 1
-							nbCompteurPotionMana -= 1
-							isSlot_libre[14] = true
+							if txtTypeClic == "left":
+								print("utilise item")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_potion_mana[14].queue_free()
+								txtItemType[14] = "vide"
+								DataSave.items_posession.potionMana -= 1
+								nbCompteurPotionMana -= 1
+								isSlot_libre[14] = true
+								txtTypeClic = ""
 						elif n == 15:
-							gui_potion_mana[15].queue_free()
-							txtItemType[15] = "vide"
-							DataSave.items_posession.potionMana -= 1
-							nbCompteurPotionMana -= 1
-							isSlot_libre[15] = true
+							if txtTypeClic == "left":
+								print("utilise item")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_potion_mana[15].queue_free()
+								txtItemType[15] = "vide"
+								DataSave.items_posession.potionMana -= 1
+								nbCompteurPotionMana -= 1
+								isSlot_libre[15] = true
+								txtTypeClic = ""
 						elif n == 16:
-							gui_potion_mana[16].queue_free()
-							txtItemType[16] = "vide"
-							DataSave.items_posession.potionMana -= 1
-							nbCompteurPotionMana -= 1
-							isSlot_libre[16] = true
+							if txtTypeClic == "left":
+								print("utilise item")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_potion_mana[16].queue_free()
+								txtItemType[16] = "vide"
+								DataSave.items_posession.potionMana -= 1
+								nbCompteurPotionMana -= 1
+								isSlot_libre[16] = true
+								txtTypeClic = ""
 						elif n == 17:
-							gui_potion_mana[17].queue_free()
-							txtItemType[17] = "vide"
-							DataSave.items_posession.potionMana -= 1
-							nbCompteurPotionMana -= 1
-							isSlot_libre[17] = true
+							if txtTypeClic == "left":
+								print("utilise item")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_potion_mana[17].queue_free()
+								txtItemType[17] = "vide"
+								DataSave.items_posession.potionMana -= 1
+								nbCompteurPotionMana -= 1
+								isSlot_libre[17] = true
+								txtTypeClic = ""
 						elif n == 18:
-							gui_potion_mana[18].queue_free()
-							txtItemType[18] = "vide"
-							DataSave.items_posession.potionMana -= 1
-							nbCompteurPotionMana -= 1
-							isSlot_libre[18] = true
+							if txtTypeClic == "left":
+								print("utilise item")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_potion_mana[18].queue_free()
+								txtItemType[18] = "vide"
+								DataSave.items_posession.potionMana -= 1
+								nbCompteurPotionMana -= 1
+								isSlot_libre[18] = true
+								txtTypeClic = ""
 						elif n == 19:
-							gui_potion_mana[19].queue_free()
-							txtItemType[19] = "vide"
-							DataSave.items_posession.potionMana -= 1
-							nbCompteurPotionMana -= 1
-							isSlot_libre[19] = true
+							if txtTypeClic == "left":
+								print("utilise item")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_potion_mana[19].queue_free()
+								txtItemType[19] = "vide"
+								DataSave.items_posession.potionMana -= 1
+								nbCompteurPotionMana -= 1
+								isSlot_libre[19] = true
+								txtTypeClic = ""
 						
 				#Potion d'exilir
 				if txtItemType[n] == "potion_elixir":
 					if gui_potion_elixir[n] != null:
 						if n == 0:
-							gui_potion_elixir[0].queue_free()
-							txtItemType[0] = "vide"
-							DataSave.items_posession.potionElixir -= 1
-							nbCompteurPotionElixir -= 1
-							isSlot_libre[0] = true
+							if txtTypeClic == "left":
+								print("utilise item")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_potion_elixir[0].queue_free()
+								txtItemType[0] = "vide"
+								DataSave.items_posession.potionElixir -= 1
+								nbCompteurPotionElixir -= 1
+								isSlot_libre[0] = true
+								txtTypeClic = ""
 						elif n == 1:
-							gui_potion_elixir[1].queue_free()
-							txtItemType[1] = "vide"
-							DataSave.items_posession.potionElixir -= 1
-							nbCompteurPotionElixir -= 1
-							isSlot_libre[1] = true
+							if txtTypeClic == "left":
+								print("utilise item")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_potion_elixir[1].queue_free()
+								txtItemType[1] = "vide"
+								DataSave.items_posession.potionElixir -= 1
+								nbCompteurPotionElixir -= 1
+								isSlot_libre[1] = true
+								txtTypeClic = ""
 						elif n == 2:
-							gui_potion_elixir[2].queue_free()
-							txtItemType[2] = "vide"
-							DataSave.items_posession.potionElixir -= 1
-							nbCompteurPotionElixir -= 1
-							isSlot_libre[2] = true
+							if txtTypeClic == "left":
+								print("utilise item")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_potion_elixir[2].queue_free()
+								txtItemType[2] = "vide"
+								DataSave.items_posession.potionElixir -= 1
+								nbCompteurPotionElixir -= 1
+								isSlot_libre[2] = true
+								txtTypeClic = ""
 						elif n == 3:
-							gui_potion_elixir[3].queue_free()
-							txtItemType[3] = "vide"
-							DataSave.items_posession.potionElixir -= 1
-							nbCompteurPotionElixir -= 1
-							isSlot_libre[3] = true
+							if txtTypeClic == "left":
+								print("utilise item")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_potion_elixir[3].queue_free()
+								txtItemType[3] = "vide"
+								DataSave.items_posession.potionElixir -= 1
+								nbCompteurPotionElixir -= 1
+								isSlot_libre[3] = true
+								txtTypeClic = ""
 						elif n == 4:
-							gui_potion_elixir[4].queue_free()
-							txtItemType[4] = "vide"
-							DataSave.items_posession.potionElixir -= 1
-							nbCompteurPotionElixir -= 1
-							isSlot_libre[4] = true
+							if txtTypeClic == "left":
+								print("utilise item")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_potion_elixir[4].queue_free()
+								txtItemType[4] = "vide"
+								DataSave.items_posession.potionElixir -= 1
+								nbCompteurPotionElixir -= 1
+								isSlot_libre[4] = true
+								txtTypeClic = ""
 						elif n == 5:
-							gui_potion_elixir[5].queue_free()
-							txtItemType[5] = "vide"
-							DataSave.items_posession.potionElixir -= 1
-							nbCompteurPotionElixir -= 1
-							isSlot_libre[5] = true
+							if txtTypeClic == "left":
+								print("utilise item")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_potion_elixir[5].queue_free()
+								txtItemType[5] = "vide"
+								DataSave.items_posession.potionElixir -= 1
+								nbCompteurPotionElixir -= 1
+								isSlot_libre[5] = true
+								txtTypeClic = ""
 						elif n == 6:
-							gui_potion_elixir[6].queue_free()
-							txtItemType[6] = "vide"
-							DataSave.items_posession.potionElixir -= 1
-							nbCompteurPotionElixir -= 1
-							isSlot_libre[6] = true
+							if txtTypeClic == "left":
+								print("utilise item")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_potion_elixir[6].queue_free()
+								txtItemType[6] = "vide"
+								DataSave.items_posession.potionElixir -= 1
+								nbCompteurPotionElixir -= 1
+								isSlot_libre[6] = true
+								txtTypeClic = ""
 						elif n == 7:
-							gui_potion_elixir[7].queue_free()
-							txtItemType[7] = "vide"
-							DataSave.items_posession.potionElixir -= 1
-							nbCompteurPotionElixir -= 1
-							isSlot_libre[7] = true
+							if txtTypeClic == "left":
+								print("utilise item")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_potion_elixir[7].queue_free()
+								txtItemType[7] = "vide"
+								DataSave.items_posession.potionElixir -= 1
+								nbCompteurPotionElixir -= 1
+								isSlot_libre[7] = true
+								txtTypeClic = ""
 						elif n == 8:
-							gui_potion_elixir[8].queue_free()
-							txtItemType[8] = "vide"
-							DataSave.items_posession.potionElixir -= 1
-							nbCompteurPotionElixir -= 1
-							isSlot_libre[8] = true
+							if txtTypeClic == "left":
+								print("utilise item")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_potion_elixir[8].queue_free()
+								txtItemType[8] = "vide"
+								DataSave.items_posession.potionElixir -= 1
+								nbCompteurPotionElixir -= 1
+								isSlot_libre[8] = true
+								txtTypeClic = ""
 						elif n == 9:
-							gui_potion_elixir[9].queue_free()
-							txtItemType[9] = "vide"
-							DataSave.items_posession.potionElixir -= 1
-							nbCompteurPotionElixir -= 1
-							isSlot_libre[9] = true
+							if txtTypeClic == "left":
+								print("utilise item")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_potion_elixir[9].queue_free()
+								txtItemType[9] = "vide"
+								DataSave.items_posession.potionElixir -= 1
+								nbCompteurPotionElixir -= 1
+								isSlot_libre[9] = true
+								txtTypeClic = ""
 						elif n == 10:
-							gui_potion_elixir[10].queue_free()
-							txtItemType[10] = "vide"
-							DataSave.items_posession.potionElixir -= 1
-							nbCompteurPotionElixir -= 1
-							isSlot_libre[10] = true
+							if txtTypeClic == "left":
+								print("utilise item")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_potion_elixir[10].queue_free()
+								txtItemType[10] = "vide"
+								DataSave.items_posession.potionElixir -= 1
+								nbCompteurPotionElixir -= 1
+								isSlot_libre[10] = true
+								txtTypeClic = ""
 						elif n == 11:
-							gui_potion_elixir[11].queue_free()
-							txtItemType[11] = "vide"
-							DataSave.items_posession.potionElixir -= 1
-							nbCompteurPotionElixir -= 1
-							isSlot_libre[11] = true
+							if txtTypeClic == "left":
+								print("utilise item")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_potion_elixir[11].queue_free()
+								txtItemType[11] = "vide"
+								DataSave.items_posession.potionElixir -= 1
+								nbCompteurPotionElixir -= 1
+								isSlot_libre[11] = true
+								txtTypeClic = ""
 						elif n == 12:
-							gui_potion_elixir[12].queue_free()
-							txtItemType[12] = "vide"
-							DataSave.items_posession.potionElixir -= 1
-							nbCompteurPotionElixir -= 1
-							isSlot_libre[12] = true
+							if txtTypeClic == "left":
+								print("utilise item")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_potion_elixir[12].queue_free()
+								txtItemType[12] = "vide"
+								DataSave.items_posession.potionElixir -= 1
+								nbCompteurPotionElixir -= 1
+								isSlot_libre[12] = true
+								txtTypeClic = ""
 						elif n == 13:
-							gui_potion_elixir[13].queue_free()
-							txtItemType[13] = "vide"
-							DataSave.items_posession.potionElixir -= 1
-							nbCompteurPotionElixir -= 1
-							isSlot_libre[13] = true
+							if txtTypeClic == "left":
+								print("utilise item")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_potion_elixir[13].queue_free()
+								txtItemType[13] = "vide"
+								DataSave.items_posession.potionElixir -= 1
+								nbCompteurPotionElixir -= 1
+								isSlot_libre[13] = true
+								txtTypeClic = ""
 						elif n == 14:
-							gui_potion_elixir[14].queue_free()
-							txtItemType[14] = "vide"
-							DataSave.items_posession.potionElixir -= 1
-							nbCompteurPotionElixir -= 1
-							isSlot_libre[14] = true
+							if txtTypeClic == "left":
+								print("utilise item")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_potion_elixir[14].queue_free()
+								txtItemType[14] = "vide"
+								DataSave.items_posession.potionElixir -= 1
+								nbCompteurPotionElixir -= 1
+								isSlot_libre[14] = true
+								txtTypeClic = ""
 						elif n == 15:
-							gui_potion_elixir[15].queue_free()
-							txtItemType[15] = "vide"
-							DataSave.items_posession.potionElixir -= 1
-							nbCompteurPotionElixir -= 1
-							isSlot_libre[15] = true
+							if txtTypeClic == "left":
+								print("utilise item")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_potion_elixir[15].queue_free()
+								txtItemType[15] = "vide"
+								DataSave.items_posession.potionElixir -= 1
+								nbCompteurPotionElixir -= 1
+								isSlot_libre[15] = true
+								txtTypeClic = ""
 						elif n == 16:
-							gui_potion_elixir[16].queue_free()
-							txtItemType[16] = "vide"
-							DataSave.items_posession.potionElixir -= 1
-							nbCompteurPotionElixir -= 1
-							isSlot_libre[16] = true
+							if txtTypeClic == "left":
+								print("utilise item")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_potion_elixir[16].queue_free()
+								txtItemType[16] = "vide"
+								DataSave.items_posession.potionElixir -= 1
+								nbCompteurPotionElixir -= 1
+								isSlot_libre[16] = true
+								txtTypeClic = ""
 						elif n == 17:
-							gui_potion_elixir[17].queue_free()
-							txtItemType[17] = "vide"
-							DataSave.items_posession.potionElixir -= 1
-							nbCompteurPotionElixir -= 1
-							isSlot_libre[17] = true
+							if txtTypeClic == "left":
+								print("utilise item")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_potion_elixir[17].queue_free()
+								txtItemType[17] = "vide"
+								DataSave.items_posession.potionElixir -= 1
+								nbCompteurPotionElixir -= 1
+								isSlot_libre[17] = true
+								txtTypeClic = ""
 						elif n == 18:
-							gui_potion_elixir[18].queue_free()
-							txtItemType[18] = "vide"
-							DataSave.items_posession.potionElixir -= 1
-							nbCompteurPotionElixir -= 1
-							isSlot_libre[18] = true
+							if txtTypeClic == "left":
+								print("utilise item")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_potion_elixir[18].queue_free()
+								txtItemType[18] = "vide"
+								DataSave.items_posession.potionElixir -= 1
+								nbCompteurPotionElixir -= 1
+								isSlot_libre[18] = true
+								txtTypeClic = ""
 						elif n == 19:
-							gui_potion_elixir[19].queue_free()
-							txtItemType[19] = "vide"
-							DataSave.items_posession.potionElixir -= 1
-							nbCompteurPotionElixir -= 1
-							isSlot_libre[19] = true
+							if txtTypeClic == "left":
+								print("utilise item")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_potion_elixir[19].queue_free()
+								txtItemType[19] = "vide"
+								DataSave.items_posession.potionElixir -= 1
+								nbCompteurPotionElixir -= 1
+								isSlot_libre[19] = true
+								txtTypeClic = ""
 						
 				#Bague 1
 				if txtItemType[n] == "bague_1":
 					if gui_bague1[n] != null:
 						if n == 0:
-							gui_bague1[0].queue_free()
-							txtItemType[0] = "vide"
-							DataSave.items_posession.bague1 -= 1
-							nbCompteurBague1 -= 1
-							isSlot_libre[0] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_bague1[0].queue_free()
+								txtItemType[0] = "vide"
+								DataSave.items_posession.bague1 -= 1
+								nbCompteurBague1 -= 1
+								isSlot_libre[0] = true
+								txtTypeClic = ""
 						elif n == 1:
-							gui_bague1[1].queue_free()
-							txtItemType[1] = "vide"
-							DataSave.items_posession.bague1 -= 1
-							nbCompteurBague1 -= 1
-							isSlot_libre[1] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_bague1[1].queue_free()
+								txtItemType[1] = "vide"
+								DataSave.items_posession.bague1 -= 1
+								nbCompteurBague1 -= 1
+								isSlot_libre[1] = true
+								txtTypeClic = ""
 						elif n == 2:
-							gui_bague1[2].queue_free()
-							txtItemType[2] = "vide"
-							DataSave.items_posession.bague1 -= 1
-							nbCompteurBague1 -= 1
-							isSlot_libre[2] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_bague1[2].queue_free()
+								txtItemType[2] = "vide"
+								DataSave.items_posession.bague1 -= 1
+								nbCompteurBague1 -= 1
+								isSlot_libre[2] = true
+								txtTypeClic = ""
 						elif n == 3:
-							gui_bague1[3].queue_free()
-							txtItemType[3] = "vide"
-							DataSave.items_posession.bague1 -= 1
-							nbCompteurBague1 -= 1
-							isSlot_libre[3] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_bague1[3].queue_free()
+								txtItemType[3] = "vide"
+								DataSave.items_posession.bague1 -= 1
+								nbCompteurBague1 -= 1
+								isSlot_libre[3] = true
+								txtTypeClic = ""
 						elif n == 4:
-							gui_bague1[4].queue_free()
-							txtItemType[4] = "vide"
-							DataSave.items_posession.bague1 -= 1
-							nbCompteurBague1 -= 1
-							isSlot_libre[4] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_bague1[4].queue_free()
+								txtItemType[4] = "vide"
+								DataSave.items_posession.bague1 -= 1
+								nbCompteurBague1 -= 1
+								isSlot_libre[4] = true
+								txtTypeClic = ""
 						elif n == 5:
-							gui_bague1[5].queue_free()
-							txtItemType[5] = "vide"
-							DataSave.items_posession.bague1 -= 1
-							nbCompteurBague1 -= 1
-							isSlot_libre[5] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_bague1[5].queue_free()
+								txtItemType[5] = "vide"
+								DataSave.items_posession.bague1 -= 1
+								nbCompteurBague1 -= 1
+								isSlot_libre[5] = true
+								txtTypeClic = ""
 						elif n == 6:
-							gui_bague1[6].queue_free()
-							txtItemType[6] = "vide"
-							DataSave.items_posession.bague1 -= 1
-							nbCompteurBague1 -= 1
-							isSlot_libre[6] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_bague1[6].queue_free()
+								txtItemType[6] = "vide"
+								DataSave.items_posession.bague1 -= 1
+								nbCompteurBague1 -= 1
+								isSlot_libre[6] = true
+								txtTypeClic = ""
 						elif n == 7:
-							gui_bague1[7].queue_free()
-							txtItemType[7] = "vide"
-							DataSave.items_posession.bague1 -= 1
-							nbCompteurBague1 -= 1
-							isSlot_libre[7] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_bague1[7].queue_free()
+								txtItemType[7] = "vide"
+								DataSave.items_posession.bague1 -= 1
+								nbCompteurBague1 -= 1
+								isSlot_libre[7] = true
+								txtTypeClic = ""
 						elif n == 8:
-							gui_bague1[8].queue_free()
-							txtItemType[8] = "vide"
-							DataSave.items_posession.bague1 -= 1
-							nbCompteurBague1 -= 1
-							isSlot_libre[8] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_bague1[8].queue_free()
+								txtItemType[8] = "vide"
+								DataSave.items_posession.bague1 -= 1
+								nbCompteurBague1 -= 1
+								isSlot_libre[8] = true
+								txtTypeClic = ""
 						elif n == 9:
-							gui_bague1[9].queue_free()
-							txtItemType[9] = "vide"
-							DataSave.items_posession.bague1 -= 1
-							nbCompteurBague1 -= 1
-							isSlot_libre[9] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_bague1[9].queue_free()
+								txtItemType[9] = "vide"
+								DataSave.items_posession.bague1 -= 1
+								nbCompteurBague1 -= 1
+								isSlot_libre[9] = true
+								txtTypeClic = ""
 						elif n == 10:
-							gui_bague1[10].queue_free()
-							txtItemType[10] = "vide"
-							DataSave.items_posession.bague1 -= 1
-							nbCompteurBague1 -= 1
-							isSlot_libre[10] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_bague1[10].queue_free()
+								txtItemType[10] = "vide"
+								DataSave.items_posession.bague1 -= 1
+								nbCompteurBague1 -= 1
+								isSlot_libre[10] = true
+								txtTypeClic = ""
 						elif n == 11:
-							gui_bague1[11].queue_free()
-							txtItemType[11] = "vide"
-							DataSave.items_posession.bague1 -= 1
-							nbCompteurBague1 -= 1
-							isSlot_libre[11] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_bague1[11].queue_free()
+								txtItemType[11] = "vide"
+								DataSave.items_posession.bague1 -= 1
+								nbCompteurBague1 -= 1
+								isSlot_libre[11] = true
+								txtTypeClic = ""
 						elif n == 12:
-							gui_bague1[12].queue_free()
-							txtItemType[12] = "vide"
-							DataSave.items_posession.bague1 -= 1
-							nbCompteurBague1 -= 1
-							isSlot_libre[12] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_bague1[12].queue_free()
+								txtItemType[12] = "vide"
+								DataSave.items_posession.bague1 -= 1
+								nbCompteurBague1 -= 1
+								isSlot_libre[12] = true
+								txtTypeClic = ""
 						elif n == 13:
-							gui_bague1[13].queue_free()
-							txtItemType[13] = "vide"
-							DataSave.items_posession.bague1 -= 1
-							nbCompteurBague1 -= 1
-							isSlot_libre[13] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_bague1[13].queue_free()
+								txtItemType[13] = "vide"
+								DataSave.items_posession.bague1 -= 1
+								nbCompteurBague1 -= 1
+								isSlot_libre[13] = true
+								txtTypeClic = ""
 						elif n == 14:
-							gui_bague1[14].queue_free()
-							txtItemType[14] = "vide"
-							DataSave.items_posession.bague1 -= 1
-							nbCompteurBague1 -= 1
-							isSlot_libre[14] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_bague1[14].queue_free()
+								txtItemType[14] = "vide"
+								DataSave.items_posession.bague1 -= 1
+								nbCompteurBague1 -= 1
+								isSlot_libre[14] = true
+								txtTypeClic = ""
 						elif n == 15:
-							gui_bague1[15].queue_free()
-							txtItemType[15] = "vide"
-							DataSave.items_posession.bague1 -= 1
-							nbCompteurBague1 -= 1
-							isSlot_libre[15] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_bague1[15].queue_free()
+								txtItemType[15] = "vide"
+								DataSave.items_posession.bague1 -= 1
+								nbCompteurBague1 -= 1
+								isSlot_libre[15] = true
+								txtTypeClic = ""
 						elif n == 16:
-							gui_bague1[16].queue_free()
-							txtItemType[16] = "vide"
-							DataSave.items_posession.bague1 -= 1
-							nbCompteurBague1 -= 1
-							isSlot_libre[16] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_bague1[16].queue_free()
+								txtItemType[16] = "vide"
+								DataSave.items_posession.bague1 -= 1
+								nbCompteurBague1 -= 1
+								isSlot_libre[16] = true
+								txtTypeClic = ""
 						elif n == 17:
-							gui_bague1[17].queue_free()
-							txtItemType[17] = "vide"
-							DataSave.items_posession.bague1 -= 1
-							nbCompteurBague1 -= 1
-							isSlot_libre[17] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_bague1[17].queue_free()
+								txtItemType[17] = "vide"
+								DataSave.items_posession.bague1 -= 1
+								nbCompteurBague1 -= 1
+								isSlot_libre[17] = true
+								txtTypeClic = ""
 						elif n == 18:
-							gui_bague1[18].queue_free()
-							txtItemType[18] = "vide"
-							DataSave.items_posession.bague1 -= 1
-							nbCompteurBague1 -= 1
-							isSlot_libre[18] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_bague1[18].queue_free()
+								txtItemType[18] = "vide"
+								DataSave.items_posession.bague1 -= 1
+								nbCompteurBague1 -= 1
+								isSlot_libre[18] = true
+								txtTypeClic = ""
 						elif n == 19:
-							gui_bague1[19].queue_free()
-							txtItemType[19] = "vide"
-							DataSave.items_posession.bague1 -= 1
-							nbCompteurBague1 -= 1
-							isSlot_libre[19] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_bague1[19].queue_free()
+								txtItemType[19] = "vide"
+								DataSave.items_posession.bague1 -= 1
+								nbCompteurBague1 -= 1
+								isSlot_libre[19] = true
+								txtTypeClic = ""
 				
 				#Bague 2
 				if txtItemType[n] == "bague_2":
 					if gui_bague2[n] != null:
 						if n == 0:
-							gui_bague2[0].queue_free()
-							txtItemType[0] = "vide"
-							DataSave.items_posession.bague2 -= 1
-							nbCompteurBague2 -= 1
-							isSlot_libre[0] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_bague2[0].queue_free()
+								txtItemType[0] = "vide"
+								DataSave.items_posession.bague2 -= 1
+								nbCompteurBague2 -= 1
+								isSlot_libre[0] = true
+								txtTypeClic = ""
 						elif n == 1:
-							gui_bague2[1].queue_free()
-							txtItemType[1] = "vide"
-							DataSave.items_posession.bague2 -= 1
-							nbCompteurBague2 -= 1
-							isSlot_libre[1] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_bague2[1].queue_free()
+								txtItemType[1] = "vide"
+								DataSave.items_posession.bague2 -= 1
+								nbCompteurBague2 -= 1
+								isSlot_libre[1] = true
+								txtTypeClic = ""
 						elif n == 2:
-							gui_bague2[2].queue_free()
-							txtItemType[2] = "vide"
-							DataSave.items_posession.bague2 -= 1
-							nbCompteurBague2 -= 1
-							isSlot_libre[2] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_bague2[2].queue_free()
+								txtItemType[2] = "vide"
+								DataSave.items_posession.bague2 -= 1
+								nbCompteurBague2 -= 1
+								isSlot_libre[2] = true
+								txtTypeClic = ""
 						elif n == 3:
-							gui_bague2[3].queue_free()
-							txtItemType[3] = "vide"
-							DataSave.items_posession.bague2 -= 1
-							nbCompteurBague2 -= 1
-							isSlot_libre[3] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_bague2[3].queue_free()
+								txtItemType[3] = "vide"
+								DataSave.items_posession.bague2 -= 1
+								nbCompteurBague2 -= 1
+								isSlot_libre[3] = true
+								txtTypeClic = ""
 						elif n == 4:
-							gui_bague2[4].queue_free()
-							txtItemType[4] = "vide"
-							DataSave.items_posession.bague2 -= 1
-							nbCompteurBague2 -= 1
-							isSlot_libre[4] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_bague2[4].queue_free()
+								txtItemType[4] = "vide"
+								DataSave.items_posession.bague2 -= 1
+								nbCompteurBague2 -= 1
+								isSlot_libre[4] = true
+								txtTypeClic = ""
 						elif n == 5:
 							gui_bague2[5].queue_free()
 							txtItemType[5] = "vide"
