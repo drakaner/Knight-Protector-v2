@@ -7539,2106 +7539,3806 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 				if txtItemType[n] == "collier_1":
 					if gui_collier1[n] != null:
 						if n == 0:
-							gui_collier1[0].queue_free()
-							txtItemType[0] = "vide"
-							DataSave.items_posession.collier1 -= 1
-							nbCompteurCollier1 -= 1
-							isSlot_libre[0] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_collier1[0].queue_free()
+								txtItemType[0] = "vide"
+								DataSave.items_posession.collier1 -= 1
+								nbCompteurCollier1 -= 1
+								isSlot_libre[0] = true
+								txtTypeClic = ""
 						elif n == 1:
-							gui_collier1[1].queue_free()
-							txtItemType[1] = "vide"
-							DataSave.items_posession.collier1 -= 1
-							nbCompteurCollier1 -= 1
-							isSlot_libre[1] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_collier1[1].queue_free()
+								txtItemType[1] = "vide"
+								DataSave.items_posession.collier1 -= 1
+								nbCompteurCollier1 -= 1
+								isSlot_libre[1] = true
+								txtTypeClic = ""
 						elif n == 2:
-							gui_collier1[2].queue_free()
-							txtItemType[2] = "vide"
-							DataSave.items_posession.collier1 -= 1
-							nbCompteurCollier1 -= 1
-							isSlot_libre[2] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_collier1[2].queue_free()
+								txtItemType[2] = "vide"
+								DataSave.items_posession.collier1 -= 1
+								nbCompteurCollier1 -= 1
+								isSlot_libre[2] = true
+								txtTypeClic = ""
 						elif n == 3:
-							gui_collier1[3].queue_free()
-							txtItemType[3] = "vide"
-							DataSave.items_posession.collier1 -= 1
-							nbCompteurCollier1 -= 1
-							isSlot_libre[3] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_collier1[3].queue_free()
+								txtItemType[3] = "vide"
+								DataSave.items_posession.collier1 -= 1
+								nbCompteurCollier1 -= 1
+								isSlot_libre[3] = true
+								txtTypeClic = ""
 						elif n == 4:
-							gui_collier1[4].queue_free()
-							txtItemType[4] = "vide"
-							DataSave.items_posession.collier1 -= 1
-							nbCompteurCollier1 -= 1
-							isSlot_libre[4] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_collier1[4].queue_free()
+								txtItemType[4] = "vide"
+								DataSave.items_posession.collier1 -= 1
+								nbCompteurCollier1 -= 1
+								isSlot_libre[4] = true
+								txtTypeClic = ""
 						elif n == 5:
-							gui_collier1[5].queue_free()
-							txtItemType[5] = "vide"
-							DataSave.items_posession.collier1 -= 1
-							nbCompteurCollier1 -= 1
-							isSlot_libre[5] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_collier1[5].queue_free()
+								txtItemType[5] = "vide"
+								DataSave.items_posession.collier1 -= 1
+								nbCompteurCollier1 -= 1
+								isSlot_libre[5] = true
+								txtTypeClic = ""
 						elif n == 6:
-							gui_collier1[6].queue_free()
-							txtItemType[6] = "vide"
-							DataSave.items_posession.collier1 -= 1
-							nbCompteurCollier1 -= 1
-							isSlot_libre[6] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_collier1[6].queue_free()
+								txtItemType[6] = "vide"
+								DataSave.items_posession.collier1 -= 1
+								nbCompteurCollier1 -= 1
+								isSlot_libre[6] = true
+								txtTypeClic = ""
 						elif n == 7:
-							gui_collier1[7].queue_free()
-							txtItemType[7] = "vide"
-							DataSave.items_posession.collier1 -= 1
-							nbCompteurCollier1 -= 1
-							isSlot_libre[7] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_collier1[7].queue_free()
+								txtItemType[7] = "vide"
+								DataSave.items_posession.collier1 -= 1
+								nbCompteurCollier1 -= 1
+								isSlot_libre[7] = true
+								txtTypeClic = ""
 						elif n == 8:
-							gui_collier1[8].queue_free()
-							txtItemType[8] = "vide"
-							DataSave.items_posession.collier1 -= 1
-							nbCompteurCollier1 -= 1
-							isSlot_libre[8] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_collier1[8].queue_free()
+								txtItemType[8] = "vide"
+								DataSave.items_posession.collier1 -= 1
+								nbCompteurCollier1 -= 1
+								isSlot_libre[8] = true
+								txtTypeClic = ""
 						elif n == 9:
-							gui_collier1[9].queue_free()
-							txtItemType[9] = "vide"
-							DataSave.items_posession.collier1 -= 1
-							nbCompteurCollier1 -= 1
-							isSlot_libre[9] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_collier1[9].queue_free()
+								txtItemType[9] = "vide"
+								DataSave.items_posession.collier1 -= 1
+								nbCompteurCollier1 -= 1
+								isSlot_libre[9] = true
+								txtTypeClic = ""
 						elif n == 10:
-							gui_collier1[10].queue_free()
-							txtItemType[10] = "vide"
-							DataSave.items_posession.collier1 -= 1
-							nbCompteurCollier1 -= 1
-							isSlot_libre[10] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_collier1[10].queue_free()
+								txtItemType[10] = "vide"
+								DataSave.items_posession.collier1 -= 1
+								nbCompteurCollier1 -= 1
+								isSlot_libre[10] = true
+								txtTypeClic = ""
 						elif n == 11:
-							gui_collier1[11].queue_free()
-							txtItemType[11] = "vide"
-							DataSave.items_posession.collier1 -= 1
-							nbCompteurCollier1 -= 1
-							isSlot_libre[11] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_collier1[11].queue_free()
+								txtItemType[11] = "vide"
+								DataSave.items_posession.collier1 -= 1
+								nbCompteurCollier1 -= 1
+								isSlot_libre[11] = true
+								txtTypeClic = ""
 						elif n == 12:
-							gui_collier1[12].queue_free()
-							txtItemType[12] = "vide"
-							DataSave.items_posession.collier1 -= 1
-							nbCompteurCollier1 -= 1
-							isSlot_libre[12] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_collier1[12].queue_free()
+								txtItemType[12] = "vide"
+								DataSave.items_posession.collier1 -= 1
+								nbCompteurCollier1 -= 1
+								isSlot_libre[12] = true
+								txtTypeClic = ""
 						elif n == 13:
-							gui_collier1[13].queue_free()
-							txtItemType[13] = "vide"
-							DataSave.items_posession.collier1 -= 1
-							nbCompteurCollier1 -= 1
-							isSlot_libre[13] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_collier1[13].queue_free()
+								txtItemType[13] = "vide"
+								DataSave.items_posession.collier1 -= 1
+								nbCompteurCollier1 -= 1
+								isSlot_libre[13] = true
+								txtTypeClic = ""
 						elif n == 14:
-							gui_collier1[14].queue_free()
-							txtItemType[14] = "vide"
-							DataSave.items_posession.collier1 -= 1
-							nbCompteurCollier1 -= 1
-							isSlot_libre[14] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_collier1[14].queue_free()
+								txtItemType[14] = "vide"
+								DataSave.items_posession.collier1 -= 1
+								nbCompteurCollier1 -= 1
+								isSlot_libre[14] = true
+								txtTypeClic = ""
 						elif n == 15:
-							gui_collier1[15].queue_free()
-							txtItemType[15] = "vide"
-							DataSave.items_posession.collier1 -= 1
-							nbCompteurCollier1 -= 1
-							isSlot_libre[15] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_collier1[15].queue_free()
+								txtItemType[15] = "vide"
+								DataSave.items_posession.collier1 -= 1
+								nbCompteurCollier1 -= 1
+								isSlot_libre[15] = true
+								txtTypeClic = ""
 						elif n == 16:
-							gui_collier1[16].queue_free()
-							txtItemType[16] = "vide"
-							DataSave.items_posession.collier1 -= 1
-							nbCompteurCollier1 -= 1
-							isSlot_libre[16] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_collier1[16].queue_free()
+								txtItemType[16] = "vide"
+								DataSave.items_posession.collier1 -= 1
+								nbCompteurCollier1 -= 1
+								isSlot_libre[16] = true
+								txtTypeClic = ""
 						elif n == 17:
-							gui_collier1[17].queue_free()
-							txtItemType[17] = "vide"
-							DataSave.items_posession.collier1 -= 1
-							nbCompteurCollier1 -= 1
-							isSlot_libre[17] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_collier1[17].queue_free()
+								txtItemType[17] = "vide"
+								DataSave.items_posession.collier1 -= 1
+								nbCompteurCollier1 -= 1
+								isSlot_libre[17] = true
+								txtTypeClic = ""
 						elif n == 18:
-							gui_collier1[18].queue_free()
-							txtItemType[18] = "vide"
-							DataSave.items_posession.collier1 -= 1
-							nbCompteurCollier1 -= 1
-							isSlot_libre[18] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_collier1[18].queue_free()
+								txtItemType[18] = "vide"
+								DataSave.items_posession.collier1 -= 1
+								nbCompteurCollier1 -= 1
+								isSlot_libre[18] = true
+								txtTypeClic = ""
 						elif n == 19:
-							gui_collier1[19].queue_free()
-							txtItemType[19] = "vide"
-							DataSave.items_posession.collier1 -= 1
-							nbCompteurCollier1 -= 1
-							isSlot_libre[19] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_collier1[19].queue_free()
+								txtItemType[19] = "vide"
+								DataSave.items_posession.collier1 -= 1
+								nbCompteurCollier1 -= 1
+								isSlot_libre[19] = true
+								txtTypeClic = ""
 				
 				#Collier2
 				if txtItemType[n] == "collier_2":
 					if gui_collier2[n] != null:
 						if n == 0:
-							gui_collier2[0].queue_free()
-							txtItemType[0] = "vide"
-							DataSave.items_posession.collier2 -= 1
-							nbCompteurCollier2 -= 1
-							isSlot_libre[0] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_collier2[0].queue_free()
+								txtItemType[0] = "vide"
+								DataSave.items_posession.collier2 -= 1
+								nbCompteurCollier2 -= 1
+								isSlot_libre[0] = true
+								txtTypeClic = ""
 						elif n == 1:
-							gui_collier2[1].queue_free()
-							txtItemType[1] = "vide"
-							DataSave.items_posession.collier2 -= 1
-							nbCompteurCollier2 -= 1
-							isSlot_libre[1] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_collier2[1].queue_free()
+								txtItemType[1] = "vide"
+								DataSave.items_posession.collier2 -= 1
+								nbCompteurCollier2 -= 1
+								isSlot_libre[1] = true
+								txtTypeClic = ""
 						elif n == 2:
-							gui_collier2[2].queue_free()
-							txtItemType[2] = "vide"
-							DataSave.items_posession.collier2 -= 1
-							nbCompteurCollier2 -= 1
-							isSlot_libre[2] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_collier2[2].queue_free()
+								txtItemType[2] = "vide"
+								DataSave.items_posession.collier2 -= 1
+								nbCompteurCollier2 -= 1
+								isSlot_libre[2] = true
+								txtTypeClic = ""
 						elif n == 3:
-							gui_collier2[3].queue_free()
-							txtItemType[3] = "vide"
-							DataSave.items_posession.collier2 -= 1
-							nbCompteurCollier2 -= 1
-							isSlot_libre[3] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_collier2[3].queue_free()
+								txtItemType[3] = "vide"
+								DataSave.items_posession.collier2 -= 1
+								nbCompteurCollier2 -= 1
+								isSlot_libre[3] = true
+								txtTypeClic = ""
 						elif n == 4:
-							gui_collier2[4].queue_free()
-							txtItemType[4] = "vide"
-							DataSave.items_posession.collier2 -= 1
-							nbCompteurCollier2 -= 1
-							isSlot_libre[4] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_collier2[4].queue_free()
+								txtItemType[4] = "vide"
+								DataSave.items_posession.collier2 -= 1
+								nbCompteurCollier2 -= 1
+								isSlot_libre[4] = true
+								txtTypeClic = ""
 						elif n == 5:
-							gui_collier2[5].queue_free()
-							txtItemType[5] = "vide"
-							DataSave.items_posession.collier2 -= 1
-							nbCompteurCollier2 -= 1
-							isSlot_libre[5] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_collier2[5].queue_free()
+								txtItemType[5] = "vide"
+								DataSave.items_posession.collier2 -= 1
+								nbCompteurCollier2 -= 1
+								isSlot_libre[5] = true
+								txtTypeClic = ""
 						elif n == 6:
-							gui_collier2[6].queue_free()
-							txtItemType[6] = "vide"
-							DataSave.items_posession.collier2 -= 1
-							nbCompteurCollier2 -= 1
-							isSlot_libre[6] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_collier2[6].queue_free()
+								txtItemType[6] = "vide"
+								DataSave.items_posession.collier2 -= 1
+								nbCompteurCollier2 -= 1
+								isSlot_libre[6] = true
+								txtTypeClic = ""
 						elif n == 7:
-							gui_collier2[7].queue_free()
-							txtItemType[7] = "vide"
-							DataSave.items_posession.collier2 -= 1
-							nbCompteurCollier2 -= 1
-							isSlot_libre[7] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_collier2[7].queue_free()
+								txtItemType[7] = "vide"
+								DataSave.items_posession.collier2 -= 1
+								nbCompteurCollier2 -= 1
+								isSlot_libre[7] = true
+								txtTypeClic = ""
 						elif n == 8:
-							gui_collier2[8].queue_free()
-							txtItemType[8] = "vide"
-							DataSave.items_posession.collier2 -= 1
-							nbCompteurCollier2 -= 1
-							isSlot_libre[8] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_collier2[8].queue_free()
+								txtItemType[8] = "vide"
+								DataSave.items_posession.collier2 -= 1
+								nbCompteurCollier2 -= 1
+								isSlot_libre[8] = true
+								txtTypeClic = ""
 						elif n == 9:
-							gui_collier2[9].queue_free()
-							txtItemType[9] = "vide"
-							DataSave.items_posession.collier2 -= 1
-							nbCompteurCollier2 -= 1
-							isSlot_libre[9] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_collier2[9].queue_free()
+								txtItemType[9] = "vide"
+								DataSave.items_posession.collier2 -= 1
+								nbCompteurCollier2 -= 1
+								isSlot_libre[9] = true
+								txtTypeClic = ""
 						elif n == 10:
-							gui_collier2[10].queue_free()
-							txtItemType[10] = "vide"
-							DataSave.items_posession.collier2 -= 1
-							nbCompteurCollier2 -= 1
-							isSlot_libre[10] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_collier2[10].queue_free()
+								txtItemType[10] = "vide"
+								DataSave.items_posession.collier2 -= 1
+								nbCompteurCollier2 -= 1
+								isSlot_libre[10] = true
+								txtTypeClic = ""
 						elif n == 11:
-							gui_collier2[11].queue_free()
-							txtItemType[11] = "vide"
-							DataSave.items_posession.collier2 -= 1
-							nbCompteurCollier2 -= 1
-							isSlot_libre[11] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_collier2[11].queue_free()
+								txtItemType[11] = "vide"
+								DataSave.items_posession.collier2 -= 1
+								nbCompteurCollier2 -= 1
+								isSlot_libre[11] = true
+								txtTypeClic = ""
 						elif n == 12:
-							gui_collier2[12].queue_free()
-							txtItemType[12] = "vide"
-							DataSave.items_posession.collier2 -= 1
-							nbCompteurCollier2 -= 1
-							isSlot_libre[12] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_collier2[12].queue_free()
+								txtItemType[12] = "vide"
+								DataSave.items_posession.collier2 -= 1
+								nbCompteurCollier2 -= 1
+								isSlot_libre[12] = true
+								txtTypeClic = ""
 						elif n == 13:
-							gui_collier2[13].queue_free()
-							txtItemType[13] = "vide"
-							DataSave.items_posession.collier2 -= 1
-							nbCompteurCollier2 -= 1
-							isSlot_libre[13] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_collier2[13].queue_free()
+								txtItemType[13] = "vide"
+								DataSave.items_posession.collier2 -= 1
+								nbCompteurCollier2 -= 1
+								isSlot_libre[13] = true
+								txtTypeClic = ""
 						elif n == 14:
-							gui_collier2[14].queue_free()
-							txtItemType[14] = "vide"
-							DataSave.items_posession.collier2 -= 1
-							nbCompteurCollier2 -= 1
-							isSlot_libre[14] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_collier2[14].queue_free()
+								txtItemType[14] = "vide"
+								DataSave.items_posession.collier2 -= 1
+								nbCompteurCollier2 -= 1
+								isSlot_libre[14] = true
+								txtTypeClic = ""
 						elif n == 15:
-							gui_collier2[15].queue_free()
-							txtItemType[15] = "vide"
-							DataSave.items_posession.collier2 -= 1
-							nbCompteurCollier2 -= 1
-							isSlot_libre[15] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_collier2[15].queue_free()
+								txtItemType[15] = "vide"
+								DataSave.items_posession.collier2 -= 1
+								nbCompteurCollier2 -= 1
+								isSlot_libre[15] = true
+								txtTypeClic = ""
 						elif n == 16:
-							gui_collier2[16].queue_free()
-							txtItemType[16] = "vide"
-							DataSave.items_posession.collier2 -= 1
-							nbCompteurCollier2 -= 1
-							isSlot_libre[16] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_collier2[16].queue_free()
+								txtItemType[16] = "vide"
+								DataSave.items_posession.collier2 -= 1
+								nbCompteurCollier2 -= 1
+								isSlot_libre[16] = true
+								txtTypeClic = ""
 						elif n == 17:
-							gui_collier2[17].queue_free()
-							txtItemType[17] = "vide"
-							DataSave.items_posession.collier2 -= 1
-							nbCompteurCollier2 -= 1
-							isSlot_libre[17] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_collier2[17].queue_free()
+								txtItemType[17] = "vide"
+								DataSave.items_posession.collier2 -= 1
+								nbCompteurCollier2 -= 1
+								isSlot_libre[17] = true
+								txtTypeClic = ""
 						elif n == 18:
-							gui_collier2[18].queue_free()
-							txtItemType[18] = "vide"
-							DataSave.items_posession.collier2 -= 1
-							nbCompteurCollier2 -= 1
-							isSlot_libre[18] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_collier2[18].queue_free()
+								txtItemType[18] = "vide"
+								DataSave.items_posession.collier2 -= 1
+								nbCompteurCollier2 -= 1
+								isSlot_libre[18] = true
+								txtTypeClic = ""
 						elif n == 19:
-							gui_collier2[19].queue_free()
-							txtItemType[19] = "vide"
-							DataSave.items_posession.collier2 -= 1
-							nbCompteurCollier2 -= 1
-							isSlot_libre[19] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_collier2[19].queue_free()
+								txtItemType[19] = "vide"
+								DataSave.items_posession.collier2 -= 1
+								nbCompteurCollier2 -= 1
+								isSlot_libre[19] = true
+								txtTypeClic = ""
 				
 				#Collier3
 				if txtItemType[n] == "collier_3":
 					if gui_collier3[n] != null:
 						if n == 0:
-							gui_collier3[0].queue_free()
-							txtItemType[0] = "vide"
-							DataSave.items_posession.collier3 -= 1
-							nbCompteurCollier3 -= 1
-							isSlot_libre[0] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_collier3[0].queue_free()
+								txtItemType[0] = "vide"
+								DataSave.items_posession.collier3 -= 1
+								nbCompteurCollier3 -= 1
+								isSlot_libre[0] = true
+								txtTypeClic = ""
 						elif n == 1:
-							gui_collier3[1].queue_free()
-							txtItemType[1] = "vide"
-							DataSave.items_posession.collier3 -= 1
-							nbCompteurCollier3 -= 1
-							isSlot_libre[1] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_collier3[1].queue_free()
+								txtItemType[1] = "vide"
+								DataSave.items_posession.collier3 -= 1
+								nbCompteurCollier3 -= 1
+								isSlot_libre[1] = true
+								txtTypeClic = ""
 						elif n == 2:
-							gui_collier3[2].queue_free()
-							txtItemType[2] = "vide"
-							DataSave.items_posession.collier3 -= 1
-							nbCompteurCollier3 -= 1
-							isSlot_libre[2] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_collier3[2].queue_free()
+								txtItemType[2] = "vide"
+								DataSave.items_posession.collier3 -= 1
+								nbCompteurCollier3 -= 1
+								isSlot_libre[2] = true
+								txtTypeClic = ""
 						elif n == 3:
-							gui_collier3[3].queue_free()
-							txtItemType[3] = "vide"
-							DataSave.items_posession.collier3 -= 1
-							nbCompteurCollier3 -= 1
-							isSlot_libre[3] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_collier3[3].queue_free()
+								txtItemType[3] = "vide"
+								DataSave.items_posession.collier3 -= 1
+								nbCompteurCollier3 -= 1
+								isSlot_libre[3] = true
+								txtTypeClic = ""
 						elif n == 4:
-							gui_collier3[4].queue_free()
-							txtItemType[4] = "vide"
-							DataSave.items_posession.collier3 -= 1
-							nbCompteurCollier3 -= 1
-							isSlot_libre[4] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_collier3[4].queue_free()
+								txtItemType[4] = "vide"
+								DataSave.items_posession.collier3 -= 1
+								nbCompteurCollier3 -= 1
+								isSlot_libre[4] = true
+								txtTypeClic = ""
 						elif n == 5:
-							gui_collier3[5].queue_free()
-							txtItemType[5] = "vide"
-							DataSave.items_posession.collier3 -= 1
-							nbCompteurCollier3 -= 1
-							isSlot_libre[5] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_collier3[5].queue_free()
+								txtItemType[5] = "vide"
+								DataSave.items_posession.collier3 -= 1
+								nbCompteurCollier3 -= 1
+								isSlot_libre[5] = true
+								txtTypeClic = ""
 						elif n == 6:
-							gui_collier3[6].queue_free()
-							txtItemType[6] = "vide"
-							DataSave.items_posession.collier3 -= 1
-							nbCompteurCollier3 -= 1
-							isSlot_libre[6] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_collier3[6].queue_free()
+								txtItemType[6] = "vide"
+								DataSave.items_posession.collier3 -= 1
+								nbCompteurCollier3 -= 1
+								isSlot_libre[6] = true
+								txtTypeClic = ""
 						elif n == 7:
-							gui_collier3[7].queue_free()
-							txtItemType[7] = "vide"
-							DataSave.items_posession.collier3 -= 1
-							nbCompteurCollier3 -= 1
-							isSlot_libre[7] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_collier3[7].queue_free()
+								txtItemType[7] = "vide"
+								DataSave.items_posession.collier3 -= 1
+								nbCompteurCollier3 -= 1
+								isSlot_libre[7] = true
+								txtTypeClic = ""
 						elif n == 8:
-							gui_collier3[8].queue_free()
-							txtItemType[8] = "vide"
-							DataSave.items_posession.collier3 -= 1
-							nbCompteurCollier3 -= 1
-							isSlot_libre[8] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_collier3[8].queue_free()
+								txtItemType[8] = "vide"
+								DataSave.items_posession.collier3 -= 1
+								nbCompteurCollier3 -= 1
+								isSlot_libre[8] = true
+								txtTypeClic = ""
 						elif n == 9:
-							gui_collier3[9].queue_free()
-							txtItemType[9] = "vide"
-							DataSave.items_posession.collier3 -= 1
-							nbCompteurCollier3 -= 1
-							isSlot_libre[9] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_collier3[9].queue_free()
+								txtItemType[9] = "vide"
+								DataSave.items_posession.collier3 -= 1
+								nbCompteurCollier3 -= 1
+								isSlot_libre[9] = true
+								txtTypeClic = ""
 						elif n == 10:
-							gui_collier3[10].queue_free()
-							txtItemType[10] = "vide"
-							DataSave.items_posession.collier3 -= 1
-							nbCompteurCollier3 -= 1
-							isSlot_libre[10] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_collier3[10].queue_free()
+								txtItemType[10] = "vide"
+								DataSave.items_posession.collier3 -= 1
+								nbCompteurCollier3 -= 1
+								isSlot_libre[10] = true
+								txtTypeClic = ""
 						elif n == 11:
-							gui_collier3[11].queue_free()
-							txtItemType[11] = "vide"
-							DataSave.items_posession.collier3 -= 1
-							nbCompteurCollier3 -= 1
-							isSlot_libre[11] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_collier3[11].queue_free()
+								txtItemType[11] = "vide"
+								DataSave.items_posession.collier3 -= 1
+								nbCompteurCollier3 -= 1
+								isSlot_libre[11] = true
+								txtTypeClic = ""
 						elif n == 12:
-							gui_collier3[12].queue_free()
-							txtItemType[12] = "vide"
-							DataSave.items_posession.collier3 -= 1
-							nbCompteurCollier3 -= 1
-							isSlot_libre[12] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_collier3[12].queue_free()
+								txtItemType[12] = "vide"
+								DataSave.items_posession.collier3 -= 1
+								nbCompteurCollier3 -= 1
+								isSlot_libre[12] = true
+								txtTypeClic = ""
 						elif n == 13:
-							gui_collier3[13].queue_free()
-							txtItemType[13] = "vide"
-							DataSave.items_posession.collier3 -= 1
-							nbCompteurCollier3 -= 1
-							isSlot_libre[13] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_collier3[13].queue_free()
+								txtItemType[13] = "vide"
+								DataSave.items_posession.collier3 -= 1
+								nbCompteurCollier3 -= 1
+								isSlot_libre[13] = true
+								txtTypeClic = ""
 						elif n == 14:
-							gui_collier3[14].queue_free()
-							txtItemType[14] = "vide"
-							DataSave.items_posession.collier3 -= 1
-							nbCompteurCollier3 -= 1
-							isSlot_libre[14] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_collier3[14].queue_free()
+								txtItemType[14] = "vide"
+								DataSave.items_posession.collier3 -= 1
+								nbCompteurCollier3 -= 1
+								isSlot_libre[14] = true
+								txtTypeClic = ""
 						elif n == 15:
-							gui_collier3[15].queue_free()
-							txtItemType[15] = "vide"
-							DataSave.items_posession.collier3 -= 1
-							nbCompteurCollier3 -= 1
-							isSlot_libre[15] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_collier3[15].queue_free()
+								txtItemType[15] = "vide"
+								DataSave.items_posession.collier3 -= 1
+								nbCompteurCollier3 -= 1
+								isSlot_libre[15] = true
+								txtTypeClic = ""
 						elif n == 16:
-							gui_collier3[16].queue_free()
-							txtItemType[16] = "vide"
-							DataSave.items_posession.collier3 -= 1
-							nbCompteurCollier3 -= 1
-							isSlot_libre[16] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_collier3[16].queue_free()
+								txtItemType[16] = "vide"
+								DataSave.items_posession.collier3 -= 1
+								nbCompteurCollier3 -= 1
+								isSlot_libre[16] = true
+								txtTypeClic = ""
 						elif n == 17:
-							gui_collier3[17].queue_free()
-							txtItemType[17] = "vide"
-							DataSave.items_posession.collier3 -= 1
-							nbCompteurCollier3 -= 1
-							isSlot_libre[17] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_collier3[17].queue_free()
+								txtItemType[17] = "vide"
+								DataSave.items_posession.collier3 -= 1
+								nbCompteurCollier3 -= 1
+								isSlot_libre[17] = true
+								txtTypeClic = ""
 						elif n == 18:
-							gui_collier3[18].queue_free()
-							txtItemType[18] = "vide"
-							DataSave.items_posession.collier3 -= 1
-							nbCompteurCollier3 -= 1
-							isSlot_libre[18] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_collier3[18].queue_free()
+								txtItemType[18] = "vide"
+								DataSave.items_posession.collier3 -= 1
+								nbCompteurCollier3 -= 1
+								isSlot_libre[18] = true
+								txtTypeClic = ""
 						elif n == 19:
-							gui_collier3[19].queue_free()
-							txtItemType[19] = "vide"
-							DataSave.items_posession.collier3 -= 1
-							nbCompteurCollier3 -= 1
-							isSlot_libre[19] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_collier3[19].queue_free()
+								txtItemType[19] = "vide"
+								DataSave.items_posession.collier3 -= 1
+								nbCompteurCollier3 -= 1
+								isSlot_libre[19] = true
+								txtTypeClic = ""
 				
 				#Heaume1
 				if txtItemType[n] == "heaume_1":
 					if gui_heaume1[n] != null:
 						if n == 0:
-							gui_heaume1[0].queue_free()
-							txtItemType[0] = "vide"
-							DataSave.items_posession.heaume1 -= 1
-							nbCompteurHeaume1 -= 1
-							isSlot_libre[0] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume1[0].queue_free()
+								txtItemType[0] = "vide"
+								DataSave.items_posession.heaume1 -= 1
+								nbCompteurHeaume1 -= 1
+								isSlot_libre[0] = true
+								txtTypeClic = ""
 						elif n == 1:
-							gui_heaume1[1].queue_free()
-							txtItemType[1] = "vide"
-							DataSave.items_posession.heaume1 -= 1
-							nbCompteurHeaume1 -= 1
-							isSlot_libre[1] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume1[1].queue_free()
+								txtItemType[1] = "vide"
+								DataSave.items_posession.heaume1 -= 1
+								nbCompteurHeaume1 -= 1
+								isSlot_libre[1] = true
+								txtTypeClic = ""
 						elif n == 2:
-							gui_heaume1[2].queue_free()
-							txtItemType[2] = "vide"
-							DataSave.items_posession.heaume1 -= 1
-							nbCompteurHeaume1 -= 1
-							isSlot_libre[2] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume1[2].queue_free()
+								txtItemType[2] = "vide"
+								DataSave.items_posession.heaume1 -= 1
+								nbCompteurHeaume1 -= 1
+								isSlot_libre[2] = true
+								txtTypeClic = ""
 						elif n == 3:
-							gui_heaume1[3].queue_free()
-							txtItemType[3] = "vide"
-							DataSave.items_posession.heaume1 -= 1
-							nbCompteurHeaume1 -= 1
-							isSlot_libre[3] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume1[3].queue_free()
+								txtItemType[3] = "vide"
+								DataSave.items_posession.heaume1 -= 1
+								nbCompteurHeaume1 -= 1
+								isSlot_libre[3] = true
+								txtTypeClic = ""
 						elif n == 4:
-							gui_heaume1[4].queue_free()
-							txtItemType[4] = "vide"
-							DataSave.items_posession.heaume1 -= 1
-							nbCompteurHeaume1 -= 1
-							isSlot_libre[4] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume1[4].queue_free()
+								txtItemType[4] = "vide"
+								DataSave.items_posession.heaume1 -= 1
+								nbCompteurHeaume1 -= 1
+								isSlot_libre[4] = true
+								txtTypeClic = ""
 						elif n == 5:
-							gui_heaume1[5].queue_free()
-							txtItemType[5] = "vide"
-							DataSave.items_posession.heaume1 -= 1
-							nbCompteurHeaume1 -= 1
-							isSlot_libre[5] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume1[5].queue_free()
+								txtItemType[5] = "vide"
+								DataSave.items_posession.heaume1 -= 1
+								nbCompteurHeaume1 -= 1
+								isSlot_libre[5] = true
+								txtTypeClic = ""
 						elif n == 6:
-							gui_heaume1[6].queue_free()
-							txtItemType[6] = "vide"
-							DataSave.items_posession.heaume1 -= 1
-							nbCompteurHeaume1 -= 1
-							isSlot_libre[6] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume1[6].queue_free()
+								txtItemType[6] = "vide"
+								DataSave.items_posession.heaume1 -= 1
+								nbCompteurHeaume1 -= 1
+								isSlot_libre[6] = true
+								txtTypeClic = ""
 						elif n == 7:
-							gui_heaume1[7].queue_free()
-							txtItemType[7] = "vide"
-							DataSave.items_posession.heaume1 -= 1
-							nbCompteurHeaume1 -= 1
-							isSlot_libre[7] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume1[7].queue_free()
+								txtItemType[7] = "vide"
+								DataSave.items_posession.heaume1 -= 1
+								nbCompteurHeaume1 -= 1
+								isSlot_libre[7] = true
+								txtTypeClic = ""
 						elif n == 8:
-							gui_heaume1[8].queue_free()
-							txtItemType[8] = "vide"
-							DataSave.items_posession.heaume1 -= 1
-							nbCompteurHeaume1 -= 1
-							isSlot_libre[8] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume1[8].queue_free()
+								txtItemType[8] = "vide"
+								DataSave.items_posession.heaume1 -= 1
+								nbCompteurHeaume1 -= 1
+								isSlot_libre[8] = true
+								txtTypeClic = ""
 						elif n == 9:
-							gui_heaume1[9].queue_free()
-							txtItemType[9] = "vide"
-							DataSave.items_posession.heaume1 -= 1
-							nbCompteurHeaume1 -= 1
-							isSlot_libre[9] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume1[9].queue_free()
+								txtItemType[9] = "vide"
+								DataSave.items_posession.heaume1 -= 1
+								nbCompteurHeaume1 -= 1
+								isSlot_libre[9] = true
+								txtTypeClic = ""
 						elif n == 10:
-							gui_heaume1[10].queue_free()
-							txtItemType[10] = "vide"
-							DataSave.items_posession.heaume1 -= 1
-							nbCompteurHeaume1 -= 1
-							isSlot_libre[10] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume1[10].queue_free()
+								txtItemType[10] = "vide"
+								DataSave.items_posession.heaume1 -= 1
+								nbCompteurHeaume1 -= 1
+								isSlot_libre[10] = true
+								txtTypeClic = ""
 						elif n == 11:
-							gui_heaume1[11].queue_free()
-							txtItemType[11] = "vide"
-							DataSave.items_posession.heaume1 -= 1
-							nbCompteurHeaume1 -= 1
-							isSlot_libre[11] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume1[11].queue_free()
+								txtItemType[11] = "vide"
+								DataSave.items_posession.heaume1 -= 1
+								nbCompteurHeaume1 -= 1
+								isSlot_libre[11] = true
+								txtTypeClic = ""
 						elif n == 12:
-							gui_heaume1[12].queue_free()
-							txtItemType[12] = "vide"
-							DataSave.items_posession.heaume1 -= 1
-							nbCompteurHeaume1 -= 1
-							isSlot_libre[12] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume1[12].queue_free()
+								txtItemType[12] = "vide"
+								DataSave.items_posession.heaume1 -= 1
+								nbCompteurHeaume1 -= 1
+								isSlot_libre[12] = true
+								txtTypeClic = ""
 						elif n == 13:
-							gui_heaume1[13].queue_free()
-							txtItemType[13] = "vide"
-							DataSave.items_posession.heaume1 -= 1
-							nbCompteurHeaume1 -= 1
-							isSlot_libre[13] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume1[13].queue_free()
+								txtItemType[13] = "vide"
+								DataSave.items_posession.heaume1 -= 1
+								nbCompteurHeaume1 -= 1
+								isSlot_libre[13] = true
+								txtTypeClic  = ""
 						elif n == 14:
-							gui_heaume1[14].queue_free()
-							txtItemType[14] = "vide"
-							DataSave.items_posession.heaume1 -= 1
-							nbCompteurHeaume1 -= 1
-							isSlot_libre[14] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume1[14].queue_free()
+								txtItemType[14] = "vide"
+								DataSave.items_posession.heaume1 -= 1
+								nbCompteurHeaume1 -= 1
+								isSlot_libre[14] = true
+								txtTypeClic = ""
 						elif n == 15:
-							gui_heaume1[15].queue_free()
-							txtItemType[15] = "vide"
-							DataSave.items_posession.heaume1 -= 1
-							nbCompteurHeaume1 -= 1
-							isSlot_libre[15] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume1[15].queue_free()
+								txtItemType[15] = "vide"
+								DataSave.items_posession.heaume1 -= 1
+								nbCompteurHeaume1 -= 1
+								isSlot_libre[15] = true
+								txtTypeClic = ""
 						elif n == 16:
-							gui_heaume1[16].queue_free()
-							txtItemType[16] = "vide"
-							DataSave.items_posession.heaume1 -= 1
-							nbCompteurHeaume1 -= 1
-							isSlot_libre[16] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume1[16].queue_free()
+								txtItemType[16] = "vide"
+								DataSave.items_posession.heaume1 -= 1
+								nbCompteurHeaume1 -= 1
+								isSlot_libre[16] = true
+								txtTypeClic = ""
 						elif n == 17:
-							gui_heaume1[17].queue_free()
-							txtItemType[17] = "vide"
-							DataSave.items_posession.heaume1 -= 1
-							nbCompteurHeaume1 -= 1
-							isSlot_libre[17] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume1[17].queue_free()
+								txtItemType[17] = "vide"
+								DataSave.items_posession.heaume1 -= 1
+								nbCompteurHeaume1 -= 1
+								isSlot_libre[17] = true
+								txtTypeClic = ""
 						elif n == 18:
-							gui_heaume1[18].queue_free()
-							txtItemType[18] = "vide"
-							DataSave.items_posession.heaume1 -= 1
-							nbCompteurHeaume1 -= 1
-							isSlot_libre[18] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume1[18].queue_free()
+								txtItemType[18] = "vide"
+								DataSave.items_posession.heaume1 -= 1
+								nbCompteurHeaume1 -= 1
+								isSlot_libre[18] = true
+								txtTypeClic = ""
 						elif n == 19:
-							gui_heaume1[19].queue_free()
-							txtItemType[19] = "vide"
-							DataSave.items_posession.heaume1 -= 1
-							nbCompteurHeaume1 -= 1
-							isSlot_libre[19] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume1[19].queue_free()
+								txtItemType[19] = "vide"
+								DataSave.items_posession.heaume1 -= 1
+								nbCompteurHeaume1 -= 1
+								isSlot_libre[19] = true
+								txtTypeClic = ""
 				
 				#Heaume2
 				if txtItemType[n] == "heaume_2":
 					if gui_heaume2[n] != null:
 						if n == 0:
-							gui_heaume2[0].queue_free()
-							txtItemType[0] = "vide"
-							DataSave.items_posession.heaume2 -= 1
-							nbCompteurHeaume2 -= 1
-							isSlot_libre[0] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume2[0].queue_free()
+								txtItemType[0] = "vide"
+								DataSave.items_posession.heaume2 -= 1
+								nbCompteurHeaume2 -= 1
+								isSlot_libre[0] = true
+								txtTypeClic = ""
 						elif n == 1:
-							gui_heaume2[1].queue_free()
-							txtItemType[1] = "vide"
-							DataSave.items_posession.heaume2 -= 1
-							nbCompteurHeaume2 -= 1
-							isSlot_libre[1] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume2[1].queue_free()
+								txtItemType[1] = "vide"
+								DataSave.items_posession.heaume2 -= 1
+								nbCompteurHeaume2 -= 1
+								isSlot_libre[1] = true
+								txtTypeClic = ""
 						elif n == 2:
-							gui_heaume2[2].queue_free()
-							txtItemType[2] = "vide"
-							DataSave.items_posession.heaume2 -= 1
-							nbCompteurHeaume2 -= 1
-							isSlot_libre[2] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume2[2].queue_free()
+								txtItemType[2] = "vide"
+								DataSave.items_posession.heaume2 -= 1
+								nbCompteurHeaume2 -= 1
+								isSlot_libre[2] = true
+								txtTypeClic  = ""
 						elif n == 3:
-							gui_heaume2[3].queue_free()
-							txtItemType[3] = "vide"
-							DataSave.items_posession.heaume2 -= 1
-							nbCompteurHeaume2 -= 1
-							isSlot_libre[3] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume2[3].queue_free()
+								txtItemType[3] = "vide"
+								DataSave.items_posession.heaume2 -= 1
+								nbCompteurHeaume2 -= 1
+								isSlot_libre[3] = true
+								txtTypeClic = ""
 						elif n == 4:
-							gui_heaume2[4].queue_free()
-							txtItemType[4] = "vide"
-							DataSave.items_posession.heaume2 -= 1
-							nbCompteurHeaume2 -= 1
-							isSlot_libre[4] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume2[4].queue_free()
+								txtItemType[4] = "vide"
+								DataSave.items_posession.heaume2 -= 1
+								nbCompteurHeaume2 -= 1
+								isSlot_libre[4] = true
+								txtTypeClic = ""
 						elif n == 5:
-							gui_heaume2[5].queue_free()
-							txtItemType[5] = "vide"
-							DataSave.items_posession.heaume2 -= 1
-							nbCompteurHeaume2 -= 1
-							isSlot_libre[5] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume2[5].queue_free()
+								txtItemType[5] = "vide"
+								DataSave.items_posession.heaume2 -= 1
+								nbCompteurHeaume2 -= 1
+								isSlot_libre[5] = true
+								txtTypeClic = ""
 						elif n == 6:
-							gui_heaume2[6].queue_free()
-							txtItemType[6] = "vide"
-							DataSave.items_posession.heaume2 -= 1
-							nbCompteurHeaume2 -= 1
-							isSlot_libre[6] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume2[6].queue_free()
+								txtItemType[6] = "vide"
+								DataSave.items_posession.heaume2 -= 1
+								nbCompteurHeaume2 -= 1
+								isSlot_libre[6] = true
+								txtTypeClic = ""
 						elif n == 7:
-							gui_heaume2[7].queue_free()
-							txtItemType[7] = "vide"
-							DataSave.items_posession.heaume2 -= 1
-							nbCompteurHeaume2 -= 1
-							isSlot_libre[7] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume2[7].queue_free()
+								txtItemType[7] = "vide"
+								DataSave.items_posession.heaume2 -= 1
+								nbCompteurHeaume2 -= 1
+								isSlot_libre[7] = true
+								txtTypeClic = ""
 						elif n == 8:
-							gui_heaume2[8].queue_free()
-							txtItemType[8] = "vide"
-							DataSave.items_posession.heaume2 -= 1
-							nbCompteurHeaume2 -= 1
-							isSlot_libre[8] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume2[8].queue_free()
+								txtItemType[8] = "vide"
+								DataSave.items_posession.heaume2 -= 1
+								nbCompteurHeaume2 -= 1
+								isSlot_libre[8] = true
+								txtTypeClic = ""
 						elif n == 9:
-							gui_heaume2[9].queue_free()
-							txtItemType[9] = "vide"
-							DataSave.items_posession.heaume2 -= 1
-							nbCompteurHeaume2 -= 1
-							isSlot_libre[9] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume2[9].queue_free()
+								txtItemType[9] = "vide"
+								DataSave.items_posession.heaume2 -= 1
+								nbCompteurHeaume2 -= 1
+								isSlot_libre[9] = true
+								txtTypeClic = ""
 						elif n == 10:
-							gui_heaume2[10].queue_free()
-							txtItemType[10] = "vide"
-							DataSave.items_posession.heaume2 -= 1
-							nbCompteurHeaume2 -= 1
-							isSlot_libre[10] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume2[10].queue_free()
+								txtItemType[10] = "vide"
+								DataSave.items_posession.heaume2 -= 1
+								nbCompteurHeaume2 -= 1
+								isSlot_libre[10] = true
+								txtTypeClic = ""
 						elif n == 11:
-							gui_heaume2[11].queue_free()
-							txtItemType[11] = "vide"
-							DataSave.items_posession.heaume2 -= 1
-							nbCompteurHeaume2 -= 1
-							isSlot_libre[11] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume2[11].queue_free()
+								txtItemType[11] = "vide"
+								DataSave.items_posession.heaume2 -= 1
+								nbCompteurHeaume2 -= 1
+								isSlot_libre[11] = true
+								txtTypeClic = ""
 						elif n == 12:
-							gui_heaume2[12].queue_free()
-							txtItemType[12] = "vide"
-							DataSave.items_posession.heaume2 -= 1
-							nbCompteurHeaume2 -= 1
-							isSlot_libre[12] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume2[12].queue_free()
+								txtItemType[12] = "vide"
+								DataSave.items_posession.heaume2 -= 1
+								nbCompteurHeaume2 -= 1
+								isSlot_libre[12] = true
+								txtTypeClic = ""
 						elif n == 13:
-							gui_heaume2[13].queue_free()
-							txtItemType[13] = "vide"
-							DataSave.items_posession.heaume2 -= 1
-							nbCompteurHeaume2 -= 1
-							isSlot_libre[13] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume2[13].queue_free()
+								txtItemType[13] = "vide"
+								DataSave.items_posession.heaume2 -= 1
+								nbCompteurHeaume2 -= 1
+								isSlot_libre[13] = true
+								txtTypeClic = ""
 						elif n == 14:
-							gui_heaume2[14].queue_free()
-							txtItemType[14] = "vide"
-							DataSave.items_posession.heaume2 -= 1
-							nbCompteurHeaume2 -= 1
-							isSlot_libre[14] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume2[14].queue_free()
+								txtItemType[14] = "vide"
+								DataSave.items_posession.heaume2 -= 1
+								nbCompteurHeaume2 -= 1
+								isSlot_libre[14] = true
+								txtTypeClic = ""
 						elif n == 15:
-							gui_heaume2[15].queue_free()
-							txtItemType[15] = "vide"
-							DataSave.items_posession.heaume2 -= 1
-							nbCompteurHeaume2 -= 1
-							isSlot_libre[15] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume2[15].queue_free()
+								txtItemType[15] = "vide"
+								DataSave.items_posession.heaume2 -= 1
+								nbCompteurHeaume2 -= 1
+								isSlot_libre[15] = true
+								txtTypeClic = ""
 						elif n == 16:
-							gui_heaume2[16].queue_free()
-							txtItemType[16] = "vide"
-							DataSave.items_posession.heaume2 -= 1
-							nbCompteurHeaume2 -= 1
-							isSlot_libre[16] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume2[16].queue_free()
+								txtItemType[16] = "vide"
+								DataSave.items_posession.heaume2 -= 1
+								nbCompteurHeaume2 -= 1
+								isSlot_libre[16] = true
+								txtTypeClic = ""
 						elif n == 17:
-							gui_heaume2[17].queue_free()
-							txtItemType[17] = "vide"
-							DataSave.items_posession.heaume2 -= 1
-							nbCompteurHeaume2 -= 1
-							isSlot_libre[17] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume2[17].queue_free()
+								txtItemType[17] = "vide"
+								DataSave.items_posession.heaume2 -= 1
+								nbCompteurHeaume2 -= 1
+								isSlot_libre[17] = true
+								txtTypeClic = ""
 						elif n == 18:
-							gui_heaume2[18].queue_free()
-							txtItemType[18] = "vide"
-							DataSave.items_posession.heaume2 -= 1
-							nbCompteurHeaume2 -= 1
-							isSlot_libre[18] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume2[18].queue_free()
+								txtItemType[18] = "vide"
+								DataSave.items_posession.heaume2 -= 1
+								nbCompteurHeaume2 -= 1
+								isSlot_libre[18] = true
+								txtTypeClic = ""
 						elif n == 19:
-							gui_heaume2[19].queue_free()
-							txtItemType[19] = "vide"
-							DataSave.items_posession.heaume2 -= 1
-							nbCompteurHeaume2 -= 1
-							isSlot_libre[19] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume2[19].queue_free()
+								txtItemType[19] = "vide"
+								DataSave.items_posession.heaume2 -= 1
+								nbCompteurHeaume2 -= 1
+								isSlot_libre[19] = true
+								txtTypeClic = ""
 				
 				#Heaume3
 				if txtItemType[n] == "heaume_3":
 					if gui_heaume3[n] != null:
 						if n == 0:
-							gui_heaume3[0].queue_free()
-							txtItemType[0] = "vide"
-							DataSave.items_posession.heaume3 -= 1
-							nbCompteurHeaume3 -= 1
-							isSlot_libre[0] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume3[0].queue_free()
+								txtItemType[0] = "vide"
+								DataSave.items_posession.heaume3 -= 1
+								nbCompteurHeaume3 -= 1
+								isSlot_libre[0] = true
+								txtTypeClic = ""
 						elif n == 1:
-							gui_heaume3[1].queue_free()
-							txtItemType[1] = "vide"
-							DataSave.items_posession.heaume3 -= 1
-							nbCompteurHeaume3 -= 1
-							isSlot_libre[1] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume3[1].queue_free()
+								txtItemType[1] = "vide"
+								DataSave.items_posession.heaume3 -= 1
+								nbCompteurHeaume3 -= 1
+								isSlot_libre[1] = true
+								txtTypeClic = ""
 						elif n == 2:
-							gui_heaume3[2].queue_free()
-							txtItemType[2] = "vide"
-							DataSave.items_posession.heaume3 -= 1
-							nbCompteurHeaume3 -= 1
-							isSlot_libre[2] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume3[2].queue_free()
+								txtItemType[2] = "vide"
+								DataSave.items_posession.heaume3 -= 1
+								nbCompteurHeaume3 -= 1
+								isSlot_libre[2] = true
+								txtTypeClic = ""
 						elif n == 3:
-							gui_heaume3[3].queue_free()
-							txtItemType[3] = "vide"
-							DataSave.items_posession.heaume3 -= 1
-							nbCompteurHeaume3 -= 1
-							isSlot_libre[3] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume3[3].queue_free()
+								txtItemType[3] = "vide"
+								DataSave.items_posession.heaume3 -= 1
+								nbCompteurHeaume3 -= 1
+								isSlot_libre[3] = true
+								txtTypeClic = ""
 						elif n == 4:
-							gui_heaume3[4].queue_free()
-							txtItemType[4] = "vide"
-							DataSave.items_posession.heaume3 -= 1
-							nbCompteurHeaume3 -= 1
-							isSlot_libre[4] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume3[4].queue_free()
+								txtItemType[4] = "vide"
+								DataSave.items_posession.heaume3 -= 1
+								nbCompteurHeaume3 -= 1
+								isSlot_libre[4] = true
+								txtTypeClic = ""
 						elif n == 5:
-							gui_heaume3[5].queue_free()
-							txtItemType[5] = "vide"
-							DataSave.items_posession.heaume3 -= 1
-							nbCompteurHeaume3 -= 1
-							isSlot_libre[5] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume3[5].queue_free()
+								txtItemType[5] = "vide"
+								DataSave.items_posession.heaume3 -= 1
+								nbCompteurHeaume3 -= 1
+								isSlot_libre[5] = true
+								txtTypeClic = ""
 						elif n == 6:
-							gui_heaume3[6].queue_free()
-							txtItemType[6] = "vide"
-							DataSave.items_posession.heaume3 -= 1
-							nbCompteurHeaume3 -= 1
-							isSlot_libre[6] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume3[6].queue_free()
+								txtItemType[6] = "vide"
+								DataSave.items_posession.heaume3 -= 1
+								nbCompteurHeaume3 -= 1
+								isSlot_libre[6] = true
+								txtTypeClic = ""
 						elif n == 7:
-							gui_heaume3[7].queue_free()
-							txtItemType[7] = "vide"
-							DataSave.items_posession.heaume3 -= 1
-							nbCompteurHeaume3 -= 1
-							isSlot_libre[7] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume3[7].queue_free()
+								txtItemType[7] = "vide"
+								DataSave.items_posession.heaume3 -= 1
+								nbCompteurHeaume3 -= 1
+								isSlot_libre[7] = true
+								txtTypeClic = ""
 						elif n == 8:
-							gui_heaume3[8].queue_free()
-							txtItemType[8] = "vide"
-							DataSave.items_posession.heaume3 -= 1
-							nbCompteurHeaume3 -= 1
-							isSlot_libre[8] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume3[8].queue_free()
+								txtItemType[8] = "vide"
+								DataSave.items_posession.heaume3 -= 1
+								nbCompteurHeaume3 -= 1
+								isSlot_libre[8] = true
+								txtTypeClic = ""
 						elif n == 9:
-							gui_heaume3[9].queue_free()
-							txtItemType[9] = "vide"
-							DataSave.items_posession.heaume3 -= 1
-							nbCompteurHeaume3 -= 1
-							isSlot_libre[9] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume3[9].queue_free()
+								txtItemType[9] = "vide"
+								DataSave.items_posession.heaume3 -= 1
+								nbCompteurHeaume3 -= 1
+								isSlot_libre[9] = true
+								txtTypeClic = ""
 						elif n == 10:
-							gui_heaume3[10].queue_free()
-							txtItemType[10] = "vide"
-							DataSave.items_posession.heaume3 -= 1
-							nbCompteurHeaume3 -= 1
-							isSlot_libre[10] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume3[10].queue_free()
+								txtItemType[10] = "vide"
+								DataSave.items_posession.heaume3 -= 1
+								nbCompteurHeaume3 -= 1
+								isSlot_libre[10] = true
+								txtTypeClic = ""
 						elif n == 11:
-							gui_heaume3[11].queue_free()
-							txtItemType[11] = "vide"
-							DataSave.items_posession.heaume3 -= 1
-							nbCompteurHeaume3 -= 1
-							isSlot_libre[11] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume3[11].queue_free()
+								txtItemType[11] = "vide"
+								DataSave.items_posession.heaume3 -= 1
+								nbCompteurHeaume3 -= 1
+								isSlot_libre[11] = true
+								txtTypeClic = ""
 						elif n == 12:
-							gui_heaume3[12].queue_free()
-							txtItemType[12] = "vide"
-							DataSave.items_posession.heaume3 -= 1
-							nbCompteurHeaume3 -= 1
-							isSlot_libre[12] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume3[12].queue_free()
+								txtItemType[12] = "vide"
+								DataSave.items_posession.heaume3 -= 1
+								nbCompteurHeaume3 -= 1
+								isSlot_libre[12] = true
+								txtTypeClic = ""
 						elif n == 13:
-							gui_heaume3[13].queue_free()
-							txtItemType[13] = "vide"
-							DataSave.items_posession.heaume3 -= 1
-							nbCompteurHeaume3 -= 1
-							isSlot_libre[13] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume3[13].queue_free()
+								txtItemType[13] = "vide"
+								DataSave.items_posession.heaume3 -= 1
+								nbCompteurHeaume3 -= 1
+								isSlot_libre[13] = true
+								txtTypeClic = ""
 						elif n == 14:
-							gui_heaume3[14].queue_free()
-							txtItemType[14] = "vide"
-							DataSave.items_posession.heaume3 -= 1
-							nbCompteurHeaume3 -= 1
-							isSlot_libre[14] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume3[14].queue_free()
+								txtItemType[14] = "vide"
+								DataSave.items_posession.heaume3 -= 1
+								nbCompteurHeaume3 -= 1
+								isSlot_libre[14] = true
+								txtTypeClic = ""
 						elif n == 15:
-							gui_heaume3[15].queue_free()
-							txtItemType[15] = "vide"
-							DataSave.items_posession.heaume3 -= 1
-							nbCompteurHeaume3 -= 1
-							isSlot_libre[15] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume3[15].queue_free()
+								txtItemType[15] = "vide"
+								DataSave.items_posession.heaume3 -= 1
+								nbCompteurHeaume3 -= 1
+								isSlot_libre[15] = true
+								txtTypeClic = ""
 						elif n == 16:
-							gui_heaume3[16].queue_free()
-							txtItemType[16] = "vide"
-							DataSave.items_posession.heaume3 -= 1
-							nbCompteurHeaume3 -= 1
-							isSlot_libre[16] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume3[16].queue_free()
+								txtItemType[16] = "vide"
+								DataSave.items_posession.heaume3 -= 1
+								nbCompteurHeaume3 -= 1
+								isSlot_libre[16] = true
+								txtTypeClic = ""
 						elif n == 17:
-							gui_heaume3[17].queue_free()
-							txtItemType[17] = "vide"
-							DataSave.items_posession.heaume3 -= 1
-							nbCompteurHeaume3 -= 1
-							isSlot_libre[17] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume3[17].queue_free()
+								txtItemType[17] = "vide"
+								DataSave.items_posession.heaume3 -= 1
+								nbCompteurHeaume3 -= 1
+								isSlot_libre[17] = true
+								txtTypeClic = ""
 						elif n == 18:
-							gui_heaume3[18].queue_free()
-							txtItemType[18] = "vide"
-							DataSave.items_posession.heaume3 -= 1
-							nbCompteurHeaume3 -= 1
-							isSlot_libre[18] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume3[18].queue_free()
+								txtItemType[18] = "vide"
+								DataSave.items_posession.heaume3 -= 1
+								nbCompteurHeaume3 -= 1
+								isSlot_libre[18] = true
+								txtTypeClic = ""
 						elif n == 19:
-							gui_heaume3[19].queue_free()
-							txtItemType[19] = "vide"
-							DataSave.items_posession.heaume3 -= 1
-							nbCompteurHeaume3 -= 1
-							isSlot_libre[19] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume3[19].queue_free()
+								txtItemType[19] = "vide"
+								DataSave.items_posession.heaume3 -= 1
+								nbCompteurHeaume3 -= 1
+								isSlot_libre[19] = true
+								txtTypeClic = ""
 				
 				#Heaume4
 				if txtItemType[n] == "heaume_4":
 					if gui_heaume4[n] != null:
 						if n == 0:
-							gui_heaume4[0].queue_free()
-							txtItemType[0] = "vide"
-							DataSave.items_posession.heaume4 -= 1
-							nbCompteurHeaume4 -= 1
-							isSlot_libre[0] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume4[0].queue_free()
+								txtItemType[0] = "vide"
+								DataSave.items_posession.heaume4 -= 1
+								nbCompteurHeaume4 -= 1
+								isSlot_libre[0] = true
+								txtTypeClic = ""
 						elif n == 1:
-							gui_heaume4[1].queue_free()
-							txtItemType[1] = "vide"
-							DataSave.items_posession.heaume4 -= 1
-							nbCompteurHeaume4 -= 1
-							isSlot_libre[1] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume4[1].queue_free()
+								txtItemType[1] = "vide"
+								DataSave.items_posession.heaume4 -= 1
+								nbCompteurHeaume4 -= 1
+								isSlot_libre[1] = true
+								txtTypeClic = ""
 						elif n == 2:
-							gui_heaume4[2].queue_free()
-							txtItemType[2] = "vide"
-							DataSave.items_posession.heaume4 -= 1
-							nbCompteurHeaume4 -= 1
-							isSlot_libre[2] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume4[2].queue_free()
+								txtItemType[2] = "vide"
+								DataSave.items_posession.heaume4 -= 1
+								nbCompteurHeaume4 -= 1
+								isSlot_libre[2] = true
+								txtTypeClic = ""
 						elif n == 3:
-							gui_heaume4[3].queue_free()
-							txtItemType[3] = "vide"
-							DataSave.items_posession.heaume4 -= 1
-							nbCompteurHeaume4 -= 1
-							isSlot_libre[3] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume4[3].queue_free()
+								txtItemType[3] = "vide"
+								DataSave.items_posession.heaume4 -= 1
+								nbCompteurHeaume4 -= 1
+								isSlot_libre[3] = true
+								txtTypeClic = ""
 						elif n == 4:
-							gui_heaume4[4].queue_free()
-							txtItemType[4] = "vide"
-							DataSave.items_posession.heaume4 -= 1
-							nbCompteurHeaume4 -= 1
-							isSlot_libre[4] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume4[4].queue_free()
+								txtItemType[4] = "vide"
+								DataSave.items_posession.heaume4 -= 1
+								nbCompteurHeaume4 -= 1
+								isSlot_libre[4] = true
+								txtTypeClic = ""
 						elif n == 5:
-							gui_heaume4[5].queue_free()
-							txtItemType[5] = "vide"
-							DataSave.items_posession.heaume4 -= 1
-							nbCompteurHeaume4 -= 1
-							isSlot_libre[5] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume4[5].queue_free()
+								txtItemType[5] = "vide"
+								DataSave.items_posession.heaume4 -= 1
+								nbCompteurHeaume4 -= 1
+								isSlot_libre[5] = true
+								txtTypeClic = ""
 						elif n == 6:
-							gui_heaume4[6].queue_free()
-							txtItemType[6] = "vide"
-							DataSave.items_posession.heaume4 -= 1
-							nbCompteurHeaume4 -= 1
-							isSlot_libre[6] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume4[6].queue_free()
+								txtItemType[6] = "vide"
+								DataSave.items_posession.heaume4 -= 1
+								nbCompteurHeaume4 -= 1
+								isSlot_libre[6] = true
+								txtTypeClic = ""
 						elif n == 7:
-							gui_heaume4[7].queue_free()
-							txtItemType[7] = "vide"
-							DataSave.items_posession.heaume4 -= 1
-							nbCompteurHeaume4 -= 1
-							isSlot_libre[7] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume4[7].queue_free()
+								txtItemType[7] = "vide"
+								DataSave.items_posession.heaume4 -= 1
+								nbCompteurHeaume4 -= 1
+								isSlot_libre[7] = true
+								txtTypeClic = ""
 						elif n == 8:
-							gui_heaume4[8].queue_free()
-							txtItemType[8] = "vide"
-							DataSave.items_posession.heaume4 -= 1
-							nbCompteurHeaume4 -= 1
-							isSlot_libre[8] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume4[8].queue_free()
+								txtItemType[8] = "vide"
+								DataSave.items_posession.heaume4 -= 1
+								nbCompteurHeaume4 -= 1
+								isSlot_libre[8] = true
+								txtTypeClic = ""
 						elif n == 9:
-							gui_heaume4[9].queue_free()
-							txtItemType[9] = "vide"
-							DataSave.items_posession.heaume4 -= 1
-							nbCompteurHeaume4 -= 1
-							isSlot_libre[9] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume4[9].queue_free()
+								txtItemType[9] = "vide"
+								DataSave.items_posession.heaume4 -= 1
+								nbCompteurHeaume4 -= 1
+								isSlot_libre[9] = true
+								txtTypeClic = ""
 						elif n == 10:
-							gui_heaume4[10].queue_free()
-							txtItemType[10] = "vide"
-							DataSave.items_posession.heaume4 -= 1
-							nbCompteurHeaume4 -= 1
-							isSlot_libre[10] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume4[10].queue_free()
+								txtItemType[10] = "vide"
+								DataSave.items_posession.heaume4 -= 1
+								nbCompteurHeaume4 -= 1
+								isSlot_libre[10] = true
+								txtTypeClic = ""
 						elif n == 11:
-							gui_heaume4[11].queue_free()
-							txtItemType[11] = "vide"
-							DataSave.items_posession.heaume4 -= 1
-							nbCompteurHeaume4 -= 1
-							isSlot_libre[11] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume4[11].queue_free()
+								txtItemType[11] = "vide"
+								DataSave.items_posession.heaume4 -= 1
+								nbCompteurHeaume4 -= 1
+								isSlot_libre[11] = true
+								txtTypeClic = ""
 						elif n == 12:
-							gui_heaume4[12].queue_free()
-							txtItemType[12] = "vide"
-							DataSave.items_posession.heaume4 -= 1
-							nbCompteurHeaume4 -= 1
-							isSlot_libre[12] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume4[12].queue_free()
+								txtItemType[12] = "vide"
+								DataSave.items_posession.heaume4 -= 1
+								nbCompteurHeaume4 -= 1
+								isSlot_libre[12] = true
+								txtTypeClic = ""
 						elif n == 13:
-							gui_heaume4[13].queue_free()
-							txtItemType[13] = "vide"
-							DataSave.items_posession.heaume4 -= 1
-							nbCompteurHeaume4 -= 1
-							isSlot_libre[13] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume4[13].queue_free()
+								txtItemType[13] = "vide"
+								DataSave.items_posession.heaume4 -= 1
+								nbCompteurHeaume4 -= 1
+								isSlot_libre[13] = true
+								txtTypeClic = ""
 						elif n == 14:
-							gui_heaume4[14].queue_free()
-							txtItemType[14] = "vide"
-							DataSave.items_posession.heaume4 -= 1
-							nbCompteurHeaume4 -= 1
-							isSlot_libre[14] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume4[14].queue_free()
+								txtItemType[14] = "vide"
+								DataSave.items_posession.heaume4 -= 1
+								nbCompteurHeaume4 -= 1
+								isSlot_libre[14] = true
+								txtTypeClic = ""
 						elif n == 15:
-							gui_heaume4[15].queue_free()
-							txtItemType[15] = "vide"
-							DataSave.items_posession.heaume4 -= 1
-							nbCompteurHeaume4 -= 1
-							isSlot_libre[15] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume4[15].queue_free()
+								txtItemType[15] = "vide"
+								DataSave.items_posession.heaume4 -= 1
+								nbCompteurHeaume4 -= 1
+								isSlot_libre[15] = true
+								txtTypeClic = ""
 						elif n == 16:
-							gui_heaume4[16].queue_free()
-							txtItemType[16] = "vide"
-							DataSave.items_posession.heaume4 -= 1
-							nbCompteurHeaume4 -= 1
-							isSlot_libre[16] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume4[16].queue_free()
+								txtItemType[16] = "vide"
+								DataSave.items_posession.heaume4 -= 1
+								nbCompteurHeaume4 -= 1
+								isSlot_libre[16] = true
+								txtTypeClic = ""
 						elif n == 17:
-							gui_heaume4[17].queue_free()
-							txtItemType[17] = "vide"
-							DataSave.items_posession.heaume4 -= 1
-							nbCompteurHeaume4 -= 1
-							isSlot_libre[17] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume4[17].queue_free()
+								txtItemType[17] = "vide"
+								DataSave.items_posession.heaume4 -= 1
+								nbCompteurHeaume4 -= 1
+								isSlot_libre[17] = true
+								txtTypeClic = ""
 						elif n == 18:
-							gui_heaume4[18].queue_free()
-							txtItemType[18] = "vide"
-							DataSave.items_posession.heaume4 -= 1
-							nbCompteurHeaume4 -= 1
-							isSlot_libre[18] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume4[18].queue_free()
+								txtItemType[18] = "vide"
+								DataSave.items_posession.heaume4 -= 1
+								nbCompteurHeaume4 -= 1
+								isSlot_libre[18] = true
+								txtTypeClic = ""
 						elif n == 19:
-							gui_heaume4[19].queue_free()
-							txtItemType[19] = "vide"
-							DataSave.items_posession.heaume4 -= 1
-							nbCompteurHeaume4 -= 1
-							isSlot_libre[19] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume4[19].queue_free()
+								txtItemType[19] = "vide"
+								DataSave.items_posession.heaume4 -= 1
+								nbCompteurHeaume4 -= 1
+								isSlot_libre[19] = true
+								txtTypeClic = ""
 				
 				#Heaume5
 				if txtItemType[n] == "heaume_5":
 					if gui_heaume5[n] != null:
 						if n == 0:
-							gui_heaume5[0].queue_free()
-							txtItemType[0] = "vide"
-							DataSave.items_posession.heaume5 -= 1
-							nbCompteurHeaume5 -= 1
-							isSlot_libre[0] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume5[0].queue_free()
+								txtItemType[0] = "vide"
+								DataSave.items_posession.heaume5 -= 1
+								nbCompteurHeaume5 -= 1
+								isSlot_libre[0] = true
+								txtTypeClic = ""
 						elif n == 1:
-							gui_heaume5[1].queue_free()
-							txtItemType[1] = "vide"
-							DataSave.items_posession.heaume5 -= 1
-							nbCompteurHeaume5 -= 1
-							isSlot_libre[1] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume5[1].queue_free()
+								txtItemType[1] = "vide"
+								DataSave.items_posession.heaume5 -= 1
+								nbCompteurHeaume5 -= 1
+								isSlot_libre[1] = true
+								txtTypeClic = ""
 						elif n == 2:
-							gui_heaume5[2].queue_free()
-							txtItemType[2] = "vide"
-							DataSave.items_posession.heaume5 -= 1
-							nbCompteurHeaume5 -= 1
-							isSlot_libre[2] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume5[2].queue_free()
+								txtItemType[2] = "vide"
+								DataSave.items_posession.heaume5 -= 1
+								nbCompteurHeaume5 -= 1
+								isSlot_libre[2] = true
+								txtTypeClic = ""
 						elif n == 3:
-							gui_heaume5[3].queue_free()
-							txtItemType[3] = "vide"
-							DataSave.items_posession.heaume5 -= 1
-							nbCompteurHeaume5 -= 1
-							isSlot_libre[3] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume5[3].queue_free()
+								txtItemType[3] = "vide"
+								DataSave.items_posession.heaume5 -= 1
+								nbCompteurHeaume5 -= 1
+								isSlot_libre[3] = true
+								txtTypeClic = ""
 						elif n == 4:
-							gui_heaume5[4].queue_free()
-							txtItemType[4] = "vide"
-							DataSave.items_posession.heaume5 -= 1
-							nbCompteurHeaume5 -= 1
-							isSlot_libre[4] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume5[4].queue_free()
+								txtItemType[4] = "vide"
+								DataSave.items_posession.heaume5 -= 1
+								nbCompteurHeaume5 -= 1
+								isSlot_libre[4] = true
+								txtTypeClic = ""
 						elif n == 5:
-							gui_heaume5[5].queue_free()
-							txtItemType[5] = "vide"
-							DataSave.items_posession.heaume5 -= 1
-							nbCompteurHeaume5 -= 1
-							isSlot_libre[5] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume5[5].queue_free()
+								txtItemType[5] = "vide"
+								DataSave.items_posession.heaume5 -= 1
+								nbCompteurHeaume5 -= 1
+								isSlot_libre[5] = true
+								txtTypeClic = ""
 						elif n == 6:
-							gui_heaume5[6].queue_free()
-							txtItemType[6] = "vide"
-							DataSave.items_posession.heaume5 -= 1
-							nbCompteurHeaume5 -= 1
-							isSlot_libre[6] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume5[6].queue_free()
+								txtItemType[6] = "vide"
+								DataSave.items_posession.heaume5 -= 1
+								nbCompteurHeaume5 -= 1
+								isSlot_libre[6] = true
+								txtTypeClic = ""
 						elif n == 7:
-							gui_heaume5[7].queue_free()
-							txtItemType[7] = "vide"
-							DataSave.items_posession.heaume5 -= 1
-							nbCompteurHeaume5 -= 1
-							isSlot_libre[7] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume5[7].queue_free()
+								txtItemType[7] = "vide"
+								DataSave.items_posession.heaume5 -= 1
+								nbCompteurHeaume5 -= 1
+								isSlot_libre[7] = true
+								txtTypeClic = ""
 						elif n == 8:
-							gui_heaume5[8].queue_free()
-							txtItemType[8] = "vide"
-							DataSave.items_posession.heaume5 -= 1
-							nbCompteurHeaume5 -= 1
-							isSlot_libre[8] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume5[8].queue_free()
+								txtItemType[8] = "vide"
+								DataSave.items_posession.heaume5 -= 1
+								nbCompteurHeaume5 -= 1
+								isSlot_libre[8] = true
+								txtTypeClic = ""
 						elif n == 9:
-							gui_heaume5[9].queue_free()
-							txtItemType[9] = "vide"
-							DataSave.items_posession.heaume5 -= 1
-							nbCompteurHeaume5 -= 1
-							isSlot_libre[9] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume5[9].queue_free()
+								txtItemType[9] = "vide"
+								DataSave.items_posession.heaume5 -= 1
+								nbCompteurHeaume5 -= 1
+								isSlot_libre[9] = true
+								txtTypeClic = ""
 						elif n == 10:
-							gui_heaume5[10].queue_free()
-							txtItemType[10] = "vide"
-							DataSave.items_posession.heaume5 -= 1
-							nbCompteurHeaume5 -= 1
-							isSlot_libre[10] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume5[10].queue_free()
+								txtItemType[10] = "vide"
+								DataSave.items_posession.heaume5 -= 1
+								nbCompteurHeaume5 -= 1
+								isSlot_libre[10] = true
+								txtTypeClic = ""
 						elif n == 11:
-							gui_heaume5[11].queue_free()
-							txtItemType[11] = "vide"
-							DataSave.items_posession.heaume5 -= 1
-							nbCompteurHeaume5 -= 1
-							isSlot_libre[11] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume5[11].queue_free()
+								txtItemType[11] = "vide"
+								DataSave.items_posession.heaume5 -= 1
+								nbCompteurHeaume5 -= 1
+								isSlot_libre[11] = true
+								txtTypeClic = ""
 						elif n == 12:
-							gui_heaume5[12].queue_free()
-							txtItemType[12] = "vide"
-							DataSave.items_posession.heaume5 -= 1
-							nbCompteurHeaume5 -= 1
-							isSlot_libre[12] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume5[12].queue_free()
+								txtItemType[12] = "vide"
+								DataSave.items_posession.heaume5 -= 1
+								nbCompteurHeaume5 -= 1
+								isSlot_libre[12] = true
+								txtTypeClic = ""
 						elif n == 13:
-							gui_heaume5[13].queue_free()
-							txtItemType[13] = "vide"
-							DataSave.items_posession.heaume5 -= 1
-							nbCompteurHeaume5 -= 1
-							isSlot_libre[13] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume5[13].queue_free()
+								txtItemType[13] = "vide"
+								DataSave.items_posession.heaume5 -= 1
+								nbCompteurHeaume5 -= 1
+								isSlot_libre[13] = true
+								txtTypeClic = ""
 						elif n == 14:
-							gui_heaume5[14].queue_free()
-							txtItemType[14] = "vide"
-							DataSave.items_posession.heaume5 -= 1
-							nbCompteurHeaume5 -= 1
-							isSlot_libre[14] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume5[14].queue_free()
+								txtItemType[14] = "vide"
+								DataSave.items_posession.heaume5 -= 1
+								nbCompteurHeaume5 -= 1
+								isSlot_libre[14] = true
+								txtTypeClic = ""
 						elif n == 15:
-							gui_heaume5[15].queue_free()
-							txtItemType[15] = "vide"
-							DataSave.items_posession.heaume5 -= 1
-							nbCompteurHeaume5 -= 1
-							isSlot_libre[15] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume5[15].queue_free()
+								txtItemType[15] = "vide"
+								DataSave.items_posession.heaume5 -= 1
+								nbCompteurHeaume5 -= 1
+								isSlot_libre[15] = true
+								txtTypeClic = ""
 						elif n == 16:
-							gui_heaume5[16].queue_free()
-							txtItemType[16] = "vide"
-							DataSave.items_posession.heaume5 -= 1
-							nbCompteurHeaume5 -= 1
-							isSlot_libre[16] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume5[16].queue_free()
+								txtItemType[16] = "vide"
+								DataSave.items_posession.heaume5 -= 1
+								nbCompteurHeaume5 -= 1
+								isSlot_libre[16] = true
+								txtTypeClic = ""
 						elif n == 17:
-							gui_heaume5[17].queue_free()
-							txtItemType[17] = "vide"
-							DataSave.items_posession.heaume5 -= 1
-							nbCompteurHeaume5 -= 1
-							isSlot_libre[17] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume5[17].queue_free()
+								txtItemType[17] = "vide"
+								DataSave.items_posession.heaume5 -= 1
+								nbCompteurHeaume5 -= 1
+								isSlot_libre[17] = true
+								txtTypeClic = ""
 						elif n == 18:
-							gui_heaume5[18].queue_free()
-							txtItemType[18] = "vide"
-							DataSave.items_posession.heaume5 -= 1
-							nbCompteurHeaume5 -= 1
-							isSlot_libre[18] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume5[18].queue_free()
+								txtItemType[18] = "vide"
+								DataSave.items_posession.heaume5 -= 1
+								nbCompteurHeaume5 -= 1
+								isSlot_libre[18] = true
+								txtTypeClic = ""
 						elif n == 19:
-							gui_heaume5[19].queue_free()
-							txtItemType[19] = "vide"
-							DataSave.items_posession.heaume5 -= 1
-							nbCompteurHeaume5 -= 1
-							isSlot_libre[19] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume5[19].queue_free()
+								txtItemType[19] = "vide"
+								DataSave.items_posession.heaume5 -= 1
+								nbCompteurHeaume5 -= 1
+								isSlot_libre[19] = true
+								txtTypeClic = ""
 				
 				#Heaume6
 				if txtItemType[n] == "heaume_6":
 					if gui_heaume6[n] != null:
 						if n == 0:
-							gui_heaume6[0].queue_free()
-							txtItemType[0] = "vide"
-							DataSave.items_posession.heaume6 -= 1
-							nbCompteurHeaume6 -= 1
-							isSlot_libre[0] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume6[0].queue_free()
+								txtItemType[0] = "vide"
+								DataSave.items_posession.heaume6 -= 1
+								nbCompteurHeaume6 -= 1
+								isSlot_libre[0] = true
+								txtTypeClic = ""
 						elif n == 1:
-							gui_heaume6[1].queue_free()
-							txtItemType[1] = "vide"
-							DataSave.items_posession.heaume6 -= 1
-							nbCompteurHeaume6 -= 1
-							isSlot_libre[1] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume6[1].queue_free()
+								txtItemType[1] = "vide"
+								DataSave.items_posession.heaume6 -= 1
+								nbCompteurHeaume6 -= 1
+								isSlot_libre[1] = true
+								txtTypeClic = ""
 						elif n == 2:
-							gui_heaume6[2].queue_free()
-							txtItemType[2] = "vide"
-							DataSave.items_posession.heaume6 -= 1
-							nbCompteurHeaume6 -= 1
-							isSlot_libre[2] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume6[2].queue_free()
+								txtItemType[2] = "vide"
+								DataSave.items_posession.heaume6 -= 1
+								nbCompteurHeaume6 -= 1
+								isSlot_libre[2] = true
+								txtTypeClic = ""
 						elif n == 3:
-							gui_heaume6[3].queue_free()
-							txtItemType[3] = "vide"
-							DataSave.items_posession.heaume6 -= 1
-							nbCompteurHeaume6 -= 1
-							isSlot_libre[3] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume6[3].queue_free()
+								txtItemType[3] = "vide"
+								DataSave.items_posession.heaume6 -= 1
+								nbCompteurHeaume6 -= 1
+								isSlot_libre[3] = true
+								txtTypeClic = ""
 						elif n == 4:
-							gui_heaume6[4].queue_free()
-							txtItemType[4] = "vide"
-							DataSave.items_posession.heaume6 -= 1
-							nbCompteurHeaume6 -= 1
-							isSlot_libre[4] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume6[4].queue_free()
+								txtItemType[4] = "vide"
+								DataSave.items_posession.heaume6 -= 1
+								nbCompteurHeaume6 -= 1
+								isSlot_libre[4] = true
+								txtTypeClic = ""
 						elif n == 5:
-							gui_heaume6[5].queue_free()
-							txtItemType[5] = "vide"
-							DataSave.items_posession.heaume6 -= 1
-							nbCompteurHeaume6 -= 1
-							isSlot_libre[5] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume6[5].queue_free()
+								txtItemType[5] = "vide"
+								DataSave.items_posession.heaume6 -= 1
+								nbCompteurHeaume6 -= 1
+								isSlot_libre[5] = true
+								txtTypeClic = ""
 						elif n == 6:
-							gui_heaume6[6].queue_free()
-							txtItemType[6] = "vide"
-							DataSave.items_posession.heaume6 -= 1
-							nbCompteurHeaume6 -= 1
-							isSlot_libre[6] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume6[6].queue_free()
+								txtItemType[6] = "vide"
+								DataSave.items_posession.heaume6 -= 1
+								nbCompteurHeaume6 -= 1
+								isSlot_libre[6] = true
+								txtTypeClic = ""
 						elif n == 7:
-							gui_heaume6[7].queue_free()
-							txtItemType[7] = "vide"
-							DataSave.items_posession.heaume6 -= 1
-							nbCompteurHeaume6 -= 1
-							isSlot_libre[7] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume6[7].queue_free()
+								txtItemType[7] = "vide"
+								DataSave.items_posession.heaume6 -= 1
+								nbCompteurHeaume6 -= 1
+								isSlot_libre[7] = true
+								txtTypeClic = ""
 						elif n == 8:
-							gui_heaume6[8].queue_free()
-							txtItemType[8] = "vide"
-							DataSave.items_posession.heaume6 -= 1
-							nbCompteurHeaume6 -= 1
-							isSlot_libre[8] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume6[8].queue_free()
+								txtItemType[8] = "vide"
+								DataSave.items_posession.heaume6 -= 1
+								nbCompteurHeaume6 -= 1
+								isSlot_libre[8] = true
+								txtTypeClic = ""
 						elif n == 9:
-							gui_heaume6[9].queue_free()
-							txtItemType[9] = "vide"
-							DataSave.items_posession.heaume6 -= 1
-							nbCompteurHeaume6 -= 1
-							isSlot_libre[9] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume6[9].queue_free()
+								txtItemType[9] = "vide"
+								DataSave.items_posession.heaume6 -= 1
+								nbCompteurHeaume6 -= 1
+								isSlot_libre[9] = true
+								txtTypeClic = ""
 						elif n == 10:
-							gui_heaume6[10].queue_free()
-							txtItemType[10] = "vide"
-							DataSave.items_posession.heaume6 -= 1
-							nbCompteurHeaume6 -= 1
-							isSlot_libre[10] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume6[10].queue_free()
+								txtItemType[10] = "vide"
+								DataSave.items_posession.heaume6 -= 1
+								nbCompteurHeaume6 -= 1
+								isSlot_libre[10] = true
+								txtTypeClic = ""
 						elif n == 11:
-							gui_heaume6[11].queue_free()
-							txtItemType[11] = "vide"
-							DataSave.items_posession.heaume6 -= 1
-							nbCompteurHeaume6 -= 1
-							isSlot_libre[11] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume6[11].queue_free()
+								txtItemType[11] = "vide"
+								DataSave.items_posession.heaume6 -= 1
+								nbCompteurHeaume6 -= 1
+								isSlot_libre[11] = true
+								txtTypeClic = ""
 						elif n == 12:
-							gui_heaume6[12].queue_free()
-							txtItemType[12] = "vide"
-							DataSave.items_posession.heaume6 -= 1
-							nbCompteurHeaume6 -= 1
-							isSlot_libre[12] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume6[12].queue_free()
+								txtItemType[12] = "vide"
+								DataSave.items_posession.heaume6 -= 1
+								nbCompteurHeaume6 -= 1
+								isSlot_libre[12] = true
+								txtTypeClic = ""
 						elif n == 13:
-							gui_heaume6[13].queue_free()
-							txtItemType[13] = "vide"
-							DataSave.items_posession.heaume6 -= 1
-							nbCompteurHeaume6 -= 1
-							isSlot_libre[13] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume6[13].queue_free()
+								txtItemType[13] = "vide"
+								DataSave.items_posession.heaume6 -= 1
+								nbCompteurHeaume6 -= 1
+								isSlot_libre[13] = true
+								txtTypeClic = ""
 						elif n == 14:
-							gui_heaume6[14].queue_free()
-							txtItemType[14] = "vide"
-							DataSave.items_posession.heaume6 -= 1
-							nbCompteurHeaume6 -= 1
-							isSlot_libre[14] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume6[14].queue_free()
+								txtItemType[14] = "vide"
+								DataSave.items_posession.heaume6 -= 1
+								nbCompteurHeaume6 -= 1
+								isSlot_libre[14] = true
+								txtTypeClic = ""
 						elif n == 15:
-							gui_heaume6[15].queue_free()
-							txtItemType[15] = "vide"
-							DataSave.items_posession.heaume6 -= 1
-							nbCompteurHeaume6 -= 1
-							isSlot_libre[15] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume6[15].queue_free()
+								txtItemType[15] = "vide"
+								DataSave.items_posession.heaume6 -= 1
+								nbCompteurHeaume6 -= 1
+								isSlot_libre[15] = true
+								txtTypeClic = ""
 						elif n == 16:
-							gui_heaume6[16].queue_free()
-							txtItemType[16] = "vide"
-							DataSave.items_posession.heaume6 -= 1
-							nbCompteurHeaume6 -= 1
-							isSlot_libre[16] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume6[16].queue_free()
+								txtItemType[16] = "vide"
+								DataSave.items_posession.heaume6 -= 1
+								nbCompteurHeaume6 -= 1
+								isSlot_libre[16] = true
+								txtTypeClic = ""
 						elif n == 17:
-							gui_heaume6[17].queue_free()
-							txtItemType[17] = "vide"
-							DataSave.items_posession.heaume6 -= 1
-							nbCompteurHeaume6 -= 1
-							isSlot_libre[17] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume6[17].queue_free()
+								txtItemType[17] = "vide"
+								DataSave.items_posession.heaume6 -= 1
+								nbCompteurHeaume6 -= 1
+								isSlot_libre[17] = true
+								txtTypeClic = ""
 						elif n == 18:
-							gui_heaume6[18].queue_free()
-							txtItemType[18] = "vide"
-							DataSave.items_posession.heaume6 -= 1
-							nbCompteurHeaume6 -= 1
-							isSlot_libre[18] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume6[18].queue_free()
+								txtItemType[18] = "vide"
+								DataSave.items_posession.heaume6 -= 1
+								nbCompteurHeaume6 -= 1
+								isSlot_libre[18] = true
+								txtTypeClic = ""
 						elif n == 19:
-							gui_heaume6[19].queue_free()
-							txtItemType[19] = "vide"
-							DataSave.items_posession.heaume6 -= 1
-							nbCompteurHeaume6 -= 1
-							isSlot_libre[19] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_heaume6[19].queue_free()
+								txtItemType[19] = "vide"
+								DataSave.items_posession.heaume6 -= 1
+								nbCompteurHeaume6 -= 1
+								isSlot_libre[19] = true
+								txtTypeClic = ""
 				
 				#Sword1
 				if txtItemType[n] == "sword_1":
 					if gui_sword1[n] != null:
 						if n == 0:
-							gui_sword1[0].queue_free()
-							txtItemType[0] = "vide"
-							DataSave.items_posession.sword1 -= 1
-							nbCompteurSword1 -= 1
-							isSlot_libre[0] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword1[0].queue_free()
+								txtItemType[0] = "vide"
+								DataSave.items_posession.sword1 -= 1
+								nbCompteurSword1 -= 1
+								isSlot_libre[0] = true
+								txtTypeClic = ""
 						elif n == 1:
-							gui_sword1[1].queue_free()
-							txtItemType[1] = "vide"
-							DataSave.items_posession.sword1 -= 1
-							nbCompteurSword1 -= 1
-							isSlot_libre[1] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword1[1].queue_free()
+								txtItemType[1] = "vide"
+								DataSave.items_posession.sword1 -= 1
+								nbCompteurSword1 -= 1
+								isSlot_libre[1] = true
+								txtTypeClic = ""
 						elif n == 2:
-							gui_sword1[2].queue_free()
-							txtItemType[2] = "vide"
-							DataSave.items_posession.sword1 -= 1
-							nbCompteurSword1 -= 1
-							isSlot_libre[2] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword1[2].queue_free()
+								txtItemType[2] = "vide"
+								DataSave.items_posession.sword1 -= 1
+								nbCompteurSword1 -= 1
+								isSlot_libre[2] = true
+								txtTypeClic = ""
 						elif n == 3:
-							gui_sword1[3].queue_free()
-							txtItemType[3] = "vide"
-							DataSave.items_posession.sword1 -= 1
-							nbCompteurSword1 -= 1
-							isSlot_libre[3] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword1[3].queue_free()
+								txtItemType[3] = "vide"
+								DataSave.items_posession.sword1 -= 1
+								nbCompteurSword1 -= 1
+								isSlot_libre[3] = true
+								txtTypeClic = ""
 						elif n == 4:
-							gui_sword1[4].queue_free()
-							txtItemType[4] = "vide"
-							DataSave.items_posession.sword1 -= 1
-							nbCompteurSword1 -= 1
-							isSlot_libre[4] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword1[4].queue_free()
+								txtItemType[4] = "vide"
+								DataSave.items_posession.sword1 -= 1
+								nbCompteurSword1 -= 1
+								isSlot_libre[4] = true
+								txtTypeClic = ""
 						elif n == 5:
-							gui_sword1[5].queue_free()
-							txtItemType[5] = "vide"
-							DataSave.items_posession.sword1 -= 1
-							nbCompteurSword1 -= 1
-							isSlot_libre[5] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword1[5].queue_free()
+								txtItemType[5] = "vide"
+								DataSave.items_posession.sword1 -= 1
+								nbCompteurSword1 -= 1
+								isSlot_libre[5] = true
+								txtTypeClic = ""
 						elif n == 6:
-							gui_sword1[6].queue_free()
-							txtItemType[6] = "vide"
-							DataSave.items_posession.sword1 -= 1
-							nbCompteurSword1 -= 1
-							isSlot_libre[6] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword1[6].queue_free()
+								txtItemType[6] = "vide"
+								DataSave.items_posession.sword1 -= 1
+								nbCompteurSword1 -= 1
+								isSlot_libre[6] = true
+								txtTypeClic = ""
 						elif n == 7:
-							gui_sword1[7].queue_free()
-							txtItemType[7] = "vide"
-							DataSave.items_posession.sword1 -= 1
-							nbCompteurSword1 -= 1
-							isSlot_libre[7] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword1[7].queue_free()
+								txtItemType[7] = "vide"
+								DataSave.items_posession.sword1 -= 1
+								nbCompteurSword1 -= 1
+								isSlot_libre[7] = true
+								txtTypeClic = ""
 						elif n == 8:
-							gui_sword1[8].queue_free()
-							txtItemType[8] = "vide"
-							DataSave.items_posession.sword1 -= 1
-							nbCompteurSword1 -= 1
-							isSlot_libre[8] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword1[8].queue_free()
+								txtItemType[8] = "vide"
+								DataSave.items_posession.sword1 -= 1
+								nbCompteurSword1 -= 1
+								isSlot_libre[8] = true
+								txtTypeClic = ""
 						elif n == 9:
-							gui_sword1[9].queue_free()
-							txtItemType[9] = "vide"
-							DataSave.items_posession.sword1 -= 1
-							nbCompteurSword1 -= 1
-							isSlot_libre[9] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword1[9].queue_free()
+								txtItemType[9] = "vide"
+								DataSave.items_posession.sword1 -= 1
+								nbCompteurSword1 -= 1
+								isSlot_libre[9] = true
+								txtTypeClic = ""
 						elif n == 10:
-							gui_sword1[10].queue_free()
-							txtItemType[10] = "vide"
-							DataSave.items_posession.sword1 -= 1
-							nbCompteurSword1 -= 1
-							isSlot_libre[10] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword1[10].queue_free()
+								txtItemType[10] = "vide"
+								DataSave.items_posession.sword1 -= 1
+								nbCompteurSword1 -= 1
+								isSlot_libre[10] = true
+								txtTypeClic = ""
 						elif n == 11:
-							gui_sword1[11].queue_free()
-							txtItemType[11] = "vide"
-							DataSave.items_posession.sword1 -= 1
-							nbCompteurSword1 -= 1
-							isSlot_libre[11] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword1[11].queue_free()
+								txtItemType[11] = "vide"
+								DataSave.items_posession.sword1 -= 1
+								nbCompteurSword1 -= 1
+								isSlot_libre[11] = true
+								txtTypeClic = ""
 						elif n == 12:
-							gui_sword1[12].queue_free()
-							txtItemType[12] = "vide"
-							DataSave.items_posession.sword1 -= 1
-							nbCompteurSword1 -= 1
-							isSlot_libre[12] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword1[12].queue_free()
+								txtItemType[12] = "vide"
+								DataSave.items_posession.sword1 -= 1
+								nbCompteurSword1 -= 1
+								isSlot_libre[12] = true
+								txtTypeClic = ""
 						elif n == 13:
-							gui_sword1[13].queue_free()
-							txtItemType[13] = "vide"
-							DataSave.items_posession.sword1 -= 1
-							nbCompteurSword1 -= 1
-							isSlot_libre[13] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword1[13].queue_free()
+								txtItemType[13] = "vide"
+								DataSave.items_posession.sword1 -= 1
+								nbCompteurSword1 -= 1
+								isSlot_libre[13] = true
+								txtTypeClic = ""
 						elif n == 14:
-							gui_sword1[14].queue_free()
-							txtItemType[14] = "vide"
-							DataSave.items_posession.sword1 -= 1
-							nbCompteurSword1 -= 1
-							isSlot_libre[14] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword1[14].queue_free()
+								txtItemType[14] = "vide"
+								DataSave.items_posession.sword1 -= 1
+								nbCompteurSword1 -= 1
+								isSlot_libre[14] = true
+								txtTypeClic = ""
 						elif n == 15:
-							gui_sword1[15].queue_free()
-							txtItemType[15] = "vide"
-							DataSave.items_posession.sword1 -= 1
-							nbCompteurSword1 -= 1
-							isSlot_libre[15] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword1[15].queue_free()
+								txtItemType[15] = "vide"
+								DataSave.items_posession.sword1 -= 1
+								nbCompteurSword1 -= 1
+								isSlot_libre[15] = true
+								txtTypeClic = ""
 						elif n == 16:
-							gui_sword1[16].queue_free()
-							txtItemType[16] = "vide"
-							DataSave.items_posession.sword1 -= 1
-							nbCompteurSword1 -= 1
-							isSlot_libre[16] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword1[16].queue_free()
+								txtItemType[16] = "vide"
+								DataSave.items_posession.sword1 -= 1
+								nbCompteurSword1 -= 1
+								isSlot_libre[16] = true
+								txtTypeClic = ""
 						elif n == 17:
-							gui_sword1[17].queue_free()
-							txtItemType[17] = "vide"
-							DataSave.items_posession.sword1 -= 1
-							nbCompteurSword1 -= 1
-							isSlot_libre[17] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword1[17].queue_free()
+								txtItemType[17] = "vide"
+								DataSave.items_posession.sword1 -= 1
+								nbCompteurSword1 -= 1
+								isSlot_libre[17] = true
+								txtTypeClic = ""
 						elif n == 18:
-							gui_sword1[18].queue_free()
-							txtItemType[18] = "vide"
-							DataSave.items_posession.sword1 -= 1
-							nbCompteurSword1 -= 1
-							isSlot_libre[18] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword1[18].queue_free()
+								txtItemType[18] = "vide"
+								DataSave.items_posession.sword1 -= 1
+								nbCompteurSword1 -= 1
+								isSlot_libre[18] = true
+								txtTypeClic = ""
 						elif n == 19:
-							gui_sword1[19].queue_free()
-							txtItemType[19] = "vide"
-							DataSave.items_posession.sword1 -= 1
-							nbCompteurSword1 -= 1
-							isSlot_libre[19] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword1[19].queue_free()
+								txtItemType[19] = "vide"
+								DataSave.items_posession.sword1 -= 1
+								nbCompteurSword1 -= 1
+								isSlot_libre[19] = true
+								txtTypeClic = ""
 				
 				#Sword2
 				if txtItemType[n] == "sword_2":
 					if gui_sword2[n] != null:
 						if n == 0:
-							gui_sword2[0].queue_free()
-							txtItemType[0] = "vide"
-							DataSave.items_posession.sword2 -= 1
-							nbCompteurSword2 -= 1
-							isSlot_libre[0] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword2[0].queue_free()
+								txtItemType[0] = "vide"
+								DataSave.items_posession.sword2 -= 1
+								nbCompteurSword2 -= 1
+								isSlot_libre[0] = true
+								txtTypeClic = ""
 						elif n == 1:
-							gui_sword2[1].queue_free()
-							txtItemType[1] = "vide"
-							DataSave.items_posession.sword2 -= 1
-							nbCompteurSword2 -= 1
-							isSlot_libre[1] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword2[1].queue_free()
+								txtItemType[1] = "vide"
+								DataSave.items_posession.sword2 -= 1
+								nbCompteurSword2 -= 1
+								isSlot_libre[1] = true
+								txtTypeClic = ""
 						elif n == 2:
-							gui_sword2[2].queue_free()
-							txtItemType[2] = "vide"
-							DataSave.items_posession.sword2 -= 1
-							nbCompteurSword2 -= 1
-							isSlot_libre[2] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword2[2].queue_free()
+								txtItemType[2] = "vide"
+								DataSave.items_posession.sword2 -= 1
+								nbCompteurSword2 -= 1
+								isSlot_libre[2] = true
+								txtTypeClic = ""
 						elif n == 3:
-							gui_sword2[3].queue_free()
-							txtItemType[3] = "vide"
-							DataSave.items_posession.sword2 -= 1
-							nbCompteurSword2 -= 1
-							isSlot_libre[3] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword2[3].queue_free()
+								txtItemType[3] = "vide"
+								DataSave.items_posession.sword2 -= 1
+								nbCompteurSword2 -= 1
+								isSlot_libre[3] = true
+								txtTypeClic = ""
 						elif n == 4:
-							gui_sword2[4].queue_free()
-							txtItemType[4] = "vide"
-							DataSave.items_posession.sword2 -= 1
-							nbCompteurSword2 -= 1
-							isSlot_libre[4] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword2[4].queue_free()
+								txtItemType[4] = "vide"
+								DataSave.items_posession.sword2 -= 1
+								nbCompteurSword2 -= 1
+								isSlot_libre[4] = true
+								txtTypeClic = ""
 						elif n == 5:
-							gui_sword2[5].queue_free()
-							txtItemType[5] = "vide"
-							DataSave.items_posession.sword2 -= 1
-							nbCompteurSword2 -= 1
-							isSlot_libre[5] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword2[5].queue_free()
+								txtItemType[5] = "vide"
+								DataSave.items_posession.sword2 -= 1
+								nbCompteurSword2 -= 1
+								isSlot_libre[5] = true
+								txtTypeClic = ""
 						elif n == 6:
-							gui_sword2[6].queue_free()
-							txtItemType[6] = "vide"
-							DataSave.items_posession.sword2 -= 1
-							nbCompteurSword2 -= 1
-							isSlot_libre[6] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword2[6].queue_free()
+								txtItemType[6] = "vide"
+								DataSave.items_posession.sword2 -= 1
+								nbCompteurSword2 -= 1
+								isSlot_libre[6] = true
+								txtTypeClic = ""
 						elif n == 7:
-							gui_sword2[7].queue_free()
-							txtItemType[7] = "vide"
-							DataSave.items_posession.sword2 -= 1
-							nbCompteurSword2 -= 1
-							isSlot_libre[7] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword2[7].queue_free()
+								txtItemType[7] = "vide"
+								DataSave.items_posession.sword2 -= 1
+								nbCompteurSword2 -= 1
+								isSlot_libre[7] = true
+								txtTypeClic = ""
 						elif n == 8:
-							gui_sword2[8].queue_free()
-							txtItemType[8] = "vide"
-							DataSave.items_posession.sword2 -= 1
-							nbCompteurSword2 -= 1
-							isSlot_libre[8] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword2[8].queue_free()
+								txtItemType[8] = "vide"
+								DataSave.items_posession.sword2 -= 1
+								nbCompteurSword2 -= 1
+								isSlot_libre[8] = true
+								txtTypeClic = ""
 						elif n == 9:
-							gui_sword2[9].queue_free()
-							txtItemType[9] = "vide"
-							DataSave.items_posession.sword2 -= 1
-							nbCompteurSword2 -= 1
-							isSlot_libre[9] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword2[9].queue_free()
+								txtItemType[9] = "vide"
+								DataSave.items_posession.sword2 -= 1
+								nbCompteurSword2 -= 1
+								isSlot_libre[9] = true
+								txtTypeClic = ""
 						elif n == 10:
-							gui_sword2[10].queue_free()
-							txtItemType[10] = "vide"
-							DataSave.items_posession.sword2 -= 1
-							nbCompteurSword2 -= 1
-							isSlot_libre[10] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword2[10].queue_free()
+								txtItemType[10] = "vide"
+								DataSave.items_posession.sword2 -= 1
+								nbCompteurSword2 -= 1
+								isSlot_libre[10] = true
+								txtTypeClic = ""
 						elif n == 11:
-							gui_sword2[11].queue_free()
-							txtItemType[11] = "vide"
-							DataSave.items_posession.sword2 -= 1
-							nbCompteurSword2 -= 1
-							isSlot_libre[11] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword2[11].queue_free()
+								txtItemType[11] = "vide"
+								DataSave.items_posession.sword2 -= 1
+								nbCompteurSword2 -= 1
+								isSlot_libre[11] = true
+								txtTypeClic = ""
 						elif n == 12:
-							gui_sword2[12].queue_free()
-							txtItemType[12] = "vide"
-							DataSave.items_posession.sword2 -= 1
-							nbCompteurSword2 -= 1
-							isSlot_libre[12] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword2[12].queue_free()
+								txtItemType[12] = "vide"
+								DataSave.items_posession.sword2 -= 1
+								nbCompteurSword2 -= 1
+								isSlot_libre[12] = true
+								txtTypeClic = ""
 						elif n == 13:
-							gui_sword2[13].queue_free()
-							txtItemType[13] = "vide"
-							DataSave.items_posession.sword2 -= 1
-							nbCompteurSword2 -= 1
-							isSlot_libre[13] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword2[13].queue_free()
+								txtItemType[13] = "vide"
+								DataSave.items_posession.sword2 -= 1
+								nbCompteurSword2 -= 1
+								isSlot_libre[13] = true
+								txtTypeClic = ""
 						elif n == 14:
-							gui_sword2[14].queue_free()
-							txtItemType[14] = "vide"
-							DataSave.items_posession.sword2 -= 1
-							nbCompteurSword2 -= 1
-							isSlot_libre[14] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword2[14].queue_free()
+								txtItemType[14] = "vide"
+								DataSave.items_posession.sword2 -= 1
+								nbCompteurSword2 -= 1
+								isSlot_libre[14] = true
+								txtTypeClic = ""
 						elif n == 15:
-							gui_sword2[15].queue_free()
-							txtItemType[15] = "vide"
-							DataSave.items_posession.sword2 -= 1
-							nbCompteurSword2 -= 1
-							isSlot_libre[15] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword2[15].queue_free()
+								txtItemType[15] = "vide"
+								DataSave.items_posession.sword2 -= 1
+								nbCompteurSword2 -= 1
+								isSlot_libre[15] = true
+								txtTypeClic = ""
 						elif n == 16:
-							gui_sword2[16].queue_free()
-							txtItemType[16] = "vide"
-							DataSave.items_posession.sword2 -= 1
-							nbCompteurSword2 -= 1
-							isSlot_libre[16] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword2[16].queue_free()
+								txtItemType[16] = "vide"
+								DataSave.items_posession.sword2 -= 1
+								nbCompteurSword2 -= 1
+								isSlot_libre[16] = true
+								txtTypeClic = ""
 						elif n == 17:
-							gui_sword2[17].queue_free()
-							txtItemType[17] = "vide"
-							DataSave.items_posession.sword2 -= 1
-							nbCompteurSword2 -= 1
-							isSlot_libre[17] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword2[17].queue_free()
+								txtItemType[17] = "vide"
+								DataSave.items_posession.sword2 -= 1
+								nbCompteurSword2 -= 1
+								isSlot_libre[17] = true
+								txtTypeClic = ""
 						elif n == 18:
-							gui_sword2[18].queue_free()
-							txtItemType[18] = "vide"
-							DataSave.items_posession.sword2 -= 1
-							nbCompteurSword2 -= 1
-							isSlot_libre[18] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword2[18].queue_free()
+								txtItemType[18] = "vide"
+								DataSave.items_posession.sword2 -= 1
+								nbCompteurSword2 -= 1
+								isSlot_libre[18] = true
+								txtTypeClic = ""
 						elif n == 19:
-							gui_sword2[19].queue_free()
-							txtItemType[19] = "vide"
-							DataSave.items_posession.sword2 -= 1
-							nbCompteurSword2 -= 1
-							isSlot_libre[19] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword2[19].queue_free()
+								txtItemType[19] = "vide"
+								DataSave.items_posession.sword2 -= 1
+								nbCompteurSword2 -= 1
+								isSlot_libre[19] = true
+								txtTypeClic = ""
 				
 				#Sword3
 				if txtItemType[n] == "sword_3":
 					if gui_sword3[n] != null:
 						if n == 0:
-							gui_sword3[0].queue_free()
-							txtItemType[0] = "vide"
-							DataSave.items_posession.sword3 -= 1
-							nbCompteurSword3 -= 1
-							isSlot_libre[0] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword3[0].queue_free()
+								txtItemType[0] = "vide"
+								DataSave.items_posession.sword3 -= 1
+								nbCompteurSword3 -= 1
+								isSlot_libre[0] = true
+								txtTypeClic = ""
 						elif n == 1:
-							gui_sword3[1].queue_free()
-							txtItemType[1] = "vide"
-							DataSave.items_posession.sword3 -= 1
-							nbCompteurSword3 -= 1
-							isSlot_libre[1] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword3[1].queue_free()
+								txtItemType[1] = "vide"
+								DataSave.items_posession.sword3 -= 1
+								nbCompteurSword3 -= 1
+								isSlot_libre[1] = true
+								txtTypeClic = ""
 						elif n == 2:
-							gui_sword3[2].queue_free()
-							txtItemType[2] = "vide"
-							DataSave.items_posession.sword3 -= 1
-							nbCompteurSword3 -= 1
-							isSlot_libre[2] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword3[2].queue_free()
+								txtItemType[2] = "vide"
+								DataSave.items_posession.sword3 -= 1
+								nbCompteurSword3 -= 1
+								isSlot_libre[2] = true
+								txtTypeClic = ""
 						elif n == 3:
-							gui_sword3[3].queue_free()
-							txtItemType[3] = "vide"
-							DataSave.items_posession.sword3 -= 1
-							nbCompteurSword3 -= 1
-							isSlot_libre[3] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword3[3].queue_free()
+								txtItemType[3] = "vide"
+								DataSave.items_posession.sword3 -= 1
+								nbCompteurSword3 -= 1
+								isSlot_libre[3] = true
+								txtTypeClic = ""
 						elif n == 4:
-							gui_sword3[4].queue_free()
-							txtItemType[4] = "vide"
-							DataSave.items_posession.sword3 -= 1
-							nbCompteurSword3 -= 1
-							isSlot_libre[4] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword3[4].queue_free()
+								txtItemType[4] = "vide"
+								DataSave.items_posession.sword3 -= 1
+								nbCompteurSword3 -= 1
+								isSlot_libre[4] = true
+								txtTypeClic = ""
 						elif n == 5:
-							gui_sword3[5].queue_free()
-							txtItemType[5] = "vide"
-							DataSave.items_posession.sword3 -= 1
-							nbCompteurSword3 -= 1
-							isSlot_libre[5] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword3[5].queue_free()
+								txtItemType[5] = "vide"
+								DataSave.items_posession.sword3 -= 1
+								nbCompteurSword3 -= 1
+								isSlot_libre[5] = true
+								txtTypeClic = ""
 						elif n == 6:
-							gui_sword3[6].queue_free()
-							txtItemType[6] = "vide"
-							DataSave.items_posession.sword3 -= 1
-							nbCompteurSword3 -= 1
-							isSlot_libre[6] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword3[6].queue_free()
+								txtItemType[6] = "vide"
+								DataSave.items_posession.sword3 -= 1
+								nbCompteurSword3 -= 1
+								isSlot_libre[6] = true
+								txtTypeClic = ""
 						elif n == 7:
-							gui_sword3[7].queue_free()
-							txtItemType[7] = "vide"
-							DataSave.items_posession.sword3 -= 1
-							nbCompteurSword3 -= 1
-							isSlot_libre[7] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword3[7].queue_free()
+								txtItemType[7] = "vide"
+								DataSave.items_posession.sword3 -= 1
+								nbCompteurSword3 -= 1
+								isSlot_libre[7] = true
+								txtTypeClic = ""
 						elif n == 8:
-							gui_sword3[8].queue_free()
-							txtItemType[8] = "vide"
-							DataSave.items_posession.sword3 -= 1
-							nbCompteurSword3 -= 1
-							isSlot_libre[8] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword3[8].queue_free()
+								txtItemType[8] = "vide"
+								DataSave.items_posession.sword3 -= 1
+								nbCompteurSword3 -= 1
+								isSlot_libre[8] = true
+								txtTypeClic = ""
 						elif n == 9:
-							gui_sword3[9].queue_free()
-							txtItemType[9] = "vide"
-							DataSave.items_posession.sword3 -= 1
-							nbCompteurSword3 -= 1
-							isSlot_libre[9] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword3[9].queue_free()
+								txtItemType[9] = "vide"
+								DataSave.items_posession.sword3 -= 1
+								nbCompteurSword3 -= 1
+								isSlot_libre[9] = true
+								txtTypeClic = ""
 						elif n == 10:
-							gui_sword3[10].queue_free()
-							txtItemType[10] = "vide"
-							DataSave.items_posession.sword3 -= 1
-							nbCompteurSword3 -= 1
-							isSlot_libre[10] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword3[10].queue_free()
+								txtItemType[10] = "vide"
+								DataSave.items_posession.sword3 -= 1
+								nbCompteurSword3 -= 1
+								isSlot_libre[10] = true
+								txtTypeClic = ""
 						elif n == 11:
-							gui_sword3[11].queue_free()
-							txtItemType[11] = "vide"
-							DataSave.items_posession.sword3 -= 1
-							nbCompteurSword3 -= 1
-							isSlot_libre[11] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword3[11].queue_free()
+								txtItemType[11] = "vide"
+								DataSave.items_posession.sword3 -= 1
+								nbCompteurSword3 -= 1
+								isSlot_libre[11] = true
+								txtTypeClic = ""
 						elif n == 12:
-							gui_sword3[12].queue_free()
-							txtItemType[12] = "vide"
-							DataSave.items_posession.sword3 -= 1
-							nbCompteurSword3 -= 1
-							isSlot_libre[12] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword3[12].queue_free()
+								txtItemType[12] = "vide"
+								DataSave.items_posession.sword3 -= 1
+								nbCompteurSword3 -= 1
+								isSlot_libre[12] = true
+								txtTypeClic = ""
 						elif n == 13:
-							gui_sword3[13].queue_free()
-							txtItemType[13] = "vide"
-							DataSave.items_posession.sword3 -= 1
-							nbCompteurSword3 -= 1
-							isSlot_libre[13] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword3[13].queue_free()
+								txtItemType[13] = "vide"
+								DataSave.items_posession.sword3 -= 1
+								nbCompteurSword3 -= 1
+								isSlot_libre[13] = true
+								txtTypeClic = ""
 						elif n == 14:
-							gui_sword3[14].queue_free()
-							txtItemType[14] = "vide"
-							DataSave.items_posession.sword3 -= 1
-							nbCompteurSword3 -= 1
-							isSlot_libre[14] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword3[14].queue_free()
+								txtItemType[14] = "vide"
+								DataSave.items_posession.sword3 -= 1
+								nbCompteurSword3 -= 1
+								isSlot_libre[14] = true
+								txtTypeClic = ""
 						elif n == 15:
-							gui_sword3[15].queue_free()
-							txtItemType[15] = "vide"
-							DataSave.items_posession.sword3 -= 1
-							nbCompteurSword3 -= 1
-							isSlot_libre[15] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword3[15].queue_free()
+								txtItemType[15] = "vide"
+								DataSave.items_posession.sword3 -= 1
+								nbCompteurSword3 -= 1
+								isSlot_libre[15] = true
+								txtTypeClic = ""
 						elif n == 16:
-							gui_sword3[16].queue_free()
-							txtItemType[16] = "vide"
-							DataSave.items_posession.sword3 -= 1
-							nbCompteurSword3 -= 1
-							isSlot_libre[16] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword3[16].queue_free()
+								txtItemType[16] = "vide"
+								DataSave.items_posession.sword3 -= 1
+								nbCompteurSword3 -= 1
+								isSlot_libre[16] = true
+								txtTypeClic = ""
 						elif n == 17:
-							gui_sword3[17].queue_free()
-							txtItemType[17] = "vide"
-							DataSave.items_posession.sword3 -= 1
-							nbCompteurSword3 -= 1
-							isSlot_libre[17] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword3[17].queue_free()
+								txtItemType[17] = "vide"
+								DataSave.items_posession.sword3 -= 1
+								nbCompteurSword3 -= 1
+								isSlot_libre[17] = true
+								txtTypeClic = ""
 						elif n == 18:
-							gui_sword3[18].queue_free()
-							txtItemType[18] = "vide"
-							DataSave.items_posession.sword3 -= 1
-							nbCompteurSword3 -= 1
-							isSlot_libre[18] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword3[18].queue_free()
+								txtItemType[18] = "vide"
+								DataSave.items_posession.sword3 -= 1
+								nbCompteurSword3 -= 1
+								isSlot_libre[18] = true
+								txtTypeClic = ""
 						elif n == 19:
-							gui_sword3[19].queue_free()
-							txtItemType[19] = "vide"
-							DataSave.items_posession.sword3 -= 1
-							nbCompteurSword3 -= 1
-							isSlot_libre[19] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword3[19].queue_free()
+								txtItemType[19] = "vide"
+								DataSave.items_posession.sword3 -= 1
+								nbCompteurSword3 -= 1
+								isSlot_libre[19] = true
+								txtTypeClic = ""
 				
 				#Sword4
 				if txtItemType[n] == "sword_4":
 					if gui_sword4[n] != null:
 						if n == 0:
-							gui_sword4[0].queue_free()
-							txtItemType[0] = "vide"
-							DataSave.items_posession.sword4 -= 1
-							nbCompteurSword4 -= 1
-							isSlot_libre[0] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword4[0].queue_free()
+								txtItemType[0] = "vide"
+								DataSave.items_posession.sword4 -= 1
+								nbCompteurSword4 -= 1
+								isSlot_libre[0] = true
+								txtTypeClic = ""
 						elif n == 1:
-							gui_sword4[1].queue_free()
-							txtItemType[1] = "vide"
-							DataSave.items_posession.sword4 -= 1
-							nbCompteurSword4 -= 1
-							isSlot_libre[1] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword4[1].queue_free()
+								txtItemType[1] = "vide"
+								DataSave.items_posession.sword4 -= 1
+								nbCompteurSword4 -= 1
+								isSlot_libre[1] = true
+								txtTypeClic = ""
 						elif n == 2:
-							gui_sword4[2].queue_free()
-							txtItemType[2] = "vide"
-							DataSave.items_posession.sword4 -= 1
-							nbCompteurSword4 -= 1
-							isSlot_libre[2] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword4[2].queue_free()
+								txtItemType[2] = "vide"
+								DataSave.items_posession.sword4 -= 1
+								nbCompteurSword4 -= 1
+								isSlot_libre[2] = true
+								txtTypeClic = ""
 						elif n == 3:
-							gui_sword4[3].queue_free()
-							txtItemType[3] = "vide"
-							DataSave.items_posession.sword4 -= 1
-							nbCompteurSword4 -= 1
-							isSlot_libre[3] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword4[3].queue_free()
+								txtItemType[3] = "vide"
+								DataSave.items_posession.sword4 -= 1
+								nbCompteurSword4 -= 1
+								isSlot_libre[3] = true
+								txtTypeClic = ""
 						elif n == 4:
-							gui_sword4[4].queue_free()
-							txtItemType[4] = "vide"
-							DataSave.items_posession.sword4 -= 1
-							nbCompteurSword4 -= 1
-							isSlot_libre[4] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword4[4].queue_free()
+								txtItemType[4] = "vide"
+								DataSave.items_posession.sword4 -= 1
+								nbCompteurSword4 -= 1
+								isSlot_libre[4] = true
+								txtTypeClic = ""
 						elif n == 5:
-							gui_sword4[5].queue_free()
-							txtItemType[5] = "vide"
-							DataSave.items_posession.sword4 -= 1
-							nbCompteurSword4 -= 1
-							isSlot_libre[5] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword4[5].queue_free()
+								txtItemType[5] = "vide"
+								DataSave.items_posession.sword4 -= 1
+								nbCompteurSword4 -= 1
+								isSlot_libre[5] = true
+								txtTypeClic = ""
 						elif n == 6:
-							gui_sword4[6].queue_free()
-							txtItemType[6] = "vide"
-							DataSave.items_posession.sword4 -= 1
-							nbCompteurSword4 -= 1
-							isSlot_libre[6] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword4[6].queue_free()
+								txtItemType[6] = "vide"
+								DataSave.items_posession.sword4 -= 1
+								nbCompteurSword4 -= 1
+								isSlot_libre[6] = true
+								txtTypeClic = ""
 						elif n == 7:
-							gui_sword4[7].queue_free()
-							txtItemType[7] = "vide"
-							DataSave.items_posession.sword4 -= 1
-							nbCompteurSword4 -= 1
-							isSlot_libre[7] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword4[7].queue_free()
+								txtItemType[7] = "vide"
+								DataSave.items_posession.sword4 -= 1
+								nbCompteurSword4 -= 1
+								isSlot_libre[7] = true
+								txtTypeClic = ""
 						elif n == 8:
-							gui_sword4[8].queue_free()
-							txtItemType[8] = "vide"
-							DataSave.items_posession.sword4 -= 1
-							nbCompteurSword4 -= 1
-							isSlot_libre[8] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword4[8].queue_free()
+								txtItemType[8] = "vide"
+								DataSave.items_posession.sword4 -= 1
+								nbCompteurSword4 -= 1
+								isSlot_libre[8] = true
+								txtTypeClic = ""
 						elif n == 9:
-							gui_sword4[9].queue_free()
-							txtItemType[9] = "vide"
-							DataSave.items_posession.sword4 -= 1
-							nbCompteurSword4 -= 1
-							isSlot_libre[9] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword4[9].queue_free()
+								txtItemType[9] = "vide"
+								DataSave.items_posession.sword4 -= 1
+								nbCompteurSword4 -= 1
+								isSlot_libre[9] = true
+								txtTypeClic = ""
 						elif n == 10:
-							gui_sword4[10].queue_free()
-							txtItemType[10] = "vide"
-							DataSave.items_posession.sword4 -= 1
-							nbCompteurSword4 -= 1
-							isSlot_libre[10] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword4[10].queue_free()
+								txtItemType[10] = "vide"
+								DataSave.items_posession.sword4 -= 1
+								nbCompteurSword4 -= 1
+								isSlot_libre[10] = true
+								txtTypeClic = ""
 						elif n == 11:
-							gui_sword4[11].queue_free()
-							txtItemType[11] = "vide"
-							DataSave.items_posession.sword4 -= 1
-							nbCompteurSword4 -= 1
-							isSlot_libre[11] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword4[11].queue_free()
+								txtItemType[11] = "vide"
+								DataSave.items_posession.sword4 -= 1
+								nbCompteurSword4 -= 1
+								isSlot_libre[11] = true
+								txtTypeClic = ""
 						elif n == 12:
-							gui_sword4[12].queue_free()
-							txtItemType[12] = "vide"
-							DataSave.items_posession.sword4 -= 1
-							nbCompteurSword4 -= 1
-							isSlot_libre[12] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword4[12].queue_free()
+								txtItemType[12] = "vide"
+								DataSave.items_posession.sword4 -= 1
+								nbCompteurSword4 -= 1
+								isSlot_libre[12] = true
+								txtTypeClic = ""
 						elif n == 13:
-							gui_sword4[13].queue_free()
-							txtItemType[13] = "vide"
-							DataSave.items_posession.sword4 -= 1
-							nbCompteurSword4 -= 1
-							isSlot_libre[13] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword4[13].queue_free()
+								txtItemType[13] = "vide"
+								DataSave.items_posession.sword4 -= 1
+								nbCompteurSword4 -= 1
+								isSlot_libre[13] = true
+								txtTypeClic = ""
 						elif n == 14:
-							gui_sword4[14].queue_free()
-							txtItemType[14] = "vide"
-							DataSave.items_posession.sword4 -= 1
-							nbCompteurSword4 -= 1
-							isSlot_libre[14] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword4[14].queue_free()
+								txtItemType[14] = "vide"
+								DataSave.items_posession.sword4 -= 1
+								nbCompteurSword4 -= 1
+								isSlot_libre[14] = true
+								txtTypeClic = ""
 						elif n == 15:
-							gui_sword4[15].queue_free()
-							txtItemType[15] = "vide"
-							DataSave.items_posession.sword4 -= 1
-							nbCompteurSword4 -= 1
-							isSlot_libre[15] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword4[15].queue_free()
+								txtItemType[15] = "vide"
+								DataSave.items_posession.sword4 -= 1
+								nbCompteurSword4 -= 1
+								isSlot_libre[15] = true
+								txtTypeClic = ""
 						elif n == 16:
-							gui_sword4[16].queue_free()
-							txtItemType[16] = "vide"
-							DataSave.items_posession.sword4 -= 1
-							nbCompteurSword4 -= 1
-							isSlot_libre[16] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword4[16].queue_free()
+								txtItemType[16] = "vide"
+								DataSave.items_posession.sword4 -= 1
+								nbCompteurSword4 -= 1
+								isSlot_libre[16] = true
+								txtTypeClic = ""
 						elif n == 17:
-							gui_sword4[17].queue_free()
-							txtItemType[17] = "vide"
-							DataSave.items_posession.sword4 -= 1
-							nbCompteurSword4 -= 1
-							isSlot_libre[17] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword4[17].queue_free()
+								txtItemType[17] = "vide"
+								DataSave.items_posession.sword4 -= 1
+								nbCompteurSword4 -= 1
+								isSlot_libre[17] = true
+								txtTypeClic = ""
 						elif n == 18:
-							gui_sword4[18].queue_free()
-							txtItemType[18] = "vide"
-							DataSave.items_posession.sword4 -= 1
-							nbCompteurSword4 -= 1
-							isSlot_libre[18] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword4[18].queue_free()
+								txtItemType[18] = "vide"
+								DataSave.items_posession.sword4 -= 1
+								nbCompteurSword4 -= 1
+								isSlot_libre[18] = true
+								txtTypeClic = ""
 						elif n == 19:
-							gui_sword4[19].queue_free()
-							txtItemType[19] = "vide"
-							DataSave.items_posession.sword4 -= 1
-							nbCompteurSword4 -= 1
-							isSlot_libre[19] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword4[19].queue_free()
+								txtItemType[19] = "vide"
+								DataSave.items_posession.sword4 -= 1
+								nbCompteurSword4 -= 1
+								isSlot_libre[19] = true
+								txtTypeClic = ""
 				
 				#Sword5
 				if txtItemType[n] == "sword_5":
 					if gui_sword5[n] != null:
 						if n == 0:
-							gui_sword5[0].queue_free()
-							txtItemType[0] = "vide"
-							DataSave.items_posession.sword5 -= 1
-							nbCompteurSword5 -= 1
-							isSlot_libre[0] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword5[0].queue_free()
+								txtItemType[0] = "vide"
+								DataSave.items_posession.sword5 -= 1
+								nbCompteurSword5 -= 1
+								isSlot_libre[0] = true
+								txtTypeClic = ""
 						elif n == 1:
-							gui_sword5[1].queue_free()
-							txtItemType[1] = "vide"
-							DataSave.items_posession.sword5 -= 1
-							nbCompteurSword5 -= 1
-							isSlot_libre[1] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword5[1].queue_free()
+								txtItemType[1] = "vide"
+								DataSave.items_posession.sword5 -= 1
+								nbCompteurSword5 -= 1
+								isSlot_libre[1] = true
+								txtTypeClic = ""
 						elif n == 2:
-							gui_sword5[2].queue_free()
-							txtItemType[2] = "vide"
-							DataSave.items_posession.sword5 -= 1
-							nbCompteurSword5 -= 1
-							isSlot_libre[2] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword5[2].queue_free()
+								txtItemType[2] = "vide"
+								DataSave.items_posession.sword5 -= 1
+								nbCompteurSword5 -= 1
+								isSlot_libre[2] = true
+								txtTypeClic = ""
 						elif n == 3:
-							gui_sword5[3].queue_free()
-							txtItemType[3] = "vide"
-							DataSave.items_posession.sword5 -= 1
-							nbCompteurSword5 -= 1
-							isSlot_libre[3] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword5[3].queue_free()
+								txtItemType[3] = "vide"
+								DataSave.items_posession.sword5 -= 1
+								nbCompteurSword5 -= 1
+								isSlot_libre[3] = true
+								txtTypeClic = ""
 						elif n == 4:
-							gui_sword5[4].queue_free()
-							txtItemType[4] = "vide"
-							DataSave.items_posession.sword5 -= 1
-							nbCompteurSword5 -= 1
-							isSlot_libre[4] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword5[4].queue_free()
+								txtItemType[4] = "vide"
+								DataSave.items_posession.sword5 -= 1
+								nbCompteurSword5 -= 1
+								isSlot_libre[4] = true
+								txtTypeClic = ""
 						elif n == 5:
-							gui_sword5[5].queue_free()
-							txtItemType[5] = "vide"
-							DataSave.items_posession.sword5 -= 1
-							nbCompteurSword5 -= 1
-							isSlot_libre[5] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword5[5].queue_free()
+								txtItemType[5] = "vide"
+								DataSave.items_posession.sword5 -= 1
+								nbCompteurSword5 -= 1
+								isSlot_libre[5] = true
+								txtTypeClic = ""
 						elif n == 6:
-							gui_sword5[6].queue_free()
-							txtItemType[6] = "vide"
-							DataSave.items_posession.sword5 -= 1
-							nbCompteurSword5 -= 1
-							isSlot_libre[6] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword5[6].queue_free()
+								txtItemType[6] = "vide"
+								DataSave.items_posession.sword5 -= 1
+								nbCompteurSword5 -= 1
+								isSlot_libre[6] = true
+								txtTypeClic = ""
 						elif n == 7:
-							gui_sword5[7].queue_free()
-							txtItemType[7] = "vide"
-							DataSave.items_posession.sword5 -= 1
-							nbCompteurSword5 -= 1
-							isSlot_libre[7] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword5[7].queue_free()
+								txtItemType[7] = "vide"
+								DataSave.items_posession.sword5 -= 1
+								nbCompteurSword5 -= 1
+								isSlot_libre[7] = true
+								txtTypeClic = ""
 						elif n == 8:
-							gui_sword5[8].queue_free()
-							txtItemType[8] = "vide"
-							DataSave.items_posession.sword5 -= 1
-							nbCompteurSword5 -= 1
-							isSlot_libre[8] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword5[8].queue_free()
+								txtItemType[8] = "vide"
+								DataSave.items_posession.sword5 -= 1
+								nbCompteurSword5 -= 1
+								isSlot_libre[8] = true
+								txtTypeClic = ""
 						elif n == 9:
-							gui_sword5[9].queue_free()
-							txtItemType[9] = "vide"
-							DataSave.items_posession.sword5 -= 1
-							nbCompteurSword5 -= 1
-							isSlot_libre[9] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword5[9].queue_free()
+								txtItemType[9] = "vide"
+								DataSave.items_posession.sword5 -= 1
+								nbCompteurSword5 -= 1
+								isSlot_libre[9] = true
+								txtTypeClic = ""
 						elif n == 10:
-							gui_sword5[10].queue_free()
-							txtItemType[10] = "vide"
-							DataSave.items_posession.sword5 -= 1
-							nbCompteurSword5 -= 1
-							isSlot_libre[10] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword5[10].queue_free()
+								txtItemType[10] = "vide"
+								DataSave.items_posession.sword5 -= 1
+								nbCompteurSword5 -= 1
+								isSlot_libre[10] = true
+								txtTypeClic = ""
 						elif n == 11:
-							gui_sword5[11].queue_free()
-							txtItemType[11] = "vide"
-							DataSave.items_posession.sword5 -= 1
-							nbCompteurSword5 -= 1
-							isSlot_libre[11] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword5[11].queue_free()
+								txtItemType[11] = "vide"
+								DataSave.items_posession.sword5 -= 1
+								nbCompteurSword5 -= 1
+								isSlot_libre[11] = true
+								txtTypeClic = ""
 						elif n == 12:
-							gui_sword5[12].queue_free()
-							txtItemType[12] = "vide"
-							DataSave.items_posession.sword5 -= 1
-							nbCompteurSword5 -= 1
-							isSlot_libre[12] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword5[12].queue_free()
+								txtItemType[12] = "vide"
+								DataSave.items_posession.sword5 -= 1
+								nbCompteurSword5 -= 1
+								isSlot_libre[12] = true
+								txtTypeClic = ""
 						elif n == 13:
-							gui_sword5[13].queue_free()
-							txtItemType[13] = "vide"
-							DataSave.items_posession.sword5 -= 1
-							nbCompteurSword5 -= 1
-							isSlot_libre[13] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword5[13].queue_free()
+								txtItemType[13] = "vide"
+								DataSave.items_posession.sword5 -= 1
+								nbCompteurSword5 -= 1
+								isSlot_libre[13] = true
+								txtTypeClic = ""
 						elif n == 14:
-							gui_sword5[14].queue_free()
-							txtItemType[14] = "vide"
-							DataSave.items_posession.sword5 -= 1
-							nbCompteurSword5 -= 1
-							isSlot_libre[14] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword5[14].queue_free()
+								txtItemType[14] = "vide"
+								DataSave.items_posession.sword5 -= 1
+								nbCompteurSword5 -= 1
+								isSlot_libre[14] = true
+								txtTypeClic = ""
 						elif n == 15:
-							gui_sword5[15].queue_free()
-							txtItemType[15] = "vide"
-							DataSave.items_posession.sword5 -= 1
-							nbCompteurSword5 -= 1
-							isSlot_libre[15] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword5[15].queue_free()
+								txtItemType[15] = "vide"
+								DataSave.items_posession.sword5 -= 1
+								nbCompteurSword5 -= 1
+								isSlot_libre[15] = true
+								txtTypeClic = ""
 						elif n == 16:
-							gui_sword5[16].queue_free()
-							txtItemType[16] = "vide"
-							DataSave.items_posession.sword5 -= 1
-							nbCompteurSword5 -= 1
-							isSlot_libre[16] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword5[16].queue_free()
+								txtItemType[16] = "vide"
+								DataSave.items_posession.sword5 -= 1
+								nbCompteurSword5 -= 1
+								isSlot_libre[16] = true
+								txtTypeClic = ""
 						elif n == 17:
-							gui_sword5[17].queue_free()
-							txtItemType[17] = "vide"
-							DataSave.items_posession.sword5 -= 1
-							nbCompteurSword5 -= 1
-							isSlot_libre[17] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword5[17].queue_free()
+								txtItemType[17] = "vide"
+								DataSave.items_posession.sword5 -= 1
+								nbCompteurSword5 -= 1
+								isSlot_libre[17] = true
+								txtTypeClic = ""
 						elif n == 18:
-							gui_sword5[18].queue_free()
-							txtItemType[18] = "vide"
-							DataSave.items_posession.sword5 -= 1
-							nbCompteurSword5 -= 1
-							isSlot_libre[18] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword5[18].queue_free()
+								txtItemType[18] = "vide"
+								DataSave.items_posession.sword5 -= 1
+								nbCompteurSword5 -= 1
+								isSlot_libre[18] = true
+								txtTypeClic = ""
 						elif n == 19:
-							gui_sword5[19].queue_free()
-							txtItemType[19] = "vide"
-							DataSave.items_posession.sword5 -= 1
-							nbCompteurSword5 -= 1
-							isSlot_libre[19] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword5[19].queue_free()
+								txtItemType[19] = "vide"
+								DataSave.items_posession.sword5 -= 1
+								nbCompteurSword5 -= 1
+								isSlot_libre[19] = true
+								txtTypeClic = ""
 				
 				#Sword6
 				if txtItemType[n] == "sword_6":
 					if gui_sword6[n] != null:
 						if n == 0:
-							gui_sword6[0].queue_free()
-							txtItemType[0] = "vide"
-							DataSave.items_posession.sword6 -= 1
-							nbCompteurSword6 -= 1
-							isSlot_libre[0] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword6[0].queue_free()
+								txtItemType[0] = "vide"
+								DataSave.items_posession.sword6 -= 1
+								nbCompteurSword6 -= 1
+								isSlot_libre[0] = true
+								txtTypeClic = ""
 						elif n == 1:
-							gui_sword6[1].queue_free()
-							txtItemType[1] = "vide"
-							DataSave.items_posession.sword6 -= 1
-							nbCompteurSword6 -= 1
-							isSlot_libre[1] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword6[1].queue_free()
+								txtItemType[1] = "vide"
+								DataSave.items_posession.sword6 -= 1
+								nbCompteurSword6 -= 1
+								isSlot_libre[1] = true
+								txtTypeClic = ""
 						elif n == 2:
-							gui_sword6[2].queue_free()
-							txtItemType[2] = "vide"
-							DataSave.items_posession.sword6 -= 1
-							nbCompteurSword6 -= 1
-							isSlot_libre[2] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword6[2].queue_free()
+								txtItemType[2] = "vide"
+								DataSave.items_posession.sword6 -= 1
+								nbCompteurSword6 -= 1
+								isSlot_libre[2] = true
+								txtTypeClic = ""
 						elif n == 3:
-							gui_sword6[3].queue_free()
-							txtItemType[3] = "vide"
-							DataSave.items_posession.sword6 -= 1
-							nbCompteurSword6 -= 1
-							isSlot_libre[3] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword6[3].queue_free()
+								txtItemType[3] = "vide"
+								DataSave.items_posession.sword6 -= 1
+								nbCompteurSword6 -= 1
+								isSlot_libre[3] = true
+								txtTypeClic = ""
 						elif n == 4:
-							gui_sword6[4].queue_free()
-							txtItemType[4] = "vide"
-							DataSave.items_posession.sword6 -= 1
-							nbCompteurSword6 -= 1
-							isSlot_libre[4] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword6[4].queue_free()
+								txtItemType[4] = "vide"
+								DataSave.items_posession.sword6 -= 1
+								nbCompteurSword6 -= 1
+								isSlot_libre[4] = true
+								txtTypeClic = ""
 						elif n == 5:
-							gui_sword6[5].queue_free()
-							txtItemType[5] = "vide"
-							DataSave.items_posession.sword6 -= 1
-							nbCompteurSword6 -= 1
-							isSlot_libre[5] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword6[5].queue_free()
+								txtItemType[5] = "vide"
+								DataSave.items_posession.sword6 -= 1
+								nbCompteurSword6 -= 1
+								isSlot_libre[5] = true
+								txtTypeClic = ""
 						elif n == 6:
-							gui_sword6[6].queue_free()
-							txtItemType[6] = "vide"
-							DataSave.items_posession.sword6 -= 1
-							nbCompteurSword6 -= 1
-							isSlot_libre[6] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword6[6].queue_free()
+								txtItemType[6] = "vide"
+								DataSave.items_posession.sword6 -= 1
+								nbCompteurSword6 -= 1
+								isSlot_libre[6] = true
+								txtTypeClic = ""
 						elif n == 7:
-							gui_sword6[7].queue_free()
-							txtItemType[7] = "vide"
-							DataSave.items_posession.sword6 -= 1
-							nbCompteurSword6 -= 1
-							isSlot_libre[7] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword6[7].queue_free()
+								txtItemType[7] = "vide"
+								DataSave.items_posession.sword6 -= 1
+								nbCompteurSword6 -= 1
+								isSlot_libre[7] = true
+								txtTypeClic = ""
 						elif n == 8:
-							gui_sword6[8].queue_free()
-							txtItemType[8] = "vide"
-							DataSave.items_posession.sword6 -= 1
-							nbCompteurSword6 -= 1
-							isSlot_libre[8] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword6[8].queue_free()
+								txtItemType[8] = "vide"
+								DataSave.items_posession.sword6 -= 1
+								nbCompteurSword6 -= 1
+								isSlot_libre[8] = true
+								txtTypeClic = ""
 						elif n == 9:
-							gui_sword6[9].queue_free()
-							txtItemType[9] = "vide"
-							DataSave.items_posession.sword6 -= 1
-							nbCompteurSword6 -= 1
-							isSlot_libre[9] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword6[9].queue_free()
+								txtItemType[9] = "vide"
+								DataSave.items_posession.sword6 -= 1
+								nbCompteurSword6 -= 1
+								isSlot_libre[9] = true
+								txtTypeClic = ""
 						elif n == 10:
-							gui_sword6[10].queue_free()
-							txtItemType[10] = "vide"
-							DataSave.items_posession.sword6 -= 1
-							nbCompteurSword6 -= 1
-							isSlot_libre[10] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword6[10].queue_free()
+								txtItemType[10] = "vide"
+								DataSave.items_posession.sword6 -= 1
+								nbCompteurSword6 -= 1
+								isSlot_libre[10] = true
+								txtTypeClic = ""
 						elif n == 11:
-							gui_sword6[11].queue_free()
-							txtItemType[11] = "vide"
-							DataSave.items_posession.sword6 -= 1
-							nbCompteurSword6 -= 1
-							isSlot_libre[11] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword6[11].queue_free()
+								txtItemType[11] = "vide"
+								DataSave.items_posession.sword6 -= 1
+								nbCompteurSword6 -= 1
+								isSlot_libre[11] = true
+								txtTypeClic = ""
 						elif n == 12:
-							gui_sword6[12].queue_free()
-							txtItemType[12] = "vide"
-							DataSave.items_posession.sword6 -= 1
-							nbCompteurSword6 -= 1
-							isSlot_libre[12] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword6[12].queue_free()
+								txtItemType[12] = "vide"
+								DataSave.items_posession.sword6 -= 1
+								nbCompteurSword6 -= 1
+								isSlot_libre[12] = true
+								txtTypeClic = ""
 						elif n == 13:
-							gui_sword6[13].queue_free()
-							txtItemType[13] = "vide"
-							DataSave.items_posession.sword6 -= 1
-							nbCompteurSword6 -= 1
-							isSlot_libre[13] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword6[13].queue_free()
+								txtItemType[13] = "vide"
+								DataSave.items_posession.sword6 -= 1
+								nbCompteurSword6 -= 1
+								isSlot_libre[13] = true
+								txtTypeClic = ""
 						elif n == 14:
-							gui_sword6[14].queue_free()
-							txtItemType[14] = "vide"
-							DataSave.items_posession.sword6 -= 1
-							nbCompteurSword6 -= 1
-							isSlot_libre[14] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword6[14].queue_free()
+								txtItemType[14] = "vide"
+								DataSave.items_posession.sword6 -= 1
+								nbCompteurSword6 -= 1
+								isSlot_libre[14] = true
+								txtTypeClic = ""
 						elif n == 15:
-							gui_sword6[15].queue_free()
-							txtItemType[15] = "vide"
-							DataSave.items_posession.sword6 -= 1
-							nbCompteurSword6 -= 1
-							isSlot_libre[15] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword6[15].queue_free()
+								txtItemType[15] = "vide"
+								DataSave.items_posession.sword6 -= 1
+								nbCompteurSword6 -= 1
+								isSlot_libre[15] = true
+								txtTypeClic = ""
 						elif n == 16:
-							gui_sword6[16].queue_free()
-							txtItemType[16] = "vide"
-							DataSave.items_posession.sword6 -= 1
-							nbCompteurSword6 -= 1
-							isSlot_libre[16] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword6[16].queue_free()
+								txtItemType[16] = "vide"
+								DataSave.items_posession.sword6 -= 1
+								nbCompteurSword6 -= 1
+								isSlot_libre[16] = true
+								txtTypeClic = ""
 						elif n == 17:
-							gui_sword6[17].queue_free()
-							txtItemType[17] = "vide"
-							DataSave.items_posession.sword6 -= 1
-							nbCompteurSword6 -= 1
-							isSlot_libre[17] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword6[17].queue_free()
+								txtItemType[17] = "vide"
+								DataSave.items_posession.sword6 -= 1
+								nbCompteurSword6 -= 1
+								isSlot_libre[17] = true
+								txtTypeClic = ""
 						elif n == 18:
-							gui_sword6[18].queue_free()
-							txtItemType[18] = "vide"
-							DataSave.items_posession.sword6 -= 1
-							nbCompteurSword6 -= 1
-							isSlot_libre[18] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword6[18].queue_free()
+								txtItemType[18] = "vide"
+								DataSave.items_posession.sword6 -= 1
+								nbCompteurSword6 -= 1
+								isSlot_libre[18] = true
+								txtTypeClic = ""
 						elif n == 19:
-							gui_sword6[19].queue_free()
-							txtItemType[19] = "vide"
-							DataSave.items_posession.sword6 -= 1
-							nbCompteurSword6 -= 1
-							isSlot_libre[19] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword6[19].queue_free()
+								txtItemType[19] = "vide"
+								DataSave.items_posession.sword6 -= 1
+								nbCompteurSword6 -= 1
+								isSlot_libre[19] = true
+								txtTypeClic = ""
 				
 				#Sword7
 				if txtItemType[n] == "sword_7":
 					if gui_sword7[n] != null:
 						if n == 0:
-							gui_sword7[0].queue_free()
-							txtItemType[0] = "vide"
-							DataSave.items_posession.sword7 -= 1
-							nbCompteurSword7 -= 1
-							isSlot_libre[0] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword7[0].queue_free()
+								txtItemType[0] = "vide"
+								DataSave.items_posession.sword7 -= 1
+								nbCompteurSword7 -= 1
+								isSlot_libre[0] = true
+								txtTypeClic = ""
 						elif n == 1:
-							gui_sword7[1].queue_free()
-							txtItemType[1] = "vide"
-							DataSave.items_posession.sword7 -= 1
-							nbCompteurSword7 -= 1
-							isSlot_libre[1] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword7[1].queue_free()
+								txtItemType[1] = "vide"
+								DataSave.items_posession.sword7 -= 1
+								nbCompteurSword7 -= 1
+								isSlot_libre[1] = true
+								txtTypeClic = ""
 						elif n == 2:
-							gui_sword7[2].queue_free()
-							txtItemType[2] = "vide"
-							DataSave.items_posession.sword7 -= 1
-							nbCompteurSword7 -= 1
-							isSlot_libre[2] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword7[2].queue_free()
+								txtItemType[2] = "vide"
+								DataSave.items_posession.sword7 -= 1
+								nbCompteurSword7 -= 1
+								isSlot_libre[2] = true
+								txtTypeClic = ""
 						elif n == 3:
-							gui_sword7[3].queue_free()
-							txtItemType[3] = "vide"
-							DataSave.items_posession.sword7 -= 1
-							nbCompteurSword7 -= 1
-							isSlot_libre[3] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword7[3].queue_free()
+								txtItemType[3] = "vide"
+								DataSave.items_posession.sword7 -= 1
+								nbCompteurSword7 -= 1
+								isSlot_libre[3] = true
+								txtTypeClic = ""
 						elif n == 4:
-							gui_sword7[4].queue_free()
-							txtItemType[4] = "vide"
-							DataSave.items_posession.sword7 -= 1
-							nbCompteurSword7 -= 1
-							isSlot_libre[4] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword7[4].queue_free()
+								txtItemType[4] = "vide"
+								DataSave.items_posession.sword7 -= 1
+								nbCompteurSword7 -= 1
+								isSlot_libre[4] = true
+								txtTypeClic = ""
 						elif n == 5:
-							gui_sword7[5].queue_free()
-							txtItemType[5] = "vide"
-							DataSave.items_posession.sword7 -= 1
-							nbCompteurSword7 -= 1
-							isSlot_libre[5] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword7[5].queue_free()
+								txtItemType[5] = "vide"
+								DataSave.items_posession.sword7 -= 1
+								nbCompteurSword7 -= 1
+								isSlot_libre[5] = true
+								txtTypeClic = ""
 						elif n == 6:
-							gui_sword7[6].queue_free()
-							txtItemType[6] = "vide"
-							DataSave.items_posession.sword7 -= 1
-							nbCompteurSword7 -= 1
-							isSlot_libre[6] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword7[6].queue_free()
+								txtItemType[6] = "vide"
+								DataSave.items_posession.sword7 -= 1
+								nbCompteurSword7 -= 1
+								isSlot_libre[6] = true
+								txtTypeClic = ""
 						elif n == 7:
-							gui_sword7[7].queue_free()
-							txtItemType[7] = "vide"
-							DataSave.items_posession.sword7 -= 1
-							nbCompteurSword7 -= 1
-							isSlot_libre[7] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword7[7].queue_free()
+								txtItemType[7] = "vide"
+								DataSave.items_posession.sword7 -= 1
+								nbCompteurSword7 -= 1
+								isSlot_libre[7] = true
+								txtTypeClic = ""
 						elif n == 8:
-							gui_sword7[8].queue_free()
-							txtItemType[8] = "vide"
-							DataSave.items_posession.sword7 -= 1
-							nbCompteurSword7 -= 1
-							isSlot_libre[8] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword7[8].queue_free()
+								txtItemType[8] = "vide"
+								DataSave.items_posession.sword7 -= 1
+								nbCompteurSword7 -= 1
+								isSlot_libre[8] = true
+								txtTypeClic = ""
 						elif n == 9:
-							gui_sword7[9].queue_free()
-							txtItemType[9] = "vide"
-							DataSave.items_posession.sword7 -= 1
-							nbCompteurSword7 -= 1
-							isSlot_libre[9] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword7[9].queue_free()
+								txtItemType[9] = "vide"
+								DataSave.items_posession.sword7 -= 1
+								nbCompteurSword7 -= 1
+								isSlot_libre[9] = true
+								txtTypeClic = ""
 						elif n == 10:
-							gui_sword7[10].queue_free()
-							txtItemType[10] = "vide"
-							DataSave.items_posession.sword7 -= 1
-							nbCompteurSword7 -= 1
-							isSlot_libre[10] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword7[10].queue_free()
+								txtItemType[10] = "vide"
+								DataSave.items_posession.sword7 -= 1
+								nbCompteurSword7 -= 1
+								isSlot_libre[10] = true
+								txtTypeClic = ""
 						elif n == 11:
-							gui_sword7[11].queue_free()
-							txtItemType[11] = "vide"
-							DataSave.items_posession.sword7 -= 1
-							nbCompteurSword7 -= 1
-							isSlot_libre[11] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword7[11].queue_free()
+								txtItemType[11] = "vide"
+								DataSave.items_posession.sword7 -= 1
+								nbCompteurSword7 -= 1
+								isSlot_libre[11] = true
+								txtTypeClic = ""
 						elif n == 12:
-							gui_sword7[12].queue_free()
-							txtItemType[12] = "vide"
-							DataSave.items_posession.sword7 -= 1
-							nbCompteurSword7 -= 1
-							isSlot_libre[12] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword7[12].queue_free()
+								txtItemType[12] = "vide"
+								DataSave.items_posession.sword7 -= 1
+								nbCompteurSword7 -= 1
+								isSlot_libre[12] = true
+								txtTypeClic = ""
 						elif n == 13:
-							gui_sword7[13].queue_free()
-							txtItemType[13] = "vide"
-							DataSave.items_posession.sword7 -= 1
-							nbCompteurSword7 -= 1
-							isSlot_libre[13] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword7[13].queue_free()
+								txtItemType[13] = "vide"
+								DataSave.items_posession.sword7 -= 1
+								nbCompteurSword7 -= 1
+								isSlot_libre[13] = true
+								txtTypeClic = ""
 						elif n == 14:
-							gui_sword7[14].queue_free()
-							txtItemType[14] = "vide"
-							DataSave.items_posession.sword7 -= 1
-							nbCompteurSword7 -= 1
-							isSlot_libre[14] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword7[14].queue_free()
+								txtItemType[14] = "vide"
+								DataSave.items_posession.sword7 -= 1
+								nbCompteurSword7 -= 1
+								isSlot_libre[14] = true
+								txtTypeClic = ""
 						elif n == 15:
-							gui_sword7[15].queue_free()
-							txtItemType[15] = "vide"
-							DataSave.items_posession.sword7 -= 1
-							nbCompteurSword7 -= 1
-							isSlot_libre[15] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword7[15].queue_free()
+								txtItemType[15] = "vide"
+								DataSave.items_posession.sword7 -= 1
+								nbCompteurSword7 -= 1
+								isSlot_libre[15] = true
+								txtTypeClic = ""
 						elif n == 16:
-							gui_sword7[16].queue_free()
-							txtItemType[16] = "vide"
-							DataSave.items_posession.sword7 -= 1
-							nbCompteurSword7 -= 1
-							isSlot_libre[16] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword7[16].queue_free()
+								txtItemType[16] = "vide"
+								DataSave.items_posession.sword7 -= 1
+								nbCompteurSword7 -= 1
+								isSlot_libre[16] = true
+								txtTypeClic = ""
 						elif n == 17:
-							gui_sword7[17].queue_free()
-							txtItemType[17] = "vide"
-							DataSave.items_posession.sword7 -= 1
-							nbCompteurSword7 -= 1
-							isSlot_libre[17] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword7[17].queue_free()
+								txtItemType[17] = "vide"
+								DataSave.items_posession.sword7 -= 1
+								nbCompteurSword7 -= 1
+								isSlot_libre[17] = true
+								txtTypeClic = ""
 						elif n == 18:
-							gui_sword7[18].queue_free()
-							txtItemType[18] = "vide"
-							DataSave.items_posession.sword7 -= 1
-							nbCompteurSword7 -= 1
-							isSlot_libre[18] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword7[18].queue_free()
+								txtItemType[18] = "vide"
+								DataSave.items_posession.sword7 -= 1
+								nbCompteurSword7 -= 1
+								isSlot_libre[18] = true
+								txtTypeClic = ""
 						elif n == 19:
-							gui_sword7[19].queue_free()
-							txtItemType[19] = "vide"
-							DataSave.items_posession.sword7 -= 1
-							nbCompteurSword7 -= 1
-							isSlot_libre[19] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword7[19].queue_free()
+								txtItemType[19] = "vide"
+								DataSave.items_posession.sword7 -= 1
+								nbCompteurSword7 -= 1
+								isSlot_libre[19] = true
+								txtTypeClic = ""
 				
 				#Sword8
 				if txtItemType[n] == "sword_8":
 					if gui_sword8[n] != null:
 						if n == 0:
-							gui_sword8[0].queue_free()
-							txtItemType[0] = "vide"
-							DataSave.items_posession.sword8 -= 1
-							nbCompteurSword8 -= 1
-							isSlot_libre[0] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword8[0].queue_free()
+								txtItemType[0] = "vide"
+								DataSave.items_posession.sword8 -= 1
+								nbCompteurSword8 -= 1
+								isSlot_libre[0] = true
+								txtTypeClic = ""
 						elif n == 1:
-							gui_sword8[1].queue_free()
-							txtItemType[1] = "vide"
-							DataSave.items_posession.sword8 -= 1
-							nbCompteurSword8 -= 1
-							isSlot_libre[1] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword8[1].queue_free()
+								txtItemType[1] = "vide"
+								DataSave.items_posession.sword8 -= 1
+								nbCompteurSword8 -= 1
+								isSlot_libre[1] = true
+								txtTypeClic = ""
 						elif n == 2:
-							gui_sword8[2].queue_free()
-							txtItemType[2] = "vide"
-							DataSave.items_posession.sword8 -= 1
-							nbCompteurSword8 -= 1
-							isSlot_libre[2] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword8[2].queue_free()
+								txtItemType[2] = "vide"
+								DataSave.items_posession.sword8 -= 1
+								nbCompteurSword8 -= 1
+								isSlot_libre[2] = true
+								txtTypeClic = ""
 						elif n == 3:
-							gui_sword8[3].queue_free()
-							txtItemType[3] = "vide"
-							DataSave.items_posession.sword8 -= 1
-							nbCompteurSword8 -= 1
-							isSlot_libre[3] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword8[3].queue_free()
+								txtItemType[3] = "vide"
+								DataSave.items_posession.sword8 -= 1
+								nbCompteurSword8 -= 1
+								isSlot_libre[3] = true
+								txtTypeClic = ""
 						elif n == 4:
-							gui_sword8[4].queue_free()
-							txtItemType[4] = "vide"
-							DataSave.items_posession.sword8 -= 1
-							nbCompteurSword8 -= 1
-							isSlot_libre[4] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword8[4].queue_free()
+								txtItemType[4] = "vide"
+								DataSave.items_posession.sword8 -= 1
+								nbCompteurSword8 -= 1
+								isSlot_libre[4] = true
+								txtTypeClic = ""
 						elif n == 5:
-							gui_sword8[5].queue_free()
-							txtItemType[5] = "vide"
-							DataSave.items_posession.sword8 -= 1
-							nbCompteurSword8 -= 1
-							isSlot_libre[5] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword8[5].queue_free()
+								txtItemType[5] = "vide"
+								DataSave.items_posession.sword8 -= 1
+								nbCompteurSword8 -= 1
+								isSlot_libre[5] = true
+								txtTypeClic = ""
 						elif n == 6:
-							gui_sword8[6].queue_free()
-							txtItemType[6] = "vide"
-							DataSave.items_posession.sword8 -= 1
-							nbCompteurSword8 -= 1
-							isSlot_libre[6] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword8[6].queue_free()
+								txtItemType[6] = "vide"
+								DataSave.items_posession.sword8 -= 1
+								nbCompteurSword8 -= 1
+								isSlot_libre[6] = true
+								txtTypeClic = ""
 						elif n == 7:
-							gui_sword8[7].queue_free()
-							txtItemType[7] = "vide"
-							DataSave.items_posession.sword8 -= 1
-							nbCompteurSword8 -= 1
-							isSlot_libre[7] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword8[7].queue_free()
+								txtItemType[7] = "vide"
+								DataSave.items_posession.sword8 -= 1
+								nbCompteurSword8 -= 1
+								isSlot_libre[7] = true
+								txtTypeClic = ""
 						elif n == 8:
-							gui_sword8[8].queue_free()
-							txtItemType[8] = "vide"
-							DataSave.items_posession.sword8 -= 1
-							nbCompteurSword8 -= 1
-							isSlot_libre[8] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword8[8].queue_free()
+								txtItemType[8] = "vide"
+								DataSave.items_posession.sword8 -= 1
+								nbCompteurSword8 -= 1
+								isSlot_libre[8] = true
+								txtTypeClic = ""
 						elif n == 9:
-							gui_sword8[9].queue_free()
-							txtItemType[9] = "vide"
-							DataSave.items_posession.sword8 -= 1
-							nbCompteurSword8 -= 1
-							isSlot_libre[9] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword8[9].queue_free()
+								txtItemType[9] = "vide"
+								DataSave.items_posession.sword8 -= 1
+								nbCompteurSword8 -= 1
+								isSlot_libre[9] = true
+								txtTypeClic = ""
 						elif n == 10:
-							gui_sword8[10].queue_free()
-							txtItemType[10] = "vide"
-							DataSave.items_posession.sword8 -= 1
-							nbCompteurSword8 -= 1
-							isSlot_libre[10] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword8[10].queue_free()
+								txtItemType[10] = "vide"
+								DataSave.items_posession.sword8 -= 1
+								nbCompteurSword8 -= 1
+								isSlot_libre[10] = true
+								txtTypeClic = ""
 						elif n == 11:
-							gui_sword8[11].queue_free()
-							txtItemType[11] = "vide"
-							DataSave.items_posession.sword8 -= 1
-							nbCompteurSword8 -= 1
-							isSlot_libre[11] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword8[11].queue_free()
+								txtItemType[11] = "vide"
+								DataSave.items_posession.sword8 -= 1
+								nbCompteurSword8 -= 1
+								isSlot_libre[11] = true
+								txtTypeClic = ""
 						elif n == 12:
-							gui_sword8[12].queue_free()
-							txtItemType[12] = "vide"
-							DataSave.items_posession.sword8 -= 1
-							nbCompteurSword8 -= 1
-							isSlot_libre[12] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword8[12].queue_free()
+								txtItemType[12] = "vide"
+								DataSave.items_posession.sword8 -= 1
+								nbCompteurSword8 -= 1
+								isSlot_libre[12] = true
+								txtTypeClic = ""
 						elif n == 13:
-							gui_sword8[13].queue_free()
-							txtItemType[13] = "vide"
-							DataSave.items_posession.sword8 -= 1
-							nbCompteurSword8 -= 1
-							isSlot_libre[13] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword8[13].queue_free()
+								txtItemType[13] = "vide"
+								DataSave.items_posession.sword8 -= 1
+								nbCompteurSword8 -= 1
+								isSlot_libre[13] = true
+								txtTypeClic = ""
 						elif n == 14:
-							gui_sword8[14].queue_free()
-							txtItemType[14] = "vide"
-							DataSave.items_posession.sword8 -= 1
-							nbCompteurSword8 -= 1
-							isSlot_libre[14] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword8[14].queue_free()
+								txtItemType[14] = "vide"
+								DataSave.items_posession.sword8 -= 1
+								nbCompteurSword8 -= 1
+								isSlot_libre[14] = true
+								txtTypeClic = ""
 						elif n == 15:
-							gui_sword8[15].queue_free()
-							txtItemType[15] = "vide"
-							DataSave.items_posession.sword8 -= 1
-							nbCompteurSword8 -= 1
-							isSlot_libre[15] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword8[15].queue_free()
+								txtItemType[15] = "vide"
+								DataSave.items_posession.sword8 -= 1
+								nbCompteurSword8 -= 1
+								isSlot_libre[15] = true
+								txtTypeClic = ""
 						elif n == 16:
-							gui_sword8[16].queue_free()
-							txtItemType[16] = "vide"
-							DataSave.items_posession.sword8 -= 1
-							nbCompteurSword8 -= 1
-							isSlot_libre[16] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword8[16].queue_free()
+								txtItemType[16] = "vide"
+								DataSave.items_posession.sword8 -= 1
+								nbCompteurSword8 -= 1
+								isSlot_libre[16] = true
+								txtTypeClic = ""
 						elif n == 17:
-							gui_sword8[17].queue_free()
-							txtItemType[17] = "vide"
-							DataSave.items_posession.sword8 -= 1
-							nbCompteurSword8 -= 1
-							isSlot_libre[17] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword8[17].queue_free()
+								txtItemType[17] = "vide"
+								DataSave.items_posession.sword8 -= 1
+								nbCompteurSword8 -= 1
+								isSlot_libre[17] = true
+								txtTypeClic = ""
 						elif n == 18:
-							gui_sword8[18].queue_free()
-							txtItemType[18] = "vide"
-							DataSave.items_posession.sword8 -= 1
-							nbCompteurSword8 -= 1
-							isSlot_libre[18] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword8[18].queue_free()
+								txtItemType[18] = "vide"
+								DataSave.items_posession.sword8 -= 1
+								nbCompteurSword8 -= 1
+								isSlot_libre[18] = true
+								txtTypeClic = ""
 						elif n == 19:
-							gui_sword8[19].queue_free()
-							txtItemType[19] = "vide"
-							DataSave.items_posession.sword8 -= 1
-							nbCompteurSword8 -= 1
-							isSlot_libre[19] = true
+							if txtTypeClic == "left":
+								print("utilise arme")
+								txtTypeClic = ""
+							elif txtTypeClic == "right":
+								gui_sword8[19].queue_free()
+								txtItemType[19] = "vide"
+								DataSave.items_posession.sword8 -= 1
+								nbCompteurSword8 -= 1
+								isSlot_libre[19] = true
+								txtTypeClic = ""
