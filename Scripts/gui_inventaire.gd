@@ -47,6 +47,9 @@ var GuiSword7 = preload("res://Objets/gui_sword_7.tscn")
 var GuiSword8 = preload("res://Objets/gui_sword_8.tscn")
 var GuiFenetre = preload("res://Objets/gui_fenetre_black.tscn")
 var GuiTextUi = preload("res://Objets/gui_text_fenetre.tscn")
+var GuiButtonOn = preload("res://Objets/gui_button_on.tscn")
+var GuiButtonOff = preload("res://Objets/gui_button_off.tscn")
+var GuiPopUp = preload("res://Objets/gui_pop_up.tscn")
 
 
 var txt_titre
@@ -95,8 +98,22 @@ var gui_sword5 = []
 var gui_sword6 = []
 var gui_sword7 = []
 var gui_sword8 = []
+var gui_popUp
+var gui_buttonOnEquiper
+var gui_buttonOffEquiper
+var gui_buttonOnStocker
+var gui_buttonOffStocker
+var gui_buttonOnJeter
+var gui_buttonOffJeter
+var gui_buttonOnUse
+var gui_buttonOffUse
+var txt_popup_1
+var txt_popup_2
+var txt_popup_3
 
 var isSlot_libre = []
+
+var txtItemSelect = []
 
 var txtItemType = []
 
@@ -1212,6 +1229,7 @@ func _ready() -> void:
 	isSlot_libre.resize(20)
 	childSlot.resize(20)
 	txtItemType.resize(20)
+	txtItemSelect.resize(20)
 	DataSave.items_posession.potionVie = 3
 	DataSave.items_posession.potionMana = 1
 	DataSave.items_posession.potionElixir = 3
@@ -1227,6 +1245,7 @@ func _ready() -> void:
 	for n in range(20):
 		isSlot_libre[n] = true
 		txtItemType[n] = "vide"
+		txtItemSelect[n] = "none"
 	
 	childSlot[0] = nodeParent.get_node("panel_slot1")
 	childSlot[1] = nodeParent.get_node("panel_slot2")
