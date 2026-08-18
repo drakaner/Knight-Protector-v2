@@ -164,1026 +164,1135 @@ var txtTypeClic = ""
 
 var isPanelClose = true
 
+var isPopUpOpen = false
+
 var nbDecaleTextName = 0
 
 func _on_mouse_exited_potion_vie():
-	gui_fenetre.queue_free()
-	txt_titre.queue_free()
-	txt_stat_1.queue_free()
+	if gui_fenetre != null:
+		gui_fenetre.queue_free()
+	if txt_titre != null:
+		txt_titre.queue_free()
+	if txt_stat_1 != null:
+		txt_stat_1.queue_free()
 	nbDecaleTextName = 0
 
 func _on_mouse_exited_potion_mana():
-	gui_fenetre.queue_free()
-	txt_titre.queue_free()
-	txt_stat_1.queue_free()
+	if gui_fenetre != null:
+		gui_fenetre.queue_free()
+	if txt_titre != null:
+		txt_titre.queue_free()
+	if txt_stat_1 != null:
+		txt_stat_1.queue_free()
 	nbDecaleTextName = 0
 
 func _on_mouse_exited_potion_elixir():
-	gui_fenetre.queue_free()
-	txt_titre.queue_free()
-	txt_stat_1.queue_free()
+	if gui_fenetre != null:
+		gui_fenetre.queue_free()
+	if txt_titre != null:
+		txt_titre.queue_free()
+	if txt_stat_1 != null:
+		txt_stat_1.queue_free()
 	nbDecaleTextName = 0
 
 func _on_mouse_exited_bague1():
-	gui_fenetre.queue_free()
-	txt_titre.queue_free()
-	txt_stat_1.queue_free()
-	txt_stat_2.queue_free()
+	if gui_fenetre != null:
+		gui_fenetre.queue_free()
+	if txt_titre != null:
+		txt_titre.queue_free()
+	if txt_stat_1 != null:
+		txt_stat_1.queue_free()
+	if txt_stat_2 != null:
+		txt_stat_2.queue_free()
 	nbDecaleTextName = 0
 
 func _on_mouse_exited_bague2():
-	gui_fenetre.queue_free()
-	txt_titre.queue_free()
-	txt_stat_1.queue_free()
-	txt_stat_2.queue_free()
+	if gui_fenetre != null:
+		gui_fenetre.queue_free()
+	if txt_titre != null:
+		txt_titre.queue_free()
+	if txt_stat_1 != null:
+		txt_stat_1.queue_free()
+	if txt_stat_2 != null:
+		txt_stat_2.queue_free()
 	nbDecaleTextName = 0
 
 func _on_mouse_exited_bague3():
-	gui_fenetre.queue_free()
-	txt_titre.queue_free()
-	txt_stat_1.queue_free()
-	txt_stat_2.queue_free()
+	if gui_fenetre != null:
+		gui_fenetre.queue_free()
+	if txt_titre != null:
+		txt_titre.queue_free()
+	if txt_stat_1 != null:
+		txt_stat_1.queue_free()
+	if txt_stat_2 != null:
+		txt_stat_2.queue_free()
 	nbDecaleTextName = 0
 
 func _on_mouse_exited_bottes1():
-	gui_fenetre.queue_free()
-	txt_titre.queue_free()
-	txt_stat_1.queue_free()
-	txt_stat_2.queue_free()
+	if gui_fenetre != null:
+		gui_fenetre.queue_free()
+	if txt_titre != null:
+		txt_titre.queue_free()
+	if txt_stat_1 != null:
+		txt_stat_1.queue_free()
+	if txt_stat_2 != null:
+		txt_stat_2.queue_free()
 	nbDecaleTextName = 0
 
 func _on_mouse_exited_bottes2():
-	gui_fenetre.queue_free()
-	txt_titre.queue_free()
-	txt_stat_1.queue_free()
-	txt_stat_2.queue_free()
+	if gui_fenetre != null:
+		gui_fenetre.queue_free()
+	if txt_titre != null:
+		txt_titre.queue_free()
+	if txt_stat_1 != null:
+		txt_stat_1.queue_free()
+	if txt_stat_2 != null:
+		txt_stat_2.queue_free()
 	nbDecaleTextName = 0
 
 func _on_mouse_exited_bottes3():
-	gui_fenetre.queue_free()
-	txt_titre.queue_free()
-	txt_stat_1.queue_free()
-	txt_stat_2.queue_free()
+	if gui_fenetre != null:
+		gui_fenetre.queue_free()
+	if txt_titre != null:
+		txt_titre.queue_free()
+	if txt_stat_1 != null:
+		txt_stat_1.queue_free()
+	if txt_stat_2 != null:
+		txt_stat_2.queue_free()
 	nbDecaleTextName = 0
 
 func _on_mouse_exited_bottes4():
-	gui_fenetre.queue_free()
-	txt_titre.queue_free()
-	txt_stat_1.queue_free()
-	txt_stat_2.queue_free()
+	if gui_fenetre != null:
+		gui_fenetre.queue_free()
+	if txt_titre != null:
+		txt_titre.queue_free()
+	if txt_stat_1 != null:
+		txt_stat_1.queue_free()
+	if txt_stat_2 != null:
+		txt_stat_2.queue_free()
 	nbDecaleTextName = 0
 
 func _on_mouse_exited_bottes5():
-	gui_fenetre.queue_free()
-	txt_titre.queue_free()
-	txt_stat_1.queue_free()
-	txt_stat_2.queue_free()
+	if gui_fenetre != null:
+		gui_fenetre.queue_free()
+	if txt_titre != null:
+		txt_titre.queue_free()
+	if txt_stat_1 != null:
+		txt_stat_1.queue_free()
+	if txt_stat_2 != null:
+		txt_stat_2.queue_free()
 	nbDecaleTextName = 0
 
 func _on_mouse_exited_bottes6():
-	gui_fenetre.queue_free()
-	txt_titre.queue_free()
-	txt_stat_1.queue_free()
-	txt_stat_2.queue_free()
+	if gui_fenetre != null:
+		gui_fenetre.queue_free()
+	if txt_titre != null:
+		txt_titre.queue_free()
+	if txt_stat_1 != null:
+		txt_stat_1.queue_free()
+	if txt_stat_2 != null:
+		txt_stat_2.queue_free()
 	nbDecaleTextName = 0
 
 func _on_mouse_exited_bouclier():
-	gui_fenetre.queue_free()
-	txt_titre.queue_free()
-	txt_stat_1.queue_free()
-	txt_stat_2.queue_free()
+	if gui_fenetre != null:
+		gui_fenetre.queue_free()
+	if txt_titre != null:
+		txt_titre.queue_free()
+	if txt_stat_1 != null:
+		txt_stat_1.queue_free()
+	if txt_stat_2 != null:
+		txt_stat_2.queue_free()
 	nbDecaleTextName = 0
 
 func _on_mouse_exited_casque():
-	gui_fenetre.queue_free()
-	txt_titre.queue_free()
-	txt_stat_1.queue_free()
-	txt_stat_2.queue_free()
+	if gui_fenetre != null:
+		gui_fenetre.queue_free()
+	if txt_titre != null:
+		txt_titre.queue_free()
+	if txt_stat_1 != null:
+		txt_stat_1.queue_free()
+	if txt_stat_2 != null:
+		txt_stat_2.queue_free()
 	nbDecaleTextName = 0
 
 func _on_mouse_exited_collier():
-	gui_fenetre.queue_free()
-	txt_titre.queue_free()
-	txt_stat_1.queue_free()
-	txt_stat_2.queue_free()
+	if gui_fenetre != null:
+		gui_fenetre.queue_free()
+	if txt_titre != null:
+		txt_titre.queue_free()
+	if txt_stat_1 != null:
+		txt_stat_1.queue_free()
+	if txt_stat_2 != null:
+		txt_stat_2.queue_free()
 	nbDecaleTextName = 0
 
 func _on_mouse_exited_heaume():
-	gui_fenetre.queue_free()
-	txt_titre.queue_free()
-	txt_stat_1.queue_free()
-	txt_stat_2.queue_free()
+	if gui_fenetre != null:
+		gui_fenetre.queue_free()
+	if txt_titre != null:
+		txt_titre.queue_free()
+	if txt_stat_1 != null:
+		txt_stat_1.queue_free()
+	if txt_stat_2 != null:
+		txt_stat_2.queue_free()
 	nbDecaleTextName = 0
 
 func _on_mouse_exited_sword():
-	gui_fenetre.queue_free()
-	txt_titre.queue_free()
-	txt_stat_1.queue_free()
+	if gui_fenetre != null:
+		gui_fenetre.queue_free()
+	if txt_titre != null:
+		txt_titre.queue_free()
+	if txt_stat_1 != null:
+		txt_stat_1.queue_free()
 	nbDecaleTextName = 0
 
 func _on_mouse_entered_potion_vie():
-	gui_fenetre = GuiFenetre.instantiate()
-	add_child(gui_fenetre)
-	txt_titre = GuiTextUi.instantiate()
-	add_child(txt_titre)
-	var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_potion_vie[n] != null:
-			childGuiTxtNameItem.text = gui_potion_vie[n].txt_name
-	nbDecaleTextName = 40
-	txt_stat_1 = GuiTextUi.instantiate()
-	add_child(txt_stat_1)
-	var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_potion_vie[n] != null:
-			childGuiTxtStat1.text = "Vie : " + str(gui_potion_vie[n].txt_description)
+	if isPopUpOpen == false:
+		gui_fenetre = GuiFenetre.instantiate()
+		add_child(gui_fenetre)
+		txt_titre = GuiTextUi.instantiate()
+		add_child(txt_titre)
+		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_potion_vie[n] != null:
+				childGuiTxtNameItem.text = gui_potion_vie[n].txt_name
+		nbDecaleTextName = 40
+		txt_stat_1 = GuiTextUi.instantiate()
+		add_child(txt_stat_1)
+		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_potion_vie[n] != null:
+				childGuiTxtStat1.text = "Vie : " + str(gui_potion_vie[n].txt_description)
 
 
 func _on_mouse_entered_potion_mana():
-	gui_fenetre = GuiFenetre.instantiate()
-	add_child(gui_fenetre)
-	txt_titre = GuiTextUi.instantiate()
-	add_child(txt_titre)
-	var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_potion_mana[n] != null:
-			childGuiTxtNameItem.text = gui_potion_mana[n].txt_name
-	nbDecaleTextName = 40
-	txt_stat_1 = GuiTextUi.instantiate()
-	add_child(txt_stat_1)
-	var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_potion_mana[n] != null:
-			childGuiTxtStat1.text = "Mana : " + str(gui_potion_mana[n].txt_description)
+	if isPopUpOpen == false:
+		gui_fenetre = GuiFenetre.instantiate()
+		add_child(gui_fenetre)
+		txt_titre = GuiTextUi.instantiate()
+		add_child(txt_titre)
+		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_potion_mana[n] != null:
+				childGuiTxtNameItem.text = gui_potion_mana[n].txt_name
+		nbDecaleTextName = 40
+		txt_stat_1 = GuiTextUi.instantiate()
+		add_child(txt_stat_1)
+		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_potion_mana[n] != null:
+				childGuiTxtStat1.text = "Mana : " + str(gui_potion_mana[n].txt_description)
 
 func _on_mouse_entered_potion_elixir():
-	gui_fenetre = GuiFenetre.instantiate()
-	add_child(gui_fenetre)
-	txt_titre = GuiTextUi.instantiate()
-	add_child(txt_titre)
-	var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_potion_elixir[n] != null:
-			childGuiTxtNameItem.text = gui_potion_elixir[n].txt_name
-	nbDecaleTextName = 40
-	txt_stat_1 = GuiTextUi.instantiate()
-	add_child(txt_stat_1)
-	var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_potion_elixir[n] != null:
-			childGuiTxtStat1.text = "Mana + Vie : " + str(gui_potion_elixir[n].txt_description)
+	if isPopUpOpen == false:
+		gui_fenetre = GuiFenetre.instantiate()
+		add_child(gui_fenetre)
+		txt_titre = GuiTextUi.instantiate()
+		add_child(txt_titre)
+		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_potion_elixir[n] != null:
+				childGuiTxtNameItem.text = gui_potion_elixir[n].txt_name
+		nbDecaleTextName = 40
+		txt_stat_1 = GuiTextUi.instantiate()
+		add_child(txt_stat_1)
+		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_potion_elixir[n] != null:
+				childGuiTxtStat1.text = "Mana + Vie : " + str(gui_potion_elixir[n].txt_description)
 
 func _on_mouse_entered_bague1():
-	gui_fenetre = GuiFenetre.instantiate()
-	add_child(gui_fenetre)
-	txt_titre = GuiTextUi.instantiate()
-	add_child(txt_titre)
-	var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_bague1[n] != null:
-			childGuiTxtNameItem.text = gui_bague1[n].txt_name
-	nbDecaleTextName = 40
-	txt_stat_1 = GuiTextUi.instantiate()
-	add_child(txt_stat_1)
-	var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_bague1[n] != null:
-			childGuiTxtStat1.text = "Puissance : + " + str(gui_bague1[n].nb_puissance)
-	txt_stat_2 = GuiTextUi.instantiate()
-	add_child(txt_stat_2)
-	var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_bague1[n] != null:
-			childGuiTxtStat2.text = "Mana : + " + str(gui_bague1[n].nb_mana)
+	if isPopUpOpen == false:
+		gui_fenetre = GuiFenetre.instantiate()
+		add_child(gui_fenetre)
+		txt_titre = GuiTextUi.instantiate()
+		add_child(txt_titre)
+		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_bague1[n] != null:
+				childGuiTxtNameItem.text = gui_bague1[n].txt_name
+		nbDecaleTextName = 40
+		txt_stat_1 = GuiTextUi.instantiate()
+		add_child(txt_stat_1)
+		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_bague1[n] != null:
+				childGuiTxtStat1.text = "Puissance : + " + str(gui_bague1[n].nb_puissance)
+		txt_stat_2 = GuiTextUi.instantiate()
+		add_child(txt_stat_2)
+		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_bague1[n] != null:
+				childGuiTxtStat2.text = "Mana : + " + str(gui_bague1[n].nb_mana)
 
 func _on_mouse_entered_bague2():
-	gui_fenetre = GuiFenetre.instantiate()
-	add_child(gui_fenetre)
-	txt_titre = GuiTextUi.instantiate()
-	add_child(txt_titre)
-	var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_bague2[n] != null:
-			childGuiTxtNameItem.text = gui_bague2[n].txt_name
-	nbDecaleTextName = 40
-	txt_stat_1 = GuiTextUi.instantiate()
-	add_child(txt_stat_1)
-	var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_bague2[n] != null:
-			childGuiTxtStat1.text = "Puissance : + " + str(gui_bague2[n].nb_puissance)
-	txt_stat_2 = GuiTextUi.instantiate()
-	add_child(txt_stat_2)
-	var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_bague2[n] != null:
-			childGuiTxtStat2.text = "Mana : + " + str(gui_bague2[n].nb_mana)
+	if isPopUpOpen == false:
+		gui_fenetre = GuiFenetre.instantiate()
+		add_child(gui_fenetre)
+		txt_titre = GuiTextUi.instantiate()
+		add_child(txt_titre)
+		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_bague2[n] != null:
+				childGuiTxtNameItem.text = gui_bague2[n].txt_name
+		nbDecaleTextName = 40
+		txt_stat_1 = GuiTextUi.instantiate()
+		add_child(txt_stat_1)
+		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_bague2[n] != null:
+				childGuiTxtStat1.text = "Puissance : + " + str(gui_bague2[n].nb_puissance)
+		txt_stat_2 = GuiTextUi.instantiate()
+		add_child(txt_stat_2)
+		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_bague2[n] != null:
+				childGuiTxtStat2.text = "Mana : + " + str(gui_bague2[n].nb_mana)
 
 func _on_mouse_entered_bague3():
-	gui_fenetre = GuiFenetre.instantiate()
-	add_child(gui_fenetre)
-	txt_titre = GuiTextUi.instantiate()
-	add_child(txt_titre)
-	var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_bague3[n] != null:
-			childGuiTxtNameItem.text = gui_bague3[n].txt_name
-	nbDecaleTextName = 40
-	txt_stat_1 = GuiTextUi.instantiate()
-	add_child(txt_stat_1)
-	var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_bague3[n] != null:
-			childGuiTxtStat1.text = "Puissance : + " + str(gui_bague3[n].nb_puissance)
-	txt_stat_2 = GuiTextUi.instantiate()
-	add_child(txt_stat_2)
-	var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_bague3[n] != null:
-			childGuiTxtStat2.text = "Mana : + " + str(gui_bague3[n].nb_mana)
+	if isPopUpOpen == false:
+		gui_fenetre = GuiFenetre.instantiate()
+		add_child(gui_fenetre)
+		txt_titre = GuiTextUi.instantiate()
+		add_child(txt_titre)
+		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_bague3[n] != null:
+				childGuiTxtNameItem.text = gui_bague3[n].txt_name
+		nbDecaleTextName = 40
+		txt_stat_1 = GuiTextUi.instantiate()
+		add_child(txt_stat_1)
+		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_bague3[n] != null:
+				childGuiTxtStat1.text = "Puissance : + " + str(gui_bague3[n].nb_puissance)
+		txt_stat_2 = GuiTextUi.instantiate()
+		add_child(txt_stat_2)
+		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_bague3[n] != null:
+				childGuiTxtStat2.text = "Mana : + " + str(gui_bague3[n].nb_mana)
 
 func _on_mouse_entered_bottes1():
-	gui_fenetre = GuiFenetre.instantiate()
-	add_child(gui_fenetre)
-	txt_titre = GuiTextUi.instantiate()
-	add_child(txt_titre)
-	var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_bottes1[n] != null:
-			childGuiTxtNameItem.text = gui_bottes1[n].txt_name
-	nbDecaleTextName = 40
-	txt_stat_1 = GuiTextUi.instantiate()
-	add_child(txt_stat_1)
-	var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_bottes1[n] != null:
-			childGuiTxtStat1.text = "Vie : + " + str(gui_bottes1[n].nb_vie)
-	txt_stat_2 = GuiTextUi.instantiate()
-	add_child(txt_stat_2)
-	var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_bottes1[n] != null:
-			childGuiTxtStat2.text = "Défense : + " + str(gui_bottes1[n].nb_defense)
+	if isPopUpOpen == false:
+		gui_fenetre = GuiFenetre.instantiate()
+		add_child(gui_fenetre)
+		txt_titre = GuiTextUi.instantiate()
+		add_child(txt_titre)
+		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_bottes1[n] != null:
+				childGuiTxtNameItem.text = gui_bottes1[n].txt_name
+		nbDecaleTextName = 40
+		txt_stat_1 = GuiTextUi.instantiate()
+		add_child(txt_stat_1)
+		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_bottes1[n] != null:
+				childGuiTxtStat1.text = "Vie : + " + str(gui_bottes1[n].nb_vie)
+		txt_stat_2 = GuiTextUi.instantiate()
+		add_child(txt_stat_2)
+		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_bottes1[n] != null:
+				childGuiTxtStat2.text = "Défense : + " + str(gui_bottes1[n].nb_defense)
 
 func _on_mouse_entered_bottes2():
-	gui_fenetre = GuiFenetre.instantiate()
-	add_child(gui_fenetre)
-	txt_titre = GuiTextUi.instantiate()
-	add_child(txt_titre)
-	var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_bottes2[n] != null:
-			childGuiTxtNameItem.text = gui_bottes2[n].txt_name
-	nbDecaleTextName = 7
-	txt_stat_1 = GuiTextUi.instantiate()
-	add_child(txt_stat_1)
-	var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_bottes2[n] != null:
-			childGuiTxtStat1.text = "Vie : + " + str(gui_bottes2[n].nb_vie)
-	txt_stat_2 = GuiTextUi.instantiate()
-	add_child(txt_stat_2)
-	var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_bottes2[n] != null:
-			childGuiTxtStat2.text = "Défense : + " + str(gui_bottes2[n].nb_defense)
+	if isPopUpOpen == false:
+		gui_fenetre = GuiFenetre.instantiate()
+		add_child(gui_fenetre)
+		txt_titre = GuiTextUi.instantiate()
+		add_child(txt_titre)
+		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_bottes2[n] != null:
+				childGuiTxtNameItem.text = gui_bottes2[n].txt_name
+		nbDecaleTextName = 7
+		txt_stat_1 = GuiTextUi.instantiate()
+		add_child(txt_stat_1)
+		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_bottes2[n] != null:
+				childGuiTxtStat1.text = "Vie : + " + str(gui_bottes2[n].nb_vie)
+		txt_stat_2 = GuiTextUi.instantiate()
+		add_child(txt_stat_2)
+		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_bottes2[n] != null:
+				childGuiTxtStat2.text = "Défense : + " + str(gui_bottes2[n].nb_defense)
 
 func _on_mouse_entered_bottes3():
-	gui_fenetre = GuiFenetre.instantiate()
-	add_child(gui_fenetre)
-	txt_titre = GuiTextUi.instantiate()
-	add_child(txt_titre)
-	var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_bottes3[n] != null:
-			childGuiTxtNameItem.text = gui_bottes3[n].txt_name
-	nbDecaleTextName = 30
-	txt_stat_1 = GuiTextUi.instantiate()
-	add_child(txt_stat_1)
-	var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_bottes3[n] != null:
-			childGuiTxtStat1.text = "Vie : + " + str(gui_bottes3[n].nb_vie)
-	txt_stat_2 = GuiTextUi.instantiate()
-	add_child(txt_stat_2)
-	var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_bottes3[n] != null:
-			childGuiTxtStat2.text = "Défense : + " + str(gui_bottes3[n].nb_defense)
+	if isPopUpOpen == false:
+		gui_fenetre = GuiFenetre.instantiate()
+		add_child(gui_fenetre)
+		txt_titre = GuiTextUi.instantiate()
+		add_child(txt_titre)
+		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_bottes3[n] != null:
+				childGuiTxtNameItem.text = gui_bottes3[n].txt_name
+		nbDecaleTextName = 30
+		txt_stat_1 = GuiTextUi.instantiate()
+		add_child(txt_stat_1)
+		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_bottes3[n] != null:
+				childGuiTxtStat1.text = "Vie : + " + str(gui_bottes3[n].nb_vie)
+		txt_stat_2 = GuiTextUi.instantiate()
+		add_child(txt_stat_2)
+		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_bottes3[n] != null:
+				childGuiTxtStat2.text = "Défense : + " + str(gui_bottes3[n].nb_defense)
 
 func _on_mouse_entered_bottes4():
-	gui_fenetre = GuiFenetre.instantiate()
-	add_child(gui_fenetre)
-	txt_titre = GuiTextUi.instantiate()
-	add_child(txt_titre)
-	var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_bottes4[n] != null:
-			childGuiTxtNameItem.text = gui_bottes4[n].txt_name
-	nbDecaleTextName = 30
-	txt_stat_1 = GuiTextUi.instantiate()
-	add_child(txt_stat_1)
-	var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_bottes4[n] != null:
-			childGuiTxtStat1.text = "Vie : + " + str(gui_bottes4[n].nb_vie)
-	txt_stat_2 = GuiTextUi.instantiate()
-	add_child(txt_stat_2)
-	var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_bottes4[n] != null:
-			childGuiTxtStat2.text = "Défense : + " + str(gui_bottes4[n].nb_defense)
+	if isPopUpOpen == false:
+		gui_fenetre = GuiFenetre.instantiate()
+		add_child(gui_fenetre)
+		txt_titre = GuiTextUi.instantiate()
+		add_child(txt_titre)
+		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_bottes4[n] != null:
+				childGuiTxtNameItem.text = gui_bottes4[n].txt_name
+		nbDecaleTextName = 30
+		txt_stat_1 = GuiTextUi.instantiate()
+		add_child(txt_stat_1)
+		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_bottes4[n] != null:
+				childGuiTxtStat1.text = "Vie : + " + str(gui_bottes4[n].nb_vie)
+		txt_stat_2 = GuiTextUi.instantiate()
+		add_child(txt_stat_2)
+		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_bottes4[n] != null:
+				childGuiTxtStat2.text = "Défense : + " + str(gui_bottes4[n].nb_defense)
 
 func _on_mouse_entered_bottes5():
-	gui_fenetre = GuiFenetre.instantiate()
-	add_child(gui_fenetre)
-	txt_titre = GuiTextUi.instantiate()
-	add_child(txt_titre)
-	var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_bottes5[n] != null:
-			childGuiTxtNameItem.text = gui_bottes5[n].txt_name
-	nbDecaleTextName = 30
-	txt_stat_1 = GuiTextUi.instantiate()
-	add_child(txt_stat_1)
-	var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_bottes5[n] != null:
-			childGuiTxtStat1.text = "Vie : + " + str(gui_bottes5[n].nb_vie)
-	txt_stat_2 = GuiTextUi.instantiate()
-	add_child(txt_stat_2)
-	var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_bottes5[n] != null:
-			childGuiTxtStat2.text = "Défense : + " + str(gui_bottes5[n].nb_defense)
+	if isPopUpOpen == false:
+		gui_fenetre = GuiFenetre.instantiate()
+		add_child(gui_fenetre)
+		txt_titre = GuiTextUi.instantiate()
+		add_child(txt_titre)
+		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_bottes5[n] != null:
+				childGuiTxtNameItem.text = gui_bottes5[n].txt_name
+		nbDecaleTextName = 30
+		txt_stat_1 = GuiTextUi.instantiate()
+		add_child(txt_stat_1)
+		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_bottes5[n] != null:
+				childGuiTxtStat1.text = "Vie : + " + str(gui_bottes5[n].nb_vie)
+		txt_stat_2 = GuiTextUi.instantiate()
+		add_child(txt_stat_2)
+		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_bottes5[n] != null:
+				childGuiTxtStat2.text = "Défense : + " + str(gui_bottes5[n].nb_defense)
 
 func _on_mouse_entered_bottes6():
-	gui_fenetre = GuiFenetre.instantiate()
-	add_child(gui_fenetre)
-	txt_titre = GuiTextUi.instantiate()
-	add_child(txt_titre)
-	var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_bottes6[n] != null:
-			childGuiTxtNameItem.text = gui_bottes6[n].txt_name
-	nbDecaleTextName = 30
-	txt_stat_1 = GuiTextUi.instantiate()
-	add_child(txt_stat_1)
-	var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_bottes6[n] != null:
-			childGuiTxtStat1.text = "Vie : + " + str(gui_bottes6[n].nb_vie)
-	txt_stat_2 = GuiTextUi.instantiate()
-	add_child(txt_stat_2)
-	var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_bottes6[n] != null:
-			childGuiTxtStat2.text = "Défense : + " + str(gui_bottes6[n].nb_defense)
+	if isPopUpOpen == false:
+		gui_fenetre = GuiFenetre.instantiate()
+		add_child(gui_fenetre)
+		txt_titre = GuiTextUi.instantiate()
+		add_child(txt_titre)
+		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_bottes6[n] != null:
+				childGuiTxtNameItem.text = gui_bottes6[n].txt_name
+		nbDecaleTextName = 30
+		txt_stat_1 = GuiTextUi.instantiate()
+		add_child(txt_stat_1)
+		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_bottes6[n] != null:
+				childGuiTxtStat1.text = "Vie : + " + str(gui_bottes6[n].nb_vie)
+		txt_stat_2 = GuiTextUi.instantiate()
+		add_child(txt_stat_2)
+		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_bottes6[n] != null:
+				childGuiTxtStat2.text = "Défense : + " + str(gui_bottes6[n].nb_defense)
 
 func _on_mouse_entered_bouclier1():
-	gui_fenetre = GuiFenetre.instantiate()
-	add_child(gui_fenetre)
-	txt_titre = GuiTextUi.instantiate()
-	add_child(txt_titre)
-	var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_bouclier1[n] != null:
-			childGuiTxtNameItem.text = gui_bouclier1[n].txt_name
-	nbDecaleTextName = 30
-	txt_stat_1 = GuiTextUi.instantiate()
-	add_child(txt_stat_1)
-	var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_bouclier1[n] != null:
-			childGuiTxtStat1.text = "Vie : + " + str(gui_bouclier1[n].nb_vie)
-	txt_stat_2 = GuiTextUi.instantiate()
-	add_child(txt_stat_2)
-	var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_bouclier1[n] != null:
-			childGuiTxtStat2.text = "Défense : + " + str(gui_bouclier1[n].nb_defense)
+	if isPopUpOpen == false:
+		gui_fenetre = GuiFenetre.instantiate()
+		add_child(gui_fenetre)
+		txt_titre = GuiTextUi.instantiate()
+		add_child(txt_titre)
+		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_bouclier1[n] != null:
+				childGuiTxtNameItem.text = gui_bouclier1[n].txt_name
+		nbDecaleTextName = 30
+		txt_stat_1 = GuiTextUi.instantiate()
+		add_child(txt_stat_1)
+		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_bouclier1[n] != null:
+				childGuiTxtStat1.text = "Vie : + " + str(gui_bouclier1[n].nb_vie)
+		txt_stat_2 = GuiTextUi.instantiate()
+		add_child(txt_stat_2)
+		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_bouclier1[n] != null:
+				childGuiTxtStat2.text = "Défense : + " + str(gui_bouclier1[n].nb_defense)
 
 func _on_mouse_entered_bouclier2():
-	gui_fenetre = GuiFenetre.instantiate()
-	add_child(gui_fenetre)
-	txt_titre = GuiTextUi.instantiate()
-	add_child(txt_titre)
-	var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_bouclier2[n] != null:
-			childGuiTxtNameItem.text = gui_bouclier2[n].txt_name
-	nbDecaleTextName = 10
-	txt_stat_1 = GuiTextUi.instantiate()
-	add_child(txt_stat_1)
-	var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_bouclier2[n] != null:
-			childGuiTxtStat1.text = "Vie : + " + str(gui_bouclier2[n].nb_vie)
-	txt_stat_2 = GuiTextUi.instantiate()
-	add_child(txt_stat_2)
-	var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_bouclier2[n] != null:
-			childGuiTxtStat2.text = "Défense : + " + str(gui_bouclier2[n].nb_defense)
+	if isPopUpOpen == false:
+		gui_fenetre = GuiFenetre.instantiate()
+		add_child(gui_fenetre)
+		txt_titre = GuiTextUi.instantiate()
+		add_child(txt_titre)
+		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_bouclier2[n] != null:
+				childGuiTxtNameItem.text = gui_bouclier2[n].txt_name
+		nbDecaleTextName = 10
+		txt_stat_1 = GuiTextUi.instantiate()
+		add_child(txt_stat_1)
+		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_bouclier2[n] != null:
+				childGuiTxtStat1.text = "Vie : + " + str(gui_bouclier2[n].nb_vie)
+		txt_stat_2 = GuiTextUi.instantiate()
+		add_child(txt_stat_2)
+		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_bouclier2[n] != null:
+				childGuiTxtStat2.text = "Défense : + " + str(gui_bouclier2[n].nb_defense)
 
 func _on_mouse_entered_bouclier3():
-	gui_fenetre = GuiFenetre.instantiate()
-	add_child(gui_fenetre)
-	txt_titre = GuiTextUi.instantiate()
-	add_child(txt_titre)
-	var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_bouclier3[n] != null:
-			childGuiTxtNameItem.text = gui_bouclier3[n].txt_name
-	nbDecaleTextName = 30
-	txt_stat_1 = GuiTextUi.instantiate()
-	add_child(txt_stat_1)
-	var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_bouclier3[n] != null:
-			childGuiTxtStat1.text = "Vie : + " + str(gui_bouclier3[n].nb_vie)
-	txt_stat_2 = GuiTextUi.instantiate()
-	add_child(txt_stat_2)
-	var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_bouclier3[n] != null:
-			childGuiTxtStat2.text = "Défense : + " + str(gui_bouclier3[n].nb_defense)
+	if isPopUpOpen == false:
+		gui_fenetre = GuiFenetre.instantiate()
+		add_child(gui_fenetre)
+		txt_titre = GuiTextUi.instantiate()
+		add_child(txt_titre)
+		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_bouclier3[n] != null:
+				childGuiTxtNameItem.text = gui_bouclier3[n].txt_name
+		nbDecaleTextName = 30
+		txt_stat_1 = GuiTextUi.instantiate()
+		add_child(txt_stat_1)
+		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_bouclier3[n] != null:
+				childGuiTxtStat1.text = "Vie : + " + str(gui_bouclier3[n].nb_vie)
+		txt_stat_2 = GuiTextUi.instantiate()
+		add_child(txt_stat_2)
+		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_bouclier3[n] != null:
+				childGuiTxtStat2.text = "Défense : + " + str(gui_bouclier3[n].nb_defense)
 
 func _on_mouse_entered_bouclier4():
-	gui_fenetre = GuiFenetre.instantiate()
-	add_child(gui_fenetre)
-	txt_titre = GuiTextUi.instantiate()
-	add_child(txt_titre)
-	var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_bouclier4[n] != null:
-			childGuiTxtNameItem.text = gui_bouclier4[n].txt_name
-	nbDecaleTextName = 5
-	txt_stat_1 = GuiTextUi.instantiate()
-	add_child(txt_stat_1)
-	var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_bouclier4[n] != null:
-			childGuiTxtStat1.text = "Vie : + " + str(gui_bouclier4[n].nb_vie)
-	txt_stat_2 = GuiTextUi.instantiate()
-	add_child(txt_stat_2)
-	var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_bouclier4[n] != null:
-			childGuiTxtStat2.text = "Défense : + " + str(gui_bouclier4[n].nb_defense)
+	if isPopUpOpen == false:
+		gui_fenetre = GuiFenetre.instantiate()
+		add_child(gui_fenetre)
+		txt_titre = GuiTextUi.instantiate()
+		add_child(txt_titre)
+		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_bouclier4[n] != null:
+				childGuiTxtNameItem.text = gui_bouclier4[n].txt_name
+		nbDecaleTextName = 5
+		txt_stat_1 = GuiTextUi.instantiate()
+		add_child(txt_stat_1)
+		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_bouclier4[n] != null:
+				childGuiTxtStat1.text = "Vie : + " + str(gui_bouclier4[n].nb_vie)
+		txt_stat_2 = GuiTextUi.instantiate()
+		add_child(txt_stat_2)
+		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_bouclier4[n] != null:
+				childGuiTxtStat2.text = "Défense : + " + str(gui_bouclier4[n].nb_defense)
 
 func _on_mouse_entered_bouclier5():
-	gui_fenetre = GuiFenetre.instantiate()
-	add_child(gui_fenetre)
-	txt_titre = GuiTextUi.instantiate()
-	add_child(txt_titre)
-	var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_bouclier5[n] != null:
-			childGuiTxtNameItem.text = gui_bouclier5[n].txt_name
-	nbDecaleTextName = 30
-	txt_stat_1 = GuiTextUi.instantiate()
-	add_child(txt_stat_1)
-	var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_bouclier5[n] != null:
-			childGuiTxtStat1.text = "Vie : + " + str(gui_bouclier5[n].nb_vie)
-	txt_stat_2 = GuiTextUi.instantiate()
-	add_child(txt_stat_2)
-	var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_bouclier5[n] != null:
-			childGuiTxtStat2.text = "Défense : + " + str(gui_bouclier5[n].nb_defense)
+	if isPopUpOpen == false:
+		gui_fenetre = GuiFenetre.instantiate()
+		add_child(gui_fenetre)
+		txt_titre = GuiTextUi.instantiate()
+		add_child(txt_titre)
+		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_bouclier5[n] != null:
+				childGuiTxtNameItem.text = gui_bouclier5[n].txt_name
+		nbDecaleTextName = 30
+		txt_stat_1 = GuiTextUi.instantiate()
+		add_child(txt_stat_1)
+		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_bouclier5[n] != null:
+				childGuiTxtStat1.text = "Vie : + " + str(gui_bouclier5[n].nb_vie)
+		txt_stat_2 = GuiTextUi.instantiate()
+		add_child(txt_stat_2)
+		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_bouclier5[n] != null:
+				childGuiTxtStat2.text = "Défense : + " + str(gui_bouclier5[n].nb_defense)
 
 func _on_mouse_entered_bouclier6():
-	gui_fenetre = GuiFenetre.instantiate()
-	add_child(gui_fenetre)
-	txt_titre = GuiTextUi.instantiate()
-	add_child(txt_titre)
-	var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_bouclier6[n] != null:
-			childGuiTxtNameItem.text = gui_bouclier6[n].txt_name
-	nbDecaleTextName = 30
-	txt_stat_1 = GuiTextUi.instantiate()
-	add_child(txt_stat_1)
-	var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_bouclier6[n] != null:
-			childGuiTxtStat1.text = "Vie : + " + str(gui_bouclier6[n].nb_vie)
-	txt_stat_2 = GuiTextUi.instantiate()
-	add_child(txt_stat_2)
-	var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_bouclier6[n] != null:
-			childGuiTxtStat2.text = "Défense : + " + str(gui_bouclier6[n].nb_defense)
+	if isPopUpOpen == false:
+		gui_fenetre = GuiFenetre.instantiate()
+		add_child(gui_fenetre)
+		txt_titre = GuiTextUi.instantiate()
+		add_child(txt_titre)
+		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_bouclier6[n] != null:
+				childGuiTxtNameItem.text = gui_bouclier6[n].txt_name
+		nbDecaleTextName = 30
+		txt_stat_1 = GuiTextUi.instantiate()
+		add_child(txt_stat_1)
+		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_bouclier6[n] != null:
+				childGuiTxtStat1.text = "Vie : + " + str(gui_bouclier6[n].nb_vie)
+		txt_stat_2 = GuiTextUi.instantiate()
+		add_child(txt_stat_2)
+		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_bouclier6[n] != null:
+				childGuiTxtStat2.text = "Défense : + " + str(gui_bouclier6[n].nb_defense)
 
 func _on_mouse_entered_bouclier7():
-	gui_fenetre = GuiFenetre.instantiate()
-	add_child(gui_fenetre)
-	txt_titre = GuiTextUi.instantiate()
-	add_child(txt_titre)
-	var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_bouclier7[n] != null:
-			childGuiTxtNameItem.text = gui_bouclier7[n].txt_name
-	nbDecaleTextName = 30
-	txt_stat_1 = GuiTextUi.instantiate()
-	add_child(txt_stat_1)
-	var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_bouclier7[n] != null:
-			childGuiTxtStat1.text = "Vie : + " + str(gui_bouclier7[n].nb_vie)
-	txt_stat_2 = GuiTextUi.instantiate()
-	add_child(txt_stat_2)
-	var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_bouclier7[n] != null:
-			childGuiTxtStat2.text = "Défense : + " + str(gui_bouclier7[n].nb_defense)
+	if isPopUpOpen == false:
+		gui_fenetre = GuiFenetre.instantiate()
+		add_child(gui_fenetre)
+		txt_titre = GuiTextUi.instantiate()
+		add_child(txt_titre)
+		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_bouclier7[n] != null:
+				childGuiTxtNameItem.text = gui_bouclier7[n].txt_name
+		nbDecaleTextName = 30
+		txt_stat_1 = GuiTextUi.instantiate()
+		add_child(txt_stat_1)
+		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_bouclier7[n] != null:
+				childGuiTxtStat1.text = "Vie : + " + str(gui_bouclier7[n].nb_vie)
+		txt_stat_2 = GuiTextUi.instantiate()
+		add_child(txt_stat_2)
+		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_bouclier7[n] != null:
+				childGuiTxtStat2.text = "Défense : + " + str(gui_bouclier7[n].nb_defense)
 
 func _on_mouse_entered_casque1():
-	gui_fenetre = GuiFenetre.instantiate()
-	add_child(gui_fenetre)
-	txt_titre = GuiTextUi.instantiate()
-	add_child(txt_titre)
-	var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_casque1[n] != null:
-			childGuiTxtNameItem.text = gui_casque1[n].txt_name
-	nbDecaleTextName = 30
-	txt_stat_1 = GuiTextUi.instantiate()
-	add_child(txt_stat_1)
-	var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_casque1[n] != null:
-			childGuiTxtStat1.text = "Vie : + " + str(gui_casque1[n].nb_vie)
-	txt_stat_2 = GuiTextUi.instantiate()
-	add_child(txt_stat_2)
-	var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_casque1[n] != null:
-			childGuiTxtStat2.text = "Défense : + " + str(gui_casque1[n].nb_defense)
+	if isPopUpOpen == false:
+		gui_fenetre = GuiFenetre.instantiate()
+		add_child(gui_fenetre)
+		txt_titre = GuiTextUi.instantiate()
+		add_child(txt_titre)
+		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_casque1[n] != null:
+				childGuiTxtNameItem.text = gui_casque1[n].txt_name
+		nbDecaleTextName = 30
+		txt_stat_1 = GuiTextUi.instantiate()
+		add_child(txt_stat_1)
+		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_casque1[n] != null:
+				childGuiTxtStat1.text = "Vie : + " + str(gui_casque1[n].nb_vie)
+		txt_stat_2 = GuiTextUi.instantiate()
+		add_child(txt_stat_2)
+		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_casque1[n] != null:
+				childGuiTxtStat2.text = "Défense : + " + str(gui_casque1[n].nb_defense)
 
 func _on_mouse_entered_casque2():
-	gui_fenetre = GuiFenetre.instantiate()
-	add_child(gui_fenetre)
-	txt_titre = GuiTextUi.instantiate()
-	add_child(txt_titre)
-	var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_casque2[n] != null:
-			childGuiTxtNameItem.text = gui_casque2[n].txt_name
-	nbDecaleTextName = 15
-	txt_stat_1 = GuiTextUi.instantiate()
-	add_child(txt_stat_1)
-	var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_casque2[n] != null:
-			childGuiTxtStat1.text = "Vie : + " + str(gui_casque2[n].nb_vie)
-	txt_stat_2 = GuiTextUi.instantiate()
-	add_child(txt_stat_2)
-	var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_casque2[n] != null:
-			childGuiTxtStat2.text = "Défense : + " + str(gui_casque2[n].nb_defense)
+	if isPopUpOpen == false:
+		gui_fenetre = GuiFenetre.instantiate()
+		add_child(gui_fenetre)
+		txt_titre = GuiTextUi.instantiate()
+		add_child(txt_titre)
+		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_casque2[n] != null:
+				childGuiTxtNameItem.text = gui_casque2[n].txt_name
+		nbDecaleTextName = 15
+		txt_stat_1 = GuiTextUi.instantiate()
+		add_child(txt_stat_1)
+		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_casque2[n] != null:
+				childGuiTxtStat1.text = "Vie : + " + str(gui_casque2[n].nb_vie)
+		txt_stat_2 = GuiTextUi.instantiate()
+		add_child(txt_stat_2)
+		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_casque2[n] != null:
+				childGuiTxtStat2.text = "Défense : + " + str(gui_casque2[n].nb_defense)
 
 func _on_mouse_entered_casque3():
-	gui_fenetre = GuiFenetre.instantiate()
-	add_child(gui_fenetre)
-	txt_titre = GuiTextUi.instantiate()
-	add_child(txt_titre)
-	var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_casque3[n] != null:
-			childGuiTxtNameItem.text = gui_casque3[n].txt_name
-	nbDecaleTextName = 30
-	txt_stat_1 = GuiTextUi.instantiate()
-	add_child(txt_stat_1)
-	var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_casque3[n] != null:
-			childGuiTxtStat1.text = "Vie : + " + str(gui_casque3[n].nb_vie)
-	txt_stat_2 = GuiTextUi.instantiate()
-	add_child(txt_stat_2)
-	var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_casque3[n] != null:
-			childGuiTxtStat2.text = "Défense : + " + str(gui_casque3[n].nb_defense)
+	if isPopUpOpen == false:
+		gui_fenetre = GuiFenetre.instantiate()
+		add_child(gui_fenetre)
+		txt_titre = GuiTextUi.instantiate()
+		add_child(txt_titre)
+		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_casque3[n] != null:
+				childGuiTxtNameItem.text = gui_casque3[n].txt_name
+		nbDecaleTextName = 30
+		txt_stat_1 = GuiTextUi.instantiate()
+		add_child(txt_stat_1)
+		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_casque3[n] != null:
+				childGuiTxtStat1.text = "Vie : + " + str(gui_casque3[n].nb_vie)
+		txt_stat_2 = GuiTextUi.instantiate()
+		add_child(txt_stat_2)
+		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_casque3[n] != null:
+				childGuiTxtStat2.text = "Défense : + " + str(gui_casque3[n].nb_defense)
 
 func _on_mouse_entered_casque4():
-	gui_fenetre = GuiFenetre.instantiate()
-	add_child(gui_fenetre)
-	txt_titre = GuiTextUi.instantiate()
-	add_child(txt_titre)
-	var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_casque4[n] != null:
-			childGuiTxtNameItem.text = gui_casque4[n].txt_name
-	nbDecaleTextName = 30
-	txt_stat_1 = GuiTextUi.instantiate()
-	add_child(txt_stat_1)
-	var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_casque4[n] != null:
-			childGuiTxtStat1.text = "Vie : + " + str(gui_casque4[n].nb_vie)
-	txt_stat_2 = GuiTextUi.instantiate()
-	add_child(txt_stat_2)
-	var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_casque4[n] != null:
-			childGuiTxtStat2.text = "Défense : + " + str(gui_casque4[n].nb_defense)
+	if isPopUpOpen == false:
+		gui_fenetre = GuiFenetre.instantiate()
+		add_child(gui_fenetre)
+		txt_titre = GuiTextUi.instantiate()
+		add_child(txt_titre)
+		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_casque4[n] != null:
+				childGuiTxtNameItem.text = gui_casque4[n].txt_name
+		nbDecaleTextName = 30
+		txt_stat_1 = GuiTextUi.instantiate()
+		add_child(txt_stat_1)
+		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_casque4[n] != null:
+				childGuiTxtStat1.text = "Vie : + " + str(gui_casque4[n].nb_vie)
+		txt_stat_2 = GuiTextUi.instantiate()
+		add_child(txt_stat_2)
+		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_casque4[n] != null:
+				childGuiTxtStat2.text = "Défense : + " + str(gui_casque4[n].nb_defense)
 
 func _on_mouse_entered_casque5():
-	gui_fenetre = GuiFenetre.instantiate()
-	add_child(gui_fenetre)
-	txt_titre = GuiTextUi.instantiate()
-	add_child(txt_titre)
-	var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_casque5[n] != null:
-			childGuiTxtNameItem.text = gui_casque5[n].txt_name
-	nbDecaleTextName = 30
-	txt_stat_1 = GuiTextUi.instantiate()
-	add_child(txt_stat_1)
-	var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_casque5[n] != null:
-			childGuiTxtStat1.text = "Vie : + " + str(gui_casque5[n].nb_vie)
-	txt_stat_2 = GuiTextUi.instantiate()
-	add_child(txt_stat_2)
-	var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_casque5[n] != null:
-			childGuiTxtStat2.text = "Défense : + " + str(gui_casque5[n].nb_defense)
+	if isPopUpOpen == false:
+		gui_fenetre = GuiFenetre.instantiate()
+		add_child(gui_fenetre)
+		txt_titre = GuiTextUi.instantiate()
+		add_child(txt_titre)
+		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_casque5[n] != null:
+				childGuiTxtNameItem.text = gui_casque5[n].txt_name
+		nbDecaleTextName = 30
+		txt_stat_1 = GuiTextUi.instantiate()
+		add_child(txt_stat_1)
+		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_casque5[n] != null:
+				childGuiTxtStat1.text = "Vie : + " + str(gui_casque5[n].nb_vie)
+		txt_stat_2 = GuiTextUi.instantiate()
+		add_child(txt_stat_2)
+		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_casque5[n] != null:
+				childGuiTxtStat2.text = "Défense : + " + str(gui_casque5[n].nb_defense)
 
 func _on_mouse_entered_casque6():
-	gui_fenetre = GuiFenetre.instantiate()
-	add_child(gui_fenetre)
-	txt_titre = GuiTextUi.instantiate()
-	add_child(txt_titre)
-	var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_casque6[n] != null:
-			childGuiTxtNameItem.text = gui_casque6[n].txt_name
-	nbDecaleTextName = 30
-	txt_stat_1 = GuiTextUi.instantiate()
-	add_child(txt_stat_1)
-	var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_casque6[n] != null:
-			childGuiTxtStat1.text = "Vie : + " + str(gui_casque6[n].nb_vie)
-	txt_stat_2 = GuiTextUi.instantiate()
-	add_child(txt_stat_2)
-	var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_casque6[n] != null:
-			childGuiTxtStat2.text = "Défense : + " + str(gui_casque6[n].nb_defense)
+	if isPopUpOpen == false:
+		gui_fenetre = GuiFenetre.instantiate()
+		add_child(gui_fenetre)
+		txt_titre = GuiTextUi.instantiate()
+		add_child(txt_titre)
+		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_casque6[n] != null:
+				childGuiTxtNameItem.text = gui_casque6[n].txt_name
+		nbDecaleTextName = 30
+		txt_stat_1 = GuiTextUi.instantiate()
+		add_child(txt_stat_1)
+		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_casque6[n] != null:
+				childGuiTxtStat1.text = "Vie : + " + str(gui_casque6[n].nb_vie)
+		txt_stat_2 = GuiTextUi.instantiate()
+		add_child(txt_stat_2)
+		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_casque6[n] != null:
+				childGuiTxtStat2.text = "Défense : + " + str(gui_casque6[n].nb_defense)
 
 func _on_mouse_entered_collier1():
-	gui_fenetre = GuiFenetre.instantiate()
-	add_child(gui_fenetre)
-	txt_titre = GuiTextUi.instantiate()
-	add_child(txt_titre)
-	var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_collier1[n] != null:
-			childGuiTxtNameItem.text = gui_collier1[n].txt_name
-	nbDecaleTextName = 5
-	txt_stat_1 = GuiTextUi.instantiate()
-	add_child(txt_stat_1)
-	var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_collier1[n] != null:
-			childGuiTxtStat1.text = "Puissance : + " + str(gui_collier1[n].nb_puissance)
-	txt_stat_2 = GuiTextUi.instantiate()
-	add_child(txt_stat_2)
-	var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_collier1[n] != null:
-			childGuiTxtStat2.text = "Endurance : + " + str(gui_collier1[n].nb_endurance)
+	if isPopUpOpen == false:
+		gui_fenetre = GuiFenetre.instantiate()
+		add_child(gui_fenetre)
+		txt_titre = GuiTextUi.instantiate()
+		add_child(txt_titre)
+		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_collier1[n] != null:
+				childGuiTxtNameItem.text = gui_collier1[n].txt_name
+		nbDecaleTextName = 5
+		txt_stat_1 = GuiTextUi.instantiate()
+		add_child(txt_stat_1)
+		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_collier1[n] != null:
+				childGuiTxtStat1.text = "Puissance : + " + str(gui_collier1[n].nb_puissance)
+		txt_stat_2 = GuiTextUi.instantiate()
+		add_child(txt_stat_2)
+		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_collier1[n] != null:
+				childGuiTxtStat2.text = "Endurance : + " + str(gui_collier1[n].nb_endurance)
 
 func _on_mouse_entered_collier2():
-	gui_fenetre = GuiFenetre.instantiate()
-	add_child(gui_fenetre)
-	txt_titre = GuiTextUi.instantiate()
-	add_child(txt_titre)
-	var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_collier2[n] != null:
-			childGuiTxtNameItem.text = gui_collier2[n].txt_name
-	nbDecaleTextName = 30
-	txt_stat_1 = GuiTextUi.instantiate()
-	add_child(txt_stat_1)
-	var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_collier2[n] != null:
-			childGuiTxtStat1.text = "Puissance : + " + str(gui_collier2[n].nb_puissance)
-	txt_stat_2 = GuiTextUi.instantiate()
-	add_child(txt_stat_2)
-	var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_collier2[n] != null:
-			childGuiTxtStat2.text = "Endurance : + " + str(gui_collier2[n].nb_endurance)
+	if isPopUpOpen == false:
+		gui_fenetre = GuiFenetre.instantiate()
+		add_child(gui_fenetre)
+		txt_titre = GuiTextUi.instantiate()
+		add_child(txt_titre)
+		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_collier2[n] != null:
+				childGuiTxtNameItem.text = gui_collier2[n].txt_name
+		nbDecaleTextName = 30
+		txt_stat_1 = GuiTextUi.instantiate()
+		add_child(txt_stat_1)
+		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_collier2[n] != null:
+				childGuiTxtStat1.text = "Puissance : + " + str(gui_collier2[n].nb_puissance)
+		txt_stat_2 = GuiTextUi.instantiate()
+		add_child(txt_stat_2)
+		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_collier2[n] != null:
+				childGuiTxtStat2.text = "Endurance : + " + str(gui_collier2[n].nb_endurance)
 
 func _on_mouse_entered_collier3():
-	gui_fenetre = GuiFenetre.instantiate()
-	add_child(gui_fenetre)
-	txt_titre = GuiTextUi.instantiate()
-	add_child(txt_titre)
-	var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_collier3[n] != null:
-			childGuiTxtNameItem.text = gui_collier3[n].txt_name
-	nbDecaleTextName = 20
-	txt_stat_1 = GuiTextUi.instantiate()
-	add_child(txt_stat_1)
-	var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_collier3[n] != null:
-			childGuiTxtStat1.text = "Puissance : + " + str(gui_collier3[n].nb_puissance)
-	txt_stat_2 = GuiTextUi.instantiate()
-	add_child(txt_stat_2)
-	var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_collier3[n] != null:
-			childGuiTxtStat2.text = "Endurance : + " + str(gui_collier3[n].nb_endurance)
+	if isPopUpOpen == false:
+		gui_fenetre = GuiFenetre.instantiate()
+		add_child(gui_fenetre)
+		txt_titre = GuiTextUi.instantiate()
+		add_child(txt_titre)
+		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_collier3[n] != null:
+				childGuiTxtNameItem.text = gui_collier3[n].txt_name
+		nbDecaleTextName = 20
+		txt_stat_1 = GuiTextUi.instantiate()
+		add_child(txt_stat_1)
+		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_collier3[n] != null:
+				childGuiTxtStat1.text = "Puissance : + " + str(gui_collier3[n].nb_puissance)
+		txt_stat_2 = GuiTextUi.instantiate()
+		add_child(txt_stat_2)
+		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_collier3[n] != null:
+				childGuiTxtStat2.text = "Endurance : + " + str(gui_collier3[n].nb_endurance)
 
 func _on_mouse_entered_heaume1():
-	gui_fenetre = GuiFenetre.instantiate()
-	add_child(gui_fenetre)
-	txt_titre = GuiTextUi.instantiate()
-	add_child(txt_titre)
-	var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_heaume1[n] != null:
-			childGuiTxtNameItem.text = gui_heaume1[n].txt_name
-	nbDecaleTextName = 35
-	txt_stat_1 = GuiTextUi.instantiate()
-	add_child(txt_stat_1)
-	var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_heaume1[n] != null:
-			childGuiTxtStat1.text = "Vie : + " + str(gui_heaume1[n].nb_vie)
-	txt_stat_2 = GuiTextUi.instantiate()
-	add_child(txt_stat_2)
-	var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_heaume1[n] != null:
-			childGuiTxtStat2.text = "Défense : + " + str(gui_heaume1[n].nb_defense)
+	if isPopUpOpen == false:
+		gui_fenetre = GuiFenetre.instantiate()
+		add_child(gui_fenetre)
+		txt_titre = GuiTextUi.instantiate()
+		add_child(txt_titre)
+		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_heaume1[n] != null:
+				childGuiTxtNameItem.text = gui_heaume1[n].txt_name
+		nbDecaleTextName = 35
+		txt_stat_1 = GuiTextUi.instantiate()
+		add_child(txt_stat_1)
+		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_heaume1[n] != null:
+				childGuiTxtStat1.text = "Vie : + " + str(gui_heaume1[n].nb_vie)
+		txt_stat_2 = GuiTextUi.instantiate()
+		add_child(txt_stat_2)
+		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_heaume1[n] != null:
+				childGuiTxtStat2.text = "Défense : + " + str(gui_heaume1[n].nb_defense)
 
 func _on_mouse_entered_heaume2():
-	gui_fenetre = GuiFenetre.instantiate()
-	add_child(gui_fenetre)
-	txt_titre = GuiTextUi.instantiate()
-	add_child(txt_titre)
-	var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_heaume2[n] != null:
-			childGuiTxtNameItem.text = gui_heaume2[n].txt_name
-	nbDecaleTextName = 20
-	txt_stat_1 = GuiTextUi.instantiate()
-	add_child(txt_stat_1)
-	var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_heaume2[n] != null:
-			childGuiTxtStat1.text = "Vie : + " + str(gui_heaume2[n].nb_vie)
-	txt_stat_2 = GuiTextUi.instantiate()
-	add_child(txt_stat_2)
-	var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_heaume2[n] != null:
-			childGuiTxtStat2.text = "Défense : + " + str(gui_heaume2[n].nb_defense)
+	if isPopUpOpen == false:
+		gui_fenetre = GuiFenetre.instantiate()
+		add_child(gui_fenetre)
+		txt_titre = GuiTextUi.instantiate()
+		add_child(txt_titre)
+		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_heaume2[n] != null:
+				childGuiTxtNameItem.text = gui_heaume2[n].txt_name
+		nbDecaleTextName = 20
+		txt_stat_1 = GuiTextUi.instantiate()
+		add_child(txt_stat_1)
+		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_heaume2[n] != null:
+				childGuiTxtStat1.text = "Vie : + " + str(gui_heaume2[n].nb_vie)
+		txt_stat_2 = GuiTextUi.instantiate()
+		add_child(txt_stat_2)
+		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_heaume2[n] != null:
+				childGuiTxtStat2.text = "Défense : + " + str(gui_heaume2[n].nb_defense)
 
 func _on_mouse_entered_heaume3():
-	gui_fenetre = GuiFenetre.instantiate()
-	add_child(gui_fenetre)
-	txt_titre = GuiTextUi.instantiate()
-	add_child(txt_titre)
-	var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_heaume3[n] != null:
-			childGuiTxtNameItem.text = gui_heaume3[n].txt_name
-	nbDecaleTextName = 35
-	txt_stat_1 = GuiTextUi.instantiate()
-	add_child(txt_stat_1)
-	var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_heaume3[n] != null:
-			childGuiTxtStat1.text = "Vie : + " + str(gui_heaume3[n].nb_vie)
-	txt_stat_2 = GuiTextUi.instantiate()
-	add_child(txt_stat_2)
-	var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_heaume3[n] != null:
-			childGuiTxtStat2.text = "Défense : + " + str(gui_heaume3[n].nb_defense)
+	if isPopUpOpen == false:
+		gui_fenetre = GuiFenetre.instantiate()
+		add_child(gui_fenetre)
+		txt_titre = GuiTextUi.instantiate()
+		add_child(txt_titre)
+		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_heaume3[n] != null:
+				childGuiTxtNameItem.text = gui_heaume3[n].txt_name
+		nbDecaleTextName = 35
+		txt_stat_1 = GuiTextUi.instantiate()
+		add_child(txt_stat_1)
+		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_heaume3[n] != null:
+				childGuiTxtStat1.text = "Vie : + " + str(gui_heaume3[n].nb_vie)
+		txt_stat_2 = GuiTextUi.instantiate()
+		add_child(txt_stat_2)
+		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_heaume3[n] != null:
+				childGuiTxtStat2.text = "Défense : + " + str(gui_heaume3[n].nb_defense)
 
 func _on_mouse_entered_heaume4():
-	gui_fenetre = GuiFenetre.instantiate()
-	add_child(gui_fenetre)
-	txt_titre = GuiTextUi.instantiate()
-	add_child(txt_titre)
-	var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_heaume4[n] != null:
-			childGuiTxtNameItem.text = gui_heaume4[n].txt_name
-	nbDecaleTextName = 20
-	txt_stat_1 = GuiTextUi.instantiate()
-	add_child(txt_stat_1)
-	var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_heaume4[n] != null:
-			childGuiTxtStat1.text = "Vie : + " + str(gui_heaume4[n].nb_vie)
-	txt_stat_2 = GuiTextUi.instantiate()
-	add_child(txt_stat_2)
-	var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_heaume4[n] != null:
-			childGuiTxtStat2.text = "Défense : + " + str(gui_heaume4[n].nb_defense)
+	if isPopUpOpen == false:
+		gui_fenetre = GuiFenetre.instantiate()
+		add_child(gui_fenetre)
+		txt_titre = GuiTextUi.instantiate()
+		add_child(txt_titre)
+		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_heaume4[n] != null:
+				childGuiTxtNameItem.text = gui_heaume4[n].txt_name
+		nbDecaleTextName = 20
+		txt_stat_1 = GuiTextUi.instantiate()
+		add_child(txt_stat_1)
+		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_heaume4[n] != null:
+				childGuiTxtStat1.text = "Vie : + " + str(gui_heaume4[n].nb_vie)
+		txt_stat_2 = GuiTextUi.instantiate()
+		add_child(txt_stat_2)
+		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_heaume4[n] != null:
+				childGuiTxtStat2.text = "Défense : + " + str(gui_heaume4[n].nb_defense)
 
 func _on_mouse_entered_heaume5():
-	gui_fenetre = GuiFenetre.instantiate()
-	add_child(gui_fenetre)
-	txt_titre = GuiTextUi.instantiate()
-	add_child(txt_titre)
-	var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_heaume5[n] != null:
-			childGuiTxtNameItem.text = gui_heaume5[n].txt_name
-	nbDecaleTextName = 20
-	txt_stat_1 = GuiTextUi.instantiate()
-	add_child(txt_stat_1)
-	var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_heaume5[n] != null:
-			childGuiTxtStat1.text = "Vie : + " + str(gui_heaume5[n].nb_vie)
-	txt_stat_2 = GuiTextUi.instantiate()
-	add_child(txt_stat_2)
-	var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_heaume5[n] != null:
-			childGuiTxtStat2.text = "Défense : + " + str(gui_heaume5[n].nb_defense)
+	if isPopUpOpen == false:
+		gui_fenetre = GuiFenetre.instantiate()
+		add_child(gui_fenetre)
+		txt_titre = GuiTextUi.instantiate()
+		add_child(txt_titre)
+		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_heaume5[n] != null:
+				childGuiTxtNameItem.text = gui_heaume5[n].txt_name
+		nbDecaleTextName = 20
+		txt_stat_1 = GuiTextUi.instantiate()
+		add_child(txt_stat_1)
+		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_heaume5[n] != null:
+				childGuiTxtStat1.text = "Vie : + " + str(gui_heaume5[n].nb_vie)
+		txt_stat_2 = GuiTextUi.instantiate()
+		add_child(txt_stat_2)
+		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_heaume5[n] != null:
+				childGuiTxtStat2.text = "Défense : + " + str(gui_heaume5[n].nb_defense)
 
 func _on_mouse_entered_heaume6():
-	gui_fenetre = GuiFenetre.instantiate()
-	add_child(gui_fenetre)
-	txt_titre = GuiTextUi.instantiate()
-	add_child(txt_titre)
-	var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_heaume6[n] != null:
-			childGuiTxtNameItem.text = gui_heaume6[n].txt_name
-	nbDecaleTextName = 20
-	txt_stat_1 = GuiTextUi.instantiate()
-	add_child(txt_stat_1)
-	var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_heaume6[n] != null:
-			childGuiTxtStat1.text = "Vie : + " + str(gui_heaume6[n].nb_vie)
-	txt_stat_2 = GuiTextUi.instantiate()
-	add_child(txt_stat_2)
-	var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_heaume6[n] != null:
-			childGuiTxtStat2.text = "Défense : + " + str(gui_heaume6[n].nb_defense)
+	if isPopUpOpen == false:
+		gui_fenetre = GuiFenetre.instantiate()
+		add_child(gui_fenetre)
+		txt_titre = GuiTextUi.instantiate()
+		add_child(txt_titre)
+		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_heaume6[n] != null:
+				childGuiTxtNameItem.text = gui_heaume6[n].txt_name
+		nbDecaleTextName = 20
+		txt_stat_1 = GuiTextUi.instantiate()
+		add_child(txt_stat_1)
+		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_heaume6[n] != null:
+				childGuiTxtStat1.text = "Vie : + " + str(gui_heaume6[n].nb_vie)
+		txt_stat_2 = GuiTextUi.instantiate()
+		add_child(txt_stat_2)
+		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_heaume6[n] != null:
+				childGuiTxtStat2.text = "Défense : + " + str(gui_heaume6[n].nb_defense)
 
 func _on_mouse_entered_sword1():
-	gui_fenetre = GuiFenetre.instantiate()
-	add_child(gui_fenetre)
-	txt_titre = GuiTextUi.instantiate()
-	add_child(txt_titre)
-	var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_sword1[n] != null:
-			childGuiTxtNameItem.text = gui_sword1[n].txt_name
-	nbDecaleTextName = 30
-	txt_stat_1 = GuiTextUi.instantiate()
-	add_child(txt_stat_1)
-	var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_sword1[n] != null:
-			childGuiTxtStat1.text = "Attaque : + " + str(gui_sword1[n].nb_attaque)
+	if isPopUpOpen == false:
+		gui_fenetre = GuiFenetre.instantiate()
+		add_child(gui_fenetre)
+		txt_titre = GuiTextUi.instantiate()
+		add_child(txt_titre)
+		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_sword1[n] != null:
+				childGuiTxtNameItem.text = gui_sword1[n].txt_name
+		nbDecaleTextName = 30
+		txt_stat_1 = GuiTextUi.instantiate()
+		add_child(txt_stat_1)
+		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_sword1[n] != null:
+				childGuiTxtStat1.text = "Attaque : + " + str(gui_sword1[n].nb_attaque)
 
 func _on_mouse_entered_sword2():
-	gui_fenetre = GuiFenetre.instantiate()
-	add_child(gui_fenetre)
-	txt_titre = GuiTextUi.instantiate()
-	add_child(txt_titre)
-	var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_sword2[n] != null:
-			childGuiTxtNameItem.text = gui_sword2[n].txt_name
-	nbDecaleTextName = 30
-	txt_stat_1 = GuiTextUi.instantiate()
-	add_child(txt_stat_1)
-	var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_sword2[n] != null:
-			childGuiTxtStat1.text = "Attaque : + " + str(gui_sword2[n].nb_attaque)
+	if isPopUpOpen == false:
+		gui_fenetre = GuiFenetre.instantiate()
+		add_child(gui_fenetre)
+		txt_titre = GuiTextUi.instantiate()
+		add_child(txt_titre)
+		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_sword2[n] != null:
+				childGuiTxtNameItem.text = gui_sword2[n].txt_name
+		nbDecaleTextName = 30
+		txt_stat_1 = GuiTextUi.instantiate()
+		add_child(txt_stat_1)
+		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_sword2[n] != null:
+				childGuiTxtStat1.text = "Attaque : + " + str(gui_sword2[n].nb_attaque)
 
 func _on_mouse_entered_sword3():
-	gui_fenetre = GuiFenetre.instantiate()
-	add_child(gui_fenetre)
-	txt_titre = GuiTextUi.instantiate()
-	add_child(txt_titre)
-	var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_sword3[n] != null:
-			childGuiTxtNameItem.text = gui_sword3[n].txt_name
-	nbDecaleTextName = 1
-	txt_stat_1 = GuiTextUi.instantiate()
-	add_child(txt_stat_1)
-	var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_sword3[n] != null:
-			childGuiTxtStat1.text = "Attaque : + " + str(gui_sword3[n].nb_attaque)
+	if isPopUpOpen == false:
+		gui_fenetre = GuiFenetre.instantiate()
+		add_child(gui_fenetre)
+		txt_titre = GuiTextUi.instantiate()
+		add_child(txt_titre)
+		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_sword3[n] != null:
+				childGuiTxtNameItem.text = gui_sword3[n].txt_name
+		nbDecaleTextName = 1
+		txt_stat_1 = GuiTextUi.instantiate()
+		add_child(txt_stat_1)
+		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_sword3[n] != null:
+				childGuiTxtStat1.text = "Attaque : + " + str(gui_sword3[n].nb_attaque)
 
 func _on_mouse_entered_sword4():
-	gui_fenetre = GuiFenetre.instantiate()
-	add_child(gui_fenetre)
-	txt_titre = GuiTextUi.instantiate()
-	add_child(txt_titre)
-	var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_sword4[n] != null:
-			childGuiTxtNameItem.text = gui_sword4[n].txt_name
-	nbDecaleTextName = 30
-	txt_stat_1 = GuiTextUi.instantiate()
-	add_child(txt_stat_1)
-	var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_sword4[n] != null:
-			childGuiTxtStat1.text = "Attaque : + " + str(gui_sword4[n].nb_attaque)
+	if isPopUpOpen == false:
+		gui_fenetre = GuiFenetre.instantiate()
+		add_child(gui_fenetre)
+		txt_titre = GuiTextUi.instantiate()
+		add_child(txt_titre)
+		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_sword4[n] != null:
+				childGuiTxtNameItem.text = gui_sword4[n].txt_name
+		nbDecaleTextName = 30
+		txt_stat_1 = GuiTextUi.instantiate()
+		add_child(txt_stat_1)
+		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_sword4[n] != null:
+				childGuiTxtStat1.text = "Attaque : + " + str(gui_sword4[n].nb_attaque)
 
 func _on_mouse_entered_sword5():
-	gui_fenetre = GuiFenetre.instantiate()
-	add_child(gui_fenetre)
-	txt_titre = GuiTextUi.instantiate()
-	add_child(txt_titre)
-	var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_sword5[n] != null:
-			childGuiTxtNameItem.text = gui_sword5[n].txt_name
-	nbDecaleTextName = 30
-	txt_stat_1 = GuiTextUi.instantiate()
-	add_child(txt_stat_1)
-	var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_sword5[n] != null:
-			childGuiTxtStat1.text = "Attaque : + " + str(gui_sword5[n].nb_attaque)
+	if isPopUpOpen == false:
+		gui_fenetre = GuiFenetre.instantiate()
+		add_child(gui_fenetre)
+		txt_titre = GuiTextUi.instantiate()
+		add_child(txt_titre)
+		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_sword5[n] != null:
+				childGuiTxtNameItem.text = gui_sword5[n].txt_name
+		nbDecaleTextName = 30
+		txt_stat_1 = GuiTextUi.instantiate()
+		add_child(txt_stat_1)
+		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_sword5[n] != null:
+				childGuiTxtStat1.text = "Attaque : + " + str(gui_sword5[n].nb_attaque)
 
 func _on_mouse_entered_sword6():
-	gui_fenetre = GuiFenetre.instantiate()
-	add_child(gui_fenetre)
-	txt_titre = GuiTextUi.instantiate()
-	add_child(txt_titre)
-	var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_sword6[n] != null:
-			childGuiTxtNameItem.text = gui_sword6[n].txt_name
-	nbDecaleTextName = 50
-	txt_stat_1 = GuiTextUi.instantiate()
-	add_child(txt_stat_1)
-	var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_sword6[n] != null:
-			childGuiTxtStat1.text = "Attaque : + " + str(gui_sword6[n].nb_attaque)
+	if isPopUpOpen == false:
+		gui_fenetre = GuiFenetre.instantiate()
+		add_child(gui_fenetre)
+		txt_titre = GuiTextUi.instantiate()
+		add_child(txt_titre)
+		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_sword6[n] != null:
+				childGuiTxtNameItem.text = gui_sword6[n].txt_name
+		nbDecaleTextName = 50
+		txt_stat_1 = GuiTextUi.instantiate()
+		add_child(txt_stat_1)
+		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_sword6[n] != null:
+				childGuiTxtStat1.text = "Attaque : + " + str(gui_sword6[n].nb_attaque)
 
 func _on_mouse_entered_sword7():
-	gui_fenetre = GuiFenetre.instantiate()
-	add_child(gui_fenetre)
-	txt_titre = GuiTextUi.instantiate()
-	add_child(txt_titre)
-	var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_sword7[n] != null:
-			childGuiTxtNameItem.text = gui_sword7[n].txt_name
-	nbDecaleTextName = 30
-	txt_stat_1 = GuiTextUi.instantiate()
-	add_child(txt_stat_1)
-	var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_sword7[n] != null:
-			childGuiTxtStat1.text = "Attaque : + " + str(gui_sword7[n].nb_attaque)
+	if isPopUpOpen == false:
+		gui_fenetre = GuiFenetre.instantiate()
+		add_child(gui_fenetre)
+		txt_titre = GuiTextUi.instantiate()
+		add_child(txt_titre)
+		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_sword7[n] != null:
+				childGuiTxtNameItem.text = gui_sword7[n].txt_name
+		nbDecaleTextName = 30
+		txt_stat_1 = GuiTextUi.instantiate()
+		add_child(txt_stat_1)
+		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_sword7[n] != null:
+				childGuiTxtStat1.text = "Attaque : + " + str(gui_sword7[n].nb_attaque)
 
 func _on_mouse_entered_sword8():
-	gui_fenetre = GuiFenetre.instantiate()
-	add_child(gui_fenetre)
-	txt_titre = GuiTextUi.instantiate()
-	add_child(txt_titre)
-	var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_sword8[n] != null:
-			childGuiTxtNameItem.text = gui_sword8[n].txt_name
-	nbDecaleTextName = 45
-	txt_stat_1 = GuiTextUi.instantiate()
-	add_child(txt_stat_1)
-	var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
-	for n in range(20):
-		if gui_sword8[n] != null:
-			childGuiTxtStat1.text = "Attaque : + " + str(gui_sword8[n].nb_attaque)
+	if isPopUpOpen == false:
+		gui_fenetre = GuiFenetre.instantiate()
+		add_child(gui_fenetre)
+		txt_titre = GuiTextUi.instantiate()
+		add_child(txt_titre)
+		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_sword8[n] != null:
+				childGuiTxtNameItem.text = gui_sword8[n].txt_name
+		nbDecaleTextName = 45
+		txt_stat_1 = GuiTextUi.instantiate()
+		add_child(txt_stat_1)
+		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		for n in range(20):
+			if gui_sword8[n] != null:
+				childGuiTxtStat1.text = "Attaque : + " + str(gui_sword8[n].nb_attaque)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	DataSave.hero.vie = 90
 	gui_potion_vie.resize(20)
 	gui_potion_mana.resize(20)
 	gui_potion_elixir.resize(20)
@@ -1273,6 +1382,106 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	#var sizeScreen = get_viewport().get_visible_rect().size
 	var mouse_pos = get_viewport().get_mouse_position()
+	
+	for i in range(20):
+		
+		if txtItemSelect[i] == "potion_vie":
+			#print("item select est potion de vie : ", txtItemSelect)
+			if DataSave.hero.vie != DataSave.hero.vieMax:
+				if isPopUpOpen == false:
+					gui_popUp = GuiPopUp.instantiate()
+					add_child(gui_popUp)
+					gui_popUp.scale = Vector2(0.5, 0.5)
+					gui_popUp.offset.x = mouse_pos.x
+					gui_popUp.offset.y = mouse_pos.y
+					
+					gui_buttonOnUse = GuiButtonOn.instantiate()
+					add_child(gui_buttonOnUse)
+					gui_buttonOnUse.scale = Vector2(0.5, 0.5)
+					gui_buttonOnUse.offset.x = mouse_pos.x + 20
+					gui_buttonOnUse.offset.y = mouse_pos.y + 30
+					
+					gui_buttonOnStocker = GuiButtonOn.instantiate()
+					add_child(gui_buttonOnStocker)
+					gui_buttonOnStocker.scale = Vector2(0.5, 0.5)
+					gui_buttonOnStocker.offset.x = mouse_pos.x + 20
+					gui_buttonOnStocker.offset.y = mouse_pos.y + 75
+					
+					gui_buttonOnJeter = GuiButtonOn.instantiate()
+					add_child(gui_buttonOnJeter)
+					gui_buttonOnJeter.scale = Vector2(0.5, 0.5)
+					gui_buttonOnJeter.offset.x = mouse_pos.x + 20
+					gui_buttonOnJeter.offset.y = mouse_pos.y + 120
+					
+					txt_popup_1 = GuiTextUi.instantiate()
+					add_child(txt_popup_1)
+					
+					var childTxtPop1 = txt_popup_1.get_node("labelGuiTextFenetre")
+					childTxtPop1.text = "Utiliser"
+					childTxtPop1.position.x = mouse_pos.x + 24
+					childTxtPop1.position.y = mouse_pos.y + 35
+					childTxtPop1.add_theme_font_size_override("font_size", 29)
+					childTxtPop1.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+					
+					txt_popup_2 = GuiTextUi.instantiate()
+					add_child(txt_popup_2)
+					
+					var childTxtPop2 = txt_popup_2.get_node("labelGuiTextFenetre")
+					childTxtPop2.text = "Stocker"
+					childTxtPop2.position.x = mouse_pos.x + 24
+					childTxtPop2.position.y = mouse_pos.y + 80
+					childTxtPop2.add_theme_font_size_override("font_size", 29)
+					childTxtPop2.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+					
+					
+					txt_popup_3 = GuiTextUi.instantiate()
+					add_child(txt_popup_3)
+					
+					var childTxtPop3 = txt_popup_3.get_node("labelGuiTextFenetre")
+					childTxtPop3.text = "Jeter"
+					childTxtPop3.position.x = mouse_pos.x + 37
+					childTxtPop3.position.y = mouse_pos.y + 125
+					childTxtPop3.add_theme_font_size_override("font_size", 29)
+					childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+					
+					isPopUpOpen = true
+					print("J'ouvre le pop up")
+			else:
+				pass
+				#print("Vie déja plein j'ouvre pas le pop up")
+			
+			if isPopUpOpen == true:
+				if mouse_pos.x >= gui_buttonOnUse.offset.x and mouse_pos.x <= gui_buttonOnUse.offset.x + 90 and mouse_pos.y >= gui_buttonOnUse.offset.y and mouse_pos.y <= gui_buttonOnUse.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button use ")
+						DataSave.hero.vie = DataSave.hero.vieMax
+						gui_potion_vie[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.potionVie -= 1
+						nbCompteurPotionVie -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnUse.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+						
+				
+				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button stocker ")
+				
+				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button jeter ")
+			#Faut creer lobjet popup (button interface text et tout)
+			#Faut que j'ajoute les conditions pour le clic et tout 
+			#A la fin remettre la variable txtItemSelect a "none"
+	
 	if gui_fenetre != null:
 		gui_fenetre.offset.x = mouse_pos.x+10
 		gui_fenetre.offset.y = mouse_pos.y+13
@@ -1957,6 +2166,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						if n == 0:
 							if txtTypeClic == "left": 
 								print("on utilise l'item")
+								txtItemSelect[0] = "potion_vie"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_potion_vie[0].queue_free()
@@ -1969,6 +2179,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 1:
 							if txtTypeClic == "left":
 								print("on utilise l'item")
+								txtItemSelect[1] = "potion_vie"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_potion_vie[1].queue_free()
@@ -1981,6 +2192,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 2:
 							if txtTypeClic == "left":
 								print("utilise l'item")
+								txtItemSelect[2] = "potion_vie"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_potion_vie[2].queue_free()
@@ -1993,6 +2205,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 3:
 							if txtTypeClic == "left":
 								print("utilise l'item")
+								txtItemSelect[3] = "potion_vie"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_potion_vie[3].queue_free()
@@ -2004,6 +2217,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 4:
 							if txtTypeClic == "left":
 								print("utilise l'item")
+								txtItemSelect[4] = "potion_vie"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_potion_vie[4].queue_free()
@@ -2015,6 +2229,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 5:
 							if txtTypeClic == "left":
 								print("utilise item")
+								txtItemSelect[5] = "potion_vie"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_potion_vie[5].queue_free()
@@ -2026,6 +2241,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 6:
 							if txtTypeClic == "left":
 								print("utilise item")
+								txtItemSelect[6] = "potion_vie"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_potion_vie[6].queue_free()
@@ -2037,6 +2253,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 7:
 							if txtTypeClic == "left":
 								print("utilise item")
+								txtItemSelect[7] = "potion_vie"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_potion_vie[7].queue_free()
@@ -2048,6 +2265,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 8:
 							if txtTypeClic == "left": 
 								print("utilise item")
+								txtItemSelect[8] = "potion_vie"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_potion_vie[8].queue_free()
@@ -2059,6 +2277,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 9:
 							if txtTypeClic == "left":
 								print("utilise item")
+								txtItemSelect[9] = "potion_vie"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_potion_vie[9].queue_free()
@@ -2070,6 +2289,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 10:
 							if txtTypeClic == "left":
 								print("utilise item")
+								txtItemSelect[10] = "potion_vie"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_potion_vie[10].queue_free()
@@ -2081,6 +2301,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 11:
 							if txtTypeClic == "left":
 								print("utilise item")
+								txtItemSelect[11] = "potion_vie"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_potion_vie[11].queue_free()
@@ -2092,6 +2313,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 12:
 							if txtTypeClic == "left":
 								print("utilise item")
+								txtItemSelect[12] = "potion_vie"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_potion_vie[12].queue_free()
@@ -2103,6 +2325,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 13:
 							if txtTypeClic == "left":
 								print("utilise item")
+								txtItemSelect[13] = "potion_vie"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_potion_vie[13].queue_free()
@@ -2114,6 +2337,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 14:
 							if txtTypeClic == "left":
 								print("utilise item")
+								txtItemSelect[14] = "potion_vie"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_potion_vie[14].queue_free()
@@ -2125,6 +2349,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 15:
 							if txtTypeClic == "left": 
 								print("utilise item")
+								txtItemSelect[15] = "potion_vie"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_potion_vie[15].queue_free()
@@ -2136,6 +2361,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 16:
 							if txtTypeClic == "left":
 								print("utilise item")
+								txtItemSelect[16] = "potion_vie"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_potion_vie[16].queue_free()
@@ -2147,6 +2373,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 17:
 							if txtTypeClic == "left":
 								print("utilise item")
+								txtItemSelect[17] = "potion_vie"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_potion_vie[17].queue_free()
@@ -2158,6 +2385,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 18:
 							if txtTypeClic == "left":
 								print("utilise item")
+								txtItemSelect[18] = "potion_vie"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_potion_vie[18].queue_free()
@@ -2169,6 +2397,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 19:
 							if txtTypeClic == "left":
 								print("utilise item")
+								txtItemSelect[19] = "potion_vie"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_potion_vie[19].queue_free()
@@ -2183,6 +2412,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						if n == 0:
 							if  txtTypeClic == "left":
 								print("utilise item")
+								txtItemSelect[0] = "potion_mana"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_potion_mana[0].queue_free()
@@ -2194,6 +2424,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 1:
 							if txtTypeClic == "left":
 								print("utilise item")
+								txtItemSelect[1] = "potion_mana"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_potion_mana[1].queue_free()
@@ -2205,6 +2436,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 2:
 							if txtTypeClic == "left":
 								print("utilise item")
+								txtItemSelect[2] = "potion_mana"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_potion_mana[2].queue_free()
@@ -2216,6 +2448,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 3:
 							if txtTypeClic == "left":
 								print("utilise item")
+								txtItemSelect[3] = "potion_mana"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_potion_mana[3].queue_free()
@@ -2227,6 +2460,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 4:
 							if txtTypeClic == "left":
 								print("utilise item")
+								txtItemSelect[4] = "potion_mana"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_potion_mana[4].queue_free()
@@ -2238,6 +2472,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 5:
 							if txtTypeClic == "left":
 								print("utilise item")
+								txtItemSelect[5] = "potion_mana"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_potion_mana[5].queue_free()
@@ -2249,6 +2484,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 6:
 							if txtTypeClic == "left":
 								print("utilise item")
+								txtItemSelect[6] = "potion_mana"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_potion_mana[6].queue_free()
@@ -2260,6 +2496,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 7:
 							if txtTypeClic == "left":
 								print("utilise item")
+								txtItemSelect[7] = "potion_mana"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_potion_mana[7].queue_free()
@@ -2271,6 +2508,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 8:
 							if txtTypeClic == "left":
 								print("utilise item")
+								txtItemSelect[8] = "potion_mana"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_potion_mana[8].queue_free()
@@ -2282,6 +2520,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 9:
 							if txtTypeClic == "left":
 								print("utilise item")
+								txtItemSelect[9] = "potion_mana"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_potion_mana[9].queue_free()
@@ -2293,6 +2532,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 10:
 							if txtTypeClic == "left":
 								print("utilise item")
+								txtItemSelect[10] = "potion_mana"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_potion_mana[10].queue_free()
@@ -2304,6 +2544,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 11:
 							if txtTypeClic == "left":
 								print("utilise item")
+								txtItemSelect[11] = "potion_mana"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_potion_mana[11].queue_free()
@@ -2315,6 +2556,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 12:
 							if txtTypeClic == "left":
 								print("utilise item")
+								txtItemSelect[12] = "potion_mana"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_potion_mana[12].queue_free()
@@ -2326,6 +2568,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 13:
 							if txtTypeClic == "left":
 								print("utilise item")
+								txtItemSelect[13] = "potion_mana"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_potion_mana[13].queue_free()
@@ -2337,6 +2580,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 14:
 							if txtTypeClic == "left":
 								print("utilise item")
+								txtItemSelect[14] = "potion_mana"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_potion_mana[14].queue_free()
@@ -2348,6 +2592,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 15:
 							if txtTypeClic == "left":
 								print("utilise item")
+								txtItemSelect[15] = "potion_mana"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_potion_mana[15].queue_free()
@@ -2359,6 +2604,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 16:
 							if txtTypeClic == "left":
 								print("utilise item")
+								txtItemSelect[16] = "potion_mana"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_potion_mana[16].queue_free()
@@ -2370,6 +2616,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 17:
 							if txtTypeClic == "left":
 								print("utilise item")
+								txtItemSelect[17] = "potion_mana"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_potion_mana[17].queue_free()
@@ -2381,6 +2628,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 18:
 							if txtTypeClic == "left":
 								print("utilise item")
+								txtItemSelect[18] = "potion_mana"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_potion_mana[18].queue_free()
@@ -2392,6 +2640,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 19:
 							if txtTypeClic == "left":
 								print("utilise item")
+								txtItemSelect[19] = "potion_mana"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_potion_mana[19].queue_free()
@@ -2407,6 +2656,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						if n == 0:
 							if txtTypeClic == "left":
 								print("utilise item")
+								txtItemSelect[0] = "potion_elixir"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_potion_elixir[0].queue_free()
@@ -2418,6 +2668,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 1:
 							if txtTypeClic == "left":
 								print("utilise item")
+								txtItemSelect[1] = "potion_elixir"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_potion_elixir[1].queue_free()
@@ -2429,6 +2680,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 2:
 							if txtTypeClic == "left":
 								print("utilise item")
+								txtItemSelect[2] = "potion_elixir"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_potion_elixir[2].queue_free()
@@ -2440,6 +2692,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 3:
 							if txtTypeClic == "left":
 								print("utilise item")
+								txtItemSelect[3] = "potion_elixir"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_potion_elixir[3].queue_free()
@@ -2451,6 +2704,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 4:
 							if txtTypeClic == "left":
 								print("utilise item")
+								txtItemSelect[4] = "potion_elixir"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_potion_elixir[4].queue_free()
@@ -2462,6 +2716,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 5:
 							if txtTypeClic == "left":
 								print("utilise item")
+								txtItemSelect[5] = "potion_elixir"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_potion_elixir[5].queue_free()
@@ -2473,6 +2728,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 6:
 							if txtTypeClic == "left":
 								print("utilise item")
+								txtItemSelect[6] = "potion_elixir"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_potion_elixir[6].queue_free()
@@ -2484,6 +2740,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 7:
 							if txtTypeClic == "left":
 								print("utilise item")
+								txtItemSelect[7] = "potion_elixir"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_potion_elixir[7].queue_free()
@@ -2495,6 +2752,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 8:
 							if txtTypeClic == "left":
 								print("utilise item")
+								txtItemSelect[8] = "potion_elixir"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_potion_elixir[8].queue_free()
@@ -2506,6 +2764,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 9:
 							if txtTypeClic == "left":
 								print("utilise item")
+								txtItemSelect[9] = "potion_elixir"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_potion_elixir[9].queue_free()
@@ -2517,6 +2776,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 10:
 							if txtTypeClic == "left":
 								print("utilise item")
+								txtItemSelect[10] = "potion_elixir"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_potion_elixir[10].queue_free()
@@ -2528,6 +2788,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 11:
 							if txtTypeClic == "left":
 								print("utilise item")
+								txtItemSelect[11] = "potion_elixir"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_potion_elixir[11].queue_free()
@@ -2539,6 +2800,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 12:
 							if txtTypeClic == "left":
 								print("utilise item")
+								txtItemSelect[12] = "potion_elixir"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_potion_elixir[12].queue_free()
@@ -2550,6 +2812,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 13:
 							if txtTypeClic == "left":
 								print("utilise item")
+								txtItemSelect[13] = "potion_elixir"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_potion_elixir[13].queue_free()
@@ -2561,6 +2824,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 14:
 							if txtTypeClic == "left":
 								print("utilise item")
+								txtItemSelect[14] = "potion_elixir"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_potion_elixir[14].queue_free()
@@ -2572,6 +2836,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 15:
 							if txtTypeClic == "left":
 								print("utilise item")
+								txtItemSelect[15] = "potion_elixir"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_potion_elixir[15].queue_free()
@@ -2583,6 +2848,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 16:
 							if txtTypeClic == "left":
 								print("utilise item")
+								txtItemSelect[16] = "potion_elixir"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_potion_elixir[16].queue_free()
@@ -2594,6 +2860,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 17:
 							if txtTypeClic == "left":
 								print("utilise item")
+								txtItemSelect[17] = "potion_elixir"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_potion_elixir[17].queue_free()
@@ -2605,6 +2872,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 18:
 							if txtTypeClic == "left":
 								print("utilise item")
+								txtItemSelect[18] = "potion_elixir"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_potion_elixir[18].queue_free()
@@ -2616,6 +2884,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 19:
 							if txtTypeClic == "left":
 								print("utilise item")
+								txtItemSelect[19] = "potion_elixir"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_potion_elixir[19].queue_free()
@@ -2631,6 +2900,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						if n == 0:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[0] = "bague_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bague1[0].queue_free()
@@ -2642,6 +2912,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 1:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[1] = "bague_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bague1[1].queue_free()
@@ -2653,6 +2924,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 2:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[2] = "bague_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bague1[2].queue_free()
@@ -2664,6 +2936,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 3:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[3] = "bague_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bague1[3].queue_free()
@@ -2675,6 +2948,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 4:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[4] = "bague_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bague1[4].queue_free()
@@ -2686,6 +2960,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 5:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[5] = "bague_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bague1[5].queue_free()
@@ -2697,6 +2972,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 6:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[6] = "bague_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bague1[6].queue_free()
@@ -2708,6 +2984,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 7:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[7] = "bague_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bague1[7].queue_free()
@@ -2719,6 +2996,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 8:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[8] = "bague_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bague1[8].queue_free()
@@ -2730,6 +3008,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 9:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[9] = "bague_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bague1[9].queue_free()
@@ -2741,6 +3020,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 10:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[10] = "bague_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bague1[10].queue_free()
@@ -2752,6 +3032,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 11:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[11] = "bague_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bague1[11].queue_free()
@@ -2763,6 +3044,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 12:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[12] = "bague_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bague1[12].queue_free()
@@ -2774,6 +3056,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 13:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[13] = "bague_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bague1[13].queue_free()
@@ -2785,6 +3068,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 14:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[14] = "bague_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bague1[14].queue_free()
@@ -2796,6 +3080,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 15:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[15] = "bague_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bague1[15].queue_free()
@@ -2807,6 +3092,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 16:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[16] = "bague_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bague1[16].queue_free()
@@ -2818,6 +3104,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 17:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[17] = "bague_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bague1[17].queue_free()
@@ -2829,6 +3116,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 18:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[18] = "bague_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bague1[18].queue_free()
@@ -2840,6 +3128,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 19:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[19] = "bague_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bague1[19].queue_free()
@@ -2855,6 +3144,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						if n == 0:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[0] = "bague_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bague2[0].queue_free()
@@ -2866,6 +3156,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 1:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[1] = "bague_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bague2[1].queue_free()
@@ -2877,6 +3168,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 2:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[2] = "bague_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bague2[2].queue_free()
@@ -2888,6 +3180,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 3:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[3] = "bague_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bague2[3].queue_free()
@@ -2899,6 +3192,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 4:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[4] = "bague_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bague2[4].queue_free()
@@ -2910,6 +3204,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 5:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[5] = "bague_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bague2[5].queue_free()
@@ -2921,6 +3216,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 6:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[6] = "bague_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bague2[6].queue_free()
@@ -2932,6 +3228,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 7:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[7] = "bague_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bague2[7].queue_free()
@@ -2943,6 +3240,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 8:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[8] = "bague_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bague2[8].queue_free()
@@ -2954,6 +3252,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 9:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[9] = "bague_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bague2[9].queue_free()
@@ -2965,6 +3264,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 10:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[10] = "bague_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bague2[10].queue_free()
@@ -2976,6 +3276,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 11:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[11] = "bague_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bague2[11].queue_free()
@@ -2987,6 +3288,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 12:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[12] = "bague_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bague2[12].queue_free()
@@ -2998,6 +3300,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 13:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[13] = "bague_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bague2[13].queue_free()
@@ -3009,6 +3312,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 14:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[14] = "bague_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bague2[14].queue_free()
@@ -3020,6 +3324,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 15:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[15] = "bague_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bague2[15].queue_free()
@@ -3031,6 +3336,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 16:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[16] = "bague_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bague2[16].queue_free()
@@ -3042,6 +3348,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 17:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[17] = "bague_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bague2[17].queue_free()
@@ -3053,6 +3360,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 18:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[18] = "bague_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bague2[18].queue_free()
@@ -3064,6 +3372,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 19:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[19] = "bague_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bague2[19].queue_free()
@@ -3079,6 +3388,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						if n == 0:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[0] = "bague_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bague3[0].queue_free()
@@ -3090,6 +3400,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 1:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[1] = "bague_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bague3[1].queue_free()
@@ -3101,6 +3412,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 2:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[2] = "bague_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bague3[2].queue_free()
@@ -3112,6 +3424,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 3:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[3] = "bague_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bague3[3].queue_free()
@@ -3123,6 +3436,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 4:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[4] = "bague_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bague3[4].queue_free()
@@ -3134,6 +3448,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 5:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[5] = "bague_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bague3[5].queue_free()
@@ -3145,6 +3460,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 6:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[6] = "bague_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bague3[6].queue_free()
@@ -3156,6 +3472,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 7:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[7] = "bague_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bague3[7].queue_free()
@@ -3167,6 +3484,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 8:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[8] = "bague_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bague3[8].queue_free()
@@ -3178,6 +3496,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 9:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[9] = "bague_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bague3[9].queue_free()
@@ -3189,6 +3508,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 10:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[10] = "bague_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bague3[10].queue_free()
@@ -3200,6 +3520,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 11:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[11] = "bague_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bague3[11].queue_free()
@@ -3211,6 +3532,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 12:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[12] = "bague_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bague3[12].queue_free()
@@ -3222,6 +3544,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 13:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[13] = "bague_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bague3[13].queue_free()
@@ -3233,6 +3556,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 14:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[14] = "bague_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bague3[14].queue_free()
@@ -3244,6 +3568,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 15:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[15] = "bague_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bague3[15].queue_free()
@@ -3255,6 +3580,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 16:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[16] = "bague_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bague3[16].queue_free()
@@ -3266,6 +3592,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 17:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[17] = "bague_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bague3[17].queue_free()
@@ -3277,6 +3604,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 18:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[18] = "bague_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bague3[18].queue_free()
@@ -3288,6 +3616,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 19:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[19] = "bague_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bague3[19].queue_free()
@@ -3304,6 +3633,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						if n == 0:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[0] = "bottes_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes1[0].queue_free()
@@ -3315,6 +3645,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 1:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[1] = "bottes_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes1[1].queue_free()
@@ -3326,6 +3657,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 2:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[2] = "bottes_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes1[2].queue_free()
@@ -3337,6 +3669,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 3:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[3] = "bottes_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes1[3].queue_free()
@@ -3348,6 +3681,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 4:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[4] = "bottes_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes1[4].queue_free()
@@ -3359,6 +3693,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 5:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[5] = "bottes_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes1[5].queue_free()
@@ -3370,6 +3705,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 6:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[6] = "bottes_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes1[6].queue_free()
@@ -3381,6 +3717,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 7:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[7] = "bottes_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes1[7].queue_free()
@@ -3392,6 +3729,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 8:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[8] = "bottes_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes1[8].queue_free()
@@ -3403,6 +3741,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 9:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[9] = "bottes_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes1[9].queue_free()
@@ -3414,6 +3753,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 10:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[10] = "bottes_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes1[10].queue_free()
@@ -3425,6 +3765,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 11:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[11] = "bottes_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes1[11].queue_free()
@@ -3436,6 +3777,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 12:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[12] = "bottes_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes1[12].queue_free()
@@ -3447,6 +3789,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 13:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[13] = "bottes_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes1[13].queue_free()
@@ -3458,6 +3801,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 14:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[14] = "bottes_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes1[14].queue_free()
@@ -3469,6 +3813,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 15:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[15] = "bottes_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes1[15].queue_free()
@@ -3480,6 +3825,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 16:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[16] = "bottes_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes1[16].queue_free()
@@ -3491,6 +3837,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 17:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[17] = "bottes_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes1[17].queue_free()
@@ -3502,6 +3849,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 18:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[18] = "bottes_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes1[18].queue_free()
@@ -3513,6 +3861,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 19:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[19] = "bottes_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes1[19].queue_free()
@@ -3528,6 +3877,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						if n == 0:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[0] = "bottes_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes2[0].queue_free()
@@ -3539,6 +3889,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 1:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[1] = "bottes_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes2[1].queue_free()
@@ -3550,6 +3901,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 2:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[2] = "bottes_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes2[2].queue_free()
@@ -3561,6 +3913,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 3:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[3] = "bottes_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes2[3].queue_free()
@@ -3572,6 +3925,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 4:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[4] = "bottes_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes2[4].queue_free()
@@ -3583,6 +3937,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 5:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[5] = "bottes_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes2[5].queue_free()
@@ -3594,6 +3949,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 6:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[6] = "bottes_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes2[6].queue_free()
@@ -3605,6 +3961,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 7:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[7] = "bottes_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes2[7].queue_free()
@@ -3616,6 +3973,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 8:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[8] = "bottes_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes2[8].queue_free()
@@ -3627,6 +3985,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 9:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[9] = "bottes_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes2[9].queue_free()
@@ -3638,6 +3997,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 10:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[10] = "bottes_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes2[10].queue_free()
@@ -3649,6 +4009,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 11:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[11] = "bottes_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes2[11].queue_free()
@@ -3660,6 +4021,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 12:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[12] = "bottes_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes2[12].queue_free()
@@ -3671,6 +4033,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 13:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[13] = "bottes_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes2[13].queue_free()
@@ -3682,6 +4045,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 14:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[14] = "bottes_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes2[14].queue_free()
@@ -3693,6 +4057,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 15:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[15] = "bottes_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes2[15].queue_free()
@@ -3704,6 +4069,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 16:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[16] = "bottes_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes2[16].queue_free()
@@ -3715,6 +4081,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 17:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[17] = "bottes_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes2[17].queue_free()
@@ -3726,6 +4093,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 18:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[18] = "bottes_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes2[18].queue_free()
@@ -3737,6 +4105,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 19:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[19] = "bottes_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes2[19].queue_free()
@@ -3752,6 +4121,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						if n == 0:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[0] = "bottes_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes3[0].queue_free()
@@ -3763,6 +4133,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 1:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[1] = "bottes_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes3[1].queue_free()
@@ -3774,6 +4145,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 2:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[2] = "bottes_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes3[2].queue_free()
@@ -3785,6 +4157,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 3:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[3] = "bottes_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes3[3].queue_free()
@@ -3796,6 +4169,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 4:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[4] = "bottes_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes3[4].queue_free()
@@ -3807,6 +4181,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 5:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[5] = "bottes_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes3[5].queue_free()
@@ -3818,6 +4193,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 6:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[6] = "bottes_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes3[6].queue_free()
@@ -3829,6 +4205,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 7:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[7] = "bottes_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes3[7].queue_free()
@@ -3840,6 +4217,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 8:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[8] = "bottes_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes3[8].queue_free()
@@ -3851,6 +4229,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 9:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[9] = "bottes_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes3[9].queue_free()
@@ -3862,6 +4241,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 10:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[10] = "bottes_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes3[10].queue_free()
@@ -3873,6 +4253,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 11:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[11] = "bottes_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes3[11].queue_free()
@@ -3884,6 +4265,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 12:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[12] = "bottes_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes3[12].queue_free()
@@ -3895,6 +4277,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 13:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[13] = "bottes_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes3[13].queue_free()
@@ -3906,6 +4289,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 14:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[14] = "bottes_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes3[14].queue_free()
@@ -3917,6 +4301,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 15:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[15] = "bottes_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes3[15].queue_free()
@@ -3928,6 +4313,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 16:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[16] = "bottes_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes3[16].queue_free()
@@ -3939,6 +4325,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 17:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[17] = "bottes_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes3[17].queue_free()
@@ -3950,6 +4337,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 18:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[18] = "bottes_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes3[18].queue_free()
@@ -3961,6 +4349,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 19:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[19] = "bottes_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes3[19].queue_free()
@@ -3976,6 +4365,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						if n == 0:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[0] = "bottes_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes4[0].queue_free()
@@ -3987,6 +4377,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 1:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[1] = "bottes_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes4[1].queue_free()
@@ -3998,6 +4389,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 2:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[2] = "bottes_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes4[2].queue_free()
@@ -4009,6 +4401,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 3:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[3] = "bottes_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes4[3].queue_free()
@@ -4020,6 +4413,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 4:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[4] = "bottes_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes4[4].queue_free()
@@ -4031,6 +4425,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 5:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[5] = "bottes_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes4[5].queue_free()
@@ -4042,6 +4437,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 6:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[6] = "bottes_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes4[6].queue_free()
@@ -4053,6 +4449,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 7:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[7] = "bottes_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes4[7].queue_free()
@@ -4064,6 +4461,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 8:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[8] = "bottes_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes4[8].queue_free()
@@ -4075,6 +4473,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 9:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[9] = "bottes_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes4[9].queue_free()
@@ -4086,6 +4485,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 10:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[10] = "bottes_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes4[10].queue_free()
@@ -4097,6 +4497,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 11:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[11] = "bottes_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes4[11].queue_free()
@@ -4108,6 +4509,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 12:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[12] = "bottes_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes4[12].queue_free()
@@ -4119,6 +4521,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 13:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[13] = "bottes_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes4[13].queue_free()
@@ -4130,6 +4533,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 14:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[14] = "bottes_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes4[14].queue_free()
@@ -4141,6 +4545,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 15:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[15] = "bottes_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes4[15].queue_free()
@@ -4152,6 +4557,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 16:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[16] = "bottes_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes4[16].queue_free()
@@ -4163,6 +4569,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 17:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[17] = "bottes_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes4[17].queue_free()
@@ -4174,6 +4581,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 18:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[18] = "bottes_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes4[18].queue_free()
@@ -4185,6 +4593,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 19:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[19] = "bottes_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes4[19].queue_free()
@@ -4200,6 +4609,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						if n == 0:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[0] = "bottes_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes5[0].queue_free()
@@ -4211,6 +4621,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 1:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[1] = "bottes_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes5[1].queue_free()
@@ -4222,6 +4633,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 2:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[2] = "bottes_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes5[2].queue_free()
@@ -4233,6 +4645,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 3:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[3] = "bottes_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes5[3].queue_free()
@@ -4244,6 +4657,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 4:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[4] = "bottes_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes5[4].queue_free()
@@ -4255,6 +4669,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 5:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[5] = "bottes_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes5[5].queue_free()
@@ -4266,6 +4681,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 6:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[6] = "bottes_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes5[6].queue_free()
@@ -4277,6 +4693,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 7:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[7] = "bottes_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes5[7].queue_free()
@@ -4288,6 +4705,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 8:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[8] = "bottes_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes5[8].queue_free()
@@ -4299,6 +4717,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 9:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[9] = "bottes_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes5[9].queue_free()
@@ -4310,6 +4729,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 10:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[10] = "bottes_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes5[10].queue_free()
@@ -4321,6 +4741,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 11:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[11] = "bottes_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes5[11].queue_free()
@@ -4332,6 +4753,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 12:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[12] = "bottes_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes5[12].queue_free()
@@ -4343,6 +4765,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 13:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[13] = "bottes_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes5[13].queue_free()
@@ -4354,6 +4777,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 14:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[14] = "bottes_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes5[14].queue_free()
@@ -4365,6 +4789,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 15:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[15] = "bottes_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes5[15].queue_free()
@@ -4376,6 +4801,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 16:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[16] = "bottes_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes5[16].queue_free()
@@ -4387,6 +4813,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 17:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[17] = "bottes_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes5[17].queue_free()
@@ -4398,6 +4825,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 18:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[18] = "bottes_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes5[18].queue_free()
@@ -4409,6 +4837,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 19:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[19] = "bottes_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes5[19].queue_free()
@@ -4424,6 +4853,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						if n == 0:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[0] = "bottes_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes6[0].queue_free()
@@ -4435,6 +4865,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 1:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[1] = "bottes_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes6[1].queue_free()
@@ -4446,6 +4877,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 2:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[2] = "bottes_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes6[2].queue_free()
@@ -4457,6 +4889,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 3:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[3] = "bottes_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes6[3].queue_free()
@@ -4468,6 +4901,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 4:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[4] = "bottes_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes6[4].queue_free()
@@ -4479,6 +4913,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 5:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[5] = "bottes_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes6[5].queue_free()
@@ -4490,6 +4925,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 6:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[6] = "bottes_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes6[6].queue_free()
@@ -4501,6 +4937,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 7:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[7] = "bottes_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes6[7].queue_free()
@@ -4512,6 +4949,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 8:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[8] = "bottes_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes6[8].queue_free()
@@ -4523,6 +4961,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 9:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[9] = "bottes_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes6[9].queue_free()
@@ -4534,6 +4973,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 10:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[10] = "bottes_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes6[10].queue_free()
@@ -4545,6 +4985,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 11:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[11] = "bottes_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes6[11].queue_free()
@@ -4556,6 +4997,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 12:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[12] = "bottes_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes6[12].queue_free()
@@ -4567,6 +5009,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 13:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[13] = "bottes_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes6[13].queue_free()
@@ -4578,6 +5021,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 14:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[14] = "bottes_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes6[14].queue_free()
@@ -4589,6 +5033,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 15:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[15] = "bottes_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes6[15].queue_free()
@@ -4600,6 +5045,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 16:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[16] = "bottes_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes6[16].queue_free()
@@ -4611,6 +5057,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 17:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[17] = "bottes_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes6[17].queue_free()
@@ -4622,6 +5069,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 18:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[18] = "bottes_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes6[18].queue_free()
@@ -4633,6 +5081,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 19:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[19] = "bottes_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bottes6[19].queue_free()
@@ -4648,6 +5097,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						if n == 0:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[0] = "bouclier_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier1[0].queue_free()
@@ -4659,6 +5109,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 1:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[1] = "bouclier_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier1[1].queue_free()
@@ -4670,6 +5121,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 2:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[2] = "bouclier_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier1[2].queue_free()
@@ -4681,6 +5133,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 3:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[3] = "bouclier_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier1[3].queue_free()
@@ -4692,6 +5145,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 4:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[4] = "bouclier_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier1[4].queue_free()
@@ -4703,6 +5157,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 5:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[5] = "bouclier_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier1[5].queue_free()
@@ -4714,6 +5169,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 6:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[6] = "bouclier_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier1[6].queue_free()
@@ -4725,6 +5181,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 7:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[7] = "bouclier_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier1[7].queue_free()
@@ -4736,6 +5193,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 8:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[8] = "bouclier_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier1[8].queue_free()
@@ -4747,6 +5205,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 9:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[9] = "bouclier_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier1[9].queue_free()
@@ -4758,6 +5217,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 10:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[10] = "bouclier_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier1[10].queue_free()
@@ -4769,6 +5229,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 11:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[11] = "bouclier_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier1[11].queue_free()
@@ -4780,6 +5241,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 12:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[12] = "bouclier_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier1[12].queue_free()
@@ -4791,6 +5253,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 13:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[13] = "bouclier_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier1[13].queue_free()
@@ -4802,6 +5265,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 14:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[14] = "bouclier_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier1[14].queue_free()
@@ -4813,6 +5277,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 15:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[15] = "bouclier_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier1[15].queue_free()
@@ -4824,6 +5289,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 16:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[16] = "bouclier_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier1[16].queue_free()
@@ -4835,6 +5301,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 17:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[17] = "bouclier_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier1[17].queue_free()
@@ -4846,6 +5313,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 18:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[18] = "bouclier_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier1[18].queue_free()
@@ -4857,6 +5325,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 19:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[19] = "bouclier_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier1[19].queue_free()
@@ -4872,6 +5341,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						if n == 0:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[0] = "bouclier_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier2[0].queue_free()
@@ -4883,6 +5353,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 1:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[1] = "bouclier_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier2[1].queue_free()
@@ -4894,6 +5365,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 2:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[2] = "bouclier_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier2[2].queue_free()
@@ -4905,6 +5377,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 3:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[3] = "bouclier_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier2[3].queue_free()
@@ -4916,6 +5389,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 4:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[4] = "bouclier_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier2[4].queue_free()
@@ -4927,6 +5401,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 5:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[5] = "bouclier_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier2[5].queue_free()
@@ -4938,6 +5413,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 6:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[6] = "bouclier_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier2[6].queue_free()
@@ -4949,6 +5425,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 7:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[7] = "bouclier_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier2[7].queue_free()
@@ -4960,6 +5437,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 8:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[8] = "bouclier_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier2[8].queue_free()
@@ -4971,6 +5449,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 9:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[9] = "bouclier_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier2[9].queue_free()
@@ -4982,6 +5461,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 10:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[10] = "bouclier_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier2[10].queue_free()
@@ -4993,6 +5473,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 11:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[11] = "bouclier_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier2[11].queue_free()
@@ -5004,6 +5485,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 12:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[12] = "bouclier_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier2[12].queue_free()
@@ -5015,6 +5497,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 13:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[13] = "bouclier_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier2[13].queue_free()
@@ -5026,6 +5509,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 14:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[14] = "bouclier_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier2[14].queue_free()
@@ -5037,6 +5521,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 15:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[15] = "bouclier_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier2[15].queue_free()
@@ -5048,6 +5533,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 16:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[16] = "bouclier_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier2[16].queue_free()
@@ -5059,6 +5545,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 17:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[17] = "bouclier_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier2[17].queue_free()
@@ -5070,6 +5557,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 18:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[18] = "bouclier_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier2[18].queue_free()
@@ -5081,6 +5569,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 19:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[19] = "bouclier_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier2[19].queue_free()
@@ -5096,6 +5585,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						if n == 0:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[0] = "bouclier_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier3[0].queue_free()
@@ -5107,6 +5597,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 1:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[1] = "bouclier_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier3[1].queue_free()
@@ -5118,6 +5609,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 2:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[2] = "bouclier_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier3[2].queue_free()
@@ -5129,6 +5621,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 3:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[3] = "bouclier_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier3[3].queue_free()
@@ -5140,6 +5633,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 4:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[4] = "bouclier_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier3[4].queue_free()
@@ -5151,6 +5645,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 5:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[5] = "bouclier_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier3[5].queue_free()
@@ -5162,6 +5657,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 6:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[6] = "bouclier_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier3[6].queue_free()
@@ -5173,6 +5669,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 7:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[7] = "bouclier_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier3[7].queue_free()
@@ -5184,6 +5681,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 8:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[8] = "bouclier_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier3[8].queue_free()
@@ -5195,6 +5693,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 9:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[9] = "bouclier_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier3[9].queue_free()
@@ -5206,6 +5705,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 10:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[10] = "bouclier_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier3[10].queue_free()
@@ -5217,6 +5717,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 11:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[11] = "bouclier_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier3[11].queue_free()
@@ -5228,6 +5729,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 12:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[12] = "bouclier_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier3[12].queue_free()
@@ -5239,6 +5741,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 13:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[13] = "bouclier_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier3[13].queue_free()
@@ -5250,6 +5753,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 14:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[14] = "bouclier_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier3[14].queue_free()
@@ -5261,6 +5765,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 15:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[15] = "bouclier_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier3[15].queue_free()
@@ -5272,6 +5777,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 16:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[16] = "bouclier_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier3[16].queue_free()
@@ -5283,6 +5789,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 17:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[17] = "bouclier_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier3[17].queue_free()
@@ -5294,6 +5801,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 18:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[18] = "bouclier_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier3[18].queue_free()
@@ -5305,6 +5813,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 19:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[19] = "bouclier_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier3[19].queue_free()
@@ -5320,6 +5829,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						if n == 0:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[0] = "bouclier_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier4[0].queue_free()
@@ -5331,6 +5841,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 1:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[1] = "bouclier_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier4[1].queue_free()
@@ -5342,6 +5853,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 2:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[2] = "bouclier_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier4[2].queue_free()
@@ -5353,6 +5865,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 3:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[3] = "bouclier_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier4[3].queue_free()
@@ -5364,6 +5877,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 4:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[4] = "bouclier_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier4[4].queue_free()
@@ -5375,6 +5889,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 5:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[5] = "bouclier_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier4[5].queue_free()
@@ -5386,6 +5901,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 6:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[6] = "bouclier_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier4[6].queue_free()
@@ -5397,6 +5913,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 7:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[7] = "bouclier_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier4[7].queue_free()
@@ -5408,6 +5925,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 8:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[8] = "bouclier_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier4[8].queue_free()
@@ -5419,6 +5937,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 9:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[9] = "bouclier_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier4[9].queue_free()
@@ -5430,6 +5949,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 10:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[10] = "bouclier_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier4[10].queue_free()
@@ -5441,6 +5961,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 11:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[11] = "bouclier_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier4[11].queue_free()
@@ -5452,6 +5973,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 12:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[12] = "bouclier_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier4[12].queue_free()
@@ -5463,6 +5985,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 13:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[13] = "bouclier_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier4[13].queue_free()
@@ -5474,6 +5997,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 14:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[14] = "bouclier_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier4[14].queue_free()
@@ -5485,6 +6009,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 15:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[15] = "bouclier_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier4[15].queue_free()
@@ -5496,6 +6021,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 16:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[16] = "bouclier_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier4[16].queue_free()
@@ -5507,6 +6033,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 17:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[17] = "bouclier_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier4[17].queue_free()
@@ -5518,6 +6045,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 18:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[18] = "bouclier_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier4[18].queue_free()
@@ -5529,6 +6057,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 19:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[19] = "bouclier_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier4[19].queue_free()
@@ -5544,6 +6073,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						if n == 0:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[0] = "bouclier_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier5[0].queue_free()
@@ -5555,6 +6085,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 1:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[1] = "bouclier_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier5[1].queue_free()
@@ -5566,6 +6097,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 2:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[2] = "bouclier_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier5[2].queue_free()
@@ -5577,6 +6109,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 3:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[3] = "bouclier_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier5[3].queue_free()
@@ -5588,6 +6121,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 4:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[4] = "bouclier_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier5[4].queue_free()
@@ -5599,6 +6133,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 5:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[5] = "bouclier_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier5[5].queue_free()
@@ -5610,6 +6145,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 6:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[6] = "bouclier_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier5[6].queue_free()
@@ -5621,6 +6157,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 7:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[7] = "bouclier_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier5[7].queue_free()
@@ -5632,6 +6169,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 8:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[8] = "bouclier_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier5[8].queue_free()
@@ -5643,6 +6181,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 9:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[9] = "bouclier_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier5[9].queue_free()
@@ -5654,6 +6193,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 10:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[10] = "bouclier_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier5[10].queue_free()
@@ -5665,6 +6205,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 11:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[11] = "bouclier_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier5[11].queue_free()
@@ -5676,6 +6217,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 12:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[12] = "bouclier_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier5[12].queue_free()
@@ -5687,6 +6229,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 13:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[13] = "bouclier_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier5[13].queue_free()
@@ -5698,6 +6241,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 14:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[14] = "bouclier_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier5[14].queue_free()
@@ -5709,6 +6253,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 15:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[15] = "bouclier_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier5[15].queue_free()
@@ -5720,6 +6265,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 16:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[16] = "bouclier_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier5[16].queue_free()
@@ -5731,6 +6277,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 17:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[17] = "bouclier_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier5[17].queue_free()
@@ -5742,6 +6289,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 18:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[18] = "bouclier_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier5[18].queue_free()
@@ -5753,6 +6301,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 19:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[19] = "bouclier_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier5[19].queue_free()
@@ -5768,6 +6317,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						if n == 0:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[0] = "bouclier_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier6[0].queue_free()
@@ -5779,6 +6329,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 1:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[1] = "bouclier_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier6[1].queue_free()
@@ -5790,6 +6341,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 2:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[2] = "bouclier_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier6[2].queue_free()
@@ -5801,6 +6353,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 3:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[3] = "bouclier_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier6[3].queue_free()
@@ -5812,6 +6365,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 4:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[4] = "bouclier_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier6[4].queue_free()
@@ -5823,6 +6377,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 5:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[5] = "bouclier_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier6[5].queue_free()
@@ -5834,6 +6389,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 6:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[6] = "bouclier_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier6[6].queue_free()
@@ -5845,6 +6401,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 7:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[7] = "bouclier_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier6[7].queue_free()
@@ -5856,6 +6413,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 8:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[8] = "bouclier_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier6[8].queue_free()
@@ -5867,6 +6425,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 9:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[9] = "bouclier_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier6[9].queue_free()
@@ -5878,6 +6437,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 10:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[10] = "bouclier_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier6[10].queue_free()
@@ -5889,6 +6449,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 11:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[11] = "bouclier_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier6[11].queue_free()
@@ -5900,6 +6461,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 12:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[12] = "bouclier_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier6[12].queue_free()
@@ -5911,6 +6473,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 13:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[13] = "bouclier_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier6[13].queue_free()
@@ -5922,6 +6485,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 14:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[14] = "bouclier_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier6[14].queue_free()
@@ -5933,6 +6497,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 15:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[15] = "bouclier_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier6[15].queue_free()
@@ -5944,6 +6509,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 16:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[16] = "bouclier_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier6[16].queue_free()
@@ -5955,6 +6521,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 17:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[17] = "bouclier_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier6[17].queue_free()
@@ -5966,6 +6533,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 18:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[18] = "bouclier_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier6[18].queue_free()
@@ -5977,6 +6545,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 19:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[19] = "bouclier_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier6[19].queue_free()
@@ -5992,6 +6561,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						if n == 0:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[0] = "bouclier_7"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier7[0].queue_free()
@@ -6003,6 +6573,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 1:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[1] = "bouclier_7"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier7[1].queue_free()
@@ -6014,6 +6585,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 2:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[2] = "bouclier_7"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier7[2].queue_free()
@@ -6025,6 +6597,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 3:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[3] = "bouclier_7"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier7[3].queue_free()
@@ -6036,6 +6609,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 4:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[4] = "bouclier_7"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier7[4].queue_free()
@@ -6047,6 +6621,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 5:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[5] = "bouclier_7"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier7[5].queue_free()
@@ -6058,6 +6633,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 6:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[6] = "bouclier_7"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier7[6].queue_free()
@@ -6069,6 +6645,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 7:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[7] = "bouclier_7"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier7[7].queue_free()
@@ -6080,6 +6657,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 8:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[8] = "bouclier_7"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier7[8].queue_free()
@@ -6091,6 +6669,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 9:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[9] = "bouclier_7"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier7[9].queue_free()
@@ -6102,6 +6681,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 10:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[10] = "bouclier_7"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier7[10].queue_free()
@@ -6113,6 +6693,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 11:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[11] = "bouclier_7"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier7[11].queue_free()
@@ -6124,6 +6705,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 12:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[12] = "bouclier_7"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier7[12].queue_free()
@@ -6135,6 +6717,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 13:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[13] = "bouclier_7"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier7[13].queue_free()
@@ -6146,6 +6729,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 14:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[14] = "bouclier_7"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier7[14].queue_free()
@@ -6157,6 +6741,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 15:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[15] = "bouclier_7"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier7[15].queue_free()
@@ -6168,6 +6753,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 16:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[16] = "bouclier_7"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier7[16].queue_free()
@@ -6179,6 +6765,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 17:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[17] = "bouclier_7"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier7[17].queue_free()
@@ -6190,6 +6777,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 18:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[18] = "bouclier_7"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier7[18].queue_free()
@@ -6201,6 +6789,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 19:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[19] = "bouclier_7"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_bouclier7[19].queue_free()
@@ -6216,6 +6805,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						if n == 0:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[0] = "casque_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque1[0].queue_free()
@@ -6227,6 +6817,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 1:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[1] = "casque_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque1[1].queue_free()
@@ -6238,6 +6829,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 2:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[2] = "casque_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque1[2].queue_free()
@@ -6249,6 +6841,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 3:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[3] = "casque_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque1[3].queue_free()
@@ -6260,6 +6853,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 4:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[4] = "casque_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque1[4].queue_free()
@@ -6271,6 +6865,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 5:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[5] = "casque_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque1[5].queue_free()
@@ -6282,6 +6877,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 6:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[6] = "casque_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque1[6].queue_free()
@@ -6293,6 +6889,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 7:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[7] = "casque_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque1[7].queue_free()
@@ -6304,6 +6901,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 8:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[8] = "casque_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque1[8].queue_free()
@@ -6315,6 +6913,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 9:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[9] = "casque_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque1[9].queue_free()
@@ -6326,6 +6925,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 10:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[10] = "casque_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque1[10].queue_free()
@@ -6337,6 +6937,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 11:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[11] = "casque_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque1[11].queue_free()
@@ -6348,6 +6949,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 12:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[12] = "casque_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque1[12].queue_free()
@@ -6359,6 +6961,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 13:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[13] = "casque_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque1[13].queue_free()
@@ -6370,6 +6973,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 14:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[14] = "casque_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque1[14].queue_free()
@@ -6381,6 +6985,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 15:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[15] = "casque_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque1[15].queue_free()
@@ -6392,6 +6997,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 16:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[16] = "casque_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque1[16].queue_free()
@@ -6403,6 +7009,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 17:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[17] = "casque_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque1[17].queue_free()
@@ -6414,6 +7021,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 18:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[18] = "casque_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque1[18].queue_free()
@@ -6425,6 +7033,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 19:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[19] = "casque_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque1[19].queue_free()
@@ -6440,6 +7049,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						if n == 0:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[0] = "casque_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque2[0].queue_free()
@@ -6451,6 +7061,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 1:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[1] = "casque_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque2[1].queue_free()
@@ -6462,6 +7073,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 2:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[2] = "casque_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque2[2].queue_free()
@@ -6473,6 +7085,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 3:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[3] = "casque_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque2[3].queue_free()
@@ -6484,6 +7097,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 4:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[4] = "casque_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque2[4].queue_free()
@@ -6495,6 +7109,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 5:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[5] = "casque_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque2[5].queue_free()
@@ -6506,6 +7121,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 6:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[6] = "casque_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque2[6].queue_free()
@@ -6517,6 +7133,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 7:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[7] = "casque_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque2[7].queue_free()
@@ -6528,6 +7145,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 8:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[8] = "casque_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque2[8].queue_free()
@@ -6539,6 +7157,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 9:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[9] = "casque_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque2[9].queue_free()
@@ -6550,6 +7169,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 10:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[10] = "casque_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque2[10].queue_free()
@@ -6561,6 +7181,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 11:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[11] = "casque_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque2[11].queue_free()
@@ -6572,6 +7193,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 12:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[12] = "casque_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque2[12].queue_free()
@@ -6583,6 +7205,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 13:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[13] = "casque_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque2[13].queue_free()
@@ -6594,6 +7217,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 14:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[14] = "casque_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque2[14].queue_free()
@@ -6605,6 +7229,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 15:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[15] = "casque_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque2[15].queue_free()
@@ -6616,6 +7241,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 16:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[16] = "casque_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque2[16].queue_free()
@@ -6627,6 +7253,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 17:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[17] = "casque_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque2[17].queue_free()
@@ -6638,6 +7265,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 18:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[18] = "casque_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque2[18].queue_free()
@@ -6649,6 +7277,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 19:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[19] = "casque_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque2[19].queue_free()
@@ -6664,6 +7293,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						if n == 0:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[0] = "casque_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque3[0].queue_free()
@@ -6675,6 +7305,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 1:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[1] = "casque_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque3[1].queue_free()
@@ -6686,6 +7317,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 2:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[2] = "casque_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque3[2].queue_free()
@@ -6697,6 +7329,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 3:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[3] = "casque_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque3[3].queue_free()
@@ -6708,6 +7341,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 4:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[4] = "casque_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque3[4].queue_free()
@@ -6719,6 +7353,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 5:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[5] = "casque_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque3[5].queue_free()
@@ -6730,6 +7365,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 6:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[6] = "casque_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque3[6].queue_free()
@@ -6741,6 +7377,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 7:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[7] = "casque_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque3[7].queue_free()
@@ -6752,6 +7389,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 8:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[8] = "casque_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque3[8].queue_free()
@@ -6763,6 +7401,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 9:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[9] = "casque_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque3[9].queue_free()
@@ -6774,6 +7413,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 10:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[10] = "casque_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque3[10].queue_free()
@@ -6785,6 +7425,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 11:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[11] = "casque_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque3[11].queue_free()
@@ -6796,6 +7437,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 12:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[12] = "casque_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque3[12].queue_free()
@@ -6807,6 +7449,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 13:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[13] = "casque_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque3[13].queue_free()
@@ -6818,6 +7461,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 14:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[14] = "casque_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque3[14].queue_free()
@@ -6829,6 +7473,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 15:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[15] = "casque_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque3[15].queue_free()
@@ -6840,6 +7485,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 16:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[16] = "casque_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque3[16].queue_free()
@@ -6851,6 +7497,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 17:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[17] = "casque_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque3[17].queue_free()
@@ -6862,6 +7509,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 18:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[18] = "casque_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque3[18].queue_free()
@@ -6873,6 +7521,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 19:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[19] = "casque_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque3[19].queue_free()
@@ -6888,6 +7537,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						if n == 0:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[0] = "casque_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque4[0].queue_free()
@@ -6899,6 +7549,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 1:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[1] = "casque_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque4[1].queue_free()
@@ -6910,6 +7561,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 2:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[2] = "casque_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque4[2].queue_free()
@@ -6921,6 +7573,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 3:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[3] = "casque_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque4[3].queue_free()
@@ -6932,6 +7585,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 4:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[4] = "casque_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque4[4].queue_free()
@@ -6943,6 +7597,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 5:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[5] = "casque_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque4[5].queue_free()
@@ -6954,6 +7609,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 6:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[6] = "casque_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque4[6].queue_free()
@@ -6965,6 +7621,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 7:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[7] = "casque_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque4[7].queue_free()
@@ -6976,6 +7633,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 8:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[8] = "casque_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque4[8].queue_free()
@@ -6987,6 +7645,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 9:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[9] = "casque_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque4[9].queue_free()
@@ -6998,6 +7657,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 10:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[10] = "casque_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque4[10].queue_free()
@@ -7009,6 +7669,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 11:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[11] = "casque_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque4[11].queue_free()
@@ -7020,6 +7681,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 12:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[12] = "casque_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque4[12].queue_free()
@@ -7031,6 +7693,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 13:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[13] = "casque_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque4[13].queue_free()
@@ -7042,6 +7705,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 14:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[14] = "casque_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque4[14].queue_free()
@@ -7053,6 +7717,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 15:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[15] = "casque_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque4[15].queue_free()
@@ -7064,6 +7729,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 16:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[16] = "casque_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque4[16].queue_free()
@@ -7075,6 +7741,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 17:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[17] = "casque_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque4[17].queue_free()
@@ -7086,6 +7753,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 18:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[18] = "casque_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque4[18].queue_free()
@@ -7097,6 +7765,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 19:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[19] = "casque_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque4[19].queue_free()
@@ -7112,6 +7781,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						if n == 0:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[0] = "casque_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque5[0].queue_free()
@@ -7123,6 +7793,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 1:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[1] = "casque_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque5[1].queue_free()
@@ -7134,6 +7805,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 2:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[2] = "casque_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque5[2].queue_free()
@@ -7145,6 +7817,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 3:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[3] = "casque_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque5[3].queue_free()
@@ -7156,6 +7829,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 4:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[4] = "casque_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque5[4].queue_free()
@@ -7167,6 +7841,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 5:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[5] = "casque_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque5[5].queue_free()
@@ -7178,6 +7853,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 6:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[6] = "casque_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque5[6].queue_free()
@@ -7189,6 +7865,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 7:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[7] = "casque_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque5[7].queue_free()
@@ -7200,6 +7877,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 8:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[8] = "casque_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque5[8].queue_free()
@@ -7211,6 +7889,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 9:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[9] = "casque_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque5[9].queue_free()
@@ -7222,6 +7901,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 10:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[10] = "casque_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque5[10].queue_free()
@@ -7233,6 +7913,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 11:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[11] = "casque_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque5[11].queue_free()
@@ -7244,6 +7925,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 12:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[12] = "casque_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque5[12].queue_free()
@@ -7255,6 +7937,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 13:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[13] = "casque_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque5[13].queue_free()
@@ -7266,6 +7949,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 14:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[14] = "casque_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque5[14].queue_free()
@@ -7277,6 +7961,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 15:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[15] = "casque_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque5[15].queue_free()
@@ -7288,6 +7973,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 16:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[16] = "casque_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque5[16].queue_free()
@@ -7299,6 +7985,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 17:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[17] = "casque_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque5[17].queue_free()
@@ -7310,6 +7997,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 18:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[18] = "casque_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque5[18].queue_free()
@@ -7321,6 +8009,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 19:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[19] = "casque_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque5[19].queue_free()
@@ -7336,6 +8025,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						if n == 0:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[0] = "casque_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque6[0].queue_free()
@@ -7347,6 +8037,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 1:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[1] = "casque_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque6[1].queue_free()
@@ -7358,6 +8049,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 2:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[2] = "casque_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque6[2].queue_free()
@@ -7369,6 +8061,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 3:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[3] = "casque_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque6[3].queue_free()
@@ -7380,6 +8073,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 4:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[4] = "casque_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque6[4].queue_free()
@@ -7391,6 +8085,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 5:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[5] = "casque_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque6[5].queue_free()
@@ -7402,6 +8097,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 6:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[6] = "casque_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque6[6].queue_free()
@@ -7413,6 +8109,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 7:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[7] = "casque_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque6[7].queue_free()
@@ -7424,6 +8121,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 8:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[8] = "casque_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque6[8].queue_free()
@@ -7435,6 +8133,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 9:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[9] = "casque_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque6[9].queue_free()
@@ -7446,6 +8145,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 10:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[10] = "casque_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque6[10].queue_free()
@@ -7457,6 +8157,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 11:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[11] = "casque_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque6[11].queue_free()
@@ -7468,6 +8169,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 12:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[12] = "casque_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque6[12].queue_free()
@@ -7479,6 +8181,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 13:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[13] = "casque_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque6[13].queue_free()
@@ -7490,6 +8193,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 14:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[14] = "casque_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque6[14].queue_free()
@@ -7501,6 +8205,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 15:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[15] = "casque_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque6[15].queue_free()
@@ -7512,6 +8217,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 16:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[16] = "casque_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque6[16].queue_free()
@@ -7523,6 +8229,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 17:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[17] = "casque_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque6[17].queue_free()
@@ -7534,6 +8241,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 18:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[18] = "casque_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque6[18].queue_free()
@@ -7545,6 +8253,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 19:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[19] = "casque_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_casque6[19].queue_free()
@@ -7560,6 +8269,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						if n == 0:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[0] = "collier_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_collier1[0].queue_free()
@@ -7571,6 +8281,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 1:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[1] = "collier_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_collier1[1].queue_free()
@@ -7582,6 +8293,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 2:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[2] = "collier_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_collier1[2].queue_free()
@@ -7593,6 +8305,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 3:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[3] = "collier_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_collier1[3].queue_free()
@@ -7604,6 +8317,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 4:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[4] = "collier_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_collier1[4].queue_free()
@@ -7615,6 +8329,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 5:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[5] = "collier_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_collier1[5].queue_free()
@@ -7626,6 +8341,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 6:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[6] = "collier_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_collier1[6].queue_free()
@@ -7637,6 +8353,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 7:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[7] = "collier_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_collier1[7].queue_free()
@@ -7648,6 +8365,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 8:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[8] = "collier_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_collier1[8].queue_free()
@@ -7659,6 +8377,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 9:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[9] = "collier_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_collier1[9].queue_free()
@@ -7670,6 +8389,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 10:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[10] = "collier_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_collier1[10].queue_free()
@@ -7681,6 +8401,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 11:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[11] = "collier_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_collier1[11].queue_free()
@@ -7692,6 +8413,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 12:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[12] = "collier_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_collier1[12].queue_free()
@@ -7703,6 +8425,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 13:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[13] = "collier_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_collier1[13].queue_free()
@@ -7714,6 +8437,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 14:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[14] = "collier_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_collier1[14].queue_free()
@@ -7725,6 +8449,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 15:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[15] = "collier_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_collier1[15].queue_free()
@@ -7736,6 +8461,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 16:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[16] = "collier_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_collier1[16].queue_free()
@@ -7747,6 +8473,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 17:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[17] = "collier_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_collier1[17].queue_free()
@@ -7758,6 +8485,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 18:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[18] = "collier_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_collier1[18].queue_free()
@@ -7769,6 +8497,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 19:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[19] = "collier_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_collier1[19].queue_free()
@@ -7784,6 +8513,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						if n == 0:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[0] = "collier_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_collier2[0].queue_free()
@@ -7795,6 +8525,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 1:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[1] = "collier_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_collier2[1].queue_free()
@@ -7806,6 +8537,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 2:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[2] = "collier_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_collier2[2].queue_free()
@@ -7817,6 +8549,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 3:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[3] = "collier_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_collier2[3].queue_free()
@@ -7828,6 +8561,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 4:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[4] = "collier_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_collier2[4].queue_free()
@@ -7839,6 +8573,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 5:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[5] = "collier_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_collier2[5].queue_free()
@@ -7850,6 +8585,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 6:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[6] = "collier_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_collier2[6].queue_free()
@@ -7861,6 +8597,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 7:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[7] = "collier_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_collier2[7].queue_free()
@@ -7872,6 +8609,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 8:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[8] = "collier_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_collier2[8].queue_free()
@@ -7883,6 +8621,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 9:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[9] = "collier_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_collier2[9].queue_free()
@@ -7894,6 +8633,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 10:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[10] = "collier_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_collier2[10].queue_free()
@@ -7905,6 +8645,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 11:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[11] = "collier_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_collier2[11].queue_free()
@@ -7916,6 +8657,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 12:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[12] = "collier_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_collier2[12].queue_free()
@@ -7927,6 +8669,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 13:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[13] = "collier_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_collier2[13].queue_free()
@@ -7938,6 +8681,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 14:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[14] = "collier_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_collier2[14].queue_free()
@@ -7949,6 +8693,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 15:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[15] = "collier_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_collier2[15].queue_free()
@@ -7960,6 +8705,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 16:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[16] = "collier_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_collier2[16].queue_free()
@@ -7971,6 +8717,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 17:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[17] = "collier_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_collier2[17].queue_free()
@@ -7982,6 +8729,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 18:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[18] = "collier_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_collier2[18].queue_free()
@@ -7993,6 +8741,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 19:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[19] = "collier_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_collier2[19].queue_free()
@@ -8008,6 +8757,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						if n == 0:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[0] = "collier_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_collier3[0].queue_free()
@@ -8019,6 +8769,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 1:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[1] = "collier_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_collier3[1].queue_free()
@@ -8030,6 +8781,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 2:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[2] = "collier_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_collier3[2].queue_free()
@@ -8041,6 +8793,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 3:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[3] = "collier_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_collier3[3].queue_free()
@@ -8052,6 +8805,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 4:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[4] = "collier_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_collier3[4].queue_free()
@@ -8063,6 +8817,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 5:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[5] = "collier_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_collier3[5].queue_free()
@@ -8074,6 +8829,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 6:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[6] = "collier_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_collier3[6].queue_free()
@@ -8085,6 +8841,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 7:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[7] = "collier_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_collier3[7].queue_free()
@@ -8096,6 +8853,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 8:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[8] = "collier_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_collier3[8].queue_free()
@@ -8107,6 +8865,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 9:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[9] = "collier_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_collier3[9].queue_free()
@@ -8118,6 +8877,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 10:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[10] = "collier_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_collier3[10].queue_free()
@@ -8129,6 +8889,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 11:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[11] = "collier_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_collier3[11].queue_free()
@@ -8140,6 +8901,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 12:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[12] = "collier_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_collier3[12].queue_free()
@@ -8151,6 +8913,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 13:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[13] = "collier_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_collier3[13].queue_free()
@@ -8162,6 +8925,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 14:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[14] = "collier_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_collier3[14].queue_free()
@@ -8173,6 +8937,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 15:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[15] = "collier_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_collier3[15].queue_free()
@@ -8184,6 +8949,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 16:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[16] = "collier_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_collier3[16].queue_free()
@@ -8195,6 +8961,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 17:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[17] = "collier_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_collier3[17].queue_free()
@@ -8206,6 +8973,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 18:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[18] = "collier_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_collier3[18].queue_free()
@@ -8217,6 +8985,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 19:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[19] = "collier_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_collier3[19].queue_free()
@@ -8232,6 +9001,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						if n == 0:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[0] = "heaume_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume1[0].queue_free()
@@ -8243,6 +9013,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 1:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[1] = "heaume_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume1[1].queue_free()
@@ -8254,6 +9025,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 2:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[2] = "heaume_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume1[2].queue_free()
@@ -8265,6 +9037,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 3:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[3] = "heaume_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume1[3].queue_free()
@@ -8276,6 +9049,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 4:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[4] = "heaume_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume1[4].queue_free()
@@ -8287,6 +9061,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 5:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[5] = "heaume_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume1[5].queue_free()
@@ -8298,6 +9073,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 6:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[6] = "heaume_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume1[6].queue_free()
@@ -8309,6 +9085,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 7:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[7] = "heaume_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume1[7].queue_free()
@@ -8320,6 +9097,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 8:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[8] = "heaume_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume1[8].queue_free()
@@ -8331,6 +9109,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 9:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[9] = "heaume_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume1[9].queue_free()
@@ -8342,6 +9121,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 10:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[10] = "heaume_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume1[10].queue_free()
@@ -8353,6 +9133,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 11:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[11] = "heaume_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume1[11].queue_free()
@@ -8364,6 +9145,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 12:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[12] = "heaume_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume1[12].queue_free()
@@ -8375,6 +9157,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 13:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[13] = "heaume_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume1[13].queue_free()
@@ -8386,6 +9169,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 14:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[14] = "heaume_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume1[14].queue_free()
@@ -8397,6 +9181,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 15:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[15] = "heaume_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume1[15].queue_free()
@@ -8408,6 +9193,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 16:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[16] = "heaume_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume1[16].queue_free()
@@ -8419,6 +9205,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 17:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[17] = "heaume_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume1[17].queue_free()
@@ -8430,6 +9217,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 18:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[18] = "heaume_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume1[18].queue_free()
@@ -8441,6 +9229,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 19:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[19] = "heaume_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume1[19].queue_free()
@@ -8456,6 +9245,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						if n == 0:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[0] = "heaume_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume2[0].queue_free()
@@ -8467,6 +9257,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 1:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[1] = "heaume_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume2[1].queue_free()
@@ -8478,6 +9269,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 2:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[2] = "heaume_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume2[2].queue_free()
@@ -8489,6 +9281,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 3:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[3] = "heaume_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume2[3].queue_free()
@@ -8500,6 +9293,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 4:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[4] = "heaume_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume2[4].queue_free()
@@ -8511,6 +9305,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 5:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[5] = "heaume_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume2[5].queue_free()
@@ -8522,6 +9317,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 6:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[6] = "heaume_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume2[6].queue_free()
@@ -8533,6 +9329,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 7:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[7] = "heaume_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume2[7].queue_free()
@@ -8544,6 +9341,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 8:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[8] = "heaume_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume2[8].queue_free()
@@ -8555,6 +9353,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 9:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[9] = "heaume_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume2[9].queue_free()
@@ -8566,6 +9365,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 10:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[10] = "heaume_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume2[10].queue_free()
@@ -8577,6 +9377,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 11:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[11] = "heaume_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume2[11].queue_free()
@@ -8588,6 +9389,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 12:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[12] = "heaume_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume2[12].queue_free()
@@ -8599,6 +9401,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 13:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[13] = "heaume_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume2[13].queue_free()
@@ -8610,6 +9413,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 14:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[14] = "heaume_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume2[14].queue_free()
@@ -8621,6 +9425,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 15:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[15] = "heaume_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume2[15].queue_free()
@@ -8632,6 +9437,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 16:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[16] = "heaume_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume2[16].queue_free()
@@ -8643,6 +9449,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 17:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[17] = "heaume_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume2[17].queue_free()
@@ -8654,6 +9461,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 18:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[18] = "heaume_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume2[18].queue_free()
@@ -8665,6 +9473,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 19:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[19] = "heaume_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume2[19].queue_free()
@@ -8680,6 +9489,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						if n == 0:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[0] = "heaume_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume3[0].queue_free()
@@ -8691,6 +9501,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 1:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[1] = "heaume_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume3[1].queue_free()
@@ -8702,6 +9513,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 2:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[2] = "heaume_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume3[2].queue_free()
@@ -8713,6 +9525,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 3:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[3] = "heaume_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume3[3].queue_free()
@@ -8724,6 +9537,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 4:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[4] = "heaume_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume3[4].queue_free()
@@ -8735,6 +9549,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 5:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[5] = "heaume_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume3[5].queue_free()
@@ -8746,6 +9561,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 6:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[6] = "heaume_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume3[6].queue_free()
@@ -8757,6 +9573,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 7:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[7] = "heaume_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume3[7].queue_free()
@@ -8768,6 +9585,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 8:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[8] = "heaume_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume3[8].queue_free()
@@ -8779,6 +9597,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 9:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[9] = "heaume_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume3[9].queue_free()
@@ -8790,6 +9609,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 10:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[10] = "heaume_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume3[10].queue_free()
@@ -8801,6 +9621,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 11:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[11] = "heaume_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume3[11].queue_free()
@@ -8812,6 +9633,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 12:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[12] = "heaume_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume3[12].queue_free()
@@ -8823,6 +9645,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 13:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[13] = "heaume_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume3[13].queue_free()
@@ -8834,6 +9657,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 14:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[14] = "heaume_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume3[14].queue_free()
@@ -8845,6 +9669,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 15:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[15] = "heaume_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume3[15].queue_free()
@@ -8856,6 +9681,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 16:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[16] = "heaume_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume3[16].queue_free()
@@ -8867,6 +9693,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 17:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[17] = "heaume_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume3[17].queue_free()
@@ -8878,6 +9705,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 18:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[18] = "heaume_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume3[18].queue_free()
@@ -8889,6 +9717,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 19:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[19] = "heaume_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume3[19].queue_free()
@@ -8904,6 +9733,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						if n == 0:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[0] = "heaume_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume4[0].queue_free()
@@ -8915,6 +9745,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 1:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[1] = "heaume_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume4[1].queue_free()
@@ -8926,6 +9757,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 2:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[2] = "heaume_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume4[2].queue_free()
@@ -8937,6 +9769,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 3:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[3] = "heaume_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume4[3].queue_free()
@@ -8948,6 +9781,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 4:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[4] = "heaume_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume4[4].queue_free()
@@ -8959,6 +9793,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 5:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[5] = "heaume_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume4[5].queue_free()
@@ -8970,6 +9805,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 6:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[6] = "heaume_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume4[6].queue_free()
@@ -8981,6 +9817,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 7:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[7] = "heaume_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume4[7].queue_free()
@@ -8992,6 +9829,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 8:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[8] = "heaume_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume4[8].queue_free()
@@ -9003,6 +9841,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 9:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[9] = "heaume_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume4[9].queue_free()
@@ -9014,6 +9853,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 10:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[10] = "heaume_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume4[10].queue_free()
@@ -9025,6 +9865,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 11:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[11] = "heaume_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume4[11].queue_free()
@@ -9036,6 +9877,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 12:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[12] = "heaume_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume4[12].queue_free()
@@ -9047,6 +9889,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 13:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[13] = "heaume_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume4[13].queue_free()
@@ -9058,6 +9901,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 14:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[14] = "heaume_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume4[14].queue_free()
@@ -9069,6 +9913,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 15:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[15] = "heaume_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume4[15].queue_free()
@@ -9080,6 +9925,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 16:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[16] = "heaume_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume4[16].queue_free()
@@ -9091,6 +9937,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 17:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[17] = "heaume_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume4[17].queue_free()
@@ -9102,6 +9949,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 18:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[18] = "heaume_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume4[18].queue_free()
@@ -9113,6 +9961,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 19:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[19] = "heaume_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume4[19].queue_free()
@@ -9128,6 +9977,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						if n == 0:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[0] = "heaume_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume5[0].queue_free()
@@ -9139,6 +9989,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 1:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[1] = "heaume_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume5[1].queue_free()
@@ -9150,6 +10001,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 2:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[2] = "heaume_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume5[2].queue_free()
@@ -9161,6 +10013,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 3:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[3] = "heaume_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume5[3].queue_free()
@@ -9172,6 +10025,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 4:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[4] = "heaume_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume5[4].queue_free()
@@ -9183,6 +10037,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 5:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[5] = "heaume_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume5[5].queue_free()
@@ -9194,6 +10049,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 6:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[6] = "heaume_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume5[6].queue_free()
@@ -9205,6 +10061,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 7:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[7] = "heaume_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume5[7].queue_free()
@@ -9216,6 +10073,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 8:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[8] = "heaume_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume5[8].queue_free()
@@ -9227,6 +10085,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 9:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[9] = "heaume_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume5[9].queue_free()
@@ -9238,6 +10097,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 10:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[10] = "heaume_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume5[10].queue_free()
@@ -9249,6 +10109,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 11:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[11] = "heaume_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume5[11].queue_free()
@@ -9260,6 +10121,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 12:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[12] = "heaume_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume5[12].queue_free()
@@ -9271,6 +10133,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 13:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[13] = "heaume_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume5[13].queue_free()
@@ -9282,6 +10145,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 14:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[14] = "heaume_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume5[14].queue_free()
@@ -9293,6 +10157,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 15:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[15] = "heaume_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume5[15].queue_free()
@@ -9304,6 +10169,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 16:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[16] = "heaume_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume5[16].queue_free()
@@ -9315,6 +10181,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 17:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[17] = "heaume_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume5[17].queue_free()
@@ -9326,6 +10193,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 18:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[18] = "heaume_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume5[18].queue_free()
@@ -9337,6 +10205,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 19:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[19] = "heaume_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume5[19].queue_free()
@@ -9352,6 +10221,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						if n == 0:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[0] = "heaume_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume6[0].queue_free()
@@ -9363,6 +10233,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 1:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[1] = "heaume_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume6[1].queue_free()
@@ -9374,6 +10245,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 2:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[2] = "heaume_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume6[2].queue_free()
@@ -9385,6 +10257,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 3:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[3] = "heaume_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume6[3].queue_free()
@@ -9396,6 +10269,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 4:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[4] = "heaume_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume6[4].queue_free()
@@ -9407,6 +10281,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 5:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[5] = "heaume_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume6[5].queue_free()
@@ -9418,6 +10293,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 6:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[6] = "heaume_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume6[6].queue_free()
@@ -9429,6 +10305,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 7:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[7] = "heaume_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume6[7].queue_free()
@@ -9440,6 +10317,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 8:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[8] = "heaume_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume6[8].queue_free()
@@ -9451,6 +10329,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 9:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[9] = "heaume_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume6[9].queue_free()
@@ -9462,6 +10341,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 10:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[10] = "heaume_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume6[10].queue_free()
@@ -9473,6 +10353,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 11:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[11] = "heaume_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume6[11].queue_free()
@@ -9484,6 +10365,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 12:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[12] = "heaume_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume6[12].queue_free()
@@ -9495,6 +10377,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 13:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[13] = "heaume_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume6[13].queue_free()
@@ -9506,6 +10389,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 14:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[14] = "heaume_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume6[14].queue_free()
@@ -9517,6 +10401,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 15:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[15] = "heaume_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume6[15].queue_free()
@@ -9528,6 +10413,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 16:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[16] = "heaume_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume6[16].queue_free()
@@ -9539,6 +10425,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 17:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[17] = "heaume_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume6[17].queue_free()
@@ -9550,6 +10437,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 18:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[18] = "heaume_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume6[18].queue_free()
@@ -9561,6 +10449,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 19:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[19] = "heaume_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_heaume6[19].queue_free()
@@ -9576,6 +10465,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						if n == 0:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[0] = "sword_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword1[0].queue_free()
@@ -9587,6 +10477,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 1:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[1] = "sword_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword1[1].queue_free()
@@ -9598,6 +10489,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 2:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[2] = "sword_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword1[2].queue_free()
@@ -9609,6 +10501,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 3:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[3] = "sword_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword1[3].queue_free()
@@ -9620,6 +10513,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 4:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[4] = "sword_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword1[4].queue_free()
@@ -9631,6 +10525,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 5:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[5] = "sword_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword1[5].queue_free()
@@ -9642,6 +10537,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 6:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[6] = "sword_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword1[6].queue_free()
@@ -9653,6 +10549,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 7:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[7] = "sword_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword1[7].queue_free()
@@ -9664,6 +10561,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 8:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[8] = "sword_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword1[8].queue_free()
@@ -9675,6 +10573,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 9:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[9] = "sword_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword1[9].queue_free()
@@ -9686,6 +10585,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 10:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[10] = "sword_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword1[10].queue_free()
@@ -9697,6 +10597,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 11:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[11] = "sword_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword1[11].queue_free()
@@ -9708,6 +10609,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 12:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[12] = "sword_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword1[12].queue_free()
@@ -9719,6 +10621,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 13:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[13] = "sword_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword1[13].queue_free()
@@ -9730,6 +10633,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 14:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[14] = "sword_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword1[14].queue_free()
@@ -9741,6 +10645,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 15:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[15] = "sword_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword1[15].queue_free()
@@ -9752,6 +10657,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 16:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[16] = "sword_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword1[16].queue_free()
@@ -9763,6 +10669,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 17:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[17] = "sword_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword1[17].queue_free()
@@ -9774,6 +10681,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 18:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[18] = "sword_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword1[18].queue_free()
@@ -9785,6 +10693,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 19:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[19] = "sword_1"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword1[19].queue_free()
@@ -9800,6 +10709,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						if n == 0:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[0] = "sword_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword2[0].queue_free()
@@ -9811,6 +10721,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 1:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[1] = "sword_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword2[1].queue_free()
@@ -9822,6 +10733,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 2:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[2] = "sword_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword2[2].queue_free()
@@ -9833,6 +10745,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 3:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[3] = "sword_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword2[3].queue_free()
@@ -9844,6 +10757,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 4:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[4] = "sword_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword2[4].queue_free()
@@ -9855,6 +10769,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 5:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[5] = "sword_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword2[5].queue_free()
@@ -9866,6 +10781,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 6:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[6] = "sword_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword2[6].queue_free()
@@ -9877,6 +10793,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 7:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[7] = "sword_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword2[7].queue_free()
@@ -9888,6 +10805,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 8:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[8] = "sword_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword2[8].queue_free()
@@ -9899,6 +10817,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 9:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[9] = "sword_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword2[9].queue_free()
@@ -9910,6 +10829,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 10:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[10] = "sword_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword2[10].queue_free()
@@ -9921,6 +10841,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 11:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[11] = "sword_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword2[11].queue_free()
@@ -9932,6 +10853,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 12:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[12] = "sword_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword2[12].queue_free()
@@ -9943,6 +10865,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 13:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[13] = "sword_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword2[13].queue_free()
@@ -9954,6 +10877,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 14:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[14] = "sword_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword2[14].queue_free()
@@ -9965,6 +10889,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 15:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[15] = "sword_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword2[15].queue_free()
@@ -9976,6 +10901,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 16:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[16] = "sword_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword2[16].queue_free()
@@ -9987,6 +10913,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 17:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[17] = "sword_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword2[17].queue_free()
@@ -9998,6 +10925,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 18:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[18] = "sword_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword2[18].queue_free()
@@ -10009,6 +10937,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 19:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[19] = "sword_2"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword2[19].queue_free()
@@ -10024,6 +10953,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						if n == 0:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[0] = "sword_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword3[0].queue_free()
@@ -10035,6 +10965,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 1:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[1] = "sword_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword3[1].queue_free()
@@ -10046,6 +10977,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 2:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[2] = "sword_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword3[2].queue_free()
@@ -10057,6 +10989,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 3:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[3] = "sword_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword3[3].queue_free()
@@ -10068,6 +11001,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 4:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[4] = "sword_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword3[4].queue_free()
@@ -10079,6 +11013,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 5:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[5] = "sword_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword3[5].queue_free()
@@ -10090,6 +11025,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 6:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[6] = "sword_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword3[6].queue_free()
@@ -10101,6 +11037,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 7:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[7] = "sword_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword3[7].queue_free()
@@ -10112,6 +11049,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 8:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[8] = "sword_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword3[8].queue_free()
@@ -10123,6 +11061,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 9:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[9] = "sword_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword3[9].queue_free()
@@ -10134,6 +11073,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 10:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[10] = "sword_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword3[10].queue_free()
@@ -10145,6 +11085,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 11:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[11] = "sword_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword3[11].queue_free()
@@ -10156,6 +11097,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 12:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[12] = "sword_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword3[12].queue_free()
@@ -10167,6 +11109,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 13:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[13] = "sword_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword3[13].queue_free()
@@ -10178,6 +11121,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 14:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[14] = "sword_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword3[14].queue_free()
@@ -10189,6 +11133,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 15:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[15] = "sword_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword3[15].queue_free()
@@ -10200,6 +11145,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 16:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[16] = "sword_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword3[16].queue_free()
@@ -10211,6 +11157,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 17:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[17] = "sword_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword3[17].queue_free()
@@ -10222,6 +11169,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 18:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[18] = "sword_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword3[18].queue_free()
@@ -10233,6 +11181,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 19:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[19] = "sword_3"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword3[19].queue_free()
@@ -10248,6 +11197,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						if n == 0:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[0] = "sword_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword4[0].queue_free()
@@ -10259,6 +11209,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 1:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[1] = "sword_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword4[1].queue_free()
@@ -10270,6 +11221,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 2:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[2] = "sword_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword4[2].queue_free()
@@ -10281,6 +11233,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 3:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[3] = "sword_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword4[3].queue_free()
@@ -10292,6 +11245,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 4:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[4] = "sword_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword4[4].queue_free()
@@ -10303,6 +11257,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 5:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[5] = "sword_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword4[5].queue_free()
@@ -10314,6 +11269,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 6:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[6] = "sword_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword4[6].queue_free()
@@ -10325,6 +11281,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 7:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[7] = "sword_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword4[7].queue_free()
@@ -10336,6 +11293,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 8:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[8] = "sword_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword4[8].queue_free()
@@ -10347,6 +11305,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 9:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[9] = "sword_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword4[9].queue_free()
@@ -10358,6 +11317,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 10:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[10] = "sword_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword4[10].queue_free()
@@ -10369,6 +11329,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 11:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[11] = "sword_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword4[11].queue_free()
@@ -10380,6 +11341,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 12:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[12] = "sword_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword4[12].queue_free()
@@ -10391,6 +11353,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 13:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[13] = "sword_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword4[13].queue_free()
@@ -10402,6 +11365,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 14:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[14] = "sword_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword4[14].queue_free()
@@ -10413,6 +11377,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 15:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[15] = "sword_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword4[15].queue_free()
@@ -10424,6 +11389,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 16:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[16] = "sword_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword4[16].queue_free()
@@ -10435,6 +11401,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 17:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[17] = "sword_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword4[17].queue_free()
@@ -10446,6 +11413,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 18:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[18] = "sword_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword4[18].queue_free()
@@ -10457,6 +11425,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 19:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[19] = "sword_4"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword4[19].queue_free()
@@ -10472,6 +11441,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						if n == 0:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[0] = "sword_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword5[0].queue_free()
@@ -10483,6 +11453,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 1:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[1] = "sword_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword5[1].queue_free()
@@ -10494,6 +11465,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 2:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[2] = "sword_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword5[2].queue_free()
@@ -10505,6 +11477,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 3:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[3] = "sword_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword5[3].queue_free()
@@ -10516,6 +11489,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 4:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[4] = "sword_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword5[4].queue_free()
@@ -10527,6 +11501,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 5:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[5] = "sword_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword5[5].queue_free()
@@ -10538,6 +11513,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 6:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[6] = "sword_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword5[6].queue_free()
@@ -10549,6 +11525,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 7:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[7] = "sword_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword5[7].queue_free()
@@ -10560,6 +11537,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 8:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[8] = "sword_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword5[8].queue_free()
@@ -10571,6 +11549,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 9:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[9] = "sword_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword5[9].queue_free()
@@ -10582,6 +11561,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 10:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[10] = "sword_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword5[10].queue_free()
@@ -10593,6 +11573,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 11:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[11] = "sword_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword5[11].queue_free()
@@ -10604,6 +11585,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 12:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[12] = "sword_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword5[12].queue_free()
@@ -10615,6 +11597,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 13:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[13] = "sword_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword5[13].queue_free()
@@ -10626,6 +11609,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 14:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[14] = "sword_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword5[14].queue_free()
@@ -10637,6 +11621,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 15:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[15] = "sword_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword5[15].queue_free()
@@ -10648,6 +11633,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 16:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[16] = "sword_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword5[16].queue_free()
@@ -10659,6 +11645,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 17:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[17] = "sword_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword5[17].queue_free()
@@ -10670,6 +11657,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 18:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[18] = "sword_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword5[18].queue_free()
@@ -10681,6 +11669,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 19:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[19] = "sword_5"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword5[19].queue_free()
@@ -10696,6 +11685,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						if n == 0:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[0] = "sword_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword6[0].queue_free()
@@ -10707,6 +11697,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 1:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[1] = "sword_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword6[1].queue_free()
@@ -10718,6 +11709,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 2:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[2] = "sword_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword6[2].queue_free()
@@ -10729,6 +11721,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 3:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[3] = "sword_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword6[3].queue_free()
@@ -10740,6 +11733,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 4:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[4] = "sword_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword6[4].queue_free()
@@ -10751,6 +11745,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 5:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[5] = "sword_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword6[5].queue_free()
@@ -10762,6 +11757,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 6:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[6] = "sword_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword6[6].queue_free()
@@ -10773,6 +11769,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 7:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[7] = "sword_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword6[7].queue_free()
@@ -10784,6 +11781,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 8:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[8] = "sword_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword6[8].queue_free()
@@ -10795,6 +11793,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 9:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[9] = "sword_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword6[9].queue_free()
@@ -10806,6 +11805,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 10:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[10] = "sword_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword6[10].queue_free()
@@ -10817,6 +11817,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 11:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[11] = "sword_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword6[11].queue_free()
@@ -10828,6 +11829,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 12:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[12] = "sword_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword6[12].queue_free()
@@ -10839,6 +11841,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 13:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[13] = "sword_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword6[13].queue_free()
@@ -10850,6 +11853,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 14:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[14] = "sword_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword6[14].queue_free()
@@ -10861,6 +11865,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 15:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[15] = "sword_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword6[15].queue_free()
@@ -10872,6 +11877,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 16:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[16] = "sword_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword6[16].queue_free()
@@ -10883,6 +11889,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 17:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[17] = "sword_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword6[17].queue_free()
@@ -10894,6 +11901,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 18:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[18] = "sword_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword6[18].queue_free()
@@ -10905,6 +11913,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 19:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[19] = "sword_6"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword6[19].queue_free()
@@ -10920,6 +11929,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						if n == 0:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[0] = "sword_7"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword7[0].queue_free()
@@ -10931,6 +11941,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 1:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[1] = "sword_7"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword7[1].queue_free()
@@ -10942,6 +11953,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 2:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[2] = "sword_7"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword7[2].queue_free()
@@ -10953,6 +11965,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 3:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[3] = "sword_7"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword7[3].queue_free()
@@ -10964,6 +11977,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 4:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[4] = "sword_7"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword7[4].queue_free()
@@ -10975,6 +11989,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 5:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[5] = "sword_7"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword7[5].queue_free()
@@ -10986,6 +12001,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 6:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[6] = "sword_7"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword7[6].queue_free()
@@ -10997,6 +12013,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 7:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[7] = "sword_7"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword7[7].queue_free()
@@ -11008,6 +12025,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 8:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[8] = "sword_7"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword7[8].queue_free()
@@ -11019,6 +12037,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 9:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[9] = "sword_7"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword7[9].queue_free()
@@ -11030,6 +12049,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 10:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[10] = "sword_7"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword7[10].queue_free()
@@ -11041,6 +12061,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 11:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[11] = "sword_7"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword7[11].queue_free()
@@ -11052,6 +12073,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 12:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[12] = "sword_7"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword7[12].queue_free()
@@ -11063,6 +12085,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 13:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[13] = "sword_7"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword7[13].queue_free()
@@ -11074,6 +12097,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 14:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[14] = "sword_7"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword7[14].queue_free()
@@ -11085,6 +12109,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 15:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[15] = "sword_7"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword7[15].queue_free()
@@ -11096,6 +12121,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 16:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[16] = "sword_7"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword7[16].queue_free()
@@ -11107,6 +12133,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 17:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[17] = "sword_7"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword7[17].queue_free()
@@ -11118,6 +12145,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 18:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[18] = "sword_7"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword7[18].queue_free()
@@ -11129,6 +12157,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 19:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[19] = "sword_7"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword7[19].queue_free()
@@ -11144,6 +12173,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						if n == 0:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[0] = "sword_8"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword8[0].queue_free()
@@ -11155,6 +12185,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 1:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[1] = "sword_8"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword8[1].queue_free()
@@ -11166,6 +12197,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 2:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[2] = "sword_8"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword8[2].queue_free()
@@ -11177,6 +12209,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 3:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[3] = "sword_8"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword8[3].queue_free()
@@ -11188,6 +12221,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 4:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[4] = "sword_8"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword8[4].queue_free()
@@ -11199,6 +12233,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 5:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[5] = "sword_8"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword8[5].queue_free()
@@ -11210,6 +12245,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 6:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[6] = "sword_8"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword8[6].queue_free()
@@ -11221,6 +12257,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 7:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[7] = "sword_8"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword8[7].queue_free()
@@ -11232,6 +12269,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 8:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[8] = "sword_8"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword8[8].queue_free()
@@ -11243,6 +12281,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 9:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[9] = "sword_8"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword8[9].queue_free()
@@ -11254,6 +12293,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 10:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[10] = "sword_8"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword8[10].queue_free()
@@ -11265,6 +12305,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 11:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[11] = "sword_8"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword8[11].queue_free()
@@ -11276,6 +12317,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 12:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[12] = "sword_8"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword8[12].queue_free()
@@ -11287,6 +12329,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 13:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[13] = "sword_8"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword8[13].queue_free()
@@ -11298,6 +12341,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 14:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[14] = "sword_8"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword8[14].queue_free()
@@ -11309,6 +12353,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 15:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[15] = "sword_8"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword8[15].queue_free()
@@ -11320,6 +12365,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 16:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[16] = "sword_8"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword8[16].queue_free()
@@ -11331,6 +12377,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 17:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[17] = "sword_8"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword8[17].queue_free()
@@ -11342,6 +12389,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 18:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[18] = "sword_8"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword8[18].queue_free()
@@ -11353,6 +12401,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 						elif n == 19:
 							if txtTypeClic == "left":
 								print("utilise arme")
+								txtItemSelect[19] = "sword_8"
 								txtTypeClic = ""
 							elif txtTypeClic == "right":
 								gui_sword8[19].queue_free()
