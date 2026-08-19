@@ -2130,6 +2130,3822 @@ func _process(delta: float) -> void:
 			#Faut que j'ajoute les conditions pour le clic et tout 
 			#A la fin remettre la variable txtItemSelect a "none"
 		
+		if txtItemSelect[i] == "bottes_1":
+			#print("item select est bague : ", txtItemSelect)
+			if isPopUpOpen == false:
+				gui_popUp = GuiPopUp.instantiate()
+				add_child(gui_popUp)
+				gui_popUp.scale = Vector2(0.5, 0.5)
+				gui_popUp.offset.x = mouse_pos.x
+				gui_popUp.offset.y = mouse_pos.y
+				
+				gui_buttonOnEquiper = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnEquiper)
+				gui_buttonOnEquiper.scale = Vector2(0.5, 0.5)
+				gui_buttonOnEquiper.offset.x = mouse_pos.x + 20
+				gui_buttonOnEquiper.offset.y = mouse_pos.y + 30
+				
+				gui_buttonOnStocker = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnStocker)
+				gui_buttonOnStocker.scale = Vector2(0.5, 0.5)
+				gui_buttonOnStocker.offset.x = mouse_pos.x + 20
+				gui_buttonOnStocker.offset.y = mouse_pos.y + 75
+				
+				gui_buttonOnJeter = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnJeter)
+				gui_buttonOnJeter.scale = Vector2(0.5, 0.5)
+				gui_buttonOnJeter.offset.x = mouse_pos.x + 20
+				gui_buttonOnJeter.offset.y = mouse_pos.y + 120
+				
+				txt_popup_1 = GuiTextUi.instantiate()
+				add_child(txt_popup_1)
+				
+				var childTxtPop1 = txt_popup_1.get_node("labelGuiTextFenetre")
+				childTxtPop1.text = "Equiper"
+				childTxtPop1.position.x = mouse_pos.x + 24
+				childTxtPop1.position.y = mouse_pos.y + 35
+				childTxtPop1.add_theme_font_size_override("font_size", 29)
+				childTxtPop1.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				txt_popup_2 = GuiTextUi.instantiate()
+				add_child(txt_popup_2)
+				
+				var childTxtPop2 = txt_popup_2.get_node("labelGuiTextFenetre")
+				childTxtPop2.text = "Stocker"
+				childTxtPop2.position.x = mouse_pos.x + 24
+				childTxtPop2.position.y = mouse_pos.y + 80
+				childTxtPop2.add_theme_font_size_override("font_size", 29)
+				childTxtPop2.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				
+				txt_popup_3 = GuiTextUi.instantiate()
+				add_child(txt_popup_3)
+				
+				var childTxtPop3 = txt_popup_3.get_node("labelGuiTextFenetre")
+				childTxtPop3.text = "Jeter"
+				childTxtPop3.position.x = mouse_pos.x + 37
+				childTxtPop3.position.y = mouse_pos.y + 125
+				childTxtPop3.add_theme_font_size_override("font_size", 29)
+				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				isPopUpOpen = true
+				print("J'ouvre le pop up")
+			
+			if isPopUpOpen == true:
+				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button equiper ")
+						#_Sgui_open()
+						nodeSceneGameplay.hero.img[nodeSceneGameplay.hero.current].isGuiOpen = false
+						nodeHudHero.emit_signal("guiHeroOpen", "hero")
+						_close_inventaire()
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+						#sceneGameplay._Sgui_open("hero")
+						
+				
+				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button stocker ")
+				
+				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button jeter ")
+						gui_bottes1[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.bottes1 -= 1
+						nbCompteurBottes1 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+			#Faut creer lobjet popup (button interface text et tout)
+			#Faut que j'ajoute les conditions pour le clic et tout 
+			#A la fin remettre la variable txtItemSelect a "none"
+		
+		if txtItemSelect[i] == "bottes_2":
+			#print("item select est bague : ", txtItemSelect)
+			if isPopUpOpen == false:
+				gui_popUp = GuiPopUp.instantiate()
+				add_child(gui_popUp)
+				gui_popUp.scale = Vector2(0.5, 0.5)
+				gui_popUp.offset.x = mouse_pos.x
+				gui_popUp.offset.y = mouse_pos.y
+				
+				gui_buttonOnEquiper = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnEquiper)
+				gui_buttonOnEquiper.scale = Vector2(0.5, 0.5)
+				gui_buttonOnEquiper.offset.x = mouse_pos.x + 20
+				gui_buttonOnEquiper.offset.y = mouse_pos.y + 30
+				
+				gui_buttonOnStocker = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnStocker)
+				gui_buttonOnStocker.scale = Vector2(0.5, 0.5)
+				gui_buttonOnStocker.offset.x = mouse_pos.x + 20
+				gui_buttonOnStocker.offset.y = mouse_pos.y + 75
+				
+				gui_buttonOnJeter = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnJeter)
+				gui_buttonOnJeter.scale = Vector2(0.5, 0.5)
+				gui_buttonOnJeter.offset.x = mouse_pos.x + 20
+				gui_buttonOnJeter.offset.y = mouse_pos.y + 120
+				
+				txt_popup_1 = GuiTextUi.instantiate()
+				add_child(txt_popup_1)
+				
+				var childTxtPop1 = txt_popup_1.get_node("labelGuiTextFenetre")
+				childTxtPop1.text = "Equiper"
+				childTxtPop1.position.x = mouse_pos.x + 24
+				childTxtPop1.position.y = mouse_pos.y + 35
+				childTxtPop1.add_theme_font_size_override("font_size", 29)
+				childTxtPop1.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				txt_popup_2 = GuiTextUi.instantiate()
+				add_child(txt_popup_2)
+				
+				var childTxtPop2 = txt_popup_2.get_node("labelGuiTextFenetre")
+				childTxtPop2.text = "Stocker"
+				childTxtPop2.position.x = mouse_pos.x + 24
+				childTxtPop2.position.y = mouse_pos.y + 80
+				childTxtPop2.add_theme_font_size_override("font_size", 29)
+				childTxtPop2.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				
+				txt_popup_3 = GuiTextUi.instantiate()
+				add_child(txt_popup_3)
+				
+				var childTxtPop3 = txt_popup_3.get_node("labelGuiTextFenetre")
+				childTxtPop3.text = "Jeter"
+				childTxtPop3.position.x = mouse_pos.x + 37
+				childTxtPop3.position.y = mouse_pos.y + 125
+				childTxtPop3.add_theme_font_size_override("font_size", 29)
+				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				isPopUpOpen = true
+				print("J'ouvre le pop up")
+			
+			if isPopUpOpen == true:
+				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button equiper ")
+						#_Sgui_open()
+						nodeSceneGameplay.hero.img[nodeSceneGameplay.hero.current].isGuiOpen = false
+						nodeHudHero.emit_signal("guiHeroOpen", "hero")
+						_close_inventaire()
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+						#sceneGameplay._Sgui_open("hero")
+						
+				
+				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button stocker ")
+				
+				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button jeter ")
+						gui_bottes2[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.bottes2 -= 1
+						nbCompteurBottes2 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+			#Faut creer lobjet popup (button interface text et tout)
+			#Faut que j'ajoute les conditions pour le clic et tout 
+			#A la fin remettre la variable txtItemSelect a "none"
+		
+		if txtItemSelect[i] == "bottes_3":
+			#print("item select est bague : ", txtItemSelect)
+			if isPopUpOpen == false:
+				gui_popUp = GuiPopUp.instantiate()
+				add_child(gui_popUp)
+				gui_popUp.scale = Vector2(0.5, 0.5)
+				gui_popUp.offset.x = mouse_pos.x
+				gui_popUp.offset.y = mouse_pos.y
+				
+				gui_buttonOnEquiper = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnEquiper)
+				gui_buttonOnEquiper.scale = Vector2(0.5, 0.5)
+				gui_buttonOnEquiper.offset.x = mouse_pos.x + 20
+				gui_buttonOnEquiper.offset.y = mouse_pos.y + 30
+				
+				gui_buttonOnStocker = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnStocker)
+				gui_buttonOnStocker.scale = Vector2(0.5, 0.5)
+				gui_buttonOnStocker.offset.x = mouse_pos.x + 20
+				gui_buttonOnStocker.offset.y = mouse_pos.y + 75
+				
+				gui_buttonOnJeter = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnJeter)
+				gui_buttonOnJeter.scale = Vector2(0.5, 0.5)
+				gui_buttonOnJeter.offset.x = mouse_pos.x + 20
+				gui_buttonOnJeter.offset.y = mouse_pos.y + 120
+				
+				txt_popup_1 = GuiTextUi.instantiate()
+				add_child(txt_popup_1)
+				
+				var childTxtPop1 = txt_popup_1.get_node("labelGuiTextFenetre")
+				childTxtPop1.text = "Equiper"
+				childTxtPop1.position.x = mouse_pos.x + 24
+				childTxtPop1.position.y = mouse_pos.y + 35
+				childTxtPop1.add_theme_font_size_override("font_size", 29)
+				childTxtPop1.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				txt_popup_2 = GuiTextUi.instantiate()
+				add_child(txt_popup_2)
+				
+				var childTxtPop2 = txt_popup_2.get_node("labelGuiTextFenetre")
+				childTxtPop2.text = "Stocker"
+				childTxtPop2.position.x = mouse_pos.x + 24
+				childTxtPop2.position.y = mouse_pos.y + 80
+				childTxtPop2.add_theme_font_size_override("font_size", 29)
+				childTxtPop2.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				
+				txt_popup_3 = GuiTextUi.instantiate()
+				add_child(txt_popup_3)
+				
+				var childTxtPop3 = txt_popup_3.get_node("labelGuiTextFenetre")
+				childTxtPop3.text = "Jeter"
+				childTxtPop3.position.x = mouse_pos.x + 37
+				childTxtPop3.position.y = mouse_pos.y + 125
+				childTxtPop3.add_theme_font_size_override("font_size", 29)
+				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				isPopUpOpen = true
+				print("J'ouvre le pop up")
+			
+			if isPopUpOpen == true:
+				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button equiper ")
+						#_Sgui_open()
+						nodeSceneGameplay.hero.img[nodeSceneGameplay.hero.current].isGuiOpen = false
+						nodeHudHero.emit_signal("guiHeroOpen", "hero")
+						_close_inventaire()
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+						#sceneGameplay._Sgui_open("hero")
+						
+				
+				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button stocker ")
+				
+				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button jeter ")
+						gui_bottes3[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.bottes3 -= 1
+						nbCompteurBottes3 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+			#Faut creer lobjet popup (button interface text et tout)
+			#Faut que j'ajoute les conditions pour le clic et tout 
+			#A la fin remettre la variable txtItemSelect a "none"
+		
+		if txtItemSelect[i] == "bottes_4":
+			#print("item select est bague : ", txtItemSelect)
+			if isPopUpOpen == false:
+				gui_popUp = GuiPopUp.instantiate()
+				add_child(gui_popUp)
+				gui_popUp.scale = Vector2(0.5, 0.5)
+				gui_popUp.offset.x = mouse_pos.x
+				gui_popUp.offset.y = mouse_pos.y
+				
+				gui_buttonOnEquiper = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnEquiper)
+				gui_buttonOnEquiper.scale = Vector2(0.5, 0.5)
+				gui_buttonOnEquiper.offset.x = mouse_pos.x + 20
+				gui_buttonOnEquiper.offset.y = mouse_pos.y + 30
+				
+				gui_buttonOnStocker = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnStocker)
+				gui_buttonOnStocker.scale = Vector2(0.5, 0.5)
+				gui_buttonOnStocker.offset.x = mouse_pos.x + 20
+				gui_buttonOnStocker.offset.y = mouse_pos.y + 75
+				
+				gui_buttonOnJeter = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnJeter)
+				gui_buttonOnJeter.scale = Vector2(0.5, 0.5)
+				gui_buttonOnJeter.offset.x = mouse_pos.x + 20
+				gui_buttonOnJeter.offset.y = mouse_pos.y + 120
+				
+				txt_popup_1 = GuiTextUi.instantiate()
+				add_child(txt_popup_1)
+				
+				var childTxtPop1 = txt_popup_1.get_node("labelGuiTextFenetre")
+				childTxtPop1.text = "Equiper"
+				childTxtPop1.position.x = mouse_pos.x + 24
+				childTxtPop1.position.y = mouse_pos.y + 35
+				childTxtPop1.add_theme_font_size_override("font_size", 29)
+				childTxtPop1.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				txt_popup_2 = GuiTextUi.instantiate()
+				add_child(txt_popup_2)
+				
+				var childTxtPop2 = txt_popup_2.get_node("labelGuiTextFenetre")
+				childTxtPop2.text = "Stocker"
+				childTxtPop2.position.x = mouse_pos.x + 24
+				childTxtPop2.position.y = mouse_pos.y + 80
+				childTxtPop2.add_theme_font_size_override("font_size", 29)
+				childTxtPop2.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				
+				txt_popup_3 = GuiTextUi.instantiate()
+				add_child(txt_popup_3)
+				
+				var childTxtPop3 = txt_popup_3.get_node("labelGuiTextFenetre")
+				childTxtPop3.text = "Jeter"
+				childTxtPop3.position.x = mouse_pos.x + 37
+				childTxtPop3.position.y = mouse_pos.y + 125
+				childTxtPop3.add_theme_font_size_override("font_size", 29)
+				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				isPopUpOpen = true
+				print("J'ouvre le pop up")
+			
+			if isPopUpOpen == true:
+				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button equiper ")
+						#_Sgui_open()
+						nodeSceneGameplay.hero.img[nodeSceneGameplay.hero.current].isGuiOpen = false
+						nodeHudHero.emit_signal("guiHeroOpen", "hero")
+						_close_inventaire()
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+						#sceneGameplay._Sgui_open("hero")
+						
+				
+				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button stocker ")
+				
+				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button jeter ")
+						gui_bottes4[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.bottes4 -= 1
+						nbCompteurBottes4 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+			#Faut creer lobjet popup (button interface text et tout)
+			#Faut que j'ajoute les conditions pour le clic et tout 
+			#A la fin remettre la variable txtItemSelect a "none"
+		
+		if txtItemSelect[i] == "bottes_5":
+			#print("item select est bague : ", txtItemSelect)
+			if isPopUpOpen == false:
+				gui_popUp = GuiPopUp.instantiate()
+				add_child(gui_popUp)
+				gui_popUp.scale = Vector2(0.5, 0.5)
+				gui_popUp.offset.x = mouse_pos.x
+				gui_popUp.offset.y = mouse_pos.y
+				
+				gui_buttonOnEquiper = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnEquiper)
+				gui_buttonOnEquiper.scale = Vector2(0.5, 0.5)
+				gui_buttonOnEquiper.offset.x = mouse_pos.x + 20
+				gui_buttonOnEquiper.offset.y = mouse_pos.y + 30
+				
+				gui_buttonOnStocker = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnStocker)
+				gui_buttonOnStocker.scale = Vector2(0.5, 0.5)
+				gui_buttonOnStocker.offset.x = mouse_pos.x + 20
+				gui_buttonOnStocker.offset.y = mouse_pos.y + 75
+				
+				gui_buttonOnJeter = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnJeter)
+				gui_buttonOnJeter.scale = Vector2(0.5, 0.5)
+				gui_buttonOnJeter.offset.x = mouse_pos.x + 20
+				gui_buttonOnJeter.offset.y = mouse_pos.y + 120
+				
+				txt_popup_1 = GuiTextUi.instantiate()
+				add_child(txt_popup_1)
+				
+				var childTxtPop1 = txt_popup_1.get_node("labelGuiTextFenetre")
+				childTxtPop1.text = "Equiper"
+				childTxtPop1.position.x = mouse_pos.x + 24
+				childTxtPop1.position.y = mouse_pos.y + 35
+				childTxtPop1.add_theme_font_size_override("font_size", 29)
+				childTxtPop1.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				txt_popup_2 = GuiTextUi.instantiate()
+				add_child(txt_popup_2)
+				
+				var childTxtPop2 = txt_popup_2.get_node("labelGuiTextFenetre")
+				childTxtPop2.text = "Stocker"
+				childTxtPop2.position.x = mouse_pos.x + 24
+				childTxtPop2.position.y = mouse_pos.y + 80
+				childTxtPop2.add_theme_font_size_override("font_size", 29)
+				childTxtPop2.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				
+				txt_popup_3 = GuiTextUi.instantiate()
+				add_child(txt_popup_3)
+				
+				var childTxtPop3 = txt_popup_3.get_node("labelGuiTextFenetre")
+				childTxtPop3.text = "Jeter"
+				childTxtPop3.position.x = mouse_pos.x + 37
+				childTxtPop3.position.y = mouse_pos.y + 125
+				childTxtPop3.add_theme_font_size_override("font_size", 29)
+				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				isPopUpOpen = true
+				print("J'ouvre le pop up")
+			
+			if isPopUpOpen == true:
+				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button equiper ")
+						#_Sgui_open()
+						nodeSceneGameplay.hero.img[nodeSceneGameplay.hero.current].isGuiOpen = false
+						nodeHudHero.emit_signal("guiHeroOpen", "hero")
+						_close_inventaire()
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+						#sceneGameplay._Sgui_open("hero")
+						
+				
+				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button stocker ")
+				
+				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button jeter ")
+						gui_bottes5[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.bottes5 -= 1
+						nbCompteurBottes5 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+			#Faut creer lobjet popup (button interface text et tout)
+			#Faut que j'ajoute les conditions pour le clic et tout 
+			#A la fin remettre la variable txtItemSelect a "none"
+		
+		if txtItemSelect[i] == "bottes_6":
+			#print("item select est bague : ", txtItemSelect)
+			if isPopUpOpen == false:
+				gui_popUp = GuiPopUp.instantiate()
+				add_child(gui_popUp)
+				gui_popUp.scale = Vector2(0.5, 0.5)
+				gui_popUp.offset.x = mouse_pos.x
+				gui_popUp.offset.y = mouse_pos.y
+				
+				gui_buttonOnEquiper = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnEquiper)
+				gui_buttonOnEquiper.scale = Vector2(0.5, 0.5)
+				gui_buttonOnEquiper.offset.x = mouse_pos.x + 20
+				gui_buttonOnEquiper.offset.y = mouse_pos.y + 30
+				
+				gui_buttonOnStocker = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnStocker)
+				gui_buttonOnStocker.scale = Vector2(0.5, 0.5)
+				gui_buttonOnStocker.offset.x = mouse_pos.x + 20
+				gui_buttonOnStocker.offset.y = mouse_pos.y + 75
+				
+				gui_buttonOnJeter = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnJeter)
+				gui_buttonOnJeter.scale = Vector2(0.5, 0.5)
+				gui_buttonOnJeter.offset.x = mouse_pos.x + 20
+				gui_buttonOnJeter.offset.y = mouse_pos.y + 120
+				
+				txt_popup_1 = GuiTextUi.instantiate()
+				add_child(txt_popup_1)
+				
+				var childTxtPop1 = txt_popup_1.get_node("labelGuiTextFenetre")
+				childTxtPop1.text = "Equiper"
+				childTxtPop1.position.x = mouse_pos.x + 24
+				childTxtPop1.position.y = mouse_pos.y + 35
+				childTxtPop1.add_theme_font_size_override("font_size", 29)
+				childTxtPop1.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				txt_popup_2 = GuiTextUi.instantiate()
+				add_child(txt_popup_2)
+				
+				var childTxtPop2 = txt_popup_2.get_node("labelGuiTextFenetre")
+				childTxtPop2.text = "Stocker"
+				childTxtPop2.position.x = mouse_pos.x + 24
+				childTxtPop2.position.y = mouse_pos.y + 80
+				childTxtPop2.add_theme_font_size_override("font_size", 29)
+				childTxtPop2.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				
+				txt_popup_3 = GuiTextUi.instantiate()
+				add_child(txt_popup_3)
+				
+				var childTxtPop3 = txt_popup_3.get_node("labelGuiTextFenetre")
+				childTxtPop3.text = "Jeter"
+				childTxtPop3.position.x = mouse_pos.x + 37
+				childTxtPop3.position.y = mouse_pos.y + 125
+				childTxtPop3.add_theme_font_size_override("font_size", 29)
+				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				isPopUpOpen = true
+				print("J'ouvre le pop up")
+			
+			if isPopUpOpen == true:
+				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button equiper ")
+						#_Sgui_open()
+						nodeSceneGameplay.hero.img[nodeSceneGameplay.hero.current].isGuiOpen = false
+						nodeHudHero.emit_signal("guiHeroOpen", "hero")
+						_close_inventaire()
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+						#sceneGameplay._Sgui_open("hero")
+						
+				
+				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button stocker ")
+				
+				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button jeter ")
+						gui_bottes6[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.bottes6 -= 1
+						nbCompteurBottes6 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+			#Faut creer lobjet popup (button interface text et tout)
+			#Faut que j'ajoute les conditions pour le clic et tout 
+			#A la fin remettre la variable txtItemSelect a "none"
+		
+		if txtItemSelect[i] == "bouclier_1":
+			#print("item select est bague : ", txtItemSelect)
+			if isPopUpOpen == false:
+				gui_popUp = GuiPopUp.instantiate()
+				add_child(gui_popUp)
+				gui_popUp.scale = Vector2(0.5, 0.5)
+				gui_popUp.offset.x = mouse_pos.x
+				gui_popUp.offset.y = mouse_pos.y
+				
+				gui_buttonOnEquiper = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnEquiper)
+				gui_buttonOnEquiper.scale = Vector2(0.5, 0.5)
+				gui_buttonOnEquiper.offset.x = mouse_pos.x + 20
+				gui_buttonOnEquiper.offset.y = mouse_pos.y + 30
+				
+				gui_buttonOnStocker = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnStocker)
+				gui_buttonOnStocker.scale = Vector2(0.5, 0.5)
+				gui_buttonOnStocker.offset.x = mouse_pos.x + 20
+				gui_buttonOnStocker.offset.y = mouse_pos.y + 75
+				
+				gui_buttonOnJeter = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnJeter)
+				gui_buttonOnJeter.scale = Vector2(0.5, 0.5)
+				gui_buttonOnJeter.offset.x = mouse_pos.x + 20
+				gui_buttonOnJeter.offset.y = mouse_pos.y + 120
+				
+				txt_popup_1 = GuiTextUi.instantiate()
+				add_child(txt_popup_1)
+				
+				var childTxtPop1 = txt_popup_1.get_node("labelGuiTextFenetre")
+				childTxtPop1.text = "Equiper"
+				childTxtPop1.position.x = mouse_pos.x + 24
+				childTxtPop1.position.y = mouse_pos.y + 35
+				childTxtPop1.add_theme_font_size_override("font_size", 29)
+				childTxtPop1.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				txt_popup_2 = GuiTextUi.instantiate()
+				add_child(txt_popup_2)
+				
+				var childTxtPop2 = txt_popup_2.get_node("labelGuiTextFenetre")
+				childTxtPop2.text = "Stocker"
+				childTxtPop2.position.x = mouse_pos.x + 24
+				childTxtPop2.position.y = mouse_pos.y + 80
+				childTxtPop2.add_theme_font_size_override("font_size", 29)
+				childTxtPop2.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				
+				txt_popup_3 = GuiTextUi.instantiate()
+				add_child(txt_popup_3)
+				
+				var childTxtPop3 = txt_popup_3.get_node("labelGuiTextFenetre")
+				childTxtPop3.text = "Jeter"
+				childTxtPop3.position.x = mouse_pos.x + 37
+				childTxtPop3.position.y = mouse_pos.y + 125
+				childTxtPop3.add_theme_font_size_override("font_size", 29)
+				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				isPopUpOpen = true
+				print("J'ouvre le pop up")
+			
+			if isPopUpOpen == true:
+				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button equiper ")
+						#_Sgui_open()
+						nodeSceneGameplay.hero.img[nodeSceneGameplay.hero.current].isGuiOpen = false
+						nodeHudHero.emit_signal("guiHeroOpen", "hero")
+						_close_inventaire()
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+						#sceneGameplay._Sgui_open("hero")
+						
+				
+				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button stocker ")
+				
+				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button jeter ")
+						gui_bouclier1[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.bouclier1 -= 1
+						nbCompteurBouclier1 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+			#Faut creer lobjet popup (button interface text et tout)
+			#Faut que j'ajoute les conditions pour le clic et tout 
+			#A la fin remettre la variable txtItemSelect a "none"
+		
+		if txtItemSelect[i] == "bouclier_2":
+			#print("item select est bague : ", txtItemSelect)
+			if isPopUpOpen == false:
+				gui_popUp = GuiPopUp.instantiate()
+				add_child(gui_popUp)
+				gui_popUp.scale = Vector2(0.5, 0.5)
+				gui_popUp.offset.x = mouse_pos.x
+				gui_popUp.offset.y = mouse_pos.y
+				
+				gui_buttonOnEquiper = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnEquiper)
+				gui_buttonOnEquiper.scale = Vector2(0.5, 0.5)
+				gui_buttonOnEquiper.offset.x = mouse_pos.x + 20
+				gui_buttonOnEquiper.offset.y = mouse_pos.y + 30
+				
+				gui_buttonOnStocker = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnStocker)
+				gui_buttonOnStocker.scale = Vector2(0.5, 0.5)
+				gui_buttonOnStocker.offset.x = mouse_pos.x + 20
+				gui_buttonOnStocker.offset.y = mouse_pos.y + 75
+				
+				gui_buttonOnJeter = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnJeter)
+				gui_buttonOnJeter.scale = Vector2(0.5, 0.5)
+				gui_buttonOnJeter.offset.x = mouse_pos.x + 20
+				gui_buttonOnJeter.offset.y = mouse_pos.y + 120
+				
+				txt_popup_1 = GuiTextUi.instantiate()
+				add_child(txt_popup_1)
+				
+				var childTxtPop1 = txt_popup_1.get_node("labelGuiTextFenetre")
+				childTxtPop1.text = "Equiper"
+				childTxtPop1.position.x = mouse_pos.x + 24
+				childTxtPop1.position.y = mouse_pos.y + 35
+				childTxtPop1.add_theme_font_size_override("font_size", 29)
+				childTxtPop1.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				txt_popup_2 = GuiTextUi.instantiate()
+				add_child(txt_popup_2)
+				
+				var childTxtPop2 = txt_popup_2.get_node("labelGuiTextFenetre")
+				childTxtPop2.text = "Stocker"
+				childTxtPop2.position.x = mouse_pos.x + 24
+				childTxtPop2.position.y = mouse_pos.y + 80
+				childTxtPop2.add_theme_font_size_override("font_size", 29)
+				childTxtPop2.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				
+				txt_popup_3 = GuiTextUi.instantiate()
+				add_child(txt_popup_3)
+				
+				var childTxtPop3 = txt_popup_3.get_node("labelGuiTextFenetre")
+				childTxtPop3.text = "Jeter"
+				childTxtPop3.position.x = mouse_pos.x + 37
+				childTxtPop3.position.y = mouse_pos.y + 125
+				childTxtPop3.add_theme_font_size_override("font_size", 29)
+				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				isPopUpOpen = true
+				print("J'ouvre le pop up")
+			
+			if isPopUpOpen == true:
+				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button equiper ")
+						#_Sgui_open()
+						nodeSceneGameplay.hero.img[nodeSceneGameplay.hero.current].isGuiOpen = false
+						nodeHudHero.emit_signal("guiHeroOpen", "hero")
+						_close_inventaire()
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+						#sceneGameplay._Sgui_open("hero")
+						
+				
+				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button stocker ")
+				
+				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button jeter ")
+						gui_bouclier2[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.bouclier2 -= 1
+						nbCompteurBouclier2 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+			#Faut creer lobjet popup (button interface text et tout)
+			#Faut que j'ajoute les conditions pour le clic et tout 
+			#A la fin remettre la variable txtItemSelect a "none"
+		
+		if txtItemSelect[i] == "bouclier_3":
+			#print("item select est bague : ", txtItemSelect)
+			if isPopUpOpen == false:
+				gui_popUp = GuiPopUp.instantiate()
+				add_child(gui_popUp)
+				gui_popUp.scale = Vector2(0.5, 0.5)
+				gui_popUp.offset.x = mouse_pos.x
+				gui_popUp.offset.y = mouse_pos.y
+				
+				gui_buttonOnEquiper = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnEquiper)
+				gui_buttonOnEquiper.scale = Vector2(0.5, 0.5)
+				gui_buttonOnEquiper.offset.x = mouse_pos.x + 20
+				gui_buttonOnEquiper.offset.y = mouse_pos.y + 30
+				
+				gui_buttonOnStocker = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnStocker)
+				gui_buttonOnStocker.scale = Vector2(0.5, 0.5)
+				gui_buttonOnStocker.offset.x = mouse_pos.x + 20
+				gui_buttonOnStocker.offset.y = mouse_pos.y + 75
+				
+				gui_buttonOnJeter = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnJeter)
+				gui_buttonOnJeter.scale = Vector2(0.5, 0.5)
+				gui_buttonOnJeter.offset.x = mouse_pos.x + 20
+				gui_buttonOnJeter.offset.y = mouse_pos.y + 120
+				
+				txt_popup_1 = GuiTextUi.instantiate()
+				add_child(txt_popup_1)
+				
+				var childTxtPop1 = txt_popup_1.get_node("labelGuiTextFenetre")
+				childTxtPop1.text = "Equiper"
+				childTxtPop1.position.x = mouse_pos.x + 24
+				childTxtPop1.position.y = mouse_pos.y + 35
+				childTxtPop1.add_theme_font_size_override("font_size", 29)
+				childTxtPop1.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				txt_popup_2 = GuiTextUi.instantiate()
+				add_child(txt_popup_2)
+				
+				var childTxtPop2 = txt_popup_2.get_node("labelGuiTextFenetre")
+				childTxtPop2.text = "Stocker"
+				childTxtPop2.position.x = mouse_pos.x + 24
+				childTxtPop2.position.y = mouse_pos.y + 80
+				childTxtPop2.add_theme_font_size_override("font_size", 29)
+				childTxtPop2.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				
+				txt_popup_3 = GuiTextUi.instantiate()
+				add_child(txt_popup_3)
+				
+				var childTxtPop3 = txt_popup_3.get_node("labelGuiTextFenetre")
+				childTxtPop3.text = "Jeter"
+				childTxtPop3.position.x = mouse_pos.x + 37
+				childTxtPop3.position.y = mouse_pos.y + 125
+				childTxtPop3.add_theme_font_size_override("font_size", 29)
+				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				isPopUpOpen = true
+				print("J'ouvre le pop up")
+			
+			if isPopUpOpen == true:
+				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button equiper ")
+						#_Sgui_open()
+						nodeSceneGameplay.hero.img[nodeSceneGameplay.hero.current].isGuiOpen = false
+						nodeHudHero.emit_signal("guiHeroOpen", "hero")
+						_close_inventaire()
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+						#sceneGameplay._Sgui_open("hero")
+						
+				
+				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button stocker ")
+				
+				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button jeter ")
+						gui_bouclier3[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.bouclier3 -= 1
+						nbCompteurBouclier3 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+			#Faut creer lobjet popup (button interface text et tout)
+			#Faut que j'ajoute les conditions pour le clic et tout 
+			#A la fin remettre la variable txtItemSelect a "none"
+		
+		if txtItemSelect[i] == "bouclier_4":
+			#print("item select est bague : ", txtItemSelect)
+			if isPopUpOpen == false:
+				gui_popUp = GuiPopUp.instantiate()
+				add_child(gui_popUp)
+				gui_popUp.scale = Vector2(0.5, 0.5)
+				gui_popUp.offset.x = mouse_pos.x
+				gui_popUp.offset.y = mouse_pos.y
+				
+				gui_buttonOnEquiper = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnEquiper)
+				gui_buttonOnEquiper.scale = Vector2(0.5, 0.5)
+				gui_buttonOnEquiper.offset.x = mouse_pos.x + 20
+				gui_buttonOnEquiper.offset.y = mouse_pos.y + 30
+				
+				gui_buttonOnStocker = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnStocker)
+				gui_buttonOnStocker.scale = Vector2(0.5, 0.5)
+				gui_buttonOnStocker.offset.x = mouse_pos.x + 20
+				gui_buttonOnStocker.offset.y = mouse_pos.y + 75
+				
+				gui_buttonOnJeter = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnJeter)
+				gui_buttonOnJeter.scale = Vector2(0.5, 0.5)
+				gui_buttonOnJeter.offset.x = mouse_pos.x + 20
+				gui_buttonOnJeter.offset.y = mouse_pos.y + 120
+				
+				txt_popup_1 = GuiTextUi.instantiate()
+				add_child(txt_popup_1)
+				
+				var childTxtPop1 = txt_popup_1.get_node("labelGuiTextFenetre")
+				childTxtPop1.text = "Equiper"
+				childTxtPop1.position.x = mouse_pos.x + 24
+				childTxtPop1.position.y = mouse_pos.y + 35
+				childTxtPop1.add_theme_font_size_override("font_size", 29)
+				childTxtPop1.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				txt_popup_2 = GuiTextUi.instantiate()
+				add_child(txt_popup_2)
+				
+				var childTxtPop2 = txt_popup_2.get_node("labelGuiTextFenetre")
+				childTxtPop2.text = "Stocker"
+				childTxtPop2.position.x = mouse_pos.x + 24
+				childTxtPop2.position.y = mouse_pos.y + 80
+				childTxtPop2.add_theme_font_size_override("font_size", 29)
+				childTxtPop2.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				
+				txt_popup_3 = GuiTextUi.instantiate()
+				add_child(txt_popup_3)
+				
+				var childTxtPop3 = txt_popup_3.get_node("labelGuiTextFenetre")
+				childTxtPop3.text = "Jeter"
+				childTxtPop3.position.x = mouse_pos.x + 37
+				childTxtPop3.position.y = mouse_pos.y + 125
+				childTxtPop3.add_theme_font_size_override("font_size", 29)
+				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				isPopUpOpen = true
+				print("J'ouvre le pop up")
+			
+			if isPopUpOpen == true:
+				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button equiper ")
+						#_Sgui_open()
+						nodeSceneGameplay.hero.img[nodeSceneGameplay.hero.current].isGuiOpen = false
+						nodeHudHero.emit_signal("guiHeroOpen", "hero")
+						_close_inventaire()
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+						#sceneGameplay._Sgui_open("hero")
+						
+				
+				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button stocker ")
+				
+				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button jeter ")
+						gui_bouclier4[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.bouclier4 -= 1
+						nbCompteurBouclier4 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+			#Faut creer lobjet popup (button interface text et tout)
+			#Faut que j'ajoute les conditions pour le clic et tout 
+			#A la fin remettre la variable txtItemSelect a "none"
+		
+		if txtItemSelect[i] == "bouclier_5":
+			#print("item select est bague : ", txtItemSelect)
+			if isPopUpOpen == false:
+				gui_popUp = GuiPopUp.instantiate()
+				add_child(gui_popUp)
+				gui_popUp.scale = Vector2(0.5, 0.5)
+				gui_popUp.offset.x = mouse_pos.x
+				gui_popUp.offset.y = mouse_pos.y
+				
+				gui_buttonOnEquiper = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnEquiper)
+				gui_buttonOnEquiper.scale = Vector2(0.5, 0.5)
+				gui_buttonOnEquiper.offset.x = mouse_pos.x + 20
+				gui_buttonOnEquiper.offset.y = mouse_pos.y + 30
+				
+				gui_buttonOnStocker = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnStocker)
+				gui_buttonOnStocker.scale = Vector2(0.5, 0.5)
+				gui_buttonOnStocker.offset.x = mouse_pos.x + 20
+				gui_buttonOnStocker.offset.y = mouse_pos.y + 75
+				
+				gui_buttonOnJeter = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnJeter)
+				gui_buttonOnJeter.scale = Vector2(0.5, 0.5)
+				gui_buttonOnJeter.offset.x = mouse_pos.x + 20
+				gui_buttonOnJeter.offset.y = mouse_pos.y + 120
+				
+				txt_popup_1 = GuiTextUi.instantiate()
+				add_child(txt_popup_1)
+				
+				var childTxtPop1 = txt_popup_1.get_node("labelGuiTextFenetre")
+				childTxtPop1.text = "Equiper"
+				childTxtPop1.position.x = mouse_pos.x + 24
+				childTxtPop1.position.y = mouse_pos.y + 35
+				childTxtPop1.add_theme_font_size_override("font_size", 29)
+				childTxtPop1.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				txt_popup_2 = GuiTextUi.instantiate()
+				add_child(txt_popup_2)
+				
+				var childTxtPop2 = txt_popup_2.get_node("labelGuiTextFenetre")
+				childTxtPop2.text = "Stocker"
+				childTxtPop2.position.x = mouse_pos.x + 24
+				childTxtPop2.position.y = mouse_pos.y + 80
+				childTxtPop2.add_theme_font_size_override("font_size", 29)
+				childTxtPop2.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				
+				txt_popup_3 = GuiTextUi.instantiate()
+				add_child(txt_popup_3)
+				
+				var childTxtPop3 = txt_popup_3.get_node("labelGuiTextFenetre")
+				childTxtPop3.text = "Jeter"
+				childTxtPop3.position.x = mouse_pos.x + 37
+				childTxtPop3.position.y = mouse_pos.y + 125
+				childTxtPop3.add_theme_font_size_override("font_size", 29)
+				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				isPopUpOpen = true
+				print("J'ouvre le pop up")
+			
+			if isPopUpOpen == true:
+				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button equiper ")
+						#_Sgui_open()
+						nodeSceneGameplay.hero.img[nodeSceneGameplay.hero.current].isGuiOpen = false
+						nodeHudHero.emit_signal("guiHeroOpen", "hero")
+						_close_inventaire()
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+						#sceneGameplay._Sgui_open("hero")
+						
+				
+				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button stocker ")
+				
+				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button jeter ")
+						gui_bouclier5[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.bouclier5 -= 1
+						nbCompteurBouclier5 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+			#Faut creer lobjet popup (button interface text et tout)
+			#Faut que j'ajoute les conditions pour le clic et tout 
+			#A la fin remettre la variable txtItemSelect a "none"
+		
+		if txtItemSelect[i] == "bouclier_6":
+			#print("item select est bague : ", txtItemSelect)
+			if isPopUpOpen == false:
+				gui_popUp = GuiPopUp.instantiate()
+				add_child(gui_popUp)
+				gui_popUp.scale = Vector2(0.5, 0.5)
+				gui_popUp.offset.x = mouse_pos.x
+				gui_popUp.offset.y = mouse_pos.y
+				
+				gui_buttonOnEquiper = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnEquiper)
+				gui_buttonOnEquiper.scale = Vector2(0.5, 0.5)
+				gui_buttonOnEquiper.offset.x = mouse_pos.x + 20
+				gui_buttonOnEquiper.offset.y = mouse_pos.y + 30
+				
+				gui_buttonOnStocker = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnStocker)
+				gui_buttonOnStocker.scale = Vector2(0.5, 0.5)
+				gui_buttonOnStocker.offset.x = mouse_pos.x + 20
+				gui_buttonOnStocker.offset.y = mouse_pos.y + 75
+				
+				gui_buttonOnJeter = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnJeter)
+				gui_buttonOnJeter.scale = Vector2(0.5, 0.5)
+				gui_buttonOnJeter.offset.x = mouse_pos.x + 20
+				gui_buttonOnJeter.offset.y = mouse_pos.y + 120
+				
+				txt_popup_1 = GuiTextUi.instantiate()
+				add_child(txt_popup_1)
+				
+				var childTxtPop1 = txt_popup_1.get_node("labelGuiTextFenetre")
+				childTxtPop1.text = "Equiper"
+				childTxtPop1.position.x = mouse_pos.x + 24
+				childTxtPop1.position.y = mouse_pos.y + 35
+				childTxtPop1.add_theme_font_size_override("font_size", 29)
+				childTxtPop1.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				txt_popup_2 = GuiTextUi.instantiate()
+				add_child(txt_popup_2)
+				
+				var childTxtPop2 = txt_popup_2.get_node("labelGuiTextFenetre")
+				childTxtPop2.text = "Stocker"
+				childTxtPop2.position.x = mouse_pos.x + 24
+				childTxtPop2.position.y = mouse_pos.y + 80
+				childTxtPop2.add_theme_font_size_override("font_size", 29)
+				childTxtPop2.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				
+				txt_popup_3 = GuiTextUi.instantiate()
+				add_child(txt_popup_3)
+				
+				var childTxtPop3 = txt_popup_3.get_node("labelGuiTextFenetre")
+				childTxtPop3.text = "Jeter"
+				childTxtPop3.position.x = mouse_pos.x + 37
+				childTxtPop3.position.y = mouse_pos.y + 125
+				childTxtPop3.add_theme_font_size_override("font_size", 29)
+				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				isPopUpOpen = true
+				print("J'ouvre le pop up")
+			
+			if isPopUpOpen == true:
+				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button equiper ")
+						#_Sgui_open()
+						nodeSceneGameplay.hero.img[nodeSceneGameplay.hero.current].isGuiOpen = false
+						nodeHudHero.emit_signal("guiHeroOpen", "hero")
+						_close_inventaire()
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+						#sceneGameplay._Sgui_open("hero")
+						
+				
+				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button stocker ")
+				
+				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button jeter ")
+						gui_bouclier6[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.bouclier6 -= 1
+						nbCompteurBouclier6 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+			#Faut creer lobjet popup (button interface text et tout)
+			#Faut que j'ajoute les conditions pour le clic et tout 
+			#A la fin remettre la variable txtItemSelect a "none"
+		
+		if txtItemSelect[i] == "bouclier_7":
+			#print("item select est bague : ", txtItemSelect)
+			if isPopUpOpen == false:
+				gui_popUp = GuiPopUp.instantiate()
+				add_child(gui_popUp)
+				gui_popUp.scale = Vector2(0.5, 0.5)
+				gui_popUp.offset.x = mouse_pos.x
+				gui_popUp.offset.y = mouse_pos.y
+				
+				gui_buttonOnEquiper = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnEquiper)
+				gui_buttonOnEquiper.scale = Vector2(0.5, 0.5)
+				gui_buttonOnEquiper.offset.x = mouse_pos.x + 20
+				gui_buttonOnEquiper.offset.y = mouse_pos.y + 30
+				
+				gui_buttonOnStocker = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnStocker)
+				gui_buttonOnStocker.scale = Vector2(0.5, 0.5)
+				gui_buttonOnStocker.offset.x = mouse_pos.x + 20
+				gui_buttonOnStocker.offset.y = mouse_pos.y + 75
+				
+				gui_buttonOnJeter = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnJeter)
+				gui_buttonOnJeter.scale = Vector2(0.5, 0.5)
+				gui_buttonOnJeter.offset.x = mouse_pos.x + 20
+				gui_buttonOnJeter.offset.y = mouse_pos.y + 120
+				
+				txt_popup_1 = GuiTextUi.instantiate()
+				add_child(txt_popup_1)
+				
+				var childTxtPop1 = txt_popup_1.get_node("labelGuiTextFenetre")
+				childTxtPop1.text = "Equiper"
+				childTxtPop1.position.x = mouse_pos.x + 24
+				childTxtPop1.position.y = mouse_pos.y + 35
+				childTxtPop1.add_theme_font_size_override("font_size", 29)
+				childTxtPop1.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				txt_popup_2 = GuiTextUi.instantiate()
+				add_child(txt_popup_2)
+				
+				var childTxtPop2 = txt_popup_2.get_node("labelGuiTextFenetre")
+				childTxtPop2.text = "Stocker"
+				childTxtPop2.position.x = mouse_pos.x + 24
+				childTxtPop2.position.y = mouse_pos.y + 80
+				childTxtPop2.add_theme_font_size_override("font_size", 29)
+				childTxtPop2.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				
+				txt_popup_3 = GuiTextUi.instantiate()
+				add_child(txt_popup_3)
+				
+				var childTxtPop3 = txt_popup_3.get_node("labelGuiTextFenetre")
+				childTxtPop3.text = "Jeter"
+				childTxtPop3.position.x = mouse_pos.x + 37
+				childTxtPop3.position.y = mouse_pos.y + 125
+				childTxtPop3.add_theme_font_size_override("font_size", 29)
+				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				isPopUpOpen = true
+				print("J'ouvre le pop up")
+			
+			if isPopUpOpen == true:
+				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button equiper ")
+						#_Sgui_open()
+						nodeSceneGameplay.hero.img[nodeSceneGameplay.hero.current].isGuiOpen = false
+						nodeHudHero.emit_signal("guiHeroOpen", "hero")
+						_close_inventaire()
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+						#sceneGameplay._Sgui_open("hero")
+						
+				
+				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button stocker ")
+				
+				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button jeter ")
+						gui_bouclier7[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.bouclier7 -= 1
+						nbCompteurBouclier7 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+			#Faut creer lobjet popup (button interface text et tout)
+			#Faut que j'ajoute les conditions pour le clic et tout 
+			#A la fin remettre la variable txtItemSelect a "none"
+		
+		if txtItemSelect[i] == "casque_1":
+			#print("item select est bague : ", txtItemSelect)
+			if isPopUpOpen == false:
+				gui_popUp = GuiPopUp.instantiate()
+				add_child(gui_popUp)
+				gui_popUp.scale = Vector2(0.5, 0.5)
+				gui_popUp.offset.x = mouse_pos.x
+				gui_popUp.offset.y = mouse_pos.y
+				
+				gui_buttonOnEquiper = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnEquiper)
+				gui_buttonOnEquiper.scale = Vector2(0.5, 0.5)
+				gui_buttonOnEquiper.offset.x = mouse_pos.x + 20
+				gui_buttonOnEquiper.offset.y = mouse_pos.y + 30
+				
+				gui_buttonOnStocker = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnStocker)
+				gui_buttonOnStocker.scale = Vector2(0.5, 0.5)
+				gui_buttonOnStocker.offset.x = mouse_pos.x + 20
+				gui_buttonOnStocker.offset.y = mouse_pos.y + 75
+				
+				gui_buttonOnJeter = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnJeter)
+				gui_buttonOnJeter.scale = Vector2(0.5, 0.5)
+				gui_buttonOnJeter.offset.x = mouse_pos.x + 20
+				gui_buttonOnJeter.offset.y = mouse_pos.y + 120
+				
+				txt_popup_1 = GuiTextUi.instantiate()
+				add_child(txt_popup_1)
+				
+				var childTxtPop1 = txt_popup_1.get_node("labelGuiTextFenetre")
+				childTxtPop1.text = "Equiper"
+				childTxtPop1.position.x = mouse_pos.x + 24
+				childTxtPop1.position.y = mouse_pos.y + 35
+				childTxtPop1.add_theme_font_size_override("font_size", 29)
+				childTxtPop1.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				txt_popup_2 = GuiTextUi.instantiate()
+				add_child(txt_popup_2)
+				
+				var childTxtPop2 = txt_popup_2.get_node("labelGuiTextFenetre")
+				childTxtPop2.text = "Stocker"
+				childTxtPop2.position.x = mouse_pos.x + 24
+				childTxtPop2.position.y = mouse_pos.y + 80
+				childTxtPop2.add_theme_font_size_override("font_size", 29)
+				childTxtPop2.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				
+				txt_popup_3 = GuiTextUi.instantiate()
+				add_child(txt_popup_3)
+				
+				var childTxtPop3 = txt_popup_3.get_node("labelGuiTextFenetre")
+				childTxtPop3.text = "Jeter"
+				childTxtPop3.position.x = mouse_pos.x + 37
+				childTxtPop3.position.y = mouse_pos.y + 125
+				childTxtPop3.add_theme_font_size_override("font_size", 29)
+				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				isPopUpOpen = true
+				print("J'ouvre le pop up")
+			
+			if isPopUpOpen == true:
+				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button equiper ")
+						#_Sgui_open()
+						nodeSceneGameplay.hero.img[nodeSceneGameplay.hero.current].isGuiOpen = false
+						nodeHudHero.emit_signal("guiHeroOpen", "hero")
+						_close_inventaire()
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+						#sceneGameplay._Sgui_open("hero")
+						
+				
+				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button stocker ")
+				
+				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button jeter ")
+						gui_casque1[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.casque1 -= 1
+						nbCompteurCasque1 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+			#Faut creer lobjet popup (button interface text et tout)
+			#Faut que j'ajoute les conditions pour le clic et tout 
+			#A la fin remettre la variable txtItemSelect a "none"
+		
+		if txtItemSelect[i] == "casque_2":
+			#print("item select est bague : ", txtItemSelect)
+			if isPopUpOpen == false:
+				gui_popUp = GuiPopUp.instantiate()
+				add_child(gui_popUp)
+				gui_popUp.scale = Vector2(0.5, 0.5)
+				gui_popUp.offset.x = mouse_pos.x
+				gui_popUp.offset.y = mouse_pos.y
+				
+				gui_buttonOnEquiper = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnEquiper)
+				gui_buttonOnEquiper.scale = Vector2(0.5, 0.5)
+				gui_buttonOnEquiper.offset.x = mouse_pos.x + 20
+				gui_buttonOnEquiper.offset.y = mouse_pos.y + 30
+				
+				gui_buttonOnStocker = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnStocker)
+				gui_buttonOnStocker.scale = Vector2(0.5, 0.5)
+				gui_buttonOnStocker.offset.x = mouse_pos.x + 20
+				gui_buttonOnStocker.offset.y = mouse_pos.y + 75
+				
+				gui_buttonOnJeter = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnJeter)
+				gui_buttonOnJeter.scale = Vector2(0.5, 0.5)
+				gui_buttonOnJeter.offset.x = mouse_pos.x + 20
+				gui_buttonOnJeter.offset.y = mouse_pos.y + 120
+				
+				txt_popup_1 = GuiTextUi.instantiate()
+				add_child(txt_popup_1)
+				
+				var childTxtPop1 = txt_popup_1.get_node("labelGuiTextFenetre")
+				childTxtPop1.text = "Equiper"
+				childTxtPop1.position.x = mouse_pos.x + 24
+				childTxtPop1.position.y = mouse_pos.y + 35
+				childTxtPop1.add_theme_font_size_override("font_size", 29)
+				childTxtPop1.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				txt_popup_2 = GuiTextUi.instantiate()
+				add_child(txt_popup_2)
+				
+				var childTxtPop2 = txt_popup_2.get_node("labelGuiTextFenetre")
+				childTxtPop2.text = "Stocker"
+				childTxtPop2.position.x = mouse_pos.x + 24
+				childTxtPop2.position.y = mouse_pos.y + 80
+				childTxtPop2.add_theme_font_size_override("font_size", 29)
+				childTxtPop2.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				
+				txt_popup_3 = GuiTextUi.instantiate()
+				add_child(txt_popup_3)
+				
+				var childTxtPop3 = txt_popup_3.get_node("labelGuiTextFenetre")
+				childTxtPop3.text = "Jeter"
+				childTxtPop3.position.x = mouse_pos.x + 37
+				childTxtPop3.position.y = mouse_pos.y + 125
+				childTxtPop3.add_theme_font_size_override("font_size", 29)
+				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				isPopUpOpen = true
+				print("J'ouvre le pop up")
+			
+			if isPopUpOpen == true:
+				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button equiper ")
+						#_Sgui_open()
+						nodeSceneGameplay.hero.img[nodeSceneGameplay.hero.current].isGuiOpen = false
+						nodeHudHero.emit_signal("guiHeroOpen", "hero")
+						_close_inventaire()
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+						#sceneGameplay._Sgui_open("hero")
+						
+				
+				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button stocker ")
+				
+				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button jeter ")
+						gui_casque2[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.casque2 -= 1
+						nbCompteurCasque2 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+			#Faut creer lobjet popup (button interface text et tout)
+			#Faut que j'ajoute les conditions pour le clic et tout 
+			#A la fin remettre la variable txtItemSelect a "none"
+		
+		if txtItemSelect[i] == "casque_3":
+			#print("item select est bague : ", txtItemSelect)
+			if isPopUpOpen == false:
+				gui_popUp = GuiPopUp.instantiate()
+				add_child(gui_popUp)
+				gui_popUp.scale = Vector2(0.5, 0.5)
+				gui_popUp.offset.x = mouse_pos.x
+				gui_popUp.offset.y = mouse_pos.y
+				
+				gui_buttonOnEquiper = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnEquiper)
+				gui_buttonOnEquiper.scale = Vector2(0.5, 0.5)
+				gui_buttonOnEquiper.offset.x = mouse_pos.x + 20
+				gui_buttonOnEquiper.offset.y = mouse_pos.y + 30
+				
+				gui_buttonOnStocker = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnStocker)
+				gui_buttonOnStocker.scale = Vector2(0.5, 0.5)
+				gui_buttonOnStocker.offset.x = mouse_pos.x + 20
+				gui_buttonOnStocker.offset.y = mouse_pos.y + 75
+				
+				gui_buttonOnJeter = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnJeter)
+				gui_buttonOnJeter.scale = Vector2(0.5, 0.5)
+				gui_buttonOnJeter.offset.x = mouse_pos.x + 20
+				gui_buttonOnJeter.offset.y = mouse_pos.y + 120
+				
+				txt_popup_1 = GuiTextUi.instantiate()
+				add_child(txt_popup_1)
+				
+				var childTxtPop1 = txt_popup_1.get_node("labelGuiTextFenetre")
+				childTxtPop1.text = "Equiper"
+				childTxtPop1.position.x = mouse_pos.x + 24
+				childTxtPop1.position.y = mouse_pos.y + 35
+				childTxtPop1.add_theme_font_size_override("font_size", 29)
+				childTxtPop1.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				txt_popup_2 = GuiTextUi.instantiate()
+				add_child(txt_popup_2)
+				
+				var childTxtPop2 = txt_popup_2.get_node("labelGuiTextFenetre")
+				childTxtPop2.text = "Stocker"
+				childTxtPop2.position.x = mouse_pos.x + 24
+				childTxtPop2.position.y = mouse_pos.y + 80
+				childTxtPop2.add_theme_font_size_override("font_size", 29)
+				childTxtPop2.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				
+				txt_popup_3 = GuiTextUi.instantiate()
+				add_child(txt_popup_3)
+				
+				var childTxtPop3 = txt_popup_3.get_node("labelGuiTextFenetre")
+				childTxtPop3.text = "Jeter"
+				childTxtPop3.position.x = mouse_pos.x + 37
+				childTxtPop3.position.y = mouse_pos.y + 125
+				childTxtPop3.add_theme_font_size_override("font_size", 29)
+				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				isPopUpOpen = true
+				print("J'ouvre le pop up")
+			
+			if isPopUpOpen == true:
+				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button equiper ")
+						#_Sgui_open()
+						nodeSceneGameplay.hero.img[nodeSceneGameplay.hero.current].isGuiOpen = false
+						nodeHudHero.emit_signal("guiHeroOpen", "hero")
+						_close_inventaire()
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+						#sceneGameplay._Sgui_open("hero")
+						
+				
+				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button stocker ")
+				
+				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button jeter ")
+						gui_casque3[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.casque3 -= 1
+						nbCompteurCasque3 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+			#Faut creer lobjet popup (button interface text et tout)
+			#Faut que j'ajoute les conditions pour le clic et tout 
+			#A la fin remettre la variable txtItemSelect a "none"
+		
+		if txtItemSelect[i] == "casque_4":
+			#print("item select est bague : ", txtItemSelect)
+			if isPopUpOpen == false:
+				gui_popUp = GuiPopUp.instantiate()
+				add_child(gui_popUp)
+				gui_popUp.scale = Vector2(0.5, 0.5)
+				gui_popUp.offset.x = mouse_pos.x
+				gui_popUp.offset.y = mouse_pos.y
+				
+				gui_buttonOnEquiper = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnEquiper)
+				gui_buttonOnEquiper.scale = Vector2(0.5, 0.5)
+				gui_buttonOnEquiper.offset.x = mouse_pos.x + 20
+				gui_buttonOnEquiper.offset.y = mouse_pos.y + 30
+				
+				gui_buttonOnStocker = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnStocker)
+				gui_buttonOnStocker.scale = Vector2(0.5, 0.5)
+				gui_buttonOnStocker.offset.x = mouse_pos.x + 20
+				gui_buttonOnStocker.offset.y = mouse_pos.y + 75
+				
+				gui_buttonOnJeter = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnJeter)
+				gui_buttonOnJeter.scale = Vector2(0.5, 0.5)
+				gui_buttonOnJeter.offset.x = mouse_pos.x + 20
+				gui_buttonOnJeter.offset.y = mouse_pos.y + 120
+				
+				txt_popup_1 = GuiTextUi.instantiate()
+				add_child(txt_popup_1)
+				
+				var childTxtPop1 = txt_popup_1.get_node("labelGuiTextFenetre")
+				childTxtPop1.text = "Equiper"
+				childTxtPop1.position.x = mouse_pos.x + 24
+				childTxtPop1.position.y = mouse_pos.y + 35
+				childTxtPop1.add_theme_font_size_override("font_size", 29)
+				childTxtPop1.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				txt_popup_2 = GuiTextUi.instantiate()
+				add_child(txt_popup_2)
+				
+				var childTxtPop2 = txt_popup_2.get_node("labelGuiTextFenetre")
+				childTxtPop2.text = "Stocker"
+				childTxtPop2.position.x = mouse_pos.x + 24
+				childTxtPop2.position.y = mouse_pos.y + 80
+				childTxtPop2.add_theme_font_size_override("font_size", 29)
+				childTxtPop2.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				
+				txt_popup_3 = GuiTextUi.instantiate()
+				add_child(txt_popup_3)
+				
+				var childTxtPop3 = txt_popup_3.get_node("labelGuiTextFenetre")
+				childTxtPop3.text = "Jeter"
+				childTxtPop3.position.x = mouse_pos.x + 37
+				childTxtPop3.position.y = mouse_pos.y + 125
+				childTxtPop3.add_theme_font_size_override("font_size", 29)
+				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				isPopUpOpen = true
+				print("J'ouvre le pop up")
+			
+			if isPopUpOpen == true:
+				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button equiper ")
+						#_Sgui_open()
+						nodeSceneGameplay.hero.img[nodeSceneGameplay.hero.current].isGuiOpen = false
+						nodeHudHero.emit_signal("guiHeroOpen", "hero")
+						_close_inventaire()
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+						#sceneGameplay._Sgui_open("hero")
+						
+				
+				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button stocker ")
+				
+				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button jeter ")
+						gui_casque4[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.casque4 -= 1
+						nbCompteurCasque4 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+			#Faut creer lobjet popup (button interface text et tout)
+			#Faut que j'ajoute les conditions pour le clic et tout 
+			#A la fin remettre la variable txtItemSelect a "none"
+		
+		if txtItemSelect[i] == "casque_5":
+			#print("item select est bague : ", txtItemSelect)
+			if isPopUpOpen == false:
+				gui_popUp = GuiPopUp.instantiate()
+				add_child(gui_popUp)
+				gui_popUp.scale = Vector2(0.5, 0.5)
+				gui_popUp.offset.x = mouse_pos.x
+				gui_popUp.offset.y = mouse_pos.y
+				
+				gui_buttonOnEquiper = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnEquiper)
+				gui_buttonOnEquiper.scale = Vector2(0.5, 0.5)
+				gui_buttonOnEquiper.offset.x = mouse_pos.x + 20
+				gui_buttonOnEquiper.offset.y = mouse_pos.y + 30
+				
+				gui_buttonOnStocker = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnStocker)
+				gui_buttonOnStocker.scale = Vector2(0.5, 0.5)
+				gui_buttonOnStocker.offset.x = mouse_pos.x + 20
+				gui_buttonOnStocker.offset.y = mouse_pos.y + 75
+				
+				gui_buttonOnJeter = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnJeter)
+				gui_buttonOnJeter.scale = Vector2(0.5, 0.5)
+				gui_buttonOnJeter.offset.x = mouse_pos.x + 20
+				gui_buttonOnJeter.offset.y = mouse_pos.y + 120
+				
+				txt_popup_1 = GuiTextUi.instantiate()
+				add_child(txt_popup_1)
+				
+				var childTxtPop1 = txt_popup_1.get_node("labelGuiTextFenetre")
+				childTxtPop1.text = "Equiper"
+				childTxtPop1.position.x = mouse_pos.x + 24
+				childTxtPop1.position.y = mouse_pos.y + 35
+				childTxtPop1.add_theme_font_size_override("font_size", 29)
+				childTxtPop1.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				txt_popup_2 = GuiTextUi.instantiate()
+				add_child(txt_popup_2)
+				
+				var childTxtPop2 = txt_popup_2.get_node("labelGuiTextFenetre")
+				childTxtPop2.text = "Stocker"
+				childTxtPop2.position.x = mouse_pos.x + 24
+				childTxtPop2.position.y = mouse_pos.y + 80
+				childTxtPop2.add_theme_font_size_override("font_size", 29)
+				childTxtPop2.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				
+				txt_popup_3 = GuiTextUi.instantiate()
+				add_child(txt_popup_3)
+				
+				var childTxtPop3 = txt_popup_3.get_node("labelGuiTextFenetre")
+				childTxtPop3.text = "Jeter"
+				childTxtPop3.position.x = mouse_pos.x + 37
+				childTxtPop3.position.y = mouse_pos.y + 125
+				childTxtPop3.add_theme_font_size_override("font_size", 29)
+				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				isPopUpOpen = true
+				print("J'ouvre le pop up")
+			
+			if isPopUpOpen == true:
+				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button equiper ")
+						#_Sgui_open()
+						nodeSceneGameplay.hero.img[nodeSceneGameplay.hero.current].isGuiOpen = false
+						nodeHudHero.emit_signal("guiHeroOpen", "hero")
+						_close_inventaire()
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+						#sceneGameplay._Sgui_open("hero")
+						
+				
+				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button stocker ")
+				
+				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button jeter ")
+						gui_casque5[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.casque5 -= 1
+						nbCompteurCasque5 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+			#Faut creer lobjet popup (button interface text et tout)
+			#Faut que j'ajoute les conditions pour le clic et tout 
+			#A la fin remettre la variable txtItemSelect a "none"
+		
+		if txtItemSelect[i] == "casque_6":
+			#print("item select est bague : ", txtItemSelect)
+			if isPopUpOpen == false:
+				gui_popUp = GuiPopUp.instantiate()
+				add_child(gui_popUp)
+				gui_popUp.scale = Vector2(0.5, 0.5)
+				gui_popUp.offset.x = mouse_pos.x
+				gui_popUp.offset.y = mouse_pos.y
+				
+				gui_buttonOnEquiper = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnEquiper)
+				gui_buttonOnEquiper.scale = Vector2(0.5, 0.5)
+				gui_buttonOnEquiper.offset.x = mouse_pos.x + 20
+				gui_buttonOnEquiper.offset.y = mouse_pos.y + 30
+				
+				gui_buttonOnStocker = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnStocker)
+				gui_buttonOnStocker.scale = Vector2(0.5, 0.5)
+				gui_buttonOnStocker.offset.x = mouse_pos.x + 20
+				gui_buttonOnStocker.offset.y = mouse_pos.y + 75
+				
+				gui_buttonOnJeter = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnJeter)
+				gui_buttonOnJeter.scale = Vector2(0.5, 0.5)
+				gui_buttonOnJeter.offset.x = mouse_pos.x + 20
+				gui_buttonOnJeter.offset.y = mouse_pos.y + 120
+				
+				txt_popup_1 = GuiTextUi.instantiate()
+				add_child(txt_popup_1)
+				
+				var childTxtPop1 = txt_popup_1.get_node("labelGuiTextFenetre")
+				childTxtPop1.text = "Equiper"
+				childTxtPop1.position.x = mouse_pos.x + 24
+				childTxtPop1.position.y = mouse_pos.y + 35
+				childTxtPop1.add_theme_font_size_override("font_size", 29)
+				childTxtPop1.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				txt_popup_2 = GuiTextUi.instantiate()
+				add_child(txt_popup_2)
+				
+				var childTxtPop2 = txt_popup_2.get_node("labelGuiTextFenetre")
+				childTxtPop2.text = "Stocker"
+				childTxtPop2.position.x = mouse_pos.x + 24
+				childTxtPop2.position.y = mouse_pos.y + 80
+				childTxtPop2.add_theme_font_size_override("font_size", 29)
+				childTxtPop2.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				
+				txt_popup_3 = GuiTextUi.instantiate()
+				add_child(txt_popup_3)
+				
+				var childTxtPop3 = txt_popup_3.get_node("labelGuiTextFenetre")
+				childTxtPop3.text = "Jeter"
+				childTxtPop3.position.x = mouse_pos.x + 37
+				childTxtPop3.position.y = mouse_pos.y + 125
+				childTxtPop3.add_theme_font_size_override("font_size", 29)
+				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				isPopUpOpen = true
+				print("J'ouvre le pop up")
+			
+			if isPopUpOpen == true:
+				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button equiper ")
+						#_Sgui_open()
+						nodeSceneGameplay.hero.img[nodeSceneGameplay.hero.current].isGuiOpen = false
+						nodeHudHero.emit_signal("guiHeroOpen", "hero")
+						_close_inventaire()
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+						#sceneGameplay._Sgui_open("hero")
+						
+				
+				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button stocker ")
+				
+				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button jeter ")
+						gui_casque6[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.casque6 -= 1
+						nbCompteurCasque6 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+			#Faut creer lobjet popup (button interface text et tout)
+			#Faut que j'ajoute les conditions pour le clic et tout 
+			#A la fin remettre la variable txtItemSelect a "none"
+		
+		if txtItemSelect[i] == "collier_1":
+			#print("item select est bague : ", txtItemSelect)
+			if isPopUpOpen == false:
+				gui_popUp = GuiPopUp.instantiate()
+				add_child(gui_popUp)
+				gui_popUp.scale = Vector2(0.5, 0.5)
+				gui_popUp.offset.x = mouse_pos.x
+				gui_popUp.offset.y = mouse_pos.y
+				
+				gui_buttonOnEquiper = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnEquiper)
+				gui_buttonOnEquiper.scale = Vector2(0.5, 0.5)
+				gui_buttonOnEquiper.offset.x = mouse_pos.x + 20
+				gui_buttonOnEquiper.offset.y = mouse_pos.y + 30
+				
+				gui_buttonOnStocker = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnStocker)
+				gui_buttonOnStocker.scale = Vector2(0.5, 0.5)
+				gui_buttonOnStocker.offset.x = mouse_pos.x + 20
+				gui_buttonOnStocker.offset.y = mouse_pos.y + 75
+				
+				gui_buttonOnJeter = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnJeter)
+				gui_buttonOnJeter.scale = Vector2(0.5, 0.5)
+				gui_buttonOnJeter.offset.x = mouse_pos.x + 20
+				gui_buttonOnJeter.offset.y = mouse_pos.y + 120
+				
+				txt_popup_1 = GuiTextUi.instantiate()
+				add_child(txt_popup_1)
+				
+				var childTxtPop1 = txt_popup_1.get_node("labelGuiTextFenetre")
+				childTxtPop1.text = "Equiper"
+				childTxtPop1.position.x = mouse_pos.x + 24
+				childTxtPop1.position.y = mouse_pos.y + 35
+				childTxtPop1.add_theme_font_size_override("font_size", 29)
+				childTxtPop1.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				txt_popup_2 = GuiTextUi.instantiate()
+				add_child(txt_popup_2)
+				
+				var childTxtPop2 = txt_popup_2.get_node("labelGuiTextFenetre")
+				childTxtPop2.text = "Stocker"
+				childTxtPop2.position.x = mouse_pos.x + 24
+				childTxtPop2.position.y = mouse_pos.y + 80
+				childTxtPop2.add_theme_font_size_override("font_size", 29)
+				childTxtPop2.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				
+				txt_popup_3 = GuiTextUi.instantiate()
+				add_child(txt_popup_3)
+				
+				var childTxtPop3 = txt_popup_3.get_node("labelGuiTextFenetre")
+				childTxtPop3.text = "Jeter"
+				childTxtPop3.position.x = mouse_pos.x + 37
+				childTxtPop3.position.y = mouse_pos.y + 125
+				childTxtPop3.add_theme_font_size_override("font_size", 29)
+				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				isPopUpOpen = true
+				print("J'ouvre le pop up")
+			
+			if isPopUpOpen == true:
+				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button equiper ")
+						#_Sgui_open()
+						nodeSceneGameplay.hero.img[nodeSceneGameplay.hero.current].isGuiOpen = false
+						nodeHudHero.emit_signal("guiHeroOpen", "hero")
+						_close_inventaire()
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+						#sceneGameplay._Sgui_open("hero")
+						
+				
+				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button stocker ")
+				
+				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button jeter ")
+						gui_collier1[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.collier1 -= 1
+						nbCompteurCollier1 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+			#Faut creer lobjet popup (button interface text et tout)
+			#Faut que j'ajoute les conditions pour le clic et tout 
+			#A la fin remettre la variable txtItemSelect a "none"
+		
+		if txtItemSelect[i] == "collier_2":
+			#print("item select est bague : ", txtItemSelect)
+			if isPopUpOpen == false:
+				gui_popUp = GuiPopUp.instantiate()
+				add_child(gui_popUp)
+				gui_popUp.scale = Vector2(0.5, 0.5)
+				gui_popUp.offset.x = mouse_pos.x
+				gui_popUp.offset.y = mouse_pos.y
+				
+				gui_buttonOnEquiper = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnEquiper)
+				gui_buttonOnEquiper.scale = Vector2(0.5, 0.5)
+				gui_buttonOnEquiper.offset.x = mouse_pos.x + 20
+				gui_buttonOnEquiper.offset.y = mouse_pos.y + 30
+				
+				gui_buttonOnStocker = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnStocker)
+				gui_buttonOnStocker.scale = Vector2(0.5, 0.5)
+				gui_buttonOnStocker.offset.x = mouse_pos.x + 20
+				gui_buttonOnStocker.offset.y = mouse_pos.y + 75
+				
+				gui_buttonOnJeter = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnJeter)
+				gui_buttonOnJeter.scale = Vector2(0.5, 0.5)
+				gui_buttonOnJeter.offset.x = mouse_pos.x + 20
+				gui_buttonOnJeter.offset.y = mouse_pos.y + 120
+				
+				txt_popup_1 = GuiTextUi.instantiate()
+				add_child(txt_popup_1)
+				
+				var childTxtPop1 = txt_popup_1.get_node("labelGuiTextFenetre")
+				childTxtPop1.text = "Equiper"
+				childTxtPop1.position.x = mouse_pos.x + 24
+				childTxtPop1.position.y = mouse_pos.y + 35
+				childTxtPop1.add_theme_font_size_override("font_size", 29)
+				childTxtPop1.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				txt_popup_2 = GuiTextUi.instantiate()
+				add_child(txt_popup_2)
+				
+				var childTxtPop2 = txt_popup_2.get_node("labelGuiTextFenetre")
+				childTxtPop2.text = "Stocker"
+				childTxtPop2.position.x = mouse_pos.x + 24
+				childTxtPop2.position.y = mouse_pos.y + 80
+				childTxtPop2.add_theme_font_size_override("font_size", 29)
+				childTxtPop2.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				
+				txt_popup_3 = GuiTextUi.instantiate()
+				add_child(txt_popup_3)
+				
+				var childTxtPop3 = txt_popup_3.get_node("labelGuiTextFenetre")
+				childTxtPop3.text = "Jeter"
+				childTxtPop3.position.x = mouse_pos.x + 37
+				childTxtPop3.position.y = mouse_pos.y + 125
+				childTxtPop3.add_theme_font_size_override("font_size", 29)
+				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				isPopUpOpen = true
+				print("J'ouvre le pop up")
+			
+			if isPopUpOpen == true:
+				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button equiper ")
+						#_Sgui_open()
+						nodeSceneGameplay.hero.img[nodeSceneGameplay.hero.current].isGuiOpen = false
+						nodeHudHero.emit_signal("guiHeroOpen", "hero")
+						_close_inventaire()
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+						#sceneGameplay._Sgui_open("hero")
+						
+				
+				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button stocker ")
+				
+				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button jeter ")
+						gui_collier2[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.collier2 -= 1
+						nbCompteurCollier2 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+			#Faut creer lobjet popup (button interface text et tout)
+			#Faut que j'ajoute les conditions pour le clic et tout 
+			#A la fin remettre la variable txtItemSelect a "none"
+		
+		if txtItemSelect[i] == "collier_3":
+			#print("item select est bague : ", txtItemSelect)
+			if isPopUpOpen == false:
+				gui_popUp = GuiPopUp.instantiate()
+				add_child(gui_popUp)
+				gui_popUp.scale = Vector2(0.5, 0.5)
+				gui_popUp.offset.x = mouse_pos.x
+				gui_popUp.offset.y = mouse_pos.y
+				
+				gui_buttonOnEquiper = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnEquiper)
+				gui_buttonOnEquiper.scale = Vector2(0.5, 0.5)
+				gui_buttonOnEquiper.offset.x = mouse_pos.x + 20
+				gui_buttonOnEquiper.offset.y = mouse_pos.y + 30
+				
+				gui_buttonOnStocker = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnStocker)
+				gui_buttonOnStocker.scale = Vector2(0.5, 0.5)
+				gui_buttonOnStocker.offset.x = mouse_pos.x + 20
+				gui_buttonOnStocker.offset.y = mouse_pos.y + 75
+				
+				gui_buttonOnJeter = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnJeter)
+				gui_buttonOnJeter.scale = Vector2(0.5, 0.5)
+				gui_buttonOnJeter.offset.x = mouse_pos.x + 20
+				gui_buttonOnJeter.offset.y = mouse_pos.y + 120
+				
+				txt_popup_1 = GuiTextUi.instantiate()
+				add_child(txt_popup_1)
+				
+				var childTxtPop1 = txt_popup_1.get_node("labelGuiTextFenetre")
+				childTxtPop1.text = "Equiper"
+				childTxtPop1.position.x = mouse_pos.x + 24
+				childTxtPop1.position.y = mouse_pos.y + 35
+				childTxtPop1.add_theme_font_size_override("font_size", 29)
+				childTxtPop1.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				txt_popup_2 = GuiTextUi.instantiate()
+				add_child(txt_popup_2)
+				
+				var childTxtPop2 = txt_popup_2.get_node("labelGuiTextFenetre")
+				childTxtPop2.text = "Stocker"
+				childTxtPop2.position.x = mouse_pos.x + 24
+				childTxtPop2.position.y = mouse_pos.y + 80
+				childTxtPop2.add_theme_font_size_override("font_size", 29)
+				childTxtPop2.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				
+				txt_popup_3 = GuiTextUi.instantiate()
+				add_child(txt_popup_3)
+				
+				var childTxtPop3 = txt_popup_3.get_node("labelGuiTextFenetre")
+				childTxtPop3.text = "Jeter"
+				childTxtPop3.position.x = mouse_pos.x + 37
+				childTxtPop3.position.y = mouse_pos.y + 125
+				childTxtPop3.add_theme_font_size_override("font_size", 29)
+				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				isPopUpOpen = true
+				print("J'ouvre le pop up")
+			
+			if isPopUpOpen == true:
+				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button equiper ")
+						#_Sgui_open()
+						nodeSceneGameplay.hero.img[nodeSceneGameplay.hero.current].isGuiOpen = false
+						nodeHudHero.emit_signal("guiHeroOpen", "hero")
+						_close_inventaire()
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+						#sceneGameplay._Sgui_open("hero")
+						
+				
+				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button stocker ")
+				
+				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button jeter ")
+						gui_collier3[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.collier3 -= 1
+						nbCompteurCollier3 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+			#Faut creer lobjet popup (button interface text et tout)
+			#Faut que j'ajoute les conditions pour le clic et tout 
+			#A la fin remettre la variable txtItemSelect a "none"
+		
+		if txtItemSelect[i] == "heaume_1":
+			#print("item select est bague : ", txtItemSelect)
+			if isPopUpOpen == false:
+				gui_popUp = GuiPopUp.instantiate()
+				add_child(gui_popUp)
+				gui_popUp.scale = Vector2(0.5, 0.5)
+				gui_popUp.offset.x = mouse_pos.x
+				gui_popUp.offset.y = mouse_pos.y
+				
+				gui_buttonOnEquiper = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnEquiper)
+				gui_buttonOnEquiper.scale = Vector2(0.5, 0.5)
+				gui_buttonOnEquiper.offset.x = mouse_pos.x + 20
+				gui_buttonOnEquiper.offset.y = mouse_pos.y + 30
+				
+				gui_buttonOnStocker = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnStocker)
+				gui_buttonOnStocker.scale = Vector2(0.5, 0.5)
+				gui_buttonOnStocker.offset.x = mouse_pos.x + 20
+				gui_buttonOnStocker.offset.y = mouse_pos.y + 75
+				
+				gui_buttonOnJeter = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnJeter)
+				gui_buttonOnJeter.scale = Vector2(0.5, 0.5)
+				gui_buttonOnJeter.offset.x = mouse_pos.x + 20
+				gui_buttonOnJeter.offset.y = mouse_pos.y + 120
+				
+				txt_popup_1 = GuiTextUi.instantiate()
+				add_child(txt_popup_1)
+				
+				var childTxtPop1 = txt_popup_1.get_node("labelGuiTextFenetre")
+				childTxtPop1.text = "Equiper"
+				childTxtPop1.position.x = mouse_pos.x + 24
+				childTxtPop1.position.y = mouse_pos.y + 35
+				childTxtPop1.add_theme_font_size_override("font_size", 29)
+				childTxtPop1.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				txt_popup_2 = GuiTextUi.instantiate()
+				add_child(txt_popup_2)
+				
+				var childTxtPop2 = txt_popup_2.get_node("labelGuiTextFenetre")
+				childTxtPop2.text = "Stocker"
+				childTxtPop2.position.x = mouse_pos.x + 24
+				childTxtPop2.position.y = mouse_pos.y + 80
+				childTxtPop2.add_theme_font_size_override("font_size", 29)
+				childTxtPop2.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				
+				txt_popup_3 = GuiTextUi.instantiate()
+				add_child(txt_popup_3)
+				
+				var childTxtPop3 = txt_popup_3.get_node("labelGuiTextFenetre")
+				childTxtPop3.text = "Jeter"
+				childTxtPop3.position.x = mouse_pos.x + 37
+				childTxtPop3.position.y = mouse_pos.y + 125
+				childTxtPop3.add_theme_font_size_override("font_size", 29)
+				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				isPopUpOpen = true
+				print("J'ouvre le pop up")
+			
+			if isPopUpOpen == true:
+				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button equiper ")
+						#_Sgui_open()
+						nodeSceneGameplay.hero.img[nodeSceneGameplay.hero.current].isGuiOpen = false
+						nodeHudHero.emit_signal("guiHeroOpen", "hero")
+						_close_inventaire()
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+						#sceneGameplay._Sgui_open("hero")
+						
+				
+				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button stocker ")
+				
+				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button jeter ")
+						gui_heaume1[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.heaume1 -= 1
+						nbCompteurHeaume1 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+			#Faut creer lobjet popup (button interface text et tout)
+			#Faut que j'ajoute les conditions pour le clic et tout 
+			#A la fin remettre la variable txtItemSelect a "none"
+		
+		if txtItemSelect[i] == "heaume_2":
+			#print("item select est bague : ", txtItemSelect)
+			if isPopUpOpen == false:
+				gui_popUp = GuiPopUp.instantiate()
+				add_child(gui_popUp)
+				gui_popUp.scale = Vector2(0.5, 0.5)
+				gui_popUp.offset.x = mouse_pos.x
+				gui_popUp.offset.y = mouse_pos.y
+				
+				gui_buttonOnEquiper = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnEquiper)
+				gui_buttonOnEquiper.scale = Vector2(0.5, 0.5)
+				gui_buttonOnEquiper.offset.x = mouse_pos.x + 20
+				gui_buttonOnEquiper.offset.y = mouse_pos.y + 30
+				
+				gui_buttonOnStocker = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnStocker)
+				gui_buttonOnStocker.scale = Vector2(0.5, 0.5)
+				gui_buttonOnStocker.offset.x = mouse_pos.x + 20
+				gui_buttonOnStocker.offset.y = mouse_pos.y + 75
+				
+				gui_buttonOnJeter = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnJeter)
+				gui_buttonOnJeter.scale = Vector2(0.5, 0.5)
+				gui_buttonOnJeter.offset.x = mouse_pos.x + 20
+				gui_buttonOnJeter.offset.y = mouse_pos.y + 120
+				
+				txt_popup_1 = GuiTextUi.instantiate()
+				add_child(txt_popup_1)
+				
+				var childTxtPop1 = txt_popup_1.get_node("labelGuiTextFenetre")
+				childTxtPop1.text = "Equiper"
+				childTxtPop1.position.x = mouse_pos.x + 24
+				childTxtPop1.position.y = mouse_pos.y + 35
+				childTxtPop1.add_theme_font_size_override("font_size", 29)
+				childTxtPop1.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				txt_popup_2 = GuiTextUi.instantiate()
+				add_child(txt_popup_2)
+				
+				var childTxtPop2 = txt_popup_2.get_node("labelGuiTextFenetre")
+				childTxtPop2.text = "Stocker"
+				childTxtPop2.position.x = mouse_pos.x + 24
+				childTxtPop2.position.y = mouse_pos.y + 80
+				childTxtPop2.add_theme_font_size_override("font_size", 29)
+				childTxtPop2.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				
+				txt_popup_3 = GuiTextUi.instantiate()
+				add_child(txt_popup_3)
+				
+				var childTxtPop3 = txt_popup_3.get_node("labelGuiTextFenetre")
+				childTxtPop3.text = "Jeter"
+				childTxtPop3.position.x = mouse_pos.x + 37
+				childTxtPop3.position.y = mouse_pos.y + 125
+				childTxtPop3.add_theme_font_size_override("font_size", 29)
+				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				isPopUpOpen = true
+				print("J'ouvre le pop up")
+			
+			if isPopUpOpen == true:
+				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button equiper ")
+						#_Sgui_open()
+						nodeSceneGameplay.hero.img[nodeSceneGameplay.hero.current].isGuiOpen = false
+						nodeHudHero.emit_signal("guiHeroOpen", "hero")
+						_close_inventaire()
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+						#sceneGameplay._Sgui_open("hero")
+						
+				
+				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button stocker ")
+				
+				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button jeter ")
+						gui_heaume2[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.heaume2 -= 1
+						nbCompteurHeaume2 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+			#Faut creer lobjet popup (button interface text et tout)
+			#Faut que j'ajoute les conditions pour le clic et tout 
+			#A la fin remettre la variable txtItemSelect a "none"
+		
+		if txtItemSelect[i] == "heaume_3":
+			#print("item select est bague : ", txtItemSelect)
+			if isPopUpOpen == false:
+				gui_popUp = GuiPopUp.instantiate()
+				add_child(gui_popUp)
+				gui_popUp.scale = Vector2(0.5, 0.5)
+				gui_popUp.offset.x = mouse_pos.x
+				gui_popUp.offset.y = mouse_pos.y
+				
+				gui_buttonOnEquiper = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnEquiper)
+				gui_buttonOnEquiper.scale = Vector2(0.5, 0.5)
+				gui_buttonOnEquiper.offset.x = mouse_pos.x + 20
+				gui_buttonOnEquiper.offset.y = mouse_pos.y + 30
+				
+				gui_buttonOnStocker = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnStocker)
+				gui_buttonOnStocker.scale = Vector2(0.5, 0.5)
+				gui_buttonOnStocker.offset.x = mouse_pos.x + 20
+				gui_buttonOnStocker.offset.y = mouse_pos.y + 75
+				
+				gui_buttonOnJeter = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnJeter)
+				gui_buttonOnJeter.scale = Vector2(0.5, 0.5)
+				gui_buttonOnJeter.offset.x = mouse_pos.x + 20
+				gui_buttonOnJeter.offset.y = mouse_pos.y + 120
+				
+				txt_popup_1 = GuiTextUi.instantiate()
+				add_child(txt_popup_1)
+				
+				var childTxtPop1 = txt_popup_1.get_node("labelGuiTextFenetre")
+				childTxtPop1.text = "Equiper"
+				childTxtPop1.position.x = mouse_pos.x + 24
+				childTxtPop1.position.y = mouse_pos.y + 35
+				childTxtPop1.add_theme_font_size_override("font_size", 29)
+				childTxtPop1.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				txt_popup_2 = GuiTextUi.instantiate()
+				add_child(txt_popup_2)
+				
+				var childTxtPop2 = txt_popup_2.get_node("labelGuiTextFenetre")
+				childTxtPop2.text = "Stocker"
+				childTxtPop2.position.x = mouse_pos.x + 24
+				childTxtPop2.position.y = mouse_pos.y + 80
+				childTxtPop2.add_theme_font_size_override("font_size", 29)
+				childTxtPop2.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				
+				txt_popup_3 = GuiTextUi.instantiate()
+				add_child(txt_popup_3)
+				
+				var childTxtPop3 = txt_popup_3.get_node("labelGuiTextFenetre")
+				childTxtPop3.text = "Jeter"
+				childTxtPop3.position.x = mouse_pos.x + 37
+				childTxtPop3.position.y = mouse_pos.y + 125
+				childTxtPop3.add_theme_font_size_override("font_size", 29)
+				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				isPopUpOpen = true
+				print("J'ouvre le pop up")
+			
+			if isPopUpOpen == true:
+				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button equiper ")
+						#_Sgui_open()
+						nodeSceneGameplay.hero.img[nodeSceneGameplay.hero.current].isGuiOpen = false
+						nodeHudHero.emit_signal("guiHeroOpen", "hero")
+						_close_inventaire()
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+						#sceneGameplay._Sgui_open("hero")
+						
+				
+				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button stocker ")
+				
+				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button jeter ")
+						gui_heaume3[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.heaume3 -= 1
+						nbCompteurHeaume3 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+			#Faut creer lobjet popup (button interface text et tout)
+			#Faut que j'ajoute les conditions pour le clic et tout 
+			#A la fin remettre la variable txtItemSelect a "none"
+		
+		if txtItemSelect[i] == "heaume_4":
+			#print("item select est bague : ", txtItemSelect)
+			if isPopUpOpen == false:
+				gui_popUp = GuiPopUp.instantiate()
+				add_child(gui_popUp)
+				gui_popUp.scale = Vector2(0.5, 0.5)
+				gui_popUp.offset.x = mouse_pos.x
+				gui_popUp.offset.y = mouse_pos.y
+				
+				gui_buttonOnEquiper = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnEquiper)
+				gui_buttonOnEquiper.scale = Vector2(0.5, 0.5)
+				gui_buttonOnEquiper.offset.x = mouse_pos.x + 20
+				gui_buttonOnEquiper.offset.y = mouse_pos.y + 30
+				
+				gui_buttonOnStocker = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnStocker)
+				gui_buttonOnStocker.scale = Vector2(0.5, 0.5)
+				gui_buttonOnStocker.offset.x = mouse_pos.x + 20
+				gui_buttonOnStocker.offset.y = mouse_pos.y + 75
+				
+				gui_buttonOnJeter = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnJeter)
+				gui_buttonOnJeter.scale = Vector2(0.5, 0.5)
+				gui_buttonOnJeter.offset.x = mouse_pos.x + 20
+				gui_buttonOnJeter.offset.y = mouse_pos.y + 120
+				
+				txt_popup_1 = GuiTextUi.instantiate()
+				add_child(txt_popup_1)
+				
+				var childTxtPop1 = txt_popup_1.get_node("labelGuiTextFenetre")
+				childTxtPop1.text = "Equiper"
+				childTxtPop1.position.x = mouse_pos.x + 24
+				childTxtPop1.position.y = mouse_pos.y + 35
+				childTxtPop1.add_theme_font_size_override("font_size", 29)
+				childTxtPop1.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				txt_popup_2 = GuiTextUi.instantiate()
+				add_child(txt_popup_2)
+				
+				var childTxtPop2 = txt_popup_2.get_node("labelGuiTextFenetre")
+				childTxtPop2.text = "Stocker"
+				childTxtPop2.position.x = mouse_pos.x + 24
+				childTxtPop2.position.y = mouse_pos.y + 80
+				childTxtPop2.add_theme_font_size_override("font_size", 29)
+				childTxtPop2.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				
+				txt_popup_3 = GuiTextUi.instantiate()
+				add_child(txt_popup_3)
+				
+				var childTxtPop3 = txt_popup_3.get_node("labelGuiTextFenetre")
+				childTxtPop3.text = "Jeter"
+				childTxtPop3.position.x = mouse_pos.x + 37
+				childTxtPop3.position.y = mouse_pos.y + 125
+				childTxtPop3.add_theme_font_size_override("font_size", 29)
+				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				isPopUpOpen = true
+				print("J'ouvre le pop up")
+			
+			if isPopUpOpen == true:
+				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button equiper ")
+						#_Sgui_open()
+						nodeSceneGameplay.hero.img[nodeSceneGameplay.hero.current].isGuiOpen = false
+						nodeHudHero.emit_signal("guiHeroOpen", "hero")
+						_close_inventaire()
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+						#sceneGameplay._Sgui_open("hero")
+						
+				
+				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button stocker ")
+				
+				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button jeter ")
+						gui_heaume4[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.heaume4 -= 1
+						nbCompteurHeaume4 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+			#Faut creer lobjet popup (button interface text et tout)
+			#Faut que j'ajoute les conditions pour le clic et tout 
+			#A la fin remettre la variable txtItemSelect a "none"
+		
+		if txtItemSelect[i] == "heaume_5":
+			#print("item select est bague : ", txtItemSelect)
+			if isPopUpOpen == false:
+				gui_popUp = GuiPopUp.instantiate()
+				add_child(gui_popUp)
+				gui_popUp.scale = Vector2(0.5, 0.5)
+				gui_popUp.offset.x = mouse_pos.x
+				gui_popUp.offset.y = mouse_pos.y
+				
+				gui_buttonOnEquiper = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnEquiper)
+				gui_buttonOnEquiper.scale = Vector2(0.5, 0.5)
+				gui_buttonOnEquiper.offset.x = mouse_pos.x + 20
+				gui_buttonOnEquiper.offset.y = mouse_pos.y + 30
+				
+				gui_buttonOnStocker = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnStocker)
+				gui_buttonOnStocker.scale = Vector2(0.5, 0.5)
+				gui_buttonOnStocker.offset.x = mouse_pos.x + 20
+				gui_buttonOnStocker.offset.y = mouse_pos.y + 75
+				
+				gui_buttonOnJeter = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnJeter)
+				gui_buttonOnJeter.scale = Vector2(0.5, 0.5)
+				gui_buttonOnJeter.offset.x = mouse_pos.x + 20
+				gui_buttonOnJeter.offset.y = mouse_pos.y + 120
+				
+				txt_popup_1 = GuiTextUi.instantiate()
+				add_child(txt_popup_1)
+				
+				var childTxtPop1 = txt_popup_1.get_node("labelGuiTextFenetre")
+				childTxtPop1.text = "Equiper"
+				childTxtPop1.position.x = mouse_pos.x + 24
+				childTxtPop1.position.y = mouse_pos.y + 35
+				childTxtPop1.add_theme_font_size_override("font_size", 29)
+				childTxtPop1.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				txt_popup_2 = GuiTextUi.instantiate()
+				add_child(txt_popup_2)
+				
+				var childTxtPop2 = txt_popup_2.get_node("labelGuiTextFenetre")
+				childTxtPop2.text = "Stocker"
+				childTxtPop2.position.x = mouse_pos.x + 24
+				childTxtPop2.position.y = mouse_pos.y + 80
+				childTxtPop2.add_theme_font_size_override("font_size", 29)
+				childTxtPop2.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				
+				txt_popup_3 = GuiTextUi.instantiate()
+				add_child(txt_popup_3)
+				
+				var childTxtPop3 = txt_popup_3.get_node("labelGuiTextFenetre")
+				childTxtPop3.text = "Jeter"
+				childTxtPop3.position.x = mouse_pos.x + 37
+				childTxtPop3.position.y = mouse_pos.y + 125
+				childTxtPop3.add_theme_font_size_override("font_size", 29)
+				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				isPopUpOpen = true
+				print("J'ouvre le pop up")
+			
+			if isPopUpOpen == true:
+				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button equiper ")
+						#_Sgui_open()
+						nodeSceneGameplay.hero.img[nodeSceneGameplay.hero.current].isGuiOpen = false
+						nodeHudHero.emit_signal("guiHeroOpen", "hero")
+						_close_inventaire()
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+						#sceneGameplay._Sgui_open("hero")
+						
+				
+				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button stocker ")
+				
+				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button jeter ")
+						gui_heaume5[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.heaume5 -= 1
+						nbCompteurHeaume5 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+			#Faut creer lobjet popup (button interface text et tout)
+			#Faut que j'ajoute les conditions pour le clic et tout 
+			#A la fin remettre la variable txtItemSelect a "none"
+		
+		if txtItemSelect[i] == "heaume_6":
+			#print("item select est bague : ", txtItemSelect)
+			if isPopUpOpen == false:
+				gui_popUp = GuiPopUp.instantiate()
+				add_child(gui_popUp)
+				gui_popUp.scale = Vector2(0.5, 0.5)
+				gui_popUp.offset.x = mouse_pos.x
+				gui_popUp.offset.y = mouse_pos.y
+				
+				gui_buttonOnEquiper = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnEquiper)
+				gui_buttonOnEquiper.scale = Vector2(0.5, 0.5)
+				gui_buttonOnEquiper.offset.x = mouse_pos.x + 20
+				gui_buttonOnEquiper.offset.y = mouse_pos.y + 30
+				
+				gui_buttonOnStocker = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnStocker)
+				gui_buttonOnStocker.scale = Vector2(0.5, 0.5)
+				gui_buttonOnStocker.offset.x = mouse_pos.x + 20
+				gui_buttonOnStocker.offset.y = mouse_pos.y + 75
+				
+				gui_buttonOnJeter = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnJeter)
+				gui_buttonOnJeter.scale = Vector2(0.5, 0.5)
+				gui_buttonOnJeter.offset.x = mouse_pos.x + 20
+				gui_buttonOnJeter.offset.y = mouse_pos.y + 120
+				
+				txt_popup_1 = GuiTextUi.instantiate()
+				add_child(txt_popup_1)
+				
+				var childTxtPop1 = txt_popup_1.get_node("labelGuiTextFenetre")
+				childTxtPop1.text = "Equiper"
+				childTxtPop1.position.x = mouse_pos.x + 24
+				childTxtPop1.position.y = mouse_pos.y + 35
+				childTxtPop1.add_theme_font_size_override("font_size", 29)
+				childTxtPop1.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				txt_popup_2 = GuiTextUi.instantiate()
+				add_child(txt_popup_2)
+				
+				var childTxtPop2 = txt_popup_2.get_node("labelGuiTextFenetre")
+				childTxtPop2.text = "Stocker"
+				childTxtPop2.position.x = mouse_pos.x + 24
+				childTxtPop2.position.y = mouse_pos.y + 80
+				childTxtPop2.add_theme_font_size_override("font_size", 29)
+				childTxtPop2.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				
+				txt_popup_3 = GuiTextUi.instantiate()
+				add_child(txt_popup_3)
+				
+				var childTxtPop3 = txt_popup_3.get_node("labelGuiTextFenetre")
+				childTxtPop3.text = "Jeter"
+				childTxtPop3.position.x = mouse_pos.x + 37
+				childTxtPop3.position.y = mouse_pos.y + 125
+				childTxtPop3.add_theme_font_size_override("font_size", 29)
+				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				isPopUpOpen = true
+				print("J'ouvre le pop up")
+			
+			if isPopUpOpen == true:
+				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button equiper ")
+						#_Sgui_open()
+						nodeSceneGameplay.hero.img[nodeSceneGameplay.hero.current].isGuiOpen = false
+						nodeHudHero.emit_signal("guiHeroOpen", "hero")
+						_close_inventaire()
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+						#sceneGameplay._Sgui_open("hero")
+						
+				
+				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button stocker ")
+				
+				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button jeter ")
+						gui_heaume6[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.heaume6 -= 1
+						nbCompteurHeaume6-= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+			#Faut creer lobjet popup (button interface text et tout)
+			#Faut que j'ajoute les conditions pour le clic et tout 
+			#A la fin remettre la variable txtItemSelect a "none"
+		
+		if txtItemSelect[i] == "sword_1":
+			#print("item select est bague : ", txtItemSelect)
+			if isPopUpOpen == false:
+				gui_popUp = GuiPopUp.instantiate()
+				add_child(gui_popUp)
+				gui_popUp.scale = Vector2(0.5, 0.5)
+				gui_popUp.offset.x = mouse_pos.x
+				gui_popUp.offset.y = mouse_pos.y
+				
+				gui_buttonOnEquiper = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnEquiper)
+				gui_buttonOnEquiper.scale = Vector2(0.5, 0.5)
+				gui_buttonOnEquiper.offset.x = mouse_pos.x + 20
+				gui_buttonOnEquiper.offset.y = mouse_pos.y + 30
+				
+				gui_buttonOnStocker = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnStocker)
+				gui_buttonOnStocker.scale = Vector2(0.5, 0.5)
+				gui_buttonOnStocker.offset.x = mouse_pos.x + 20
+				gui_buttonOnStocker.offset.y = mouse_pos.y + 75
+				
+				gui_buttonOnJeter = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnJeter)
+				gui_buttonOnJeter.scale = Vector2(0.5, 0.5)
+				gui_buttonOnJeter.offset.x = mouse_pos.x + 20
+				gui_buttonOnJeter.offset.y = mouse_pos.y + 120
+				
+				txt_popup_1 = GuiTextUi.instantiate()
+				add_child(txt_popup_1)
+				
+				var childTxtPop1 = txt_popup_1.get_node("labelGuiTextFenetre")
+				childTxtPop1.text = "Equiper"
+				childTxtPop1.position.x = mouse_pos.x + 24
+				childTxtPop1.position.y = mouse_pos.y + 35
+				childTxtPop1.add_theme_font_size_override("font_size", 29)
+				childTxtPop1.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				txt_popup_2 = GuiTextUi.instantiate()
+				add_child(txt_popup_2)
+				
+				var childTxtPop2 = txt_popup_2.get_node("labelGuiTextFenetre")
+				childTxtPop2.text = "Stocker"
+				childTxtPop2.position.x = mouse_pos.x + 24
+				childTxtPop2.position.y = mouse_pos.y + 80
+				childTxtPop2.add_theme_font_size_override("font_size", 29)
+				childTxtPop2.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				
+				txt_popup_3 = GuiTextUi.instantiate()
+				add_child(txt_popup_3)
+				
+				var childTxtPop3 = txt_popup_3.get_node("labelGuiTextFenetre")
+				childTxtPop3.text = "Jeter"
+				childTxtPop3.position.x = mouse_pos.x + 37
+				childTxtPop3.position.y = mouse_pos.y + 125
+				childTxtPop3.add_theme_font_size_override("font_size", 29)
+				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				isPopUpOpen = true
+				print("J'ouvre le pop up")
+			
+			if isPopUpOpen == true:
+				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button equiper ")
+						#_Sgui_open()
+						nodeSceneGameplay.hero.img[nodeSceneGameplay.hero.current].isGuiOpen = false
+						nodeHudHero.emit_signal("guiHeroOpen", "hero")
+						_close_inventaire()
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+						#sceneGameplay._Sgui_open("hero")
+						
+				
+				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button stocker ")
+				
+				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button jeter ")
+						gui_sword1[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.sword1 -= 1
+						nbCompteurSword1 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+			#Faut creer lobjet popup (button interface text et tout)
+			#Faut que j'ajoute les conditions pour le clic et tout 
+			#A la fin remettre la variable txtItemSelect a "none"
+		
+		if txtItemSelect[i] == "sword_2":
+			#print("item select est bague : ", txtItemSelect)
+			if isPopUpOpen == false:
+				gui_popUp = GuiPopUp.instantiate()
+				add_child(gui_popUp)
+				gui_popUp.scale = Vector2(0.5, 0.5)
+				gui_popUp.offset.x = mouse_pos.x
+				gui_popUp.offset.y = mouse_pos.y
+				
+				gui_buttonOnEquiper = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnEquiper)
+				gui_buttonOnEquiper.scale = Vector2(0.5, 0.5)
+				gui_buttonOnEquiper.offset.x = mouse_pos.x + 20
+				gui_buttonOnEquiper.offset.y = mouse_pos.y + 30
+				
+				gui_buttonOnStocker = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnStocker)
+				gui_buttonOnStocker.scale = Vector2(0.5, 0.5)
+				gui_buttonOnStocker.offset.x = mouse_pos.x + 20
+				gui_buttonOnStocker.offset.y = mouse_pos.y + 75
+				
+				gui_buttonOnJeter = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnJeter)
+				gui_buttonOnJeter.scale = Vector2(0.5, 0.5)
+				gui_buttonOnJeter.offset.x = mouse_pos.x + 20
+				gui_buttonOnJeter.offset.y = mouse_pos.y + 120
+				
+				txt_popup_1 = GuiTextUi.instantiate()
+				add_child(txt_popup_1)
+				
+				var childTxtPop1 = txt_popup_1.get_node("labelGuiTextFenetre")
+				childTxtPop1.text = "Equiper"
+				childTxtPop1.position.x = mouse_pos.x + 24
+				childTxtPop1.position.y = mouse_pos.y + 35
+				childTxtPop1.add_theme_font_size_override("font_size", 29)
+				childTxtPop1.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				txt_popup_2 = GuiTextUi.instantiate()
+				add_child(txt_popup_2)
+				
+				var childTxtPop2 = txt_popup_2.get_node("labelGuiTextFenetre")
+				childTxtPop2.text = "Stocker"
+				childTxtPop2.position.x = mouse_pos.x + 24
+				childTxtPop2.position.y = mouse_pos.y + 80
+				childTxtPop2.add_theme_font_size_override("font_size", 29)
+				childTxtPop2.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				
+				txt_popup_3 = GuiTextUi.instantiate()
+				add_child(txt_popup_3)
+				
+				var childTxtPop3 = txt_popup_3.get_node("labelGuiTextFenetre")
+				childTxtPop3.text = "Jeter"
+				childTxtPop3.position.x = mouse_pos.x + 37
+				childTxtPop3.position.y = mouse_pos.y + 125
+				childTxtPop3.add_theme_font_size_override("font_size", 29)
+				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				isPopUpOpen = true
+				print("J'ouvre le pop up")
+			
+			if isPopUpOpen == true:
+				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button equiper ")
+						#_Sgui_open()
+						nodeSceneGameplay.hero.img[nodeSceneGameplay.hero.current].isGuiOpen = false
+						nodeHudHero.emit_signal("guiHeroOpen", "hero")
+						_close_inventaire()
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+						#sceneGameplay._Sgui_open("hero")
+						
+				
+				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button stocker ")
+				
+				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button jeter ")
+						gui_sword2[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.sword2 -= 1
+						nbCompteurSword2 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+			#Faut creer lobjet popup (button interface text et tout)
+			#Faut que j'ajoute les conditions pour le clic et tout 
+			#A la fin remettre la variable txtItemSelect a "none"
+		
+		if txtItemSelect[i] == "sword_3":
+			#print("item select est bague : ", txtItemSelect)
+			if isPopUpOpen == false:
+				gui_popUp = GuiPopUp.instantiate()
+				add_child(gui_popUp)
+				gui_popUp.scale = Vector2(0.5, 0.5)
+				gui_popUp.offset.x = mouse_pos.x
+				gui_popUp.offset.y = mouse_pos.y
+				
+				gui_buttonOnEquiper = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnEquiper)
+				gui_buttonOnEquiper.scale = Vector2(0.5, 0.5)
+				gui_buttonOnEquiper.offset.x = mouse_pos.x + 20
+				gui_buttonOnEquiper.offset.y = mouse_pos.y + 30
+				
+				gui_buttonOnStocker = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnStocker)
+				gui_buttonOnStocker.scale = Vector2(0.5, 0.5)
+				gui_buttonOnStocker.offset.x = mouse_pos.x + 20
+				gui_buttonOnStocker.offset.y = mouse_pos.y + 75
+				
+				gui_buttonOnJeter = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnJeter)
+				gui_buttonOnJeter.scale = Vector2(0.5, 0.5)
+				gui_buttonOnJeter.offset.x = mouse_pos.x + 20
+				gui_buttonOnJeter.offset.y = mouse_pos.y + 120
+				
+				txt_popup_1 = GuiTextUi.instantiate()
+				add_child(txt_popup_1)
+				
+				var childTxtPop1 = txt_popup_1.get_node("labelGuiTextFenetre")
+				childTxtPop1.text = "Equiper"
+				childTxtPop1.position.x = mouse_pos.x + 24
+				childTxtPop1.position.y = mouse_pos.y + 35
+				childTxtPop1.add_theme_font_size_override("font_size", 29)
+				childTxtPop1.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				txt_popup_2 = GuiTextUi.instantiate()
+				add_child(txt_popup_2)
+				
+				var childTxtPop2 = txt_popup_2.get_node("labelGuiTextFenetre")
+				childTxtPop2.text = "Stocker"
+				childTxtPop2.position.x = mouse_pos.x + 24
+				childTxtPop2.position.y = mouse_pos.y + 80
+				childTxtPop2.add_theme_font_size_override("font_size", 29)
+				childTxtPop2.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				
+				txt_popup_3 = GuiTextUi.instantiate()
+				add_child(txt_popup_3)
+				
+				var childTxtPop3 = txt_popup_3.get_node("labelGuiTextFenetre")
+				childTxtPop3.text = "Jeter"
+				childTxtPop3.position.x = mouse_pos.x + 37
+				childTxtPop3.position.y = mouse_pos.y + 125
+				childTxtPop3.add_theme_font_size_override("font_size", 29)
+				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				isPopUpOpen = true
+				print("J'ouvre le pop up")
+			
+			if isPopUpOpen == true:
+				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button equiper ")
+						#_Sgui_open()
+						nodeSceneGameplay.hero.img[nodeSceneGameplay.hero.current].isGuiOpen = false
+						nodeHudHero.emit_signal("guiHeroOpen", "hero")
+						_close_inventaire()
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+						#sceneGameplay._Sgui_open("hero")
+						
+				
+				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button stocker ")
+				
+				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button jeter ")
+						gui_sword3[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.sword3 -= 1
+						nbCompteurSword3 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+			#Faut creer lobjet popup (button interface text et tout)
+			#Faut que j'ajoute les conditions pour le clic et tout 
+			#A la fin remettre la variable txtItemSelect a "none"
+		
+		if txtItemSelect[i] == "sword_4":
+			#print("item select est bague : ", txtItemSelect)
+			if isPopUpOpen == false:
+				gui_popUp = GuiPopUp.instantiate()
+				add_child(gui_popUp)
+				gui_popUp.scale = Vector2(0.5, 0.5)
+				gui_popUp.offset.x = mouse_pos.x
+				gui_popUp.offset.y = mouse_pos.y
+				
+				gui_buttonOnEquiper = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnEquiper)
+				gui_buttonOnEquiper.scale = Vector2(0.5, 0.5)
+				gui_buttonOnEquiper.offset.x = mouse_pos.x + 20
+				gui_buttonOnEquiper.offset.y = mouse_pos.y + 30
+				
+				gui_buttonOnStocker = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnStocker)
+				gui_buttonOnStocker.scale = Vector2(0.5, 0.5)
+				gui_buttonOnStocker.offset.x = mouse_pos.x + 20
+				gui_buttonOnStocker.offset.y = mouse_pos.y + 75
+				
+				gui_buttonOnJeter = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnJeter)
+				gui_buttonOnJeter.scale = Vector2(0.5, 0.5)
+				gui_buttonOnJeter.offset.x = mouse_pos.x + 20
+				gui_buttonOnJeter.offset.y = mouse_pos.y + 120
+				
+				txt_popup_1 = GuiTextUi.instantiate()
+				add_child(txt_popup_1)
+				
+				var childTxtPop1 = txt_popup_1.get_node("labelGuiTextFenetre")
+				childTxtPop1.text = "Equiper"
+				childTxtPop1.position.x = mouse_pos.x + 24
+				childTxtPop1.position.y = mouse_pos.y + 35
+				childTxtPop1.add_theme_font_size_override("font_size", 29)
+				childTxtPop1.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				txt_popup_2 = GuiTextUi.instantiate()
+				add_child(txt_popup_2)
+				
+				var childTxtPop2 = txt_popup_2.get_node("labelGuiTextFenetre")
+				childTxtPop2.text = "Stocker"
+				childTxtPop2.position.x = mouse_pos.x + 24
+				childTxtPop2.position.y = mouse_pos.y + 80
+				childTxtPop2.add_theme_font_size_override("font_size", 29)
+				childTxtPop2.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				
+				txt_popup_3 = GuiTextUi.instantiate()
+				add_child(txt_popup_3)
+				
+				var childTxtPop3 = txt_popup_3.get_node("labelGuiTextFenetre")
+				childTxtPop3.text = "Jeter"
+				childTxtPop3.position.x = mouse_pos.x + 37
+				childTxtPop3.position.y = mouse_pos.y + 125
+				childTxtPop3.add_theme_font_size_override("font_size", 29)
+				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				isPopUpOpen = true
+				print("J'ouvre le pop up")
+			
+			if isPopUpOpen == true:
+				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button equiper ")
+						#_Sgui_open()
+						nodeSceneGameplay.hero.img[nodeSceneGameplay.hero.current].isGuiOpen = false
+						nodeHudHero.emit_signal("guiHeroOpen", "hero")
+						_close_inventaire()
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+						#sceneGameplay._Sgui_open("hero")
+						
+				
+				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button stocker ")
+				
+				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button jeter ")
+						gui_sword4[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.sword4 -= 1
+						nbCompteurSword4 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+			#Faut creer lobjet popup (button interface text et tout)
+			#Faut que j'ajoute les conditions pour le clic et tout 
+			#A la fin remettre la variable txtItemSelect a "none"
+		
+		if txtItemSelect[i] == "sword_5":
+			#print("item select est bague : ", txtItemSelect)
+			if isPopUpOpen == false:
+				gui_popUp = GuiPopUp.instantiate()
+				add_child(gui_popUp)
+				gui_popUp.scale = Vector2(0.5, 0.5)
+				gui_popUp.offset.x = mouse_pos.x
+				gui_popUp.offset.y = mouse_pos.y
+				
+				gui_buttonOnEquiper = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnEquiper)
+				gui_buttonOnEquiper.scale = Vector2(0.5, 0.5)
+				gui_buttonOnEquiper.offset.x = mouse_pos.x + 20
+				gui_buttonOnEquiper.offset.y = mouse_pos.y + 30
+				
+				gui_buttonOnStocker = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnStocker)
+				gui_buttonOnStocker.scale = Vector2(0.5, 0.5)
+				gui_buttonOnStocker.offset.x = mouse_pos.x + 20
+				gui_buttonOnStocker.offset.y = mouse_pos.y + 75
+				
+				gui_buttonOnJeter = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnJeter)
+				gui_buttonOnJeter.scale = Vector2(0.5, 0.5)
+				gui_buttonOnJeter.offset.x = mouse_pos.x + 20
+				gui_buttonOnJeter.offset.y = mouse_pos.y + 120
+				
+				txt_popup_1 = GuiTextUi.instantiate()
+				add_child(txt_popup_1)
+				
+				var childTxtPop1 = txt_popup_1.get_node("labelGuiTextFenetre")
+				childTxtPop1.text = "Equiper"
+				childTxtPop1.position.x = mouse_pos.x + 24
+				childTxtPop1.position.y = mouse_pos.y + 35
+				childTxtPop1.add_theme_font_size_override("font_size", 29)
+				childTxtPop1.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				txt_popup_2 = GuiTextUi.instantiate()
+				add_child(txt_popup_2)
+				
+				var childTxtPop2 = txt_popup_2.get_node("labelGuiTextFenetre")
+				childTxtPop2.text = "Stocker"
+				childTxtPop2.position.x = mouse_pos.x + 24
+				childTxtPop2.position.y = mouse_pos.y + 80
+				childTxtPop2.add_theme_font_size_override("font_size", 29)
+				childTxtPop2.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				
+				txt_popup_3 = GuiTextUi.instantiate()
+				add_child(txt_popup_3)
+				
+				var childTxtPop3 = txt_popup_3.get_node("labelGuiTextFenetre")
+				childTxtPop3.text = "Jeter"
+				childTxtPop3.position.x = mouse_pos.x + 37
+				childTxtPop3.position.y = mouse_pos.y + 125
+				childTxtPop3.add_theme_font_size_override("font_size", 29)
+				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				isPopUpOpen = true
+				print("J'ouvre le pop up")
+			
+			if isPopUpOpen == true:
+				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button equiper ")
+						#_Sgui_open()
+						nodeSceneGameplay.hero.img[nodeSceneGameplay.hero.current].isGuiOpen = false
+						nodeHudHero.emit_signal("guiHeroOpen", "hero")
+						_close_inventaire()
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+						#sceneGameplay._Sgui_open("hero")
+						
+				
+				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button stocker ")
+				
+				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button jeter ")
+						gui_sword5[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.sword5 -= 1
+						nbCompteurSword5 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+			#Faut creer lobjet popup (button interface text et tout)
+			#Faut que j'ajoute les conditions pour le clic et tout 
+			#A la fin remettre la variable txtItemSelect a "none"
+		
+		if txtItemSelect[i] == "sword_6":
+			#print("item select est bague : ", txtItemSelect)
+			if isPopUpOpen == false:
+				gui_popUp = GuiPopUp.instantiate()
+				add_child(gui_popUp)
+				gui_popUp.scale = Vector2(0.5, 0.5)
+				gui_popUp.offset.x = mouse_pos.x
+				gui_popUp.offset.y = mouse_pos.y
+				
+				gui_buttonOnEquiper = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnEquiper)
+				gui_buttonOnEquiper.scale = Vector2(0.5, 0.5)
+				gui_buttonOnEquiper.offset.x = mouse_pos.x + 20
+				gui_buttonOnEquiper.offset.y = mouse_pos.y + 30
+				
+				gui_buttonOnStocker = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnStocker)
+				gui_buttonOnStocker.scale = Vector2(0.5, 0.5)
+				gui_buttonOnStocker.offset.x = mouse_pos.x + 20
+				gui_buttonOnStocker.offset.y = mouse_pos.y + 75
+				
+				gui_buttonOnJeter = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnJeter)
+				gui_buttonOnJeter.scale = Vector2(0.5, 0.5)
+				gui_buttonOnJeter.offset.x = mouse_pos.x + 20
+				gui_buttonOnJeter.offset.y = mouse_pos.y + 120
+				
+				txt_popup_1 = GuiTextUi.instantiate()
+				add_child(txt_popup_1)
+				
+				var childTxtPop1 = txt_popup_1.get_node("labelGuiTextFenetre")
+				childTxtPop1.text = "Equiper"
+				childTxtPop1.position.x = mouse_pos.x + 24
+				childTxtPop1.position.y = mouse_pos.y + 35
+				childTxtPop1.add_theme_font_size_override("font_size", 29)
+				childTxtPop1.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				txt_popup_2 = GuiTextUi.instantiate()
+				add_child(txt_popup_2)
+				
+				var childTxtPop2 = txt_popup_2.get_node("labelGuiTextFenetre")
+				childTxtPop2.text = "Stocker"
+				childTxtPop2.position.x = mouse_pos.x + 24
+				childTxtPop2.position.y = mouse_pos.y + 80
+				childTxtPop2.add_theme_font_size_override("font_size", 29)
+				childTxtPop2.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				
+				txt_popup_3 = GuiTextUi.instantiate()
+				add_child(txt_popup_3)
+				
+				var childTxtPop3 = txt_popup_3.get_node("labelGuiTextFenetre")
+				childTxtPop3.text = "Jeter"
+				childTxtPop3.position.x = mouse_pos.x + 37
+				childTxtPop3.position.y = mouse_pos.y + 125
+				childTxtPop3.add_theme_font_size_override("font_size", 29)
+				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				isPopUpOpen = true
+				print("J'ouvre le pop up")
+			
+			if isPopUpOpen == true:
+				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button equiper ")
+						#_Sgui_open()
+						nodeSceneGameplay.hero.img[nodeSceneGameplay.hero.current].isGuiOpen = false
+						nodeHudHero.emit_signal("guiHeroOpen", "hero")
+						_close_inventaire()
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+						#sceneGameplay._Sgui_open("hero")
+						
+				
+				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button stocker ")
+				
+				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button jeter ")
+						gui_sword6[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.sword6 -= 1
+						nbCompteurSword6 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+			#Faut creer lobjet popup (button interface text et tout)
+			#Faut que j'ajoute les conditions pour le clic et tout 
+			#A la fin remettre la variable txtItemSelect a "none"
+		
+		if txtItemSelect[i] == "sword_7":
+			#print("item select est bague : ", txtItemSelect)
+			if isPopUpOpen == false:
+				gui_popUp = GuiPopUp.instantiate()
+				add_child(gui_popUp)
+				gui_popUp.scale = Vector2(0.5, 0.5)
+				gui_popUp.offset.x = mouse_pos.x
+				gui_popUp.offset.y = mouse_pos.y
+				
+				gui_buttonOnEquiper = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnEquiper)
+				gui_buttonOnEquiper.scale = Vector2(0.5, 0.5)
+				gui_buttonOnEquiper.offset.x = mouse_pos.x + 20
+				gui_buttonOnEquiper.offset.y = mouse_pos.y + 30
+				
+				gui_buttonOnStocker = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnStocker)
+				gui_buttonOnStocker.scale = Vector2(0.5, 0.5)
+				gui_buttonOnStocker.offset.x = mouse_pos.x + 20
+				gui_buttonOnStocker.offset.y = mouse_pos.y + 75
+				
+				gui_buttonOnJeter = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnJeter)
+				gui_buttonOnJeter.scale = Vector2(0.5, 0.5)
+				gui_buttonOnJeter.offset.x = mouse_pos.x + 20
+				gui_buttonOnJeter.offset.y = mouse_pos.y + 120
+				
+				txt_popup_1 = GuiTextUi.instantiate()
+				add_child(txt_popup_1)
+				
+				var childTxtPop1 = txt_popup_1.get_node("labelGuiTextFenetre")
+				childTxtPop1.text = "Equiper"
+				childTxtPop1.position.x = mouse_pos.x + 24
+				childTxtPop1.position.y = mouse_pos.y + 35
+				childTxtPop1.add_theme_font_size_override("font_size", 29)
+				childTxtPop1.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				txt_popup_2 = GuiTextUi.instantiate()
+				add_child(txt_popup_2)
+				
+				var childTxtPop2 = txt_popup_2.get_node("labelGuiTextFenetre")
+				childTxtPop2.text = "Stocker"
+				childTxtPop2.position.x = mouse_pos.x + 24
+				childTxtPop2.position.y = mouse_pos.y + 80
+				childTxtPop2.add_theme_font_size_override("font_size", 29)
+				childTxtPop2.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				
+				txt_popup_3 = GuiTextUi.instantiate()
+				add_child(txt_popup_3)
+				
+				var childTxtPop3 = txt_popup_3.get_node("labelGuiTextFenetre")
+				childTxtPop3.text = "Jeter"
+				childTxtPop3.position.x = mouse_pos.x + 37
+				childTxtPop3.position.y = mouse_pos.y + 125
+				childTxtPop3.add_theme_font_size_override("font_size", 29)
+				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				isPopUpOpen = true
+				print("J'ouvre le pop up")
+			
+			if isPopUpOpen == true:
+				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button equiper ")
+						#_Sgui_open()
+						nodeSceneGameplay.hero.img[nodeSceneGameplay.hero.current].isGuiOpen = false
+						nodeHudHero.emit_signal("guiHeroOpen", "hero")
+						_close_inventaire()
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+						#sceneGameplay._Sgui_open("hero")
+						
+				
+				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button stocker ")
+				
+				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button jeter ")
+						gui_sword7[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.sword7 -= 1
+						nbCompteurSword7 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+			#Faut creer lobjet popup (button interface text et tout)
+			#Faut que j'ajoute les conditions pour le clic et tout 
+			#A la fin remettre la variable txtItemSelect a "none"
+		
+		if txtItemSelect[i] == "sword_8":
+			#print("item select est bague : ", txtItemSelect)
+			if isPopUpOpen == false:
+				gui_popUp = GuiPopUp.instantiate()
+				add_child(gui_popUp)
+				gui_popUp.scale = Vector2(0.5, 0.5)
+				gui_popUp.offset.x = mouse_pos.x
+				gui_popUp.offset.y = mouse_pos.y
+				
+				gui_buttonOnEquiper = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnEquiper)
+				gui_buttonOnEquiper.scale = Vector2(0.5, 0.5)
+				gui_buttonOnEquiper.offset.x = mouse_pos.x + 20
+				gui_buttonOnEquiper.offset.y = mouse_pos.y + 30
+				
+				gui_buttonOnStocker = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnStocker)
+				gui_buttonOnStocker.scale = Vector2(0.5, 0.5)
+				gui_buttonOnStocker.offset.x = mouse_pos.x + 20
+				gui_buttonOnStocker.offset.y = mouse_pos.y + 75
+				
+				gui_buttonOnJeter = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnJeter)
+				gui_buttonOnJeter.scale = Vector2(0.5, 0.5)
+				gui_buttonOnJeter.offset.x = mouse_pos.x + 20
+				gui_buttonOnJeter.offset.y = mouse_pos.y + 120
+				
+				txt_popup_1 = GuiTextUi.instantiate()
+				add_child(txt_popup_1)
+				
+				var childTxtPop1 = txt_popup_1.get_node("labelGuiTextFenetre")
+				childTxtPop1.text = "Equiper"
+				childTxtPop1.position.x = mouse_pos.x + 24
+				childTxtPop1.position.y = mouse_pos.y + 35
+				childTxtPop1.add_theme_font_size_override("font_size", 29)
+				childTxtPop1.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				txt_popup_2 = GuiTextUi.instantiate()
+				add_child(txt_popup_2)
+				
+				var childTxtPop2 = txt_popup_2.get_node("labelGuiTextFenetre")
+				childTxtPop2.text = "Stocker"
+				childTxtPop2.position.x = mouse_pos.x + 24
+				childTxtPop2.position.y = mouse_pos.y + 80
+				childTxtPop2.add_theme_font_size_override("font_size", 29)
+				childTxtPop2.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				
+				txt_popup_3 = GuiTextUi.instantiate()
+				add_child(txt_popup_3)
+				
+				var childTxtPop3 = txt_popup_3.get_node("labelGuiTextFenetre")
+				childTxtPop3.text = "Jeter"
+				childTxtPop3.position.x = mouse_pos.x + 37
+				childTxtPop3.position.y = mouse_pos.y + 125
+				childTxtPop3.add_theme_font_size_override("font_size", 29)
+				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				isPopUpOpen = true
+				print("J'ouvre le pop up")
+			
+			if isPopUpOpen == true:
+				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button equiper ")
+						#_Sgui_open()
+						nodeSceneGameplay.hero.img[nodeSceneGameplay.hero.current].isGuiOpen = false
+						nodeHudHero.emit_signal("guiHeroOpen", "hero")
+						_close_inventaire()
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+						#sceneGameplay._Sgui_open("hero")
+						
+				
+				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button stocker ")
+				
+				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button jeter ")
+						gui_sword8[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.sword8 -= 1
+						nbCompteurSword8 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+			#Faut creer lobjet popup (button interface text et tout)
+			#Faut que j'ajoute les conditions pour le clic et tout 
+			#A la fin remettre la variable txtItemSelect a "none"
+		
 	if gui_fenetre != null:
 		gui_fenetre.offset.x = mouse_pos.x+10
 		gui_fenetre.offset.y = mouse_pos.y+13
