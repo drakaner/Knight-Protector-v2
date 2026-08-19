@@ -60,10 +60,13 @@ func _Sgui_open(pTypeGui):
 		hero.img[hero.current].isGuiOpen = true
 		gui_inventaire = GUIInventaire.instantiate()
 		add_child(gui_inventaire)
+		#gui_inventaire.scene_gameplay = self
 		gui_inventaire.offset = Vector2(sizeScreen.x/2-300, sizeScreen.y/2-100)
 		gui_inventaire.isPanelClose = false
 	elif pTypeGui == "hero":
 		if hero.img[hero.current].isGuiOpen == false:
+			print("HERO JE TEST SI CETTE AVANT ETAPE MARCHE OU BIEN ")
+			
 			hero.img[hero.current].isGuiOpen = true
 			gui_equipement = GUIEquipement.instantiate()
 			add_child(gui_equipement)
@@ -131,6 +134,7 @@ func gestuinInterfaceUI():
 			_Sgui_open("inventaire")
 	
 	if gui_statue != null:
+		
 		if gui_statue.isPanelClose == true:
 			hero.img[hero.current].isGuiStatueOpen = false
 			hero.img[hero.current].isGuiOpen = false
@@ -165,6 +169,8 @@ func gestuinInterfaceUI():
 			hero.img[hero.current].isGuiOpen = false
 			gui_inventaire.queue_free()
 	elif gui_equipement != null:
+		if gui_equipement.isPanelClose == false:
+			hero.img[hero.current].isGuiOpen = true
 		if gui_equipement.isPanelClose == true:
 			hero.img[hero.current].isGuiOpen = false
 			gui_equipement.queue_free()

@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+@onready var nodeSceneGameplay = get_parent()
+@onready var nodeHudHero = get_node("../gui_hudHero")
 @onready var nodeParent = get_node(".")
 @onready var childSlot = []
 #sword8
@@ -1290,9 +1292,100 @@ func _on_mouse_entered_sword8():
 			if gui_sword8[n] != null:
 				childGuiTxtStat1.text = "Attaque : + " + str(gui_sword8[n].nb_attaque)
 
+func _close_inventaire():
+	isPanelClose = true
+	for n in range(20):
+		if gui_potion_vie[n] != null:
+			gui_potion_vie[n].queue_free()
+		if gui_potion_mana[n] != null:
+			gui_potion_mana[n].queue_free()
+		if gui_potion_elixir[n] != null:
+			gui_potion_elixir[n].queue_free()
+		if gui_bague1[n] != null:
+			gui_bague1[n].queue_free()
+		if gui_bague2[n] != null:
+			gui_bague2[n].queue_free()
+		if gui_bague3[n] != null:
+			gui_bague3[n].queue_free()
+		if gui_bottes1[n] != null:
+			gui_bottes1[n].queue_free()
+		if gui_bottes2[n] != null:
+			gui_bottes2[n].queue_free()
+		if gui_bottes3[n] != null:
+			gui_bottes3[n].queue_free()
+		if gui_bottes4[n] != null:
+			gui_bottes4[n].queue_free()
+		if gui_bottes5[n] != null:
+			gui_bottes5[n].queue_free()
+		if gui_bottes6[n] != null:
+			gui_bottes6[n].queue_free()
+		if gui_bouclier1[n] != null:
+			gui_bouclier1[n].queue_free()
+		if gui_bouclier2[n] != null:
+			gui_bouclier2[n].queue_free()
+		if gui_bouclier3[n] != null:
+			gui_bouclier3[n].queue_free()
+		if gui_bouclier4[n] != null:
+			gui_bouclier4[n].queue_free()
+		if gui_bouclier5[n] != null:
+			gui_bouclier5[n].queue_free()
+		if gui_bouclier6[n] != null:
+			gui_bouclier6[n].queue_free()
+		if gui_bouclier7[n] != null:
+			gui_bouclier7[n].queue_free()
+		if gui_casque1[n] != null:
+			gui_casque1[n].queue_free()
+		if gui_casque2[n] != null:
+			gui_casque2[n].queue_free()
+		if gui_casque3[n] != null:
+			gui_casque3[n].queue_free()
+		if gui_casque4[n] != null:
+			gui_casque4[n].queue_free()
+		if gui_casque5[n] != null:
+			gui_casque5[n].queue_free()
+		if gui_casque6[n] != null:
+			gui_casque6[n].queue_free()
+		if gui_collier1[n] != null:
+			gui_collier1[n].queue_free()
+		if gui_collier2[n] != null:
+			gui_collier2[n].queue_free()
+		if gui_collier3[n] != null:
+			gui_collier3[n].queue_free()
+		if gui_heaume1[n] != null:
+			gui_heaume1[n].queue_free()
+		if gui_heaume2[n] != null:
+			gui_heaume2[n].queue_free()
+		if gui_heaume3[n] != null:
+			gui_heaume3[n].queue_free()
+		if gui_heaume4[n] != null:
+			gui_heaume4[n].queue_free()
+		if gui_heaume5[n] != null:
+			gui_heaume5[n].queue_free()
+		if gui_heaume6[n] != null:
+			gui_heaume6[n].queue_free()
+		if gui_sword1[n] != null:
+			gui_sword1[n].queue_free()
+		if gui_sword2[n] != null:
+			gui_sword2[n].queue_free()
+		if gui_sword3[n] != null:
+			gui_sword3[n].queue_free()
+		if gui_sword4[n] != null:
+			gui_sword4[n].queue_free()
+		if gui_sword5[n] != null:
+			gui_sword5[n].queue_free()
+		if gui_sword6[n] != null:
+			gui_sword6[n].queue_free()
+		if gui_sword7[n] != null:
+			gui_sword7[n].queue_free()
+		if gui_sword8[n] != null:
+			gui_sword8[n].queue_free()
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	DataSave.hero.vie = 90
+	DataSave.hero.mana = -1
+	print("test de self de scene a ici : ", nodeHudHero)
+	nodeSceneGameplay.connect("guiHeroOpen", Callable(self, "_Sgui_open"))
 	gui_potion_vie.resize(20)
 	gui_potion_mana.resize(20)
 	gui_potion_elixir.resize(20)
@@ -1478,10 +1571,565 @@ func _process(delta: float) -> void:
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button jeter ")
+						gui_potion_vie[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.potionVie -= 1
+						nbCompteurPotionVie -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnUse.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
 			#Faut creer lobjet popup (button interface text et tout)
 			#Faut que j'ajoute les conditions pour le clic et tout 
 			#A la fin remettre la variable txtItemSelect a "none"
 	
+		if txtItemSelect[i] == "potion_mana":
+			#print("item select est potion de mana : ", txtItemSelect)
+			if DataSave.hero.mana != DataSave.hero.manaMax:
+				if isPopUpOpen == false:
+					gui_popUp = GuiPopUp.instantiate()
+					add_child(gui_popUp)
+					gui_popUp.scale = Vector2(0.5, 0.5)
+					gui_popUp.offset.x = mouse_pos.x
+					gui_popUp.offset.y = mouse_pos.y
+					
+					gui_buttonOnUse = GuiButtonOn.instantiate()
+					add_child(gui_buttonOnUse)
+					gui_buttonOnUse.scale = Vector2(0.5, 0.5)
+					gui_buttonOnUse.offset.x = mouse_pos.x + 20
+					gui_buttonOnUse.offset.y = mouse_pos.y + 30
+					
+					gui_buttonOnStocker = GuiButtonOn.instantiate()
+					add_child(gui_buttonOnStocker)
+					gui_buttonOnStocker.scale = Vector2(0.5, 0.5)
+					gui_buttonOnStocker.offset.x = mouse_pos.x + 20
+					gui_buttonOnStocker.offset.y = mouse_pos.y + 75
+					
+					gui_buttonOnJeter = GuiButtonOn.instantiate()
+					add_child(gui_buttonOnJeter)
+					gui_buttonOnJeter.scale = Vector2(0.5, 0.5)
+					gui_buttonOnJeter.offset.x = mouse_pos.x + 20
+					gui_buttonOnJeter.offset.y = mouse_pos.y + 120
+					
+					txt_popup_1 = GuiTextUi.instantiate()
+					add_child(txt_popup_1)
+					
+					var childTxtPop1 = txt_popup_1.get_node("labelGuiTextFenetre")
+					childTxtPop1.text = "Utiliser"
+					childTxtPop1.position.x = mouse_pos.x + 24
+					childTxtPop1.position.y = mouse_pos.y + 35
+					childTxtPop1.add_theme_font_size_override("font_size", 29)
+					childTxtPop1.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+					
+					txt_popup_2 = GuiTextUi.instantiate()
+					add_child(txt_popup_2)
+					
+					var childTxtPop2 = txt_popup_2.get_node("labelGuiTextFenetre")
+					childTxtPop2.text = "Stocker"
+					childTxtPop2.position.x = mouse_pos.x + 24
+					childTxtPop2.position.y = mouse_pos.y + 80
+					childTxtPop2.add_theme_font_size_override("font_size", 29)
+					childTxtPop2.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+					
+					
+					txt_popup_3 = GuiTextUi.instantiate()
+					add_child(txt_popup_3)
+					
+					var childTxtPop3 = txt_popup_3.get_node("labelGuiTextFenetre")
+					childTxtPop3.text = "Jeter"
+					childTxtPop3.position.x = mouse_pos.x + 37
+					childTxtPop3.position.y = mouse_pos.y + 125
+					childTxtPop3.add_theme_font_size_override("font_size", 29)
+					childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+					
+					isPopUpOpen = true
+					print("J'ouvre le pop up")
+			else:
+				pass
+				#print("Mana déja plein j'ouvre pas le pop up")
+			
+			if isPopUpOpen == true:
+				if mouse_pos.x >= gui_buttonOnUse.offset.x and mouse_pos.x <= gui_buttonOnUse.offset.x + 90 and mouse_pos.y >= gui_buttonOnUse.offset.y and mouse_pos.y <= gui_buttonOnUse.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button use ")
+						DataSave.hero.mana = DataSave.hero.manaMax
+						gui_potion_mana[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.potionMana -= 1
+						nbCompteurPotionMana -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnUse.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+						
+				
+				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button stocker ")
+				
+				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button jeter ")
+						gui_potion_mana[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.potionMana -= 1
+						nbCompteurPotionMana -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnUse.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+			#Faut creer lobjet popup (button interface text et tout)
+			#Faut que j'ajoute les conditions pour le clic et tout 
+			#A la fin remettre la variable txtItemSelect a "none"
+	
+		if txtItemSelect[i] == "potion_elixir":
+			#print("item select est potion de elixir : ", txtItemSelect)
+			if DataSave.hero.vie != DataSave.hero.vieMax or DataSave.hero.mana != DataSave.hero.manaMax:
+				if isPopUpOpen == false:
+					gui_popUp = GuiPopUp.instantiate()
+					add_child(gui_popUp)
+					gui_popUp.scale = Vector2(0.5, 0.5)
+					gui_popUp.offset.x = mouse_pos.x
+					gui_popUp.offset.y = mouse_pos.y
+					
+					gui_buttonOnUse = GuiButtonOn.instantiate()
+					add_child(gui_buttonOnUse)
+					gui_buttonOnUse.scale = Vector2(0.5, 0.5)
+					gui_buttonOnUse.offset.x = mouse_pos.x + 20
+					gui_buttonOnUse.offset.y = mouse_pos.y + 30
+					
+					gui_buttonOnStocker = GuiButtonOn.instantiate()
+					add_child(gui_buttonOnStocker)
+					gui_buttonOnStocker.scale = Vector2(0.5, 0.5)
+					gui_buttonOnStocker.offset.x = mouse_pos.x + 20
+					gui_buttonOnStocker.offset.y = mouse_pos.y + 75
+					
+					gui_buttonOnJeter = GuiButtonOn.instantiate()
+					add_child(gui_buttonOnJeter)
+					gui_buttonOnJeter.scale = Vector2(0.5, 0.5)
+					gui_buttonOnJeter.offset.x = mouse_pos.x + 20
+					gui_buttonOnJeter.offset.y = mouse_pos.y + 120
+					
+					txt_popup_1 = GuiTextUi.instantiate()
+					add_child(txt_popup_1)
+					
+					var childTxtPop1 = txt_popup_1.get_node("labelGuiTextFenetre")
+					childTxtPop1.text = "Utiliser"
+					childTxtPop1.position.x = mouse_pos.x + 24
+					childTxtPop1.position.y = mouse_pos.y + 35
+					childTxtPop1.add_theme_font_size_override("font_size", 29)
+					childTxtPop1.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+					
+					txt_popup_2 = GuiTextUi.instantiate()
+					add_child(txt_popup_2)
+					
+					var childTxtPop2 = txt_popup_2.get_node("labelGuiTextFenetre")
+					childTxtPop2.text = "Stocker"
+					childTxtPop2.position.x = mouse_pos.x + 24
+					childTxtPop2.position.y = mouse_pos.y + 80
+					childTxtPop2.add_theme_font_size_override("font_size", 29)
+					childTxtPop2.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+					
+					
+					txt_popup_3 = GuiTextUi.instantiate()
+					add_child(txt_popup_3)
+					
+					var childTxtPop3 = txt_popup_3.get_node("labelGuiTextFenetre")
+					childTxtPop3.text = "Jeter"
+					childTxtPop3.position.x = mouse_pos.x + 37
+					childTxtPop3.position.y = mouse_pos.y + 125
+					childTxtPop3.add_theme_font_size_override("font_size", 29)
+					childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+					
+					isPopUpOpen = true
+					print("J'ouvre le pop up")
+			else:
+				pass
+				#print("Vie déja plein j'ouvre pas le pop up")
+			
+			if isPopUpOpen == true:
+				if mouse_pos.x >= gui_buttonOnUse.offset.x and mouse_pos.x <= gui_buttonOnUse.offset.x + 90 and mouse_pos.y >= gui_buttonOnUse.offset.y and mouse_pos.y <= gui_buttonOnUse.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button use ")
+						DataSave.hero.vie = DataSave.hero.vieMax
+						DataSave.hero.mana = DataSave.hero.manaMax
+						gui_potion_elixir[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.potionElixir -= 1
+						nbCompteurPotionElixir -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnUse.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+						
+				
+				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button stocker ")
+				
+				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button jeter ")
+						gui_potion_elixir[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.potionElixir -= 1
+						nbCompteurPotionElixir -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnUse.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+			#Faut creer lobjet popup (button interface text et tout)
+			#Faut que j'ajoute les conditions pour le clic et tout 
+			#A la fin remettre la variable txtItemSelect a "none"
+		
+		if txtItemSelect[i] == "bague_1":
+			#print("item select est bague : ", txtItemSelect)
+			if isPopUpOpen == false:
+				gui_popUp = GuiPopUp.instantiate()
+				add_child(gui_popUp)
+				gui_popUp.scale = Vector2(0.5, 0.5)
+				gui_popUp.offset.x = mouse_pos.x
+				gui_popUp.offset.y = mouse_pos.y
+				
+				gui_buttonOnEquiper = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnEquiper)
+				gui_buttonOnEquiper.scale = Vector2(0.5, 0.5)
+				gui_buttonOnEquiper.offset.x = mouse_pos.x + 20
+				gui_buttonOnEquiper.offset.y = mouse_pos.y + 30
+				
+				gui_buttonOnStocker = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnStocker)
+				gui_buttonOnStocker.scale = Vector2(0.5, 0.5)
+				gui_buttonOnStocker.offset.x = mouse_pos.x + 20
+				gui_buttonOnStocker.offset.y = mouse_pos.y + 75
+				
+				gui_buttonOnJeter = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnJeter)
+				gui_buttonOnJeter.scale = Vector2(0.5, 0.5)
+				gui_buttonOnJeter.offset.x = mouse_pos.x + 20
+				gui_buttonOnJeter.offset.y = mouse_pos.y + 120
+				
+				txt_popup_1 = GuiTextUi.instantiate()
+				add_child(txt_popup_1)
+				
+				var childTxtPop1 = txt_popup_1.get_node("labelGuiTextFenetre")
+				childTxtPop1.text = "Equiper"
+				childTxtPop1.position.x = mouse_pos.x + 24
+				childTxtPop1.position.y = mouse_pos.y + 35
+				childTxtPop1.add_theme_font_size_override("font_size", 29)
+				childTxtPop1.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				txt_popup_2 = GuiTextUi.instantiate()
+				add_child(txt_popup_2)
+				
+				var childTxtPop2 = txt_popup_2.get_node("labelGuiTextFenetre")
+				childTxtPop2.text = "Stocker"
+				childTxtPop2.position.x = mouse_pos.x + 24
+				childTxtPop2.position.y = mouse_pos.y + 80
+				childTxtPop2.add_theme_font_size_override("font_size", 29)
+				childTxtPop2.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				
+				txt_popup_3 = GuiTextUi.instantiate()
+				add_child(txt_popup_3)
+				
+				var childTxtPop3 = txt_popup_3.get_node("labelGuiTextFenetre")
+				childTxtPop3.text = "Jeter"
+				childTxtPop3.position.x = mouse_pos.x + 37
+				childTxtPop3.position.y = mouse_pos.y + 125
+				childTxtPop3.add_theme_font_size_override("font_size", 29)
+				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				isPopUpOpen = true
+				print("J'ouvre le pop up")
+			
+			if isPopUpOpen == true:
+				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button equiper ")
+						#_Sgui_open()
+						nodeSceneGameplay.hero.img[nodeSceneGameplay.hero.current].isGuiOpen = false
+						nodeHudHero.emit_signal("guiHeroOpen", "hero")
+						_close_inventaire()
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+						#sceneGameplay._Sgui_open("hero")
+						
+				
+				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button stocker ")
+				
+				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button jeter ")
+						gui_bague1[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.bague1 -= 1
+						nbCompteurBague1 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+			#Faut creer lobjet popup (button interface text et tout)
+			#Faut que j'ajoute les conditions pour le clic et tout 
+			#A la fin remettre la variable txtItemSelect a "none"
+		
+		if txtItemSelect[i] == "bague_2":
+			#print("item select est bague : ", txtItemSelect)
+			if isPopUpOpen == false:
+				gui_popUp = GuiPopUp.instantiate()
+				add_child(gui_popUp)
+				gui_popUp.scale = Vector2(0.5, 0.5)
+				gui_popUp.offset.x = mouse_pos.x
+				gui_popUp.offset.y = mouse_pos.y
+				
+				gui_buttonOnEquiper = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnEquiper)
+				gui_buttonOnEquiper.scale = Vector2(0.5, 0.5)
+				gui_buttonOnEquiper.offset.x = mouse_pos.x + 20
+				gui_buttonOnEquiper.offset.y = mouse_pos.y + 30
+				
+				gui_buttonOnStocker = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnStocker)
+				gui_buttonOnStocker.scale = Vector2(0.5, 0.5)
+				gui_buttonOnStocker.offset.x = mouse_pos.x + 20
+				gui_buttonOnStocker.offset.y = mouse_pos.y + 75
+				
+				gui_buttonOnJeter = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnJeter)
+				gui_buttonOnJeter.scale = Vector2(0.5, 0.5)
+				gui_buttonOnJeter.offset.x = mouse_pos.x + 20
+				gui_buttonOnJeter.offset.y = mouse_pos.y + 120
+				
+				txt_popup_1 = GuiTextUi.instantiate()
+				add_child(txt_popup_1)
+				
+				var childTxtPop1 = txt_popup_1.get_node("labelGuiTextFenetre")
+				childTxtPop1.text = "Equiper"
+				childTxtPop1.position.x = mouse_pos.x + 24
+				childTxtPop1.position.y = mouse_pos.y + 35
+				childTxtPop1.add_theme_font_size_override("font_size", 29)
+				childTxtPop1.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				txt_popup_2 = GuiTextUi.instantiate()
+				add_child(txt_popup_2)
+				
+				var childTxtPop2 = txt_popup_2.get_node("labelGuiTextFenetre")
+				childTxtPop2.text = "Stocker"
+				childTxtPop2.position.x = mouse_pos.x + 24
+				childTxtPop2.position.y = mouse_pos.y + 80
+				childTxtPop2.add_theme_font_size_override("font_size", 29)
+				childTxtPop2.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				
+				txt_popup_3 = GuiTextUi.instantiate()
+				add_child(txt_popup_3)
+				
+				var childTxtPop3 = txt_popup_3.get_node("labelGuiTextFenetre")
+				childTxtPop3.text = "Jeter"
+				childTxtPop3.position.x = mouse_pos.x + 37
+				childTxtPop3.position.y = mouse_pos.y + 125
+				childTxtPop3.add_theme_font_size_override("font_size", 29)
+				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				isPopUpOpen = true
+				print("J'ouvre le pop up")
+			
+			if isPopUpOpen == true:
+				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button equiper ")
+						#_Sgui_open()
+						nodeSceneGameplay.hero.img[nodeSceneGameplay.hero.current].isGuiOpen = false
+						nodeHudHero.emit_signal("guiHeroOpen", "hero")
+						_close_inventaire()
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+						#sceneGameplay._Sgui_open("hero")
+						
+				
+				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button stocker ")
+				
+				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button jeter ")
+						gui_bague2[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.bague2 -= 1
+						nbCompteurBague2 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+			#Faut creer lobjet popup (button interface text et tout)
+			#Faut que j'ajoute les conditions pour le clic et tout 
+			#A la fin remettre la variable txtItemSelect a "none"
+		
+		if txtItemSelect[i] == "bague_3":
+			#print("item select est bague : ", txtItemSelect)
+			if isPopUpOpen == false:
+				gui_popUp = GuiPopUp.instantiate()
+				add_child(gui_popUp)
+				gui_popUp.scale = Vector2(0.5, 0.5)
+				gui_popUp.offset.x = mouse_pos.x
+				gui_popUp.offset.y = mouse_pos.y
+				
+				gui_buttonOnEquiper = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnEquiper)
+				gui_buttonOnEquiper.scale = Vector2(0.5, 0.5)
+				gui_buttonOnEquiper.offset.x = mouse_pos.x + 20
+				gui_buttonOnEquiper.offset.y = mouse_pos.y + 30
+				
+				gui_buttonOnStocker = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnStocker)
+				gui_buttonOnStocker.scale = Vector2(0.5, 0.5)
+				gui_buttonOnStocker.offset.x = mouse_pos.x + 20
+				gui_buttonOnStocker.offset.y = mouse_pos.y + 75
+				
+				gui_buttonOnJeter = GuiButtonOn.instantiate()
+				add_child(gui_buttonOnJeter)
+				gui_buttonOnJeter.scale = Vector2(0.5, 0.5)
+				gui_buttonOnJeter.offset.x = mouse_pos.x + 20
+				gui_buttonOnJeter.offset.y = mouse_pos.y + 120
+				
+				txt_popup_1 = GuiTextUi.instantiate()
+				add_child(txt_popup_1)
+				
+				var childTxtPop1 = txt_popup_1.get_node("labelGuiTextFenetre")
+				childTxtPop1.text = "Equiper"
+				childTxtPop1.position.x = mouse_pos.x + 24
+				childTxtPop1.position.y = mouse_pos.y + 35
+				childTxtPop1.add_theme_font_size_override("font_size", 29)
+				childTxtPop1.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				txt_popup_2 = GuiTextUi.instantiate()
+				add_child(txt_popup_2)
+				
+				var childTxtPop2 = txt_popup_2.get_node("labelGuiTextFenetre")
+				childTxtPop2.text = "Stocker"
+				childTxtPop2.position.x = mouse_pos.x + 24
+				childTxtPop2.position.y = mouse_pos.y + 80
+				childTxtPop2.add_theme_font_size_override("font_size", 29)
+				childTxtPop2.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				
+				txt_popup_3 = GuiTextUi.instantiate()
+				add_child(txt_popup_3)
+				
+				var childTxtPop3 = txt_popup_3.get_node("labelGuiTextFenetre")
+				childTxtPop3.text = "Jeter"
+				childTxtPop3.position.x = mouse_pos.x + 37
+				childTxtPop3.position.y = mouse_pos.y + 125
+				childTxtPop3.add_theme_font_size_override("font_size", 29)
+				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+				
+				isPopUpOpen = true
+				print("J'ouvre le pop up")
+			
+			if isPopUpOpen == true:
+				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button equiper ")
+						#_Sgui_open()
+						nodeSceneGameplay.hero.img[nodeSceneGameplay.hero.current].isGuiOpen = false
+						nodeHudHero.emit_signal("guiHeroOpen", "hero")
+						_close_inventaire()
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+						#sceneGameplay._Sgui_open("hero")
+						
+				
+				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button stocker ")
+				
+				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
+					if Input.is_action_just_pressed("button_left"):
+						print("on clique sur le button jeter ")
+						gui_bague3[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.bague3 -= 1
+						nbCompteurBague3 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+			#Faut creer lobjet popup (button interface text et tout)
+			#Faut que j'ajoute les conditions pour le clic et tout 
+			#A la fin remettre la variable txtItemSelect a "none"
+		
 	if gui_fenetre != null:
 		gui_fenetre.offset.x = mouse_pos.x+10
 		gui_fenetre.offset.y = mouse_pos.y+13
@@ -2048,92 +2696,7 @@ func _process(delta: float) -> void:
 
 func _on_panel_retour_gui_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("button_left"):
-		isPanelClose = true
-		for n in range(20):
-			if gui_potion_vie[n] != null:
-				gui_potion_vie[n].queue_free()
-			if gui_potion_mana[n] != null:
-				gui_potion_mana[n].queue_free()
-			if gui_potion_elixir[n] != null:
-				gui_potion_elixir[n].queue_free()
-			if gui_bague1[n] != null:
-				gui_bague1[n].queue_free()
-			if gui_bague2[n] != null:
-				gui_bague2[n].queue_free()
-			if gui_bague3[n] != null:
-				gui_bague3[n].queue_free()
-			if gui_bottes1[n] != null:
-				gui_bottes1[n].queue_free()
-			if gui_bottes2[n] != null:
-				gui_bottes2[n].queue_free()
-			if gui_bottes3[n] != null:
-				gui_bottes3[n].queue_free()
-			if gui_bottes4[n] != null:
-				gui_bottes4[n].queue_free()
-			if gui_bottes5[n] != null:
-				gui_bottes5[n].queue_free()
-			if gui_bottes6[n] != null:
-				gui_bottes6[n].queue_free()
-			if gui_bouclier1[n] != null:
-				gui_bouclier1[n].queue_free()
-			if gui_bouclier2[n] != null:
-				gui_bouclier2[n].queue_free()
-			if gui_bouclier3[n] != null:
-				gui_bouclier3[n].queue_free()
-			if gui_bouclier4[n] != null:
-				gui_bouclier4[n].queue_free()
-			if gui_bouclier5[n] != null:
-				gui_bouclier5[n].queue_free()
-			if gui_bouclier6[n] != null:
-				gui_bouclier6[n].queue_free()
-			if gui_bouclier7[n] != null:
-				gui_bouclier7[n].queue_free()
-			if gui_casque1[n] != null:
-				gui_casque1[n].queue_free()
-			if gui_casque2[n] != null:
-				gui_casque2[n].queue_free()
-			if gui_casque3[n] != null:
-				gui_casque3[n].queue_free()
-			if gui_casque4[n] != null:
-				gui_casque4[n].queue_free()
-			if gui_casque5[n] != null:
-				gui_casque5[n].queue_free()
-			if gui_casque6[n] != null:
-				gui_casque6[n].queue_free()
-			if gui_collier1[n] != null:
-				gui_collier1[n].queue_free()
-			if gui_collier2[n] != null:
-				gui_collier2[n].queue_free()
-			if gui_collier3[n] != null:
-				gui_collier3[n].queue_free()
-			if gui_heaume1[n] != null:
-				gui_heaume1[n].queue_free()
-			if gui_heaume2[n] != null:
-				gui_heaume2[n].queue_free()
-			if gui_heaume3[n] != null:
-				gui_heaume3[n].queue_free()
-			if gui_heaume4[n] != null:
-				gui_heaume4[n].queue_free()
-			if gui_heaume5[n] != null:
-				gui_heaume5[n].queue_free()
-			if gui_heaume6[n] != null:
-				gui_heaume6[n].queue_free()
-			if gui_sword1[n] != null:
-				gui_sword1[n].queue_free()
-			if gui_sword2[n] != null:
-				gui_sword2[n].queue_free()
-			if gui_sword3[n] != null:
-				gui_sword3[n].queue_free()
-			if gui_sword4[n] != null:
-				gui_sword4[n].queue_free()
-			if gui_sword5[n] != null:
-				gui_sword5[n].queue_free()
-			if gui_sword6[n] != null:
-				gui_sword6[n].queue_free()
-			if gui_sword7[n] != null:
-				gui_sword7[n].queue_free()
-			if gui_sword8[n] != null:
-				gui_sword8[n].queue_free()
+		_close_inventaire()
 
 func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il execute en continue comme un update
 	var mouse_pos = get_viewport().get_mouse_position()
