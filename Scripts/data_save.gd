@@ -19,6 +19,13 @@ casque3 = 0, casque4 = 0, casque5 = 0, casque6 = 0, collier1 = 0, collier2 = 0, 
 heaume2 = 0, heaume3 = 0, heaume4 = 0, heaume5 = 0, heaume6 = 0, sword1 = 0, sword2 = 0, sword3 = 0, 
 sword4 = 0, sword5 = 0, sword6 = 0, sword7 = 0, sword8 = 0 }
 
+var items_stocker = { potionVie = 0, potionMana = 0, potionElixir = 0, bague1 = 0, bague2 = 0, bague3 = 0, bottes1 = 0,
+bottes2 = 0, bottes3 = 0, bottes4 = 0, bottes5 = 0, bottes6 = 0, bouclier1 = 0, bouclier2 = 0,
+bouclier3 = 0, bouclier4 = 0, bouclier5 = 0, bouclier6 = 0, bouclier7 = 0, casque1 = 0, casque2 = 0, 
+casque3 = 0, casque4 = 0, casque5 = 0, casque6 = 0, collier1 = 0, collier2 = 0, collier3 = 0, heaume1 = 0,
+heaume2 = 0, heaume3 = 0, heaume4 = 0, heaume5 = 0, heaume6 = 0, sword1 = 0, sword2 = 0, sword3 = 0, 
+sword4 = 0, sword5 = 0, sword6 = 0, sword7 = 0, sword8 = 0 }
+
 var addStatVie = 0
 var addStatMana = 0
 var addStatPuissance = 0
@@ -29,6 +36,8 @@ var addStatDefense = 0
 
 var nbTotalItemsInventaire = 0 
 var nbTotalItemsEquipements = 0
+
+var nbNiveauCoffreStockage = 1
 
 const  SAVE_PATH = "user://settings.cfg"
 
@@ -145,7 +154,49 @@ func load_data():
 	addStatRegeneEndurance = config.get_value("stat_bonus", "regene_endurance", 0)
 	addStatAttaque = config.get_value("stat_bonus", "attaque", 0)
 	addStatDefense = config.get_value("stat_bonus", "defense", 0)
-	
+	items_stocker.potionVie = config.get_value("stocker", "potion_vie", 0)
+	items_stocker.potionMana = config.get_value("stocker", "potion_mana", 0)
+	items_stocker.potionElixir = config.get_value("stocker", "potion_elixir", 0)
+	items_stocker.bague1 = config.get_value("stocker", "bague_1", 0)
+	items_stocker.bague2 = config.get_value("stocker", "bague_2", 0)
+	items_stocker.bague3 = config.get_value("stocker", "bague_3", 0)
+	items_stocker.bottes1 = config.get_value("stocker", "bottes_1", 0)
+	items_stocker.bottes2 = config.get_value("stocker", "bottes_2", 0)
+	items_stocker.bottes3 = config.get_value("stocker", "bottes_3", 0)
+	items_stocker.bottes4 = config.get_value("stocker", "bottes_4", 0)
+	items_stocker.bottes5 = config.get_value("stocker", "bottes_5", 0)
+	items_stocker.bottes6 = config.get_value("stocker", "bottes_6", 0)
+	items_stocker.bouclier1 = config.get_value("stocker", "bouclier_1", 0)
+	items_stocker.bouclier2 = config.get_value("stocker", "bouclier_2", 0)
+	items_stocker.bouclier3 = config.get_value("stocker", "bouclier_3", 0)
+	items_stocker.bouclier4 = config.get_value("stocker", "bouclier_4", 0)
+	items_stocker.bouclier5 = config.get_value("stocker", "bouclier_5", 0)
+	items_stocker.bouclier6 = config.get_value("stocker", "bouclier_6", 0)
+	items_stocker.bouclier7 = config.get_value("stocker", "bouclier_7", 0)
+	items_stocker.casque1 = config.get_value("stocker", "casque_1", 0)
+	items_stocker.casque2 = config.get_value("stocker", "casque_2", 0)
+	items_stocker.casque3 = config.get_value("stocker", "casque_3", 0)
+	items_stocker.casque4 = config.get_value("stocker", "casque_4", 0)
+	items_stocker.casque5 = config.get_value("stocker", "casque_5", 0)
+	items_stocker.casque6 = config.get_value("stocker", "casque_6", 0)
+	items_stocker.collier1 = config.get_value("stocker", "collier_1", 0)
+	items_stocker.collier2 = config.get_value("stocker", "collier_2", 0)
+	items_stocker.collier3 = config.get_value("stocker", "collier_3", 0)
+	items_stocker.heaume1 = config.get_value("stocker", "heaume_1", 0)
+	items_stocker.heaume2 = config.get_value("stocker", "heaume_2", 0)
+	items_stocker.heaume3 = config.get_value("stocker", "heaume_3", 0)
+	items_stocker.heaume4 = config.get_value("stocker", "heaume_4", 0)
+	items_stocker.heaume5 = config.get_value("stocker", "heaume_5", 0)
+	items_stocker.heaume6 = config.get_value("stocker", "heaume_6", 0)
+	items_stocker.sword1 = config.get_value("stocker", "sword_1", 0)
+	items_stocker.sword2 = config.get_value("stocker", "sword_2", 0)
+	items_stocker.sword3 = config.get_value("stocker", "sword_3", 0)
+	items_stocker.sword4 = config.get_value("stocker", "sword_4", 0)
+	items_stocker.sword5 = config.get_value("stocker", "sword_5", 0)
+	items_stocker.sword6 = config.get_value("stocker", "sword_6", 0)
+	items_stocker.sword7 = config.get_value("stocker", "sword_7", 0)
+	items_stocker.sword8 = config.get_value("stocker", "sword_8", 0)
+	nbNiveauCoffreStockage = config.get_value("coffre_stockage", "niveau", 1)
 
 func save_data():
 	var config = ConfigFile.new()
@@ -249,6 +300,49 @@ func save_data():
 	config.set_value("stat_bonus", "regene_endurance", addStatRegeneEndurance)
 	config.set_value("stat_bonus", "attaque", addStatAttaque)
 	config.set_value("stat_bonus", "defense", addStatDefense)
+	config.set_value("stocker", "potion_vie", items_stocker.potionVie)
+	config.set_value("stocker", "potion_mana", items_stocker.potionMana)
+	config.set_value("stocker", "potion_elixir", items_stocker.potionElixir)
+	config.set_value("stocker", "bague_1", items_stocker.bague1)
+	config.set_value("stocker", "bague_2", items_stocker.bague2)
+	config.set_value("stocker", "bague_3", items_stocker.bague3)
+	config.set_value("stocker", "bottes_1", items_stocker.bottes1)
+	config.set_value("stocker", "bottes_2", items_stocker.bottes2)
+	config.set_value("stocker", "bottes_3", items_stocker.bottes3)
+	config.set_value("stocker", "bottes_4", items_stocker.bottes4)
+	config.set_value("stocker", "bottes_5", items_stocker.bottes5)
+	config.set_value("stocker", "bottes_6", items_stocker.bottes6)
+	config.set_value("stocker", "bouclier_1", items_stocker.bouclier1)
+	config.set_value("stocker", "bouclier_2", items_stocker.bouclier2)
+	config.set_value("stocker", "bouclier_3", items_stocker.bouclier3)
+	config.set_value("stocker", "bouclier_4", items_stocker.bouclier4)
+	config.set_value("stocker", "bouclier_5", items_stocker.bouclier5)
+	config.set_value("stocker", "bouclier_6", items_stocker.bouclier6)
+	config.set_value("stocker", "bouclier_7", items_stocker.bouclier7)
+	config.set_value("stocker", "casque_1", items_stocker.casque1)
+	config.set_value("stocker", "casque_2", items_stocker.casque2)
+	config.set_value("stocker", "casque_3", items_stocker.casque3)
+	config.set_value("stocker", "casque_4", items_stocker.casque4)
+	config.set_value("stocker", "casque_5", items_stocker.casque5)
+	config.set_value("stocker", "casque_6", items_stocker.casque6)
+	config.set_value("stocker", "collier_1", items_stocker.collier1)
+	config.set_value("stocker", "collier_2", items_stocker.collier2)
+	config.set_value("stocker", "collier_3", items_stocker.collier3)
+	config.set_value("stocker", "heaume_1", items_stocker.heaume1)
+	config.set_value("stocker", "heaume_2", items_stocker.heaume2)
+	config.set_value("stocker", "heaume_3", items_stocker.heaume3)
+	config.set_value("stocker", "heaume_4", items_stocker.heaume4)
+	config.set_value("stocker", "heaume_5", items_stocker.heaume5)
+	config.set_value("stocker", "heaume_6", items_stocker.heaume6)
+	config.set_value("stocker", "sword_1", items_stocker.sword1)
+	config.set_value("stocker", "sword_2", items_stocker.sword2)
+	config.set_value("stocker", "sword_3", items_stocker.sword3)
+	config.set_value("stocker", "sword_4", items_stocker.sword4)
+	config.set_value("stocker", "sword_5", items_stocker.sword5)
+	config.set_value("stocker", "sword_6", items_stocker.sword6)
+	config.set_value("stocker", "sword_7", items_stocker.sword7)
+	config.set_value("stocker", "sword_8", items_stocker.sword8)
+	config.set_value("coffre_stockage", "niveau", nbNiveauCoffreStockage)
 	
 	config.save(SAVE_PATH)
 
