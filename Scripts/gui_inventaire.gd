@@ -167,6 +167,48 @@ var txtTypeClic = ""
 var isPanelClose = true
 
 var isPopUpOpen = false
+var isPopUpOpenPotionVie = false
+var isPopUpOpenPotionMana = false
+var isPopUpOpenPotionElixir = false
+var isPopUpOpenBague1 = false
+var isPopUpOpenBague2 = false
+var isPopUpOpenBague3 = false
+var isPopUpOpenBottes1 = false
+var isPopUpOpenBottes2 = false
+var isPopUpOpenBottes3 = false
+var isPopUpOpenBottes4 = false
+var isPopUpOpenBottes5 = false
+var isPopUpOpenBottes6 = false
+var isPopUpOpenBouclier1 = false
+var isPopUpOpenBouclier2 = false
+var isPopUpOpenBouclier3 = false
+var isPopUpOpenBouclier4 = false
+var isPopUpOpenBouclier5 = false
+var isPopUpOpenBouclier6 = false
+var isPopUpOpenBouclier7 = false
+var isPopUpOpenCasque1 = false
+var isPopUpOpenCasque2 = false
+var isPopUpOpenCasque3 = false
+var isPopUpOpenCasque4 = false
+var isPopUpOpenCasque5 = false
+var isPopUpOpenCasque6 = false
+var isPopUpOpenCollier1 = false
+var isPopUpOpenCollier2 = false
+var isPopUpOpenCollier3 = false
+var isPopUpOpenHeaume1 = false
+var isPopUpOpenHeaume2 = false
+var isPopUpOpenHeaume3 = false
+var isPopUpOpenHeaume4 = false
+var isPopUpOpenHeaume5 = false
+var isPopUpOpenHeaume6 = false
+var isPopUpOpenSword1 = false
+var isPopUpOpenSword2 = false
+var isPopUpOpenSword3 = false
+var isPopUpOpenSword4 = false
+var isPopUpOpenSword5 = false
+var isPopUpOpenSword6 = false
+var isPopUpOpenSword7 = false
+var isPopUpOpenSword8 = false
 
 var nbDecaleTextName = 0
 
@@ -1382,8 +1424,8 @@ func _close_inventaire():
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	DataSave.hero.vie = 90
-	DataSave.hero.mana = -1
+	#DataSave.hero.vie = 90
+	#DataSave.hero.mana = -1
 	print("test de self de scene a ici : ", nodeHudHero)
 	nodeSceneGameplay.connect("guiHeroOpen", Callable(self, "_Sgui_open"))
 	gui_potion_vie.resize(20)
@@ -1475,13 +1517,13 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	#var sizeScreen = get_viewport().get_visible_rect().size
 	var mouse_pos = get_viewport().get_mouse_position()
-	
+	#DataSave.hero.vie = 50
 	for i in range(20):
 		
 		if txtItemSelect[i] == "potion_vie":
 			#print("item select est potion de vie : ", txtItemSelect)
 			if DataSave.hero.vie != DataSave.hero.vieMax:
-				if isPopUpOpen == false:
+				if isPopUpOpen == false and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 					gui_popUp = GuiPopUp.instantiate()
 					add_child(gui_popUp)
 					gui_popUp.scale = Vector2(0.5, 0.5)
@@ -1538,12 +1580,55 @@ func _process(delta: float) -> void:
 					childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
 					
 					isPopUpOpen = true
+					isPopUpOpenPotionVie = true
 					print("J'ouvre le pop up")
 			else:
-				pass
+				if isPopUpOpen == false and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
+					gui_popUp = GuiPopUp.instantiate()
+					add_child(gui_popUp)
+					gui_popUp.scale = Vector2(0.5, 0.5)
+					gui_popUp.offset.x = mouse_pos.x
+					gui_popUp.offset.y = mouse_pos.y
+					
+					gui_buttonOnStocker = GuiButtonOn.instantiate()
+					add_child(gui_buttonOnStocker)
+					gui_buttonOnStocker.scale = Vector2(0.5, 0.5)
+					gui_buttonOnStocker.offset.x = mouse_pos.x + 20
+					gui_buttonOnStocker.offset.y = mouse_pos.y + 75
+					
+					gui_buttonOnJeter = GuiButtonOn.instantiate()
+					add_child(gui_buttonOnJeter)
+					gui_buttonOnJeter.scale = Vector2(0.5, 0.5)
+					gui_buttonOnJeter.offset.x = mouse_pos.x + 20
+					gui_buttonOnJeter.offset.y = mouse_pos.y + 120
+					
+					txt_popup_2 = GuiTextUi.instantiate()
+					add_child(txt_popup_2)
+					
+					var childTxtPop2 = txt_popup_2.get_node("labelGuiTextFenetre")
+					childTxtPop2.text = "Stocker"
+					childTxtPop2.position.x = mouse_pos.x + 24
+					childTxtPop2.position.y = mouse_pos.y + 80
+					childTxtPop2.add_theme_font_size_override("font_size", 29)
+					childTxtPop2.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+					
+					
+					txt_popup_3 = GuiTextUi.instantiate()
+					add_child(txt_popup_3)
+					
+					var childTxtPop3 = txt_popup_3.get_node("labelGuiTextFenetre")
+					childTxtPop3.text = "Jeter"
+					childTxtPop3.position.x = mouse_pos.x + 37
+					childTxtPop3.position.y = mouse_pos.y + 125
+					childTxtPop3.add_theme_font_size_override("font_size", 29)
+					childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+					
+					isPopUpOpen = true
+					isPopUpOpenPotionVie = true 
 				#print("Vie déja plein j'ouvre pas le pop up")
 			
-			if isPopUpOpen == true:
+			if isPopUpOpen == true and isPopUpOpenPotionVie == true and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
+				#if gui_buttonOnUse != null:
 				if mouse_pos.x >= gui_buttonOnUse.offset.x and mouse_pos.x <= gui_buttonOnUse.offset.x + 90 and mouse_pos.y >= gui_buttonOnUse.offset.y and mouse_pos.y <= gui_buttonOnUse.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button use ")
@@ -1561,12 +1646,29 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenPotionVie = false
 						txtItemSelect[i] = "none"
 						
 				
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button stocker ")
+						gui_potion_vie[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.potionVie -= 1
+						DataSave.items_stocker.potionVie += 1
+						nbCompteurPotionVie -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnUse.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						isPopUpOpenPotionVie = false
+						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
@@ -1584,6 +1686,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenPotionVie = false
 						txtItemSelect[i] = "none"
 			#Faut creer lobjet popup (button interface text et tout)
 			#Faut que j'ajoute les conditions pour le clic et tout 
@@ -1678,6 +1781,21 @@ func _process(delta: float) -> void:
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button stocker ")
+						gui_potion_mana[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.potionMana -= 1
+						DataSave.items_stocker.potionMana += 1
+						nbCompteurPotionMana -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnUse.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
@@ -1790,6 +1908,21 @@ func _process(delta: float) -> void:
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button stocker ")
+						gui_potion_elixir[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.potionElixir -= 1
+						DataSave.items_stocker.potionElixir += 1
+						nbCompteurPotionElixir -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnUse.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
@@ -1896,6 +2029,21 @@ func _process(delta: float) -> void:
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button stocker ")
+						gui_bague1[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.bague1 -= 1
+						DataSave.items_stocker.bague1 += 1
+						nbCompteurBague1 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
@@ -2002,6 +2150,21 @@ func _process(delta: float) -> void:
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button stocker ")
+						gui_bague2[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.bague2 -= 1
+						DataSave.items_stocker.bague2 += 1
+						nbCompteurBague2 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
@@ -2108,6 +2271,21 @@ func _process(delta: float) -> void:
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button stocker ")
+						gui_bague3[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.bague3 -= 1
+						DataSave.items_stocker.bague3 += 1
+						nbCompteurBague3 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
@@ -2214,6 +2392,22 @@ func _process(delta: float) -> void:
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button stocker ")
+						gui_bottes1[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.bottes1 -= 1
+						DataSave.items_stocker.bottes1 += 1
+						nbCompteurBottes1 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
+						
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
@@ -2320,6 +2514,21 @@ func _process(delta: float) -> void:
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button stocker ")
+						gui_bottes2[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.bottes2 -= 1
+						DataSave.items_stocker.bottes2 += 1
+						nbCompteurBottes2 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
@@ -2426,6 +2635,21 @@ func _process(delta: float) -> void:
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button stocker ")
+						gui_bottes3[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.bottes3 -= 1
+						DataSave.items_stocker.bottes3 += 1
+						nbCompteurBottes3 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
@@ -2532,6 +2756,21 @@ func _process(delta: float) -> void:
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button stocker ")
+						gui_bottes4[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.bottes4 -= 1
+						DataSave.items_stocker.bottes4 += 1
+						nbCompteurBottes4 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
@@ -2638,6 +2877,21 @@ func _process(delta: float) -> void:
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button stocker ")
+						gui_bottes5[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.bottes5 -= 1
+						DataSave.items_stocker.bottes5 += 1
+						nbCompteurBottes5 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
@@ -2744,6 +2998,21 @@ func _process(delta: float) -> void:
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button stocker ")
+						gui_bottes6[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.bottes6 -= 1
+						DataSave.items_stocker.bottes6 += 1
+						nbCompteurBottes6 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
@@ -2850,6 +3119,21 @@ func _process(delta: float) -> void:
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button stocker ")
+						gui_bouclier1[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.bouclier1 -= 1
+						DataSave.items_stocker.bouclier1 += 1
+						nbCompteurBouclier1 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
@@ -2956,6 +3240,21 @@ func _process(delta: float) -> void:
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button stocker ")
+						gui_bouclier2[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.bouclier2 -= 1
+						DataSave.items_stocker.bouclier2 += 1
+						nbCompteurBouclier2 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
@@ -3062,6 +3361,21 @@ func _process(delta: float) -> void:
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button stocker ")
+						gui_bouclier3[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.bouclier3 -= 1
+						DataSave.items_stocker.bouclier3 += 1
+						nbCompteurBouclier3 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
@@ -3168,6 +3482,21 @@ func _process(delta: float) -> void:
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button stocker ")
+						gui_bouclier4[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.bouclier4 -= 1
+						DataSave.items_stocker.bouclier4 += 1
+						nbCompteurBouclier4 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
@@ -3274,6 +3603,21 @@ func _process(delta: float) -> void:
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button stocker ")
+						gui_bouclier5[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.bouclier5 -= 1
+						DataSave.items_stocker.bouclier5 += 1
+						nbCompteurBouclier5 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
@@ -3380,6 +3724,21 @@ func _process(delta: float) -> void:
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button stocker ")
+						gui_bouclier6[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.bouclier6 -= 1
+						DataSave.items_stocker.bouclier6 += 1
+						nbCompteurBouclier6 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
@@ -3486,6 +3845,21 @@ func _process(delta: float) -> void:
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button stocker ")
+						gui_bouclier7[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.bouclier7 -= 1
+						DataSave.items_stocker.bouclier7 += 1
+						nbCompteurBouclier7 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
@@ -3592,6 +3966,21 @@ func _process(delta: float) -> void:
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button stocker ")
+						gui_casque1[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.casque1 -= 1
+						DataSave.items_stocker.casque1 += 1
+						nbCompteurCasque1 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
@@ -3698,6 +4087,21 @@ func _process(delta: float) -> void:
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button stocker ")
+						gui_casque2[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.casque2 -= 1
+						DataSave.items_stocker.casque2 += 1
+						nbCompteurCasque2 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
@@ -3804,6 +4208,21 @@ func _process(delta: float) -> void:
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button stocker ")
+						gui_casque3[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.casque3 -= 1
+						DataSave.items_stocker.casque3 += 1
+						nbCompteurCasque3 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
@@ -3910,6 +4329,21 @@ func _process(delta: float) -> void:
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button stocker ")
+						gui_casque4[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.casque4 -= 1
+						DataSave.items_stocker.casque4 += 1
+						nbCompteurCasque4 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
@@ -4016,6 +4450,21 @@ func _process(delta: float) -> void:
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button stocker ")
+						gui_casque5[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.casque5 -= 1
+						DataSave.items_stocker.casque5 += 1
+						nbCompteurCasque5 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
@@ -4122,6 +4571,21 @@ func _process(delta: float) -> void:
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button stocker ")
+						gui_casque6[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.casque6 -= 1
+						DataSave.items_stocker.casque6 += 1
+						nbCompteurCasque6 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
@@ -4228,6 +4692,21 @@ func _process(delta: float) -> void:
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button stocker ")
+						gui_collier1[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.collier1 -= 1
+						DataSave.items_stocker.collier1 += 1
+						nbCompteurCollier1 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
@@ -4334,6 +4813,21 @@ func _process(delta: float) -> void:
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button stocker ")
+						gui_collier2[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.collier2 -= 1
+						DataSave.items_stocker.collier2 += 1
+						nbCompteurCollier2 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
@@ -4440,6 +4934,21 @@ func _process(delta: float) -> void:
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button stocker ")
+						gui_collier3[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.collier3 -= 1
+						DataSave.items_stocker.collier3 += 1
+						nbCompteurCollier3 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
@@ -4546,6 +5055,21 @@ func _process(delta: float) -> void:
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button stocker ")
+						gui_heaume1[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.heaume1 -= 1
+						DataSave.items_stocker.heaume1 += 1
+						nbCompteurHeaume1 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
@@ -4652,6 +5176,21 @@ func _process(delta: float) -> void:
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button stocker ")
+						gui_heaume2[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.heaume2 -= 1
+						DataSave.items_stocker.heaume2 += 1
+						nbCompteurHeaume2 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
@@ -4758,6 +5297,21 @@ func _process(delta: float) -> void:
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button stocker ")
+						gui_heaume3[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.heaume3 -= 1
+						DataSave.items_stocker.heaume3 += 1
+						nbCompteurHeaume3 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
@@ -4864,6 +5418,21 @@ func _process(delta: float) -> void:
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button stocker ")
+						gui_heaume4[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.heaume4 -= 1
+						DataSave.items_stocker.heaume4 += 1
+						nbCompteurHeaume4 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
@@ -4970,6 +5539,21 @@ func _process(delta: float) -> void:
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button stocker ")
+						gui_heaume5[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.heaume5 -= 1
+						DataSave.items_stocker.heaume5 += 1
+						nbCompteurHeaume5 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
@@ -5076,6 +5660,21 @@ func _process(delta: float) -> void:
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button stocker ")
+						gui_heaume6[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.heaume6 -= 1
+						DataSave.items_stocker.heaume6 += 1
+						nbCompteurHeaume6-= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
@@ -5182,6 +5781,21 @@ func _process(delta: float) -> void:
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button stocker ")
+						gui_sword1[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.sword1 -= 1
+						DataSave.items_stocker.sword1 += 1
+						nbCompteurSword1 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
@@ -5288,6 +5902,21 @@ func _process(delta: float) -> void:
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button stocker ")
+						gui_sword2[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.sword2 -= 1
+						DataSave.items_stocker.sword2 += 1
+						nbCompteurSword2 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
@@ -5394,6 +6023,21 @@ func _process(delta: float) -> void:
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button stocker ")
+						gui_sword3[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.sword3 -= 1
+						DataSave.items_stocker.sword3 += 1
+						nbCompteurSword3 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
@@ -5500,6 +6144,21 @@ func _process(delta: float) -> void:
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button stocker ")
+						gui_sword4[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.sword4 -= 1
+						DataSave.items_stocker.sword4 += 1
+						nbCompteurSword4 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
@@ -5606,6 +6265,21 @@ func _process(delta: float) -> void:
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button stocker ")
+						gui_sword5[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.sword5 -= 1
+						DataSave.items_stocker.sword5 += 1
+						nbCompteurSword5 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
@@ -5712,6 +6386,21 @@ func _process(delta: float) -> void:
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button stocker ")
+						gui_sword6[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.sword6 -= 1
+						DataSave.items_stocker.sword6 += 1
+						nbCompteurSword6 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
@@ -5818,6 +6507,21 @@ func _process(delta: float) -> void:
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button stocker ")
+						gui_sword7[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.sword7 -= 1
+						DataSave.items_stocker.sword7 += 1
+						nbCompteurSword7 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
@@ -5924,6 +6628,21 @@ func _process(delta: float) -> void:
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button stocker ")
+						gui_sword8[i].queue_free()
+						txtItemType[i] = "vide"
+						DataSave.items_posession.sword8 -= 1
+						DataSave.items_stocker.sword8 += 1
+						nbCompteurSword8 -= 1
+						isSlot_libre[i] = true
+						gui_popUp.queue_free()
+						gui_buttonOnEquiper.queue_free()
+						gui_buttonOnStocker.queue_free()
+						gui_buttonOnJeter.queue_free()
+						txt_popup_1.queue_free()
+						txt_popup_2.queue_free()
+						txt_popup_3.queue_free()
+						isPopUpOpen = false
+						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):

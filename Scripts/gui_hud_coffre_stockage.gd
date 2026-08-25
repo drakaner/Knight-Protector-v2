@@ -44,6 +44,7 @@ var GuiSword7 = preload("res://Objets/gui_sword_7.tscn")
 var GuiSword8 = preload("res://Objets/gui_sword_8.tscn")
 var GuiTextUi = preload("res://Objets/gui_text_fenetre.tscn")
 
+@onready var nodeParent = get_node(".")
 @onready var childSlot = []
 
 var gui_potion_vie = []
@@ -89,17 +90,63 @@ var gui_sword6 = []
 var gui_sword7 = []
 var gui_sword8 = []
 
+var nbCompteurPotionVie = 0
+var nbCompteurPotionMana = 0
+var nbCompteurPotionElixir = 0
+var nbCompteurBague1 = 0
+var nbCompteurBague2 = 0
+var nbCompteurBague3 = 0
+var nbCompteurBottes1 = 0
+var nbCompteurBottes2 = 0
+var nbCompteurBottes3 = 0
+var nbCompteurBottes4 = 0
+var nbCompteurBottes5 = 0
+var nbCompteurBottes6 = 0
+var nbCompteurBouclier1 = 0
+var nbCompteurBouclier2 = 0
+var nbCompteurBouclier3 = 0
+var nbCompteurBouclier4 = 0
+var nbCompteurBouclier5 = 0
+var nbCompteurBouclier6 = 0
+var nbCompteurBouclier7 = 0
+var nbCompteurCasque1 = 0
+var nbCompteurCasque2 = 0
+var nbCompteurCasque3 = 0
+var nbCompteurCasque4 = 0
+var nbCompteurCasque5 = 0
+var nbCompteurCasque6 = 0
+var nbCompteurCollier1 = 0
+var nbCompteurCollier2 = 0
+var nbCompteurCollier3 = 0
+var nbCompteurHeaume1 = 0
+var nbCompteurHeaume2 = 0
+var nbCompteurHeaume3 = 0
+var nbCompteurHeaume4 = 0
+var nbCompteurHeaume5 = 0
+var nbCompteurHeaume6 = 0
+var nbCompteurSword1 = 0
+var nbCompteurSword2 = 0
+var nbCompteurSword3 = 0
+var nbCompteurSword4 = 0
+var nbCompteurSword5 = 0
+var nbCompteurSword6 = 0
+var nbCompteurSword7 = 0
+var nbCompteurSword8 = 0
+
+
+
 var isPanelClose = true
 
 var nbPlaceDispo = 10 #nv1 : 10, nv2 : 15, nv3 : 20
 
 var isSlotLibre = []
-var txtTypeItem = []
+var txtItemType = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	#DataSave.items_stocker.bague1 = 1
 	isSlotLibre.resize(nbPlaceDispo)
-	txtTypeItem.resize(nbPlaceDispo)
+	txtItemType.resize(nbPlaceDispo)
 	
 	
 	gui_potion_vie.resize(nbPlaceDispo)
@@ -145,15 +192,460 @@ func _ready() -> void:
 	gui_sword7.resize(nbPlaceDispo)
 	gui_sword8.resize(nbPlaceDispo)
 	
+	childSlot.resize(20)
+	
+	childSlot[0] = nodeParent.get_node("panel_slot1")
+	childSlot[1] = nodeParent.get_node("panel_slot2")
+	childSlot[2] = nodeParent.get_node("panel_slot3")
+	childSlot[3] = nodeParent.get_node("panel_slot4")
+	childSlot[4] = nodeParent.get_node("panel_slot5")
+	childSlot[5] = nodeParent.get_node("panel_slot6")
+	childSlot[6] = nodeParent.get_node("panel_slot7")
+	childSlot[7] = nodeParent.get_node("panel_slot8")
+	childSlot[8] = nodeParent.get_node("panel_slot9")
+	childSlot[9] = nodeParent.get_node("panel_slot10")
+	childSlot[10] = nodeParent.get_node("panel_slot11")
+	childSlot[11] = nodeParent.get_node("panel_slot12")
+	childSlot[12] = nodeParent.get_node("panel_slot13")
+	childSlot[13] = nodeParent.get_node("panel_slot14")
+	childSlot[14] = nodeParent.get_node("panel_slot15")
+	childSlot[15] = nodeParent.get_node("panel_slot16")
+	childSlot[16] = nodeParent.get_node("panel_slot17")
+	childSlot[17] = nodeParent.get_node("panel_slot18")
+	childSlot[18] = nodeParent.get_node("panel_slot19")
+	childSlot[19] = nodeParent.get_node("panel_slot20")
+	
 	
 	for n in range(nbPlaceDispo):
 		isSlotLibre[n] = true
-		txtTypeItem[n] = "none"
+		txtItemType[n] = "vide"
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	var mouse_pos = get_viewport().get_mouse_position()
+	
+	for n in range(nbPlaceDispo):
+		if isSlotLibre[n] == true:
+			if DataSave.items_stocker.potionVie != nbCompteurPotionVie and txtItemType[n] == "vide":
+				gui_potion_vie[n] = GuiPotionVie.instantiate()
+				add_child(gui_potion_vie[n])
+				gui_potion_vie[n].scale = Vector2(0.7, 0.8)
+				gui_potion_vie[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
+				gui_potion_vie[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
+				nbCompteurPotionVie += 1
+				isSlotLibre[n] = false
+				txtItemType[n] = "potion_vie"
+		
+			if DataSave.items_stocker.potionMana != nbCompteurPotionMana and txtItemType[n] == "vide":
+				gui_potion_mana[n] = GuiPotionMana.instantiate()
+				add_child(gui_potion_mana[n])
+				gui_potion_mana[n].scale = Vector2(0.7, 0.8)
+				gui_potion_mana[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
+				gui_potion_mana[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
+				nbCompteurPotionMana += 1
+				isSlotLibre[n] = false
+				txtItemType[n] = "potion_mana"
+			
+			if DataSave.items_stocker.potionElixir != nbCompteurPotionElixir and txtItemType[n] == "vide":
+				gui_potion_elixir[n] = GuiPotionElixir.instantiate()
+				add_child(gui_potion_elixir[n])
+				gui_potion_elixir[n].scale = Vector2(0.7, 0.8)
+				gui_potion_elixir[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
+				gui_potion_elixir[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
+				nbCompteurPotionElixir += 1
+				isSlotLibre[n] = false
+				txtItemType[n] = "potion_elixir"
+			
+			if DataSave.items_stocker.bague1 != nbCompteurBague1 and txtItemType[n] == "vide":
+				gui_bague1[n] = GuiBague1.instantiate()
+				add_child(gui_bague1[n])
+				gui_bague1[n].scale = Vector2(0.7, 0.8)
+				gui_bague1[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
+				gui_bague1[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
+				nbCompteurBague1 += 1
+				isSlotLibre[n] = false
+				txtItemType[n] = "bague_1"
+			
+			if DataSave.items_stocker.bague2 != nbCompteurBague2 and txtItemType[n] == "vide":
+				gui_bague2[n] = GuiBague2.instantiate()
+				add_child(gui_bague2[n])
+				gui_bague2[n].scale = Vector2(0.7, 0.8)
+				gui_bague2[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
+				gui_bague2[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
+				nbCompteurBague2 += 1
+				isSlotLibre[n] = false
+				txtItemType[n] = "bague_2"
+			
+			if DataSave.items_stocker.bague3 != nbCompteurBague3 and txtItemType[n] == "vide":
+				gui_bague3[n] = GuiBague3.instantiate()
+				add_child(gui_bague3[n])
+				gui_bague3[n].scale = Vector2(0.7, 0.8)
+				gui_bague3[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
+				gui_bague3[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
+				nbCompteurBague3 += 1
+				isSlotLibre[n] = false
+				txtItemType[n] = "bague_3"
+			
+			if DataSave.items_stocker.bottes1 != nbCompteurBottes1 and txtItemType[n] == "vide":
+				gui_bottes1[n] = GuiBottes1.instantiate()
+				add_child(gui_bottes1[n])
+				gui_bottes1[n].scale = Vector2(0.7, 0.8)
+				gui_bottes1[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
+				gui_bottes1[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
+				nbCompteurBottes1 += 1
+				isSlotLibre[n] = false
+				txtItemType[n] = "bottes_1"
+			
+			if DataSave.items_stocker.bottes2 != nbCompteurBottes2 and txtItemType[n] == "vide":
+				gui_bottes2[n] = GuiBottes2.instantiate()
+				add_child(gui_bottes2[n])
+				gui_bottes2[n].scale = Vector2(0.7, 0.8)
+				gui_bottes2[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
+				gui_bottes2[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
+				nbCompteurBottes2 += 1
+				isSlotLibre[n] = false
+				txtItemType[n] = "bottes_2"
+			
+			if DataSave.items_stocker.bottes3 != nbCompteurBottes3 and txtItemType[n] == "vide":
+				gui_bottes3[n] = GuiBottes3.instantiate()
+				add_child(gui_bottes3[n])
+				gui_bottes3[n].scale = Vector2(0.7, 0.8)
+				gui_bottes3[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
+				gui_bottes3[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
+				nbCompteurBottes3 += 1
+				isSlotLibre[n] = false
+				txtItemType[n] = "bottes_3"
+			
+			if DataSave.items_stocker.bottes4 != nbCompteurBottes4 and txtItemType[n] == "vide":
+				gui_bottes4[n] = GuiBottes4.instantiate()
+				add_child(gui_bottes4[n])
+				gui_bottes4[n].scale = Vector2(0.7, 0.8)
+				gui_bottes4[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
+				gui_bottes4[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
+				nbCompteurBottes4 += 1
+				isSlotLibre[n] = false
+				txtItemType[n] = "bottes_4"
+			
+			if DataSave.items_stocker.bottes5 != nbCompteurBottes5 and txtItemType[n] == "vide":
+				gui_bottes5[n] = GuiBottes5.instantiate()
+				add_child(gui_bottes5[n])
+				gui_bottes5[n].scale = Vector2(0.7, 0.8)
+				gui_bottes5[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
+				gui_bottes5[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
+				nbCompteurBottes5 += 1
+				isSlotLibre[n] = false
+				txtItemType[n] = "bottes_5"
+			
+			if DataSave.items_stocker.bottes6 != nbCompteurBottes6 and txtItemType[n] == "vide":
+				gui_bottes6[n] = GuiBottes6.instantiate()
+				add_child(gui_bottes6[n])
+				gui_bottes6[n].scale = Vector2(0.7, 0.8)
+				gui_bottes6[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
+				gui_bottes6[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
+				nbCompteurBottes6 += 1
+				isSlotLibre[n] = false
+				txtItemType[n] = "bottes_6"
+			
+			if DataSave.items_stocker.bouclier1 != nbCompteurBouclier1 and txtItemType[n] == "vide":
+				gui_bouclier1[n] = GuiBouclier1.instantiate()
+				add_child(gui_bouclier1[n])
+				gui_bouclier1[n].scale = Vector2(0.7, 0.8)
+				gui_bouclier1[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
+				gui_bouclier1[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
+				nbCompteurBouclier1 += 1
+				isSlotLibre[n] = false
+				txtItemType[n] = "bouclier_1"
+			
+			if DataSave.items_stocker.bouclier2 != nbCompteurBouclier2 and txtItemType[n] == "vide":
+				gui_bouclier2[n] = GuiBouclier2.instantiate()
+				add_child(gui_bouclier2[n])
+				gui_bouclier2[n].scale = Vector2(0.7, 0.8)
+				gui_bouclier2[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
+				gui_bouclier2[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
+				nbCompteurBouclier2 += 1
+				isSlotLibre[n] = false
+				txtItemType[n] = "bouclier_2"
+			
+			if DataSave.items_stocker.bouclier3 != nbCompteurBouclier3 and txtItemType[n] == "vide":
+				gui_bouclier3[n] = GuiBouclier3.instantiate()
+				add_child(gui_bouclier3[n])
+				gui_bouclier3[n].scale = Vector2(0.7, 0.8)
+				gui_bouclier3[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
+				gui_bouclier3[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
+				nbCompteurBouclier3 += 1
+				isSlotLibre[n] = false
+				txtItemType[n] = "bouclier_3"
+			
+			if DataSave.items_stocker.bouclier4 != nbCompteurBouclier4 and txtItemType[n] == "vide":
+				gui_bouclier4[n] = GuiBouclier4.instantiate()
+				add_child(gui_bouclier4[n])
+				gui_bouclier4[n].scale = Vector2(0.7, 0.8)
+				gui_bouclier4[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
+				gui_bouclier4[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
+				nbCompteurBouclier4 += 1
+				isSlotLibre[n] = false
+				txtItemType[n] = "bouclier_4"
+			
+			if DataSave.items_stocker.bouclier5 != nbCompteurBouclier5 and txtItemType[n] == "vide":
+				gui_bouclier5[n] = GuiBouclier5.instantiate()
+				add_child(gui_bouclier5[n])
+				gui_bouclier5[n].scale = Vector2(0.7, 0.8)
+				gui_bouclier5[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
+				gui_bouclier5[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
+				nbCompteurBouclier5 += 1
+				isSlotLibre[n] = false
+				txtItemType[n] = "bouclier_5"
+			
+			if DataSave.items_stocker.bouclier6 != nbCompteurBouclier6 and txtItemType[n] == "vide":
+				gui_bouclier6[n] = GuiBouclier6.instantiate()
+				add_child(gui_bouclier6[n])
+				gui_bouclier6[n].scale = Vector2(0.7, 0.8)
+				gui_bouclier6[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
+				gui_bouclier6[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
+				nbCompteurBouclier6 += 1
+				isSlotLibre[n] = false
+				txtItemType[n] = "bouclier_6"
+			
+			if DataSave.items_stocker.bouclier7 != nbCompteurBouclier7 and txtItemType[n] == "vide":
+				gui_bouclier7[n] = GuiBouclier7.instantiate()
+				add_child(gui_bouclier7[n])
+				gui_bouclier7[n].scale = Vector2(0.7, 0.8)
+				gui_bouclier7[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
+				gui_bouclier7[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
+				nbCompteurBouclier7 += 1
+				isSlotLibre[n] = false
+				txtItemType[n] = "bouclier_7"
+			
+			if DataSave.items_stocker.casque1 != nbCompteurCasque1 and txtItemType[n] == "vide":
+				gui_casque1[n] = GuiCasque1.instantiate()
+				add_child(gui_casque1[n])
+				gui_casque1[n].scale = Vector2(0.7, 0.8)
+				gui_casque1[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
+				gui_casque1[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
+				nbCompteurCasque1 += 1
+				isSlotLibre[n] = false
+				txtItemType[n] = "casque_1"
+			
+			if DataSave.items_stocker.casque2 != nbCompteurCasque2 and txtItemType[n] == "vide":
+				gui_casque2[n] = GuiCasque2.instantiate()
+				add_child(gui_casque2[n])
+				gui_casque2[n].scale = Vector2(0.7, 0.8)
+				gui_casque2[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
+				gui_casque2[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
+				nbCompteurCasque2 += 1
+				isSlotLibre[n] = false
+				txtItemType[n] = "casque_2"
+			
+			if DataSave.items_stocker.casque3 != nbCompteurCasque3 and txtItemType[n] == "vide":
+				gui_casque3[n] = GuiCasque3.instantiate()
+				add_child(gui_casque3[n])
+				gui_casque3[n].scale = Vector2(0.7, 0.8)
+				gui_casque3[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
+				gui_casque3[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
+				nbCompteurCasque3 += 1
+				isSlotLibre[n] = false
+				txtItemType[n] = "casque_3"
+			
+			if DataSave.items_stocker.casque4 != nbCompteurCasque4 and txtItemType[n] == "vide":
+				gui_casque4[n] = GuiCasque4.instantiate()
+				add_child(gui_casque4[n])
+				gui_casque4[n].scale = Vector2(0.7, 0.8)
+				gui_casque4[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
+				gui_casque4[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
+				nbCompteurCasque4 += 1
+				isSlotLibre[n] = false
+				txtItemType[n] = "casque_4"
+			
+			if DataSave.items_stocker.casque5 != nbCompteurCasque5 and txtItemType[n] == "vide":
+				gui_casque5[n] = GuiCasque5.instantiate()
+				add_child(gui_casque5[n])
+				gui_casque5[n].scale = Vector2(0.7, 0.8)
+				gui_casque5[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
+				gui_casque5[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
+				nbCompteurCasque5 += 1
+				isSlotLibre[n] = false
+				txtItemType[n] = "casque_5"
+			
+			if DataSave.items_stocker.casque6 != nbCompteurCasque6 and txtItemType[n] == "vide":
+				gui_casque6[n] = GuiCasque6.instantiate()
+				add_child(gui_casque6[n])
+				gui_casque6[n].scale = Vector2(0.7, 0.8)
+				gui_casque6[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
+				gui_casque6[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
+				nbCompteurCasque6 += 1
+				isSlotLibre[n] = false
+				txtItemType[n] = "casque_6"
+			
+			if DataSave.items_stocker.collier1 != nbCompteurCollier1 and txtItemType[n] == "vide":
+				gui_collier1[n] = GuiCollier1.instantiate()
+				add_child(gui_collier1[n])
+				gui_collier1[n].scale = Vector2(0.7, 0.8)
+				gui_collier1[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
+				gui_collier1[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
+				nbCompteurCollier1 += 1
+				isSlotLibre[n] = false
+				txtItemType[n] = "collier_1"
+			
+			if DataSave.items_stocker.collier2 != nbCompteurCollier2 and txtItemType[n] == "vide":
+				gui_collier2[n] = GuiCollier2.instantiate()
+				add_child(gui_collier2[n])
+				gui_collier2[n].scale = Vector2(0.7, 0.8)
+				gui_collier2[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
+				gui_collier2[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
+				nbCompteurCollier2 += 1
+				isSlotLibre[n] = false
+				txtItemType[n] = "collier_2"
+			
+			if DataSave.items_stocker.collier3 != nbCompteurCollier3 and txtItemType[n] == "vide":
+				gui_collier3[n] = GuiCollier3.instantiate()
+				add_child(gui_collier3[n])
+				gui_collier3[n].scale = Vector2(0.7, 0.8)
+				gui_collier3[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
+				gui_collier3[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
+				nbCompteurCollier3 += 1
+				isSlotLibre[n] = false
+				txtItemType[n] = "collier_3"
+			
+			if DataSave.items_stocker.heaume1 != nbCompteurHeaume1 and txtItemType[n] == "vide":
+				gui_heaume1[n] = GuiHeaume1.instantiate()
+				add_child(gui_heaume1[n])
+				gui_heaume1[n].scale = Vector2(0.7, 0.8)
+				gui_heaume1[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
+				gui_heaume1[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
+				nbCompteurHeaume1 += 1
+				isSlotLibre[n] = false
+				txtItemType[n] = "heaume_1"
+			
+			if DataSave.items_stocker.heaume2 != nbCompteurHeaume2 and txtItemType[n] == "vide":
+				gui_heaume2[n] = GuiHeaume2.instantiate()
+				add_child(gui_heaume2[n])
+				gui_heaume2[n].scale = Vector2(0.7, 0.8)
+				gui_heaume2[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
+				gui_heaume2[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
+				nbCompteurHeaume2 += 1
+				isSlotLibre[n] = false
+				txtItemType[n] = "heaume_2"
+			
+			if DataSave.items_stocker.heaume3 != nbCompteurHeaume3 and txtItemType[n] == "vide":
+				gui_heaume3[n] = GuiHeaume3.instantiate()
+				add_child(gui_heaume3[n])
+				gui_heaume3[n].scale = Vector2(0.7, 0.8)
+				gui_heaume3[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
+				gui_heaume3[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
+				nbCompteurHeaume3 += 1
+				isSlotLibre[n] = false
+				txtItemType[n] = "heaume_3"
+			
+			if DataSave.items_stocker.heaume4 != nbCompteurHeaume4 and txtItemType[n] == "vide":
+				gui_heaume4[n] = GuiHeaume4.instantiate()
+				add_child(gui_heaume4[n])
+				gui_heaume4[n].scale = Vector2(0.7, 0.8)
+				gui_heaume4[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
+				gui_heaume4[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
+				nbCompteurHeaume4 += 1
+				isSlotLibre[n] = false
+				txtItemType[n] = "heaume_4"
+			
+			if DataSave.items_stocker.heaume5 != nbCompteurHeaume5 and txtItemType[n] == "vide":
+				gui_heaume5[n] = GuiHeaume5.instantiate()
+				add_child(gui_heaume5[n])
+				gui_heaume5[n].scale = Vector2(0.7, 0.8)
+				gui_heaume5[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
+				gui_heaume5[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
+				nbCompteurHeaume5 += 1
+				isSlotLibre[n] = false
+				txtItemType[n] = "heaume_5"
+			
+			if DataSave.items_stocker.heaume6 != nbCompteurHeaume6 and txtItemType[n] == "vide":
+				gui_heaume6[n] = GuiHeaume6.instantiate()
+				add_child(gui_heaume6[n])
+				gui_heaume6[n].scale = Vector2(0.7, 0.8)
+				gui_heaume6[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
+				gui_heaume6[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
+				nbCompteurHeaume6 += 1
+				isSlotLibre[n] = false
+				txtItemType[n] = "heaume_6"
+			
+			if DataSave.items_stocker.sword1 != nbCompteurSword1 and txtItemType[n] == "vide":
+				gui_sword1[n] = GuiSword1.instantiate()
+				add_child(gui_sword1[n])
+				gui_sword1[n].scale = Vector2(0.7, 0.8)
+				gui_sword1[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
+				gui_sword1[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
+				nbCompteurSword1 += 1
+				isSlotLibre[n] = false
+				txtItemType[n] = "sword_1"
+			
+			if DataSave.items_stocker.sword2 != nbCompteurSword2 and txtItemType[n] == "vide":
+				gui_sword2[n] = GuiSword2.instantiate()
+				add_child(gui_sword2[n])
+				gui_sword2[n].scale = Vector2(0.7, 0.8)
+				gui_sword2[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
+				gui_sword2[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
+				nbCompteurSword2 += 1
+				isSlotLibre[n] = false
+				txtItemType[n] = "sword_2"
+			
+			if DataSave.items_stocker.sword3 != nbCompteurSword3 and txtItemType[n] == "vide":
+				gui_sword3[n] = GuiSword3.instantiate()
+				add_child(gui_sword3[n])
+				gui_sword3[n].scale = Vector2(0.7, 0.8)
+				gui_sword3[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
+				gui_sword3[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
+				nbCompteurSword3 += 1
+				isSlotLibre[n] = false
+				txtItemType[n] = "sword_3"
+			
+			if DataSave.items_stocker.sword4 != nbCompteurSword4 and txtItemType[n] == "vide":
+				gui_sword4[n] = GuiSword4.instantiate()
+				add_child(gui_sword4[n])
+				gui_sword4[n].scale = Vector2(0.7, 0.8)
+				gui_sword4[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
+				gui_sword4[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
+				nbCompteurSword4 += 1
+				isSlotLibre[n] = false
+				txtItemType[n] = "sword_4"
+			
+			if DataSave.items_stocker.sword5 != nbCompteurSword5 and txtItemType[n] == "vide":
+				gui_sword5[n] = GuiSword5.instantiate()
+				add_child(gui_sword5[n])
+				gui_sword5[n].scale = Vector2(0.7, 0.8)
+				gui_sword5[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
+				gui_sword5[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
+				nbCompteurSword5 += 1
+				isSlotLibre[n] = false
+				txtItemType[n] = "sword_5"
+			
+			if DataSave.items_stocker.sword6 != nbCompteurSword6 and txtItemType[n] == "vide":
+				gui_sword6[n] = GuiSword6.instantiate()
+				add_child(gui_sword6[n])
+				gui_sword6[n].scale = Vector2(0.7, 0.8)
+				gui_sword6[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
+				gui_sword6[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
+				nbCompteurSword6 += 1
+				isSlotLibre[n] = false
+				txtItemType[n] = "sword_6"
+			
+			if DataSave.items_stocker.sword7 != nbCompteurSword7 and txtItemType[n] == "vide":
+				gui_sword7[n] = GuiSword7.instantiate()
+				add_child(gui_sword7[n])
+				gui_sword7[n].scale = Vector2(0.7, 0.8)
+				gui_sword7[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
+				gui_sword7[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
+				nbCompteurSword7 += 1
+				isSlotLibre[n] = false
+				txtItemType[n] = "sword_7"
+			
+			if DataSave.items_stocker.sword8 != nbCompteurSword8 and txtItemType[n] == "vide":
+				gui_sword8[n] = GuiSword8.instantiate()
+				add_child(gui_sword8[n])
+				gui_sword8[n].scale = Vector2(0.7, 0.8)
+				gui_sword8[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
+				gui_sword8[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
+				nbCompteurSword8 += 1
+				isSlotLibre[n] = false
+				txtItemType[n] = "sword_8"
 
 
 func _on_panel_retour_gui_input(event: InputEvent) -> void:

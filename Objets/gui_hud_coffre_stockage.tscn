@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b0is1tpxsgk5e" path="res://Ressources/hud_coffre_stockage_1.png" id="3_mtiiv"]
 
 [node name="gui_hudCoffreStockage" type="CanvasLayer"]
+layer = 0
 script = ExtResource("1_mxcox")
 
 [node name="hud_coffreStockageLv1" type="TextureRect" parent="."]
@@ -34,5 +35,145 @@ offset_left = 255.0
 offset_top = 9.0
 offset_right = 289.0
 offset_bottom = 43.0
+
+[node name="panel_slot1" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 38.0
+offset_top = 57.0
+offset_right = 78.0
+offset_bottom = 98.0
+
+[node name="panel_slot2" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 84.0
+offset_top = 57.0
+offset_right = 125.0
+offset_bottom = 98.0
+
+[node name="panel_slot3" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 130.0
+offset_top = 57.0
+offset_right = 171.0
+offset_bottom = 98.0
+
+[node name="panel_slot4" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 177.0
+offset_top = 57.0
+offset_right = 218.0
+offset_bottom = 98.0
+
+[node name="panel_slot5" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 223.0
+offset_top = 57.0
+offset_right = 264.0
+offset_bottom = 98.0
+
+[node name="panel_slot6" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 38.0
+offset_top = 104.0
+offset_right = 78.0
+offset_bottom = 144.0
+
+[node name="panel_slot7" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 84.0
+offset_top = 104.0
+offset_right = 125.0
+offset_bottom = 144.0
+
+[node name="panel_slot8" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 130.0
+offset_top = 104.0
+offset_right = 171.0
+offset_bottom = 144.0
+
+[node name="panel_slot9" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 177.0
+offset_top = 104.0
+offset_right = 218.0
+offset_bottom = 144.0
+
+[node name="panel_slot10" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 223.0
+offset_top = 104.0
+offset_right = 264.0
+offset_bottom = 144.0
+
+[node name="panel_slot11" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 38.0
+offset_top = 150.0
+offset_right = 78.0
+offset_bottom = 191.0
+
+[node name="panel_slot12" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 84.0
+offset_top = 150.0
+offset_right = 125.0
+offset_bottom = 191.0
+
+[node name="panel_slot13" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 130.0
+offset_top = 150.0
+offset_right = 171.0
+offset_bottom = 191.0
+
+[node name="panel_slot14" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 177.0
+offset_top = 150.0
+offset_right = 218.0
+offset_bottom = 191.0
+
+[node name="panel_slot15" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 223.0
+offset_top = 150.0
+offset_right = 264.0
+offset_bottom = 191.0
+
+[node name="panel_slot16" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 38.0
+offset_top = 197.0
+offset_right = 78.0
+offset_bottom = 238.0
+
+[node name="panel_slot17" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 84.0
+offset_top = 197.0
+offset_right = 125.0
+offset_bottom = 238.0
+
+[node name="panel_slot18" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 130.0
+offset_top = 197.0
+offset_right = 171.0
+offset_bottom = 238.0
+
+[node name="panel_slot19" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 177.0
+offset_top = 197.0
+offset_right = 218.0
+offset_bottom = 238.0
+
+[node name="panel_slot20" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 223.0
+offset_top = 197.0
+offset_right = 264.0
+offset_bottom = 238.0
 
 [connection signal="gui_input" from="panel_retour" to="." method="_on_panel_retour_gui_input"]
