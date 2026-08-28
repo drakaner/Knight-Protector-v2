@@ -1520,7 +1520,7 @@ func _process(delta: float) -> void:
 	#DataSave.hero.vie = 50
 	for i in range(20):
 		
-		if txtItemSelect[i] == "potion_vie":
+		if txtItemSelect[i] == "potion_vie": # faut que je verifie cette condition en large
 			#print("item select est potion de vie : ", txtItemSelect)
 			if DataSave.hero.vie != DataSave.hero.vieMax:
 				if isPopUpOpen == false and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
@@ -1628,26 +1628,26 @@ func _process(delta: float) -> void:
 				#print("Vie déja plein j'ouvre pas le pop up")
 			
 			if isPopUpOpen == true and isPopUpOpenPotionVie == true and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
-				#if gui_buttonOnUse != null:
-				if mouse_pos.x >= gui_buttonOnUse.offset.x and mouse_pos.x <= gui_buttonOnUse.offset.x + 90 and mouse_pos.y >= gui_buttonOnUse.offset.y and mouse_pos.y <= gui_buttonOnUse.offset.y + 35:
-					if Input.is_action_just_pressed("button_left"):
-						print("on clique sur le button use ")
-						DataSave.hero.vie = DataSave.hero.vieMax
-						gui_potion_vie[i].queue_free()
-						txtItemType[i] = "vide"
-						DataSave.items_posession.potionVie -= 1
-						nbCompteurPotionVie -= 1
-						isSlot_libre[i] = true
-						gui_popUp.queue_free()
-						gui_buttonOnUse.queue_free()
-						gui_buttonOnStocker.queue_free()
-						gui_buttonOnJeter.queue_free()
-						txt_popup_1.queue_free()
-						txt_popup_2.queue_free()
-						txt_popup_3.queue_free()
-						isPopUpOpen = false
-						isPopUpOpenPotionVie = false
-						txtItemSelect[i] = "none"
+				if gui_buttonOnUse != null:
+					if mouse_pos.x >= gui_buttonOnUse.offset.x and mouse_pos.x <= gui_buttonOnUse.offset.x + 90 and mouse_pos.y >= gui_buttonOnUse.offset.y and mouse_pos.y <= gui_buttonOnUse.offset.y + 35:
+						if Input.is_action_just_pressed("button_left"):
+							print("on clique sur le button use ")
+							DataSave.hero.vie = DataSave.hero.vieMax
+							gui_potion_vie[i].queue_free()
+							txtItemType[i] = "vide"
+							DataSave.items_posession.potionVie -= 1
+							nbCompteurPotionVie -= 1
+							isSlot_libre[i] = true
+							gui_popUp.queue_free()
+							gui_buttonOnUse.queue_free()
+							gui_buttonOnStocker.queue_free()
+							gui_buttonOnJeter.queue_free()
+							txt_popup_1.queue_free()
+							txt_popup_2.queue_free()
+							txt_popup_3.queue_free()
+							isPopUpOpen = false
+							isPopUpOpenPotionVie = false
+							txtItemSelect[i] = "none"
 						
 				
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
@@ -1660,10 +1660,12 @@ func _process(delta: float) -> void:
 						nbCompteurPotionVie -= 1
 						isSlot_libre[i] = true
 						gui_popUp.queue_free()
-						gui_buttonOnUse.queue_free()
+						if gui_buttonOnUse != null:
+							gui_buttonOnUse.queue_free()
 						gui_buttonOnStocker.queue_free()
 						gui_buttonOnJeter.queue_free()
-						txt_popup_1.queue_free()
+						if txt_popup_1 != null:
+							txt_popup_1.queue_free()
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
@@ -1679,10 +1681,12 @@ func _process(delta: float) -> void:
 						nbCompteurPotionVie -= 1
 						isSlot_libre[i] = true
 						gui_popUp.queue_free()
-						gui_buttonOnUse.queue_free()
+						if gui_buttonOnUse != null:
+							gui_buttonOnUse.queue_free()
 						gui_buttonOnStocker.queue_free()
 						gui_buttonOnJeter.queue_free()
-						txt_popup_1.queue_free()
+						if txt_popup_1 != null:
+							txt_popup_1.queue_free()
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
@@ -1695,7 +1699,8 @@ func _process(delta: float) -> void:
 		if txtItemSelect[i] == "potion_mana":
 			#print("item select est potion de mana : ", txtItemSelect)
 			if DataSave.hero.mana != DataSave.hero.manaMax:
-				if isPopUpOpen == false:
+				
+				if isPopUpOpen == false and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 					gui_popUp = GuiPopUp.instantiate()
 					add_child(gui_popUp)
 					gui_popUp.scale = Vector2(0.5, 0.5)
@@ -1752,12 +1757,13 @@ func _process(delta: float) -> void:
 					childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
 					
 					isPopUpOpen = true
+					isPopUpOpenPotionMana = true
 					print("J'ouvre le pop up")
 			else:
 				pass
 				#print("Mana déja plein j'ouvre pas le pop up")
 			
-			if isPopUpOpen == true:
+			if isPopUpOpen == true and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == true and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				if mouse_pos.x >= gui_buttonOnUse.offset.x and mouse_pos.x <= gui_buttonOnUse.offset.x + 90 and mouse_pos.y >= gui_buttonOnUse.offset.y and mouse_pos.y <= gui_buttonOnUse.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button use ")
@@ -1775,6 +1781,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenPotionMana = false
 						txtItemSelect[i] = "none"
 						
 				
@@ -1795,6 +1802,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenPotionMana = false
 						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
@@ -1813,6 +1821,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenPotionMana = false
 						txtItemSelect[i] = "none"
 			#Faut creer lobjet popup (button interface text et tout)
 			#Faut que j'ajoute les conditions pour le clic et tout 
@@ -1821,7 +1830,7 @@ func _process(delta: float) -> void:
 		if txtItemSelect[i] == "potion_elixir":
 			#print("item select est potion de elixir : ", txtItemSelect)
 			if DataSave.hero.vie != DataSave.hero.vieMax or DataSave.hero.mana != DataSave.hero.manaMax:
-				if isPopUpOpen == false:
+				if isPopUpOpen == false and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 					gui_popUp = GuiPopUp.instantiate()
 					add_child(gui_popUp)
 					gui_popUp.scale = Vector2(0.5, 0.5)
@@ -1878,12 +1887,13 @@ func _process(delta: float) -> void:
 					childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
 					
 					isPopUpOpen = true
+					isPopUpOpenPotionElixir = true
 					print("J'ouvre le pop up")
 			else:
 				pass
 				#print("Vie déja plein j'ouvre pas le pop up")
 			
-			if isPopUpOpen == true:
+			if isPopUpOpen == true and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == true and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				if mouse_pos.x >= gui_buttonOnUse.offset.x and mouse_pos.x <= gui_buttonOnUse.offset.x + 90 and mouse_pos.y >= gui_buttonOnUse.offset.y and mouse_pos.y <= gui_buttonOnUse.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button use ")
@@ -1902,6 +1912,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenPotionElixir = false
 						txtItemSelect[i] = "none"
 						
 				
@@ -1922,6 +1933,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenPotionElixir = false
 						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
@@ -1940,6 +1952,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenPotionElixir = false
 						txtItemSelect[i] = "none"
 			#Faut creer lobjet popup (button interface text et tout)
 			#Faut que j'ajoute les conditions pour le clic et tout 
@@ -1947,7 +1960,7 @@ func _process(delta: float) -> void:
 		
 		if txtItemSelect[i] == "bague_1":
 			#print("item select est bague : ", txtItemSelect)
-			if isPopUpOpen == false:
+			if isPopUpOpen == false and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				gui_popUp = GuiPopUp.instantiate()
 				add_child(gui_popUp)
 				gui_popUp.scale = Vector2(0.5, 0.5)
@@ -2004,9 +2017,10 @@ func _process(delta: float) -> void:
 				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
 				
 				isPopUpOpen = true
+				isPopUpOpenBague1 = true
 				print("J'ouvre le pop up")
 			
-			if isPopUpOpen == true:
+			if isPopUpOpen == true and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == true and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button equiper ")
@@ -2022,6 +2036,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenBague1 = false
 						txtItemSelect[i] = "none"
 						#sceneGameplay._Sgui_open("hero")
 						
@@ -2043,6 +2058,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenBague1 = false
 						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
@@ -2061,6 +2077,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenBague1 = false
 						txtItemSelect[i] = "none"
 			#Faut creer lobjet popup (button interface text et tout)
 			#Faut que j'ajoute les conditions pour le clic et tout 
@@ -2068,7 +2085,7 @@ func _process(delta: float) -> void:
 		
 		if txtItemSelect[i] == "bague_2":
 			#print("item select est bague : ", txtItemSelect)
-			if isPopUpOpen == false:
+			if isPopUpOpen == false and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				gui_popUp = GuiPopUp.instantiate()
 				add_child(gui_popUp)
 				gui_popUp.scale = Vector2(0.5, 0.5)
@@ -2125,9 +2142,10 @@ func _process(delta: float) -> void:
 				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
 				
 				isPopUpOpen = true
+				isPopUpOpenBague2 = true
 				print("J'ouvre le pop up")
 			
-			if isPopUpOpen == true:
+			if isPopUpOpen == true and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == true and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button equiper ")
@@ -2143,6 +2161,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenBague2 = false
 						txtItemSelect[i] = "none"
 						#sceneGameplay._Sgui_open("hero")
 						
@@ -2164,6 +2183,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenBague2 = false
 						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
@@ -2182,6 +2202,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenBague2 = false
 						txtItemSelect[i] = "none"
 			#Faut creer lobjet popup (button interface text et tout)
 			#Faut que j'ajoute les conditions pour le clic et tout 
@@ -2189,7 +2210,7 @@ func _process(delta: float) -> void:
 		
 		if txtItemSelect[i] == "bague_3":
 			#print("item select est bague : ", txtItemSelect)
-			if isPopUpOpen == false:
+			if isPopUpOpen == false and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				gui_popUp = GuiPopUp.instantiate()
 				add_child(gui_popUp)
 				gui_popUp.scale = Vector2(0.5, 0.5)
@@ -2246,9 +2267,10 @@ func _process(delta: float) -> void:
 				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
 				
 				isPopUpOpen = true
+				isPopUpOpenBague3 = true
 				print("J'ouvre le pop up")
 			
-			if isPopUpOpen == true:
+			if isPopUpOpen == true and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == true and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button equiper ")
@@ -2264,6 +2286,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenBague3 = false 
 						txtItemSelect[i] = "none"
 						#sceneGameplay._Sgui_open("hero")
 						
@@ -2285,6 +2308,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenBague3 = false
 						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
@@ -2303,6 +2327,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenBague3 = false
 						txtItemSelect[i] = "none"
 			#Faut creer lobjet popup (button interface text et tout)
 			#Faut que j'ajoute les conditions pour le clic et tout 
@@ -2310,7 +2335,7 @@ func _process(delta: float) -> void:
 		
 		if txtItemSelect[i] == "bottes_1":
 			#print("item select est bague : ", txtItemSelect)
-			if isPopUpOpen == false:
+			if isPopUpOpen == false and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				gui_popUp = GuiPopUp.instantiate()
 				add_child(gui_popUp)
 				gui_popUp.scale = Vector2(0.5, 0.5)
@@ -2367,9 +2392,10 @@ func _process(delta: float) -> void:
 				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
 				
 				isPopUpOpen = true
+				isPopUpOpenBottes1 = true
 				print("J'ouvre le pop up")
 			
-			if isPopUpOpen == true:
+			if isPopUpOpen == true and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == true and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button equiper ")
@@ -2385,6 +2411,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenBottes1 = false
 						txtItemSelect[i] = "none"
 						#sceneGameplay._Sgui_open("hero")
 						
@@ -2406,6 +2433,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenBottes1 = false
 						txtItemSelect[i] = "none"
 						
 				
@@ -2425,6 +2453,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenBottes1 = false
 						txtItemSelect[i] = "none"
 			#Faut creer lobjet popup (button interface text et tout)
 			#Faut que j'ajoute les conditions pour le clic et tout 
@@ -2432,7 +2461,7 @@ func _process(delta: float) -> void:
 		
 		if txtItemSelect[i] == "bottes_2":
 			#print("item select est bague : ", txtItemSelect)
-			if isPopUpOpen == false:
+			if isPopUpOpen == false and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				gui_popUp = GuiPopUp.instantiate()
 				add_child(gui_popUp)
 				gui_popUp.scale = Vector2(0.5, 0.5)
@@ -2489,9 +2518,10 @@ func _process(delta: float) -> void:
 				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
 				
 				isPopUpOpen = true
+				isPopUpOpenBottes2 = true
 				print("J'ouvre le pop up")
 			
-			if isPopUpOpen == true:
+			if isPopUpOpen == true and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == true and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button equiper ")
@@ -2507,6 +2537,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenBottes2 = false
 						txtItemSelect[i] = "none"
 						#sceneGameplay._Sgui_open("hero")
 						
@@ -2528,6 +2559,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenBottes2 = false
 						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
@@ -2546,6 +2578,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenBottes2 = false
 						txtItemSelect[i] = "none"
 			#Faut creer lobjet popup (button interface text et tout)
 			#Faut que j'ajoute les conditions pour le clic et tout 
@@ -2553,7 +2586,7 @@ func _process(delta: float) -> void:
 		
 		if txtItemSelect[i] == "bottes_3":
 			#print("item select est bague : ", txtItemSelect)
-			if isPopUpOpen == false:
+			if isPopUpOpen == false and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				gui_popUp = GuiPopUp.instantiate()
 				add_child(gui_popUp)
 				gui_popUp.scale = Vector2(0.5, 0.5)
@@ -2610,9 +2643,10 @@ func _process(delta: float) -> void:
 				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
 				
 				isPopUpOpen = true
+				isPopUpOpenBottes3 = true
 				print("J'ouvre le pop up")
 			
-			if isPopUpOpen == true:
+			if isPopUpOpen == true and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == true and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button equiper ")
@@ -2628,6 +2662,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenBottes3 = false
 						txtItemSelect[i] = "none"
 						#sceneGameplay._Sgui_open("hero")
 						
@@ -2649,6 +2684,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenBottes3 = false
 						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
@@ -2667,6 +2703,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenBottes3 = false
 						txtItemSelect[i] = "none"
 			#Faut creer lobjet popup (button interface text et tout)
 			#Faut que j'ajoute les conditions pour le clic et tout 
@@ -2674,7 +2711,7 @@ func _process(delta: float) -> void:
 		
 		if txtItemSelect[i] == "bottes_4":
 			#print("item select est bague : ", txtItemSelect)
-			if isPopUpOpen == false:
+			if isPopUpOpen == false and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				gui_popUp = GuiPopUp.instantiate()
 				add_child(gui_popUp)
 				gui_popUp.scale = Vector2(0.5, 0.5)
@@ -2731,9 +2768,10 @@ func _process(delta: float) -> void:
 				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
 				
 				isPopUpOpen = true
+				isPopUpOpenBottes4 = true
 				print("J'ouvre le pop up")
 			
-			if isPopUpOpen == true:
+			if isPopUpOpen == true and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == true and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button equiper ")
@@ -2749,6 +2787,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenBottes4 = false
 						txtItemSelect[i] = "none"
 						#sceneGameplay._Sgui_open("hero")
 						
@@ -2770,6 +2809,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenBottes4 = false
 						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
@@ -2788,6 +2828,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenBottes4 = false
 						txtItemSelect[i] = "none"
 			#Faut creer lobjet popup (button interface text et tout)
 			#Faut que j'ajoute les conditions pour le clic et tout 
@@ -2795,7 +2836,7 @@ func _process(delta: float) -> void:
 		
 		if txtItemSelect[i] == "bottes_5":
 			#print("item select est bague : ", txtItemSelect)
-			if isPopUpOpen == false:
+			if isPopUpOpen == false and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				gui_popUp = GuiPopUp.instantiate()
 				add_child(gui_popUp)
 				gui_popUp.scale = Vector2(0.5, 0.5)
@@ -2852,9 +2893,10 @@ func _process(delta: float) -> void:
 				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
 				
 				isPopUpOpen = true
+				isPopUpOpenBottes5 = true
 				print("J'ouvre le pop up")
 			
-			if isPopUpOpen == true:
+			if isPopUpOpen == true and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == true and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button equiper ")
@@ -2870,6 +2912,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenBottes5 = false
 						txtItemSelect[i] = "none"
 						#sceneGameplay._Sgui_open("hero")
 						
@@ -2891,6 +2934,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenBottes5 = false
 						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
@@ -2909,6 +2953,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenBottes5 = false
 						txtItemSelect[i] = "none"
 			#Faut creer lobjet popup (button interface text et tout)
 			#Faut que j'ajoute les conditions pour le clic et tout 
@@ -2916,7 +2961,7 @@ func _process(delta: float) -> void:
 		
 		if txtItemSelect[i] == "bottes_6":
 			#print("item select est bague : ", txtItemSelect)
-			if isPopUpOpen == false:
+			if isPopUpOpen == false and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				gui_popUp = GuiPopUp.instantiate()
 				add_child(gui_popUp)
 				gui_popUp.scale = Vector2(0.5, 0.5)
@@ -2973,9 +3018,10 @@ func _process(delta: float) -> void:
 				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
 				
 				isPopUpOpen = true
+				isPopUpOpenBottes6 = true
 				print("J'ouvre le pop up")
 			
-			if isPopUpOpen == true:
+			if isPopUpOpen == true and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == true and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button equiper ")
@@ -2991,6 +3037,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenBottes6 = false
 						txtItemSelect[i] = "none"
 						#sceneGameplay._Sgui_open("hero")
 						
@@ -3012,6 +3059,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenBottes6 = false
 						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
@@ -3030,6 +3078,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenBottes6 = false
 						txtItemSelect[i] = "none"
 			#Faut creer lobjet popup (button interface text et tout)
 			#Faut que j'ajoute les conditions pour le clic et tout 
@@ -3037,7 +3086,7 @@ func _process(delta: float) -> void:
 		
 		if txtItemSelect[i] == "bouclier_1":
 			#print("item select est bague : ", txtItemSelect)
-			if isPopUpOpen == false:
+			if isPopUpOpen == false and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				gui_popUp = GuiPopUp.instantiate()
 				add_child(gui_popUp)
 				gui_popUp.scale = Vector2(0.5, 0.5)
@@ -3094,9 +3143,10 @@ func _process(delta: float) -> void:
 				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
 				
 				isPopUpOpen = true
+				isPopUpOpenBouclier1 = true
 				print("J'ouvre le pop up")
 			
-			if isPopUpOpen == true:
+			if isPopUpOpen == true and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == true and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button equiper ")
@@ -3112,6 +3162,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenBouclier1 = false
 						txtItemSelect[i] = "none"
 						#sceneGameplay._Sgui_open("hero")
 						
@@ -3133,6 +3184,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenBouclier1 = false
 						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
@@ -3151,6 +3203,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenBouclier1 = false
 						txtItemSelect[i] = "none"
 			#Faut creer lobjet popup (button interface text et tout)
 			#Faut que j'ajoute les conditions pour le clic et tout 
@@ -3158,7 +3211,7 @@ func _process(delta: float) -> void:
 		
 		if txtItemSelect[i] == "bouclier_2":
 			#print("item select est bague : ", txtItemSelect)
-			if isPopUpOpen == false:
+			if isPopUpOpen == false and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				gui_popUp = GuiPopUp.instantiate()
 				add_child(gui_popUp)
 				gui_popUp.scale = Vector2(0.5, 0.5)
@@ -3215,9 +3268,10 @@ func _process(delta: float) -> void:
 				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
 				
 				isPopUpOpen = true
+				isPopUpOpenBouclier2 = true
 				print("J'ouvre le pop up")
 			
-			if isPopUpOpen == true:
+			if isPopUpOpen == true and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == true and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button equiper ")
@@ -3233,6 +3287,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenBouclier2 = false
 						txtItemSelect[i] = "none"
 						#sceneGameplay._Sgui_open("hero")
 						
@@ -3254,6 +3309,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenBouclier2 = false
 						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
@@ -3272,6 +3328,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenBouclier2 = false
 						txtItemSelect[i] = "none"
 			#Faut creer lobjet popup (button interface text et tout)
 			#Faut que j'ajoute les conditions pour le clic et tout 
@@ -3279,7 +3336,7 @@ func _process(delta: float) -> void:
 		
 		if txtItemSelect[i] == "bouclier_3":
 			#print("item select est bague : ", txtItemSelect)
-			if isPopUpOpen == false:
+			if isPopUpOpen == false and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				gui_popUp = GuiPopUp.instantiate()
 				add_child(gui_popUp)
 				gui_popUp.scale = Vector2(0.5, 0.5)
@@ -3336,9 +3393,10 @@ func _process(delta: float) -> void:
 				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
 				
 				isPopUpOpen = true
+				isPopUpOpenBouclier3 = true
 				print("J'ouvre le pop up")
 			
-			if isPopUpOpen == true:
+			if isPopUpOpen == true and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == true and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button equiper ")
@@ -3354,6 +3412,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenBouclier3 = false
 						txtItemSelect[i] = "none"
 						#sceneGameplay._Sgui_open("hero")
 						
@@ -3375,6 +3434,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenBouclier3 = false
 						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
@@ -3393,6 +3453,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenBouclier3 = false
 						txtItemSelect[i] = "none"
 			#Faut creer lobjet popup (button interface text et tout)
 			#Faut que j'ajoute les conditions pour le clic et tout 
@@ -3400,7 +3461,7 @@ func _process(delta: float) -> void:
 		
 		if txtItemSelect[i] == "bouclier_4":
 			#print("item select est bague : ", txtItemSelect)
-			if isPopUpOpen == false:
+			if isPopUpOpen == false and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				gui_popUp = GuiPopUp.instantiate()
 				add_child(gui_popUp)
 				gui_popUp.scale = Vector2(0.5, 0.5)
@@ -3457,9 +3518,10 @@ func _process(delta: float) -> void:
 				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
 				
 				isPopUpOpen = true
+				isPopUpOpenBouclier4 = true
 				print("J'ouvre le pop up")
 			
-			if isPopUpOpen == true:
+			if isPopUpOpen == true and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == true and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button equiper ")
@@ -3475,6 +3537,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenBouclier4 = false
 						txtItemSelect[i] = "none"
 						#sceneGameplay._Sgui_open("hero")
 						
@@ -3496,6 +3559,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenBouclier4 = false
 						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
@@ -3514,6 +3578,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenBouclier4 = false
 						txtItemSelect[i] = "none"
 			#Faut creer lobjet popup (button interface text et tout)
 			#Faut que j'ajoute les conditions pour le clic et tout 
@@ -3521,7 +3586,7 @@ func _process(delta: float) -> void:
 		
 		if txtItemSelect[i] == "bouclier_5":
 			#print("item select est bague : ", txtItemSelect)
-			if isPopUpOpen == false:
+			if isPopUpOpen == false and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				gui_popUp = GuiPopUp.instantiate()
 				add_child(gui_popUp)
 				gui_popUp.scale = Vector2(0.5, 0.5)
@@ -3578,9 +3643,10 @@ func _process(delta: float) -> void:
 				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
 				
 				isPopUpOpen = true
+				isPopUpOpenBouclier5 = true
 				print("J'ouvre le pop up")
 			
-			if isPopUpOpen == true:
+			if isPopUpOpen == true and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == true and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button equiper ")
@@ -3596,6 +3662,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenBouclier5 = false
 						txtItemSelect[i] = "none"
 						#sceneGameplay._Sgui_open("hero")
 						
@@ -3617,6 +3684,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenBouclier5 = false
 						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
@@ -3635,6 +3703,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenBouclier5 = false
 						txtItemSelect[i] = "none"
 			#Faut creer lobjet popup (button interface text et tout)
 			#Faut que j'ajoute les conditions pour le clic et tout 
@@ -3642,7 +3711,7 @@ func _process(delta: float) -> void:
 		
 		if txtItemSelect[i] == "bouclier_6":
 			#print("item select est bague : ", txtItemSelect)
-			if isPopUpOpen == false:
+			if isPopUpOpen == false and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				gui_popUp = GuiPopUp.instantiate()
 				add_child(gui_popUp)
 				gui_popUp.scale = Vector2(0.5, 0.5)
@@ -3699,9 +3768,10 @@ func _process(delta: float) -> void:
 				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
 				
 				isPopUpOpen = true
+				isPopUpOpenBouclier6 = true
 				print("J'ouvre le pop up")
 			
-			if isPopUpOpen == true:
+			if isPopUpOpen == true and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == true and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button equiper ")
@@ -3717,6 +3787,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenBouclier6 = false
 						txtItemSelect[i] = "none"
 						#sceneGameplay._Sgui_open("hero")
 						
@@ -3738,6 +3809,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenBouclier6 = false
 						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
@@ -3756,6 +3828,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenBouclier6 = false
 						txtItemSelect[i] = "none"
 			#Faut creer lobjet popup (button interface text et tout)
 			#Faut que j'ajoute les conditions pour le clic et tout 
@@ -3763,7 +3836,7 @@ func _process(delta: float) -> void:
 		
 		if txtItemSelect[i] == "bouclier_7":
 			#print("item select est bague : ", txtItemSelect)
-			if isPopUpOpen == false:
+			if isPopUpOpen == false and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				gui_popUp = GuiPopUp.instantiate()
 				add_child(gui_popUp)
 				gui_popUp.scale = Vector2(0.5, 0.5)
@@ -3820,9 +3893,10 @@ func _process(delta: float) -> void:
 				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
 				
 				isPopUpOpen = true
+				isPopUpOpenBouclier7 = true
 				print("J'ouvre le pop up")
 			
-			if isPopUpOpen == true:
+			if isPopUpOpen == true and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == true and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button equiper ")
@@ -3838,6 +3912,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenBouclier7 = false
 						txtItemSelect[i] = "none"
 						#sceneGameplay._Sgui_open("hero")
 						
@@ -3859,6 +3934,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenBouclier7 = false
 						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
@@ -3877,6 +3953,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenBouclier7 = false
 						txtItemSelect[i] = "none"
 			#Faut creer lobjet popup (button interface text et tout)
 			#Faut que j'ajoute les conditions pour le clic et tout 
@@ -3884,7 +3961,7 @@ func _process(delta: float) -> void:
 		
 		if txtItemSelect[i] == "casque_1":
 			#print("item select est bague : ", txtItemSelect)
-			if isPopUpOpen == false:
+			if isPopUpOpen == false and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				gui_popUp = GuiPopUp.instantiate()
 				add_child(gui_popUp)
 				gui_popUp.scale = Vector2(0.5, 0.5)
@@ -3941,9 +4018,10 @@ func _process(delta: float) -> void:
 				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
 				
 				isPopUpOpen = true
+				isPopUpOpenCasque1 = true
 				print("J'ouvre le pop up")
 			
-			if isPopUpOpen == true:
+			if isPopUpOpen == true and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == true and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button equiper ")
@@ -3959,6 +4037,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenCasque1 = false
 						txtItemSelect[i] = "none"
 						#sceneGameplay._Sgui_open("hero")
 						
@@ -3980,6 +4059,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenCasque1 = false
 						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
@@ -3998,6 +4078,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenCasque1 = false
 						txtItemSelect[i] = "none"
 			#Faut creer lobjet popup (button interface text et tout)
 			#Faut que j'ajoute les conditions pour le clic et tout 
@@ -4005,7 +4086,7 @@ func _process(delta: float) -> void:
 		
 		if txtItemSelect[i] == "casque_2":
 			#print("item select est bague : ", txtItemSelect)
-			if isPopUpOpen == false:
+			if isPopUpOpen == false and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				gui_popUp = GuiPopUp.instantiate()
 				add_child(gui_popUp)
 				gui_popUp.scale = Vector2(0.5, 0.5)
@@ -4062,9 +4143,10 @@ func _process(delta: float) -> void:
 				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
 				
 				isPopUpOpen = true
+				isPopUpOpenCasque2 = true
 				print("J'ouvre le pop up")
 			
-			if isPopUpOpen == true:
+			if isPopUpOpen == true and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == true and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button equiper ")
@@ -4080,6 +4162,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenCasque2 = false
 						txtItemSelect[i] = "none"
 						#sceneGameplay._Sgui_open("hero")
 						
@@ -4101,6 +4184,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenCasque2 = false
 						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
@@ -4119,6 +4203,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenCasque2 = false
 						txtItemSelect[i] = "none"
 			#Faut creer lobjet popup (button interface text et tout)
 			#Faut que j'ajoute les conditions pour le clic et tout 
@@ -4126,7 +4211,7 @@ func _process(delta: float) -> void:
 		
 		if txtItemSelect[i] == "casque_3":
 			#print("item select est bague : ", txtItemSelect)
-			if isPopUpOpen == false:
+			if isPopUpOpen == false and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				gui_popUp = GuiPopUp.instantiate()
 				add_child(gui_popUp)
 				gui_popUp.scale = Vector2(0.5, 0.5)
@@ -4183,9 +4268,10 @@ func _process(delta: float) -> void:
 				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
 				
 				isPopUpOpen = true
+				isPopUpOpenCasque3 = true
 				print("J'ouvre le pop up")
 			
-			if isPopUpOpen == true:
+			if isPopUpOpen == true and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == true and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button equiper ")
@@ -4201,6 +4287,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenCasque3 = false
 						txtItemSelect[i] = "none"
 						#sceneGameplay._Sgui_open("hero")
 						
@@ -4222,6 +4309,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenCasque3 = false
 						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
@@ -4240,6 +4328,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenCasque3 = false
 						txtItemSelect[i] = "none"
 			#Faut creer lobjet popup (button interface text et tout)
 			#Faut que j'ajoute les conditions pour le clic et tout 
@@ -4247,7 +4336,7 @@ func _process(delta: float) -> void:
 		
 		if txtItemSelect[i] == "casque_4":
 			#print("item select est bague : ", txtItemSelect)
-			if isPopUpOpen == false:
+			if isPopUpOpen == false and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				gui_popUp = GuiPopUp.instantiate()
 				add_child(gui_popUp)
 				gui_popUp.scale = Vector2(0.5, 0.5)
@@ -4304,9 +4393,10 @@ func _process(delta: float) -> void:
 				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
 				
 				isPopUpOpen = true
+				isPopUpOpenCasque4 = true
 				print("J'ouvre le pop up")
 			
-			if isPopUpOpen == true:
+			if isPopUpOpen == true and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == true and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button equiper ")
@@ -4322,6 +4412,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenCasque4 = false
 						txtItemSelect[i] = "none"
 						#sceneGameplay._Sgui_open("hero")
 						
@@ -4343,6 +4434,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenCasque4 = false
 						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
@@ -4361,6 +4453,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenCasque4 = false
 						txtItemSelect[i] = "none"
 			#Faut creer lobjet popup (button interface text et tout)
 			#Faut que j'ajoute les conditions pour le clic et tout 
@@ -4368,7 +4461,7 @@ func _process(delta: float) -> void:
 		
 		if txtItemSelect[i] == "casque_5":
 			#print("item select est bague : ", txtItemSelect)
-			if isPopUpOpen == false:
+			if isPopUpOpen == false and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				gui_popUp = GuiPopUp.instantiate()
 				add_child(gui_popUp)
 				gui_popUp.scale = Vector2(0.5, 0.5)
@@ -4425,9 +4518,10 @@ func _process(delta: float) -> void:
 				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
 				
 				isPopUpOpen = true
+				isPopUpOpenCasque5 = true
 				print("J'ouvre le pop up")
 			
-			if isPopUpOpen == true:
+			if isPopUpOpen == true and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == true and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button equiper ")
@@ -4443,6 +4537,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenCasque5 = false
 						txtItemSelect[i] = "none"
 						#sceneGameplay._Sgui_open("hero")
 						
@@ -4464,6 +4559,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenCasque5 = false
 						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
@@ -4482,6 +4578,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenCasque5 = false
 						txtItemSelect[i] = "none"
 			#Faut creer lobjet popup (button interface text et tout)
 			#Faut que j'ajoute les conditions pour le clic et tout 
@@ -4489,7 +4586,7 @@ func _process(delta: float) -> void:
 		
 		if txtItemSelect[i] == "casque_6":
 			#print("item select est bague : ", txtItemSelect)
-			if isPopUpOpen == false:
+			if isPopUpOpen == false and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				gui_popUp = GuiPopUp.instantiate()
 				add_child(gui_popUp)
 				gui_popUp.scale = Vector2(0.5, 0.5)
@@ -4546,9 +4643,10 @@ func _process(delta: float) -> void:
 				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
 				
 				isPopUpOpen = true
+				isPopUpOpenCasque6 = true
 				print("J'ouvre le pop up")
 			
-			if isPopUpOpen == true:
+			if isPopUpOpen == true and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == true and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button equiper ")
@@ -4564,6 +4662,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenCasque6 = false
 						txtItemSelect[i] = "none"
 						#sceneGameplay._Sgui_open("hero")
 						
@@ -4585,6 +4684,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenCasque6 = false
 						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
@@ -4603,6 +4703,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenCasque6 = false
 						txtItemSelect[i] = "none"
 			#Faut creer lobjet popup (button interface text et tout)
 			#Faut que j'ajoute les conditions pour le clic et tout 
@@ -4610,7 +4711,7 @@ func _process(delta: float) -> void:
 		
 		if txtItemSelect[i] == "collier_1":
 			#print("item select est bague : ", txtItemSelect)
-			if isPopUpOpen == false:
+			if isPopUpOpen == false and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				gui_popUp = GuiPopUp.instantiate()
 				add_child(gui_popUp)
 				gui_popUp.scale = Vector2(0.5, 0.5)
@@ -4667,9 +4768,10 @@ func _process(delta: float) -> void:
 				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
 				
 				isPopUpOpen = true
+				isPopUpOpenCollier1 = true
 				print("J'ouvre le pop up")
 			
-			if isPopUpOpen == true:
+			if isPopUpOpen == true and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == true and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button equiper ")
@@ -4685,6 +4787,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenCasque1 = false
 						txtItemSelect[i] = "none"
 						#sceneGameplay._Sgui_open("hero")
 						
@@ -4706,6 +4809,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenCasque1 = false
 						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
@@ -4724,6 +4828,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenCasque1 = false
 						txtItemSelect[i] = "none"
 			#Faut creer lobjet popup (button interface text et tout)
 			#Faut que j'ajoute les conditions pour le clic et tout 
@@ -4731,7 +4836,7 @@ func _process(delta: float) -> void:
 		
 		if txtItemSelect[i] == "collier_2":
 			#print("item select est bague : ", txtItemSelect)
-			if isPopUpOpen == false:
+			if isPopUpOpen == false and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				gui_popUp = GuiPopUp.instantiate()
 				add_child(gui_popUp)
 				gui_popUp.scale = Vector2(0.5, 0.5)
@@ -4788,9 +4893,10 @@ func _process(delta: float) -> void:
 				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
 				
 				isPopUpOpen = true
+				isPopUpOpenCollier2 = true
 				print("J'ouvre le pop up")
 			
-			if isPopUpOpen == true:
+			if isPopUpOpen == true and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == true and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button equiper ")
@@ -4806,6 +4912,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenCollier2 = false
 						txtItemSelect[i] = "none"
 						#sceneGameplay._Sgui_open("hero")
 						
@@ -4827,6 +4934,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenCollier2 = false
 						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
@@ -4845,6 +4953,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenCollier2 = false
 						txtItemSelect[i] = "none"
 			#Faut creer lobjet popup (button interface text et tout)
 			#Faut que j'ajoute les conditions pour le clic et tout 
@@ -4852,7 +4961,7 @@ func _process(delta: float) -> void:
 		
 		if txtItemSelect[i] == "collier_3":
 			#print("item select est bague : ", txtItemSelect)
-			if isPopUpOpen == false:
+			if isPopUpOpen == false and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				gui_popUp = GuiPopUp.instantiate()
 				add_child(gui_popUp)
 				gui_popUp.scale = Vector2(0.5, 0.5)
@@ -4909,9 +5018,10 @@ func _process(delta: float) -> void:
 				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
 				
 				isPopUpOpen = true
+				isPopUpOpenCollier3 = true
 				print("J'ouvre le pop up")
 			
-			if isPopUpOpen == true:
+			if isPopUpOpen == true and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == true and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button equiper ")
@@ -4927,6 +5037,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenCollier3 = false
 						txtItemSelect[i] = "none"
 						#sceneGameplay._Sgui_open("hero")
 						
@@ -4948,6 +5059,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenCollier3 = false
 						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
@@ -4966,6 +5078,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenCollier3 = false
 						txtItemSelect[i] = "none"
 			#Faut creer lobjet popup (button interface text et tout)
 			#Faut que j'ajoute les conditions pour le clic et tout 
@@ -4973,7 +5086,7 @@ func _process(delta: float) -> void:
 		
 		if txtItemSelect[i] == "heaume_1":
 			#print("item select est bague : ", txtItemSelect)
-			if isPopUpOpen == false:
+			if isPopUpOpen == false and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				gui_popUp = GuiPopUp.instantiate()
 				add_child(gui_popUp)
 				gui_popUp.scale = Vector2(0.5, 0.5)
@@ -5030,9 +5143,10 @@ func _process(delta: float) -> void:
 				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
 				
 				isPopUpOpen = true
+				isPopUpOpenHeaume1 = true
 				print("J'ouvre le pop up")
 			
-			if isPopUpOpen == true:
+			if isPopUpOpen == true and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == true and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button equiper ")
@@ -5048,6 +5162,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenHeaume1 = false
 						txtItemSelect[i] = "none"
 						#sceneGameplay._Sgui_open("hero")
 						
@@ -5069,6 +5184,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenHeaume1 = false
 						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
@@ -5087,6 +5203,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenHeaume1 = false
 						txtItemSelect[i] = "none"
 			#Faut creer lobjet popup (button interface text et tout)
 			#Faut que j'ajoute les conditions pour le clic et tout 
@@ -5094,7 +5211,7 @@ func _process(delta: float) -> void:
 		
 		if txtItemSelect[i] == "heaume_2":
 			#print("item select est bague : ", txtItemSelect)
-			if isPopUpOpen == false:
+			if isPopUpOpen == false and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				gui_popUp = GuiPopUp.instantiate()
 				add_child(gui_popUp)
 				gui_popUp.scale = Vector2(0.5, 0.5)
@@ -5151,9 +5268,10 @@ func _process(delta: float) -> void:
 				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
 				
 				isPopUpOpen = true
+				isPopUpOpenHeaume2 = true
 				print("J'ouvre le pop up")
 			
-			if isPopUpOpen == true:
+			if isPopUpOpen == true and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == true and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button equiper ")
@@ -5169,6 +5287,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenHeaume2 = false
 						txtItemSelect[i] = "none"
 						#sceneGameplay._Sgui_open("hero")
 						
@@ -5190,6 +5309,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenHeaume2 = false
 						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
@@ -5208,6 +5328,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenHeaume2 = false
 						txtItemSelect[i] = "none"
 			#Faut creer lobjet popup (button interface text et tout)
 			#Faut que j'ajoute les conditions pour le clic et tout 
@@ -5215,7 +5336,7 @@ func _process(delta: float) -> void:
 		
 		if txtItemSelect[i] == "heaume_3":
 			#print("item select est bague : ", txtItemSelect)
-			if isPopUpOpen == false:
+			if isPopUpOpen == false and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				gui_popUp = GuiPopUp.instantiate()
 				add_child(gui_popUp)
 				gui_popUp.scale = Vector2(0.5, 0.5)
@@ -5272,9 +5393,10 @@ func _process(delta: float) -> void:
 				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
 				
 				isPopUpOpen = true
+				isPopUpOpenHeaume3 = true
 				print("J'ouvre le pop up")
 			
-			if isPopUpOpen == true:
+			if isPopUpOpen == true and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == true and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button equiper ")
@@ -5290,6 +5412,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenHeaume3 = false
 						txtItemSelect[i] = "none"
 						#sceneGameplay._Sgui_open("hero")
 						
@@ -5311,6 +5434,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenHeaume3 = false
 						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
@@ -5329,6 +5453,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenHeaume3 = false
 						txtItemSelect[i] = "none"
 			#Faut creer lobjet popup (button interface text et tout)
 			#Faut que j'ajoute les conditions pour le clic et tout 
@@ -5336,7 +5461,7 @@ func _process(delta: float) -> void:
 		
 		if txtItemSelect[i] == "heaume_4":
 			#print("item select est bague : ", txtItemSelect)
-			if isPopUpOpen == false:
+			if isPopUpOpen == false and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				gui_popUp = GuiPopUp.instantiate()
 				add_child(gui_popUp)
 				gui_popUp.scale = Vector2(0.5, 0.5)
@@ -5393,9 +5518,10 @@ func _process(delta: float) -> void:
 				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
 				
 				isPopUpOpen = true
+				isPopUpOpenHeaume4 = true
 				print("J'ouvre le pop up")
 			
-			if isPopUpOpen == true:
+			if isPopUpOpen == true and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == true and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button equiper ")
@@ -5411,6 +5537,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenHeaume4 = false
 						txtItemSelect[i] = "none"
 						#sceneGameplay._Sgui_open("hero")
 						
@@ -5432,6 +5559,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenHeaume4 = false
 						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
@@ -5450,6 +5578,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenHeaume4 = false
 						txtItemSelect[i] = "none"
 			#Faut creer lobjet popup (button interface text et tout)
 			#Faut que j'ajoute les conditions pour le clic et tout 
@@ -5457,7 +5586,7 @@ func _process(delta: float) -> void:
 		
 		if txtItemSelect[i] == "heaume_5":
 			#print("item select est bague : ", txtItemSelect)
-			if isPopUpOpen == false:
+			if isPopUpOpen == false and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				gui_popUp = GuiPopUp.instantiate()
 				add_child(gui_popUp)
 				gui_popUp.scale = Vector2(0.5, 0.5)
@@ -5514,9 +5643,10 @@ func _process(delta: float) -> void:
 				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
 				
 				isPopUpOpen = true
+				isPopUpOpenHeaume5 = true
 				print("J'ouvre le pop up")
 			
-			if isPopUpOpen == true:
+			if isPopUpOpen == true and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == true and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button equiper ")
@@ -5532,6 +5662,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenHeaume5 = false
 						txtItemSelect[i] = "none"
 						#sceneGameplay._Sgui_open("hero")
 						
@@ -5553,6 +5684,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenHeaume5 = false
 						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
@@ -5571,6 +5703,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenHeaume5 = false
 						txtItemSelect[i] = "none"
 			#Faut creer lobjet popup (button interface text et tout)
 			#Faut que j'ajoute les conditions pour le clic et tout 
@@ -5578,7 +5711,7 @@ func _process(delta: float) -> void:
 		
 		if txtItemSelect[i] == "heaume_6":
 			#print("item select est bague : ", txtItemSelect)
-			if isPopUpOpen == false:
+			if isPopUpOpen == false and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				gui_popUp = GuiPopUp.instantiate()
 				add_child(gui_popUp)
 				gui_popUp.scale = Vector2(0.5, 0.5)
@@ -5635,9 +5768,10 @@ func _process(delta: float) -> void:
 				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
 				
 				isPopUpOpen = true
+				isPopUpOpenHeaume6 = true
 				print("J'ouvre le pop up")
 			
-			if isPopUpOpen == true:
+			if isPopUpOpen == true and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == true and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button equiper ")
@@ -5653,6 +5787,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenHeaume6 = false
 						txtItemSelect[i] = "none"
 						#sceneGameplay._Sgui_open("hero")
 						
@@ -5674,6 +5809,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenHeaume6 = false
 						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
@@ -5692,6 +5828,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenHeaume6 = false
 						txtItemSelect[i] = "none"
 			#Faut creer lobjet popup (button interface text et tout)
 			#Faut que j'ajoute les conditions pour le clic et tout 
@@ -5699,7 +5836,7 @@ func _process(delta: float) -> void:
 		
 		if txtItemSelect[i] == "sword_1":
 			#print("item select est bague : ", txtItemSelect)
-			if isPopUpOpen == false:
+			if isPopUpOpen == false and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				gui_popUp = GuiPopUp.instantiate()
 				add_child(gui_popUp)
 				gui_popUp.scale = Vector2(0.5, 0.5)
@@ -5756,9 +5893,10 @@ func _process(delta: float) -> void:
 				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
 				
 				isPopUpOpen = true
+				isPopUpOpenSword1 = true
 				print("J'ouvre le pop up")
 			
-			if isPopUpOpen == true:
+			if isPopUpOpen == true and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == true and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button equiper ")
@@ -5774,6 +5912,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenSword1 = false
 						txtItemSelect[i] = "none"
 						#sceneGameplay._Sgui_open("hero")
 						
@@ -5795,6 +5934,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenSword1 = false
 						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
@@ -5813,6 +5953,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenSword1 = false
 						txtItemSelect[i] = "none"
 			#Faut creer lobjet popup (button interface text et tout)
 			#Faut que j'ajoute les conditions pour le clic et tout 
@@ -5820,7 +5961,7 @@ func _process(delta: float) -> void:
 		
 		if txtItemSelect[i] == "sword_2":
 			#print("item select est bague : ", txtItemSelect)
-			if isPopUpOpen == false:
+			if isPopUpOpen == false and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				gui_popUp = GuiPopUp.instantiate()
 				add_child(gui_popUp)
 				gui_popUp.scale = Vector2(0.5, 0.5)
@@ -5877,9 +6018,10 @@ func _process(delta: float) -> void:
 				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
 				
 				isPopUpOpen = true
+				isPopUpOpenSword2 = true
 				print("J'ouvre le pop up")
 			
-			if isPopUpOpen == true:
+			if isPopUpOpen == true and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == true and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button equiper ")
@@ -5895,6 +6037,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenSword2 = false
 						txtItemSelect[i] = "none"
 						#sceneGameplay._Sgui_open("hero")
 						
@@ -5916,6 +6059,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenSword2 = false
 						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
@@ -5934,6 +6078,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenSword2 = false
 						txtItemSelect[i] = "none"
 			#Faut creer lobjet popup (button interface text et tout)
 			#Faut que j'ajoute les conditions pour le clic et tout 
@@ -5941,7 +6086,7 @@ func _process(delta: float) -> void:
 		
 		if txtItemSelect[i] == "sword_3":
 			#print("item select est bague : ", txtItemSelect)
-			if isPopUpOpen == false:
+			if isPopUpOpen == false and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				gui_popUp = GuiPopUp.instantiate()
 				add_child(gui_popUp)
 				gui_popUp.scale = Vector2(0.5, 0.5)
@@ -5998,9 +6143,10 @@ func _process(delta: float) -> void:
 				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
 				
 				isPopUpOpen = true
+				isPopUpOpenSword3 = true
 				print("J'ouvre le pop up")
 			
-			if isPopUpOpen == true:
+			if isPopUpOpen == true and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == true and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button equiper ")
@@ -6016,6 +6162,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenSword3 = false
 						txtItemSelect[i] = "none"
 						#sceneGameplay._Sgui_open("hero")
 						
@@ -6037,6 +6184,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenSword3 = false
 						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
@@ -6055,6 +6203,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenSword3 = false
 						txtItemSelect[i] = "none"
 			#Faut creer lobjet popup (button interface text et tout)
 			#Faut que j'ajoute les conditions pour le clic et tout 
@@ -6062,7 +6211,7 @@ func _process(delta: float) -> void:
 		
 		if txtItemSelect[i] == "sword_4":
 			#print("item select est bague : ", txtItemSelect)
-			if isPopUpOpen == false:
+			if isPopUpOpen == false and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				gui_popUp = GuiPopUp.instantiate()
 				add_child(gui_popUp)
 				gui_popUp.scale = Vector2(0.5, 0.5)
@@ -6119,9 +6268,10 @@ func _process(delta: float) -> void:
 				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
 				
 				isPopUpOpen = true
+				isPopUpOpenSword4 = true
 				print("J'ouvre le pop up")
 			
-			if isPopUpOpen == true:
+			if isPopUpOpen == true and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == true and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button equiper ")
@@ -6137,6 +6287,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenSword4 = false
 						txtItemSelect[i] = "none"
 						#sceneGameplay._Sgui_open("hero")
 						
@@ -6158,6 +6309,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenSword4 = false
 						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
@@ -6176,6 +6328,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenSword4 = false
 						txtItemSelect[i] = "none"
 			#Faut creer lobjet popup (button interface text et tout)
 			#Faut que j'ajoute les conditions pour le clic et tout 
@@ -6183,7 +6336,7 @@ func _process(delta: float) -> void:
 		
 		if txtItemSelect[i] == "sword_5":
 			#print("item select est bague : ", txtItemSelect)
-			if isPopUpOpen == false:
+			if isPopUpOpen == false and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				gui_popUp = GuiPopUp.instantiate()
 				add_child(gui_popUp)
 				gui_popUp.scale = Vector2(0.5, 0.5)
@@ -6240,9 +6393,10 @@ func _process(delta: float) -> void:
 				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
 				
 				isPopUpOpen = true
+				isPopUpOpenSword5 = true
 				print("J'ouvre le pop up")
 			
-			if isPopUpOpen == true:
+			if isPopUpOpen == true and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == true and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button equiper ")
@@ -6258,6 +6412,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenSword5 = false
 						txtItemSelect[i] = "none"
 						#sceneGameplay._Sgui_open("hero")
 						
@@ -6279,6 +6434,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenSword5 = false
 						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
@@ -6297,6 +6453,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenSword5 = false
 						txtItemSelect[i] = "none"
 			#Faut creer lobjet popup (button interface text et tout)
 			#Faut que j'ajoute les conditions pour le clic et tout 
@@ -6304,7 +6461,7 @@ func _process(delta: float) -> void:
 		
 		if txtItemSelect[i] == "sword_6":
 			#print("item select est bague : ", txtItemSelect)
-			if isPopUpOpen == false:
+			if isPopUpOpen == false and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				gui_popUp = GuiPopUp.instantiate()
 				add_child(gui_popUp)
 				gui_popUp.scale = Vector2(0.5, 0.5)
@@ -6361,9 +6518,10 @@ func _process(delta: float) -> void:
 				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
 				
 				isPopUpOpen = true
+				isPopUpOpenSword6 = true
 				print("J'ouvre le pop up")
 			
-			if isPopUpOpen == true:
+			if isPopUpOpen == true and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == true and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button equiper ")
@@ -6379,6 +6537,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenSword6 = false
 						txtItemSelect[i] = "none"
 						#sceneGameplay._Sgui_open("hero")
 						
@@ -6400,6 +6559,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenSword6 = false
 						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
@@ -6418,6 +6578,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenSword6 = false
 						txtItemSelect[i] = "none"
 			#Faut creer lobjet popup (button interface text et tout)
 			#Faut que j'ajoute les conditions pour le clic et tout 
@@ -6425,7 +6586,7 @@ func _process(delta: float) -> void:
 		
 		if txtItemSelect[i] == "sword_7":
 			#print("item select est bague : ", txtItemSelect)
-			if isPopUpOpen == false:
+			if isPopUpOpen == false and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				gui_popUp = GuiPopUp.instantiate()
 				add_child(gui_popUp)
 				gui_popUp.scale = Vector2(0.5, 0.5)
@@ -6482,9 +6643,10 @@ func _process(delta: float) -> void:
 				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
 				
 				isPopUpOpen = true
+				isPopUpOpenSword7 = true
 				print("J'ouvre le pop up")
 			
-			if isPopUpOpen == true:
+			if isPopUpOpen == true and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == true and isPopUpOpenSword8 == false :
 				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button equiper ")
@@ -6500,6 +6662,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenSword7 = false
 						txtItemSelect[i] = "none"
 						#sceneGameplay._Sgui_open("hero")
 						
@@ -6520,7 +6683,8 @@ func _process(delta: float) -> void:
 						txt_popup_1.queue_free()
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
-						isPopUpOpen = false
+						isPopUpOpen = false 
+						isPopUpOpenSword7 = false
 						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
@@ -6539,6 +6703,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenSword7 = false
 						txtItemSelect[i] = "none"
 			#Faut creer lobjet popup (button interface text et tout)
 			#Faut que j'ajoute les conditions pour le clic et tout 
@@ -6546,7 +6711,7 @@ func _process(delta: float) -> void:
 		
 		if txtItemSelect[i] == "sword_8":
 			#print("item select est bague : ", txtItemSelect)
-			if isPopUpOpen == false:
+			if isPopUpOpen == false and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
 				gui_popUp = GuiPopUp.instantiate()
 				add_child(gui_popUp)
 				gui_popUp.scale = Vector2(0.5, 0.5)
@@ -6603,9 +6768,10 @@ func _process(delta: float) -> void:
 				childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
 				
 				isPopUpOpen = true
+				isPopUpOpenSword8 = true
 				print("J'ouvre le pop up")
 			
-			if isPopUpOpen == true:
+			if isPopUpOpen == true and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == true :
 				if mouse_pos.x >= gui_buttonOnEquiper.offset.x and mouse_pos.x <= gui_buttonOnEquiper.offset.x + 90 and mouse_pos.y >= gui_buttonOnEquiper.offset.y and mouse_pos.y <= gui_buttonOnEquiper.offset.y + 35:
 					if Input.is_action_just_pressed("button_left"):
 						print("on clique sur le button equiper ")
@@ -6621,6 +6787,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenSword8 = false
 						txtItemSelect[i] = "none"
 						#sceneGameplay._Sgui_open("hero")
 						
@@ -6642,6 +6809,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenSword8 = false
 						txtItemSelect[i] = "none"
 				
 				if mouse_pos.x >= gui_buttonOnJeter.offset.x and mouse_pos.x <= gui_buttonOnJeter.offset.x + 90 and mouse_pos.y >= gui_buttonOnJeter.offset.y and mouse_pos.y <= gui_buttonOnJeter.offset.y + 35:
@@ -6660,6 +6828,7 @@ func _process(delta: float) -> void:
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
+						isPopUpOpenSword8 = false
 						txtItemSelect[i] = "none"
 			#Faut creer lobjet popup (button interface text et tout)
 			#Faut que j'ajoute les conditions pour le clic et tout 
@@ -7259,7 +7428,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 			#finalement rester uniquement sur clik gauche et afficher 3 options : - utiliser , coffret , jeter
 			if mouse_pos.x >= slot_posX[n] and mouse_pos.x <= slot_posX[n] + childSlot[n].size.x-1 and mouse_pos.y >= slot_posY[n] and mouse_pos.y <= slot_posY[n] + childSlot[n].size.y-1:
 				#print("Je clic sur la potion", n)
-				if txtItemType[n] == "potion_vie":
+				if txtItemType[n] == "potion_vie" and gui_popUp == null:
 					if gui_potion_vie[n] != null:
 						if n == 0:
 							if txtTypeClic == "left": 
@@ -7505,7 +7674,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 								isSlot_libre[19] = true
 								txtTypeClic = ""
 				#Potion de mana
-				if txtItemType[n] == "potion_mana":
+				if txtItemType[n] == "potion_mana" and gui_popUp == null:
 					if gui_potion_mana[n] != null:
 						if n == 0:
 							if  txtTypeClic == "left":
@@ -7749,7 +7918,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 								txtTypeClic = ""
 						
 				#Potion d'exilir
-				if txtItemType[n] == "potion_elixir":
+				if txtItemType[n] == "potion_elixir" and gui_popUp == null:
 					if gui_potion_elixir[n] != null:
 						if n == 0:
 							if txtTypeClic == "left":
@@ -7993,7 +8162,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 								txtTypeClic = ""
 						
 				#Bague 1
-				if txtItemType[n] == "bague_1":
+				if txtItemType[n] == "bague_1" and gui_popUp == null:
 					if gui_bague1[n] != null:
 						if n == 0:
 							if txtTypeClic == "left":
@@ -8237,7 +8406,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 								txtTypeClic = ""
 				
 				#Bague 2
-				if txtItemType[n] == "bague_2":
+				if txtItemType[n] == "bague_2" and gui_popUp == null:
 					if gui_bague2[n] != null:
 						if n == 0:
 							if txtTypeClic == "left":
@@ -8481,7 +8650,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 								txtTypeClic = ""
 				
 				#Bague 3
-				if txtItemType[n] == "bague_3":
+				if txtItemType[n] == "bague_3" and gui_popUp == null:
 					if gui_bague3[n] != null:
 						if n == 0:
 							if txtTypeClic == "left":
@@ -8726,7 +8895,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 							
 				#faire les bottes 
 				#Bottes 1
-				if txtItemType[n] == "bottes_1":
+				if txtItemType[n] == "bottes_1" and gui_popUp == null:
 					if gui_bottes1[n] != null:
 						if n == 0:
 							if txtTypeClic == "left":
@@ -8970,7 +9139,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 								txtTypeClic = ""
 				
 				#Bottes 2
-				if txtItemType[n] == "bottes_2":
+				if txtItemType[n] == "bottes_2" and gui_popUp == null:
 					if gui_bottes2[n] != null:
 						if n == 0:
 							if txtTypeClic == "left":
@@ -9214,7 +9383,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 								txtTypeClic = ""
 				
 				#Bottes 3
-				if txtItemType[n] == "bottes_3":
+				if txtItemType[n] == "bottes_3" and gui_popUp == null:
 					if gui_bottes3[n] != null:
 						if n == 0:
 							if txtTypeClic == "left":
@@ -9458,7 +9627,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 								txtTypeClic = ""
 				
 				#Bottes 4
-				if txtItemType[n] == "bottes_4":
+				if txtItemType[n] == "bottes_4" and gui_popUp == null:
 					if gui_bottes4[n] != null:
 						if n == 0:
 							if txtTypeClic == "left":
@@ -9702,7 +9871,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 								txtTypeClic = ""
 				
 				#Bottes 5
-				if txtItemType[n] == "bottes_5":
+				if txtItemType[n] == "bottes_5" and gui_popUp == null:
 					if gui_bottes5[n] != null:
 						if n == 0:
 							if txtTypeClic == "left":
@@ -9946,7 +10115,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 								txtTypeClic = ""
 				
 				#Bottes 6
-				if txtItemType[n] == "bottes_6":
+				if txtItemType[n] == "bottes_6" and gui_popUp == null:
 					if gui_bottes6[n] != null:
 						if n == 0:
 							if txtTypeClic == "left":
@@ -10190,7 +10359,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 								txtTypeClic = ""
 				
 				#Bouclier 1
-				if txtItemType[n] == "bouclier_1":
+				if txtItemType[n] == "bouclier_1" and gui_popUp == null:
 					if gui_bouclier1[n] != null:
 						if n == 0:
 							if txtTypeClic == "left":
@@ -10434,7 +10603,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 								txtTypeClic = ""
 				
 				#Bouclier 2
-				if txtItemType[n] == "bouclier_2":
+				if txtItemType[n] == "bouclier_2" and gui_popUp == null:
 					if gui_bouclier2[n] != null:
 						if n == 0:
 							if txtTypeClic == "left":
@@ -10678,7 +10847,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 								txtTypeClic = ""
 				
 				#Bouclier 3
-				if txtItemType[n] == "bouclier_3":
+				if txtItemType[n] == "bouclier_3" and gui_popUp == null:
 					if gui_bouclier3[n] != null:
 						if n == 0:
 							if txtTypeClic == "left":
@@ -10922,7 +11091,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 								txtTypeClic = ""
 				
 				#Bouclier 4
-				if txtItemType[n] == "bouclier_4":
+				if txtItemType[n] == "bouclier_4" and gui_popUp == null:
 					if gui_bouclier4[n] != null:
 						if n == 0:
 							if txtTypeClic == "left":
@@ -11166,7 +11335,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 								txtTypeClic = ""
 				
 				#Bouclier 5
-				if txtItemType[n] == "bouclier_5":
+				if txtItemType[n] == "bouclier_5" and gui_popUp == null:
 					if gui_bouclier5[n] != null:
 						if n == 0:
 							if txtTypeClic == "left":
@@ -11410,7 +11579,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 								txtTypeClic = ""
 				
 				#Bouclier 6
-				if txtItemType[n] == "bouclier_6":
+				if txtItemType[n] == "bouclier_6" and gui_popUp == null:
 					if gui_bouclier6[n] != null:
 						if n == 0:
 							if txtTypeClic == "left":
@@ -11654,7 +11823,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 								txtTypeClic = ""
 				
 				#Bouclier 7
-				if txtItemType[n] == "bouclier_7":
+				if txtItemType[n] == "bouclier_7" and gui_popUp == null:
 					if gui_bouclier7[n] != null:
 						if n == 0:
 							if txtTypeClic == "left":
@@ -11898,7 +12067,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 								txtTypeClic = ""
 				
 				#Casque1
-				if txtItemType[n] == "casque_1":
+				if txtItemType[n] == "casque_1" and gui_popUp == null:
 					if gui_casque1[n] != null:
 						if n == 0:
 							if txtTypeClic == "left":
@@ -12142,7 +12311,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 								txtTypeClic = ""
 				
 				#Casque2
-				if txtItemType[n] == "casque_2":
+				if txtItemType[n] == "casque_2" and gui_popUp == null:
 					if gui_casque2[n] != null:
 						if n == 0:
 							if txtTypeClic == "left":
@@ -12386,7 +12555,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 								txtTypeClic = ""
 				
 				#Casque3
-				if txtItemType[n] == "casque_3":
+				if txtItemType[n] == "casque_3" and gui_popUp == null:
 					if gui_casque3[n] != null:
 						if n == 0:
 							if txtTypeClic == "left":
@@ -12630,7 +12799,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 								txtTypeClic = ""
 				
 				#Casque4
-				if txtItemType[n] == "casque_4":
+				if txtItemType[n] == "casque_4" and gui_popUp == null:
 					if gui_casque4[n] != null:
 						if n == 0:
 							if txtTypeClic == "left":
@@ -12874,7 +13043,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 								txtTypeClic = ""
 				
 				#Casque5
-				if txtItemType[n] == "casque_5":
+				if txtItemType[n] == "casque_5" and gui_popUp == null:
 					if gui_casque5[n] != null:
 						if n == 0:
 							if txtTypeClic == "left":
@@ -13118,7 +13287,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 								txtTypeClic = ""
 				
 				#Casque6
-				if txtItemType[n] == "casque_6":
+				if txtItemType[n] == "casque_6" and gui_popUp == null:
 					if gui_casque6[n] != null:
 						if n == 0:
 							if txtTypeClic == "left":
@@ -13362,7 +13531,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 								txtTypeClic = ""
 				
 				#Collier1
-				if txtItemType[n] == "collier_1":
+				if txtItemType[n] == "collier_1" and gui_popUp == null:
 					if gui_collier1[n] != null:
 						if n == 0:
 							if txtTypeClic == "left":
@@ -13606,7 +13775,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 								txtTypeClic = ""
 				
 				#Collier2
-				if txtItemType[n] == "collier_2":
+				if txtItemType[n] == "collier_2" and gui_popUp == null:
 					if gui_collier2[n] != null:
 						if n == 0:
 							if txtTypeClic == "left":
@@ -13850,7 +14019,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 								txtTypeClic = ""
 				
 				#Collier3
-				if txtItemType[n] == "collier_3":
+				if txtItemType[n] == "collier_3" and gui_popUp == null:
 					if gui_collier3[n] != null:
 						if n == 0:
 							if txtTypeClic == "left":
@@ -14094,7 +14263,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 								txtTypeClic = ""
 				
 				#Heaume1
-				if txtItemType[n] == "heaume_1":
+				if txtItemType[n] == "heaume_1" and gui_popUp == null:
 					if gui_heaume1[n] != null:
 						if n == 0:
 							if txtTypeClic == "left":
@@ -14338,7 +14507,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 								txtTypeClic = ""
 				
 				#Heaume2
-				if txtItemType[n] == "heaume_2":
+				if txtItemType[n] == "heaume_2" and gui_popUp == null:
 					if gui_heaume2[n] != null:
 						if n == 0:
 							if txtTypeClic == "left":
@@ -14582,7 +14751,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 								txtTypeClic = ""
 				
 				#Heaume3
-				if txtItemType[n] == "heaume_3":
+				if txtItemType[n] == "heaume_3" and gui_popUp == null:
 					if gui_heaume3[n] != null:
 						if n == 0:
 							if txtTypeClic == "left":
@@ -14826,7 +14995,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 								txtTypeClic = ""
 				
 				#Heaume4
-				if txtItemType[n] == "heaume_4":
+				if txtItemType[n] == "heaume_4" and gui_popUp == null:
 					if gui_heaume4[n] != null:
 						if n == 0:
 							if txtTypeClic == "left":
@@ -15070,7 +15239,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 								txtTypeClic = ""
 				
 				#Heaume5
-				if txtItemType[n] == "heaume_5":
+				if txtItemType[n] == "heaume_5" and gui_popUp == null:
 					if gui_heaume5[n] != null:
 						if n == 0:
 							if txtTypeClic == "left":
@@ -15314,7 +15483,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 								txtTypeClic = ""
 				
 				#Heaume6
-				if txtItemType[n] == "heaume_6":
+				if txtItemType[n] == "heaume_6" and gui_popUp == null:
 					if gui_heaume6[n] != null:
 						if n == 0:
 							if txtTypeClic == "left":
@@ -15558,7 +15727,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 								txtTypeClic = ""
 				
 				#Sword1
-				if txtItemType[n] == "sword_1":
+				if txtItemType[n] == "sword_1" and gui_popUp == null:
 					if gui_sword1[n] != null:
 						if n == 0:
 							if txtTypeClic == "left":
@@ -15802,7 +15971,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 								txtTypeClic = ""
 				
 				#Sword2
-				if txtItemType[n] == "sword_2":
+				if txtItemType[n] == "sword_2" and gui_popUp == null:
 					if gui_sword2[n] != null:
 						if n == 0:
 							if txtTypeClic == "left":
@@ -16046,7 +16215,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 								txtTypeClic = ""
 				
 				#Sword3
-				if txtItemType[n] == "sword_3":
+				if txtItemType[n] == "sword_3" and gui_popUp == null:
 					if gui_sword3[n] != null:
 						if n == 0:
 							if txtTypeClic == "left":
@@ -16290,7 +16459,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 								txtTypeClic = ""
 				
 				#Sword4
-				if txtItemType[n] == "sword_4":
+				if txtItemType[n] == "sword_4" and gui_popUp == null:
 					if gui_sword4[n] != null:
 						if n == 0:
 							if txtTypeClic == "left":
@@ -16534,7 +16703,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 								txtTypeClic = ""
 				
 				#Sword5
-				if txtItemType[n] == "sword_5":
+				if txtItemType[n] == "sword_5" and gui_popUp == null:
 					if gui_sword5[n] != null:
 						if n == 0:
 							if txtTypeClic == "left":
@@ -16778,7 +16947,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 								txtTypeClic = ""
 				
 				#Sword6
-				if txtItemType[n] == "sword_6":
+				if txtItemType[n] == "sword_6" and gui_popUp == null:
 					if gui_sword6[n] != null:
 						if n == 0:
 							if txtTypeClic == "left":
@@ -17022,7 +17191,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 								txtTypeClic = ""
 				
 				#Sword7
-				if txtItemType[n] == "sword_7":
+				if txtItemType[n] == "sword_7" and gui_popUp == null:
 					if gui_sword7[n] != null:
 						if n == 0:
 							if txtTypeClic == "left":
@@ -17266,7 +17435,7 @@ func _input(event): #l'équivalent de keypressed dans love2D avec le fait qu'il 
 								txtTypeClic = ""
 				
 				#Sword8
-				if txtItemType[n] == "sword_8":
+				if txtItemType[n] == "sword_8" and gui_popUp == null:
 					if gui_sword8[n] != null:
 						if n == 0:
 							if txtTypeClic == "left":
