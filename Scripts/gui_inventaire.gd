@@ -4,6 +4,7 @@ extends CanvasLayer
 @onready var nodeHudHero = get_node("../gui_hudHero")
 @onready var nodeParent = get_node(".")
 @onready var childSlot = []
+
 #sword8
 var GuiPotionVie = preload("res://Objets/gui_potion_vie.tscn")
 var GuiPotionMana = preload("res://Objets/gui_potion_mana.tscn")
@@ -161,6 +162,8 @@ var nbCompteurSword5 = 0
 var nbCompteurSword6 = 0
 var nbCompteurSword7 = 0
 var nbCompteurSword8 = 0
+
+var nbItemPossesionStockage = 0
 
 var txtTypeClic = ""
 
@@ -1518,6 +1521,9 @@ func _process(delta: float) -> void:
 	#var sizeScreen = get_viewport().get_visible_rect().size
 	var mouse_pos = get_viewport().get_mouse_position()
 	#DataSave.hero.vie = 50
+	#print("is pop up est : ", txtItemSelect[0])
+	
+	
 	for i in range(20):
 		
 		if txtItemSelect[i] == "potion_vie": # faut que je verifie cette condition en large
@@ -1657,6 +1663,10 @@ func _process(delta: float) -> void:
 						txtItemType[i] = "vide"
 						DataSave.items_posession.potionVie -= 1
 						DataSave.items_stocker.potionVie += 1
+						
+						#CONTINUE POUR LES AUTRES
+						nbItemPossesionStockage += 1
+						
 						nbCompteurPotionVie -= 1
 						isSlot_libre[i] = true
 						gui_popUp.queue_free()
@@ -1760,29 +1770,71 @@ func _process(delta: float) -> void:
 					isPopUpOpenPotionMana = true
 					print("J'ouvre le pop up")
 			else:
-				pass
-				#print("Mana déja plein j'ouvre pas le pop up")
+				if isPopUpOpen == false and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
+					gui_popUp = GuiPopUp.instantiate()
+					add_child(gui_popUp)
+					gui_popUp.scale = Vector2(0.5, 0.5)
+					gui_popUp.offset.x = mouse_pos.x
+					gui_popUp.offset.y = mouse_pos.y
+					
+					gui_buttonOnStocker = GuiButtonOn.instantiate()
+					add_child(gui_buttonOnStocker)
+					gui_buttonOnStocker.scale = Vector2(0.5, 0.5)
+					gui_buttonOnStocker.offset.x = mouse_pos.x + 20
+					gui_buttonOnStocker.offset.y = mouse_pos.y + 75
+					
+					gui_buttonOnJeter = GuiButtonOn.instantiate()
+					add_child(gui_buttonOnJeter)
+					gui_buttonOnJeter.scale = Vector2(0.5, 0.5)
+					gui_buttonOnJeter.offset.x = mouse_pos.x + 20
+					gui_buttonOnJeter.offset.y = mouse_pos.y + 120
+					
+					txt_popup_2 = GuiTextUi.instantiate()
+					add_child(txt_popup_2)
+					
+					var childTxtPop2 = txt_popup_2.get_node("labelGuiTextFenetre")
+					childTxtPop2.text = "Stocker"
+					childTxtPop2.position.x = mouse_pos.x + 24
+					childTxtPop2.position.y = mouse_pos.y + 80
+					childTxtPop2.add_theme_font_size_override("font_size", 29)
+					childTxtPop2.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+					
+					
+					txt_popup_3 = GuiTextUi.instantiate()
+					add_child(txt_popup_3)
+					
+					var childTxtPop3 = txt_popup_3.get_node("labelGuiTextFenetre")
+					childTxtPop3.text = "Jeter"
+					childTxtPop3.position.x = mouse_pos.x + 37
+					childTxtPop3.position.y = mouse_pos.y + 125
+					childTxtPop3.add_theme_font_size_override("font_size", 29)
+					childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+					
+					isPopUpOpen = true
+					isPopUpOpenPotionMana = true
+					print("J'ouvre le pop up")
 			
 			if isPopUpOpen == true and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == true and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
-				if mouse_pos.x >= gui_buttonOnUse.offset.x and mouse_pos.x <= gui_buttonOnUse.offset.x + 90 and mouse_pos.y >= gui_buttonOnUse.offset.y and mouse_pos.y <= gui_buttonOnUse.offset.y + 35:
-					if Input.is_action_just_pressed("button_left"):
-						print("on clique sur le button use ")
-						DataSave.hero.mana = DataSave.hero.manaMax
-						gui_potion_mana[i].queue_free()
-						txtItemType[i] = "vide"
-						DataSave.items_posession.potionMana -= 1
-						nbCompteurPotionMana -= 1
-						isSlot_libre[i] = true
-						gui_popUp.queue_free()
-						gui_buttonOnUse.queue_free()
-						gui_buttonOnStocker.queue_free()
-						gui_buttonOnJeter.queue_free()
-						txt_popup_1.queue_free()
-						txt_popup_2.queue_free()
-						txt_popup_3.queue_free()
-						isPopUpOpen = false
-						isPopUpOpenPotionMana = false
-						txtItemSelect[i] = "none"
+				if gui_buttonOnUse != null:
+					if mouse_pos.x >= gui_buttonOnUse.offset.x and mouse_pos.x <= gui_buttonOnUse.offset.x + 90 and mouse_pos.y >= gui_buttonOnUse.offset.y and mouse_pos.y <= gui_buttonOnUse.offset.y + 35:
+						if Input.is_action_just_pressed("button_left"):
+							print("on clique sur le button use ")
+							DataSave.hero.mana = DataSave.hero.manaMax
+							gui_potion_mana[i].queue_free()
+							txtItemType[i] = "vide"
+							DataSave.items_posession.potionMana -= 1
+							nbCompteurPotionMana -= 1
+							isSlot_libre[i] = true
+							gui_popUp.queue_free()
+							gui_buttonOnUse.queue_free()
+							gui_buttonOnStocker.queue_free()
+							gui_buttonOnJeter.queue_free()
+							txt_popup_1.queue_free()
+							txt_popup_2.queue_free()
+							txt_popup_3.queue_free()
+							isPopUpOpen = false
+							isPopUpOpenPotionMana = false
+							txtItemSelect[i] = "none"
 						
 				
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
@@ -1795,10 +1847,12 @@ func _process(delta: float) -> void:
 						nbCompteurPotionMana -= 1
 						isSlot_libre[i] = true
 						gui_popUp.queue_free()
-						gui_buttonOnUse.queue_free()
+						if gui_buttonOnUse != null:
+							gui_buttonOnUse.queue_free()
 						gui_buttonOnStocker.queue_free()
 						gui_buttonOnJeter.queue_free()
-						txt_popup_1.queue_free()
+						if txt_popup_1 != null:
+							txt_popup_1.queue_free()
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
@@ -1814,10 +1868,12 @@ func _process(delta: float) -> void:
 						nbCompteurPotionMana -= 1
 						isSlot_libre[i] = true
 						gui_popUp.queue_free()
-						gui_buttonOnUse.queue_free()
+						if gui_buttonOnUse != null:
+							gui_buttonOnUse.queue_free()
 						gui_buttonOnStocker.queue_free()
 						gui_buttonOnJeter.queue_free()
-						txt_popup_1.queue_free()
+						if txt_popup_1 != null:
+							txt_popup_1.queue_free()
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
@@ -1890,30 +1946,74 @@ func _process(delta: float) -> void:
 					isPopUpOpenPotionElixir = true
 					print("J'ouvre le pop up")
 			else:
-				pass
-				#print("Vie déja plein j'ouvre pas le pop up")
+				if isPopUpOpen == false and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == false and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
+					gui_popUp = GuiPopUp.instantiate()
+					add_child(gui_popUp)
+					gui_popUp.scale = Vector2(0.5, 0.5)
+					gui_popUp.offset.x = mouse_pos.x
+					gui_popUp.offset.y = mouse_pos.y
+					
+					gui_buttonOnStocker = GuiButtonOn.instantiate()
+					add_child(gui_buttonOnStocker)
+					gui_buttonOnStocker.scale = Vector2(0.5, 0.5)
+					gui_buttonOnStocker.offset.x = mouse_pos.x + 20
+					gui_buttonOnStocker.offset.y = mouse_pos.y + 75
+					
+					gui_buttonOnJeter = GuiButtonOn.instantiate()
+					add_child(gui_buttonOnJeter)
+					gui_buttonOnJeter.scale = Vector2(0.5, 0.5)
+					gui_buttonOnJeter.offset.x = mouse_pos.x + 20
+					gui_buttonOnJeter.offset.y = mouse_pos.y + 120
+					
+					txt_popup_2 = GuiTextUi.instantiate()
+					add_child(txt_popup_2)
+					
+					var childTxtPop2 = txt_popup_2.get_node("labelGuiTextFenetre")
+					childTxtPop2.text = "Stocker"
+					childTxtPop2.position.x = mouse_pos.x + 24
+					childTxtPop2.position.y = mouse_pos.y + 80
+					childTxtPop2.add_theme_font_size_override("font_size", 29)
+					childTxtPop2.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+					
+					
+					txt_popup_3 = GuiTextUi.instantiate()
+					add_child(txt_popup_3)
+					
+					var childTxtPop3 = txt_popup_3.get_node("labelGuiTextFenetre")
+					childTxtPop3.text = "Jeter"
+					childTxtPop3.position.x = mouse_pos.x + 37
+					childTxtPop3.position.y = mouse_pos.y + 125
+					childTxtPop3.add_theme_font_size_override("font_size", 29)
+					childTxtPop3.add_theme_color_override("font_color", Color(0, 0, 0, 1) )
+					
+					isPopUpOpen = true
+					isPopUpOpenPotionElixir = true
+					print("J'ouvre le pop up")
+					
+					
 			
 			if isPopUpOpen == true and isPopUpOpenPotionVie == false and isPopUpOpenPotionMana == false and isPopUpOpenPotionElixir == true and isPopUpOpenBague1 == false and isPopUpOpenBague2 == false and isPopUpOpenBague3 == false and isPopUpOpenBottes1 == false and isPopUpOpenBottes2 == false and isPopUpOpenBottes3 == false and isPopUpOpenBottes4 == false and isPopUpOpenBottes5 == false and isPopUpOpenBottes6 == false and isPopUpOpenBouclier1 == false and isPopUpOpenBouclier2 == false and isPopUpOpenBouclier3 == false and isPopUpOpenBouclier4 == false and isPopUpOpenBouclier5 == false and isPopUpOpenBouclier6 == false and isPopUpOpenBouclier7 == false and isPopUpOpenCasque1 == false and isPopUpOpenCasque2 == false and isPopUpOpenCasque3 == false and isPopUpOpenCasque4 == false and isPopUpOpenCasque5 == false and isPopUpOpenCasque6 == false and isPopUpOpenCollier1 == false and isPopUpOpenCollier2 == false and isPopUpOpenCollier3 == false and isPopUpOpenHeaume1 == false and isPopUpOpenHeaume2 == false and isPopUpOpenHeaume3 == false and isPopUpOpenHeaume4 == false and isPopUpOpenHeaume5 == false and isPopUpOpenHeaume6 == false and isPopUpOpenSword1 == false and isPopUpOpenSword2 == false and isPopUpOpenSword3 == false and isPopUpOpenSword4 == false and isPopUpOpenSword5 == false and isPopUpOpenSword6 == false and isPopUpOpenSword7 == false and isPopUpOpenSword8 == false :
-				if mouse_pos.x >= gui_buttonOnUse.offset.x and mouse_pos.x <= gui_buttonOnUse.offset.x + 90 and mouse_pos.y >= gui_buttonOnUse.offset.y and mouse_pos.y <= gui_buttonOnUse.offset.y + 35:
-					if Input.is_action_just_pressed("button_left"):
-						print("on clique sur le button use ")
-						DataSave.hero.vie = DataSave.hero.vieMax
-						DataSave.hero.mana = DataSave.hero.manaMax
-						gui_potion_elixir[i].queue_free()
-						txtItemType[i] = "vide"
-						DataSave.items_posession.potionElixir -= 1
-						nbCompteurPotionElixir -= 1
-						isSlot_libre[i] = true
-						gui_popUp.queue_free()
-						gui_buttonOnUse.queue_free()
-						gui_buttonOnStocker.queue_free()
-						gui_buttonOnJeter.queue_free()
-						txt_popup_1.queue_free()
-						txt_popup_2.queue_free()
-						txt_popup_3.queue_free()
-						isPopUpOpen = false
-						isPopUpOpenPotionElixir = false
-						txtItemSelect[i] = "none"
+				if gui_buttonOnUse != null:
+					if mouse_pos.x >= gui_buttonOnUse.offset.x and mouse_pos.x <= gui_buttonOnUse.offset.x + 90 and mouse_pos.y >= gui_buttonOnUse.offset.y and mouse_pos.y <= gui_buttonOnUse.offset.y + 35:
+						if Input.is_action_just_pressed("button_left"):
+							print("on clique sur le button use ")
+							DataSave.hero.vie = DataSave.hero.vieMax
+							DataSave.hero.mana = DataSave.hero.manaMax
+							gui_potion_elixir[i].queue_free()
+							txtItemType[i] = "vide"
+							DataSave.items_posession.potionElixir -= 1
+							nbCompteurPotionElixir -= 1
+							isSlot_libre[i] = true
+							gui_popUp.queue_free()
+							gui_buttonOnUse.queue_free()
+							gui_buttonOnStocker.queue_free()
+							gui_buttonOnJeter.queue_free()
+							txt_popup_1.queue_free()
+							txt_popup_2.queue_free()
+							txt_popup_3.queue_free()
+							isPopUpOpen = false
+							isPopUpOpenPotionElixir = false
+							txtItemSelect[i] = "none"
 						
 				
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
@@ -1926,10 +2026,12 @@ func _process(delta: float) -> void:
 						nbCompteurPotionElixir -= 1
 						isSlot_libre[i] = true
 						gui_popUp.queue_free()
-						gui_buttonOnUse.queue_free()
+						if gui_buttonOnUse != null:
+							gui_buttonOnUse.queue_free()
 						gui_buttonOnStocker.queue_free()
 						gui_buttonOnJeter.queue_free()
-						txt_popup_1.queue_free()
+						if txt_popup_1 != null:
+							txt_popup_1.queue_free()
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
@@ -1945,10 +2047,12 @@ func _process(delta: float) -> void:
 						nbCompteurPotionElixir -= 1
 						isSlot_libre[i] = true
 						gui_popUp.queue_free()
-						gui_buttonOnUse.queue_free()
+						if gui_buttonOnUse != null:
+							gui_buttonOnUse.queue_free()
 						gui_buttonOnStocker.queue_free()
 						gui_buttonOnJeter.queue_free()
-						txt_popup_1.queue_free()
+						if txt_popup_1 != null:
+							txt_popup_1.queue_free()
 						txt_popup_2.queue_free()
 						txt_popup_3.queue_free()
 						isPopUpOpen = false
@@ -7396,6 +7500,67 @@ func _process(delta: float) -> void:
 				isSlot_libre[n] = false
 				txtItemType[n] = "sword_8"
 	
+	if gui_popUp != null:
+		if Input.is_action_just_pressed("button_left"):
+			if !(mouse_pos.x >= gui_popUp.offset.x and mouse_pos.x <= gui_popUp.offset.x + 258/2 and mouse_pos.y >= gui_popUp.offset.y and mouse_pos.y <= gui_popUp.offset.y + 360/2):
+				isPopUpOpen = false
+				isPopUpOpenPotionVie = false
+				isPopUpOpenPotionMana = false
+				isPopUpOpenPotionElixir = false
+				isPopUpOpenBague1 = false
+				isPopUpOpenBague2 = false
+				isPopUpOpenBague3 = false
+				isPopUpOpenBottes1 = false
+				isPopUpOpenBottes2 = false
+				isPopUpOpenBottes3 = false
+				isPopUpOpenBottes4 = false
+				isPopUpOpenBottes5 = false
+				isPopUpOpenBottes6 = false
+				isPopUpOpenBouclier1 = false
+				isPopUpOpenBouclier2 = false
+				isPopUpOpenBouclier3 = false
+				isPopUpOpenBouclier4 = false
+				isPopUpOpenBouclier5 = false
+				isPopUpOpenBouclier6 = false
+				isPopUpOpenBouclier7 = false
+				isPopUpOpenCasque1 = false
+				isPopUpOpenCasque2 = false
+				isPopUpOpenCasque3 = false
+				isPopUpOpenCasque4 = false
+				isPopUpOpenCasque5 = false
+				isPopUpOpenCasque6 = false
+				isPopUpOpenCollier1 = false
+				isPopUpOpenCollier2 = false
+				isPopUpOpenCollier3 = false
+				isPopUpOpenHeaume1 = false
+				isPopUpOpenHeaume2 = false
+				isPopUpOpenHeaume3 = false
+				isPopUpOpenHeaume4 = false
+				isPopUpOpenHeaume5 = false
+				isPopUpOpenHeaume6 = false
+				isPopUpOpenSword1 = false
+				isPopUpOpenSword2 = false
+				isPopUpOpenSword3 = false
+				isPopUpOpenSword4 = false
+				isPopUpOpenSword5 = false
+				isPopUpOpenSword6 = false
+				isPopUpOpenSword7 = false
+				isPopUpOpenSword8 = false
+				gui_popUp.queue_free()
+				if gui_buttonOnUse != null:
+					gui_buttonOnUse.queue_free()
+				if gui_buttonOnEquiper != null:
+					gui_buttonOnEquiper.queue_free()
+				gui_buttonOnStocker.queue_free()
+				gui_buttonOnJeter.queue_free()
+				if txt_popup_1 != null:
+					txt_popup_1.queue_free()
+					#print("test de si le txt 1 est bien supprimé")
+				txt_popup_2.queue_free()
+				txt_popup_3.queue_free()
+				for i in range(20):
+					txtItemSelect[i] = "none"
+				print("Je clique en dehors de la zone : ", isPopUpOpen)
 
 
 func _on_panel_retour_gui_input(event: InputEvent) -> void:

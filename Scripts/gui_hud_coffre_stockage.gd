@@ -139,6 +139,7 @@ var isPanelClose = true
 
 var nbPlaceDispo = 10 #nv1 : 10, nv2 : 15, nv3 : 20
 
+
 var isSlotLibre = []
 var txtItemType = []
 
@@ -224,6 +225,8 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	var mouse_pos = get_viewport().get_mouse_position()
+	
+	#print("stockage actuel : ", nbItemsStocker)
 	
 	for n in range(nbPlaceDispo):
 		if isSlotLibre[n] == true:
@@ -516,6 +519,7 @@ func _process(delta: float) -> void:
 				nbCompteurHeaume1 += 1
 				isSlotLibre[n] = false
 				txtItemType[n] = "heaume_1"
+				
 			
 			if DataSave.items_stocker.heaume2 != nbCompteurHeaume2 and txtItemType[n] == "vide":
 				gui_heaume2[n] = GuiHeaume2.instantiate()
@@ -526,6 +530,7 @@ func _process(delta: float) -> void:
 				nbCompteurHeaume2 += 1
 				isSlotLibre[n] = false
 				txtItemType[n] = "heaume_2"
+				
 			
 			if DataSave.items_stocker.heaume3 != nbCompteurHeaume3 and txtItemType[n] == "vide":
 				gui_heaume3[n] = GuiHeaume3.instantiate()
@@ -536,6 +541,7 @@ func _process(delta: float) -> void:
 				nbCompteurHeaume3 += 1
 				isSlotLibre[n] = false
 				txtItemType[n] = "heaume_3"
+				
 			
 			if DataSave.items_stocker.heaume4 != nbCompteurHeaume4 and txtItemType[n] == "vide":
 				gui_heaume4[n] = GuiHeaume4.instantiate()
@@ -546,6 +552,7 @@ func _process(delta: float) -> void:
 				nbCompteurHeaume4 += 1
 				isSlotLibre[n] = false
 				txtItemType[n] = "heaume_4"
+				
 			
 			if DataSave.items_stocker.heaume5 != nbCompteurHeaume5 and txtItemType[n] == "vide":
 				gui_heaume5[n] = GuiHeaume5.instantiate()
@@ -556,6 +563,7 @@ func _process(delta: float) -> void:
 				nbCompteurHeaume5 += 1
 				isSlotLibre[n] = false
 				txtItemType[n] = "heaume_5"
+				
 			
 			if DataSave.items_stocker.heaume6 != nbCompteurHeaume6 and txtItemType[n] == "vide":
 				gui_heaume6[n] = GuiHeaume6.instantiate()
@@ -566,6 +574,7 @@ func _process(delta: float) -> void:
 				nbCompteurHeaume6 += 1
 				isSlotLibre[n] = false
 				txtItemType[n] = "heaume_6"
+				
 			
 			if DataSave.items_stocker.sword1 != nbCompteurSword1 and txtItemType[n] == "vide":
 				gui_sword1[n] = GuiSword1.instantiate()
@@ -576,6 +585,7 @@ func _process(delta: float) -> void:
 				nbCompteurSword1 += 1
 				isSlotLibre[n] = false
 				txtItemType[n] = "sword_1"
+				
 			
 			if DataSave.items_stocker.sword2 != nbCompteurSword2 and txtItemType[n] == "vide":
 				gui_sword2[n] = GuiSword2.instantiate()
@@ -586,6 +596,7 @@ func _process(delta: float) -> void:
 				nbCompteurSword2 += 1
 				isSlotLibre[n] = false
 				txtItemType[n] = "sword_2"
+				
 			
 			if DataSave.items_stocker.sword3 != nbCompteurSword3 and txtItemType[n] == "vide":
 				gui_sword3[n] = GuiSword3.instantiate()
@@ -596,6 +607,7 @@ func _process(delta: float) -> void:
 				nbCompteurSword3 += 1
 				isSlotLibre[n] = false
 				txtItemType[n] = "sword_3"
+				
 			
 			if DataSave.items_stocker.sword4 != nbCompteurSword4 and txtItemType[n] == "vide":
 				gui_sword4[n] = GuiSword4.instantiate()
@@ -606,6 +618,7 @@ func _process(delta: float) -> void:
 				nbCompteurSword4 += 1
 				isSlotLibre[n] = false
 				txtItemType[n] = "sword_4"
+				
 			
 			if DataSave.items_stocker.sword5 != nbCompteurSword5 and txtItemType[n] == "vide":
 				gui_sword5[n] = GuiSword5.instantiate()
@@ -616,6 +629,7 @@ func _process(delta: float) -> void:
 				nbCompteurSword5 += 1
 				isSlotLibre[n] = false
 				txtItemType[n] = "sword_5"
+				
 			
 			if DataSave.items_stocker.sword6 != nbCompteurSword6 and txtItemType[n] == "vide":
 				gui_sword6[n] = GuiSword6.instantiate()
@@ -626,6 +640,7 @@ func _process(delta: float) -> void:
 				nbCompteurSword6 += 1
 				isSlotLibre[n] = false
 				txtItemType[n] = "sword_6"
+				
 			
 			if DataSave.items_stocker.sword7 != nbCompteurSword7 and txtItemType[n] == "vide":
 				gui_sword7[n] = GuiSword7.instantiate()
@@ -636,6 +651,7 @@ func _process(delta: float) -> void:
 				nbCompteurSword7 += 1
 				isSlotLibre[n] = false
 				txtItemType[n] = "sword_7"
+				
 			
 			if DataSave.items_stocker.sword8 != nbCompteurSword8 and txtItemType[n] == "vide":
 				gui_sword8[n] = GuiSword8.instantiate()
@@ -646,6 +662,7 @@ func _process(delta: float) -> void:
 				nbCompteurSword8 += 1
 				isSlotLibre[n] = false
 				txtItemType[n] = "sword_8"
+				
 
 
 func _on_panel_retour_gui_input(event: InputEvent) -> void:
