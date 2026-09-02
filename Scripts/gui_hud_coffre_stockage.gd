@@ -226,6 +226,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	var mouse_pos = get_viewport().get_mouse_position()
 	
+	nbPlaceDispo = DataSave.nbStockageMax
+	
 	#print("stockage actuel : ", nbItemsStocker)
 	
 	for n in range(nbPlaceDispo):
@@ -233,7 +235,7 @@ func _process(delta: float) -> void:
 			if DataSave.items_stocker.potionVie != nbCompteurPotionVie and txtItemType[n] == "vide":
 				gui_potion_vie[n] = GuiPotionVie.instantiate()
 				add_child(gui_potion_vie[n])
-				gui_potion_vie[n].scale = Vector2(0.7, 0.8)
+				gui_potion_vie[n].scale = Vector2(0.85, 0.95)
 				gui_potion_vie[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_potion_vie[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
 				nbCompteurPotionVie += 1
@@ -243,7 +245,7 @@ func _process(delta: float) -> void:
 			if DataSave.items_stocker.potionMana != nbCompteurPotionMana and txtItemType[n] == "vide":
 				gui_potion_mana[n] = GuiPotionMana.instantiate()
 				add_child(gui_potion_mana[n])
-				gui_potion_mana[n].scale = Vector2(0.7, 0.8)
+				gui_potion_mana[n].scale = Vector2(0.85, 0.95)
 				gui_potion_mana[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_potion_mana[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
 				nbCompteurPotionMana += 1
@@ -253,7 +255,7 @@ func _process(delta: float) -> void:
 			if DataSave.items_stocker.potionElixir != nbCompteurPotionElixir and txtItemType[n] == "vide":
 				gui_potion_elixir[n] = GuiPotionElixir.instantiate()
 				add_child(gui_potion_elixir[n])
-				gui_potion_elixir[n].scale = Vector2(0.7, 0.8)
+				gui_potion_elixir[n].scale = Vector2(0.85, 0.95)
 				gui_potion_elixir[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_potion_elixir[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
 				nbCompteurPotionElixir += 1
@@ -263,7 +265,7 @@ func _process(delta: float) -> void:
 			if DataSave.items_stocker.bague1 != nbCompteurBague1 and txtItemType[n] == "vide":
 				gui_bague1[n] = GuiBague1.instantiate()
 				add_child(gui_bague1[n])
-				gui_bague1[n].scale = Vector2(0.7, 0.8)
+				gui_bague1[n].scale = Vector2(0.85, 0.95)
 				gui_bague1[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_bague1[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
 				nbCompteurBague1 += 1
@@ -273,7 +275,7 @@ func _process(delta: float) -> void:
 			if DataSave.items_stocker.bague2 != nbCompteurBague2 and txtItemType[n] == "vide":
 				gui_bague2[n] = GuiBague2.instantiate()
 				add_child(gui_bague2[n])
-				gui_bague2[n].scale = Vector2(0.7, 0.8)
+				gui_bague2[n].scale = Vector2(0.85, 0.95)
 				gui_bague2[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_bague2[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
 				nbCompteurBague2 += 1
@@ -283,7 +285,7 @@ func _process(delta: float) -> void:
 			if DataSave.items_stocker.bague3 != nbCompteurBague3 and txtItemType[n] == "vide":
 				gui_bague3[n] = GuiBague3.instantiate()
 				add_child(gui_bague3[n])
-				gui_bague3[n].scale = Vector2(0.7, 0.8)
+				gui_bague3[n].scale = Vector2(0.85, 0.95)
 				gui_bague3[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_bague3[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
 				nbCompteurBague3 += 1
@@ -293,7 +295,7 @@ func _process(delta: float) -> void:
 			if DataSave.items_stocker.bottes1 != nbCompteurBottes1 and txtItemType[n] == "vide":
 				gui_bottes1[n] = GuiBottes1.instantiate()
 				add_child(gui_bottes1[n])
-				gui_bottes1[n].scale = Vector2(0.7, 0.8)
+				gui_bottes1[n].scale = Vector2(0.85, 0.95)
 				gui_bottes1[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_bottes1[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
 				nbCompteurBottes1 += 1
@@ -303,7 +305,7 @@ func _process(delta: float) -> void:
 			if DataSave.items_stocker.bottes2 != nbCompteurBottes2 and txtItemType[n] == "vide":
 				gui_bottes2[n] = GuiBottes2.instantiate()
 				add_child(gui_bottes2[n])
-				gui_bottes2[n].scale = Vector2(0.7, 0.8)
+				gui_bottes2[n].scale = Vector2(0.85, 0.95)
 				gui_bottes2[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_bottes2[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
 				nbCompteurBottes2 += 1
@@ -313,7 +315,7 @@ func _process(delta: float) -> void:
 			if DataSave.items_stocker.bottes3 != nbCompteurBottes3 and txtItemType[n] == "vide":
 				gui_bottes3[n] = GuiBottes3.instantiate()
 				add_child(gui_bottes3[n])
-				gui_bottes3[n].scale = Vector2(0.7, 0.8)
+				gui_bottes3[n].scale = Vector2(0.85, 0.95)
 				gui_bottes3[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_bottes3[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
 				nbCompteurBottes3 += 1
@@ -323,7 +325,7 @@ func _process(delta: float) -> void:
 			if DataSave.items_stocker.bottes4 != nbCompteurBottes4 and txtItemType[n] == "vide":
 				gui_bottes4[n] = GuiBottes4.instantiate()
 				add_child(gui_bottes4[n])
-				gui_bottes4[n].scale = Vector2(0.7, 0.8)
+				gui_bottes4[n].scale = Vector2(0.85, 0.95)
 				gui_bottes4[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_bottes4[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
 				nbCompteurBottes4 += 1
@@ -333,7 +335,7 @@ func _process(delta: float) -> void:
 			if DataSave.items_stocker.bottes5 != nbCompteurBottes5 and txtItemType[n] == "vide":
 				gui_bottes5[n] = GuiBottes5.instantiate()
 				add_child(gui_bottes5[n])
-				gui_bottes5[n].scale = Vector2(0.7, 0.8)
+				gui_bottes5[n].scale = Vector2(0.85, 0.95)
 				gui_bottes5[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_bottes5[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
 				nbCompteurBottes5 += 1
@@ -343,7 +345,7 @@ func _process(delta: float) -> void:
 			if DataSave.items_stocker.bottes6 != nbCompteurBottes6 and txtItemType[n] == "vide":
 				gui_bottes6[n] = GuiBottes6.instantiate()
 				add_child(gui_bottes6[n])
-				gui_bottes6[n].scale = Vector2(0.7, 0.8)
+				gui_bottes6[n].scale = Vector2(0.85, 0.95)
 				gui_bottes6[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_bottes6[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
 				nbCompteurBottes6 += 1
@@ -353,7 +355,7 @@ func _process(delta: float) -> void:
 			if DataSave.items_stocker.bouclier1 != nbCompteurBouclier1 and txtItemType[n] == "vide":
 				gui_bouclier1[n] = GuiBouclier1.instantiate()
 				add_child(gui_bouclier1[n])
-				gui_bouclier1[n].scale = Vector2(0.7, 0.8)
+				gui_bouclier1[n].scale = Vector2(0.85, 0.95)
 				gui_bouclier1[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_bouclier1[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
 				nbCompteurBouclier1 += 1
@@ -363,7 +365,7 @@ func _process(delta: float) -> void:
 			if DataSave.items_stocker.bouclier2 != nbCompteurBouclier2 and txtItemType[n] == "vide":
 				gui_bouclier2[n] = GuiBouclier2.instantiate()
 				add_child(gui_bouclier2[n])
-				gui_bouclier2[n].scale = Vector2(0.7, 0.8)
+				gui_bouclier2[n].scale = Vector2(0.85, 0.95)
 				gui_bouclier2[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_bouclier2[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
 				nbCompteurBouclier2 += 1
@@ -373,7 +375,7 @@ func _process(delta: float) -> void:
 			if DataSave.items_stocker.bouclier3 != nbCompteurBouclier3 and txtItemType[n] == "vide":
 				gui_bouclier3[n] = GuiBouclier3.instantiate()
 				add_child(gui_bouclier3[n])
-				gui_bouclier3[n].scale = Vector2(0.7, 0.8)
+				gui_bouclier3[n].scale = Vector2(0.85, 0.95)
 				gui_bouclier3[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_bouclier3[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
 				nbCompteurBouclier3 += 1
@@ -383,7 +385,7 @@ func _process(delta: float) -> void:
 			if DataSave.items_stocker.bouclier4 != nbCompteurBouclier4 and txtItemType[n] == "vide":
 				gui_bouclier4[n] = GuiBouclier4.instantiate()
 				add_child(gui_bouclier4[n])
-				gui_bouclier4[n].scale = Vector2(0.7, 0.8)
+				gui_bouclier4[n].scale = Vector2(0.85, 0.95)
 				gui_bouclier4[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_bouclier4[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
 				nbCompteurBouclier4 += 1
@@ -393,7 +395,7 @@ func _process(delta: float) -> void:
 			if DataSave.items_stocker.bouclier5 != nbCompteurBouclier5 and txtItemType[n] == "vide":
 				gui_bouclier5[n] = GuiBouclier5.instantiate()
 				add_child(gui_bouclier5[n])
-				gui_bouclier5[n].scale = Vector2(0.7, 0.8)
+				gui_bouclier5[n].scale = Vector2(0.85, 0.95)
 				gui_bouclier5[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_bouclier5[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
 				nbCompteurBouclier5 += 1
@@ -403,7 +405,7 @@ func _process(delta: float) -> void:
 			if DataSave.items_stocker.bouclier6 != nbCompteurBouclier6 and txtItemType[n] == "vide":
 				gui_bouclier6[n] = GuiBouclier6.instantiate()
 				add_child(gui_bouclier6[n])
-				gui_bouclier6[n].scale = Vector2(0.7, 0.8)
+				gui_bouclier6[n].scale = Vector2(0.85, 0.95)
 				gui_bouclier6[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_bouclier6[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
 				nbCompteurBouclier6 += 1
@@ -413,7 +415,7 @@ func _process(delta: float) -> void:
 			if DataSave.items_stocker.bouclier7 != nbCompteurBouclier7 and txtItemType[n] == "vide":
 				gui_bouclier7[n] = GuiBouclier7.instantiate()
 				add_child(gui_bouclier7[n])
-				gui_bouclier7[n].scale = Vector2(0.7, 0.8)
+				gui_bouclier7[n].scale = Vector2(0.85, 0.95)
 				gui_bouclier7[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_bouclier7[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
 				nbCompteurBouclier7 += 1
@@ -423,7 +425,7 @@ func _process(delta: float) -> void:
 			if DataSave.items_stocker.casque1 != nbCompteurCasque1 and txtItemType[n] == "vide":
 				gui_casque1[n] = GuiCasque1.instantiate()
 				add_child(gui_casque1[n])
-				gui_casque1[n].scale = Vector2(0.7, 0.8)
+				gui_casque1[n].scale = Vector2(0.85, 0.95)
 				gui_casque1[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_casque1[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
 				nbCompteurCasque1 += 1
@@ -433,7 +435,7 @@ func _process(delta: float) -> void:
 			if DataSave.items_stocker.casque2 != nbCompteurCasque2 and txtItemType[n] == "vide":
 				gui_casque2[n] = GuiCasque2.instantiate()
 				add_child(gui_casque2[n])
-				gui_casque2[n].scale = Vector2(0.7, 0.8)
+				gui_casque2[n].scale = Vector2(0.85, 0.95)
 				gui_casque2[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_casque2[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
 				nbCompteurCasque2 += 1
@@ -443,7 +445,7 @@ func _process(delta: float) -> void:
 			if DataSave.items_stocker.casque3 != nbCompteurCasque3 and txtItemType[n] == "vide":
 				gui_casque3[n] = GuiCasque3.instantiate()
 				add_child(gui_casque3[n])
-				gui_casque3[n].scale = Vector2(0.7, 0.8)
+				gui_casque3[n].scale = Vector2(0.85, 0.95)
 				gui_casque3[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_casque3[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
 				nbCompteurCasque3 += 1
@@ -453,7 +455,7 @@ func _process(delta: float) -> void:
 			if DataSave.items_stocker.casque4 != nbCompteurCasque4 and txtItemType[n] == "vide":
 				gui_casque4[n] = GuiCasque4.instantiate()
 				add_child(gui_casque4[n])
-				gui_casque4[n].scale = Vector2(0.7, 0.8)
+				gui_casque4[n].scale = Vector2(0.85, 0.95)
 				gui_casque4[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_casque4[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
 				nbCompteurCasque4 += 1
@@ -463,7 +465,7 @@ func _process(delta: float) -> void:
 			if DataSave.items_stocker.casque5 != nbCompteurCasque5 and txtItemType[n] == "vide":
 				gui_casque5[n] = GuiCasque5.instantiate()
 				add_child(gui_casque5[n])
-				gui_casque5[n].scale = Vector2(0.7, 0.8)
+				gui_casque5[n].scale = Vector2(0.85, 0.95)
 				gui_casque5[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_casque5[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
 				nbCompteurCasque5 += 1
@@ -473,7 +475,7 @@ func _process(delta: float) -> void:
 			if DataSave.items_stocker.casque6 != nbCompteurCasque6 and txtItemType[n] == "vide":
 				gui_casque6[n] = GuiCasque6.instantiate()
 				add_child(gui_casque6[n])
-				gui_casque6[n].scale = Vector2(0.7, 0.8)
+				gui_casque6[n].scale = Vector2(0.85, 0.95)
 				gui_casque6[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_casque6[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
 				nbCompteurCasque6 += 1
@@ -483,7 +485,7 @@ func _process(delta: float) -> void:
 			if DataSave.items_stocker.collier1 != nbCompteurCollier1 and txtItemType[n] == "vide":
 				gui_collier1[n] = GuiCollier1.instantiate()
 				add_child(gui_collier1[n])
-				gui_collier1[n].scale = Vector2(0.7, 0.8)
+				gui_collier1[n].scale = Vector2(0.85, 0.95)
 				gui_collier1[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_collier1[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
 				nbCompteurCollier1 += 1
@@ -493,7 +495,7 @@ func _process(delta: float) -> void:
 			if DataSave.items_stocker.collier2 != nbCompteurCollier2 and txtItemType[n] == "vide":
 				gui_collier2[n] = GuiCollier2.instantiate()
 				add_child(gui_collier2[n])
-				gui_collier2[n].scale = Vector2(0.7, 0.8)
+				gui_collier2[n].scale = Vector2(0.85, 0.95)
 				gui_collier2[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_collier2[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
 				nbCompteurCollier2 += 1
@@ -503,7 +505,7 @@ func _process(delta: float) -> void:
 			if DataSave.items_stocker.collier3 != nbCompteurCollier3 and txtItemType[n] == "vide":
 				gui_collier3[n] = GuiCollier3.instantiate()
 				add_child(gui_collier3[n])
-				gui_collier3[n].scale = Vector2(0.7, 0.8)
+				gui_collier3[n].scale = Vector2(0.85, 0.95)
 				gui_collier3[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_collier3[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
 				nbCompteurCollier3 += 1
@@ -513,7 +515,7 @@ func _process(delta: float) -> void:
 			if DataSave.items_stocker.heaume1 != nbCompteurHeaume1 and txtItemType[n] == "vide":
 				gui_heaume1[n] = GuiHeaume1.instantiate()
 				add_child(gui_heaume1[n])
-				gui_heaume1[n].scale = Vector2(0.7, 0.8)
+				gui_heaume1[n].scale = Vector2(0.85, 0.95)
 				gui_heaume1[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_heaume1[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
 				nbCompteurHeaume1 += 1
@@ -524,7 +526,7 @@ func _process(delta: float) -> void:
 			if DataSave.items_stocker.heaume2 != nbCompteurHeaume2 and txtItemType[n] == "vide":
 				gui_heaume2[n] = GuiHeaume2.instantiate()
 				add_child(gui_heaume2[n])
-				gui_heaume2[n].scale = Vector2(0.7, 0.8)
+				gui_heaume2[n].scale = Vector2(0.85, 0.95)
 				gui_heaume2[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_heaume2[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
 				nbCompteurHeaume2 += 1
@@ -535,7 +537,7 @@ func _process(delta: float) -> void:
 			if DataSave.items_stocker.heaume3 != nbCompteurHeaume3 and txtItemType[n] == "vide":
 				gui_heaume3[n] = GuiHeaume3.instantiate()
 				add_child(gui_heaume3[n])
-				gui_heaume3[n].scale = Vector2(0.7, 0.8)
+				gui_heaume3[n].scale = Vector2(0.85, 0.95)
 				gui_heaume3[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_heaume3[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
 				nbCompteurHeaume3 += 1
@@ -546,7 +548,7 @@ func _process(delta: float) -> void:
 			if DataSave.items_stocker.heaume4 != nbCompteurHeaume4 and txtItemType[n] == "vide":
 				gui_heaume4[n] = GuiHeaume4.instantiate()
 				add_child(gui_heaume4[n])
-				gui_heaume4[n].scale = Vector2(0.7, 0.8)
+				gui_heaume4[n].scale = Vector2(0.85, 0.95)
 				gui_heaume4[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_heaume4[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
 				nbCompteurHeaume4 += 1
@@ -557,7 +559,7 @@ func _process(delta: float) -> void:
 			if DataSave.items_stocker.heaume5 != nbCompteurHeaume5 and txtItemType[n] == "vide":
 				gui_heaume5[n] = GuiHeaume5.instantiate()
 				add_child(gui_heaume5[n])
-				gui_heaume5[n].scale = Vector2(0.7, 0.8)
+				gui_heaume5[n].scale = Vector2(0.85, 0.95)
 				gui_heaume5[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_heaume5[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
 				nbCompteurHeaume5 += 1
@@ -568,7 +570,7 @@ func _process(delta: float) -> void:
 			if DataSave.items_stocker.heaume6 != nbCompteurHeaume6 and txtItemType[n] == "vide":
 				gui_heaume6[n] = GuiHeaume6.instantiate()
 				add_child(gui_heaume6[n])
-				gui_heaume6[n].scale = Vector2(0.7, 0.8)
+				gui_heaume6[n].scale = Vector2(0.85, 0.95)
 				gui_heaume6[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_heaume6[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
 				nbCompteurHeaume6 += 1
@@ -579,7 +581,7 @@ func _process(delta: float) -> void:
 			if DataSave.items_stocker.sword1 != nbCompteurSword1 and txtItemType[n] == "vide":
 				gui_sword1[n] = GuiSword1.instantiate()
 				add_child(gui_sword1[n])
-				gui_sword1[n].scale = Vector2(0.7, 0.8)
+				gui_sword1[n].scale = Vector2(0.85, 0.95)
 				gui_sword1[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_sword1[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
 				nbCompteurSword1 += 1
@@ -590,7 +592,7 @@ func _process(delta: float) -> void:
 			if DataSave.items_stocker.sword2 != nbCompteurSword2 and txtItemType[n] == "vide":
 				gui_sword2[n] = GuiSword2.instantiate()
 				add_child(gui_sword2[n])
-				gui_sword2[n].scale = Vector2(0.7, 0.8)
+				gui_sword2[n].scale = Vector2(0.85, 0.95)
 				gui_sword2[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_sword2[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
 				nbCompteurSword2 += 1
@@ -601,7 +603,7 @@ func _process(delta: float) -> void:
 			if DataSave.items_stocker.sword3 != nbCompteurSword3 and txtItemType[n] == "vide":
 				gui_sword3[n] = GuiSword3.instantiate()
 				add_child(gui_sword3[n])
-				gui_sword3[n].scale = Vector2(0.7, 0.8)
+				gui_sword3[n].scale = Vector2(0.85, 0.95)
 				gui_sword3[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_sword3[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
 				nbCompteurSword3 += 1
@@ -612,7 +614,7 @@ func _process(delta: float) -> void:
 			if DataSave.items_stocker.sword4 != nbCompteurSword4 and txtItemType[n] == "vide":
 				gui_sword4[n] = GuiSword4.instantiate()
 				add_child(gui_sword4[n])
-				gui_sword4[n].scale = Vector2(0.7, 0.8)
+				gui_sword4[n].scale = Vector2(0.85, 0.95)
 				gui_sword4[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_sword4[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
 				nbCompteurSword4 += 1
@@ -623,7 +625,7 @@ func _process(delta: float) -> void:
 			if DataSave.items_stocker.sword5 != nbCompteurSword5 and txtItemType[n] == "vide":
 				gui_sword5[n] = GuiSword5.instantiate()
 				add_child(gui_sword5[n])
-				gui_sword5[n].scale = Vector2(0.7, 0.8)
+				gui_sword5[n].scale = Vector2(0.85, 0.95)
 				gui_sword5[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_sword5[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
 				nbCompteurSword5 += 1
@@ -634,7 +636,7 @@ func _process(delta: float) -> void:
 			if DataSave.items_stocker.sword6 != nbCompteurSword6 and txtItemType[n] == "vide":
 				gui_sword6[n] = GuiSword6.instantiate()
 				add_child(gui_sword6[n])
-				gui_sword6[n].scale = Vector2(0.7, 0.8)
+				gui_sword6[n].scale = Vector2(0.85, 0.95)
 				gui_sword6[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_sword6[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
 				nbCompteurSword6 += 1
@@ -645,7 +647,7 @@ func _process(delta: float) -> void:
 			if DataSave.items_stocker.sword7 != nbCompteurSword7 and txtItemType[n] == "vide":
 				gui_sword7[n] = GuiSword7.instantiate()
 				add_child(gui_sword7[n])
-				gui_sword7[n].scale = Vector2(0.7, 0.8)
+				gui_sword7[n].scale = Vector2(0.85, 0.95)
 				gui_sword7[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_sword7[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
 				nbCompteurSword7 += 1
@@ -656,7 +658,7 @@ func _process(delta: float) -> void:
 			if DataSave.items_stocker.sword8 != nbCompteurSword8 and txtItemType[n] == "vide":
 				gui_sword8[n] = GuiSword8.instantiate()
 				add_child(gui_sword8[n])
-				gui_sword8[n].scale = Vector2(0.7, 0.8)
+				gui_sword8[n].scale = Vector2(0.85, 0.95)
 				gui_sword8[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
 				gui_sword8[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
 				nbCompteurSword8 += 1
@@ -668,3 +670,9 @@ func _process(delta: float) -> void:
 func _on_panel_retour_gui_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("button_left"):
 		isPanelClose = true
+
+
+func _input(event):
+	for n in range(nbPlaceDispo):
+		if Input.is_action_just_pressed("button_left"):
+			

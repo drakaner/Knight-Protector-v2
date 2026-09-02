@@ -163,8 +163,6 @@ var nbCompteurSword6 = 0
 var nbCompteurSword7 = 0
 var nbCompteurSword8 = 0
 
-var nbItemPossesionStockage = 0
-
 var txtTypeClic = ""
 
 var isPanelClose = true
@@ -1657,17 +1655,14 @@ func _process(delta: float) -> void:
 						
 				
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
-					if Input.is_action_just_pressed("button_left"):
+					if Input.is_action_just_pressed("button_left") and DataSave.nbItemsStocker < DataSave.nbStockageMax:
 						print("on clique sur le button stocker ")
 						gui_potion_vie[i].queue_free()
 						txtItemType[i] = "vide"
 						DataSave.items_posession.potionVie -= 1
 						DataSave.items_stocker.potionVie += 1
-						
-						#CONTINUE POUR LES AUTRES
-						nbItemPossesionStockage += 1
-						
 						nbCompteurPotionVie -= 1
+						DataSave.nbItemsStocker += 1
 						isSlot_libre[i] = true
 						gui_popUp.queue_free()
 						if gui_buttonOnUse != null:
@@ -1838,13 +1833,14 @@ func _process(delta: float) -> void:
 						
 				
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
-					if Input.is_action_just_pressed("button_left"):
+					if Input.is_action_just_pressed("button_left") and DataSave.nbItemsStocker < DataSave.nbStockageMax:
 						print("on clique sur le button stocker ")
 						gui_potion_mana[i].queue_free()
 						txtItemType[i] = "vide"
 						DataSave.items_posession.potionMana -= 1
 						DataSave.items_stocker.potionMana += 1
 						nbCompteurPotionMana -= 1
+						DataSave.nbItemsStocker += 1
 						isSlot_libre[i] = true
 						gui_popUp.queue_free()
 						if gui_buttonOnUse != null:
@@ -2017,13 +2013,14 @@ func _process(delta: float) -> void:
 						
 				
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
-					if Input.is_action_just_pressed("button_left"):
+					if Input.is_action_just_pressed("button_left") and DataSave.nbItemsStocker < DataSave.nbStockageMax:
 						print("on clique sur le button stocker ")
 						gui_potion_elixir[i].queue_free()
 						txtItemType[i] = "vide"
 						DataSave.items_posession.potionElixir -= 1
 						DataSave.items_stocker.potionElixir += 1
 						nbCompteurPotionElixir -= 1
+						DataSave.nbItemsStocker += 1
 						isSlot_libre[i] = true
 						gui_popUp.queue_free()
 						if gui_buttonOnUse != null:
@@ -2146,13 +2143,14 @@ func _process(delta: float) -> void:
 						
 				
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
-					if Input.is_action_just_pressed("button_left"):
+					if Input.is_action_just_pressed("button_left") and DataSave.nbItemsStocker < DataSave.nbStockageMax:
 						print("on clique sur le button stocker ")
 						gui_bague1[i].queue_free()
 						txtItemType[i] = "vide"
 						DataSave.items_posession.bague1 -= 1
 						DataSave.items_stocker.bague1 += 1
 						nbCompteurBague1 -= 1
+						DataSave.nbItemsStocker += 1
 						isSlot_libre[i] = true
 						gui_popUp.queue_free()
 						gui_buttonOnEquiper.queue_free()
@@ -2271,13 +2269,14 @@ func _process(delta: float) -> void:
 						
 				
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
-					if Input.is_action_just_pressed("button_left"):
+					if Input.is_action_just_pressed("button_left") and DataSave.nbItemsStocker < DataSave.nbStockageMax:
 						print("on clique sur le button stocker ")
 						gui_bague2[i].queue_free()
 						txtItemType[i] = "vide"
 						DataSave.items_posession.bague2 -= 1
 						DataSave.items_stocker.bague2 += 1
 						nbCompteurBague2 -= 1
+						DataSave.nbItemsStocker += 1
 						isSlot_libre[i] = true
 						gui_popUp.queue_free()
 						gui_buttonOnEquiper.queue_free()
@@ -2396,13 +2395,14 @@ func _process(delta: float) -> void:
 						
 				
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
-					if Input.is_action_just_pressed("button_left"):
+					if Input.is_action_just_pressed("button_left") and DataSave.nbItemsStocker < DataSave.nbStockageMax:
 						print("on clique sur le button stocker ")
 						gui_bague3[i].queue_free()
 						txtItemType[i] = "vide"
 						DataSave.items_posession.bague3 -= 1
 						DataSave.items_stocker.bague3 += 1
 						nbCompteurBague3 -= 1
+						DataSave.nbItemsStocker += 1
 						isSlot_libre[i] = true
 						gui_popUp.queue_free()
 						gui_buttonOnEquiper.queue_free()
@@ -2521,13 +2521,14 @@ func _process(delta: float) -> void:
 						
 				
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
-					if Input.is_action_just_pressed("button_left"):
+					if Input.is_action_just_pressed("button_left") and DataSave.nbItemsStocker < DataSave.nbStockageMax:
 						print("on clique sur le button stocker ")
 						gui_bottes1[i].queue_free()
 						txtItemType[i] = "vide"
 						DataSave.items_posession.bottes1 -= 1
 						DataSave.items_stocker.bottes1 += 1
 						nbCompteurBottes1 -= 1
+						DataSave.nbItemsStocker += 1
 						isSlot_libre[i] = true
 						gui_popUp.queue_free()
 						gui_buttonOnEquiper.queue_free()
@@ -2647,13 +2648,14 @@ func _process(delta: float) -> void:
 						
 				
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
-					if Input.is_action_just_pressed("button_left"):
+					if Input.is_action_just_pressed("button_left") and DataSave.nbItemsStocker < DataSave.nbStockageMax:
 						print("on clique sur le button stocker ")
 						gui_bottes2[i].queue_free()
 						txtItemType[i] = "vide"
 						DataSave.items_posession.bottes2 -= 1
 						DataSave.items_stocker.bottes2 += 1
 						nbCompteurBottes2 -= 1
+						DataSave.nbItemsStocker += 1
 						isSlot_libre[i] = true
 						gui_popUp.queue_free()
 						gui_buttonOnEquiper.queue_free()
@@ -2772,13 +2774,14 @@ func _process(delta: float) -> void:
 						
 				
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
-					if Input.is_action_just_pressed("button_left"):
+					if Input.is_action_just_pressed("button_left") and DataSave.nbItemsStocker < DataSave.nbStockageMax:
 						print("on clique sur le button stocker ")
 						gui_bottes3[i].queue_free()
 						txtItemType[i] = "vide"
 						DataSave.items_posession.bottes3 -= 1
 						DataSave.items_stocker.bottes3 += 1
 						nbCompteurBottes3 -= 1
+						DataSave.nbItemsStocker += 1
 						isSlot_libre[i] = true
 						gui_popUp.queue_free()
 						gui_buttonOnEquiper.queue_free()
@@ -2897,13 +2900,14 @@ func _process(delta: float) -> void:
 						
 				
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
-					if Input.is_action_just_pressed("button_left"):
+					if Input.is_action_just_pressed("button_left") and DataSave.nbItemsStocker < DataSave.nbStockageMax:
 						print("on clique sur le button stocker ")
 						gui_bottes4[i].queue_free()
 						txtItemType[i] = "vide"
 						DataSave.items_posession.bottes4 -= 1
 						DataSave.items_stocker.bottes4 += 1
 						nbCompteurBottes4 -= 1
+						DataSave.nbItemsStocker += 1
 						isSlot_libre[i] = true
 						gui_popUp.queue_free()
 						gui_buttonOnEquiper.queue_free()
@@ -3022,13 +3026,14 @@ func _process(delta: float) -> void:
 						
 				
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
-					if Input.is_action_just_pressed("button_left"):
+					if Input.is_action_just_pressed("button_left") and DataSave.nbItemsStocker < DataSave.nbStockageMax:
 						print("on clique sur le button stocker ")
 						gui_bottes5[i].queue_free()
 						txtItemType[i] = "vide"
 						DataSave.items_posession.bottes5 -= 1
 						DataSave.items_stocker.bottes5 += 1
 						nbCompteurBottes5 -= 1
+						DataSave.nbItemsStocker += 1
 						isSlot_libre[i] = true
 						gui_popUp.queue_free()
 						gui_buttonOnEquiper.queue_free()
@@ -3147,13 +3152,14 @@ func _process(delta: float) -> void:
 						
 				
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
-					if Input.is_action_just_pressed("button_left"):
+					if Input.is_action_just_pressed("button_left") and DataSave.nbItemsStocker < DataSave.nbStockageMax:
 						print("on clique sur le button stocker ")
 						gui_bottes6[i].queue_free()
 						txtItemType[i] = "vide"
 						DataSave.items_posession.bottes6 -= 1
 						DataSave.items_stocker.bottes6 += 1
 						nbCompteurBottes6 -= 1
+						DataSave.nbItemsStocker += 1
 						isSlot_libre[i] = true
 						gui_popUp.queue_free()
 						gui_buttonOnEquiper.queue_free()
@@ -3272,13 +3278,14 @@ func _process(delta: float) -> void:
 						
 				
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
-					if Input.is_action_just_pressed("button_left"):
+					if Input.is_action_just_pressed("button_left") and DataSave.nbItemsStocker < DataSave.nbStockageMax:
 						print("on clique sur le button stocker ")
 						gui_bouclier1[i].queue_free()
 						txtItemType[i] = "vide"
 						DataSave.items_posession.bouclier1 -= 1
 						DataSave.items_stocker.bouclier1 += 1
 						nbCompteurBouclier1 -= 1
+						DataSave.nbItemsStocker += 1
 						isSlot_libre[i] = true
 						gui_popUp.queue_free()
 						gui_buttonOnEquiper.queue_free()
@@ -3397,13 +3404,14 @@ func _process(delta: float) -> void:
 						
 				
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
-					if Input.is_action_just_pressed("button_left"):
+					if Input.is_action_just_pressed("button_left") and DataSave.nbItemsStocker < DataSave.nbStockageMax:
 						print("on clique sur le button stocker ")
 						gui_bouclier2[i].queue_free()
 						txtItemType[i] = "vide"
 						DataSave.items_posession.bouclier2 -= 1
 						DataSave.items_stocker.bouclier2 += 1
 						nbCompteurBouclier2 -= 1
+						DataSave.nbItemsStocker += 1
 						isSlot_libre[i] = true
 						gui_popUp.queue_free()
 						gui_buttonOnEquiper.queue_free()
@@ -3522,13 +3530,14 @@ func _process(delta: float) -> void:
 						
 				
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
-					if Input.is_action_just_pressed("button_left"):
+					if Input.is_action_just_pressed("button_left") and DataSave.nbItemsStocker < DataSave.nbStockageMax:
 						print("on clique sur le button stocker ")
 						gui_bouclier3[i].queue_free()
 						txtItemType[i] = "vide"
 						DataSave.items_posession.bouclier3 -= 1
 						DataSave.items_stocker.bouclier3 += 1
 						nbCompteurBouclier3 -= 1
+						DataSave.nbItemsStocker += 1
 						isSlot_libre[i] = true
 						gui_popUp.queue_free()
 						gui_buttonOnEquiper.queue_free()
@@ -3647,13 +3656,14 @@ func _process(delta: float) -> void:
 						
 				
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
-					if Input.is_action_just_pressed("button_left"):
+					if Input.is_action_just_pressed("button_left") and DataSave.nbItemsStocker < DataSave.nbStockageMax:
 						print("on clique sur le button stocker ")
 						gui_bouclier4[i].queue_free()
 						txtItemType[i] = "vide"
 						DataSave.items_posession.bouclier4 -= 1
 						DataSave.items_stocker.bouclier4 += 1
 						nbCompteurBouclier4 -= 1
+						DataSave.nbItemsStocker += 1
 						isSlot_libre[i] = true
 						gui_popUp.queue_free()
 						gui_buttonOnEquiper.queue_free()
@@ -3772,13 +3782,14 @@ func _process(delta: float) -> void:
 						
 				
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
-					if Input.is_action_just_pressed("button_left"):
+					if Input.is_action_just_pressed("button_left") and DataSave.nbItemsStocker < DataSave.nbStockageMax:
 						print("on clique sur le button stocker ")
 						gui_bouclier5[i].queue_free()
 						txtItemType[i] = "vide"
 						DataSave.items_posession.bouclier5 -= 1
 						DataSave.items_stocker.bouclier5 += 1
 						nbCompteurBouclier5 -= 1
+						DataSave.nbItemsStocker += 1
 						isSlot_libre[i] = true
 						gui_popUp.queue_free()
 						gui_buttonOnEquiper.queue_free()
@@ -3897,13 +3908,14 @@ func _process(delta: float) -> void:
 						
 				
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
-					if Input.is_action_just_pressed("button_left"):
+					if Input.is_action_just_pressed("button_left") and DataSave.nbItemsStocker < DataSave.nbStockageMax:
 						print("on clique sur le button stocker ")
 						gui_bouclier6[i].queue_free()
 						txtItemType[i] = "vide"
 						DataSave.items_posession.bouclier6 -= 1
 						DataSave.items_stocker.bouclier6 += 1
 						nbCompteurBouclier6 -= 1
+						DataSave.nbItemsStocker += 1
 						isSlot_libre[i] = true
 						gui_popUp.queue_free()
 						gui_buttonOnEquiper.queue_free()
@@ -4022,13 +4034,14 @@ func _process(delta: float) -> void:
 						
 				
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
-					if Input.is_action_just_pressed("button_left"):
+					if Input.is_action_just_pressed("button_left") and DataSave.nbItemsStocker < DataSave.nbStockageMax:
 						print("on clique sur le button stocker ")
 						gui_bouclier7[i].queue_free()
 						txtItemType[i] = "vide"
 						DataSave.items_posession.bouclier7 -= 1
 						DataSave.items_stocker.bouclier7 += 1
 						nbCompteurBouclier7 -= 1
+						DataSave.nbItemsStocker += 1
 						isSlot_libre[i] = true
 						gui_popUp.queue_free()
 						gui_buttonOnEquiper.queue_free()
@@ -4147,13 +4160,14 @@ func _process(delta: float) -> void:
 						
 				
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
-					if Input.is_action_just_pressed("button_left"):
+					if Input.is_action_just_pressed("button_left") and DataSave.nbItemsStocker < DataSave.nbStockageMax:
 						print("on clique sur le button stocker ")
 						gui_casque1[i].queue_free()
 						txtItemType[i] = "vide"
 						DataSave.items_posession.casque1 -= 1
 						DataSave.items_stocker.casque1 += 1
 						nbCompteurCasque1 -= 1
+						DataSave.nbItemsStocker += 1
 						isSlot_libre[i] = true
 						gui_popUp.queue_free()
 						gui_buttonOnEquiper.queue_free()
@@ -4272,13 +4286,14 @@ func _process(delta: float) -> void:
 						
 				
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
-					if Input.is_action_just_pressed("button_left"):
+					if Input.is_action_just_pressed("button_left") and DataSave.nbItemsStocker < DataSave.nbStockageMax:
 						print("on clique sur le button stocker ")
 						gui_casque2[i].queue_free()
 						txtItemType[i] = "vide"
 						DataSave.items_posession.casque2 -= 1
 						DataSave.items_stocker.casque2 += 1
 						nbCompteurCasque2 -= 1
+						DataSave.nbItemsStocker += 1
 						isSlot_libre[i] = true
 						gui_popUp.queue_free()
 						gui_buttonOnEquiper.queue_free()
@@ -4397,13 +4412,14 @@ func _process(delta: float) -> void:
 						
 				
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
-					if Input.is_action_just_pressed("button_left"):
+					if Input.is_action_just_pressed("button_left") and DataSave.nbItemsStocker < DataSave.nbStockageMax:
 						print("on clique sur le button stocker ")
 						gui_casque3[i].queue_free()
 						txtItemType[i] = "vide"
 						DataSave.items_posession.casque3 -= 1
 						DataSave.items_stocker.casque3 += 1
 						nbCompteurCasque3 -= 1
+						DataSave.nbItemsStocker += 1
 						isSlot_libre[i] = true
 						gui_popUp.queue_free()
 						gui_buttonOnEquiper.queue_free()
@@ -4522,13 +4538,14 @@ func _process(delta: float) -> void:
 						
 				
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
-					if Input.is_action_just_pressed("button_left"):
+					if Input.is_action_just_pressed("button_left") and DataSave.nbItemsStocker < DataSave.nbStockageMax:
 						print("on clique sur le button stocker ")
 						gui_casque4[i].queue_free()
 						txtItemType[i] = "vide"
 						DataSave.items_posession.casque4 -= 1
 						DataSave.items_stocker.casque4 += 1
 						nbCompteurCasque4 -= 1
+						DataSave.nbItemsStocker += 1
 						isSlot_libre[i] = true
 						gui_popUp.queue_free()
 						gui_buttonOnEquiper.queue_free()
@@ -4647,13 +4664,14 @@ func _process(delta: float) -> void:
 						
 				
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
-					if Input.is_action_just_pressed("button_left"):
+					if Input.is_action_just_pressed("button_left") and DataSave.nbItemsStocker < DataSave.nbStockageMax:
 						print("on clique sur le button stocker ")
 						gui_casque5[i].queue_free()
 						txtItemType[i] = "vide"
 						DataSave.items_posession.casque5 -= 1
 						DataSave.items_stocker.casque5 += 1
 						nbCompteurCasque5 -= 1
+						DataSave.nbItemsStocker += 1
 						isSlot_libre[i] = true
 						gui_popUp.queue_free()
 						gui_buttonOnEquiper.queue_free()
@@ -4772,13 +4790,14 @@ func _process(delta: float) -> void:
 						
 				
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
-					if Input.is_action_just_pressed("button_left"):
+					if Input.is_action_just_pressed("button_left") and DataSave.nbItemsStocker < DataSave.nbStockageMax:
 						print("on clique sur le button stocker ")
 						gui_casque6[i].queue_free()
 						txtItemType[i] = "vide"
 						DataSave.items_posession.casque6 -= 1
 						DataSave.items_stocker.casque6 += 1
 						nbCompteurCasque6 -= 1
+						DataSave.nbItemsStocker += 1
 						isSlot_libre[i] = true
 						gui_popUp.queue_free()
 						gui_buttonOnEquiper.queue_free()
@@ -4897,13 +4916,14 @@ func _process(delta: float) -> void:
 						
 				
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
-					if Input.is_action_just_pressed("button_left"):
+					if Input.is_action_just_pressed("button_left") and DataSave.nbItemsStocker < DataSave.nbStockageMax:
 						print("on clique sur le button stocker ")
 						gui_collier1[i].queue_free()
 						txtItemType[i] = "vide"
 						DataSave.items_posession.collier1 -= 1
 						DataSave.items_stocker.collier1 += 1
 						nbCompteurCollier1 -= 1
+						DataSave.nbItemsStocker += 1
 						isSlot_libre[i] = true
 						gui_popUp.queue_free()
 						gui_buttonOnEquiper.queue_free()
@@ -5022,13 +5042,14 @@ func _process(delta: float) -> void:
 						
 				
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
-					if Input.is_action_just_pressed("button_left"):
+					if Input.is_action_just_pressed("button_left") and DataSave.nbItemsStocker < DataSave.nbStockageMax:
 						print("on clique sur le button stocker ")
 						gui_collier2[i].queue_free()
 						txtItemType[i] = "vide"
 						DataSave.items_posession.collier2 -= 1
 						DataSave.items_stocker.collier2 += 1
 						nbCompteurCollier2 -= 1
+						DataSave.nbItemsStocker += 1
 						isSlot_libre[i] = true
 						gui_popUp.queue_free()
 						gui_buttonOnEquiper.queue_free()
@@ -5147,13 +5168,14 @@ func _process(delta: float) -> void:
 						
 				
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
-					if Input.is_action_just_pressed("button_left"):
+					if Input.is_action_just_pressed("button_left") and DataSave.nbItemsStocker < DataSave.nbStockageMax:
 						print("on clique sur le button stocker ")
 						gui_collier3[i].queue_free()
 						txtItemType[i] = "vide"
 						DataSave.items_posession.collier3 -= 1
 						DataSave.items_stocker.collier3 += 1
 						nbCompteurCollier3 -= 1
+						DataSave.nbItemsStocker += 1
 						isSlot_libre[i] = true
 						gui_popUp.queue_free()
 						gui_buttonOnEquiper.queue_free()
@@ -5272,13 +5294,14 @@ func _process(delta: float) -> void:
 						
 				
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
-					if Input.is_action_just_pressed("button_left"):
+					if Input.is_action_just_pressed("button_left") and DataSave.nbItemsStocker < DataSave.nbStockageMax:
 						print("on clique sur le button stocker ")
 						gui_heaume1[i].queue_free()
 						txtItemType[i] = "vide"
 						DataSave.items_posession.heaume1 -= 1
 						DataSave.items_stocker.heaume1 += 1
 						nbCompteurHeaume1 -= 1
+						DataSave.nbItemsStocker += 1
 						isSlot_libre[i] = true
 						gui_popUp.queue_free()
 						gui_buttonOnEquiper.queue_free()
@@ -5397,13 +5420,14 @@ func _process(delta: float) -> void:
 						
 				
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
-					if Input.is_action_just_pressed("button_left"):
+					if Input.is_action_just_pressed("button_left") and DataSave.nbItemsStocker < DataSave.nbStockageMax:
 						print("on clique sur le button stocker ")
 						gui_heaume2[i].queue_free()
 						txtItemType[i] = "vide"
 						DataSave.items_posession.heaume2 -= 1
 						DataSave.items_stocker.heaume2 += 1
 						nbCompteurHeaume2 -= 1
+						DataSave.nbItemsStocker += 1
 						isSlot_libre[i] = true
 						gui_popUp.queue_free()
 						gui_buttonOnEquiper.queue_free()
@@ -5522,13 +5546,14 @@ func _process(delta: float) -> void:
 						
 				
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
-					if Input.is_action_just_pressed("button_left"):
+					if Input.is_action_just_pressed("button_left") and DataSave.nbItemsStocker < DataSave.nbStockageMax:
 						print("on clique sur le button stocker ")
 						gui_heaume3[i].queue_free()
 						txtItemType[i] = "vide"
 						DataSave.items_posession.heaume3 -= 1
 						DataSave.items_stocker.heaume3 += 1
 						nbCompteurHeaume3 -= 1
+						DataSave.nbItemsStocker += 1
 						isSlot_libre[i] = true
 						gui_popUp.queue_free()
 						gui_buttonOnEquiper.queue_free()
@@ -5647,13 +5672,14 @@ func _process(delta: float) -> void:
 						
 				
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
-					if Input.is_action_just_pressed("button_left"):
+					if Input.is_action_just_pressed("button_left") and DataSave.nbItemsStocker < DataSave.nbStockageMax:
 						print("on clique sur le button stocker ")
 						gui_heaume4[i].queue_free()
 						txtItemType[i] = "vide"
 						DataSave.items_posession.heaume4 -= 1
 						DataSave.items_stocker.heaume4 += 1
 						nbCompteurHeaume4 -= 1
+						DataSave.nbItemsStocker += 1
 						isSlot_libre[i] = true
 						gui_popUp.queue_free()
 						gui_buttonOnEquiper.queue_free()
@@ -5772,13 +5798,14 @@ func _process(delta: float) -> void:
 						
 				
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
-					if Input.is_action_just_pressed("button_left"):
+					if Input.is_action_just_pressed("button_left") and DataSave.nbItemsStocker < DataSave.nbStockageMax:
 						print("on clique sur le button stocker ")
 						gui_heaume5[i].queue_free()
 						txtItemType[i] = "vide"
 						DataSave.items_posession.heaume5 -= 1
 						DataSave.items_stocker.heaume5 += 1
 						nbCompteurHeaume5 -= 1
+						DataSave.nbItemsStocker += 1
 						isSlot_libre[i] = true
 						gui_popUp.queue_free()
 						gui_buttonOnEquiper.queue_free()
@@ -5897,13 +5924,14 @@ func _process(delta: float) -> void:
 						
 				
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
-					if Input.is_action_just_pressed("button_left"):
+					if Input.is_action_just_pressed("button_left") and DataSave.nbItemsStocker < DataSave.nbStockageMax:
 						print("on clique sur le button stocker ")
 						gui_heaume6[i].queue_free()
 						txtItemType[i] = "vide"
 						DataSave.items_posession.heaume6 -= 1
 						DataSave.items_stocker.heaume6 += 1
 						nbCompteurHeaume6-= 1
+						DataSave.nbItemsStocker += 1
 						isSlot_libre[i] = true
 						gui_popUp.queue_free()
 						gui_buttonOnEquiper.queue_free()
@@ -6022,13 +6050,14 @@ func _process(delta: float) -> void:
 						
 				
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
-					if Input.is_action_just_pressed("button_left"):
+					if Input.is_action_just_pressed("button_left") and DataSave.nbItemsStocker < DataSave.nbStockageMax:
 						print("on clique sur le button stocker ")
 						gui_sword1[i].queue_free()
 						txtItemType[i] = "vide"
 						DataSave.items_posession.sword1 -= 1
 						DataSave.items_stocker.sword1 += 1
 						nbCompteurSword1 -= 1
+						DataSave.nbItemsStocker += 1
 						isSlot_libre[i] = true
 						gui_popUp.queue_free()
 						gui_buttonOnEquiper.queue_free()
@@ -6147,13 +6176,14 @@ func _process(delta: float) -> void:
 						
 				
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
-					if Input.is_action_just_pressed("button_left"):
+					if Input.is_action_just_pressed("button_left") and DataSave.nbItemsStocker < DataSave.nbStockageMax:
 						print("on clique sur le button stocker ")
 						gui_sword2[i].queue_free()
 						txtItemType[i] = "vide"
 						DataSave.items_posession.sword2 -= 1
 						DataSave.items_stocker.sword2 += 1
 						nbCompteurSword2 -= 1
+						DataSave.nbItemsStocker += 1
 						isSlot_libre[i] = true
 						gui_popUp.queue_free()
 						gui_buttonOnEquiper.queue_free()
@@ -6272,13 +6302,14 @@ func _process(delta: float) -> void:
 						
 				
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
-					if Input.is_action_just_pressed("button_left"):
+					if Input.is_action_just_pressed("button_left") and DataSave.nbItemsStocker < DataSave.nbStockageMax:
 						print("on clique sur le button stocker ")
 						gui_sword3[i].queue_free()
 						txtItemType[i] = "vide"
 						DataSave.items_posession.sword3 -= 1
 						DataSave.items_stocker.sword3 += 1
 						nbCompteurSword3 -= 1
+						DataSave.nbItemsStocker += 1
 						isSlot_libre[i] = true
 						gui_popUp.queue_free()
 						gui_buttonOnEquiper.queue_free()
@@ -6397,13 +6428,14 @@ func _process(delta: float) -> void:
 						
 				
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
-					if Input.is_action_just_pressed("button_left"):
+					if Input.is_action_just_pressed("button_left") and DataSave.nbItemsStocker < DataSave.nbStockageMax:
 						print("on clique sur le button stocker ")
 						gui_sword4[i].queue_free()
 						txtItemType[i] = "vide"
 						DataSave.items_posession.sword4 -= 1
 						DataSave.items_stocker.sword4 += 1
 						nbCompteurSword4 -= 1
+						DataSave.nbItemsStocker += 1
 						isSlot_libre[i] = true
 						gui_popUp.queue_free()
 						gui_buttonOnEquiper.queue_free()
@@ -6522,13 +6554,14 @@ func _process(delta: float) -> void:
 						
 				
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
-					if Input.is_action_just_pressed("button_left"):
+					if Input.is_action_just_pressed("button_left") and DataSave.nbItemsStocker < DataSave.nbStockageMax:
 						print("on clique sur le button stocker ")
 						gui_sword5[i].queue_free()
 						txtItemType[i] = "vide"
 						DataSave.items_posession.sword5 -= 1
 						DataSave.items_stocker.sword5 += 1
 						nbCompteurSword5 -= 1
+						DataSave.nbItemsStocker += 1
 						isSlot_libre[i] = true
 						gui_popUp.queue_free()
 						gui_buttonOnEquiper.queue_free()
@@ -6647,13 +6680,14 @@ func _process(delta: float) -> void:
 						
 				
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
-					if Input.is_action_just_pressed("button_left"):
+					if Input.is_action_just_pressed("button_left") and DataSave.nbItemsStocker < DataSave.nbStockageMax:
 						print("on clique sur le button stocker ")
 						gui_sword6[i].queue_free()
 						txtItemType[i] = "vide"
 						DataSave.items_posession.sword6 -= 1
 						DataSave.items_stocker.sword6 += 1
 						nbCompteurSword6 -= 1
+						DataSave.nbItemsStocker += 1
 						isSlot_libre[i] = true
 						gui_popUp.queue_free()
 						gui_buttonOnEquiper.queue_free()
@@ -6772,12 +6806,13 @@ func _process(delta: float) -> void:
 						
 				
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
-					if Input.is_action_just_pressed("button_left"):
+					if Input.is_action_just_pressed("button_left") and DataSave.nbItemsStocker < DataSave.nbStockageMax:
 						print("on clique sur le button stocker ")
 						gui_sword7[i].queue_free()
 						txtItemType[i] = "vide"
 						DataSave.items_posession.sword7 -= 1
 						DataSave.items_stocker.sword7 += 1
+						DataSave.nbItemsStocker += 1
 						nbCompteurSword7 -= 1
 						isSlot_libre[i] = true
 						gui_popUp.queue_free()
@@ -6897,13 +6932,14 @@ func _process(delta: float) -> void:
 						
 				
 				if mouse_pos.x >= gui_buttonOnStocker.offset.x and mouse_pos.x <= gui_buttonOnStocker.offset.x + 90 and mouse_pos.y >= gui_buttonOnStocker.offset.y and mouse_pos.y <= gui_buttonOnStocker.offset.y + 35:
-					if Input.is_action_just_pressed("button_left"):
+					if Input.is_action_just_pressed("button_left") and DataSave.nbItemsStocker < DataSave.nbStockageMax:
 						print("on clique sur le button stocker ")
 						gui_sword8[i].queue_free()
 						txtItemType[i] = "vide"
 						DataSave.items_posession.sword8 -= 1
 						DataSave.items_stocker.sword8 += 1
 						nbCompteurSword8 -= 1
+						DataSave.nbItemsStocker += 1
 						isSlot_libre[i] = true
 						gui_popUp.queue_free()
 						gui_buttonOnEquiper.queue_free()

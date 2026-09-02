@@ -38,6 +38,8 @@ var nbTotalItemsInventaire = 0
 var nbTotalItemsEquipements = 0
 
 var nbNiveauCoffreStockage = 1
+var nbItemsStocker = 0
+var nbStockageMax = 10
 
 const  SAVE_PATH = "user://settings.cfg"
 
@@ -197,6 +199,8 @@ func load_data():
 	items_stocker.sword7 = config.get_value("stocker", "sword_7", 0)
 	items_stocker.sword8 = config.get_value("stocker", "sword_8", 0)
 	nbNiveauCoffreStockage = config.get_value("coffre_stockage", "niveau", 1)
+	nbItemsStocker = config.get_value("coffre_stockage", "items_stocker", 0)
+	nbStockageMax = config.get_value("coffre_stockage", "stockage_max", 10)
 
 func save_data():
 	var config = ConfigFile.new()
@@ -343,6 +347,8 @@ func save_data():
 	config.set_value("stocker", "sword_7", items_stocker.sword7)
 	config.set_value("stocker", "sword_8", items_stocker.sword8)
 	config.set_value("coffre_stockage", "niveau", nbNiveauCoffreStockage)
+	config.set_value("coffre_stockage", "items_stocker", nbItemsStocker)
+	config.set_value("coffre_stockage", "stockage_max", nbStockageMax)
 	
 	config.save(SAVE_PATH)
 
