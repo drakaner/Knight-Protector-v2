@@ -146,6 +146,14 @@ var txtItemType = []
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#DataSave.items_stocker.bague1 = 1
+	
+	#txt_gold = GuiTextUi.instantiate()
+	#add_child(txt_gold)
+	#var childTxtGold = txt_gold.get_node("labelGuiTextFenetre")
+	#childTxtGold.text = "Tessssst"
+	#childTxtGold.add_theme_font_size_override("font_size", 29)
+	#childTxtGold.add_theme_color_override("font_color", Color(1.0, 0.494, 0.0, 1.0) )
+	
 	isSlotLibre.resize(nbPlaceDispo)
 	txtItemType.resize(nbPlaceDispo)
 	
@@ -992,5 +1000,68 @@ func _input(event):
 					gui_sword1[n].queue_free()
 					nbCompteurSword1 -= 1
 					isSlotLibre[n] = true
-				print("clic clic clic clic clic:::", txtItemType[n])
+				
+				if txtItemType[n] == "sword_2":
+					DataSave.items_posession.sword2 += 1
+					DataSave.items_stocker.sword2 -= 1
+					DataSave.nbItemsStocker -= 1
+					txtItemType[n] = "vide"
+					gui_sword2[n].queue_free()
+					nbCompteurSword2 -= 1
+					isSlotLibre[n] = true
+				
+				if txtItemType[n] == "sword_3":
+					DataSave.items_posession.sword3 += 1
+					DataSave.items_stocker.sword3 -= 1
+					DataSave.nbItemsStocker -= 1
+					txtItemType[n] = "vide"
+					gui_sword3[n].queue_free()
+					nbCompteurSword3 -= 1
+					isSlotLibre[n] = true
+				
+				if txtItemType[n] == "sword_4":
+					DataSave.items_posession.sword4 += 1
+					DataSave.items_stocker.sword4 -= 1
+					DataSave.nbItemsStocker -= 1
+					txtItemType[n] = "vide"
+					gui_sword4[n].queue_free()
+					nbCompteurSword4 -= 1
+					isSlotLibre[n] = true
+				
+				if txtItemType[n] == "sword_5":
+					DataSave.items_posession.sword5 += 1
+					DataSave.items_stocker.sword5 -= 1
+					DataSave.nbItemsStocker -= 1
+					txtItemType[n] = "vide"
+					gui_sword5[n].queue_free()
+					nbCompteurSword5 -= 1
+					isSlotLibre[n] = true
+				
+				if txtItemType[n] == "sword_6":
+					DataSave.items_posession.sword6 += 1
+					DataSave.items_stocker.sword6 -= 1
+					DataSave.nbItemsStocker -= 1
+					txtItemType[n] = "vide"
+					gui_sword6[n].queue_free()
+					nbCompteurSword6 -= 1
+					isSlotLibre[n] = true
+				
+				if txtItemType[n] == "sword_7":
+					DataSave.items_posession.sword7 += 1
+					DataSave.items_stocker.sword7 -= 1
+					DataSave.nbItemsStocker -= 1
+					txtItemType[n] = "vide"
+					gui_sword7[n].queue_free()
+					nbCompteurSword7 -= 1
+					isSlotLibre[n] = true
+				
+				if txtItemType[n] == "sword_8":
+					DataSave.items_posession.sword8 += 1
+					DataSave.items_stocker.sword8 -= 1
+					DataSave.nbItemsStocker -= 1
+					txtItemType[n] = "vide"
+					gui_sword8[n].queue_free()
+					nbCompteurSword8 -= 1
+					isSlotLibre[n] = true
+				print("clic clic clic clic clic:", txtItemType[n])
 			

@@ -113,6 +113,7 @@ var gui_buttonOffUse
 var txt_popup_1
 var txt_popup_2
 var txt_popup_3
+var txt_gold
 
 var isSlot_libre = []
 
@@ -1486,6 +1487,15 @@ func _ready() -> void:
 	DataSave.items_posession.heaume6 = 2
 	DataSave.items_posession.sword7 = 3
 	DataSave.items_posession.sword8 = 3
+	
+	txt_gold = GuiTextUi.instantiate()
+	add_child(txt_gold)
+	var childTxtGold = txt_gold.get_node("labelGuiTextFenetre")
+	childTxtGold.position.x = 360
+	childTxtGold.position.y = 430
+	childTxtGold.text = str(DataSave.hero.gold)
+	childTxtGold.add_theme_font_size_override("font_size", 29)
+	childTxtGold.add_theme_color_override("font_color", Color(1.0, 0.494, 0.0, 1.0) )
 	
 	for n in range(20):
 		isSlot_libre[n] = true
