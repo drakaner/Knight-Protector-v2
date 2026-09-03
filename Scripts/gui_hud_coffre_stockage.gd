@@ -673,6 +673,324 @@ func _on_panel_retour_gui_input(event: InputEvent) -> void:
 
 
 func _input(event):
+	var mouse_pos = get_viewport().get_mouse_position()
+	
 	for n in range(nbPlaceDispo):
 		if Input.is_action_just_pressed("button_left"):
+			if mouse_pos.x >= childSlot[n].position.x + nodeParent.offset.x and mouse_pos.x <= childSlot[n].position.x + nodeParent.offset.x + childSlot[n].size.x and mouse_pos.y >= childSlot[n].position.y + nodeParent.offset.y and mouse_pos.y <= childSlot[n].position.y + childSlot[n].size.y + nodeParent.offset.y:
+				if txtItemType[n] == "potion_vie":
+					DataSave.items_posession.potionVie += 1
+					DataSave.items_stocker.potionVie -= 1
+					DataSave.nbItemsStocker -= 1
+					txtItemType[n] = "vide"
+					gui_potion_vie[n].queue_free()
+					nbCompteurPotionVie -= 1
+					isSlotLibre[n] = true
+				
+				if txtItemType[n] == "potion_mana":
+					DataSave.items_posession.potionMana += 1
+					DataSave.items_stocker.potionMana -= 1
+					DataSave.nbItemsStocker -= 1
+					txtItemType[n] = "vide"
+					gui_potion_mana[n].queue_free()
+					nbCompteurPotionMana -= 1
+					isSlotLibre[n] = true
+				
+				if txtItemType[n] == "potion_elixir":
+					DataSave.items_posession.potionElixir += 1
+					DataSave.items_stocker.potionElixir -= 1
+					DataSave.nbItemsStocker -= 1
+					txtItemType[n] = "vide"
+					gui_potion_elixir[n].queue_free()
+					nbCompteurPotionElixir -= 1
+					isSlotLibre[n] = true
+				
+				if txtItemType[n] == "bague_1":
+					DataSave.items_posession.bague1 += 1
+					DataSave.items_stocker.bague1 -= 1
+					DataSave.nbItemsStocker -= 1
+					txtItemType[n] = "vide"
+					gui_bague1[n].queue_free()
+					nbCompteurBague1 -= 1
+					isSlotLibre[n] = true
+				
+				if txtItemType[n] == "bague_2":
+					DataSave.items_posession.bague2 += 1
+					DataSave.items_stocker.bague2 -= 1
+					DataSave.nbItemsStocker -= 1
+					txtItemType[n] = "vide"
+					gui_bague2[n].queue_free()
+					nbCompteurBague2 -= 1
+					isSlotLibre[n] = true
+				
+				if txtItemType[n] == "bague_3":
+					DataSave.items_posession.bague3 += 1
+					DataSave.items_stocker.bague3 -= 1
+					DataSave.nbItemsStocker -= 1
+					txtItemType[n] = "vide"
+					gui_bague3[n].queue_free()
+					nbCompteurBague3 -= 1
+					isSlotLibre[n] = true
+				
+				if txtItemType[n] == "bottes_1":
+					DataSave.items_posession.bottes1 += 1
+					DataSave.items_stocker.bottes1 -= 1
+					DataSave.nbItemsStocker -= 1
+					txtItemType[n] = "vide"
+					gui_bottes1[n].queue_free()
+					nbCompteurBottes1 -= 1
+					isSlotLibre[n] = true
+				
+				if txtItemType[n] == "bottes_2":
+					DataSave.items_posession.bottes2 += 1
+					DataSave.items_stocker.bottes2 -= 1
+					DataSave.nbItemsStocker -= 1
+					txtItemType[n] = "vide"
+					gui_bottes2[n].queue_free()
+					nbCompteurBottes2 -= 1
+					isSlotLibre[n] = true
+				
+				if txtItemType[n] == "bottes_3":
+					DataSave.items_posession.bottes3 += 1
+					DataSave.items_stocker.bottes3 -= 1
+					DataSave.nbItemsStocker -= 1
+					txtItemType[n] = "vide"
+					gui_bottes3[n].queue_free()
+					nbCompteurBottes3 -= 1
+					isSlotLibre[n] = true
+				
+				if txtItemType[n] == "bottes_4":
+					DataSave.items_posession.bottes4 += 1
+					DataSave.items_stocker.bottes4 -= 1
+					DataSave.nbItemsStocker -= 1
+					txtItemType[n] = "vide"
+					gui_bottes4[n].queue_free()
+					nbCompteurBottes4 -= 1
+					isSlotLibre[n] = true
+				
+				if txtItemType[n] == "bottes_5":
+					DataSave.items_posession.bottes5 += 1
+					DataSave.items_stocker.bottes5 -= 1
+					DataSave.nbItemsStocker -= 1
+					txtItemType[n] = "vide"
+					gui_bottes5[n].queue_free()
+					nbCompteurBottes5 -= 1
+					isSlotLibre[n] = true
+				
+				if txtItemType[n] == "bottes_6":
+					DataSave.items_posession.bottes6 += 1
+					DataSave.items_stocker.bottes6 -= 1
+					DataSave.nbItemsStocker -= 1
+					txtItemType[n] = "vide"
+					gui_bottes6[n].queue_free()
+					nbCompteurBottes6 -= 1
+					isSlotLibre[n] = true
+				
+				if txtItemType[n] == "bouclier_1":
+					DataSave.items_posession.bouclier1 += 1
+					DataSave.items_stocker.bouclier1 -= 1
+					DataSave.nbItemsStocker -= 1
+					txtItemType[n] = "vide"
+					gui_bouclier1[n].queue_free()
+					nbCompteurBouclier1 -= 1
+					isSlotLibre[n] = true
+				
+				if txtItemType[n] == "bouclier_2":
+					DataSave.items_posession.bouclier2 += 1
+					DataSave.items_stocker.bouclier2 -= 1
+					DataSave.nbItemsStocker -= 1
+					txtItemType[n] = "vide"
+					gui_bouclier2[n].queue_free()
+					nbCompteurBouclier2 -= 1
+					isSlotLibre[n] = true
+				
+				if txtItemType[n] == "bouclier_3":
+					DataSave.items_posession.bouclier3 += 1
+					DataSave.items_stocker.bouclier3 -= 1
+					DataSave.nbItemsStocker -= 1
+					txtItemType[n] = "vide"
+					gui_bouclier3[n].queue_free()
+					nbCompteurBouclier3 -= 1
+					isSlotLibre[n] = true
+				
+				if txtItemType[n] == "bouclier_4":
+					DataSave.items_posession.bouclier4 += 1
+					DataSave.items_stocker.bouclier4 -= 1
+					DataSave.nbItemsStocker -= 1
+					txtItemType[n] = "vide"
+					gui_bouclier4[n].queue_free()
+					nbCompteurBouclier4 -= 1
+					isSlotLibre[n] = true
+				
+				if txtItemType[n] == "bouclier_5":
+					DataSave.items_posession.bouclier5 += 1
+					DataSave.items_stocker.bouclier5 -= 1
+					DataSave.nbItemsStocker -= 1
+					txtItemType[n] = "vide"
+					gui_bouclier5[n].queue_free()
+					nbCompteurBouclier5 -= 1
+					isSlotLibre[n] = true
+				
+				if txtItemType[n] == "bouclier_6":
+					DataSave.items_posession.bouclier6 += 1
+					DataSave.items_stocker.bouclier6 -= 1
+					DataSave.nbItemsStocker -= 1
+					txtItemType[n] = "vide"
+					gui_bouclier6[n].queue_free()
+					nbCompteurBouclier6 -= 1
+					isSlotLibre[n] = true
+				
+				if txtItemType[n] == "bouclier_7":
+					DataSave.items_posession.bouclier7 += 1
+					DataSave.items_stocker.bouclier7 -= 1
+					DataSave.nbItemsStocker -= 1
+					txtItemType[n] = "vide"
+					gui_bouclier7[n].queue_free()
+					nbCompteurBouclier7 -= 1
+					isSlotLibre[n] = true
+				
+				if txtItemType[n] == "casque_1":
+					DataSave.items_posession.casque1 += 1
+					DataSave.items_stocker.casque1 -= 1
+					DataSave.nbItemsStocker -= 1
+					txtItemType[n] = "vide"
+					gui_casque1[n].queue_free()
+					nbCompteurCasque1 -= 1
+					isSlotLibre[n] = true
+				
+				if txtItemType[n] == "casque_2":
+					DataSave.items_posession.casque2 += 1
+					DataSave.items_stocker.casque2 -= 1
+					DataSave.nbItemsStocker -= 1
+					txtItemType[n] = "vide"
+					gui_casque2[n].queue_free()
+					nbCompteurCasque2 -= 1
+					isSlotLibre[n] = true
+				
+				if txtItemType[n] == "casque_3":
+					DataSave.items_posession.casque3 += 1
+					DataSave.items_stocker.casque3 -= 1
+					DataSave.nbItemsStocker -= 1
+					txtItemType[n] = "vide"
+					gui_casque3[n].queue_free()
+					nbCompteurCasque3 -= 1
+					isSlotLibre[n] = true
+				
+				if txtItemType[n] == "casque_4":
+					DataSave.items_posession.casque4 += 1
+					DataSave.items_stocker.casque4 -= 1
+					DataSave.nbItemsStocker -= 1
+					txtItemType[n] = "vide"
+					gui_casque4[n].queue_free()
+					nbCompteurCasque4 -= 1
+					isSlotLibre[n] = true
+				
+				if txtItemType[n] == "casque_5":
+					DataSave.items_posession.casque5 += 1
+					DataSave.items_stocker.casque5 -= 1
+					DataSave.nbItemsStocker -= 1
+					txtItemType[n] = "vide"
+					gui_casque5[n].queue_free()
+					nbCompteurCasque5 -= 1
+					isSlotLibre[n] = true
+				
+				if txtItemType[n] == "casque_6":
+					DataSave.items_posession.casque6 += 1
+					DataSave.items_stocker.casque6 -= 1
+					DataSave.nbItemsStocker -= 1
+					txtItemType[n] = "vide"
+					gui_casque6[n].queue_free()
+					nbCompteurCasque6 -= 1
+					isSlotLibre[n] = true
+				
+				if txtItemType[n] == "collier_1":
+					DataSave.items_posession.collier1 += 1
+					DataSave.items_stocker.collier1 -= 1
+					DataSave.nbItemsStocker -= 1
+					txtItemType[n] = "vide"
+					gui_collier1[n].queue_free()
+					nbCompteurCollier1 -= 1
+					isSlotLibre[n] = true
+				
+				if txtItemType[n] == "collier_2":
+					DataSave.items_posession.collier2 += 1
+					DataSave.items_stocker.collier2 -= 1
+					DataSave.nbItemsStocker -= 1
+					txtItemType[n] = "vide"
+					gui_collier2[n].queue_free()
+					nbCompteurCollier2 -= 1
+					isSlotLibre[n] = true
+				
+				if txtItemType[n] == "collier_3":
+					DataSave.items_posession.collier3 += 1
+					DataSave.items_stocker.collier3 -= 1
+					DataSave.nbItemsStocker -= 1
+					txtItemType[n] = "vide"
+					gui_collier3[n].queue_free()
+					nbCompteurCollier3 -= 1
+					isSlotLibre[n] = true
+				
+				if txtItemType[n] == "heaume_1":
+					DataSave.items_posession.heaume1 += 1
+					DataSave.items_stocker.heaume1 -= 1
+					DataSave.nbItemsStocker -= 1
+					txtItemType[n] = "vide"
+					gui_heaume1[n].queue_free()
+					nbCompteurHeaume1 -= 1
+					isSlotLibre[n] = true
+				
+				if txtItemType[n] == "heaume_2":
+					DataSave.items_posession.heaume2 += 1
+					DataSave.items_stocker.heaume2 -= 1
+					DataSave.nbItemsStocker -= 1
+					txtItemType[n] = "vide"
+					gui_heaume2[n].queue_free()
+					nbCompteurHeaume2 -= 1
+					isSlotLibre[n] = true
+				
+				if txtItemType[n] == "heaume_3":
+					DataSave.items_posession.heaume3 += 1
+					DataSave.items_stocker.heaume3 -= 1
+					DataSave.nbItemsStocker -= 1
+					txtItemType[n] = "vide"
+					gui_heaume3[n].queue_free()
+					nbCompteurHeaume3 -= 1
+					isSlotLibre[n] = true
+				
+				if txtItemType[n] == "heaume_4":
+					DataSave.items_posession.heaume4 += 1
+					DataSave.items_stocker.heaume4 -= 1
+					DataSave.nbItemsStocker -= 1
+					txtItemType[n] = "vide"
+					gui_heaume4[n].queue_free()
+					nbCompteurHeaume4 -= 1
+					isSlotLibre[n] = true
+				
+				if txtItemType[n] == "heaume_5":
+					DataSave.items_posession.heaume5 += 1
+					DataSave.items_stocker.heaume5 -= 1
+					DataSave.nbItemsStocker -= 1
+					txtItemType[n] = "vide"
+					gui_heaume5[n].queue_free()
+					nbCompteurHeaume5 -= 1
+					isSlotLibre[n] = true
+				
+				if txtItemType[n] == "heaume_6":
+					DataSave.items_posession.heaume6 += 1
+					DataSave.items_stocker.heaume6 -= 1
+					DataSave.nbItemsStocker -= 1
+					txtItemType[n] = "vide"
+					gui_heaume6[n].queue_free()
+					nbCompteurHeaume6 -= 1
+					isSlotLibre[n] = true
+				
+				if txtItemType[n] == "sword_1":
+					DataSave.items_posession.sword1 += 1
+					DataSave.items_stocker.sword1 -= 1
+					DataSave.nbItemsStocker -= 1
+					txtItemType[n] = "vide"
+					gui_sword1[n].queue_free()
+					nbCompteurSword1 -= 1
+					isSlotLibre[n] = true
+				print("clic clic clic clic clic:::", txtItemType[n])
 			
