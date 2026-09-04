@@ -1495,7 +1495,7 @@ func _ready() -> void:
 	childTxtGold.position.y = 430
 	childTxtGold.text = str(DataSave.hero.gold)
 	childTxtGold.add_theme_font_size_override("font_size", 29)
-	childTxtGold.add_theme_color_override("font_color", Color(1.0, 0.494, 0.0, 1.0) )
+	childTxtGold.add_theme_color_override("font_color", Color(1.0, 0.443, 0.0, 1.0) )
 	
 	for n in range(20):
 		isSlot_libre[n] = true
