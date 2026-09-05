@@ -163,7 +163,7 @@ func _on_mouse_entered_bague1():
 		txt_titre = GuiTextUi.instantiate()
 		add_child(txt_titre)
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
-		childGuiTxtNameItem.position.x = mouse_pos.x
+		childGuiTxtNameItem.position.x = mouse_pos.x + 20
 		childGuiTxtNameItem.position.y = mouse_pos.y
 		for n in range(15):
 			if gui_bague1[n] != null:
@@ -173,7 +173,7 @@ func _on_mouse_entered_bague1():
 		add_child(txt_stat_1)
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
 		childGuiTxtStat1.position.x = mouse_pos.x
-		childGuiTxtStat1.position.y = mouse_pos.y
+		childGuiTxtStat1.position.y = mouse_pos.y + 30
 		for n in range(15):
 			if gui_bague1[n] != null:
 				childGuiTxtStat1.text = "Puissance : + " + str(gui_bague1[n].nb_puissance)
@@ -181,18 +181,25 @@ func _on_mouse_entered_bague1():
 		add_child(txt_stat_2)
 		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
 		childGuiTxtStat2.position.x = mouse_pos.x
-		childGuiTxtStat2.position.y = mouse_pos.y
+		childGuiTxtStat2.position.y = mouse_pos.y + 47
 		for n in range(15):
 			if gui_bague1[n] != null:
 				childGuiTxtStat2.text = "Mana : + " + str(gui_bague1[n].nb_mana)
 
 func _on_mouse_entered_bague2():
+	var mouse_pos = get_viewport().get_mouse_position()
+	
 	if isPopUpOpen == false:
 		gui_fenetre = GuiFenetre.instantiate()
 		add_child(gui_fenetre)
+		var childGuiFenetre = gui_fenetre.get_node("panelGuiFenetre")
+		childGuiFenetre.position.x = mouse_pos.x
+		childGuiFenetre.position.y = mouse_pos.y
 		txt_titre = GuiTextUi.instantiate()
 		add_child(txt_titre)
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		childGuiTxtNameItem.position.x = mouse_pos.x + 20
+		childGuiTxtNameItem.position.y = mouse_pos.y
 		for n in range(15):
 			if gui_bague2[n] != null:
 				childGuiTxtNameItem.text = gui_bague2[n].txt_name
@@ -200,23 +207,34 @@ func _on_mouse_entered_bague2():
 		txt_stat_1 = GuiTextUi.instantiate()
 		add_child(txt_stat_1)
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		childGuiTxtStat1.position.x = mouse_pos.x
+		childGuiTxtStat1.position.y = mouse_pos.y + 30
 		for n in range(15):
 			if gui_bague2[n] != null:
 				childGuiTxtStat1.text = "Puissance : + " + str(gui_bague2[n].nb_puissance)
 		txt_stat_2 = GuiTextUi.instantiate()
 		add_child(txt_stat_2)
 		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+		childGuiTxtStat2.position.x = mouse_pos.x
+		childGuiTxtStat2.position.y = mouse_pos.y + 47
 		for n in range(15):
 			if gui_bague2[n] != null:
 				childGuiTxtStat2.text = "Mana : + " + str(gui_bague2[n].nb_mana)
 
 func _on_mouse_entered_bague3():
+	var mouse_pos = get_viewport().get_mouse_position()
+	
 	if isPopUpOpen == false:
 		gui_fenetre = GuiFenetre.instantiate()
 		add_child(gui_fenetre)
+		var childGuiFenetre = gui_fenetre.get_node("panelGuiFenetre")
+		childGuiFenetre.position.x = mouse_pos.x
+		childGuiFenetre.position.y = mouse_pos.y
 		txt_titre = GuiTextUi.instantiate()
 		add_child(txt_titre)
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		childGuiTxtNameItem.position.x = mouse_pos.x + 20
+		childGuiTxtNameItem.position.y = mouse_pos.y
 		for n in range(15):
 			if gui_bague3[n] != null:
 				childGuiTxtNameItem.text = gui_bague3[n].txt_name
@@ -224,23 +242,34 @@ func _on_mouse_entered_bague3():
 		txt_stat_1 = GuiTextUi.instantiate()
 		add_child(txt_stat_1)
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		childGuiTxtStat1.position.x = mouse_pos.x
+		childGuiTxtStat1.position.y = mouse_pos.y + 30
 		for n in range(15):
 			if gui_bague3[n] != null:
 				childGuiTxtStat1.text = "Puissance : + " + str(gui_bague3[n].nb_puissance)
 		txt_stat_2 = GuiTextUi.instantiate()
 		add_child(txt_stat_2)
 		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+		childGuiTxtStat2.position.x = mouse_pos.x
+		childGuiTxtStat2.position.y = mouse_pos.y + 47
 		for n in range(15):
 			if gui_bague3[n] != null:
 				childGuiTxtStat2.text = "Mana : + " + str(gui_bague3[n].nb_mana)
 
 func _on_mouse_entered_bottes1():
+	var mouse_pos = get_viewport().get_mouse_position()
+	
 	if isPopUpOpen == false:
 		gui_fenetre = GuiFenetre.instantiate()
 		add_child(gui_fenetre)
+		var childGuiFenetre = gui_fenetre.get_node("panelGuiFenetre")
+		childGuiFenetre.position.x = mouse_pos.x
+		childGuiFenetre.position.y = mouse_pos.y
 		txt_titre = GuiTextUi.instantiate()
 		add_child(txt_titre)
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		childGuiTxtNameItem.position.x = mouse_pos.x + 20
+		childGuiTxtNameItem.position.y = mouse_pos.y
 		for n in range(15):
 			if gui_bottes1[n] != null:
 				childGuiTxtNameItem.text = gui_bottes1[n].txt_name
@@ -248,23 +277,34 @@ func _on_mouse_entered_bottes1():
 		txt_stat_1 = GuiTextUi.instantiate()
 		add_child(txt_stat_1)
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		childGuiTxtStat1.position.x = mouse_pos.x
+		childGuiTxtStat1.position.y = mouse_pos.y + 30
 		for n in range(15):
 			if gui_bottes1[n] != null:
 				childGuiTxtStat1.text = "Vie : + " + str(gui_bottes1[n].nb_vie)
 		txt_stat_2 = GuiTextUi.instantiate()
 		add_child(txt_stat_2)
 		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+		childGuiTxtStat2.position.x = mouse_pos.x
+		childGuiTxtStat2.position.y = mouse_pos.y + 47
 		for n in range(15):
 			if gui_bottes1[n] != null:
 				childGuiTxtStat2.text = "Défense : + " + str(gui_bottes1[n].nb_defense)
 
 func _on_mouse_entered_bottes2():
+	var mouse_pos = get_viewport().get_mouse_position()
+	
 	if isPopUpOpen == false:
 		gui_fenetre = GuiFenetre.instantiate()
 		add_child(gui_fenetre)
+		var childGuiFenetre = gui_fenetre.get_node("panelGuiFenetre")
+		childGuiFenetre.position.x = mouse_pos.x
+		childGuiFenetre.position.y = mouse_pos.y
 		txt_titre = GuiTextUi.instantiate()
 		add_child(txt_titre)
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		childGuiTxtNameItem.position.x = mouse_pos.x + 20
+		childGuiTxtNameItem.position.y = mouse_pos.y
 		for n in range(15):
 			if gui_bottes2[n] != null:
 				childGuiTxtNameItem.text = gui_bottes2[n].txt_name
@@ -272,23 +312,34 @@ func _on_mouse_entered_bottes2():
 		txt_stat_1 = GuiTextUi.instantiate()
 		add_child(txt_stat_1)
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		childGuiTxtStat1.position.x = mouse_pos.x
+		childGuiTxtStat1.position.y = mouse_pos.y + 30
 		for n in range(15):
 			if gui_bottes2[n] != null:
 				childGuiTxtStat1.text = "Vie : + " + str(gui_bottes2[n].nb_vie)
 		txt_stat_2 = GuiTextUi.instantiate()
 		add_child(txt_stat_2)
 		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+		childGuiTxtStat2.position.x = mouse_pos.x
+		childGuiTxtStat2.position.y = mouse_pos.y + 47
 		for n in range(15):
 			if gui_bottes2[n] != null:
 				childGuiTxtStat2.text = "Défense : + " + str(gui_bottes2[n].nb_defense)
 
 func _on_mouse_entered_bottes3():
+	var mouse_pos = get_viewport().get_mouse_position()
+	
 	if isPopUpOpen == false:
 		gui_fenetre = GuiFenetre.instantiate()
 		add_child(gui_fenetre)
+		var childGuiFenetre = gui_fenetre.get_node("panelGuiFenetre")
+		childGuiFenetre.position.x = mouse_pos.x
+		childGuiFenetre.position.y = mouse_pos.y
 		txt_titre = GuiTextUi.instantiate()
 		add_child(txt_titre)
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		childGuiTxtNameItem.position.x = mouse_pos.x + 20
+		childGuiTxtNameItem.position.y = mouse_pos.y
 		for n in range(15):
 			if gui_bottes3[n] != null:
 				childGuiTxtNameItem.text = gui_bottes3[n].txt_name
@@ -296,23 +347,34 @@ func _on_mouse_entered_bottes3():
 		txt_stat_1 = GuiTextUi.instantiate()
 		add_child(txt_stat_1)
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		childGuiTxtStat1.position.x = mouse_pos.x
+		childGuiTxtStat1.position.y = mouse_pos.y + 30
 		for n in range(15):
 			if gui_bottes3[n] != null:
 				childGuiTxtStat1.text = "Vie : + " + str(gui_bottes3[n].nb_vie)
 		txt_stat_2 = GuiTextUi.instantiate()
 		add_child(txt_stat_2)
 		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+		childGuiTxtStat2.position.x = mouse_pos.x
+		childGuiTxtStat2.position.y = mouse_pos.y + 47
 		for n in range(15):
 			if gui_bottes3[n] != null:
 				childGuiTxtStat2.text = "Défense : + " + str(gui_bottes3[n].nb_defense)
 
 func _on_mouse_entered_bottes4():
+	var mouse_pos = get_viewport().get_mouse_position()
+	
 	if isPopUpOpen == false:
 		gui_fenetre = GuiFenetre.instantiate()
 		add_child(gui_fenetre)
+		var childGuiFenetre = gui_fenetre.get_node("panelGuiFenetre")
+		childGuiFenetre.position.x = mouse_pos.x
+		childGuiFenetre.position.y = mouse_pos.y
 		txt_titre = GuiTextUi.instantiate()
 		add_child(txt_titre)
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		childGuiTxtNameItem.position.x = mouse_pos.x + 20
+		childGuiTxtNameItem.position.y = mouse_pos.y
 		for n in range(15):
 			if gui_bottes4[n] != null:
 				childGuiTxtNameItem.text = gui_bottes4[n].txt_name
@@ -320,23 +382,34 @@ func _on_mouse_entered_bottes4():
 		txt_stat_1 = GuiTextUi.instantiate()
 		add_child(txt_stat_1)
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		childGuiTxtStat1.position.x = mouse_pos.x
+		childGuiTxtStat1.position.y = mouse_pos.y + 30
 		for n in range(15):
 			if gui_bottes4[n] != null:
 				childGuiTxtStat1.text = "Vie : + " + str(gui_bottes4[n].nb_vie)
 		txt_stat_2 = GuiTextUi.instantiate()
 		add_child(txt_stat_2)
 		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+		childGuiTxtStat2.position.x = mouse_pos.x
+		childGuiTxtStat2.position.y = mouse_pos.y + 47
 		for n in range(15):
 			if gui_bottes4[n] != null:
 				childGuiTxtStat2.text = "Défense : + " + str(gui_bottes4[n].nb_defense)
 
 func _on_mouse_entered_bottes5():
+	var mouse_pos = get_viewport().get_mouse_position()
+	
 	if isPopUpOpen == false:
 		gui_fenetre = GuiFenetre.instantiate()
 		add_child(gui_fenetre)
+		var childGuiFenetre = gui_fenetre.get_node("panelGuiFenetre")
+		childGuiFenetre.position.x = mouse_pos.x
+		childGuiFenetre.position.y = mouse_pos.y
 		txt_titre = GuiTextUi.instantiate()
 		add_child(txt_titre)
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		childGuiTxtNameItem.position.x = mouse_pos.x + 20
+		childGuiTxtNameItem.position.y = mouse_pos.y
 		for n in range(15):
 			if gui_bottes5[n] != null:
 				childGuiTxtNameItem.text = gui_bottes5[n].txt_name
@@ -344,23 +417,34 @@ func _on_mouse_entered_bottes5():
 		txt_stat_1 = GuiTextUi.instantiate()
 		add_child(txt_stat_1)
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		childGuiTxtStat1.position.x = mouse_pos.x
+		childGuiTxtStat1.position.y = mouse_pos.y + 30
 		for n in range(15):
 			if gui_bottes5[n] != null:
 				childGuiTxtStat1.text = "Vie : + " + str(gui_bottes5[n].nb_vie)
 		txt_stat_2 = GuiTextUi.instantiate()
 		add_child(txt_stat_2)
 		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+		childGuiTxtStat2.position.x = mouse_pos.x
+		childGuiTxtStat2.position.y = mouse_pos.y + 47
 		for n in range(15):
 			if gui_bottes5[n] != null:
 				childGuiTxtStat2.text = "Défense : + " + str(gui_bottes5[n].nb_defense)
 
 func _on_mouse_entered_bottes6():
+	var mouse_pos = get_viewport().get_mouse_position()
+	
 	if isPopUpOpen == false:
 		gui_fenetre = GuiFenetre.instantiate()
 		add_child(gui_fenetre)
+		var childGuiFenetre = gui_fenetre.get_node("panelGuiFenetre")
+		childGuiFenetre.position.x = mouse_pos.x
+		childGuiFenetre.position.y = mouse_pos.y
 		txt_titre = GuiTextUi.instantiate()
 		add_child(txt_titre)
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		childGuiTxtNameItem.position.x = mouse_pos.x + 20
+		childGuiTxtNameItem.position.y = mouse_pos.y
 		for n in range(15):
 			if gui_bottes6[n] != null:
 				childGuiTxtNameItem.text = gui_bottes6[n].txt_name
@@ -368,23 +452,34 @@ func _on_mouse_entered_bottes6():
 		txt_stat_1 = GuiTextUi.instantiate()
 		add_child(txt_stat_1)
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		childGuiTxtStat1.position.x = mouse_pos.x
+		childGuiTxtStat1.position.y = mouse_pos.y + 30
 		for n in range(15):
 			if gui_bottes6[n] != null:
 				childGuiTxtStat1.text = "Vie : + " + str(gui_bottes6[n].nb_vie)
 		txt_stat_2 = GuiTextUi.instantiate()
 		add_child(txt_stat_2)
 		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+		childGuiTxtStat2.position.x = mouse_pos.x
+		childGuiTxtStat2.position.y = mouse_pos.y + 47
 		for n in range(15):
 			if gui_bottes6[n] != null:
 				childGuiTxtStat2.text = "Défense : + " + str(gui_bottes6[n].nb_defense)
 
 func _on_mouse_entered_bouclier1():
+	var mouse_pos = get_viewport().get_mouse_position()
+	
 	if isPopUpOpen == false:
 		gui_fenetre = GuiFenetre.instantiate()
 		add_child(gui_fenetre)
+		var childGuiFenetre = gui_fenetre.get_node("panelGuiFenetre")
+		childGuiFenetre.position.x = mouse_pos.x
+		childGuiFenetre.position.y = mouse_pos.y
 		txt_titre = GuiTextUi.instantiate()
 		add_child(txt_titre)
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		childGuiTxtNameItem.position.x = mouse_pos.x + 20
+		childGuiTxtNameItem.position.y = mouse_pos.y
 		for n in range(15):
 			if gui_bouclier1[n] != null:
 				childGuiTxtNameItem.text = gui_bouclier1[n].txt_name
@@ -392,23 +487,34 @@ func _on_mouse_entered_bouclier1():
 		txt_stat_1 = GuiTextUi.instantiate()
 		add_child(txt_stat_1)
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		childGuiTxtStat1.position.x = mouse_pos.x
+		childGuiTxtStat1.position.y = mouse_pos.y + 30
 		for n in range(15):
 			if gui_bouclier1[n] != null:
 				childGuiTxtStat1.text = "Vie : + " + str(gui_bouclier1[n].nb_vie)
 		txt_stat_2 = GuiTextUi.instantiate()
 		add_child(txt_stat_2)
 		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+		childGuiTxtStat2.position.x = mouse_pos.x
+		childGuiTxtStat2.position.y = mouse_pos.y + 47
 		for n in range(15):
 			if gui_bouclier1[n] != null:
 				childGuiTxtStat2.text = "Défense : + " + str(gui_bouclier1[n].nb_defense)
 
 func _on_mouse_entered_bouclier2():
+	var mouse_pos = get_viewport().get_mouse_position()
+	
 	if isPopUpOpen == false:
 		gui_fenetre = GuiFenetre.instantiate()
 		add_child(gui_fenetre)
+		var childGuiFenetre = gui_fenetre.get_node("panelGuiFenetre")
+		childGuiFenetre.position.x = mouse_pos.x
+		childGuiFenetre.position.y = mouse_pos.y
 		txt_titre = GuiTextUi.instantiate()
 		add_child(txt_titre)
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		childGuiTxtNameItem.position.x = mouse_pos.x + 20
+		childGuiTxtNameItem.position.y = mouse_pos.y
 		for n in range(15):
 			if gui_bouclier2[n] != null:
 				childGuiTxtNameItem.text = gui_bouclier2[n].txt_name
@@ -416,23 +522,34 @@ func _on_mouse_entered_bouclier2():
 		txt_stat_1 = GuiTextUi.instantiate()
 		add_child(txt_stat_1)
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		childGuiTxtStat1.position.x = mouse_pos.x
+		childGuiTxtStat1.position.y = mouse_pos.y + 30
 		for n in range(15):
 			if gui_bouclier2[n] != null:
 				childGuiTxtStat1.text = "Vie : + " + str(gui_bouclier2[n].nb_vie)
 		txt_stat_2 = GuiTextUi.instantiate()
 		add_child(txt_stat_2)
 		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+		childGuiTxtStat2.position.x = mouse_pos.x
+		childGuiTxtStat2.position.y = mouse_pos.y + 47
 		for n in range(15):
 			if gui_bouclier2[n] != null:
 				childGuiTxtStat2.text = "Défense : + " + str(gui_bouclier2[n].nb_defense)
 
 func _on_mouse_entered_bouclier3():
+	var mouse_pos = get_viewport().get_mouse_position()
+	
 	if isPopUpOpen == false:
 		gui_fenetre = GuiFenetre.instantiate()
 		add_child(gui_fenetre)
+		var childGuiFenetre = gui_fenetre.get_node("panelGuiFenetre")
+		childGuiFenetre.position.x = mouse_pos.x
+		childGuiFenetre.position.y = mouse_pos.y
 		txt_titre = GuiTextUi.instantiate()
 		add_child(txt_titre)
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		childGuiTxtNameItem.position.x = mouse_pos.x + 20
+		childGuiTxtNameItem.position.y = mouse_pos.y
 		for n in range(15):
 			if gui_bouclier3[n] != null:
 				childGuiTxtNameItem.text = gui_bouclier3[n].txt_name
@@ -440,23 +557,34 @@ func _on_mouse_entered_bouclier3():
 		txt_stat_1 = GuiTextUi.instantiate()
 		add_child(txt_stat_1)
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		childGuiTxtStat1.position.x = mouse_pos.x
+		childGuiTxtStat1.position.y = mouse_pos.y + 30
 		for n in range(15):
 			if gui_bouclier3[n] != null:
 				childGuiTxtStat1.text = "Vie : + " + str(gui_bouclier3[n].nb_vie)
 		txt_stat_2 = GuiTextUi.instantiate()
 		add_child(txt_stat_2)
 		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+		childGuiTxtStat2.position.x = mouse_pos.x
+		childGuiTxtStat2.position.y = mouse_pos.y + 47
 		for n in range(15):
 			if gui_bouclier3[n] != null:
 				childGuiTxtStat2.text = "Défense : + " + str(gui_bouclier3[n].nb_defense)
 
 func _on_mouse_entered_bouclier4():
+	var mouse_pos = get_viewport().get_mouse_position()
+	
 	if isPopUpOpen == false:
 		gui_fenetre = GuiFenetre.instantiate()
 		add_child(gui_fenetre)
+		var childGuiFenetre = gui_fenetre.get_node("panelGuiFenetre")
+		childGuiFenetre.position.x = mouse_pos.x
+		childGuiFenetre.position.y = mouse_pos.y
 		txt_titre = GuiTextUi.instantiate()
 		add_child(txt_titre)
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		childGuiTxtNameItem.position.x = mouse_pos.x + 20
+		childGuiTxtNameItem.position.y = mouse_pos.y
 		for n in range(15):
 			if gui_bouclier4[n] != null:
 				childGuiTxtNameItem.text = gui_bouclier4[n].txt_name
@@ -464,23 +592,34 @@ func _on_mouse_entered_bouclier4():
 		txt_stat_1 = GuiTextUi.instantiate()
 		add_child(txt_stat_1)
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		childGuiTxtStat1.position.x = mouse_pos.x
+		childGuiTxtStat1.position.y = mouse_pos.y + 30
 		for n in range(15):
 			if gui_bouclier4[n] != null:
 				childGuiTxtStat1.text = "Vie : + " + str(gui_bouclier4[n].nb_vie)
 		txt_stat_2 = GuiTextUi.instantiate()
 		add_child(txt_stat_2)
 		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+		childGuiTxtStat2.position.x = mouse_pos.x
+		childGuiTxtStat2.position.y = mouse_pos.y + 47
 		for n in range(15):
 			if gui_bouclier4[n] != null:
 				childGuiTxtStat2.text = "Défense : + " + str(gui_bouclier4[n].nb_defense)
 
 func _on_mouse_entered_bouclier5():
+	var mouse_pos = get_viewport().get_mouse_position()
+	
 	if isPopUpOpen == false:
 		gui_fenetre = GuiFenetre.instantiate()
 		add_child(gui_fenetre)
+		var childGuiFenetre = gui_fenetre.get_node("panelGuiFenetre")
+		childGuiFenetre.position.x = mouse_pos.x
+		childGuiFenetre.position.y = mouse_pos.y
 		txt_titre = GuiTextUi.instantiate()
 		add_child(txt_titre)
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		childGuiTxtNameItem.position.x = mouse_pos.x + 20
+		childGuiTxtNameItem.position.y = mouse_pos.y
 		for n in range(15):
 			if gui_bouclier5[n] != null:
 				childGuiTxtNameItem.text = gui_bouclier5[n].txt_name
@@ -488,23 +627,34 @@ func _on_mouse_entered_bouclier5():
 		txt_stat_1 = GuiTextUi.instantiate()
 		add_child(txt_stat_1)
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		childGuiTxtStat1.position.x = mouse_pos.x
+		childGuiTxtStat1.position.y = mouse_pos.y + 30
 		for n in range(15):
 			if gui_bouclier5[n] != null:
 				childGuiTxtStat1.text = "Vie : + " + str(gui_bouclier5[n].nb_vie)
 		txt_stat_2 = GuiTextUi.instantiate()
 		add_child(txt_stat_2)
 		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+		childGuiTxtStat2.position.x = mouse_pos.x
+		childGuiTxtStat2.position.y = mouse_pos.y + 47
 		for n in range(15):
 			if gui_bouclier5[n] != null:
 				childGuiTxtStat2.text = "Défense : + " + str(gui_bouclier5[n].nb_defense)
 
 func _on_mouse_entered_bouclier6():
+	var mouse_pos = get_viewport().get_mouse_position()
+	
 	if isPopUpOpen == false:
 		gui_fenetre = GuiFenetre.instantiate()
 		add_child(gui_fenetre)
+		var childGuiFenetre = gui_fenetre.get_node("panelGuiFenetre")
+		childGuiFenetre.position.x = mouse_pos.x
+		childGuiFenetre.position.y = mouse_pos.y
 		txt_titre = GuiTextUi.instantiate()
 		add_child(txt_titre)
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		childGuiTxtNameItem.position.x = mouse_pos.x + 20
+		childGuiTxtNameItem.position.y = mouse_pos.y
 		for n in range(15):
 			if gui_bouclier6[n] != null:
 				childGuiTxtNameItem.text = gui_bouclier6[n].txt_name
@@ -512,23 +662,34 @@ func _on_mouse_entered_bouclier6():
 		txt_stat_1 = GuiTextUi.instantiate()
 		add_child(txt_stat_1)
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		childGuiTxtStat1.position.x = mouse_pos.x
+		childGuiTxtStat1.position.y = mouse_pos.y + 30
 		for n in range(15):
 			if gui_bouclier6[n] != null:
 				childGuiTxtStat1.text = "Vie : + " + str(gui_bouclier6[n].nb_vie)
 		txt_stat_2 = GuiTextUi.instantiate()
 		add_child(txt_stat_2)
 		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+		childGuiTxtStat2.position.x = mouse_pos.x
+		childGuiTxtStat2.position.y = mouse_pos.y + 47
 		for n in range(15):
 			if gui_bouclier6[n] != null:
 				childGuiTxtStat2.text = "Défense : + " + str(gui_bouclier6[n].nb_defense)
 
 func _on_mouse_entered_bouclier7():
+	var mouse_pos = get_viewport().get_mouse_position()
+	
 	if isPopUpOpen == false:
 		gui_fenetre = GuiFenetre.instantiate()
 		add_child(gui_fenetre)
+		var childGuiFenetre = gui_fenetre.get_node("panelGuiFenetre")
+		childGuiFenetre.position.x = mouse_pos.x
+		childGuiFenetre.position.y = mouse_pos.y
 		txt_titre = GuiTextUi.instantiate()
 		add_child(txt_titre)
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		childGuiTxtNameItem.position.x = mouse_pos.x + 20
+		childGuiTxtNameItem.position.y = mouse_pos.y
 		for n in range(15):
 			if gui_bouclier7[n] != null:
 				childGuiTxtNameItem.text = gui_bouclier7[n].txt_name
@@ -536,23 +697,34 @@ func _on_mouse_entered_bouclier7():
 		txt_stat_1 = GuiTextUi.instantiate()
 		add_child(txt_stat_1)
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		childGuiTxtStat1.position.x = mouse_pos.x
+		childGuiTxtStat1.position.y = mouse_pos.y + 30
 		for n in range(15):
 			if gui_bouclier7[n] != null:
 				childGuiTxtStat1.text = "Vie : + " + str(gui_bouclier7[n].nb_vie)
 		txt_stat_2 = GuiTextUi.instantiate()
 		add_child(txt_stat_2)
 		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+		childGuiTxtStat2.position.x = mouse_pos.x
+		childGuiTxtStat2.position.y = mouse_pos.y + 47
 		for n in range(15):
 			if gui_bouclier7[n] != null:
 				childGuiTxtStat2.text = "Défense : + " + str(gui_bouclier7[n].nb_defense)
 
 func _on_mouse_entered_casque1():
+	var mouse_pos = get_viewport().get_mouse_position()
+	
 	if isPopUpOpen == false:
 		gui_fenetre = GuiFenetre.instantiate()
 		add_child(gui_fenetre)
+		var childGuiFenetre = gui_fenetre.get_node("panelGuiFenetre")
+		childGuiFenetre.position.x = mouse_pos.x
+		childGuiFenetre.position.y = mouse_pos.y
 		txt_titre = GuiTextUi.instantiate()
 		add_child(txt_titre)
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		childGuiTxtNameItem.position.x = mouse_pos.x + 20
+		childGuiTxtNameItem.position.y = mouse_pos.y
 		for n in range(15):
 			if gui_casque1[n] != null:
 				childGuiTxtNameItem.text = gui_casque1[n].txt_name
@@ -560,23 +732,34 @@ func _on_mouse_entered_casque1():
 		txt_stat_1 = GuiTextUi.instantiate()
 		add_child(txt_stat_1)
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		childGuiTxtStat1.position.x = mouse_pos.x
+		childGuiTxtStat1.position.y = mouse_pos.y + 30
 		for n in range(15):
 			if gui_casque1[n] != null:
 				childGuiTxtStat1.text = "Vie : + " + str(gui_casque1[n].nb_vie)
 		txt_stat_2 = GuiTextUi.instantiate()
 		add_child(txt_stat_2)
 		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+		childGuiTxtStat2.position.x = mouse_pos.x
+		childGuiTxtStat2.position.y = mouse_pos.y + 47
 		for n in range(15):
 			if gui_casque1[n] != null:
 				childGuiTxtStat2.text = "Défense : + " + str(gui_casque1[n].nb_defense)
 
 func _on_mouse_entered_casque2():
+	var mouse_pos = get_viewport().get_mouse_position()
+	
 	if isPopUpOpen == false:
 		gui_fenetre = GuiFenetre.instantiate()
 		add_child(gui_fenetre)
+		var childGuiFenetre = gui_fenetre.get_node("panelGuiFenetre")
+		childGuiFenetre.position.x = mouse_pos.x
+		childGuiFenetre.position.y = mouse_pos.y
 		txt_titre = GuiTextUi.instantiate()
 		add_child(txt_titre)
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		childGuiTxtNameItem.position.x = mouse_pos.x + 20
+		childGuiTxtNameItem.position.y = mouse_pos.y
 		for n in range(15):
 			if gui_casque2[n] != null:
 				childGuiTxtNameItem.text = gui_casque2[n].txt_name
@@ -584,23 +767,34 @@ func _on_mouse_entered_casque2():
 		txt_stat_1 = GuiTextUi.instantiate()
 		add_child(txt_stat_1)
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		childGuiTxtStat1.position.x = mouse_pos.x
+		childGuiTxtStat1.position.y = mouse_pos.y + 30
 		for n in range(15):
 			if gui_casque2[n] != null:
 				childGuiTxtStat1.text = "Vie : + " + str(gui_casque2[n].nb_vie)
 		txt_stat_2 = GuiTextUi.instantiate()
 		add_child(txt_stat_2)
 		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+		childGuiTxtStat2.position.x = mouse_pos.x
+		childGuiTxtStat2.position.y = mouse_pos.y + 47
 		for n in range(15):
 			if gui_casque2[n] != null:
 				childGuiTxtStat2.text = "Défense : + " + str(gui_casque2[n].nb_defense)
 
 func _on_mouse_entered_casque3():
+	var mouse_pos = get_viewport().get_mouse_position()
+	
 	if isPopUpOpen == false:
 		gui_fenetre = GuiFenetre.instantiate()
 		add_child(gui_fenetre)
+		var childGuiFenetre = gui_fenetre.get_node("panelGuiFenetre")
+		childGuiFenetre.position.x = mouse_pos.x
+		childGuiFenetre.position.y = mouse_pos.y
 		txt_titre = GuiTextUi.instantiate()
 		add_child(txt_titre)
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		childGuiTxtNameItem.position.x = mouse_pos.x + 20
+		childGuiTxtNameItem.position.y = mouse_pos.y
 		for n in range(15):
 			if gui_casque3[n] != null:
 				childGuiTxtNameItem.text = gui_casque3[n].txt_name
@@ -608,23 +802,34 @@ func _on_mouse_entered_casque3():
 		txt_stat_1 = GuiTextUi.instantiate()
 		add_child(txt_stat_1)
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		childGuiTxtStat1.position.x = mouse_pos.x
+		childGuiTxtStat1.position.y = mouse_pos.y + 30
 		for n in range(15):
 			if gui_casque3[n] != null:
 				childGuiTxtStat1.text = "Vie : + " + str(gui_casque3[n].nb_vie)
 		txt_stat_2 = GuiTextUi.instantiate()
 		add_child(txt_stat_2)
 		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+		childGuiTxtStat2.position.x = mouse_pos.x
+		childGuiTxtStat2.position.y = mouse_pos.y + 47
 		for n in range(15):
 			if gui_casque3[n] != null:
 				childGuiTxtStat2.text = "Défense : + " + str(gui_casque3[n].nb_defense)
 
 func _on_mouse_entered_casque4():
+	var mouse_pos = get_viewport().get_mouse_position()
+	
 	if isPopUpOpen == false:
 		gui_fenetre = GuiFenetre.instantiate()
 		add_child(gui_fenetre)
+		var childGuiFenetre = gui_fenetre.get_node("panelGuiFenetre")
+		childGuiFenetre.position.x = mouse_pos.x
+		childGuiFenetre.position.y = mouse_pos.y
 		txt_titre = GuiTextUi.instantiate()
 		add_child(txt_titre)
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		childGuiTxtNameItem.position.x = mouse_pos.x + 20
+		childGuiTxtNameItem.position.y = mouse_pos.y
 		for n in range(15):
 			if gui_casque4[n] != null:
 				childGuiTxtNameItem.text = gui_casque4[n].txt_name
@@ -632,23 +837,34 @@ func _on_mouse_entered_casque4():
 		txt_stat_1 = GuiTextUi.instantiate()
 		add_child(txt_stat_1)
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		childGuiTxtStat1.position.x = mouse_pos.x
+		childGuiTxtStat1.position.y = mouse_pos.y + 30
 		for n in range(15):
 			if gui_casque4[n] != null:
 				childGuiTxtStat1.text = "Vie : + " + str(gui_casque4[n].nb_vie)
 		txt_stat_2 = GuiTextUi.instantiate()
 		add_child(txt_stat_2)
 		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+		childGuiTxtStat2.position.x = mouse_pos.x
+		childGuiTxtStat2.position.y = mouse_pos.y + 47
 		for n in range(15):
 			if gui_casque4[n] != null:
 				childGuiTxtStat2.text = "Défense : + " + str(gui_casque4[n].nb_defense)
 
 func _on_mouse_entered_casque5():
+	var mouse_pos = get_viewport().get_mouse_position()
+	
 	if isPopUpOpen == false:
 		gui_fenetre = GuiFenetre.instantiate()
 		add_child(gui_fenetre)
+		var childGuiFenetre = gui_fenetre.get_node("panelGuiFenetre")
+		childGuiFenetre.position.x = mouse_pos.x
+		childGuiFenetre.position.y = mouse_pos.y
 		txt_titre = GuiTextUi.instantiate()
 		add_child(txt_titre)
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		childGuiTxtNameItem.position.x = mouse_pos.x + 20
+		childGuiTxtNameItem.position.y = mouse_pos.y
 		for n in range(15):
 			if gui_casque5[n] != null:
 				childGuiTxtNameItem.text = gui_casque5[n].txt_name
@@ -656,23 +872,34 @@ func _on_mouse_entered_casque5():
 		txt_stat_1 = GuiTextUi.instantiate()
 		add_child(txt_stat_1)
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		childGuiTxtStat1.position.x = mouse_pos.x
+		childGuiTxtStat1.position.y = mouse_pos.y + 30
 		for n in range(15):
 			if gui_casque5[n] != null:
 				childGuiTxtStat1.text = "Vie : + " + str(gui_casque5[n].nb_vie)
 		txt_stat_2 = GuiTextUi.instantiate()
 		add_child(txt_stat_2)
 		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+		childGuiTxtStat2.position.x = mouse_pos.x
+		childGuiTxtStat2.position.y = mouse_pos.y + 47
 		for n in range(15):
 			if gui_casque5[n] != null:
 				childGuiTxtStat2.text = "Défense : + " + str(gui_casque5[n].nb_defense)
 
 func _on_mouse_entered_casque6():
+	var mouse_pos = get_viewport().get_mouse_position()
+	
 	if isPopUpOpen == false:
 		gui_fenetre = GuiFenetre.instantiate()
 		add_child(gui_fenetre)
+		var childGuiFenetre = gui_fenetre.get_node("panelGuiFenetre")
+		childGuiFenetre.position.x = mouse_pos.x
+		childGuiFenetre.position.y = mouse_pos.y
 		txt_titre = GuiTextUi.instantiate()
 		add_child(txt_titre)
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		childGuiTxtNameItem.position.x = mouse_pos.x + 20
+		childGuiTxtNameItem.position.y = mouse_pos.y
 		for n in range(15):
 			if gui_casque6[n] != null:
 				childGuiTxtNameItem.text = gui_casque6[n].txt_name
@@ -680,23 +907,34 @@ func _on_mouse_entered_casque6():
 		txt_stat_1 = GuiTextUi.instantiate()
 		add_child(txt_stat_1)
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		childGuiTxtStat1.position.x = mouse_pos.x
+		childGuiTxtStat1.position.y = mouse_pos.y + 30
 		for n in range(15):
 			if gui_casque6[n] != null:
 				childGuiTxtStat1.text = "Vie : + " + str(gui_casque6[n].nb_vie)
 		txt_stat_2 = GuiTextUi.instantiate()
 		add_child(txt_stat_2)
 		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+		childGuiTxtStat2.position.x = mouse_pos.x
+		childGuiTxtStat2.position.y = mouse_pos.y + 47
 		for n in range(15):
 			if gui_casque6[n] != null:
 				childGuiTxtStat2.text = "Défense : + " + str(gui_casque6[n].nb_defense)
 
 func _on_mouse_entered_collier1():
+	var mouse_pos = get_viewport().get_mouse_position()
+	
 	if isPopUpOpen == false:
 		gui_fenetre = GuiFenetre.instantiate()
 		add_child(gui_fenetre)
+		var childGuiFenetre = gui_fenetre.get_node("panelGuiFenetre")
+		childGuiFenetre.position.x = mouse_pos.x
+		childGuiFenetre.position.y = mouse_pos.y
 		txt_titre = GuiTextUi.instantiate()
 		add_child(txt_titre)
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		childGuiTxtNameItem.position.x = mouse_pos.x + 20
+		childGuiTxtNameItem.position.y = mouse_pos.y
 		for n in range(15):
 			if gui_collier1[n] != null:
 				childGuiTxtNameItem.text = gui_collier1[n].txt_name
@@ -704,23 +942,34 @@ func _on_mouse_entered_collier1():
 		txt_stat_1 = GuiTextUi.instantiate()
 		add_child(txt_stat_1)
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		childGuiTxtStat1.position.x = mouse_pos.x
+		childGuiTxtStat1.position.y = mouse_pos.y + 30
 		for n in range(15):
 			if gui_collier1[n] != null:
 				childGuiTxtStat1.text = "Puissance : + " + str(gui_collier1[n].nb_puissance)
 		txt_stat_2 = GuiTextUi.instantiate()
 		add_child(txt_stat_2)
 		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+		childGuiTxtStat2.position.x = mouse_pos.x
+		childGuiTxtStat2.position.y = mouse_pos.y + 47
 		for n in range(15):
 			if gui_collier1[n] != null:
 				childGuiTxtStat2.text = "Endurance : + " + str(gui_collier1[n].nb_endurance)
 
 func _on_mouse_entered_collier2():
+	var mouse_pos = get_viewport().get_mouse_position()
+	
 	if isPopUpOpen == false:
 		gui_fenetre = GuiFenetre.instantiate()
 		add_child(gui_fenetre)
+		var childGuiFenetre = gui_fenetre.get_node("panelGuiFenetre")
+		childGuiFenetre.position.x = mouse_pos.x
+		childGuiFenetre.position.y = mouse_pos.y
 		txt_titre = GuiTextUi.instantiate()
 		add_child(txt_titre)
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		childGuiTxtNameItem.position.x = mouse_pos.x + 20
+		childGuiTxtNameItem.position.y = mouse_pos.y
 		for n in range(15):
 			if gui_collier2[n] != null:
 				childGuiTxtNameItem.text = gui_collier2[n].txt_name
@@ -728,23 +977,34 @@ func _on_mouse_entered_collier2():
 		txt_stat_1 = GuiTextUi.instantiate()
 		add_child(txt_stat_1)
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		childGuiTxtStat1.position.x = mouse_pos.x
+		childGuiTxtStat1.position.y = mouse_pos.y + 30
 		for n in range(15):
 			if gui_collier2[n] != null:
 				childGuiTxtStat1.text = "Puissance : + " + str(gui_collier2[n].nb_puissance)
 		txt_stat_2 = GuiTextUi.instantiate()
 		add_child(txt_stat_2)
 		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+		childGuiTxtStat2.position.x = mouse_pos.x
+		childGuiTxtStat2.position.y = mouse_pos.y + 47
 		for n in range(15):
 			if gui_collier2[n] != null:
 				childGuiTxtStat2.text = "Endurance : + " + str(gui_collier2[n].nb_endurance)
 
 func _on_mouse_entered_collier3():
+	var mouse_pos = get_viewport().get_mouse_position()
+	
 	if isPopUpOpen == false:
 		gui_fenetre = GuiFenetre.instantiate()
 		add_child(gui_fenetre)
+		var childGuiFenetre = gui_fenetre.get_node("panelGuiFenetre")
+		childGuiFenetre.position.x = mouse_pos.x
+		childGuiFenetre.position.y = mouse_pos.y
 		txt_titre = GuiTextUi.instantiate()
 		add_child(txt_titre)
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
+		childGuiTxtNameItem.position.x = mouse_pos.x + 20
+		childGuiTxtNameItem.position.y = mouse_pos.y
 		for n in range(15):
 			if gui_collier3[n] != null:
 				childGuiTxtNameItem.text = gui_collier3[n].txt_name
@@ -752,12 +1012,16 @@ func _on_mouse_entered_collier3():
 		txt_stat_1 = GuiTextUi.instantiate()
 		add_child(txt_stat_1)
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
+		childGuiTxtStat1.position.x = mouse_pos.x
+		childGuiTxtStat1.position.y = mouse_pos.y + 30
 		for n in range(15):
 			if gui_collier3[n] != null:
 				childGuiTxtStat1.text = "Puissance : + " + str(gui_collier3[n].nb_puissance)
 		txt_stat_2 = GuiTextUi.instantiate()
 		add_child(txt_stat_2)
 		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
+		childGuiTxtStat2.position.x = mouse_pos.x
+		childGuiTxtStat2.position.y = mouse_pos.y + 47
 		for n in range(15):
 			if gui_collier3[n] != null:
 				childGuiTxtStat2.text = "Endurance : + " + str(gui_collier3[n].nb_endurance)
