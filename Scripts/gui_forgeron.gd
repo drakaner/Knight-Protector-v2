@@ -50,6 +50,8 @@ var GuiSword8 = preload("res://Objets/gui_sword_8.tscn")
 @onready var childSlot = []
 @onready var childSlotIngredient = []
 @onready var childSlotResultat
+@onready var childButtonFlecheLeft
+@onready var childButtonFlecheRight
 
 var gui_potion_vie = []
 var gui_potion_mana = []
@@ -147,6 +149,7 @@ var txt_stat_2
 var gui_fenetre
 
 var nbDecaleTextName = 0
+var nbPage = 1
 
 var txtItemType = []
 var isSlot_libre = []
@@ -165,7 +168,7 @@ func _on_mouse_entered_bague1():
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
 		childGuiTxtNameItem.position.x = mouse_pos.x + 20
 		childGuiTxtNameItem.position.y = mouse_pos.y
-		for n in range(15):
+		for n in range(21):
 			if gui_bague1[n] != null:
 				childGuiTxtNameItem.text = gui_bague1[n].txt_name
 		nbDecaleTextName = 40
@@ -174,7 +177,7 @@ func _on_mouse_entered_bague1():
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
 		childGuiTxtStat1.position.x = mouse_pos.x
 		childGuiTxtStat1.position.y = mouse_pos.y + 30
-		for n in range(15):
+		for n in range(21):
 			if gui_bague1[n] != null:
 				childGuiTxtStat1.text = "Puissance : + " + str(gui_bague1[n].nb_puissance)
 		txt_stat_2 = GuiTextUi.instantiate()
@@ -182,7 +185,7 @@ func _on_mouse_entered_bague1():
 		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
 		childGuiTxtStat2.position.x = mouse_pos.x
 		childGuiTxtStat2.position.y = mouse_pos.y + 47
-		for n in range(15):
+		for n in range(21):
 			if gui_bague1[n] != null:
 				childGuiTxtStat2.text = "Mana : + " + str(gui_bague1[n].nb_mana)
 
@@ -200,7 +203,7 @@ func _on_mouse_entered_bague2():
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
 		childGuiTxtNameItem.position.x = mouse_pos.x + 20
 		childGuiTxtNameItem.position.y = mouse_pos.y
-		for n in range(15):
+		for n in range(21):
 			if gui_bague2[n] != null:
 				childGuiTxtNameItem.text = gui_bague2[n].txt_name
 		nbDecaleTextName = 40
@@ -209,7 +212,7 @@ func _on_mouse_entered_bague2():
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
 		childGuiTxtStat1.position.x = mouse_pos.x
 		childGuiTxtStat1.position.y = mouse_pos.y + 30
-		for n in range(15):
+		for n in range(21):
 			if gui_bague2[n] != null:
 				childGuiTxtStat1.text = "Puissance : + " + str(gui_bague2[n].nb_puissance)
 		txt_stat_2 = GuiTextUi.instantiate()
@@ -217,7 +220,7 @@ func _on_mouse_entered_bague2():
 		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
 		childGuiTxtStat2.position.x = mouse_pos.x
 		childGuiTxtStat2.position.y = mouse_pos.y + 47
-		for n in range(15):
+		for n in range(21):
 			if gui_bague2[n] != null:
 				childGuiTxtStat2.text = "Mana : + " + str(gui_bague2[n].nb_mana)
 
@@ -235,7 +238,7 @@ func _on_mouse_entered_bague3():
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
 		childGuiTxtNameItem.position.x = mouse_pos.x + 20
 		childGuiTxtNameItem.position.y = mouse_pos.y
-		for n in range(15):
+		for n in range(21):
 			if gui_bague3[n] != null:
 				childGuiTxtNameItem.text = gui_bague3[n].txt_name
 		nbDecaleTextName = 40
@@ -244,7 +247,7 @@ func _on_mouse_entered_bague3():
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
 		childGuiTxtStat1.position.x = mouse_pos.x
 		childGuiTxtStat1.position.y = mouse_pos.y + 30
-		for n in range(15):
+		for n in range(21):
 			if gui_bague3[n] != null:
 				childGuiTxtStat1.text = "Puissance : + " + str(gui_bague3[n].nb_puissance)
 		txt_stat_2 = GuiTextUi.instantiate()
@@ -252,7 +255,7 @@ func _on_mouse_entered_bague3():
 		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
 		childGuiTxtStat2.position.x = mouse_pos.x
 		childGuiTxtStat2.position.y = mouse_pos.y + 47
-		for n in range(15):
+		for n in range(21):
 			if gui_bague3[n] != null:
 				childGuiTxtStat2.text = "Mana : + " + str(gui_bague3[n].nb_mana)
 
@@ -270,7 +273,7 @@ func _on_mouse_entered_bottes1():
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
 		childGuiTxtNameItem.position.x = mouse_pos.x + 20
 		childGuiTxtNameItem.position.y = mouse_pos.y
-		for n in range(15):
+		for n in range(21):
 			if gui_bottes1[n] != null:
 				childGuiTxtNameItem.text = gui_bottes1[n].txt_name
 		nbDecaleTextName = 40
@@ -279,7 +282,7 @@ func _on_mouse_entered_bottes1():
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
 		childGuiTxtStat1.position.x = mouse_pos.x
 		childGuiTxtStat1.position.y = mouse_pos.y + 30
-		for n in range(15):
+		for n in range(21):
 			if gui_bottes1[n] != null:
 				childGuiTxtStat1.text = "Vie : + " + str(gui_bottes1[n].nb_vie)
 		txt_stat_2 = GuiTextUi.instantiate()
@@ -287,7 +290,7 @@ func _on_mouse_entered_bottes1():
 		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
 		childGuiTxtStat2.position.x = mouse_pos.x
 		childGuiTxtStat2.position.y = mouse_pos.y + 47
-		for n in range(15):
+		for n in range(21):
 			if gui_bottes1[n] != null:
 				childGuiTxtStat2.text = "Défense : + " + str(gui_bottes1[n].nb_defense)
 
@@ -305,7 +308,7 @@ func _on_mouse_entered_bottes2():
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
 		childGuiTxtNameItem.position.x = mouse_pos.x + 20
 		childGuiTxtNameItem.position.y = mouse_pos.y
-		for n in range(15):
+		for n in range(21):
 			if gui_bottes2[n] != null:
 				childGuiTxtNameItem.text = gui_bottes2[n].txt_name
 		nbDecaleTextName = 7
@@ -314,7 +317,7 @@ func _on_mouse_entered_bottes2():
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
 		childGuiTxtStat1.position.x = mouse_pos.x
 		childGuiTxtStat1.position.y = mouse_pos.y + 30
-		for n in range(15):
+		for n in range(21):
 			if gui_bottes2[n] != null:
 				childGuiTxtStat1.text = "Vie : + " + str(gui_bottes2[n].nb_vie)
 		txt_stat_2 = GuiTextUi.instantiate()
@@ -322,7 +325,7 @@ func _on_mouse_entered_bottes2():
 		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
 		childGuiTxtStat2.position.x = mouse_pos.x
 		childGuiTxtStat2.position.y = mouse_pos.y + 47
-		for n in range(15):
+		for n in range(21):
 			if gui_bottes2[n] != null:
 				childGuiTxtStat2.text = "Défense : + " + str(gui_bottes2[n].nb_defense)
 
@@ -340,7 +343,7 @@ func _on_mouse_entered_bottes3():
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
 		childGuiTxtNameItem.position.x = mouse_pos.x + 20
 		childGuiTxtNameItem.position.y = mouse_pos.y
-		for n in range(15):
+		for n in range(21):
 			if gui_bottes3[n] != null:
 				childGuiTxtNameItem.text = gui_bottes3[n].txt_name
 		nbDecaleTextName = 30
@@ -349,7 +352,7 @@ func _on_mouse_entered_bottes3():
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
 		childGuiTxtStat1.position.x = mouse_pos.x
 		childGuiTxtStat1.position.y = mouse_pos.y + 30
-		for n in range(15):
+		for n in range(21):
 			if gui_bottes3[n] != null:
 				childGuiTxtStat1.text = "Vie : + " + str(gui_bottes3[n].nb_vie)
 		txt_stat_2 = GuiTextUi.instantiate()
@@ -357,7 +360,7 @@ func _on_mouse_entered_bottes3():
 		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
 		childGuiTxtStat2.position.x = mouse_pos.x
 		childGuiTxtStat2.position.y = mouse_pos.y + 47
-		for n in range(15):
+		for n in range(21):
 			if gui_bottes3[n] != null:
 				childGuiTxtStat2.text = "Défense : + " + str(gui_bottes3[n].nb_defense)
 
@@ -375,7 +378,7 @@ func _on_mouse_entered_bottes4():
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
 		childGuiTxtNameItem.position.x = mouse_pos.x + 20
 		childGuiTxtNameItem.position.y = mouse_pos.y
-		for n in range(15):
+		for n in range(21):
 			if gui_bottes4[n] != null:
 				childGuiTxtNameItem.text = gui_bottes4[n].txt_name
 		nbDecaleTextName = 30
@@ -384,7 +387,7 @@ func _on_mouse_entered_bottes4():
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
 		childGuiTxtStat1.position.x = mouse_pos.x
 		childGuiTxtStat1.position.y = mouse_pos.y + 30
-		for n in range(15):
+		for n in range(21):
 			if gui_bottes4[n] != null:
 				childGuiTxtStat1.text = "Vie : + " + str(gui_bottes4[n].nb_vie)
 		txt_stat_2 = GuiTextUi.instantiate()
@@ -392,7 +395,7 @@ func _on_mouse_entered_bottes4():
 		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
 		childGuiTxtStat2.position.x = mouse_pos.x
 		childGuiTxtStat2.position.y = mouse_pos.y + 47
-		for n in range(15):
+		for n in range(21):
 			if gui_bottes4[n] != null:
 				childGuiTxtStat2.text = "Défense : + " + str(gui_bottes4[n].nb_defense)
 
@@ -410,7 +413,7 @@ func _on_mouse_entered_bottes5():
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
 		childGuiTxtNameItem.position.x = mouse_pos.x + 20
 		childGuiTxtNameItem.position.y = mouse_pos.y
-		for n in range(15):
+		for n in range(21):
 			if gui_bottes5[n] != null:
 				childGuiTxtNameItem.text = gui_bottes5[n].txt_name
 		nbDecaleTextName = 30
@@ -419,7 +422,7 @@ func _on_mouse_entered_bottes5():
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
 		childGuiTxtStat1.position.x = mouse_pos.x
 		childGuiTxtStat1.position.y = mouse_pos.y + 30
-		for n in range(15):
+		for n in range(21):
 			if gui_bottes5[n] != null:
 				childGuiTxtStat1.text = "Vie : + " + str(gui_bottes5[n].nb_vie)
 		txt_stat_2 = GuiTextUi.instantiate()
@@ -427,7 +430,7 @@ func _on_mouse_entered_bottes5():
 		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
 		childGuiTxtStat2.position.x = mouse_pos.x
 		childGuiTxtStat2.position.y = mouse_pos.y + 47
-		for n in range(15):
+		for n in range(21):
 			if gui_bottes5[n] != null:
 				childGuiTxtStat2.text = "Défense : + " + str(gui_bottes5[n].nb_defense)
 
@@ -445,7 +448,7 @@ func _on_mouse_entered_bottes6():
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
 		childGuiTxtNameItem.position.x = mouse_pos.x + 20
 		childGuiTxtNameItem.position.y = mouse_pos.y
-		for n in range(15):
+		for n in range(21):
 			if gui_bottes6[n] != null:
 				childGuiTxtNameItem.text = gui_bottes6[n].txt_name
 		nbDecaleTextName = 30
@@ -454,7 +457,7 @@ func _on_mouse_entered_bottes6():
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
 		childGuiTxtStat1.position.x = mouse_pos.x
 		childGuiTxtStat1.position.y = mouse_pos.y + 30
-		for n in range(15):
+		for n in range(21):
 			if gui_bottes6[n] != null:
 				childGuiTxtStat1.text = "Vie : + " + str(gui_bottes6[n].nb_vie)
 		txt_stat_2 = GuiTextUi.instantiate()
@@ -462,7 +465,7 @@ func _on_mouse_entered_bottes6():
 		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
 		childGuiTxtStat2.position.x = mouse_pos.x
 		childGuiTxtStat2.position.y = mouse_pos.y + 47
-		for n in range(15):
+		for n in range(21):
 			if gui_bottes6[n] != null:
 				childGuiTxtStat2.text = "Défense : + " + str(gui_bottes6[n].nb_defense)
 
@@ -480,7 +483,7 @@ func _on_mouse_entered_bouclier1():
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
 		childGuiTxtNameItem.position.x = mouse_pos.x + 20
 		childGuiTxtNameItem.position.y = mouse_pos.y
-		for n in range(15):
+		for n in range(21):
 			if gui_bouclier1[n] != null:
 				childGuiTxtNameItem.text = gui_bouclier1[n].txt_name
 		nbDecaleTextName = 30
@@ -489,7 +492,7 @@ func _on_mouse_entered_bouclier1():
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
 		childGuiTxtStat1.position.x = mouse_pos.x
 		childGuiTxtStat1.position.y = mouse_pos.y + 30
-		for n in range(15):
+		for n in range(21):
 			if gui_bouclier1[n] != null:
 				childGuiTxtStat1.text = "Vie : + " + str(gui_bouclier1[n].nb_vie)
 		txt_stat_2 = GuiTextUi.instantiate()
@@ -497,7 +500,7 @@ func _on_mouse_entered_bouclier1():
 		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
 		childGuiTxtStat2.position.x = mouse_pos.x
 		childGuiTxtStat2.position.y = mouse_pos.y + 47
-		for n in range(15):
+		for n in range(21):
 			if gui_bouclier1[n] != null:
 				childGuiTxtStat2.text = "Défense : + " + str(gui_bouclier1[n].nb_defense)
 
@@ -515,7 +518,7 @@ func _on_mouse_entered_bouclier2():
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
 		childGuiTxtNameItem.position.x = mouse_pos.x + 20
 		childGuiTxtNameItem.position.y = mouse_pos.y
-		for n in range(15):
+		for n in range(21):
 			if gui_bouclier2[n] != null:
 				childGuiTxtNameItem.text = gui_bouclier2[n].txt_name
 		nbDecaleTextName = 10
@@ -524,7 +527,7 @@ func _on_mouse_entered_bouclier2():
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
 		childGuiTxtStat1.position.x = mouse_pos.x
 		childGuiTxtStat1.position.y = mouse_pos.y + 30
-		for n in range(15):
+		for n in range(21):
 			if gui_bouclier2[n] != null:
 				childGuiTxtStat1.text = "Vie : + " + str(gui_bouclier2[n].nb_vie)
 		txt_stat_2 = GuiTextUi.instantiate()
@@ -532,7 +535,7 @@ func _on_mouse_entered_bouclier2():
 		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
 		childGuiTxtStat2.position.x = mouse_pos.x
 		childGuiTxtStat2.position.y = mouse_pos.y + 47
-		for n in range(15):
+		for n in range(21):
 			if gui_bouclier2[n] != null:
 				childGuiTxtStat2.text = "Défense : + " + str(gui_bouclier2[n].nb_defense)
 
@@ -550,7 +553,7 @@ func _on_mouse_entered_bouclier3():
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
 		childGuiTxtNameItem.position.x = mouse_pos.x + 20
 		childGuiTxtNameItem.position.y = mouse_pos.y
-		for n in range(15):
+		for n in range(21):
 			if gui_bouclier3[n] != null:
 				childGuiTxtNameItem.text = gui_bouclier3[n].txt_name
 		nbDecaleTextName = 30
@@ -559,7 +562,7 @@ func _on_mouse_entered_bouclier3():
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
 		childGuiTxtStat1.position.x = mouse_pos.x
 		childGuiTxtStat1.position.y = mouse_pos.y + 30
-		for n in range(15):
+		for n in range(21):
 			if gui_bouclier3[n] != null:
 				childGuiTxtStat1.text = "Vie : + " + str(gui_bouclier3[n].nb_vie)
 		txt_stat_2 = GuiTextUi.instantiate()
@@ -567,7 +570,7 @@ func _on_mouse_entered_bouclier3():
 		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
 		childGuiTxtStat2.position.x = mouse_pos.x
 		childGuiTxtStat2.position.y = mouse_pos.y + 47
-		for n in range(15):
+		for n in range(21):
 			if gui_bouclier3[n] != null:
 				childGuiTxtStat2.text = "Défense : + " + str(gui_bouclier3[n].nb_defense)
 
@@ -585,7 +588,7 @@ func _on_mouse_entered_bouclier4():
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
 		childGuiTxtNameItem.position.x = mouse_pos.x + 20
 		childGuiTxtNameItem.position.y = mouse_pos.y
-		for n in range(15):
+		for n in range(21):
 			if gui_bouclier4[n] != null:
 				childGuiTxtNameItem.text = gui_bouclier4[n].txt_name
 		nbDecaleTextName = 5
@@ -594,7 +597,7 @@ func _on_mouse_entered_bouclier4():
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
 		childGuiTxtStat1.position.x = mouse_pos.x
 		childGuiTxtStat1.position.y = mouse_pos.y + 30
-		for n in range(15):
+		for n in range(21):
 			if gui_bouclier4[n] != null:
 				childGuiTxtStat1.text = "Vie : + " + str(gui_bouclier4[n].nb_vie)
 		txt_stat_2 = GuiTextUi.instantiate()
@@ -602,7 +605,7 @@ func _on_mouse_entered_bouclier4():
 		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
 		childGuiTxtStat2.position.x = mouse_pos.x
 		childGuiTxtStat2.position.y = mouse_pos.y + 47
-		for n in range(15):
+		for n in range(21):
 			if gui_bouclier4[n] != null:
 				childGuiTxtStat2.text = "Défense : + " + str(gui_bouclier4[n].nb_defense)
 
@@ -620,7 +623,7 @@ func _on_mouse_entered_bouclier5():
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
 		childGuiTxtNameItem.position.x = mouse_pos.x + 20
 		childGuiTxtNameItem.position.y = mouse_pos.y
-		for n in range(15):
+		for n in range(21):
 			if gui_bouclier5[n] != null:
 				childGuiTxtNameItem.text = gui_bouclier5[n].txt_name
 		nbDecaleTextName = 30
@@ -629,7 +632,7 @@ func _on_mouse_entered_bouclier5():
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
 		childGuiTxtStat1.position.x = mouse_pos.x
 		childGuiTxtStat1.position.y = mouse_pos.y + 30
-		for n in range(15):
+		for n in range(21):
 			if gui_bouclier5[n] != null:
 				childGuiTxtStat1.text = "Vie : + " + str(gui_bouclier5[n].nb_vie)
 		txt_stat_2 = GuiTextUi.instantiate()
@@ -637,7 +640,7 @@ func _on_mouse_entered_bouclier5():
 		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
 		childGuiTxtStat2.position.x = mouse_pos.x
 		childGuiTxtStat2.position.y = mouse_pos.y + 47
-		for n in range(15):
+		for n in range(21):
 			if gui_bouclier5[n] != null:
 				childGuiTxtStat2.text = "Défense : + " + str(gui_bouclier5[n].nb_defense)
 
@@ -655,7 +658,7 @@ func _on_mouse_entered_bouclier6():
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
 		childGuiTxtNameItem.position.x = mouse_pos.x + 20
 		childGuiTxtNameItem.position.y = mouse_pos.y
-		for n in range(15):
+		for n in range(21):
 			if gui_bouclier6[n] != null:
 				childGuiTxtNameItem.text = gui_bouclier6[n].txt_name
 		nbDecaleTextName = 30
@@ -664,7 +667,7 @@ func _on_mouse_entered_bouclier6():
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
 		childGuiTxtStat1.position.x = mouse_pos.x
 		childGuiTxtStat1.position.y = mouse_pos.y + 30
-		for n in range(15):
+		for n in range(21):
 			if gui_bouclier6[n] != null:
 				childGuiTxtStat1.text = "Vie : + " + str(gui_bouclier6[n].nb_vie)
 		txt_stat_2 = GuiTextUi.instantiate()
@@ -672,7 +675,7 @@ func _on_mouse_entered_bouclier6():
 		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
 		childGuiTxtStat2.position.x = mouse_pos.x
 		childGuiTxtStat2.position.y = mouse_pos.y + 47
-		for n in range(15):
+		for n in range(21):
 			if gui_bouclier6[n] != null:
 				childGuiTxtStat2.text = "Défense : + " + str(gui_bouclier6[n].nb_defense)
 
@@ -690,7 +693,7 @@ func _on_mouse_entered_bouclier7():
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
 		childGuiTxtNameItem.position.x = mouse_pos.x + 20
 		childGuiTxtNameItem.position.y = mouse_pos.y
-		for n in range(15):
+		for n in range(21):
 			if gui_bouclier7[n] != null:
 				childGuiTxtNameItem.text = gui_bouclier7[n].txt_name
 		nbDecaleTextName = 30
@@ -699,7 +702,7 @@ func _on_mouse_entered_bouclier7():
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
 		childGuiTxtStat1.position.x = mouse_pos.x
 		childGuiTxtStat1.position.y = mouse_pos.y + 30
-		for n in range(15):
+		for n in range(21):
 			if gui_bouclier7[n] != null:
 				childGuiTxtStat1.text = "Vie : + " + str(gui_bouclier7[n].nb_vie)
 		txt_stat_2 = GuiTextUi.instantiate()
@@ -707,7 +710,7 @@ func _on_mouse_entered_bouclier7():
 		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
 		childGuiTxtStat2.position.x = mouse_pos.x
 		childGuiTxtStat2.position.y = mouse_pos.y + 47
-		for n in range(15):
+		for n in range(21):
 			if gui_bouclier7[n] != null:
 				childGuiTxtStat2.text = "Défense : + " + str(gui_bouclier7[n].nb_defense)
 
@@ -725,7 +728,7 @@ func _on_mouse_entered_casque1():
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
 		childGuiTxtNameItem.position.x = mouse_pos.x + 20
 		childGuiTxtNameItem.position.y = mouse_pos.y
-		for n in range(15):
+		for n in range(21):
 			if gui_casque1[n] != null:
 				childGuiTxtNameItem.text = gui_casque1[n].txt_name
 		nbDecaleTextName = 30
@@ -734,7 +737,7 @@ func _on_mouse_entered_casque1():
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
 		childGuiTxtStat1.position.x = mouse_pos.x
 		childGuiTxtStat1.position.y = mouse_pos.y + 30
-		for n in range(15):
+		for n in range(21):
 			if gui_casque1[n] != null:
 				childGuiTxtStat1.text = "Vie : + " + str(gui_casque1[n].nb_vie)
 		txt_stat_2 = GuiTextUi.instantiate()
@@ -742,7 +745,7 @@ func _on_mouse_entered_casque1():
 		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
 		childGuiTxtStat2.position.x = mouse_pos.x
 		childGuiTxtStat2.position.y = mouse_pos.y + 47
-		for n in range(15):
+		for n in range(21):
 			if gui_casque1[n] != null:
 				childGuiTxtStat2.text = "Défense : + " + str(gui_casque1[n].nb_defense)
 
@@ -760,7 +763,7 @@ func _on_mouse_entered_casque2():
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
 		childGuiTxtNameItem.position.x = mouse_pos.x + 20
 		childGuiTxtNameItem.position.y = mouse_pos.y
-		for n in range(15):
+		for n in range(21):
 			if gui_casque2[n] != null:
 				childGuiTxtNameItem.text = gui_casque2[n].txt_name
 		nbDecaleTextName = 15
@@ -769,7 +772,7 @@ func _on_mouse_entered_casque2():
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
 		childGuiTxtStat1.position.x = mouse_pos.x
 		childGuiTxtStat1.position.y = mouse_pos.y + 30
-		for n in range(15):
+		for n in range(21):
 			if gui_casque2[n] != null:
 				childGuiTxtStat1.text = "Vie : + " + str(gui_casque2[n].nb_vie)
 		txt_stat_2 = GuiTextUi.instantiate()
@@ -777,7 +780,7 @@ func _on_mouse_entered_casque2():
 		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
 		childGuiTxtStat2.position.x = mouse_pos.x
 		childGuiTxtStat2.position.y = mouse_pos.y + 47
-		for n in range(15):
+		for n in range(21):
 			if gui_casque2[n] != null:
 				childGuiTxtStat2.text = "Défense : + " + str(gui_casque2[n].nb_defense)
 
@@ -795,7 +798,7 @@ func _on_mouse_entered_casque3():
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
 		childGuiTxtNameItem.position.x = mouse_pos.x + 20
 		childGuiTxtNameItem.position.y = mouse_pos.y
-		for n in range(15):
+		for n in range(21):
 			if gui_casque3[n] != null:
 				childGuiTxtNameItem.text = gui_casque3[n].txt_name
 		nbDecaleTextName = 30
@@ -804,7 +807,7 @@ func _on_mouse_entered_casque3():
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
 		childGuiTxtStat1.position.x = mouse_pos.x
 		childGuiTxtStat1.position.y = mouse_pos.y + 30
-		for n in range(15):
+		for n in range(21):
 			if gui_casque3[n] != null:
 				childGuiTxtStat1.text = "Vie : + " + str(gui_casque3[n].nb_vie)
 		txt_stat_2 = GuiTextUi.instantiate()
@@ -812,7 +815,7 @@ func _on_mouse_entered_casque3():
 		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
 		childGuiTxtStat2.position.x = mouse_pos.x
 		childGuiTxtStat2.position.y = mouse_pos.y + 47
-		for n in range(15):
+		for n in range(21):
 			if gui_casque3[n] != null:
 				childGuiTxtStat2.text = "Défense : + " + str(gui_casque3[n].nb_defense)
 
@@ -830,7 +833,7 @@ func _on_mouse_entered_casque4():
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
 		childGuiTxtNameItem.position.x = mouse_pos.x + 20
 		childGuiTxtNameItem.position.y = mouse_pos.y
-		for n in range(15):
+		for n in range(21):
 			if gui_casque4[n] != null:
 				childGuiTxtNameItem.text = gui_casque4[n].txt_name
 		nbDecaleTextName = 30
@@ -839,7 +842,7 @@ func _on_mouse_entered_casque4():
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
 		childGuiTxtStat1.position.x = mouse_pos.x
 		childGuiTxtStat1.position.y = mouse_pos.y + 30
-		for n in range(15):
+		for n in range(21):
 			if gui_casque4[n] != null:
 				childGuiTxtStat1.text = "Vie : + " + str(gui_casque4[n].nb_vie)
 		txt_stat_2 = GuiTextUi.instantiate()
@@ -847,7 +850,7 @@ func _on_mouse_entered_casque4():
 		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
 		childGuiTxtStat2.position.x = mouse_pos.x
 		childGuiTxtStat2.position.y = mouse_pos.y + 47
-		for n in range(15):
+		for n in range(21):
 			if gui_casque4[n] != null:
 				childGuiTxtStat2.text = "Défense : + " + str(gui_casque4[n].nb_defense)
 
@@ -865,7 +868,7 @@ func _on_mouse_entered_casque5():
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
 		childGuiTxtNameItem.position.x = mouse_pos.x + 20
 		childGuiTxtNameItem.position.y = mouse_pos.y
-		for n in range(15):
+		for n in range(21):
 			if gui_casque5[n] != null:
 				childGuiTxtNameItem.text = gui_casque5[n].txt_name
 		nbDecaleTextName = 30
@@ -874,7 +877,7 @@ func _on_mouse_entered_casque5():
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
 		childGuiTxtStat1.position.x = mouse_pos.x
 		childGuiTxtStat1.position.y = mouse_pos.y + 30
-		for n in range(15):
+		for n in range(21):
 			if gui_casque5[n] != null:
 				childGuiTxtStat1.text = "Vie : + " + str(gui_casque5[n].nb_vie)
 		txt_stat_2 = GuiTextUi.instantiate()
@@ -882,7 +885,7 @@ func _on_mouse_entered_casque5():
 		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
 		childGuiTxtStat2.position.x = mouse_pos.x
 		childGuiTxtStat2.position.y = mouse_pos.y + 47
-		for n in range(15):
+		for n in range(21):
 			if gui_casque5[n] != null:
 				childGuiTxtStat2.text = "Défense : + " + str(gui_casque5[n].nb_defense)
 
@@ -900,7 +903,7 @@ func _on_mouse_entered_casque6():
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
 		childGuiTxtNameItem.position.x = mouse_pos.x + 20
 		childGuiTxtNameItem.position.y = mouse_pos.y
-		for n in range(15):
+		for n in range(21):
 			if gui_casque6[n] != null:
 				childGuiTxtNameItem.text = gui_casque6[n].txt_name
 		nbDecaleTextName = 30
@@ -909,7 +912,7 @@ func _on_mouse_entered_casque6():
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
 		childGuiTxtStat1.position.x = mouse_pos.x
 		childGuiTxtStat1.position.y = mouse_pos.y + 30
-		for n in range(15):
+		for n in range(21):
 			if gui_casque6[n] != null:
 				childGuiTxtStat1.text = "Vie : + " + str(gui_casque6[n].nb_vie)
 		txt_stat_2 = GuiTextUi.instantiate()
@@ -917,7 +920,7 @@ func _on_mouse_entered_casque6():
 		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
 		childGuiTxtStat2.position.x = mouse_pos.x
 		childGuiTxtStat2.position.y = mouse_pos.y + 47
-		for n in range(15):
+		for n in range(21):
 			if gui_casque6[n] != null:
 				childGuiTxtStat2.text = "Défense : + " + str(gui_casque6[n].nb_defense)
 
@@ -935,7 +938,7 @@ func _on_mouse_entered_collier1():
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
 		childGuiTxtNameItem.position.x = mouse_pos.x + 20
 		childGuiTxtNameItem.position.y = mouse_pos.y
-		for n in range(15):
+		for n in range(21):
 			if gui_collier1[n] != null:
 				childGuiTxtNameItem.text = gui_collier1[n].txt_name
 		nbDecaleTextName = 5
@@ -944,7 +947,7 @@ func _on_mouse_entered_collier1():
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
 		childGuiTxtStat1.position.x = mouse_pos.x
 		childGuiTxtStat1.position.y = mouse_pos.y + 30
-		for n in range(15):
+		for n in range(21):
 			if gui_collier1[n] != null:
 				childGuiTxtStat1.text = "Puissance : + " + str(gui_collier1[n].nb_puissance)
 		txt_stat_2 = GuiTextUi.instantiate()
@@ -952,7 +955,7 @@ func _on_mouse_entered_collier1():
 		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
 		childGuiTxtStat2.position.x = mouse_pos.x
 		childGuiTxtStat2.position.y = mouse_pos.y + 47
-		for n in range(15):
+		for n in range(21):
 			if gui_collier1[n] != null:
 				childGuiTxtStat2.text = "Endurance : + " + str(gui_collier1[n].nb_endurance)
 
@@ -970,7 +973,7 @@ func _on_mouse_entered_collier2():
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
 		childGuiTxtNameItem.position.x = mouse_pos.x + 20
 		childGuiTxtNameItem.position.y = mouse_pos.y
-		for n in range(15):
+		for n in range(21):
 			if gui_collier2[n] != null:
 				childGuiTxtNameItem.text = gui_collier2[n].txt_name
 		nbDecaleTextName = 30
@@ -979,7 +982,7 @@ func _on_mouse_entered_collier2():
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
 		childGuiTxtStat1.position.x = mouse_pos.x
 		childGuiTxtStat1.position.y = mouse_pos.y + 30
-		for n in range(15):
+		for n in range(21):
 			if gui_collier2[n] != null:
 				childGuiTxtStat1.text = "Puissance : + " + str(gui_collier2[n].nb_puissance)
 		txt_stat_2 = GuiTextUi.instantiate()
@@ -987,7 +990,7 @@ func _on_mouse_entered_collier2():
 		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
 		childGuiTxtStat2.position.x = mouse_pos.x
 		childGuiTxtStat2.position.y = mouse_pos.y + 47
-		for n in range(15):
+		for n in range(21):
 			if gui_collier2[n] != null:
 				childGuiTxtStat2.text = "Endurance : + " + str(gui_collier2[n].nb_endurance)
 
@@ -1005,7 +1008,7 @@ func _on_mouse_entered_collier3():
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
 		childGuiTxtNameItem.position.x = mouse_pos.x + 20
 		childGuiTxtNameItem.position.y = mouse_pos.y
-		for n in range(15):
+		for n in range(21):
 			if gui_collier3[n] != null:
 				childGuiTxtNameItem.text = gui_collier3[n].txt_name
 		nbDecaleTextName = 20
@@ -1014,7 +1017,7 @@ func _on_mouse_entered_collier3():
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
 		childGuiTxtStat1.position.x = mouse_pos.x
 		childGuiTxtStat1.position.y = mouse_pos.y + 30
-		for n in range(15):
+		for n in range(21):
 			if gui_collier3[n] != null:
 				childGuiTxtStat1.text = "Puissance : + " + str(gui_collier3[n].nb_puissance)
 		txt_stat_2 = GuiTextUi.instantiate()
@@ -1022,295 +1025,433 @@ func _on_mouse_entered_collier3():
 		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
 		childGuiTxtStat2.position.x = mouse_pos.x
 		childGuiTxtStat2.position.y = mouse_pos.y + 47
-		for n in range(15):
+		for n in range(21):
 			if gui_collier3[n] != null:
 				childGuiTxtStat2.text = "Endurance : + " + str(gui_collier3[n].nb_endurance)
 
 func _on_mouse_entered_heaume1():
+	var mouse_pos = get_viewport().get_mouse_position()
+	
 	if isPopUpOpen == false:
 		gui_fenetre = GuiFenetre.instantiate()
 		add_child(gui_fenetre)
+		var childGuiFenetre = gui_fenetre.get_node("panelGuiFenetre")
+		childGuiFenetre.position.x = mouse_pos.x
+		childGuiFenetre.position.y = mouse_pos.y
 		txt_titre = GuiTextUi.instantiate()
 		add_child(txt_titre)
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
-		for n in range(15):
+		childGuiTxtNameItem.position.x = mouse_pos.x + 20
+		childGuiTxtNameItem.position.y = mouse_pos.y
+		for n in range(21):
 			if gui_heaume1[n] != null:
 				childGuiTxtNameItem.text = gui_heaume1[n].txt_name
 		nbDecaleTextName = 35
 		txt_stat_1 = GuiTextUi.instantiate()
 		add_child(txt_stat_1)
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
-		for n in range(15):
+		childGuiTxtStat1.position.x = mouse_pos.x
+		childGuiTxtStat1.position.y = mouse_pos.y + 30
+		for n in range(21):
 			if gui_heaume1[n] != null:
 				childGuiTxtStat1.text = "Vie : + " + str(gui_heaume1[n].nb_vie)
 		txt_stat_2 = GuiTextUi.instantiate()
 		add_child(txt_stat_2)
 		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
-		for n in range(15):
+		childGuiTxtStat2.position.x = mouse_pos.x
+		childGuiTxtStat2.position.y = mouse_pos.y + 47
+		for n in range(21):
 			if gui_heaume1[n] != null:
 				childGuiTxtStat2.text = "Défense : + " + str(gui_heaume1[n].nb_defense)
 
 func _on_mouse_entered_heaume2():
+	var mouse_pos = get_viewport().get_mouse_position()
+	
 	if isPopUpOpen == false:
 		gui_fenetre = GuiFenetre.instantiate()
 		add_child(gui_fenetre)
+		var childGuiFenetre = gui_fenetre.get_node("panelGuiFenetre")
+		childGuiFenetre.position.x = mouse_pos.x
+		childGuiFenetre.position.y = mouse_pos.y
 		txt_titre = GuiTextUi.instantiate()
 		add_child(txt_titre)
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
-		for n in range(15):
+		childGuiTxtNameItem.position.x = mouse_pos.x + 20
+		childGuiTxtNameItem.position.y = mouse_pos.y
+		for n in range(21):
 			if gui_heaume2[n] != null:
 				childGuiTxtNameItem.text = gui_heaume2[n].txt_name
 		nbDecaleTextName = 20
 		txt_stat_1 = GuiTextUi.instantiate()
 		add_child(txt_stat_1)
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
-		for n in range(15):
+		childGuiTxtStat1.position.x = mouse_pos.x
+		childGuiTxtStat1.position.y = mouse_pos.y + 30
+		for n in range(21):
 			if gui_heaume2[n] != null:
 				childGuiTxtStat1.text = "Vie : + " + str(gui_heaume2[n].nb_vie)
 		txt_stat_2 = GuiTextUi.instantiate()
 		add_child(txt_stat_2)
 		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
-		for n in range(15):
+		childGuiTxtStat2.position.x = mouse_pos.x
+		childGuiTxtStat2.position.y = mouse_pos.y + 47
+		for n in range(21):
 			if gui_heaume2[n] != null:
 				childGuiTxtStat2.text = "Défense : + " + str(gui_heaume2[n].nb_defense)
 
 func _on_mouse_entered_heaume3():
+	var mouse_pos = get_viewport().get_mouse_position()
+	
 	if isPopUpOpen == false:
 		gui_fenetre = GuiFenetre.instantiate()
 		add_child(gui_fenetre)
+		var childGuiFenetre = gui_fenetre.get_node("panelGuiFenetre")
+		childGuiFenetre.position.x = mouse_pos.x
+		childGuiFenetre.position.y = mouse_pos.y
 		txt_titre = GuiTextUi.instantiate()
 		add_child(txt_titre)
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
-		for n in range(15):
+		childGuiTxtNameItem.position.x = mouse_pos.x + 20
+		childGuiTxtNameItem.position.y = mouse_pos.y
+		for n in range(21):
 			if gui_heaume3[n] != null:
 				childGuiTxtNameItem.text = gui_heaume3[n].txt_name
 		nbDecaleTextName = 35
 		txt_stat_1 = GuiTextUi.instantiate()
 		add_child(txt_stat_1)
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
-		for n in range(15):
+		childGuiTxtStat1.position.x = mouse_pos.x
+		childGuiTxtStat1.position.y = mouse_pos.y + 30
+		for n in range(21):
 			if gui_heaume3[n] != null:
 				childGuiTxtStat1.text = "Vie : + " + str(gui_heaume3[n].nb_vie)
 		txt_stat_2 = GuiTextUi.instantiate()
 		add_child(txt_stat_2)
 		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
-		for n in range(15):
+		childGuiTxtStat2.position.x = mouse_pos.x
+		childGuiTxtStat2.position.y = mouse_pos.y + 47
+		for n in range(21):
 			if gui_heaume3[n] != null:
 				childGuiTxtStat2.text = "Défense : + " + str(gui_heaume3[n].nb_defense)
 
 func _on_mouse_entered_heaume4():
+	var mouse_pos = get_viewport().get_mouse_position()
+	
 	if isPopUpOpen == false:
 		gui_fenetre = GuiFenetre.instantiate()
 		add_child(gui_fenetre)
+		var childGuiFenetre = gui_fenetre.get_node("panelGuiFenetre")
+		childGuiFenetre.position.x = mouse_pos.x
+		childGuiFenetre.position.y = mouse_pos.y
 		txt_titre = GuiTextUi.instantiate()
 		add_child(txt_titre)
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
-		for n in range(15):
+		childGuiTxtNameItem.position.x = mouse_pos.x + 20
+		childGuiTxtNameItem.position.y = mouse_pos.y
+		for n in range(21):
 			if gui_heaume4[n] != null:
 				childGuiTxtNameItem.text = gui_heaume4[n].txt_name
 		nbDecaleTextName = 20
 		txt_stat_1 = GuiTextUi.instantiate()
 		add_child(txt_stat_1)
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
-		for n in range(15):
+		childGuiTxtStat1.position.x = mouse_pos.x
+		childGuiTxtStat1.position.y = mouse_pos.y + 30
+		for n in range(21):
 			if gui_heaume4[n] != null:
 				childGuiTxtStat1.text = "Vie : + " + str(gui_heaume4[n].nb_vie)
 		txt_stat_2 = GuiTextUi.instantiate()
 		add_child(txt_stat_2)
 		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
-		for n in range(15):
+		childGuiTxtStat2.position.x = mouse_pos.x
+		childGuiTxtStat2.position.y = mouse_pos.y + 47
+		for n in range(21):
 			if gui_heaume4[n] != null:
 				childGuiTxtStat2.text = "Défense : + " + str(gui_heaume4[n].nb_defense)
 
 func _on_mouse_entered_heaume5():
+	var mouse_pos = get_viewport().get_mouse_position()
+	
 	if isPopUpOpen == false:
 		gui_fenetre = GuiFenetre.instantiate()
 		add_child(gui_fenetre)
+		var childGuiFenetre = gui_fenetre.get_node("panelGuiFenetre")
+		childGuiFenetre.position.x = mouse_pos.x
+		childGuiFenetre.position.y = mouse_pos.y
 		txt_titre = GuiTextUi.instantiate()
 		add_child(txt_titre)
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
-		for n in range(15):
+		childGuiTxtNameItem.position.x = mouse_pos.x + 20
+		childGuiTxtNameItem.position.y = mouse_pos.y
+		for n in range(21):
 			if gui_heaume5[n] != null:
 				childGuiTxtNameItem.text = gui_heaume5[n].txt_name
 		nbDecaleTextName = 20
 		txt_stat_1 = GuiTextUi.instantiate()
 		add_child(txt_stat_1)
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
-		for n in range(15):
+		childGuiTxtStat1.position.x = mouse_pos.x
+		childGuiTxtStat1.position.y = mouse_pos.y + 30
+		for n in range(21):
 			if gui_heaume5[n] != null:
 				childGuiTxtStat1.text = "Vie : + " + str(gui_heaume5[n].nb_vie)
 		txt_stat_2 = GuiTextUi.instantiate()
 		add_child(txt_stat_2)
 		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
-		for n in range(15):
+		childGuiTxtStat2.position.x = mouse_pos.x
+		childGuiTxtStat2.position.y = mouse_pos.y + 47
+		for n in range(21):
 			if gui_heaume5[n] != null:
 				childGuiTxtStat2.text = "Défense : + " + str(gui_heaume5[n].nb_defense)
 
 func _on_mouse_entered_heaume6():
+	var mouse_pos = get_viewport().get_mouse_position()
+	
 	if isPopUpOpen == false:
 		gui_fenetre = GuiFenetre.instantiate()
 		add_child(gui_fenetre)
+		var childGuiFenetre = gui_fenetre.get_node("panelGuiFenetre")
+		childGuiFenetre.position.x = mouse_pos.x
+		childGuiFenetre.position.y = mouse_pos.y
 		txt_titre = GuiTextUi.instantiate()
 		add_child(txt_titre)
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
-		for n in range(15):
+		childGuiTxtNameItem.position.x = mouse_pos.x + 20
+		childGuiTxtNameItem.position.y = mouse_pos.y
+		for n in range(21):
 			if gui_heaume6[n] != null:
 				childGuiTxtNameItem.text = gui_heaume6[n].txt_name
 		nbDecaleTextName = 20
 		txt_stat_1 = GuiTextUi.instantiate()
 		add_child(txt_stat_1)
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
-		for n in range(15):
+		childGuiTxtStat1.position.x = mouse_pos.x
+		childGuiTxtStat1.position.y = mouse_pos.y + 30
+		for n in range(21):
 			if gui_heaume6[n] != null:
 				childGuiTxtStat1.text = "Vie : + " + str(gui_heaume6[n].nb_vie)
 		txt_stat_2 = GuiTextUi.instantiate()
 		add_child(txt_stat_2)
 		var childGuiTxtStat2 = txt_stat_2.get_node("labelGuiTextFenetre")
-		for n in range(15):
+		childGuiTxtStat2.position.x = mouse_pos.x
+		childGuiTxtStat2.position.y = mouse_pos.y + 47
+		for n in range(21):
 			if gui_heaume6[n] != null:
 				childGuiTxtStat2.text = "Défense : + " + str(gui_heaume6[n].nb_defense)
 
 func _on_mouse_entered_sword1():
+	var mouse_pos = get_viewport().get_mouse_position()
+	
 	if isPopUpOpen == false:
 		gui_fenetre = GuiFenetre.instantiate()
 		add_child(gui_fenetre)
+		var childGuiFenetre = gui_fenetre.get_node("panelGuiFenetre")
+		childGuiFenetre.position.x = mouse_pos.x
+		childGuiFenetre.position.y = mouse_pos.y
 		txt_titre = GuiTextUi.instantiate()
 		add_child(txt_titre)
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
-		for n in range(15):
+		childGuiTxtNameItem.position.x = mouse_pos.x + 20
+		childGuiTxtNameItem.position.y = mouse_pos.y
+		for n in range(21):
 			if gui_sword1[n] != null:
 				childGuiTxtNameItem.text = gui_sword1[n].txt_name
 		nbDecaleTextName = 30
 		txt_stat_1 = GuiTextUi.instantiate()
 		add_child(txt_stat_1)
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
-		for n in range(15):
+		childGuiTxtStat1.position.x = mouse_pos.x
+		childGuiTxtStat1.position.y = mouse_pos.y + 30
+		for n in range(21):
 			if gui_sword1[n] != null:
 				childGuiTxtStat1.text = "Attaque : + " + str(gui_sword1[n].nb_attaque)
 
 func _on_mouse_entered_sword2():
+	var mouse_pos = get_viewport().get_mouse_position()
+	
 	if isPopUpOpen == false:
 		gui_fenetre = GuiFenetre.instantiate()
 		add_child(gui_fenetre)
+		var childGuiFenetre = gui_fenetre.get_node("panelGuiFenetre")
+		childGuiFenetre.position.x = mouse_pos.x
+		childGuiFenetre.position.y = mouse_pos.y
 		txt_titre = GuiTextUi.instantiate()
 		add_child(txt_titre)
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
-		for n in range(15):
+		childGuiTxtNameItem.position.x = mouse_pos.x + 20
+		childGuiTxtNameItem.position.y = mouse_pos.y
+		for n in range(21):
 			if gui_sword2[n] != null:
 				childGuiTxtNameItem.text = gui_sword2[n].txt_name
 		nbDecaleTextName = 30
 		txt_stat_1 = GuiTextUi.instantiate()
 		add_child(txt_stat_1)
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
-		for n in range(15):
+		childGuiTxtStat1.position.x = mouse_pos.x
+		childGuiTxtStat1.position.y = mouse_pos.y + 30
+		for n in range(21):
 			if gui_sword2[n] != null:
 				childGuiTxtStat1.text = "Attaque : + " + str(gui_sword2[n].nb_attaque)
 
 func _on_mouse_entered_sword3():
+	var mouse_pos = get_viewport().get_mouse_position()
+	
 	if isPopUpOpen == false:
 		gui_fenetre = GuiFenetre.instantiate()
 		add_child(gui_fenetre)
+		var childGuiFenetre = gui_fenetre.get_node("panelGuiFenetre")
+		childGuiFenetre.position.x = mouse_pos.x
+		childGuiFenetre.position.y = mouse_pos.y
 		txt_titre = GuiTextUi.instantiate()
 		add_child(txt_titre)
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
-		for n in range(15):
+		childGuiTxtNameItem.position.x = mouse_pos.x + 20
+		childGuiTxtNameItem.position.y = mouse_pos.y
+		for n in range(21):
 			if gui_sword3[n] != null:
 				childGuiTxtNameItem.text = gui_sword3[n].txt_name
 		nbDecaleTextName = 1
 		txt_stat_1 = GuiTextUi.instantiate()
 		add_child(txt_stat_1)
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
-		for n in range(15):
+		childGuiTxtStat1.position.x = mouse_pos.x
+		childGuiTxtStat1.position.y = mouse_pos.y + 30
+		for n in range(21):
 			if gui_sword3[n] != null:
 				childGuiTxtStat1.text = "Attaque : + " + str(gui_sword3[n].nb_attaque)
 
 func _on_mouse_entered_sword4():
+	var mouse_pos = get_viewport().get_mouse_position()
+	
 	if isPopUpOpen == false:
 		gui_fenetre = GuiFenetre.instantiate()
 		add_child(gui_fenetre)
+		var childGuiFenetre = gui_fenetre.get_node("panelGuiFenetre")
+		childGuiFenetre.position.x = mouse_pos.x
+		childGuiFenetre.position.y = mouse_pos.y
 		txt_titre = GuiTextUi.instantiate()
 		add_child(txt_titre)
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
-		for n in range(15):
+		childGuiTxtNameItem.position.x = mouse_pos.x + 20
+		childGuiTxtNameItem.position.y = mouse_pos.y
+		for n in range(21):
 			if gui_sword4[n] != null:
 				childGuiTxtNameItem.text = gui_sword4[n].txt_name
 		nbDecaleTextName = 30
 		txt_stat_1 = GuiTextUi.instantiate()
 		add_child(txt_stat_1)
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
-		for n in range(15):
+		childGuiTxtStat1.position.x = mouse_pos.x
+		childGuiTxtStat1.position.y = mouse_pos.y + 30
+		for n in range(21):
 			if gui_sword4[n] != null:
 				childGuiTxtStat1.text = "Attaque : + " + str(gui_sword4[n].nb_attaque)
 
 func _on_mouse_entered_sword5():
+	var mouse_pos = get_viewport().get_mouse_position()
+	
 	if isPopUpOpen == false:
 		gui_fenetre = GuiFenetre.instantiate()
 		add_child(gui_fenetre)
+		var childGuiFenetre = gui_fenetre.get_node("panelGuiFenetre")
+		childGuiFenetre.position.x = mouse_pos.x
+		childGuiFenetre.position.y = mouse_pos.y
 		txt_titre = GuiTextUi.instantiate()
 		add_child(txt_titre)
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
-		for n in range(15):
+		childGuiTxtNameItem.position.x = mouse_pos.x + 20
+		childGuiTxtNameItem.position.y = mouse_pos.y
+		for n in range(21):
 			if gui_sword5[n] != null:
 				childGuiTxtNameItem.text = gui_sword5[n].txt_name
 		nbDecaleTextName = 30
 		txt_stat_1 = GuiTextUi.instantiate()
 		add_child(txt_stat_1)
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
-		for n in range(15):
+		childGuiTxtStat1.position.x = mouse_pos.x
+		childGuiTxtStat1.position.y = mouse_pos.y + 30
+		for n in range(21):
 			if gui_sword5[n] != null:
 				childGuiTxtStat1.text = "Attaque : + " + str(gui_sword5[n].nb_attaque)
 
 func _on_mouse_entered_sword6():
+	var mouse_pos = get_viewport().get_mouse_position()
+	
 	if isPopUpOpen == false:
 		gui_fenetre = GuiFenetre.instantiate()
 		add_child(gui_fenetre)
+		var childGuiFenetre = gui_fenetre.get_node("panelGuiFenetre")
+		childGuiFenetre.position.x = mouse_pos.x
+		childGuiFenetre.position.y = mouse_pos.y
 		txt_titre = GuiTextUi.instantiate()
 		add_child(txt_titre)
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
-		for n in range(15):
+		childGuiTxtNameItem.position.x = mouse_pos.x + 20
+		childGuiTxtNameItem.position.y = mouse_pos.y
+		for n in range(21):
 			if gui_sword6[n] != null:
 				childGuiTxtNameItem.text = gui_sword6[n].txt_name
 		nbDecaleTextName = 50
 		txt_stat_1 = GuiTextUi.instantiate()
 		add_child(txt_stat_1)
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
-		for n in range(15):
+		childGuiTxtStat1.position.x = mouse_pos.x
+		childGuiTxtStat1.position.y = mouse_pos.y + 30
+		for n in range(21):
 			if gui_sword6[n] != null:
 				childGuiTxtStat1.text = "Attaque : + " + str(gui_sword6[n].nb_attaque)
 
 func _on_mouse_entered_sword7():
+	var mouse_pos = get_viewport().get_mouse_position()
+	
 	if isPopUpOpen == false:
 		gui_fenetre = GuiFenetre.instantiate()
 		add_child(gui_fenetre)
+		var childGuiFenetre = gui_fenetre.get_node("panelGuiFenetre")
+		childGuiFenetre.position.x = mouse_pos.x
+		childGuiFenetre.position.y = mouse_pos.y
 		txt_titre = GuiTextUi.instantiate()
 		add_child(txt_titre)
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
-		for n in range(15):
+		childGuiTxtNameItem.position.x = mouse_pos.x + 20
+		childGuiTxtNameItem.position.y = mouse_pos.y
+		for n in range(21):
 			if gui_sword7[n] != null:
 				childGuiTxtNameItem.text = gui_sword7[n].txt_name
 		nbDecaleTextName = 30
 		txt_stat_1 = GuiTextUi.instantiate()
 		add_child(txt_stat_1)
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
-		for n in range(15):
+		childGuiTxtStat1.position.x = mouse_pos.x
+		childGuiTxtStat1.position.y = mouse_pos.y + 30
+		for n in range(21):
 			if gui_sword7[n] != null:
 				childGuiTxtStat1.text = "Attaque : + " + str(gui_sword7[n].nb_attaque)
 
 func _on_mouse_entered_sword8():
+	var mouse_pos = get_viewport().get_mouse_position()
+	
 	if isPopUpOpen == false:
 		gui_fenetre = GuiFenetre.instantiate()
 		add_child(gui_fenetre)
+		var childGuiFenetre = gui_fenetre.get_node("panelGuiFenetre")
+		childGuiFenetre.position.x = mouse_pos.x
+		childGuiFenetre.position.y = mouse_pos.y
 		txt_titre = GuiTextUi.instantiate()
 		add_child(txt_titre)
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
-		for n in range(15):
+		childGuiTxtNameItem.position.x = mouse_pos.x + 20
+		childGuiTxtNameItem.position.y = mouse_pos.y
+		for n in range(21):
 			if gui_sword8[n] != null:
 				childGuiTxtNameItem.text = gui_sword8[n].txt_name
 		nbDecaleTextName = 45
 		txt_stat_1 = GuiTextUi.instantiate()
 		add_child(txt_stat_1)
 		var childGuiTxtStat1 = txt_stat_1.get_node("labelGuiTextFenetre")
-		for n in range(15):
+		childGuiTxtStat1.position.x = mouse_pos.x
+		childGuiTxtStat1.position.y = mouse_pos.y + 30
+		for n in range(21):
 			if gui_sword8[n] != null:
 				childGuiTxtStat1.text = "Attaque : + " + str(gui_sword8[n].nb_attaque)
 
@@ -1471,53 +1612,53 @@ func _on_mouse_exited_sword():
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
-	txtItemType.resize(15)
-	isSlot_libre.resize(15)
+	txtItemType.resize(21)
+	isSlot_libre.resize(21)
 	
-	gui_potion_vie.resize(15)
-	gui_potion_mana.resize(15)
-	gui_potion_elixir.resize(15)
-	gui_bague1.resize(15)
-	gui_bague2.resize(15)
-	gui_bague3.resize(15)
-	gui_bottes1.resize(15)
-	gui_bottes2.resize(15)
-	gui_bottes3.resize(15)
-	gui_bottes4.resize(15)
-	gui_bottes5.resize(15)
-	gui_bottes6.resize(15)
-	gui_bouclier1.resize(15)
-	gui_bouclier2.resize(15)
-	gui_bouclier3.resize(15)
-	gui_bouclier4.resize(15)
-	gui_bouclier5.resize(15)
-	gui_bouclier6.resize(15)
-	gui_bouclier7.resize(15)
-	gui_casque1.resize(15)
-	gui_casque2.resize(15)
-	gui_casque3.resize(15)
-	gui_casque4.resize(15)
-	gui_casque5.resize(15)
-	gui_casque6.resize(15)
-	gui_collier1.resize(15)
-	gui_collier2.resize(15)
-	gui_collier3.resize(15)
-	gui_heaume1.resize(15)
-	gui_heaume2.resize(15)
-	gui_heaume3.resize(15)
-	gui_heaume4.resize(15)
-	gui_heaume5.resize(15)
-	gui_heaume6.resize(15)
-	gui_sword1.resize(15)
-	gui_sword2.resize(15)
-	gui_sword3.resize(15)
-	gui_sword4.resize(15)
-	gui_sword5.resize(15)
-	gui_sword6.resize(15)
-	gui_sword7.resize(15)
-	gui_sword8.resize(15)
+	gui_potion_vie.resize(21)
+	gui_potion_mana.resize(21)
+	gui_potion_elixir.resize(21)
+	gui_bague1.resize(21)
+	gui_bague2.resize(21)
+	gui_bague3.resize(21)
+	gui_bottes1.resize(21)
+	gui_bottes2.resize(21)
+	gui_bottes3.resize(21)
+	gui_bottes4.resize(21)
+	gui_bottes5.resize(21)
+	gui_bottes6.resize(21)
+	gui_bouclier1.resize(21)
+	gui_bouclier2.resize(21)
+	gui_bouclier3.resize(21)
+	gui_bouclier4.resize(21)
+	gui_bouclier5.resize(21)
+	gui_bouclier6.resize(21)
+	gui_bouclier7.resize(21)
+	gui_casque1.resize(21)
+	gui_casque2.resize(21)
+	gui_casque3.resize(21)
+	gui_casque4.resize(21)
+	gui_casque5.resize(21)
+	gui_casque6.resize(21)
+	gui_collier1.resize(21)
+	gui_collier2.resize(21)
+	gui_collier3.resize(21)
+	gui_heaume1.resize(21)
+	gui_heaume2.resize(21)
+	gui_heaume3.resize(21)
+	gui_heaume4.resize(21)
+	gui_heaume5.resize(21)
+	gui_heaume6.resize(21)
+	gui_sword1.resize(21)
+	gui_sword2.resize(21)
+	gui_sword3.resize(21)
+	gui_sword4.resize(21)
+	gui_sword5.resize(21)
+	gui_sword6.resize(21)
+	gui_sword7.resize(21)
+	gui_sword8.resize(21)
 	
-	childSlot.resize(15)
+	childSlot.resize(21)
 	childSlotIngredient.resize(2)
 	
 	childSlot[0] = nodeParent.get_node("panel_slot1")
@@ -1535,13 +1676,22 @@ func _ready() -> void:
 	childSlot[12] = nodeParent.get_node("panel_slot13")
 	childSlot[13] = nodeParent.get_node("panel_slot14")
 	childSlot[14] = nodeParent.get_node("panel_slot15")
+	childSlot[15] = nodeParent.get_node("panel_slot16")
+	childSlot[16] = nodeParent.get_node("panel_slot17")
+	childSlot[17] = nodeParent.get_node("panel_slot18")
+	childSlot[18] = nodeParent.get_node("panel_slot19")
+	childSlot[19] = nodeParent.get_node("panel_slot20")
+	childSlot[20] = nodeParent.get_node("panel_slot21")
 	
 	childSlotIngredient[0] = nodeParent.get_node("panel_slot_ingredient1")
 	childSlotIngredient[1] = nodeParent.get_node("panel_slot_ingredient2")
 	
 	childSlotResultat = nodeParent.get_node("panel_slot_resultat")
 	
-	for n in range(15):
+	childButtonFlecheLeft = nodeParent.get_node("panel_fleche_gauche")
+	childButtonFlecheRight = nodeParent.get_node("panel_fleche_droite")
+	
+	for n in range(21):
 		txtItemType[n] = "vide"
 		isSlot_libre[n] = true
 	
@@ -1554,13 +1704,261 @@ func _ready() -> void:
 	childTxtGold.add_theme_font_size_override("font_size", 27)
 	childTxtGold.add_theme_color_override("font_color", Color(1.0, 0.443, 0.0, 1.0) )
 
+func update_inventaires_visibility():
+	for bague in gui_bague1:
+		if bague != null:
+			bague.visible = true
+	
+	for bague in gui_bague2:
+		if bague != null:
+			bague.visible = true
+	
+	for bague in gui_bague3:
+		if bague != null:
+			bague.visible = true
+	
+	for bottes in gui_bottes1:
+		if bottes != null:
+			bottes.visible = true
+	
+	for bottes in gui_bottes2:
+		if bottes != null:
+			bottes.visible = true
+	
+	for bottes in gui_bottes3:
+		if bottes != null:
+			bottes.visible = true
+	
+	for bottes in gui_bottes4:
+		if bottes != null:
+			bottes.visible = true
+	
+	for bottes in gui_bottes5:
+		if bottes != null:
+			bottes.visible = true
+	
+	for bottes in gui_bottes6:
+		if bottes != null:
+			bottes.visible = true
+	
+	for bouclier in gui_bouclier1:
+		if bouclier != null:
+			bouclier.visible = true
+	
+	for bouclier in gui_bouclier2:
+		if bouclier != null:
+			bouclier.visible = true
+	
+	for bouclier in gui_bouclier3:
+		if bouclier != null:
+			bouclier.visible = true
+	
+	for bouclier in gui_bouclier4:
+		if bouclier != null:
+			bouclier.visible = true
+	
+	for bouclier in gui_bouclier5:
+		if bouclier != null:
+			bouclier.visible = true
+	
+	for bouclier in gui_bouclier6:
+		if bouclier != null:
+			bouclier.visible = true
+	
+	for bouclier in gui_bouclier7:
+		if bouclier != null:
+			bouclier.visible = true
+	
+	for casque in gui_casque1:
+		if casque != null:
+			casque.visible = true
+	
+	for casque in gui_casque2:
+		if casque != null:
+			casque.visible = true
+	
+	for casque in gui_casque3:
+		if casque != null:
+			casque.visible = true
+	
+	for casque in gui_casque4:
+		if casque != null:
+			casque.visible = true
+	
+	for casque in gui_casque5:
+		if casque != null:
+			casque.visible = true
+	
+	for casque in gui_casque6:
+		if casque != null:
+			casque.visible = true
+	
+	for collier in gui_collier1:
+		if collier != null:
+			collier.visible = true
+	
+	for collier in gui_collier2:
+		if collier != null:
+			collier.visible = true
+	
+	for collier in gui_collier3:
+		if collier != null:
+			collier.visible = true
+	
+	for heaume in gui_heaume1:
+		if heaume != null:
+			heaume.visible = true
+	
+	for heaume in gui_heaume2:
+		if heaume != null:
+			heaume.visible = true
+	
+	for heaume in gui_heaume3:
+		if heaume != null:
+			heaume.visible = true
+	
+	for heaume in gui_heaume4:
+		if heaume != null:
+			heaume.visible = true
+	
+	for heaume in gui_heaume5:
+		if heaume != null:
+			heaume.visible = true
+	
+	for heaume in gui_heaume6:
+		if heaume != null:
+			heaume.visible = true
+	
+	for sword in gui_sword1:
+		if sword != null:
+			sword.visible = true
+	
+	for sword in gui_sword2:
+		if sword != null:
+			sword.visible = true
+	
+	for sword in gui_sword3:
+		if sword != null:
+			sword.visible = true
+	
+	for sword in gui_sword4:
+		if sword != null:
+			sword.visible = true
+	
+	for sword in gui_sword5:
+		if sword != null:
+			sword.visible = true
+	
+	for sword in gui_sword6:
+		if sword != null:
+			sword.visible = true
+	
+	for sword in gui_sword7:
+		if sword != null:
+			sword.visible = true
+	
+	for sword in gui_sword8:
+		if sword != null:
+			sword.visible = true
+
+
+	if nbPage == 1:
+		for n in range(16, gui_bague1.size()):
+			if gui_bague1[n] != null:
+				gui_bague1[n].visible = false
+		
+		for n in range(16, gui_bague2.size()):
+			if gui_bague2[n] != null:
+				gui_bague2[n].visible = false
+		
+		for n in range(16, gui_bague3.size()):
+			if gui_bague3[n] != null:
+				gui_bague3[n].visible = false
+		
+		for n in range(16, gui_bottes1.size()):
+			if gui_bottes1[n] != null:
+				gui_bottes1[n].visible = false
+		
+		for n in range(16, gui_bottes2.size()):
+			if gui_bottes2[n] != null:
+				gui_bottes2[n].visible = false
+		
+		for n in range(16, gui_bottes3.size()):
+			if gui_bottes3[n] != null:
+				gui_bottes3[n].visible = false
+		
+		for n in range(16, gui_bottes4.size()):
+			if gui_bottes4[n] != null:
+				gui_bottes4[n].visible = false
+		
+		for n in range(16, gui_bottes5.size()):
+			if gui_bottes5[n] != null:
+				gui_bottes5[n].visible = false
+		
+		for n in range(16, gui_bottes6.size()):
+			if gui_bottes6[n] != null:
+				gui_bottes6[n].visible = false
+		
+		for n in range(16, gui_bouclier1.size()):
+			if gui_bouclier1[n] != null:
+				gui_bouclier1[n].visible = false
+		
+		#CONTINUE A COPIER COLLER CETTE PARTIE LA PUIS TESTER
+		
+		for n in range(16, gui_sword1.size()):
+			if gui_sword1[n] != null:
+				gui_sword1[n].visible = false
+		
+		for n in range(16, gui_sword2.size()):
+			if gui_sword2[n] != null:
+				gui_sword2[n].visible = false
+		
+		for n in range(16, gui_sword3.size()):
+			if gui_sword3[n] != null:
+				gui_sword3[n].visible = false
+		
+		for n in range(16, gui_sword4.size()):
+			if gui_sword4[n] != null:
+				gui_sword4[n].visible = false
+		
+		for n in range(16, gui_sword5.size()):
+			if gui_sword5[n] != null:
+				gui_sword5[n].visible = false
+		
+		for n in range(16, gui_sword6.size()):
+			if gui_sword6[n] != null:
+				gui_sword6[n].visible = false
+		
+		for n in range(16, gui_sword7.size()):
+			if gui_sword7[n] != null:
+				gui_sword7[n].visible = false
+		
+		for n in range(16, gui_sword8.size()):
+			if gui_sword8[n] != null:
+				gui_sword8[n].visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
 	var mouse_pos = get_viewport().get_mouse_position()
 	
-	for n in range(15):
+	if mouse_pos.x - nodeParent.offset.x >= childButtonFlecheRight.position.x and mouse_pos.x - nodeParent.offset.x <= childButtonFlecheRight.position.x + 9 and mouse_pos.y - nodeParent.offset.y >= childButtonFlecheRight.position.y and mouse_pos.y - nodeParent.offset.y <= childButtonFlecheRight.position.y + 17:
+		if Input.is_action_just_pressed("button_left"):
+			nbPage += 1
+			if nbPage >= 3:
+				nbPage = 1
+			update_inventaires_visibility()
+			#print("+page : ", nbPage)
+	
+	if mouse_pos.x - nodeParent.offset.x >= childButtonFlecheLeft.position.x and mouse_pos.x - nodeParent.offset.x <= childButtonFlecheLeft.position.x + 9 and mouse_pos.y - nodeParent.offset.y >= childButtonFlecheLeft.position.y and mouse_pos.y - nodeParent.offset.y <= childButtonFlecheLeft.position.y + 17:
+		if Input.is_action_just_pressed("button_left"):
+			nbPage -= 1
+			if nbPage <= 0:
+				nbPage = 2
+			update_inventaires_visibility()
+			#print("-page : ", nbPage)
+	
+	for n in range(21):
 		if isSlot_libre[n] == true:
 			if DataSave.items_posession.bague1 != nbCompteurBague1 and txtItemType[n] == "vide":
 				gui_bague1[n] = GuiBague1.instantiate()
@@ -2068,7 +2466,14 @@ func _process(delta: float) -> void:
 				nbCompteurSword8 += 1
 				isSlot_libre[n] = false
 				txtItemType[n] = "sword_8"
+	
+	update_inventaires_visibility()
+	
 
+func _input(event):
+	var mouse_pos = get_viewport().get_mouse_position()
+	
+	
 
 func _on_panel_retour_gui_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("button_left"):
