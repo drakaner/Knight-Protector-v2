@@ -1863,77 +1863,348 @@ func update_inventaires_visibility():
 
 
 	if nbPage == 1:
-		for n in range(16, gui_bague1.size()):
+		for n in range(15, gui_bague1.size()):
 			if gui_bague1[n] != null:
 				gui_bague1[n].visible = false
 		
-		for n in range(16, gui_bague2.size()):
+		for n in range(15, gui_bague2.size()):
 			if gui_bague2[n] != null:
 				gui_bague2[n].visible = false
 		
-		for n in range(16, gui_bague3.size()):
+		for n in range(15, gui_bague3.size()):
 			if gui_bague3[n] != null:
 				gui_bague3[n].visible = false
 		
-		for n in range(16, gui_bottes1.size()):
+		for n in range(15, gui_bottes1.size()):
 			if gui_bottes1[n] != null:
 				gui_bottes1[n].visible = false
 		
-		for n in range(16, gui_bottes2.size()):
+		for n in range(15, gui_bottes2.size()):
 			if gui_bottes2[n] != null:
 				gui_bottes2[n].visible = false
 		
-		for n in range(16, gui_bottes3.size()):
+		for n in range(15, gui_bottes3.size()):
 			if gui_bottes3[n] != null:
 				gui_bottes3[n].visible = false
 		
-		for n in range(16, gui_bottes4.size()):
+		for n in range(15, gui_bottes4.size()):
 			if gui_bottes4[n] != null:
 				gui_bottes4[n].visible = false
 		
-		for n in range(16, gui_bottes5.size()):
+		for n in range(15, gui_bottes5.size()):
 			if gui_bottes5[n] != null:
 				gui_bottes5[n].visible = false
 		
-		for n in range(16, gui_bottes6.size()):
+		for n in range(15, gui_bottes6.size()):
 			if gui_bottes6[n] != null:
 				gui_bottes6[n].visible = false
 		
-		for n in range(16, gui_bouclier1.size()):
+		for n in range(15, gui_bouclier1.size()):
 			if gui_bouclier1[n] != null:
 				gui_bouclier1[n].visible = false
 		
-		#CONTINUE A COPIER COLLER CETTE PARTIE LA PUIS TESTER
+		for n in range(15, gui_bouclier2.size()):
+			if gui_bouclier2[n] != null:
+				gui_bouclier2[n].visible = false
 		
-		for n in range(16, gui_sword1.size()):
+		for n in range(15, gui_bouclier3.size()):
+			if gui_bouclier3[n] != null:
+				gui_bouclier3[n].visible = false
+		
+		for n in range(15, gui_bouclier4.size()):
+			if gui_bouclier4[n] != null:
+				gui_bouclier4[n].visible = false
+		
+		for n in range(15, gui_bouclier5.size()):
+			if gui_bouclier5[n] != null:
+				gui_bouclier5[n].visible = false
+		
+		for n in range(15, gui_bouclier6.size()):
+			if gui_bouclier6[n] != null:
+				gui_bouclier6[n].visible = false
+		
+		for n in range(15, gui_bouclier7.size()):
+			if gui_bouclier7[n] != null:
+				gui_bouclier7[n].visible = false
+		
+		for n in range(15, gui_casque1.size()):
+			if gui_casque1[n] != null:
+				gui_casque1[n].visible = false
+		
+		for n in range(15, gui_casque2.size()):
+			if gui_casque2[n] != null:
+				gui_casque2[n].visible = false
+		
+		for n in range(15, gui_casque3.size()):
+			if gui_casque3[n] != null:
+				gui_casque3[n].visible = false
+		
+		for n in range(15, gui_casque4.size()):
+			if gui_casque4[n] != null:
+				gui_casque4[n].visible = false
+		
+		for n in range(15, gui_casque1.size()):
+			if gui_casque1[n] != null:
+				gui_casque1[n].visible = false
+		
+		for n in range(15, gui_casque2.size()):
+			if gui_casque2[n] != null:
+				gui_casque2[n].visible = false
+		
+		for n in range(15, gui_casque3.size()):
+			if gui_casque3[n] != null:
+				gui_casque3[n].visible = false
+		
+		for n in range(15, gui_casque4.size()):
+			if gui_casque4[n] != null:
+				gui_casque4[n].visible = false
+		
+		for n in range(15, gui_casque5.size()):
+			if gui_casque5[n] != null:
+				gui_casque5[n].visible = false
+		
+		for n in range(15, gui_casque6.size()):
+			if gui_casque6[n] != null:
+				gui_casque6[n].visible = false
+		
+		for n in range(15, gui_collier1.size()):
+			if gui_collier1[n] != null:
+				gui_collier1[n].visible = false
+		
+		for n in range(15, gui_collier2.size()):
+			if gui_collier2[n] != null:
+				gui_collier2[n].visible = false
+		
+		for n in range(15, gui_collier3.size()):
+			if gui_collier3[n] != null:
+				gui_collier3[n].visible = false
+		
+		for n in range(15, gui_heaume1.size()):
+			if gui_heaume1[n] != null:
+				gui_heaume1[n].visible = false
+		
+		for n in range(15, gui_heaume2.size()):
+			if gui_heaume2[n] != null:
+				gui_heaume2[n].visible = false
+		
+		for n in range(15, gui_heaume3.size()):
+			if gui_heaume3[n] != null:
+				gui_heaume3[n].visible = false
+		
+		for n in range(15, gui_heaume4.size()):
+			if gui_heaume4[n] != null:
+				gui_heaume4[n].visible = false
+		
+		for n in range(15, gui_heaume5.size()):
+			if gui_heaume5[n] != null:
+				gui_heaume5[n].visible = false
+		
+		for n in range(15, gui_heaume6.size()):
+			if gui_heaume6[n] != null:
+				gui_heaume6[n].visible = false
+		
+		for n in range(15, gui_sword1.size()):
 			if gui_sword1[n] != null:
 				gui_sword1[n].visible = false
 		
-		for n in range(16, gui_sword2.size()):
+		for n in range(15, gui_sword2.size()):
 			if gui_sword2[n] != null:
 				gui_sword2[n].visible = false
 		
-		for n in range(16, gui_sword3.size()):
+		for n in range(15, gui_sword3.size()):
 			if gui_sword3[n] != null:
 				gui_sword3[n].visible = false
 		
-		for n in range(16, gui_sword4.size()):
+		for n in range(15, gui_sword4.size()):
 			if gui_sword4[n] != null:
 				gui_sword4[n].visible = false
 		
-		for n in range(16, gui_sword5.size()):
+		for n in range(15, gui_sword5.size()):
 			if gui_sword5[n] != null:
 				gui_sword5[n].visible = false
 		
-		for n in range(16, gui_sword6.size()):
+		for n in range(15, gui_sword6.size()):
 			if gui_sword6[n] != null:
 				gui_sword6[n].visible = false
 		
-		for n in range(16, gui_sword7.size()):
+		for n in range(15, gui_sword7.size()):
 			if gui_sword7[n] != null:
 				gui_sword7[n].visible = false
 		
-		for n in range(16, gui_sword8.size()):
+		for n in range(15, gui_sword8.size()):
+			if gui_sword8[n] != null:
+				gui_sword8[n].visible = false
+		
+	if nbPage == 2:
+		for n in range(15):
+			if gui_bague1[n] != null:
+				gui_bague1[n].visible = false
+		
+		for n in range(15):
+			if gui_bague2[n] != null:
+				gui_bague2[n].visible = false
+		
+		for n in range(15):
+			if gui_bague3[n] != null:
+				gui_bague3[n].visible = false
+		
+		for n in range(15):
+			if gui_bottes1[n] != null:
+				gui_bottes1[n].visible = false
+		
+		for n in range(15):
+			if gui_bottes2[n] != null:
+				gui_bottes2[n].visible = false
+		
+		for n in range(15):
+			if gui_bottes3[n] != null:
+				gui_bottes3[n].visible = false
+		
+		for n in range(15):
+			if gui_bottes4[n] != null:
+				gui_bottes4[n].visible = false
+		
+		for n in range(15):
+			if gui_bottes5[n] != null:
+				gui_bottes5[n].visible = false
+		
+		for n in range(15):
+			if gui_bottes6[n] != null:
+				gui_bottes6[n].visible = false
+		
+		for n in range(15):
+			if gui_bouclier1[n] != null:
+				gui_bouclier1[n].visible = false
+		
+		for n in range(15):
+			if gui_bouclier2[n] != null:
+				gui_bouclier2[n].visible = false
+		
+		for n in range(15):
+			if gui_bouclier3[n] != null:
+				gui_bouclier3[n].visible = false
+		
+		for n in range(15):
+			if gui_bouclier4[n] != null:
+				gui_bouclier4[n].visible = false
+		
+		for n in range(15):
+			if gui_bouclier5[n] != null:
+				gui_bouclier5[n].visible = false
+		
+		for n in range(15):
+			if gui_bouclier6[n] != null:
+				gui_bouclier6[n].visible = false
+		
+		for n in range(15):
+			if gui_bouclier7[n] != null:
+				gui_bouclier7[n].visible = false
+		
+		for n in range(15):
+			if gui_casque1[n] != null:
+				gui_casque1[n].visible = false
+		
+		for n in range(15):
+			if gui_casque2[n] != null:
+				gui_casque2[n].visible = false
+		
+		for n in range(15):
+			if gui_casque3[n] != null:
+				gui_casque3[n].visible = false
+		
+		for n in range(15):
+			if gui_casque4[n] != null:
+				gui_casque4[n].visible = false
+		
+		for n in range(15):
+			if gui_casque1[n] != null:
+				gui_casque1[n].visible = false
+		
+		for n in range(15):
+			if gui_casque2[n] != null:
+				gui_casque2[n].visible = false
+		
+		for n in range(15):
+			if gui_casque3[n] != null:
+				gui_casque3[n].visible = false
+		
+		for n in range(15):
+			if gui_casque4[n] != null:
+				gui_casque4[n].visible = false
+		
+		for n in range(15):
+			if gui_casque5[n] != null:
+				gui_casque5[n].visible = false
+		
+		for n in range(15):
+			if gui_casque6[n] != null:
+				gui_casque6[n].visible = false
+		
+		for n in range(15):
+			if gui_collier1[n] != null:
+				gui_collier1[n].visible = false
+		
+		for n in range(15):
+			if gui_collier2[n] != null:
+				gui_collier2[n].visible = false
+		
+		for n in range(15):
+			if gui_collier3[n] != null:
+				gui_collier3[n].visible = false
+		
+		for n in range(15):
+			if gui_heaume1[n] != null:
+				gui_heaume1[n].visible = false
+		
+		for n in range(15):
+			if gui_heaume2[n] != null:
+				gui_heaume2[n].visible = false
+		
+		for n in range(15):
+			if gui_heaume3[n] != null:
+				gui_heaume3[n].visible = false
+		
+		for n in range(15):
+			if gui_heaume4[n] != null:
+				gui_heaume4[n].visible = false
+		
+		for n in range(15):
+			if gui_heaume5[n] != null:
+				gui_heaume5[n].visible = false
+		
+		for n in range(15):
+			if gui_heaume6[n] != null:
+				gui_heaume6[n].visible = false
+		
+		for n in range(15):
+			if gui_sword1[n] != null:
+				gui_sword1[n].visible = false
+		
+		for n in range(15):
+			if gui_sword2[n] != null:
+				gui_sword2[n].visible = false
+		
+		for n in range(15):
+			if gui_sword3[n] != null:
+				gui_sword3[n].visible = false
+		
+		for n in range(15):
+			if gui_sword4[n] != null:
+				gui_sword4[n].visible = false
+		
+		for n in range(15):
+			if gui_sword5[n] != null:
+				gui_sword5[n].visible = false
+		
+		for n in range(15):
+			if gui_sword6[n] != null:
+				gui_sword6[n].visible = false
+		
+		for n in range(15):
+			if gui_sword7[n] != null:
+				gui_sword7[n].visible = false
+		
+		for n in range(15):
 			if gui_sword8[n] != null:
 				gui_sword8[n].visible = false
 
@@ -1947,7 +2218,6 @@ func _process(delta: float) -> void:
 			nbPage += 1
 			if nbPage >= 3:
 				nbPage = 1
-			update_inventaires_visibility()
 			#print("+page : ", nbPage)
 	
 	if mouse_pos.x - nodeParent.offset.x >= childButtonFlecheLeft.position.x and mouse_pos.x - nodeParent.offset.x <= childButtonFlecheLeft.position.x + 9 and mouse_pos.y - nodeParent.offset.y >= childButtonFlecheLeft.position.y and mouse_pos.y - nodeParent.offset.y <= childButtonFlecheLeft.position.y + 17:
@@ -1955,7 +2225,6 @@ func _process(delta: float) -> void:
 			nbPage -= 1
 			if nbPage <= 0:
 				nbPage = 2
-			update_inventaires_visibility()
 			#print("-page : ", nbPage)
 	
 	for n in range(21):
@@ -2469,6 +2738,19 @@ func _process(delta: float) -> void:
 	
 	update_inventaires_visibility()
 	
+	#Gestion de clic sur l'item 
+	
+	if nbPage == 1:
+		for n in range(15): 
+			if mouse_pos.x - nodeParent.offset.x >= childSlot[n].position.x and mouse_pos.x - nodeParent.offset.x <= childSlot[n].position.x + 30 and mouse_pos.y - nodeParent.offset.y >= childSlot[n].position.y and mouse_pos.y - nodeParent.offset.y <= childSlot[n].position.y + 30:
+				if Input.is_action_just_pressed("button_left"):
+					print("le type clic : ", txtItemType[n])
+	
+	if nbPage == 2:
+		for n in range(15, 21): 
+			if mouse_pos.x - nodeParent.offset.x >= childSlot[n].position.x and mouse_pos.x - nodeParent.offset.x <= childSlot[n].position.x + 30 and mouse_pos.y - nodeParent.offset.y >= childSlot[n].position.y and mouse_pos.y - nodeParent.offset.y <= childSlot[n].position.y + 30:
+				if Input.is_action_just_pressed("button_left"):
+					print("le type clic2 : ", txtItemType[n])
 
 func _input(event):
 	var mouse_pos = get_viewport().get_mouse_position()
