@@ -96,6 +96,8 @@ var gui_sword6 = []
 var gui_sword7 = []
 var gui_sword8 = []
 
+var lstIngredientsSelect = { item1 = "vide", item2 = "vide", index1 = -1, index2 = -1 }
+
 var nbCompteurPotionVie = 0
 var nbCompteurPotionMana = 0
 var nbCompteurPotionElixir = 0
@@ -1865,83 +1867,83 @@ func update_inventaires_visibility():
 	if nbPage == 1:
 		for n in range(15, gui_bague1.size()):
 			if gui_bague1[n] != null:
-				gui_bague1[n].visible = false
+				if lstIngredientsSelect.item1 != "bague_1" and lstIngredientsSelect.item2 != "bague_1":
+					gui_bague1[n].visible = false
 		
 		for n in range(15, gui_bague2.size()):
 			if gui_bague2[n] != null:
-				gui_bague2[n].visible = false
+				if lstIngredientsSelect.item1 != "bague_2" and lstIngredientsSelect.item2 != "bague_2":
+					gui_bague2[n].visible = false
 		
 		for n in range(15, gui_bague3.size()):
 			if gui_bague3[n] != null:
-				gui_bague3[n].visible = false
+				if lstIngredientsSelect.item1 != "bague_3" and lstIngredientsSelect.item2 != "bague_3":
+					gui_bague3[n].visible = false
 		
 		for n in range(15, gui_bottes1.size()):
 			if gui_bottes1[n] != null:
-				gui_bottes1[n].visible = false
+				if lstIngredientsSelect.item1 != "bottes_1" and lstIngredientsSelect.item2 != "bottes_1":
+					gui_bottes1[n].visible = false
 		
 		for n in range(15, gui_bottes2.size()):
 			if gui_bottes2[n] != null:
-				gui_bottes2[n].visible = false
+				if lstIngredientsSelect.item1 != "bottes_2" and lstIngredientsSelect.item2 != "bottes_2":
+					gui_bottes2[n].visible = false
 		
 		for n in range(15, gui_bottes3.size()):
 			if gui_bottes3[n] != null:
-				gui_bottes3[n].visible = false
+				if lstIngredientsSelect.item1 != "bottes_3" and lstIngredientsSelect.item2 != "bottes_3":
+					gui_bottes3[n].visible = false
 		
 		for n in range(15, gui_bottes4.size()):
 			if gui_bottes4[n] != null:
-				gui_bottes4[n].visible = false
+				if lstIngredientsSelect.item1 != "bottes_4" and lstIngredientsSelect.item2 != "bottes_4":
+					gui_bottes4[n].visible = false
 		
 		for n in range(15, gui_bottes5.size()):
 			if gui_bottes5[n] != null:
-				gui_bottes5[n].visible = false
+				if lstIngredientsSelect.item1 != "bottes_5" and lstIngredientsSelect.item2 != "bottes_5":
+					gui_bottes5[n].visible = false
 		
 		for n in range(15, gui_bottes6.size()):
 			if gui_bottes6[n] != null:
-				gui_bottes6[n].visible = false
+				if lstIngredientsSelect.item1 != "bottes_6" and lstIngredientsSelect.item2 != "bottes_6":
+					gui_bottes6[n].visible = false
 		
 		for n in range(15, gui_bouclier1.size()):
 			if gui_bouclier1[n] != null:
-				gui_bouclier1[n].visible = false
+				if lstIngredientsSelect.item1 != "bouclier_1" and lstIngredientsSelect.item2 != "bouclier_1":
+					gui_bouclier1[n].visible = false
 		
 		for n in range(15, gui_bouclier2.size()):
 			if gui_bouclier2[n] != null:
-				gui_bouclier2[n].visible = false
+				if lstIngredientsSelect.item1 != "bouclier_2" and lstIngredientsSelect.item2 != "bouclier_2":
+					gui_bouclier2[n].visible = false
 		
 		for n in range(15, gui_bouclier3.size()):
 			if gui_bouclier3[n] != null:
-				gui_bouclier3[n].visible = false
+				if lstIngredientsSelect.item1 != "bouclier_3" and lstIngredientsSelect.item2 != "bouclier_3":
+					gui_bouclier3[n].visible = false
 		
 		for n in range(15, gui_bouclier4.size()):
 			if gui_bouclier4[n] != null:
-				gui_bouclier4[n].visible = false
+				if lstIngredientsSelect.item1 != "bouclier_4" and lstIngredientsSelect.item2 != "bouclier_4":
+					gui_bouclier4[n].visible = false
 		
 		for n in range(15, gui_bouclier5.size()):
 			if gui_bouclier5[n] != null:
-				gui_bouclier5[n].visible = false
+				if lstIngredientsSelect.item1 != "bouclier_5" and lstIngredientsSelect.item2 != "bouclier_5":
+					gui_bouclier5[n].visible = false
 		
 		for n in range(15, gui_bouclier6.size()):
 			if gui_bouclier6[n] != null:
-				gui_bouclier6[n].visible = false
+				if lstIngredientsSelect.item1 != "bouclier_6" and lstIngredientsSelect.item2 != "bouclier_6":
+					gui_bouclier6[n].visible = false
 		
 		for n in range(15, gui_bouclier7.size()):
 			if gui_bouclier7[n] != null:
-				gui_bouclier7[n].visible = false
-		
-		for n in range(15, gui_casque1.size()):
-			if gui_casque1[n] != null:
-				gui_casque1[n].visible = false
-		
-		for n in range(15, gui_casque2.size()):
-			if gui_casque2[n] != null:
-				gui_casque2[n].visible = false
-		
-		for n in range(15, gui_casque3.size()):
-			if gui_casque3[n] != null:
-				gui_casque3[n].visible = false
-		
-		for n in range(15, gui_casque4.size()):
-			if gui_casque4[n] != null:
-				gui_casque4[n].visible = false
+				if lstIngredientsSelect.item1 != "bouclier_7" and lstIngredientsSelect.item2 != "bouclier_7":
+					gui_bouclier7[n].visible = false
 		
 		for n in range(15, gui_casque1.size()):
 			if gui_casque1[n] != null:
@@ -2038,7 +2040,8 @@ func update_inventaires_visibility():
 	if nbPage == 2:
 		for n in range(15):
 			if gui_bague1[n] != null:
-				gui_bague1[n].visible = false
+				if lstIngredientsSelect.item1 != "bague_1" and lstIngredientsSelect.item2 != "bague_1":
+					gui_bague1[n].visible = false
 		
 		for n in range(15):
 			if gui_bague2[n] != null:
@@ -2744,14 +2747,418 @@ func _process(delta: float) -> void:
 		for n in range(15): 
 			if mouse_pos.x - nodeParent.offset.x >= childSlot[n].position.x and mouse_pos.x - nodeParent.offset.x <= childSlot[n].position.x + 30 and mouse_pos.y - nodeParent.offset.y >= childSlot[n].position.y and mouse_pos.y - nodeParent.offset.y <= childSlot[n].position.y + 30:
 				if Input.is_action_just_pressed("button_left"):
+					if lstIngredientsSelect.item1 != "vide" and lstIngredientsSelect.item2 == "vide":
+						lstIngredientsSelect.item2 = txtItemType[n]
+						lstIngredientsSelect.index2 = n
+					if lstIngredientsSelect.item1 == "vide":
+						lstIngredientsSelect.item1 = txtItemType[n]
+						lstIngredientsSelect.index1 = n
 					print("le type clic : ", txtItemType[n])
 	
 	if nbPage == 2:
 		for n in range(15, 21): 
 			if mouse_pos.x - nodeParent.offset.x >= childSlot[n].position.x and mouse_pos.x - nodeParent.offset.x <= childSlot[n].position.x + 30 and mouse_pos.y - nodeParent.offset.y >= childSlot[n].position.y and mouse_pos.y - nodeParent.offset.y <= childSlot[n].position.y + 30:
 				if Input.is_action_just_pressed("button_left"):
+					if lstIngredientsSelect.item1 != "vide" and lstIngredientsSelect.item2 == "vide":
+						lstIngredientsSelect.item2 = txtItemType[n]
+						lstIngredientsSelect.index2 = n
+					if lstIngredientsSelect.item1 == "vide":
+						lstIngredientsSelect.item1 = txtItemType[n]
+						lstIngredientsSelect.index1 = n
 					print("le type clic2 : ", txtItemType[n])
+	
+	if lstIngredientsSelect.item1 == "bague_1":
+		gui_bague1[lstIngredientsSelect.index1].offset.x = childSlotIngredient[0].position.x + nodeParent.offset.x
+		gui_bague1[lstIngredientsSelect.index1].offset.y = childSlotIngredient[0].position.y + nodeParent.offset.y
+		gui_bague1[lstIngredientsSelect.index1].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item1 == "bague_2":
+		gui_bague2[lstIngredientsSelect.index1].offset.x = childSlotIngredient[0].position.x + nodeParent.offset.x
+		gui_bague2[lstIngredientsSelect.index1].offset.y = childSlotIngredient[0].position.y + nodeParent.offset.y
+		gui_bague2[lstIngredientsSelect.index1].scale = Vector2(0.68, 0.78)
 
+	if lstIngredientsSelect.item1 == "bague_3":
+		gui_bague3[lstIngredientsSelect.index1].offset.x = childSlotIngredient[0].position.x + nodeParent.offset.x
+		gui_bague3[lstIngredientsSelect.index1].offset.y = childSlotIngredient[0].position.y + nodeParent.offset.y
+		gui_bague3[lstIngredientsSelect.index1].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item1 == "bottes_1":
+		gui_bottes1[lstIngredientsSelect.index1].offset.x = childSlotIngredient[0].position.x + nodeParent.offset.x
+		gui_bottes1[lstIngredientsSelect.index1].offset.y = childSlotIngredient[0].position.y + nodeParent.offset.y
+		gui_bottes1[lstIngredientsSelect.index1].scale = Vector2(0.68, 0.78)
+
+	if lstIngredientsSelect.item1 == "bottes_2":
+		gui_bottes2[lstIngredientsSelect.index1].offset.x = childSlotIngredient[0].position.x + nodeParent.offset.x
+		gui_bottes2[lstIngredientsSelect.index1].offset.y = childSlotIngredient[0].position.y + nodeParent.offset.y
+		gui_bottes2[lstIngredientsSelect.index1].scale = Vector2(0.68, 0.78)
+
+	if lstIngredientsSelect.item1 == "bottes_3":
+		gui_bottes3[lstIngredientsSelect.index1].offset.x = childSlotIngredient[0].position.x + nodeParent.offset.x
+		gui_bottes3[lstIngredientsSelect.index1].offset.y = childSlotIngredient[0].position.y + nodeParent.offset.y
+		gui_bottes3[lstIngredientsSelect.index1].scale = Vector2(0.68, 0.78)
+
+	if lstIngredientsSelect.item1 == "bottes_4":
+		gui_bottes4[lstIngredientsSelect.index1].offset.x = childSlotIngredient[0].position.x + nodeParent.offset.x
+		gui_bottes4[lstIngredientsSelect.index1].offset.y = childSlotIngredient[0].position.y + nodeParent.offset.y
+		gui_bottes4[lstIngredientsSelect.index1].scale = Vector2(0.68, 0.78)
+
+	if lstIngredientsSelect.item1 == "bottes_5":
+		gui_bottes5[lstIngredientsSelect.index1].offset.x = childSlotIngredient[0].position.x + nodeParent.offset.x
+		gui_bottes5[lstIngredientsSelect.index1].offset.y = childSlotIngredient[0].position.y + nodeParent.offset.y
+		gui_bottes5[lstIngredientsSelect.index1].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item1 == "bottes_6":
+		gui_bottes6[lstIngredientsSelect.index1].offset.x = childSlotIngredient[0].position.x + nodeParent.offset.x
+		gui_bottes6[lstIngredientsSelect.index1].offset.y = childSlotIngredient[0].position.y + nodeParent.offset.y
+		gui_bottes6[lstIngredientsSelect.index1].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item1 == "bouclier_1":
+		gui_bouclier1[lstIngredientsSelect.index1].offset.x = childSlotIngredient[0].position.x + nodeParent.offset.x
+		gui_bouclier1[lstIngredientsSelect.index1].offset.y = childSlotIngredient[0].position.y + nodeParent.offset.y
+		gui_bouclier1[lstIngredientsSelect.index1].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item1 == "bouclier_2":
+		gui_bouclier2[lstIngredientsSelect.index1].offset.x = childSlotIngredient[0].position.x + nodeParent.offset.x
+		gui_bouclier2[lstIngredientsSelect.index1].offset.y = childSlotIngredient[0].position.y + nodeParent.offset.y
+		gui_bouclier2[lstIngredientsSelect.index1].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item1 == "bouclier_3":
+		gui_bouclier3[lstIngredientsSelect.index1].offset.x = childSlotIngredient[0].position.x + nodeParent.offset.x
+		gui_bouclier3[lstIngredientsSelect.index1].offset.y = childSlotIngredient[0].position.y + nodeParent.offset.y
+		gui_bouclier3[lstIngredientsSelect.index1].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item1 == "bouclier_4":
+		gui_bouclier4[lstIngredientsSelect.index1].offset.x = childSlotIngredient[0].position.x + nodeParent.offset.x
+		gui_bouclier4[lstIngredientsSelect.index1].offset.y = childSlotIngredient[0].position.y + nodeParent.offset.y
+		gui_bouclier4[lstIngredientsSelect.index1].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item1 == "bouclier_5":
+		gui_bouclier5[lstIngredientsSelect.index1].offset.x = childSlotIngredient[0].position.x + nodeParent.offset.x
+		gui_bouclier5[lstIngredientsSelect.index1].offset.y = childSlotIngredient[0].position.y + nodeParent.offset.y
+		gui_bouclier5[lstIngredientsSelect.index1].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item1 == "bouclier_6":
+		gui_bouclier6[lstIngredientsSelect.index1].offset.x = childSlotIngredient[0].position.x + nodeParent.offset.x
+		gui_bouclier6[lstIngredientsSelect.index1].offset.y = childSlotIngredient[0].position.y + nodeParent.offset.y
+		gui_bouclier6[lstIngredientsSelect.index1].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item1 == "bouclier_7":
+		gui_bouclier7[lstIngredientsSelect.index1].offset.x = childSlotIngredient[0].position.x + nodeParent.offset.x
+		gui_bouclier7[lstIngredientsSelect.index1].offset.y = childSlotIngredient[0].position.y + nodeParent.offset.y
+		gui_bouclier7[lstIngredientsSelect.index1].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item1 == "casque_1":
+		gui_casque1[lstIngredientsSelect.index1].offset.x = childSlotIngredient[0].position.x + nodeParent.offset.x
+		gui_casque1[lstIngredientsSelect.index1].offset.y = childSlotIngredient[0].position.y + nodeParent.offset.y
+		gui_casque1[lstIngredientsSelect.index1].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item1 == "casque_2":
+		gui_casque2[lstIngredientsSelect.index1].offset.x = childSlotIngredient[0].position.x + nodeParent.offset.x
+		gui_casque2[lstIngredientsSelect.index1].offset.y = childSlotIngredient[0].position.y + nodeParent.offset.y
+		gui_casque2[lstIngredientsSelect.index1].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item1 == "casque_3":
+		gui_casque3[lstIngredientsSelect.index1].offset.x = childSlotIngredient[0].position.x + nodeParent.offset.x
+		gui_casque3[lstIngredientsSelect.index1].offset.y = childSlotIngredient[0].position.y + nodeParent.offset.y
+		gui_casque3[lstIngredientsSelect.index1].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item1 == "casque_4":
+		gui_casque4[lstIngredientsSelect.index1].offset.x = childSlotIngredient[0].position.x + nodeParent.offset.x
+		gui_casque4[lstIngredientsSelect.index1].offset.y = childSlotIngredient[0].position.y + nodeParent.offset.y
+		gui_casque4[lstIngredientsSelect.index1].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item1 == "casque_5":
+		gui_casque5[lstIngredientsSelect.index1].offset.x = childSlotIngredient[0].position.x + nodeParent.offset.x
+		gui_casque5[lstIngredientsSelect.index1].offset.y = childSlotIngredient[0].position.y + nodeParent.offset.y
+		gui_casque5[lstIngredientsSelect.index1].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item1 == "casque_6":
+		gui_casque6[lstIngredientsSelect.index1].offset.x = childSlotIngredient[0].position.x + nodeParent.offset.x
+		gui_casque6[lstIngredientsSelect.index1].offset.y = childSlotIngredient[0].position.y + nodeParent.offset.y
+		gui_casque6[lstIngredientsSelect.index1].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item1 == "collier_1":
+		gui_collier1[lstIngredientsSelect.index1].offset.x = childSlotIngredient[0].position.x + nodeParent.offset.x
+		gui_collier1[lstIngredientsSelect.index1].offset.y = childSlotIngredient[0].position.y + nodeParent.offset.y
+		gui_collier1[lstIngredientsSelect.index1].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item1 == "collier_2":
+		gui_collier2[lstIngredientsSelect.index1].offset.x = childSlotIngredient[0].position.x + nodeParent.offset.x
+		gui_collier2[lstIngredientsSelect.index1].offset.y = childSlotIngredient[0].position.y + nodeParent.offset.y
+		gui_collier2[lstIngredientsSelect.index1].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item1 == "collier_3":
+		gui_collier3[lstIngredientsSelect.index1].offset.x = childSlotIngredient[0].position.x + nodeParent.offset.x
+		gui_collier3[lstIngredientsSelect.index1].offset.y = childSlotIngredient[0].position.y + nodeParent.offset.y
+		gui_collier3[lstIngredientsSelect.index1].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item1 == "heaume_1":
+		gui_heaume1[lstIngredientsSelect.index1].offset.x = childSlotIngredient[0].position.x + nodeParent.offset.x
+		gui_heaume1[lstIngredientsSelect.index1].offset.y = childSlotIngredient[0].position.y + nodeParent.offset.y
+		gui_heaume1[lstIngredientsSelect.index1].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item1 == "heaume_2":
+		gui_heaume2[lstIngredientsSelect.index1].offset.x = childSlotIngredient[0].position.x + nodeParent.offset.x
+		gui_heaume2[lstIngredientsSelect.index1].offset.y = childSlotIngredient[0].position.y + nodeParent.offset.y
+		gui_heaume2[lstIngredientsSelect.index1].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item1 == "heaume_3":
+		gui_heaume3[lstIngredientsSelect.index1].offset.x = childSlotIngredient[0].position.x + nodeParent.offset.x
+		gui_heaume3[lstIngredientsSelect.index1].offset.y = childSlotIngredient[0].position.y + nodeParent.offset.y
+		gui_heaume3[lstIngredientsSelect.index1].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item1 == "heaume_4":
+		gui_heaume4[lstIngredientsSelect.index1].offset.x = childSlotIngredient[0].position.x + nodeParent.offset.x
+		gui_heaume4[lstIngredientsSelect.index1].offset.y = childSlotIngredient[0].position.y + nodeParent.offset.y
+		gui_heaume4[lstIngredientsSelect.index1].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item1 == "heaume_5":
+		gui_heaume5[lstIngredientsSelect.index1].offset.x = childSlotIngredient[0].position.x + nodeParent.offset.x
+		gui_heaume5[lstIngredientsSelect.index1].offset.y = childSlotIngredient[0].position.y + nodeParent.offset.y
+		gui_heaume5[lstIngredientsSelect.index1].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item1 == "heaume_6":
+		gui_heaume6[lstIngredientsSelect.index1].offset.x = childSlotIngredient[0].position.x + nodeParent.offset.x
+		gui_heaume6[lstIngredientsSelect.index1].offset.y = childSlotIngredient[0].position.y + nodeParent.offset.y
+		gui_heaume6[lstIngredientsSelect.index1].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item1 == "sword_1":
+		gui_sword1[lstIngredientsSelect.index1].offset.x = childSlotIngredient[0].position.x + nodeParent.offset.x
+		gui_sword1[lstIngredientsSelect.index1].offset.y = childSlotIngredient[0].position.y + nodeParent.offset.y
+		gui_sword1[lstIngredientsSelect.index1].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item1 == "sword_2":
+		gui_sword2[lstIngredientsSelect.index1].offset.x = childSlotIngredient[0].position.x + nodeParent.offset.x
+		gui_sword2[lstIngredientsSelect.index1].offset.y = childSlotIngredient[0].position.y + nodeParent.offset.y
+		gui_sword2[lstIngredientsSelect.index1].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item1 == "sword_3":
+		gui_sword3[lstIngredientsSelect.index1].offset.x = childSlotIngredient[0].position.x + nodeParent.offset.x
+		gui_sword3[lstIngredientsSelect.index1].offset.y = childSlotIngredient[0].position.y + nodeParent.offset.y
+		gui_sword3[lstIngredientsSelect.index1].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item1 == "sword_4":
+		gui_sword4[lstIngredientsSelect.index1].offset.x = childSlotIngredient[0].position.x + nodeParent.offset.x
+		gui_sword4[lstIngredientsSelect.index1].offset.y = childSlotIngredient[0].position.y + nodeParent.offset.y
+		gui_sword4[lstIngredientsSelect.index1].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item1 == "sword_5":
+		gui_sword5[lstIngredientsSelect.index1].offset.x = childSlotIngredient[0].position.x + nodeParent.offset.x
+		gui_sword5[lstIngredientsSelect.index1].offset.y = childSlotIngredient[0].position.y + nodeParent.offset.y
+		gui_sword5[lstIngredientsSelect.index1].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item1 == "sword_6":
+		gui_sword6[lstIngredientsSelect.index1].offset.x = childSlotIngredient[0].position.x + nodeParent.offset.x
+		gui_sword6[lstIngredientsSelect.index1].offset.y = childSlotIngredient[0].position.y + nodeParent.offset.y
+		gui_sword6[lstIngredientsSelect.index1].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item1 == "sword_7":
+		gui_sword7[lstIngredientsSelect.index1].offset.x = childSlotIngredient[0].position.x + nodeParent.offset.x
+		gui_sword7[lstIngredientsSelect.index1].offset.y = childSlotIngredient[0].position.y + nodeParent.offset.y
+		gui_sword7[lstIngredientsSelect.index1].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item1 == "sword_8":
+		gui_sword8[lstIngredientsSelect.index1].offset.x = childSlotIngredient[0].position.x + nodeParent.offset.x
+		gui_sword8[lstIngredientsSelect.index1].offset.y = childSlotIngredient[0].position.y + nodeParent.offset.y
+		gui_sword8[lstIngredientsSelect.index1].scale = Vector2(0.68, 0.78)
+	
+	
+	
+	if lstIngredientsSelect.item2 == "bague_1":
+		gui_bague1[lstIngredientsSelect.index2].offset.x = childSlotIngredient[1].position.x + nodeParent.offset.x
+		gui_bague1[lstIngredientsSelect.index2].offset.y = childSlotIngredient[1].position.y + nodeParent.offset.y
+		gui_bague1[lstIngredientsSelect.index2].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item2 == "bague_2":
+		gui_bague2[lstIngredientsSelect.index2].offset.x = childSlotIngredient[1].position.x + nodeParent.offset.x
+		gui_bague2[lstIngredientsSelect.index2].offset.y = childSlotIngredient[1].position.y + nodeParent.offset.y
+		gui_bague2[lstIngredientsSelect.index2].scale = Vector2(0.68, 0.78)
+
+	if lstIngredientsSelect.item2 == "bague_3":
+		gui_bague3[lstIngredientsSelect.index2].offset.x = childSlotIngredient[1].position.x + nodeParent.offset.x
+		gui_bague3[lstIngredientsSelect.index2].offset.y = childSlotIngredient[1].position.y + nodeParent.offset.y
+		gui_bague3[lstIngredientsSelect.index2].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item2 == "bottes_1":
+		gui_bottes1[lstIngredientsSelect.index2].offset.x = childSlotIngredient[1].position.x + nodeParent.offset.x
+		gui_bottes1[lstIngredientsSelect.index2].offset.y = childSlotIngredient[1].position.y + nodeParent.offset.y
+		gui_bottes1[lstIngredientsSelect.index2].scale = Vector2(0.68, 0.78)
+
+	if lstIngredientsSelect.item2 == "bottes_2":
+		gui_bottes2[lstIngredientsSelect.index2].offset.x = childSlotIngredient[1].position.x + nodeParent.offset.x
+		gui_bottes2[lstIngredientsSelect.index2].offset.y = childSlotIngredient[1].position.y + nodeParent.offset.y
+		gui_bottes2[lstIngredientsSelect.index2].scale = Vector2(0.68, 0.78)
+
+	if lstIngredientsSelect.item2 == "bottes_3":
+		gui_bottes3[lstIngredientsSelect.index2].offset.x = childSlotIngredient[1].position.x + nodeParent.offset.x
+		gui_bottes3[lstIngredientsSelect.index2].offset.y = childSlotIngredient[1].position.y + nodeParent.offset.y
+		gui_bottes3[lstIngredientsSelect.index2].scale = Vector2(0.68, 0.78)
+
+	if lstIngredientsSelect.item2 == "bottes_4":
+		gui_bottes4[lstIngredientsSelect.index2].offset.x = childSlotIngredient[1].position.x + nodeParent.offset.x
+		gui_bottes4[lstIngredientsSelect.index2].offset.y = childSlotIngredient[1].position.y + nodeParent.offset.y
+		gui_bottes4[lstIngredientsSelect.index2].scale = Vector2(0.68, 0.78)
+
+	if lstIngredientsSelect.item2 == "bottes_5":
+		gui_bottes5[lstIngredientsSelect.index2].offset.x = childSlotIngredient[1].position.x + nodeParent.offset.x
+		gui_bottes5[lstIngredientsSelect.index2].offset.y = childSlotIngredient[1].position.y + nodeParent.offset.y
+		gui_bottes5[lstIngredientsSelect.index2].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item2 == "bottes_6":
+		gui_bottes6[lstIngredientsSelect.index2].offset.x = childSlotIngredient[1].position.x + nodeParent.offset.x
+		gui_bottes6[lstIngredientsSelect.index2].offset.y = childSlotIngredient[1].position.y + nodeParent.offset.y
+		gui_bottes6[lstIngredientsSelect.index2].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item2 == "bouclier_1":
+		gui_bouclier1[lstIngredientsSelect.index2].offset.x = childSlotIngredient[1].position.x + nodeParent.offset.x
+		gui_bouclier1[lstIngredientsSelect.index2].offset.y = childSlotIngredient[1].position.y + nodeParent.offset.y
+		gui_bouclier1[lstIngredientsSelect.index2].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item2 == "bouclier_2":
+		gui_bouclier2[lstIngredientsSelect.index2].offset.x = childSlotIngredient[1].position.x + nodeParent.offset.x
+		gui_bouclier2[lstIngredientsSelect.index2].offset.y = childSlotIngredient[1].position.y + nodeParent.offset.y
+		gui_bouclier2[lstIngredientsSelect.index2].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item2 == "bouclier_3":
+		gui_bouclier3[lstIngredientsSelect.index2].offset.x = childSlotIngredient[1].position.x + nodeParent.offset.x
+		gui_bouclier3[lstIngredientsSelect.index2].offset.y = childSlotIngredient[1].position.y + nodeParent.offset.y
+		gui_bouclier3[lstIngredientsSelect.index2].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item2 == "bouclier_4":
+		gui_bouclier4[lstIngredientsSelect.index2].offset.x = childSlotIngredient[1].position.x + nodeParent.offset.x
+		gui_bouclier4[lstIngredientsSelect.index2].offset.y = childSlotIngredient[1].position.y + nodeParent.offset.y
+		gui_bouclier4[lstIngredientsSelect.index2].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item2 == "bouclier_5":
+		gui_bouclier5[lstIngredientsSelect.index2].offset.x = childSlotIngredient[1].position.x + nodeParent.offset.x
+		gui_bouclier5[lstIngredientsSelect.index2].offset.y = childSlotIngredient[1].position.y + nodeParent.offset.y
+		gui_bouclier5[lstIngredientsSelect.index2].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item2 == "bouclier_6":
+		gui_bouclier6[lstIngredientsSelect.index2].offset.x = childSlotIngredient[1].position.x + nodeParent.offset.x
+		gui_bouclier6[lstIngredientsSelect.index2].offset.y = childSlotIngredient[1].position.y + nodeParent.offset.y
+		gui_bouclier6[lstIngredientsSelect.index2].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item2 == "bouclier_7":
+		gui_bouclier7[lstIngredientsSelect.index2].offset.x = childSlotIngredient[1].position.x + nodeParent.offset.x
+		gui_bouclier7[lstIngredientsSelect.index2].offset.y = childSlotIngredient[1].position.y + nodeParent.offset.y
+		gui_bouclier7[lstIngredientsSelect.index2].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item2 == "casque_1":
+		gui_casque1[lstIngredientsSelect.index2].offset.x = childSlotIngredient[1].position.x + nodeParent.offset.x
+		gui_casque1[lstIngredientsSelect.index2].offset.y = childSlotIngredient[1].position.y + nodeParent.offset.y
+		gui_casque1[lstIngredientsSelect.index2].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item2 == "casque_2":
+		gui_casque2[lstIngredientsSelect.index2].offset.x = childSlotIngredient[1].position.x + nodeParent.offset.x
+		gui_casque2[lstIngredientsSelect.index2].offset.y = childSlotIngredient[1].position.y + nodeParent.offset.y
+		gui_casque2[lstIngredientsSelect.index2].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item2 == "casque_3":
+		gui_casque3[lstIngredientsSelect.index2].offset.x = childSlotIngredient[1].position.x + nodeParent.offset.x
+		gui_casque3[lstIngredientsSelect.index2].offset.y = childSlotIngredient[1].position.y + nodeParent.offset.y
+		gui_casque3[lstIngredientsSelect.index2].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item2 == "casque_4":
+		gui_casque4[lstIngredientsSelect.index2].offset.x = childSlotIngredient[1].position.x + nodeParent.offset.x
+		gui_casque4[lstIngredientsSelect.index2].offset.y = childSlotIngredient[1].position.y + nodeParent.offset.y
+		gui_casque4[lstIngredientsSelect.index2].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item2 == "casque_5":
+		gui_casque5[lstIngredientsSelect.index2].offset.x = childSlotIngredient[1].position.x + nodeParent.offset.x
+		gui_casque5[lstIngredientsSelect.index2].offset.y = childSlotIngredient[1].position.y + nodeParent.offset.y
+		gui_casque5[lstIngredientsSelect.index2].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item2 == "casque_6":
+		gui_casque6[lstIngredientsSelect.index2].offset.x = childSlotIngredient[1].position.x + nodeParent.offset.x
+		gui_casque6[lstIngredientsSelect.index2].offset.y = childSlotIngredient[1].position.y + nodeParent.offset.y
+		gui_casque6[lstIngredientsSelect.index2].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item2 == "collier_1":
+		gui_collier1[lstIngredientsSelect.index2].offset.x = childSlotIngredient[1].position.x + nodeParent.offset.x
+		gui_collier1[lstIngredientsSelect.index2].offset.y = childSlotIngredient[1].position.y + nodeParent.offset.y
+		gui_collier1[lstIngredientsSelect.index2].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item2 == "collier_2":
+		gui_collier2[lstIngredientsSelect.index2].offset.x = childSlotIngredient[1].position.x + nodeParent.offset.x
+		gui_collier2[lstIngredientsSelect.index2].offset.y = childSlotIngredient[1].position.y + nodeParent.offset.y
+		gui_collier2[lstIngredientsSelect.index2].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item2 == "collier_3":
+		gui_collier3[lstIngredientsSelect.index2].offset.x = childSlotIngredient[1].position.x + nodeParent.offset.x
+		gui_collier3[lstIngredientsSelect.index2].offset.y = childSlotIngredient[1].position.y + nodeParent.offset.y
+		gui_collier3[lstIngredientsSelect.index2].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item2 == "heaume_1":
+		gui_heaume1[lstIngredientsSelect.index2].offset.x = childSlotIngredient[1].position.x + nodeParent.offset.x
+		gui_heaume1[lstIngredientsSelect.index2].offset.y = childSlotIngredient[1].position.y + nodeParent.offset.y
+		gui_heaume1[lstIngredientsSelect.index2].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item2 == "heaume_2":
+		gui_heaume2[lstIngredientsSelect.index2].offset.x = childSlotIngredient[1].position.x + nodeParent.offset.x
+		gui_heaume2[lstIngredientsSelect.index2].offset.y = childSlotIngredient[1].position.y + nodeParent.offset.y
+		gui_heaume2[lstIngredientsSelect.index2].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item2 == "heaume_3":
+		gui_heaume3[lstIngredientsSelect.index2].offset.x = childSlotIngredient[1].position.x + nodeParent.offset.x
+		gui_heaume3[lstIngredientsSelect.index2].offset.y = childSlotIngredient[1].position.y + nodeParent.offset.y
+		gui_heaume3[lstIngredientsSelect.index2].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item2 == "heaume_4":
+		gui_heaume4[lstIngredientsSelect.index2].offset.x = childSlotIngredient[1].position.x + nodeParent.offset.x
+		gui_heaume4[lstIngredientsSelect.index2].offset.y = childSlotIngredient[1].position.y + nodeParent.offset.y
+		gui_heaume4[lstIngredientsSelect.index2].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item2 == "heaume_5":
+		gui_heaume5[lstIngredientsSelect.index2].offset.x = childSlotIngredient[1].position.x + nodeParent.offset.x
+		gui_heaume5[lstIngredientsSelect.index2].offset.y = childSlotIngredient[1].position.y + nodeParent.offset.y
+		gui_heaume5[lstIngredientsSelect.index2].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item2 == "heaume_6":
+		gui_heaume6[lstIngredientsSelect.index2].offset.x = childSlotIngredient[1].position.x + nodeParent.offset.x
+		gui_heaume6[lstIngredientsSelect.index2].offset.y = childSlotIngredient[1].position.y + nodeParent.offset.y
+		gui_heaume6[lstIngredientsSelect.index2].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item2 == "sword_1":
+		gui_sword1[lstIngredientsSelect.index2].offset.x = childSlotIngredient[1].position.x + nodeParent.offset.x
+		gui_sword1[lstIngredientsSelect.index2].offset.y = childSlotIngredient[1].position.y + nodeParent.offset.y
+		gui_sword1[lstIngredientsSelect.index2].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item2 == "sword_2":
+		gui_sword2[lstIngredientsSelect.index2].offset.x = childSlotIngredient[1].position.x + nodeParent.offset.x
+		gui_sword2[lstIngredientsSelect.index2].offset.y = childSlotIngredient[1].position.y + nodeParent.offset.y
+		gui_sword2[lstIngredientsSelect.index2].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item2 == "sword_3":
+		gui_sword3[lstIngredientsSelect.index2].offset.x = childSlotIngredient[1].position.x + nodeParent.offset.x
+		gui_sword3[lstIngredientsSelect.index2].offset.y = childSlotIngredient[1].position.y + nodeParent.offset.y
+		gui_sword3[lstIngredientsSelect.index2].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item2 == "sword_4":
+		gui_sword4[lstIngredientsSelect.index2].offset.x = childSlotIngredient[1].position.x + nodeParent.offset.x
+		gui_sword4[lstIngredientsSelect.index2].offset.y = childSlotIngredient[1].position.y + nodeParent.offset.y
+		gui_sword4[lstIngredientsSelect.index2].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item2 == "sword_5":
+		gui_sword5[lstIngredientsSelect.index2].offset.x = childSlotIngredient[1].position.x + nodeParent.offset.x
+		gui_sword5[lstIngredientsSelect.index2].offset.y = childSlotIngredient[1].position.y + nodeParent.offset.y
+		gui_sword5[lstIngredientsSelect.index2].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item2 == "sword_6":
+		gui_sword6[lstIngredientsSelect.index2].offset.x = childSlotIngredient[1].position.x + nodeParent.offset.x
+		gui_sword6[lstIngredientsSelect.index2].offset.y = childSlotIngredient[1].position.y + nodeParent.offset.y
+		gui_sword6[lstIngredientsSelect.index2].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item2 == "sword_7":
+		gui_sword7[lstIngredientsSelect.index2].offset.x = childSlotIngredient[1].position.x + nodeParent.offset.x
+		gui_sword7[lstIngredientsSelect.index2].offset.y = childSlotIngredient[1].position.y + nodeParent.offset.y
+		gui_sword7[lstIngredientsSelect.index2].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item2 == "sword_8":
+		gui_sword8[lstIngredientsSelect.index2].offset.x = childSlotIngredient[1].position.x + nodeParent.offset.x
+		gui_sword8[lstIngredientsSelect.index2].offset.y = childSlotIngredient[1].position.y + nodeParent.offset.y
+		gui_sword8[lstIngredientsSelect.index2].scale = Vector2(0.68, 0.78)
+	
 func _input(event):
 	var mouse_pos = get_viewport().get_mouse_position()
 	
