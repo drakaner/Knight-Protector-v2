@@ -1867,173 +1867,275 @@ func update_inventaires_visibility():
 	if nbPage == 1:
 		for n in range(15, gui_bague1.size()):
 			if gui_bague1[n] != null:
-				if lstIngredientsSelect.item1 != "bague_1" and lstIngredientsSelect.item2 != "bague_1":
-					gui_bague1[n].visible = false
+				gui_bague1[n].visible = false
+				if lstIngredientsSelect.index1 != -1 and lstIngredientsSelect.item1 == "bague_1":
+					gui_bague1[lstIngredientsSelect.index1].visible = true
+				if lstIngredientsSelect.index2 != -1 and lstIngredientsSelect.item2 == "bague_1":
+					gui_bague1[lstIngredientsSelect.index2].visible = true
 		
 		for n in range(15, gui_bague2.size()):
 			if gui_bague2[n] != null:
-				if lstIngredientsSelect.item1 != "bague_2" and lstIngredientsSelect.item2 != "bague_2":
-					gui_bague2[n].visible = false
+				gui_bague2[n].visible = false
+				if lstIngredientsSelect.index1 != -1 and lstIngredientsSelect.item1 == "bague_2":
+					gui_bague2[lstIngredientsSelect.index1].visible = true
+				if lstIngredientsSelect.index2 != -1 and lstIngredientsSelect.item2 == "bague_2":
+					gui_bague2[lstIngredientsSelect.index2].visible = true
 		
 		for n in range(15, gui_bague3.size()):
 			if gui_bague3[n] != null:
-				if lstIngredientsSelect.item1 != "bague_3" and lstIngredientsSelect.item2 != "bague_3":
-					gui_bague3[n].visible = false
+				gui_bague3[n].visible = false
+				if lstIngredientsSelect.index1 != -1 and lstIngredientsSelect.item1 == "bague_3":
+					gui_bague3[lstIngredientsSelect.index1].visible = true
+				if lstIngredientsSelect.index2 != -1 and lstIngredientsSelect.item2 == "bague_3":
+					gui_bague3[lstIngredientsSelect.index2].visible = true
 		
 		for n in range(15, gui_bottes1.size()):
 			if gui_bottes1[n] != null:
-				if lstIngredientsSelect.item1 != "bottes_1" and lstIngredientsSelect.item2 != "bottes_1":
-					gui_bottes1[n].visible = false
+				gui_bottes1[n].visible = false
+				if lstIngredientsSelect.index1 != -1 and lstIngredientsSelect.item1 == "bottes_1":
+					gui_bottes1[lstIngredientsSelect.index1].visible = true
+				if lstIngredientsSelect.index2 != -1 and lstIngredientsSelect.item2 == "bottes_1":
+					gui_bottes1[lstIngredientsSelect.index2].visible = true
 		
 		for n in range(15, gui_bottes2.size()):
 			if gui_bottes2[n] != null:
-				if lstIngredientsSelect.item1 != "bottes_2" and lstIngredientsSelect.item2 != "bottes_2":
-					gui_bottes2[n].visible = false
+				gui_bottes2[n].visible = false
+				if lstIngredientsSelect.index1 != -1 and lstIngredientsSelect.item1 == "bottes_2":
+					gui_bottes2[lstIngredientsSelect.index1].visible = true
+				if lstIngredientsSelect.index2 != -1 and lstIngredientsSelect.item2 == "bottes_2":
+					gui_bottes2[lstIngredientsSelect.index2].visible = true
 		
 		for n in range(15, gui_bottes3.size()):
 			if gui_bottes3[n] != null:
-				if lstIngredientsSelect.item1 != "bottes_3" and lstIngredientsSelect.item2 != "bottes_3":
-					gui_bottes3[n].visible = false
+				gui_bottes3[n].visible = false
+				if lstIngredientsSelect.index1 != -1 and lstIngredientsSelect.item1 == "bottes_3":
+					gui_bottes3[lstIngredientsSelect.index1].visible = true
+				if lstIngredientsSelect.index2 != -1 and lstIngredientsSelect.item2 == "bottes_3":
+					gui_bottes3[lstIngredientsSelect.index2].visible = true
 		
 		for n in range(15, gui_bottes4.size()):
 			if gui_bottes4[n] != null:
-				if lstIngredientsSelect.item1 != "bottes_4" and lstIngredientsSelect.item2 != "bottes_4":
-					gui_bottes4[n].visible = false
+				gui_bottes4[n].visible = false
+				if lstIngredientsSelect.index1 != -1 and lstIngredientsSelect.item1 == "bottes_4":
+					gui_bottes4[lstIngredientsSelect.index1].visible = true
+				if lstIngredientsSelect.index2 != -1 and lstIngredientsSelect.item2 == "bottes_4":
+					gui_bottes4[lstIngredientsSelect.index2].visible = true
 		
 		for n in range(15, gui_bottes5.size()):
 			if gui_bottes5[n] != null:
-				if lstIngredientsSelect.item1 != "bottes_5" and lstIngredientsSelect.item2 != "bottes_5":
-					gui_bottes5[n].visible = false
+				gui_bottes5[n].visible = false
+				if lstIngredientsSelect.index1 != -1 and lstIngredientsSelect.item1 == "bottes_5":
+					gui_bottes5[lstIngredientsSelect.index1].visible = true
+				if lstIngredientsSelect.index2 != -1 and lstIngredientsSelect.item2 == "bottes_5":
+					gui_bottes5[lstIngredientsSelect.index2].visible = true
 		
 		for n in range(15, gui_bottes6.size()):
 			if gui_bottes6[n] != null:
-				if lstIngredientsSelect.item1 != "bottes_6" and lstIngredientsSelect.item2 != "bottes_6":
-					gui_bottes6[n].visible = false
+				gui_bottes6[n].visible = false
+				if lstIngredientsSelect.index1 != -1 and lstIngredientsSelect.item1 == "bottes_6":
+					gui_bottes6[lstIngredientsSelect.index1].visible = true
+				if lstIngredientsSelect.index2 != -1 and lstIngredientsSelect.item2 == "bottes_6":
+					gui_bottes6[lstIngredientsSelect.index2].visible = true
 		
 		for n in range(15, gui_bouclier1.size()):
 			if gui_bouclier1[n] != null:
-				if lstIngredientsSelect.item1 != "bouclier_1" and lstIngredientsSelect.item2 != "bouclier_1":
-					gui_bouclier1[n].visible = false
+				gui_bouclier1[n].visible = false
+				if lstIngredientsSelect.index1 != -1 and lstIngredientsSelect.item1 == "bouclier_1":
+					gui_bouclier1[lstIngredientsSelect.index1].visible = true
+				if lstIngredientsSelect.index2 != -1 and lstIngredientsSelect.item2 == "bouclier_1":
+					gui_bouclier1[lstIngredientsSelect.index2].visible = true
 		
 		for n in range(15, gui_bouclier2.size()):
 			if gui_bouclier2[n] != null:
-				if lstIngredientsSelect.item1 != "bouclier_2" and lstIngredientsSelect.item2 != "bouclier_2":
-					gui_bouclier2[n].visible = false
+				gui_bouclier2[n].visible = false
+				if lstIngredientsSelect.index1 != -1 and lstIngredientsSelect.item1 == "bouclier_2":
+					gui_bouclier2[lstIngredientsSelect.index1].visible = true
+				if lstIngredientsSelect.index2 != -1 and lstIngredientsSelect.item2 == "bouclier_2":
+					gui_bouclier2[lstIngredientsSelect.index2].visible = true
 		
 		for n in range(15, gui_bouclier3.size()):
 			if gui_bouclier3[n] != null:
-				if lstIngredientsSelect.item1 != "bouclier_3" and lstIngredientsSelect.item2 != "bouclier_3":
-					gui_bouclier3[n].visible = false
+				gui_bouclier3[n].visible = false
+				if lstIngredientsSelect.index1 != -1 and lstIngredientsSelect.item1 == "bouclier_3":
+					gui_bouclier3[lstIngredientsSelect.index1].visible = true
+				if lstIngredientsSelect.index2 != -1 and lstIngredientsSelect.item2 == "bouclier_3":
+					gui_bouclier3[lstIngredientsSelect.index2].visible = true
 		
 		for n in range(15, gui_bouclier4.size()):
 			if gui_bouclier4[n] != null:
-				if lstIngredientsSelect.item1 != "bouclier_4" and lstIngredientsSelect.item2 != "bouclier_4":
-					gui_bouclier4[n].visible = false
+				gui_bouclier4[n].visible = false
+				if lstIngredientsSelect.index1 != -1 and lstIngredientsSelect.item1 == "bouclier_4":
+					gui_bouclier4[lstIngredientsSelect.index1].visible = true
+				if lstIngredientsSelect.index2 != -1 and lstIngredientsSelect.item2 == "bouclier_4":
+					gui_bouclier4[lstIngredientsSelect.index2].visible = true
 		
 		for n in range(15, gui_bouclier5.size()):
 			if gui_bouclier5[n] != null:
-				if lstIngredientsSelect.item1 != "bouclier_5" and lstIngredientsSelect.item2 != "bouclier_5":
-					gui_bouclier5[n].visible = false
+				gui_bouclier5[n].visible = false
+				if lstIngredientsSelect.index1 != -1 and lstIngredientsSelect.item1 == "bouclier_5":
+					gui_bouclier5[lstIngredientsSelect.index1].visible = true
+				if lstIngredientsSelect.index2 != -1 and lstIngredientsSelect.item2 == "bouclier_5":
+					gui_bouclier5[lstIngredientsSelect.index2].visible = true
 		
 		for n in range(15, gui_bouclier6.size()):
 			if gui_bouclier6[n] != null:
-				if lstIngredientsSelect.item1 != "bouclier_6" and lstIngredientsSelect.item2 != "bouclier_6":
-					gui_bouclier6[n].visible = false
+				gui_bouclier6[n].visible = false
+				if lstIngredientsSelect.index1 != -1 and lstIngredientsSelect.item1 == "bouclier_6":
+					gui_bouclier6[lstIngredientsSelect.index1].visible = true
+				if lstIngredientsSelect.index2 != -1 and lstIngredientsSelect.item2 == "bouclier_6":
+					gui_bouclier6[lstIngredientsSelect.index2].visible = true
 		
 		for n in range(15, gui_bouclier7.size()):
 			if gui_bouclier7[n] != null:
-				if lstIngredientsSelect.item1 != "bouclier_7" and lstIngredientsSelect.item2 != "bouclier_7":
-					gui_bouclier7[n].visible = false
+				gui_bouclier7[n].visible = false
+				if lstIngredientsSelect.index1 != -1 and lstIngredientsSelect.item1 == "bouclier_7":
+					gui_bouclier7[lstIngredientsSelect.index1].visible = true
+				if lstIngredientsSelect.index2 != -1 and lstIngredientsSelect.item2 == "bouclier_7":
+					gui_bouclier7[lstIngredientsSelect.index2].visible = true
 		
 		for n in range(15, gui_casque1.size()):
 			if gui_casque1[n] != null:
-				if lstIngredientsSelect.item1 != "casque_1" and lstIngredientsSelect.item2 != "casque_1":
-					gui_casque1[n].visible = false
+				gui_casque1[n].visible = false
+				if lstIngredientsSelect.index1 != -1 and lstIngredientsSelect.item1 == "casque_1":
+					gui_casque1[lstIngredientsSelect.index1].visible = true
+				if lstIngredientsSelect.index2 != -1 and lstIngredientsSelect.item2 == "casque_1":
+					gui_casque1[lstIngredientsSelect.index2].visible = true
 		
 		for n in range(15, gui_casque2.size()):
 			if gui_casque2[n] != null:
-				if lstIngredientsSelect.item1 != "casque_2" and lstIngredientsSelect.item2 != "casque_2":
-					gui_casque2[n].visible = false
+				gui_casque2[n].visible = false
+				if lstIngredientsSelect.index1 != -1 and lstIngredientsSelect.item1 == "casque_2":
+					gui_casque2[lstIngredientsSelect.index1].visible = true
+				if lstIngredientsSelect.index2 != -1 and lstIngredientsSelect.item2 == "casque_2":
+					gui_casque2[lstIngredientsSelect.index2].visible = true
 		
 		for n in range(15, gui_casque3.size()):
 			if gui_casque3[n] != null:
-				if lstIngredientsSelect.item1 != "casque_3" and lstIngredientsSelect.item2 != "casque_3":
-					gui_casque3[n].visible = false
+				gui_casque3[n].visible = false
+				if lstIngredientsSelect.index1 != -1 and lstIngredientsSelect.item1 == "casque_3":
+					gui_casque3[lstIngredientsSelect.index1].visible = true
+				if lstIngredientsSelect.index2 != -1 and lstIngredientsSelect.item2 == "casque_3":
+					gui_casque3[lstIngredientsSelect.index2].visible = true
 		
 		for n in range(15, gui_casque4.size()):
 			if gui_casque4[n] != null:
-				if lstIngredientsSelect.item1 != "casque_4" and lstIngredientsSelect.item2 != "casque_4":
-					gui_casque4[n].visible = false
+				gui_casque4[n].visible = false
+				if lstIngredientsSelect.index1 != -1 and lstIngredientsSelect.item1 == "casque_4":
+					gui_casque4[lstIngredientsSelect.index1].visible = true
+				if lstIngredientsSelect.index2 != -1 and lstIngredientsSelect.item2 == "casque_4":
+					gui_casque4[lstIngredientsSelect.index2].visible = true
 		
 		for n in range(15, gui_casque5.size()):
 			if gui_casque5[n] != null:
-				if lstIngredientsSelect.item1 != "casque_5" and lstIngredientsSelect.item2 != "casque_5":
-					gui_casque5[n].visible = false
+				gui_casque5[n].visible = false
+				if lstIngredientsSelect.index1 != -1 and lstIngredientsSelect.item1 == "casque_5":
+					gui_casque5[lstIngredientsSelect.index1].visible = true
+				if lstIngredientsSelect.index2 != -1 and lstIngredientsSelect.item2 == "casque_5":
+					gui_casque5[lstIngredientsSelect.index2].visible = true
 		
 		for n in range(15, gui_casque6.size()):
 			if gui_casque6[n] != null:
-				if lstIngredientsSelect.item1 != "casque_6" and lstIngredientsSelect.item2 != "casque_6":
-					gui_casque6[n].visible = false
+				gui_casque6[n].visible = false
+				if lstIngredientsSelect.index1 != -1 and lstIngredientsSelect.item1 == "casque_6":
+					gui_casque6[lstIngredientsSelect.index1].visible = true
+				if lstIngredientsSelect.index2 != -1 and lstIngredientsSelect.item2 == "casque_6":
+					gui_casque6[lstIngredientsSelect.index2].visible = true
 		
 		for n in range(15, gui_collier1.size()):
 			if gui_collier1[n] != null:
-				if lstIngredientsSelect.item1 != "collier_1" and lstIngredientsSelect.item2 != "collier_1":
-					gui_collier1[n].visible = false
+				gui_collier1[n].visible = false
+				if lstIngredientsSelect.index1 != -1 and lstIngredientsSelect.item1 == "collier_1":
+					gui_collier1[lstIngredientsSelect.index1].visible = true
+				if lstIngredientsSelect.index2 != -1 and lstIngredientsSelect.item2 == "collier_1":
+					gui_collier1[lstIngredientsSelect.index2].visible = true
 		
 		for n in range(15, gui_collier2.size()):
 			if gui_collier2[n] != null:
-				if lstIngredientsSelect.item1 != "collier_2" and lstIngredientsSelect.item2 != "collier_2":
-					gui_collier2[n].visible = false
+				gui_collier2[n].visible = false
+				if lstIngredientsSelect.index1 != -1 and lstIngredientsSelect.item1 == "collier_2":
+					gui_collier2[lstIngredientsSelect.index1].visible = true
+				if lstIngredientsSelect.index2 != -1 and lstIngredientsSelect.item2 == "collier_2":
+					gui_collier2[lstIngredientsSelect.index2].visible = true
 		
 		for n in range(15, gui_collier3.size()):
 			if gui_collier3[n] != null:
-				if lstIngredientsSelect.item1 != "collier_3" and lstIngredientsSelect.item2 != "collier_3":
-					gui_collier3[n].visible = false
+				gui_collier3[n].visible = false
+				if lstIngredientsSelect.index1 != -1 and lstIngredientsSelect.item1 == "collier_3":
+					gui_collier3[lstIngredientsSelect.index1].visible = true
+				if lstIngredientsSelect.index2 != -1 and lstIngredientsSelect.item2 == "collier_3":
+					gui_collier3[lstIngredientsSelect.index2].visible = true
 		
 		for n in range(15, gui_heaume1.size()):
 			if gui_heaume1[n] != null:
-				if lstIngredientsSelect.item1 != "heaume_1" and lstIngredientsSelect.item2 != "heaume_1":
-					gui_heaume1[n].visible = false
+				gui_heaume1[n].visible = false
+				if lstIngredientsSelect.index1 != -1 and lstIngredientsSelect.item1 == "heaume_1":
+					gui_heaume1[lstIngredientsSelect.index1].visible = true
+				if lstIngredientsSelect.index2 != -1 and lstIngredientsSelect.item2 == "heaume_1":
+					gui_heaume1[lstIngredientsSelect.index2].visible = true
 		
 		for n in range(15, gui_heaume2.size()):
 			if gui_heaume2[n] != null:
-				if lstIngredientsSelect.item1 != "heaume_2" and lstIngredientsSelect.item2 != "heaume_2":
-					gui_heaume2[n].visible = false
+				gui_heaume2[n].visible = false
+				if lstIngredientsSelect.index1 != -1 and lstIngredientsSelect.item1 == "heaume_2":
+					gui_heaume2[lstIngredientsSelect.index1].visible = true
+				if lstIngredientsSelect.index2 != -1 and lstIngredientsSelect.item2 == "heaume_2":
+					gui_heaume2[lstIngredientsSelect.index2].visible = true
 		
 		for n in range(15, gui_heaume3.size()):
 			if gui_heaume3[n] != null:
-				if lstIngredientsSelect.item1 != "heaume_3" and lstIngredientsSelect.item2 != "heaume_3":
-					gui_heaume3[n].visible = false
+				gui_heaume3[n].visible = false
+				if lstIngredientsSelect.index1 != -1 and lstIngredientsSelect.item1 == "heaume_3":
+					gui_heaume3[lstIngredientsSelect.index1].visible = true
+				if lstIngredientsSelect.index2 != -1 and lstIngredientsSelect.item2 == "heaume_3":
+					gui_heaume3[lstIngredientsSelect.index2].visible = true
 		
 		for n in range(15, gui_heaume4.size()):
 			if gui_heaume4[n] != null:
-				if lstIngredientsSelect.item1 != "heaume_4" and lstIngredientsSelect.item2 != "heaume_4":
-					gui_heaume4[n].visible = false
+				gui_heaume4[n].visible = false
+				if lstIngredientsSelect.index1 != -1 and lstIngredientsSelect.item1 == "heaume_4":
+					gui_heaume4[lstIngredientsSelect.index1].visible = true
+				if lstIngredientsSelect.index2 != -1 and lstIngredientsSelect.item2 == "heaume_4":
+					gui_heaume4[lstIngredientsSelect.index2].visible = true
 		
 		for n in range(15, gui_heaume5.size()):
 			if gui_heaume5[n] != null:
-				if lstIngredientsSelect.item1 != "heaume_5" and lstIngredientsSelect.item2 != "heaume_5":
-					gui_heaume5[n].visible = false
+				gui_heaume5[n].visible = false
+				if lstIngredientsSelect.index1 != -1 and lstIngredientsSelect.item1 == "heaume_5":
+					gui_heaume5[lstIngredientsSelect.index1].visible = true
+				if lstIngredientsSelect.index2 != -1 and lstIngredientsSelect.item2 == "heaume_5":
+					gui_heaume5[lstIngredientsSelect.index2].visible = true
 		
 		for n in range(15, gui_heaume6.size()):
 			if gui_heaume6[n] != null:
-				if lstIngredientsSelect.item1 != "heaume_6" and lstIngredientsSelect.item2 != "heaume_6":
-					gui_heaume6[n].visible = false
+				gui_heaume6[n].visible = false
+				if lstIngredientsSelect.index1 != -1 and lstIngredientsSelect.item1 == "heaume_6":
+					gui_heaume6[lstIngredientsSelect.index1].visible = true
+				if lstIngredientsSelect.index2 != -1 and lstIngredientsSelect.item2 == "heaume_6":
+					gui_heaume6[lstIngredientsSelect.index2].visible = true
 		
 		for n in range(15, gui_sword1.size()):
 			if gui_sword1[n] != null:
-				if lstIngredientsSelect.item1 != "sword_1" and lstIngredientsSelect.item2 != "sword_1":
-					gui_sword1[n].visible = false
+				gui_sword1[n].visible = false
+				if lstIngredientsSelect.index1 != -1 and lstIngredientsSelect.item1 == "sword_1":
+					gui_sword1[lstIngredientsSelect.index1].visible = true
+				if lstIngredientsSelect.index2 != -1 and lstIngredientsSelect.item2 == "sword_1":
+					gui_sword1[lstIngredientsSelect.index2].visible = true
 		
 		for n in range(15, gui_sword2.size()):
 			if gui_sword2[n] != null:
-				if lstIngredientsSelect.item1 != "sword_2" and lstIngredientsSelect.item2 != "sword_2":
-					gui_sword2[n].visible = false
+				gui_sword2[n].visible = false
+				if lstIngredientsSelect.index1 != -1 and lstIngredientsSelect.item1 == "sword_2":
+					gui_sword2[lstIngredientsSelect.index1].visible = true
+				if lstIngredientsSelect.index2 != -1 and lstIngredientsSelect.item2 == "sword_2":
+					gui_sword2[lstIngredientsSelect.index2].visible = true
 		
 		for n in range(15, gui_sword3.size()):
 			if gui_sword3[n] != null:
-				if lstIngredientsSelect.item1 != "sword_3" and lstIngredientsSelect.item2 != "sword_3":
-					gui_sword3[n].visible = false
+				gui_sword3[n].visible = false
+				if lstIngredientsSelect.index1 != -1 and lstIngredientsSelect.item1 == "sword_3":
+					gui_sword3[lstIngredientsSelect.index1].visible = true
+				if lstIngredientsSelect.index2 != -1 and lstIngredientsSelect.item2 == "sword_3":
+					gui_sword3[lstIngredientsSelect.index2].visible = true
 		
 		for n in range(15, gui_sword4.size()):
 			if gui_sword4[n] != null:
@@ -2063,8 +2165,12 @@ func update_inventaires_visibility():
 	if nbPage == 2:
 		for n in range(15):
 			if gui_bague1[n] != null:
-				if lstIngredientsSelect.item1 != "bague_1" and lstIngredientsSelect.item2 != "bague_1":
-					gui_bague1[n].visible = false
+				#if lstIngredientsSelect.item1 == "bague_1" or lstIngredientsSelect.item2 == "bague_1":
+				gui_bague1[n].visible = false
+				if lstIngredientsSelect.index1 != -1 and lstIngredientsSelect.item1 == "bague_1":
+					gui_bague1[lstIngredientsSelect.index1].visible = true
+				if lstIngredientsSelect.index2 != -1 and lstIngredientsSelect.item2 == "bague_1":
+					gui_bague1[lstIngredientsSelect.index2].visible = true
 		
 		for n in range(15):
 			if gui_bague2[n] != null:
