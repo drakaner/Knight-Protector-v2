@@ -2525,7 +2525,7 @@ func _process(delta: float) -> void:
 					var childTxtGold = txtNbGoldTotalIngredients.get_node("labelGuiTextFenetre")
 					childTxtGold.position.x = 545
 					childTxtGold.position.y = 313
-					childTxtGold.text = str(DataSave.hero.gold)
+					childTxtGold.text = str(DataSave.hero.gold) #le mettre a jour
 					childTxtGold.add_theme_font_size_override("font_size", 27)
 					childTxtGold.add_theme_color_override("font_color", Color(1.0, 0.443, 0.0, 1.0) )
 					print("on affiche le prix et on va rendre possible le crafting !")
@@ -3046,6 +3046,10 @@ func _process(delta: float) -> void:
 		if lstIngredientsSelect.index2 != -1:
 			if mouse_pos.x - nodeParent.offset.x >= childSlotIngredient[1].position.x and mouse_pos.x - nodeParent.offset.x <= childSlotIngredient[1].position.x + 30 and mouse_pos.y - nodeParent.offset.y >= childSlotIngredient[1].position.y and mouse_pos.y - nodeParent.offset.y <= childSlotIngredient[1].position.y + 30:
 				if Input.is_action_just_pressed("button_left"):
+					
+					if txtNbGoldTotalIngredients.visible == true:
+						txtNbGoldTotalIngredients.visible = false
+					
 					if lstIngredientsSelect.item2 == "bague_1":
 						gui_bague1[lstIngredientsSelect.index2].offset.x = childSlot[lstIngredientsSelect.index2].position.x + nodeParent.offset.x + 2
 						gui_bague1[lstIngredientsSelect.index2].offset.y = childSlot[lstIngredientsSelect.index2].position.y + nodeParent.offset.y + 1
@@ -3324,6 +3328,9 @@ func _process(delta: float) -> void:
 		if lstIngredientsSelect.index1 != -1:
 			if mouse_pos.x - nodeParent.offset.x >= childSlotIngredient[0].position.x and mouse_pos.x - nodeParent.offset.x <= childSlotIngredient[0].position.x + 30 and mouse_pos.y - nodeParent.offset.y >= childSlotIngredient[0].position.y and mouse_pos.y - nodeParent.offset.y <= childSlotIngredient[0].position.y + 30:
 				if Input.is_action_just_pressed("button_left"):
+					if txtNbGoldTotalIngredients.visible == true:
+						txtNbGoldTotalIngredients.visible = false
+					
 					if lstIngredientsSelect.item1 == "bague_1":
 						gui_bague1[lstIngredientsSelect.index1].offset.x = childSlot[lstIngredientsSelect.index1].position.x + nodeParent.offset.x + 2
 						gui_bague1[lstIngredientsSelect.index1].offset.y = childSlot[lstIngredientsSelect.index1].position.y + nodeParent.offset.y + 1
@@ -3631,7 +3638,7 @@ func _process(delta: float) -> void:
 							lstIngredientsSelect.item2 = txtItemType[n]
 							lstIngredientsSelect.index2 = n
 					if lstIngredientsSelect.item1 == "vide":
-						if n != lstIngredientsSelect.item2:
+						if n != lstIngredientsSelect.index2:
 							lstIngredientsSelect.item1 = txtItemType[n]
 							lstIngredientsSelect.index1 = n
 					print("le type clic2 : ", txtItemType[n])
