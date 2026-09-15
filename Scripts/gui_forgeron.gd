@@ -53,6 +53,8 @@ var GuiSword8 = preload("res://Objets/gui_sword_8.tscn")
 @onready var childButtonFlecheLeft
 @onready var childButtonFlecheRight
 
+var gui_items_resultat = {}
+
 var gui_potion_vie = []
 var gui_potion_mana = []
 var gui_potion_elixir = []
@@ -153,6 +155,8 @@ var gui_fenetre
 
 var nbDecaleTextName = 0
 var nbPage = 1
+
+var nbPrixCraft = 0
 
 var txtItemType = []
 var isSlot_libre = []
@@ -1615,6 +1619,8 @@ func _on_mouse_exited_sword():
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
+	#gui_items_resultat.resize(32)
+	
 	txtItemType.resize(21)
 	isSlot_libre.resize(21)
 	
@@ -1663,6 +1669,106 @@ func _ready() -> void:
 	
 	childSlot.resize(21)
 	childSlotIngredient.resize(2)
+	
+	gui_items_resultat["bague_2"] = GuiBague2.instantiate()
+	add_child(gui_items_resultat["bague_2"])
+	gui_items_resultat["bague_3"] = GuiBague3.instantiate()
+	add_child(gui_items_resultat["bague_3"])
+	gui_items_resultat["bottes_2"] = GuiBottes2.instantiate()
+	add_child(gui_items_resultat["bottes_2"])
+	gui_items_resultat["bottes_3"] = GuiBottes3.instantiate()
+	add_child(gui_items_resultat["bottes_3"])
+	gui_items_resultat["bottes_4"] = GuiBottes4.instantiate()
+	add_child(gui_items_resultat["bottes_4"])
+	gui_items_resultat["bottes_5"] = GuiBottes5.instantiate()
+	add_child(gui_items_resultat["bottes_5"])
+	gui_items_resultat["bottes_6"] = GuiBottes6.instantiate()
+	add_child(gui_items_resultat["bottes_6"])
+	gui_items_resultat["bouclier_2"] = GuiBouclier2.instantiate()
+	add_child(gui_items_resultat["bouclier_2"])
+	gui_items_resultat["bouclier_3"] = GuiBouclier3.instantiate()
+	add_child(gui_items_resultat["bouclier_3"])
+	gui_items_resultat["bouclier_4"] = GuiBouclier4.instantiate()
+	add_child(gui_items_resultat["bouclier_4"])
+	gui_items_resultat["bouclier_5"] = GuiBouclier5.instantiate()
+	add_child(gui_items_resultat["bouclier_5"])
+	gui_items_resultat["bouclier_6"] = GuiBouclier6.instantiate()
+	add_child(gui_items_resultat["bouclier_6"])
+	gui_items_resultat["bouclier_7"] = GuiBouclier7.instantiate()
+	add_child(gui_items_resultat["bouclier_7"])
+	gui_items_resultat["casque_2"] = GuiCasque2.instantiate()
+	add_child(gui_items_resultat["casque_2"])
+	gui_items_resultat["casque_3"] = GuiCasque3.instantiate()
+	add_child(gui_items_resultat["casque_3"])
+	gui_items_resultat["casque_4"] = GuiCasque4.instantiate()
+	add_child(gui_items_resultat["casque_4"])
+	gui_items_resultat["casque_5"] = GuiCasque5.instantiate()
+	add_child(gui_items_resultat["casque_5"])
+	gui_items_resultat["casque_6"] = GuiCasque6.instantiate()
+	add_child(gui_items_resultat["casque_6"])
+	gui_items_resultat["collier_2"] = GuiCollier2.instantiate()
+	add_child(gui_items_resultat["collier_2"])
+	gui_items_resultat["collier_3"] = GuiCollier3.instantiate()
+	add_child(gui_items_resultat["collier_3"])
+	gui_items_resultat["heaume_2"] = GuiHeaume2.instantiate()
+	add_child(gui_items_resultat["heaume_2"])
+	gui_items_resultat["heaume_3"] = GuiHeaume3.instantiate()
+	add_child(gui_items_resultat["heaume_3"])
+	gui_items_resultat["heaume_4"] = GuiHeaume4.instantiate()
+	add_child(gui_items_resultat["heaume_4"])
+	gui_items_resultat["heaume_5"] = GuiHeaume5.instantiate()
+	add_child(gui_items_resultat["heaume_5"])
+	gui_items_resultat["heaume_6"] = GuiHeaume6.instantiate()
+	add_child(gui_items_resultat["heaume_6"])
+	gui_items_resultat["sword_2"] = GuiSword2.instantiate()
+	add_child(gui_items_resultat["sword_2"])
+	gui_items_resultat["sword_3"] = GuiSword3.instantiate()
+	add_child(gui_items_resultat["sword_3"])
+	gui_items_resultat["sword_4"] = GuiSword4.instantiate()
+	add_child(gui_items_resultat["sword_4"])
+	gui_items_resultat["sword_5"] = GuiSword5.instantiate()
+	add_child(gui_items_resultat["sword_5"])
+	gui_items_resultat["sword_6"] = GuiSword6.instantiate()
+	add_child(gui_items_resultat["sword_6"])
+	gui_items_resultat["sword_7"] = GuiSword7.instantiate()
+	add_child(gui_items_resultat["sword_7"])
+	gui_items_resultat["sword_8"] = GuiSword8.instantiate()
+	add_child(gui_items_resultat["sword_8"])
+	
+	gui_items_resultat["bague_2"].visible = false
+	gui_items_resultat["bague_3"].visible = false
+	gui_items_resultat["bottes_2"].visible = false
+	gui_items_resultat["bottes_3"].visible = false
+	gui_items_resultat["bottes_4"].visible = false
+	gui_items_resultat["bottes_5"].visible = false
+	gui_items_resultat["bottes_6"].visible = false
+	gui_items_resultat["bouclier_2"].visible = false
+	gui_items_resultat["bouclier_3"].visible = false
+	gui_items_resultat["bouclier_4"].visible = false
+	gui_items_resultat["bouclier_5"].visible = false
+	gui_items_resultat["bouclier_6"].visible = false
+	gui_items_resultat["bouclier_7"].visible = false
+	gui_items_resultat["casque_2"].visible = false
+	gui_items_resultat["casque_3"].visible = false
+	gui_items_resultat["casque_4"].visible = false
+	gui_items_resultat["casque_5"].visible = false
+	gui_items_resultat["casque_6"].visible = false
+	gui_items_resultat["collier_2"].visible = false
+	gui_items_resultat["collier_3"].visible = false
+	gui_items_resultat["heaume_2"].visible = false
+	gui_items_resultat["heaume_3"].visible = false
+	gui_items_resultat["heaume_4"].visible = false
+	gui_items_resultat["heaume_5"].visible = false
+	gui_items_resultat["heaume_6"].visible = false
+	gui_items_resultat["sword_2"].visible = false
+	gui_items_resultat["sword_3"].visible = false
+	gui_items_resultat["sword_4"].visible = false
+	gui_items_resultat["sword_5"].visible = false
+	gui_items_resultat["sword_6"].visible = false
+	gui_items_resultat["sword_7"].visible = false
+	gui_items_resultat["sword_8"].visible = false
+	
+	#PLUS CAS METTRE TOUT CA A TRUE QUAND LES DEUX ITEMS SONT IDENTIQUES ET AUSSI FAUDRA CHANGER LA POSITION X ET Y
 	
 	childSlot[0] = nodeParent.get_node("panel_slot1")
 	childSlot[1] = nodeParent.get_node("panel_slot2")
@@ -2525,7 +2631,74 @@ func _process(delta: float) -> void:
 					var childTxtGold = txtNbGoldTotalIngredients.get_node("labelGuiTextFenetre")
 					childTxtGold.position.x = 545
 					childTxtGold.position.y = 313
-					childTxtGold.text = str(DataSave.hero.gold) #le mettre a jour
+					if lstIngredientsSelect.item1 == "bague_1" and lstIngredientsSelect.item2 == "bague_1":
+						nbPrixCraft = 12000 
+					elif lstIngredientsSelect.item1 == "casque_1" and lstIngredientsSelect.item2 == "casque_1":
+						nbPrixCraft = 150
+					elif lstIngredientsSelect.item1 == "heaume_1" and lstIngredientsSelect.item2 == "heaume_1":
+						nbPrixCraft = 700
+					elif lstIngredientsSelect.item1 == "bottes_1" and lstIngredientsSelect.item2 == "bottes_1":
+						nbPrixCraft = 350
+					elif lstIngredientsSelect.item1 == "sword_1" and lstIngredientsSelect.item2 == "sword_1":
+						nbPrixCraft = 350
+					elif lstIngredientsSelect.item1 == "bague_2" and lstIngredientsSelect.item2 == "bague_2":
+						nbPrixCraft = 24000
+					elif lstIngredientsSelect.item1 == "casque_2" and lstIngredientsSelect.item2 == "casque_2":
+						nbPrixCraft = 300
+					elif lstIngredientsSelect.item1 == "heaume_2" and lstIngredientsSelect.item2 == "heaume_2":
+						nbPrixCraft = 1400
+					elif lstIngredientsSelect.item1 == "bottes_2" and lstIngredientsSelect.item2 == "bottes_2":
+						nbPrixCraft = 700
+					elif lstIngredientsSelect.item1 == "sword_2" and lstIngredientsSelect.item2 == "sword_2":
+						nbPrixCraft = 700
+					elif lstIngredientsSelect.item1 == "casque_3" and lstIngredientsSelect.item2 == "casque_3":
+						nbPrixCraft = 600
+					elif lstIngredientsSelect.item1 == "heaume_3" and lstIngredientsSelect.item2 == "heaume_3":
+						nbPrixCraft = 2800
+					elif lstIngredientsSelect.item1 == "bottes_3" and lstIngredientsSelect.item2 == "bottes_3":
+						nbPrixCraft = 1400
+					elif lstIngredientsSelect.item1 == "sword_3" and lstIngredientsSelect.item2 == "sword_3":
+						nbPrixCraft = 1400
+					elif lstIngredientsSelect.item1 == "casque_4" and lstIngredientsSelect.item2 == "casque_4":
+						nbPrixCraft = 1200
+					elif lstIngredientsSelect.item1 == "heaume_4" and lstIngredientsSelect.item2 == "heaume_4":
+						nbPrixCraft = 5600
+					elif lstIngredientsSelect.item1 == "bottes_4" and lstIngredientsSelect.item2 == "bottes_4":
+						nbPrixCraft = 2800
+					elif lstIngredientsSelect.item1 == "sword_4" and lstIngredientsSelect.item2 == "sword_4":
+						nbPrixCraft = 2800
+					elif lstIngredientsSelect.item1 == "casque_5" and lstIngredientsSelect.item2 == "casque_5":
+						nbPrixCraft = 2400
+					elif lstIngredientsSelect.item1 == "heaume_5" and lstIngredientsSelect.item2 == "heaume_5":
+						nbPrixCraft = 11200
+					elif lstIngredientsSelect.item1 == "bottes_5" and lstIngredientsSelect.item2 == "bottes_5":
+						nbPrixCraft = 5600
+					elif lstIngredientsSelect.item1 == "sword_5" and lstIngredientsSelect.item2 == "sword_5":
+						nbPrixCraft = 5600
+					elif lstIngredientsSelect.item1 == "sword_6" and lstIngredientsSelect.item2 == "sword_6":
+						nbPrixCraft = 11200
+					elif lstIngredientsSelect.item1 == "sword_7" and lstIngredientsSelect.item2 == "sword_7":
+						nbPrixCraft = 22400
+					elif lstIngredientsSelect.item1 == "bouclier_1" and lstIngredientsSelect.item2 == "bouclier_1":
+						nbPrixCraft = 250
+					elif lstIngredientsSelect.item1 == "bouclier_2" and lstIngredientsSelect.item2 == "bouclier_2":
+						nbPrixCraft = 500
+					elif lstIngredientsSelect.item1 == "bouclier_3" and lstIngredientsSelect.item2 == "bouclier_3":
+						nbPrixCraft = 1000
+					elif lstIngredientsSelect.item1 == "bouclier_4" and lstIngredientsSelect.item2 == "bouclier_4":
+						nbPrixCraft = 2000
+					elif lstIngredientsSelect.item1 == "bouclier_5" and lstIngredientsSelect.item2 == "bouclier_5":
+						nbPrixCraft = 4000
+					elif lstIngredientsSelect.item1 == "bouclier_6" and lstIngredientsSelect.item2 == "bouclier_6":
+						nbPrixCraft = 8000
+					elif lstIngredientsSelect.item1 == "collier_1" and lstIngredientsSelect.item2 == "collier_1":
+						nbPrixCraft = 18000
+					elif lstIngredientsSelect.item1 == "collier_2" and lstIngredientsSelect.item2 == "collier_2":
+						nbPrixCraft = 36000
+					else:
+						nbPrixCraft = 0
+					
+					childTxtGold.text = str(nbPrixCraft)
 					childTxtGold.add_theme_font_size_override("font_size", 27)
 					childTxtGold.add_theme_color_override("font_color", Color(1.0, 0.443, 0.0, 1.0) )
 					print("on affiche le prix et on va rendre possible le crafting !")
