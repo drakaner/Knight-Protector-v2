@@ -2632,69 +2632,229 @@ func _process(delta: float) -> void:
 					childTxtGold.position.x = 545
 					childTxtGold.position.y = 313
 					if lstIngredientsSelect.item1 == "bague_1" and lstIngredientsSelect.item2 == "bague_1":
-						nbPrixCraft = 12000 
+						nbPrixCraft = 12000
+						if gui_items_resultat["bague_2"].visible == false:
+							gui_items_resultat["bague_2"].visible = true  
+							gui_items_resultat["bague_2"].offset.x = nodeParent.offset.x + childSlotResultat.position.x
+							gui_items_resultat["bague_2"].offset.y = nodeParent.offset.y + childSlotResultat.position.y
+							gui_items_resultat["bague_2"].scale = Vector2(0.80, 0.80)
 					elif lstIngredientsSelect.item1 == "casque_1" and lstIngredientsSelect.item2 == "casque_1":
 						nbPrixCraft = 150
+						if gui_items_resultat["casque_2"].visible == false:
+							gui_items_resultat["casque_2"].visible = true  
+							gui_items_resultat["casque_2"].offset.x = nodeParent.offset.x + childSlotResultat.position.x
+							gui_items_resultat["casque_2"].offset.y = nodeParent.offset.y + childSlotResultat.position.y
+							gui_items_resultat["casque_2"].scale = Vector2(0.80, 0.80)
 					elif lstIngredientsSelect.item1 == "heaume_1" and lstIngredientsSelect.item2 == "heaume_1":
 						nbPrixCraft = 700
+						if gui_items_resultat["heaume_2"].visible == false:
+							gui_items_resultat["heaume_2"].visible = true  
+							gui_items_resultat["heaume_2"].offset.x = nodeParent.offset.x + childSlotResultat.position.x
+							gui_items_resultat["heaume_2"].offset.y = nodeParent.offset.y + childSlotResultat.position.y
+							gui_items_resultat["heaume_2"].scale = Vector2(0.80, 0.80)
 					elif lstIngredientsSelect.item1 == "bottes_1" and lstIngredientsSelect.item2 == "bottes_1":
 						nbPrixCraft = 350
+						if gui_items_resultat["bottes_2"].visible == false:
+							gui_items_resultat["bottes_2"].visible = true  
+							gui_items_resultat["bottes_2"].offset.x = nodeParent.offset.x + childSlotResultat.position.x
+							gui_items_resultat["bottes_2"].offset.y = nodeParent.offset.y + childSlotResultat.position.y
+							gui_items_resultat["bottes_2"].scale = Vector2(0.80, 0.80)
 					elif lstIngredientsSelect.item1 == "sword_1" and lstIngredientsSelect.item2 == "sword_1":
 						nbPrixCraft = 350
+						if gui_items_resultat["sword_2"].visible == false:
+							gui_items_resultat["sword_2"].visible = true  
+							gui_items_resultat["sword_2"].offset.x = nodeParent.offset.x + childSlotResultat.position.x
+							gui_items_resultat["sword_2"].offset.y = nodeParent.offset.y + childSlotResultat.position.y
+							gui_items_resultat["sword_2"].scale = Vector2(0.80, 0.80)
 					elif lstIngredientsSelect.item1 == "bague_2" and lstIngredientsSelect.item2 == "bague_2":
 						nbPrixCraft = 24000
+						if gui_items_resultat["bague_3"].visible == false:
+							gui_items_resultat["bague_3"].visible = true  
+							gui_items_resultat["bague_3"].offset.x = nodeParent.offset.x + childSlotResultat.position.x
+							gui_items_resultat["bague_3"].offset.y = nodeParent.offset.y + childSlotResultat.position.y
+							gui_items_resultat["bague_3"].scale = Vector2(0.80, 0.80)
 					elif lstIngredientsSelect.item1 == "casque_2" and lstIngredientsSelect.item2 == "casque_2":
 						nbPrixCraft = 300
+						if gui_items_resultat["casque_3"].visible == false:
+							gui_items_resultat["casque_3"].visible = true  
+							gui_items_resultat["casque_3"].offset.x = nodeParent.offset.x + childSlotResultat.position.x
+							gui_items_resultat["casque_3"].offset.y = nodeParent.offset.y + childSlotResultat.position.y
+							gui_items_resultat["casque_3"].scale = Vector2(0.80, 0.80)
 					elif lstIngredientsSelect.item1 == "heaume_2" and lstIngredientsSelect.item2 == "heaume_2":
 						nbPrixCraft = 1400
+						if gui_items_resultat["heaume_3"].visible == false:
+							gui_items_resultat["heaume_3"].visible = true  
+							gui_items_resultat["heaume_3"].offset.x = nodeParent.offset.x + childSlotResultat.position.x
+							gui_items_resultat["heaume_3"].offset.y = nodeParent.offset.y + childSlotResultat.position.y
+							gui_items_resultat["heaume_3"].scale = Vector2(0.80, 0.80)
 					elif lstIngredientsSelect.item1 == "bottes_2" and lstIngredientsSelect.item2 == "bottes_2":
 						nbPrixCraft = 700
+						if gui_items_resultat["bottes_3"].visible == false:
+							gui_items_resultat["bottes_3"].visible = true  
+							gui_items_resultat["bottes_3"].offset.x = nodeParent.offset.x + childSlotResultat.position.x
+							gui_items_resultat["bottes_3"].offset.y = nodeParent.offset.y + childSlotResultat.position.y
+							gui_items_resultat["bottes_3"].scale = Vector2(0.80, 0.80)
 					elif lstIngredientsSelect.item1 == "sword_2" and lstIngredientsSelect.item2 == "sword_2":
 						nbPrixCraft = 700
+						if gui_items_resultat["sword_3"].visible == false:
+							gui_items_resultat["sword_3"].visible = true  
+							gui_items_resultat["sword_3"].offset.x = nodeParent.offset.x + childSlotResultat.position.x
+							gui_items_resultat["sword_3"].offset.y = nodeParent.offset.y + childSlotResultat.position.y
+							gui_items_resultat["sword_3"].scale = Vector2(0.80, 0.80)
 					elif lstIngredientsSelect.item1 == "casque_3" and lstIngredientsSelect.item2 == "casque_3":
 						nbPrixCraft = 600
+						if gui_items_resultat["casque_4"].visible == false:
+							gui_items_resultat["casque_4"].visible = true  
+							gui_items_resultat["casque_4"].offset.x = nodeParent.offset.x + childSlotResultat.position.x
+							gui_items_resultat["casque_4"].offset.y = nodeParent.offset.y + childSlotResultat.position.y
+							gui_items_resultat["casque_4"].scale = Vector2(0.80, 0.80)
 					elif lstIngredientsSelect.item1 == "heaume_3" and lstIngredientsSelect.item2 == "heaume_3":
 						nbPrixCraft = 2800
+						if gui_items_resultat["heaume_4"].visible == false:
+							gui_items_resultat["heaume_4"].visible = true  
+							gui_items_resultat["heaume_4"].offset.x = nodeParent.offset.x + childSlotResultat.position.x
+							gui_items_resultat["heaume_4"].offset.y = nodeParent.offset.y + childSlotResultat.position.y
+							gui_items_resultat["heaume_4"].scale = Vector2(0.80, 0.80)
 					elif lstIngredientsSelect.item1 == "bottes_3" and lstIngredientsSelect.item2 == "bottes_3":
 						nbPrixCraft = 1400
+						if gui_items_resultat["bottes_4"].visible == false:
+							gui_items_resultat["bottes_4"].visible = true  
+							gui_items_resultat["bottes_4"].offset.x = nodeParent.offset.x + childSlotResultat.position.x
+							gui_items_resultat["bottes_4"].offset.y = nodeParent.offset.y + childSlotResultat.position.y
+							gui_items_resultat["bottes_4"].scale = Vector2(0.80, 0.80)
 					elif lstIngredientsSelect.item1 == "sword_3" and lstIngredientsSelect.item2 == "sword_3":
 						nbPrixCraft = 1400
+						if gui_items_resultat["sword_4"].visible == false:
+							gui_items_resultat["sword_4"].visible = true  
+							gui_items_resultat["sword_4"].offset.x = nodeParent.offset.x + childSlotResultat.position.x
+							gui_items_resultat["sword_4"].offset.y = nodeParent.offset.y + childSlotResultat.position.y
+							gui_items_resultat["sword_4"].scale = Vector2(0.80, 0.80)
 					elif lstIngredientsSelect.item1 == "casque_4" and lstIngredientsSelect.item2 == "casque_4":
 						nbPrixCraft = 1200
+						if gui_items_resultat["casque_5"].visible == false:
+							gui_items_resultat["casque_5"].visible = true  
+							gui_items_resultat["casque_5"].offset.x = nodeParent.offset.x + childSlotResultat.position.x
+							gui_items_resultat["casque_5"].offset.y = nodeParent.offset.y + childSlotResultat.position.y
+							gui_items_resultat["casque_5"].scale = Vector2(0.80, 0.80)
 					elif lstIngredientsSelect.item1 == "heaume_4" and lstIngredientsSelect.item2 == "heaume_4":
 						nbPrixCraft = 5600
+						if gui_items_resultat["heaume_5"].visible == false:
+							gui_items_resultat["heaume_5"].visible = true  
+							gui_items_resultat["heaume_5"].offset.x = nodeParent.offset.x + childSlotResultat.position.x
+							gui_items_resultat["heaume_5"].offset.y = nodeParent.offset.y + childSlotResultat.position.y
+							gui_items_resultat["heaume_5"].scale = Vector2(0.80, 0.80)
 					elif lstIngredientsSelect.item1 == "bottes_4" and lstIngredientsSelect.item2 == "bottes_4":
 						nbPrixCraft = 2800
+						if gui_items_resultat["bottes_5"].visible == false:
+							gui_items_resultat["bottes_5"].visible = true  
+							gui_items_resultat["bottes_5"].offset.x = nodeParent.offset.x + childSlotResultat.position.x
+							gui_items_resultat["bottes_5"].offset.y = nodeParent.offset.y + childSlotResultat.position.y
+							gui_items_resultat["bottes_5"].scale = Vector2(0.80, 0.80)
 					elif lstIngredientsSelect.item1 == "sword_4" and lstIngredientsSelect.item2 == "sword_4":
 						nbPrixCraft = 2800
+						if gui_items_resultat["sword_5"].visible == false:
+							gui_items_resultat["sword_5"].visible = true  
+							gui_items_resultat["sword_5"].offset.x = nodeParent.offset.x + childSlotResultat.position.x
+							gui_items_resultat["sword_5"].offset.y = nodeParent.offset.y + childSlotResultat.position.y
+							gui_items_resultat["sword_5"].scale = Vector2(0.80, 0.80)
 					elif lstIngredientsSelect.item1 == "casque_5" and lstIngredientsSelect.item2 == "casque_5":
 						nbPrixCraft = 2400
+						if gui_items_resultat["casque_6"].visible == false:
+							gui_items_resultat["casque_6"].visible = true  
+							gui_items_resultat["casque_6"].offset.x = nodeParent.offset.x + childSlotResultat.position.x
+							gui_items_resultat["casque_6"].offset.y = nodeParent.offset.y + childSlotResultat.position.y
+							gui_items_resultat["casque_6"].scale = Vector2(0.80, 0.80)
 					elif lstIngredientsSelect.item1 == "heaume_5" and lstIngredientsSelect.item2 == "heaume_5":
 						nbPrixCraft = 11200
+						if gui_items_resultat["heaume_6"].visible == false:
+							gui_items_resultat["heaume_6"].visible = true  
+							gui_items_resultat["heaume_6"].offset.x = nodeParent.offset.x + childSlotResultat.position.x
+							gui_items_resultat["heaume_6"].offset.y = nodeParent.offset.y + childSlotResultat.position.y
+							gui_items_resultat["heaume_6"].scale = Vector2(0.80, 0.80)
 					elif lstIngredientsSelect.item1 == "bottes_5" and lstIngredientsSelect.item2 == "bottes_5":
 						nbPrixCraft = 5600
+						if gui_items_resultat["bottes_6"].visible == false:
+							gui_items_resultat["bottes_6"].visible = true  
+							gui_items_resultat["bottes_6"].offset.x = nodeParent.offset.x + childSlotResultat.position.x
+							gui_items_resultat["bottes_6"].offset.y = nodeParent.offset.y + childSlotResultat.position.y
+							gui_items_resultat["bottes_6"].scale = Vector2(0.80, 0.80)
 					elif lstIngredientsSelect.item1 == "sword_5" and lstIngredientsSelect.item2 == "sword_5":
 						nbPrixCraft = 5600
+						if gui_items_resultat["sword_6"].visible == false:
+							gui_items_resultat["sword_6"].visible = true  
+							gui_items_resultat["sword_6"].offset.x = nodeParent.offset.x + childSlotResultat.position.x
+							gui_items_resultat["sword_6"].offset.y = nodeParent.offset.y + childSlotResultat.position.y
+							gui_items_resultat["sword_6"].scale = Vector2(0.80, 0.80)
 					elif lstIngredientsSelect.item1 == "sword_6" and lstIngredientsSelect.item2 == "sword_6":
 						nbPrixCraft = 11200
+						if gui_items_resultat["sword_7"].visible == false:
+							gui_items_resultat["sword_7"].visible = true  
+							gui_items_resultat["sword_7"].offset.x = nodeParent.offset.x + childSlotResultat.position.x
+							gui_items_resultat["sword_7"].offset.y = nodeParent.offset.y + childSlotResultat.position.y
+							gui_items_resultat["sword_7"].scale = Vector2(0.80, 0.80)
 					elif lstIngredientsSelect.item1 == "sword_7" and lstIngredientsSelect.item2 == "sword_7":
 						nbPrixCraft = 22400
+						if gui_items_resultat["sword_8"].visible == false:
+							gui_items_resultat["sword_8"].visible = true  
+							gui_items_resultat["sword_8"].offset.x = nodeParent.offset.x + childSlotResultat.position.x
+							gui_items_resultat["sword_8"].offset.y = nodeParent.offset.y + childSlotResultat.position.y
+							gui_items_resultat["sword_8"].scale = Vector2(0.80, 0.80)
 					elif lstIngredientsSelect.item1 == "bouclier_1" and lstIngredientsSelect.item2 == "bouclier_1":
 						nbPrixCraft = 250
+						if gui_items_resultat["bouclier_2"].visible == false:
+							gui_items_resultat["bouclier_2"].visible = true  
+							gui_items_resultat["bouclier_2"].offset.x = nodeParent.offset.x + childSlotResultat.position.x
+							gui_items_resultat["bouclier_2"].offset.y = nodeParent.offset.y + childSlotResultat.position.y
+							gui_items_resultat["bouclier_2"].scale = Vector2(0.80, 0.80)
 					elif lstIngredientsSelect.item1 == "bouclier_2" and lstIngredientsSelect.item2 == "bouclier_2":
 						nbPrixCraft = 500
+						if gui_items_resultat["bouclier_3"].visible == false:
+							gui_items_resultat["bouclier_3"].visible = true  
+							gui_items_resultat["bouclier_3"].offset.x = nodeParent.offset.x + childSlotResultat.position.x
+							gui_items_resultat["bouclier_3"].offset.y = nodeParent.offset.y + childSlotResultat.position.y
+							gui_items_resultat["bouclier_3"].scale = Vector2(0.80, 0.80)
 					elif lstIngredientsSelect.item1 == "bouclier_3" and lstIngredientsSelect.item2 == "bouclier_3":
 						nbPrixCraft = 1000
+						if gui_items_resultat["bouclier_4"].visible == false:
+							gui_items_resultat["bouclier_4"].visible = true  
+							gui_items_resultat["bouclier_4"].offset.x = nodeParent.offset.x + childSlotResultat.position.x
+							gui_items_resultat["bouclier_4"].offset.y = nodeParent.offset.y + childSlotResultat.position.y
+							gui_items_resultat["bouclier_4"].scale = Vector2(0.80, 0.80)
 					elif lstIngredientsSelect.item1 == "bouclier_4" and lstIngredientsSelect.item2 == "bouclier_4":
 						nbPrixCraft = 2000
+						if gui_items_resultat["bouclier_5"].visible == false:
+							gui_items_resultat["bouclier_5"].visible = true  
+							gui_items_resultat["bouclier_5"].offset.x = nodeParent.offset.x + childSlotResultat.position.x
+							gui_items_resultat["bouclier_5"].offset.y = nodeParent.offset.y + childSlotResultat.position.y
+							gui_items_resultat["bouclier_5"].scale = Vector2(0.80, 0.80)
 					elif lstIngredientsSelect.item1 == "bouclier_5" and lstIngredientsSelect.item2 == "bouclier_5":
 						nbPrixCraft = 4000
+						if gui_items_resultat["bouclier_6"].visible == false:
+							gui_items_resultat["bouclier_6"].visible = true  
+							gui_items_resultat["bouclier_6"].offset.x = nodeParent.offset.x + childSlotResultat.position.x
+							gui_items_resultat["bouclier_6"].offset.y = nodeParent.offset.y + childSlotResultat.position.y
+							gui_items_resultat["bouclier_6"].scale = Vector2(0.80, 0.80)
 					elif lstIngredientsSelect.item1 == "bouclier_6" and lstIngredientsSelect.item2 == "bouclier_6":
 						nbPrixCraft = 8000
+						if gui_items_resultat["bouclier_7"].visible == false:
+							gui_items_resultat["bouclier_7"].visible = true  
+							gui_items_resultat["bouclier_7"].offset.x = nodeParent.offset.x + childSlotResultat.position.x
+							gui_items_resultat["bouclier_7"].offset.y = nodeParent.offset.y + childSlotResultat.position.y
+							gui_items_resultat["bouclier_7"].scale = Vector2(0.80, 0.80)
 					elif lstIngredientsSelect.item1 == "collier_1" and lstIngredientsSelect.item2 == "collier_1":
 						nbPrixCraft = 18000
+						if gui_items_resultat["collier_2"].visible == false:
+							gui_items_resultat["collier_2"].visible = true  
+							gui_items_resultat["collier_2"].offset.x = nodeParent.offset.x + childSlotResultat.position.x
+							gui_items_resultat["collier_2"].offset.y = nodeParent.offset.y + childSlotResultat.position.y
+							gui_items_resultat["collier_2"].scale = Vector2(0.80, 0.80)
 					elif lstIngredientsSelect.item1 == "collier_2" and lstIngredientsSelect.item2 == "collier_2":
 						nbPrixCraft = 36000
+						if gui_items_resultat["collier_3"].visible == false:
+							gui_items_resultat["collier_3"].visible = true  
+							gui_items_resultat["collier_3"].offset.x = nodeParent.offset.x + childSlotResultat.position.x
+							gui_items_resultat["collier_3"].offset.y = nodeParent.offset.y + childSlotResultat.position.y
+							gui_items_resultat["collier_3"].scale = Vector2(0.80, 0.80)
 					else:
 						nbPrixCraft = 0
 					
@@ -3505,6 +3665,7 @@ func _process(delta: float) -> void:
 						txtNbGoldTotalIngredients.visible = false
 					
 					if lstIngredientsSelect.item1 == "bague_1":
+						gui_items_resultat["bague_2"].visible = false
 						gui_bague1[lstIngredientsSelect.index1].offset.x = childSlot[lstIngredientsSelect.index1].position.x + nodeParent.offset.x + 2
 						gui_bague1[lstIngredientsSelect.index1].offset.y = childSlot[lstIngredientsSelect.index1].position.y + nodeParent.offset.y + 1
 						gui_bague1[lstIngredientsSelect.index1].scale = Vector2(0.58, 0.68)
@@ -3512,6 +3673,7 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.item1 = "vide"
 					
 					if lstIngredientsSelect.item1 == "bague_2":
+						gui_items_resultat["bague_3"].visible = false
 						gui_bague2[lstIngredientsSelect.index1].offset.x = childSlot[lstIngredientsSelect.index1].position.x + nodeParent.offset.x + 2
 						gui_bague2[lstIngredientsSelect.index1].offset.y = childSlot[lstIngredientsSelect.index1].position.y + nodeParent.offset.y + 1
 						gui_bague2[lstIngredientsSelect.index1].scale = Vector2(0.58, 0.68)
@@ -3526,6 +3688,7 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.item1 = "vide"
 					
 					if lstIngredientsSelect.item1 == "bottes_1":
+						gui_items_resultat["bottes_2"].visible = false
 						gui_bottes1[lstIngredientsSelect.index1].offset.x = childSlot[lstIngredientsSelect.index1].position.x + nodeParent.offset.x + 2
 						gui_bottes1[lstIngredientsSelect.index1].offset.y = childSlot[lstIngredientsSelect.index1].position.y + nodeParent.offset.y + 1
 						gui_bottes1[lstIngredientsSelect.index1].scale = Vector2(0.58, 0.68)
@@ -3533,6 +3696,7 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.item1 = "vide"
 					
 					if lstIngredientsSelect.item1 == "bottes_2":
+						gui_items_resultat["bottes_3"].visible = false
 						gui_bottes2[lstIngredientsSelect.index1].offset.x = childSlot[lstIngredientsSelect.index1].position.x + nodeParent.offset.x + 2
 						gui_bottes2[lstIngredientsSelect.index1].offset.y = childSlot[lstIngredientsSelect.index1].position.y + nodeParent.offset.y + 1
 						gui_bottes2[lstIngredientsSelect.index1].scale = Vector2(0.58, 0.68)
@@ -3540,6 +3704,7 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.item1 = "vide"
 					
 					if lstIngredientsSelect.item1 == "bottes_3":
+						gui_items_resultat["bottes_4"].visible = false
 						gui_bottes3[lstIngredientsSelect.index1].offset.x = childSlot[lstIngredientsSelect.index1].position.x + nodeParent.offset.x + 2
 						gui_bottes3[lstIngredientsSelect.index1].offset.y = childSlot[lstIngredientsSelect.index1].position.y + nodeParent.offset.y + 1
 						gui_bottes3[lstIngredientsSelect.index1].scale = Vector2(0.58, 0.68)
@@ -3547,6 +3712,7 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.item1 = "vide"
 					
 					if lstIngredientsSelect.item1 == "bottes_4":
+						gui_items_resultat["bottes_5"].visible = false
 						gui_bottes4[lstIngredientsSelect.index1].offset.x = childSlot[lstIngredientsSelect.index1].position.x + nodeParent.offset.x + 2
 						gui_bottes4[lstIngredientsSelect.index1].offset.y = childSlot[lstIngredientsSelect.index1].position.y + nodeParent.offset.y + 1
 						gui_bottes4[lstIngredientsSelect.index1].scale = Vector2(0.58, 0.68)
@@ -3554,18 +3720,13 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.item1 = "vide"
 					
 					if lstIngredientsSelect.item1 == "bottes_5":
+						gui_items_resultat["bottes_6"].visible = false
 						gui_bottes5[lstIngredientsSelect.index1].offset.x = childSlot[lstIngredientsSelect.index1].position.x + nodeParent.offset.x + 2
 						gui_bottes5[lstIngredientsSelect.index1].offset.y = childSlot[lstIngredientsSelect.index1].position.y + nodeParent.offset.y + 1
 						gui_bottes5[lstIngredientsSelect.index1].scale = Vector2(0.58, 0.68)
 						lstIngredientsSelect.index1 = -1
 						lstIngredientsSelect.item1 = "vide"
 					
-					if lstIngredientsSelect.item1 == "bottes_5":
-						gui_bottes5[lstIngredientsSelect.index1].offset.x = childSlot[lstIngredientsSelect.index1].position.x + nodeParent.offset.x + 2
-						gui_bottes5[lstIngredientsSelect.index1].offset.y = childSlot[lstIngredientsSelect.index1].position.y + nodeParent.offset.y + 1
-						gui_bottes5[lstIngredientsSelect.index1].scale = Vector2(0.58, 0.68)
-						lstIngredientsSelect.index1 = -1
-						lstIngredientsSelect.item1 = "vide"
 					
 					if lstIngredientsSelect.item1 == "bottes_6":
 						gui_bottes6[lstIngredientsSelect.index1].offset.x = childSlot[lstIngredientsSelect.index1].position.x + nodeParent.offset.x + 2
@@ -3575,6 +3736,7 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.item1 = "vide"
 					
 					if lstIngredientsSelect.item1 == "bouclier_1":
+						gui_items_resultat["bouclier_2"].visible = false
 						gui_bouclier1[lstIngredientsSelect.index1].offset.x = childSlot[lstIngredientsSelect.index1].position.x + nodeParent.offset.x + 2
 						gui_bouclier1[lstIngredientsSelect.index1].offset.y = childSlot[lstIngredientsSelect.index1].position.y + nodeParent.offset.y + 1
 						gui_bouclier1[lstIngredientsSelect.index1].scale = Vector2(0.58, 0.68)
@@ -3582,6 +3744,7 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.item1 = "vide"
 					
 					if lstIngredientsSelect.item1 == "bouclier_2":
+						gui_items_resultat["bouclier_3"].visible = false
 						gui_bouclier2[lstIngredientsSelect.index1].offset.x = childSlot[lstIngredientsSelect.index1].position.x + nodeParent.offset.x + 2
 						gui_bouclier2[lstIngredientsSelect.index1].offset.y = childSlot[lstIngredientsSelect.index1].position.y + nodeParent.offset.y + 1
 						gui_bouclier2[lstIngredientsSelect.index1].scale = Vector2(0.58, 0.68)
@@ -3589,6 +3752,7 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.item1 = "vide"
 					
 					if lstIngredientsSelect.item1 == "bouclier_3":
+						gui_items_resultat["bouclier_4"].visible = false
 						gui_bouclier3[lstIngredientsSelect.index1].offset.x = childSlot[lstIngredientsSelect.index1].position.x + nodeParent.offset.x + 2
 						gui_bouclier3[lstIngredientsSelect.index1].offset.y = childSlot[lstIngredientsSelect.index1].position.y + nodeParent.offset.y + 1
 						gui_bouclier3[lstIngredientsSelect.index1].scale = Vector2(0.58, 0.68)
@@ -3596,6 +3760,7 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.item1 = "vide"
 					
 					if lstIngredientsSelect.item1 == "bouclier_4":
+						gui_items_resultat["bouclier_5"].visible = false
 						gui_bouclier4[lstIngredientsSelect.index1].offset.x = childSlot[lstIngredientsSelect.index1].position.x + nodeParent.offset.x + 2
 						gui_bouclier4[lstIngredientsSelect.index1].offset.y = childSlot[lstIngredientsSelect.index1].position.y + nodeParent.offset.y + 1
 						gui_bouclier4[lstIngredientsSelect.index1].scale = Vector2(0.58, 0.68)
@@ -3603,6 +3768,7 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.item1 = "vide"
 					
 					if lstIngredientsSelect.item1 == "bouclier_5":
+						gui_items_resultat["bouclier_6"].visible = false
 						gui_bouclier5[lstIngredientsSelect.index1].offset.x = childSlot[lstIngredientsSelect.index1].position.x + nodeParent.offset.x + 2
 						gui_bouclier5[lstIngredientsSelect.index1].offset.y = childSlot[lstIngredientsSelect.index1].position.y + nodeParent.offset.y + 1
 						gui_bouclier5[lstIngredientsSelect.index1].scale = Vector2(0.58, 0.68)
@@ -3610,6 +3776,7 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.item1 = "vide"
 					
 					if lstIngredientsSelect.item1 == "bouclier_6":
+						gui_items_resultat["bouclier_7"].visible = false
 						gui_bouclier6[lstIngredientsSelect.index1].offset.x = childSlot[lstIngredientsSelect.index1].position.x + nodeParent.offset.x + 2
 						gui_bouclier6[lstIngredientsSelect.index1].offset.y = childSlot[lstIngredientsSelect.index1].position.y + nodeParent.offset.y + 1
 						gui_bouclier6[lstIngredientsSelect.index1].scale = Vector2(0.58, 0.68)
@@ -3624,6 +3791,7 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.item1 = "vide"
 					
 					if lstIngredientsSelect.item1 == "casque_1":
+						gui_items_resultat["casque_2"].visible = false
 						gui_casque1[lstIngredientsSelect.index1].offset.x = childSlot[lstIngredientsSelect.index1].position.x + nodeParent.offset.x + 2
 						gui_casque1[lstIngredientsSelect.index1].offset.y = childSlot[lstIngredientsSelect.index1].position.y + nodeParent.offset.y + 1
 						gui_casque1[lstIngredientsSelect.index1].scale = Vector2(0.58, 0.68)
@@ -3631,6 +3799,7 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.item1 = "vide"
 					
 					if lstIngredientsSelect.item1 == "casque_2":
+						gui_items_resultat["casque_3"].visible = false
 						gui_casque2[lstIngredientsSelect.index1].offset.x = childSlot[lstIngredientsSelect.index1].position.x + nodeParent.offset.x + 2
 						gui_casque2[lstIngredientsSelect.index1].offset.y = childSlot[lstIngredientsSelect.index1].position.y + nodeParent.offset.y + 1
 						gui_casque2[lstIngredientsSelect.index1].scale = Vector2(0.58, 0.68)
@@ -3638,6 +3807,7 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.item1 = "vide"
 					
 					if lstIngredientsSelect.item1 == "casque_3":
+						gui_items_resultat["casque_4"].visible = false
 						gui_casque3[lstIngredientsSelect.index1].offset.x = childSlot[lstIngredientsSelect.index1].position.x + nodeParent.offset.x + 2
 						gui_casque3[lstIngredientsSelect.index1].offset.y = childSlot[lstIngredientsSelect.index1].position.y + nodeParent.offset.y + 1
 						gui_casque3[lstIngredientsSelect.index1].scale = Vector2(0.58, 0.68)
@@ -3645,6 +3815,7 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.item1 = "vide"
 					
 					if lstIngredientsSelect.item1 == "casque_4":
+						gui_items_resultat["casque_5"].visible = false
 						gui_casque4[lstIngredientsSelect.index1].offset.x = childSlot[lstIngredientsSelect.index1].position.x + nodeParent.offset.x + 2
 						gui_casque4[lstIngredientsSelect.index1].offset.y = childSlot[lstIngredientsSelect.index1].position.y + nodeParent.offset.y + 1
 						gui_casque4[lstIngredientsSelect.index1].scale = Vector2(0.58, 0.68)
@@ -3652,6 +3823,7 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.item1 = "vide"
 					
 					if lstIngredientsSelect.item1 == "casque_5":
+						gui_items_resultat["casque_6"].visible = false
 						gui_casque5[lstIngredientsSelect.index1].offset.x = childSlot[lstIngredientsSelect.index1].position.x + nodeParent.offset.x + 2
 						gui_casque5[lstIngredientsSelect.index1].offset.y = childSlot[lstIngredientsSelect.index1].position.y + nodeParent.offset.y + 1
 						gui_casque5[lstIngredientsSelect.index1].scale = Vector2(0.58, 0.68)
@@ -3666,6 +3838,7 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.item1 = "vide"
 					
 					if lstIngredientsSelect.item1 == "collier_1":
+						gui_items_resultat["collier_2"].visible = false
 						gui_collier1[lstIngredientsSelect.index1].offset.x = childSlot[lstIngredientsSelect.index1].position.x + nodeParent.offset.x + 2
 						gui_collier1[lstIngredientsSelect.index1].offset.y = childSlot[lstIngredientsSelect.index1].position.y + nodeParent.offset.y + 1
 						gui_collier1[lstIngredientsSelect.index1].scale = Vector2(0.58, 0.68)
@@ -3673,6 +3846,7 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.item1 = "vide"
 					
 					if lstIngredientsSelect.item1 == "collier_2":
+						gui_items_resultat["collier_3"].visible = false
 						gui_collier2[lstIngredientsSelect.index1].offset.x = childSlot[lstIngredientsSelect.index1].position.x + nodeParent.offset.x + 2
 						gui_collier2[lstIngredientsSelect.index1].offset.y = childSlot[lstIngredientsSelect.index1].position.y + nodeParent.offset.y + 1
 						gui_collier2[lstIngredientsSelect.index1].scale = Vector2(0.58, 0.68)
