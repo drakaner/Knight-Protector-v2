@@ -99,6 +99,7 @@ var gui_sword7 = []
 var gui_sword8 = []
 
 var lstIngredientsSelect = { item1 = "vide", item2 = "vide", index1 = -1, index2 = -1 }
+var lstTextCraftFinal = {}
 
 var nbCompteurPotionVie = 0
 var nbCompteurPotionMana = 0
@@ -1390,7 +1391,7 @@ func _on_mouse_entered_sword6():
 		var childGuiFenetre = gui_fenetre.get_node("panelGuiFenetre")
 		childGuiFenetre.position.x = mouse_pos.x
 		childGuiFenetre.position.y = mouse_pos.y
-		txt_titre = GuiTextUi.instantiate()
+		txt_titre = GuiTextUi.instantiate() 
 		add_child(txt_titre)
 		var childGuiTxtNameItem = txt_titre.get_node("labelGuiTextFenetre")
 		childGuiTxtNameItem.position.x = mouse_pos.x + 20
@@ -1618,6 +1619,18 @@ func _on_mouse_exited_sword():
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
+	lstTextCraftFinal["TUTO"] = {}
+	lstTextCraftFinal["TUTO"].titre = ""
+	lstTextCraftFinal["TUTO"].descrition = ""
+	
+	lstTextCraftFinal["APERCU"] = {}
+	lstTextCraftFinal["APERCU"].titre = ""
+	lstTextCraftFinal["APERCU"].description = ""
+	
+	lstTextCraftFinal["MINI_JEU"] = {}
+	lstTextCraftFinal["MINI_JEU"].titre = ""
+	lstTextCraftFinal["MINI_JEU"].description = ""
 	
 	#gui_items_resultat.resize(32)
 	
@@ -3384,6 +3397,7 @@ func _process(delta: float) -> void:
 						txtNbGoldTotalIngredients.visible = false
 					
 					if lstIngredientsSelect.item2 == "bague_1":
+						gui_items_resultat["bague_2"].visible = false
 						gui_bague1[lstIngredientsSelect.index2].offset.x = childSlot[lstIngredientsSelect.index2].position.x + nodeParent.offset.x + 2
 						gui_bague1[lstIngredientsSelect.index2].offset.y = childSlot[lstIngredientsSelect.index2].position.y + nodeParent.offset.y + 1
 						gui_bague1[lstIngredientsSelect.index2].scale = Vector2(0.58, 0.68)
@@ -3391,6 +3405,7 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.item2 = "vide"
 					
 					if lstIngredientsSelect.item2 == "bague_2":
+						gui_items_resultat["bague_3"].visible = false
 						gui_bague2[lstIngredientsSelect.index2].offset.x = childSlot[lstIngredientsSelect.index2].position.x + nodeParent.offset.x + 2
 						gui_bague2[lstIngredientsSelect.index2].offset.y = childSlot[lstIngredientsSelect.index2].position.y + nodeParent.offset.y + 1
 						gui_bague2[lstIngredientsSelect.index2].scale = Vector2(0.58, 0.68)
@@ -3405,6 +3420,7 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.item2 = "vide"
 					
 					if lstIngredientsSelect.item2 == "bottes_1":
+						gui_items_resultat["bottes_2"].visible = false
 						gui_bottes1[lstIngredientsSelect.index2].offset.x = childSlot[lstIngredientsSelect.index2].position.x + nodeParent.offset.x + 2
 						gui_bottes1[lstIngredientsSelect.index2].offset.y = childSlot[lstIngredientsSelect.index2].position.y + nodeParent.offset.y + 1
 						gui_bottes1[lstIngredientsSelect.index2].scale = Vector2(0.58, 0.68)
@@ -3412,6 +3428,7 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.item2 = "vide"
 					
 					if lstIngredientsSelect.item2 == "bottes_2":
+						gui_items_resultat["bottes_3"].visible = false
 						gui_bottes2[lstIngredientsSelect.index2].offset.x = childSlot[lstIngredientsSelect.index2].position.x + nodeParent.offset.x + 2
 						gui_bottes2[lstIngredientsSelect.index2].offset.y = childSlot[lstIngredientsSelect.index2].position.y + nodeParent.offset.y + 1
 						gui_bottes2[lstIngredientsSelect.index2].scale = Vector2(0.58, 0.68)
@@ -3419,6 +3436,7 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.item2 = "vide"
 					
 					if lstIngredientsSelect.item2 == "bottes_3":
+						gui_items_resultat["bottes_4"].visible = false
 						gui_bottes3[lstIngredientsSelect.index2].offset.x = childSlot[lstIngredientsSelect.index2].position.x + nodeParent.offset.x + 2
 						gui_bottes3[lstIngredientsSelect.index2].offset.y = childSlot[lstIngredientsSelect.index2].position.y + nodeParent.offset.y + 1
 						gui_bottes3[lstIngredientsSelect.index2].scale = Vector2(0.58, 0.68)
@@ -3426,6 +3444,7 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.item2 = "vide"
 					
 					if lstIngredientsSelect.item2 == "bottes_4":
+						gui_items_resultat["bottes_5"].visible = false
 						gui_bottes4[lstIngredientsSelect.index2].offset.x = childSlot[lstIngredientsSelect.index2].position.x + nodeParent.offset.x + 2
 						gui_bottes4[lstIngredientsSelect.index2].offset.y = childSlot[lstIngredientsSelect.index2].position.y + nodeParent.offset.y + 1
 						gui_bottes4[lstIngredientsSelect.index2].scale = Vector2(0.58, 0.68)
@@ -3433,6 +3452,7 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.item2 = "vide"
 					
 					if lstIngredientsSelect.item2 == "bottes_5":
+						gui_items_resultat["bottes_6"].visible = false
 						gui_bottes5[lstIngredientsSelect.index2].offset.x = childSlot[lstIngredientsSelect.index2].position.x + nodeParent.offset.x + 2
 						gui_bottes5[lstIngredientsSelect.index2].offset.y = childSlot[lstIngredientsSelect.index2].position.y + nodeParent.offset.y + 1
 						gui_bottes5[lstIngredientsSelect.index2].scale = Vector2(0.58, 0.68)
@@ -3447,6 +3467,7 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.item2 = "vide"
 					
 					if lstIngredientsSelect.item2 == "bouclier_1":
+						gui_items_resultat["bouclier_2"].visible = false
 						gui_bouclier1[lstIngredientsSelect.index2].offset.x = childSlot[lstIngredientsSelect.index2].position.x + nodeParent.offset.x + 2
 						gui_bouclier1[lstIngredientsSelect.index2].offset.y = childSlot[lstIngredientsSelect.index2].position.y + nodeParent.offset.y + 1
 						gui_bouclier1[lstIngredientsSelect.index2].scale = Vector2(0.58, 0.68)
@@ -3454,6 +3475,7 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.item2 = "vide"
 					
 					if lstIngredientsSelect.item2 == "bouclier_2":
+						gui_items_resultat["bouclier_3"].visible = false
 						gui_bouclier2[lstIngredientsSelect.index2].offset.x = childSlot[lstIngredientsSelect.index2].position.x + nodeParent.offset.x + 2
 						gui_bouclier2[lstIngredientsSelect.index2].offset.y = childSlot[lstIngredientsSelect.index2].position.y + nodeParent.offset.y + 1
 						gui_bouclier2[lstIngredientsSelect.index2].scale = Vector2(0.58, 0.68)
@@ -3461,6 +3483,7 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.item2 = "vide"
 					
 					if lstIngredientsSelect.item2 == "bouclier_3":
+						gui_items_resultat["bouclier_4"].visible = false
 						gui_bouclier3[lstIngredientsSelect.index2].offset.x = childSlot[lstIngredientsSelect.index2].position.x + nodeParent.offset.x + 2
 						gui_bouclier3[lstIngredientsSelect.index2].offset.y = childSlot[lstIngredientsSelect.index2].position.y + nodeParent.offset.y + 1
 						gui_bouclier3[lstIngredientsSelect.index2].scale = Vector2(0.58, 0.68)
@@ -3468,6 +3491,7 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.item2 = "vide"
 					
 					if lstIngredientsSelect.item2 == "bouclier_4":
+						gui_items_resultat["bouclier_5"].visible = false
 						gui_bouclier4[lstIngredientsSelect.index2].offset.x = childSlot[lstIngredientsSelect.index2].position.x + nodeParent.offset.x + 2
 						gui_bouclier4[lstIngredientsSelect.index2].offset.y = childSlot[lstIngredientsSelect.index2].position.y + nodeParent.offset.y + 1
 						gui_bouclier4[lstIngredientsSelect.index2].scale = Vector2(0.58, 0.68)
@@ -3475,6 +3499,7 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.item2 = "vide"
 					
 					if lstIngredientsSelect.item2 == "bouclier_5":
+						gui_items_resultat["bouclier_6"].visible = false
 						gui_bouclier5[lstIngredientsSelect.index2].offset.x = childSlot[lstIngredientsSelect.index2].position.x + nodeParent.offset.x + 2
 						gui_bouclier5[lstIngredientsSelect.index2].offset.y = childSlot[lstIngredientsSelect.index2].position.y + nodeParent.offset.y + 1
 						gui_bouclier5[lstIngredientsSelect.index2].scale = Vector2(0.58, 0.68)
@@ -3482,6 +3507,7 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.item2 = "vide"
 					
 					if lstIngredientsSelect.item2 == "bouclier_6":
+						gui_items_resultat["bouclier_7"].visible = false
 						gui_bouclier6[lstIngredientsSelect.index2].offset.x = childSlot[lstIngredientsSelect.index2].position.x + nodeParent.offset.x + 2
 						gui_bouclier6[lstIngredientsSelect.index2].offset.y = childSlot[lstIngredientsSelect.index2].position.y + nodeParent.offset.y + 1
 						gui_bouclier6[lstIngredientsSelect.index2].scale = Vector2(0.58, 0.68)
@@ -3496,6 +3522,7 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.item2 = "vide"
 					
 					if lstIngredientsSelect.item2 == "casque_1":
+						gui_items_resultat["casque_2"].visible = false
 						gui_casque1[lstIngredientsSelect.index2].offset.x = childSlot[lstIngredientsSelect.index2].position.x + nodeParent.offset.x + 2
 						gui_casque1[lstIngredientsSelect.index2].offset.y = childSlot[lstIngredientsSelect.index2].position.y + nodeParent.offset.y + 1
 						gui_casque1[lstIngredientsSelect.index2].scale = Vector2(0.58, 0.68)
@@ -3503,6 +3530,7 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.item2 = "vide"
 					
 					if lstIngredientsSelect.item2 == "casque_2":
+						gui_items_resultat["casque_3"].visible = false
 						gui_casque2[lstIngredientsSelect.index2].offset.x = childSlot[lstIngredientsSelect.index2].position.x + nodeParent.offset.x + 2
 						gui_casque2[lstIngredientsSelect.index2].offset.y = childSlot[lstIngredientsSelect.index2].position.y + nodeParent.offset.y + 1
 						gui_casque2[lstIngredientsSelect.index2].scale = Vector2(0.58, 0.68)
@@ -3510,6 +3538,7 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.item2 = "vide"
 					
 					if lstIngredientsSelect.item2 == "casque_3":
+						gui_items_resultat["casque_4"].visible = false
 						gui_casque3[lstIngredientsSelect.index2].offset.x = childSlot[lstIngredientsSelect.index2].position.x + nodeParent.offset.x + 2
 						gui_casque3[lstIngredientsSelect.index2].offset.y = childSlot[lstIngredientsSelect.index2].position.y + nodeParent.offset.y + 1
 						gui_casque3[lstIngredientsSelect.index2].scale = Vector2(0.58, 0.68)
@@ -3517,6 +3546,7 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.item2 = "vide"
 					
 					if lstIngredientsSelect.item2 == "casque_4":
+						gui_items_resultat["casque_5"].visible = false
 						gui_casque4[lstIngredientsSelect.index2].offset.x = childSlot[lstIngredientsSelect.index2].position.x + nodeParent.offset.x + 2
 						gui_casque4[lstIngredientsSelect.index2].offset.y = childSlot[lstIngredientsSelect.index2].position.y + nodeParent.offset.y + 1
 						gui_casque4[lstIngredientsSelect.index2].scale = Vector2(0.58, 0.68)
@@ -3524,6 +3554,7 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.item2 = "vide"
 					
 					if lstIngredientsSelect.item2 == "casque_5":
+						gui_items_resultat["casque_6"].visible = false
 						gui_casque5[lstIngredientsSelect.index2].offset.x = childSlot[lstIngredientsSelect.index2].position.x + nodeParent.offset.x + 2
 						gui_casque5[lstIngredientsSelect.index2].offset.y = childSlot[lstIngredientsSelect.index2].position.y + nodeParent.offset.y + 1
 						gui_casque5[lstIngredientsSelect.index2].scale = Vector2(0.58, 0.68)
@@ -3538,6 +3569,7 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.item2 = "vide"
 					
 					if lstIngredientsSelect.item2 == "collier_1":
+						gui_items_resultat["collier_2"].visible = false
 						gui_collier1[lstIngredientsSelect.index2].offset.x = childSlot[lstIngredientsSelect.index2].position.x + nodeParent.offset.x + 2
 						gui_collier1[lstIngredientsSelect.index2].offset.y = childSlot[lstIngredientsSelect.index2].position.y + nodeParent.offset.y + 1
 						gui_collier1[lstIngredientsSelect.index2].scale = Vector2(0.58, 0.68)
@@ -3545,6 +3577,7 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.item2 = "vide"
 					
 					if lstIngredientsSelect.item2 == "collier_2":
+						gui_items_resultat["collier_3"].visible = false
 						gui_collier2[lstIngredientsSelect.index2].offset.x = childSlot[lstIngredientsSelect.index2].position.x + nodeParent.offset.x + 2
 						gui_collier2[lstIngredientsSelect.index2].offset.y = childSlot[lstIngredientsSelect.index2].position.y + nodeParent.offset.y + 1
 						gui_collier2[lstIngredientsSelect.index2].scale = Vector2(0.58, 0.68)
@@ -3559,6 +3592,7 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.item2 = "vide"
 					
 					if lstIngredientsSelect.item2 == "heaume_1":
+						gui_items_resultat["heaume_2"].visible = false
 						gui_heaume1[lstIngredientsSelect.index2].offset.x = childSlot[lstIngredientsSelect.index2].position.x + nodeParent.offset.x + 2
 						gui_heaume1[lstIngredientsSelect.index2].offset.y = childSlot[lstIngredientsSelect.index2].position.y + nodeParent.offset.y + 1
 						gui_heaume1[lstIngredientsSelect.index2].scale = Vector2(0.58, 0.68)
@@ -3566,6 +3600,7 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.item2 = "vide"
 					
 					if lstIngredientsSelect.item2 == "heaume_2":
+						gui_items_resultat["heaume_3"].visible = false
 						gui_heaume2[lstIngredientsSelect.index2].offset.x = childSlot[lstIngredientsSelect.index2].position.x + nodeParent.offset.x + 2
 						gui_heaume2[lstIngredientsSelect.index2].offset.y = childSlot[lstIngredientsSelect.index2].position.y + nodeParent.offset.y + 1
 						gui_heaume2[lstIngredientsSelect.index2].scale = Vector2(0.58, 0.68)
@@ -3573,6 +3608,7 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.item2 = "vide"
 					
 					if lstIngredientsSelect.item2 == "heaume_3":
+						gui_items_resultat["heaume_4"].visible = false
 						gui_heaume3[lstIngredientsSelect.index2].offset.x = childSlot[lstIngredientsSelect.index2].position.x + nodeParent.offset.x + 2
 						gui_heaume3[lstIngredientsSelect.index2].offset.y = childSlot[lstIngredientsSelect.index2].position.y + nodeParent.offset.y + 1
 						gui_heaume3[lstIngredientsSelect.index2].scale = Vector2(0.58, 0.68)
@@ -3580,6 +3616,7 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.item2 = "vide"
 					
 					if lstIngredientsSelect.item2 == "heaume_4":
+						gui_items_resultat["heaume_5"].visible = false
 						gui_heaume4[lstIngredientsSelect.index2].offset.x = childSlot[lstIngredientsSelect.index2].position.x + nodeParent.offset.x + 2
 						gui_heaume4[lstIngredientsSelect.index2].offset.y = childSlot[lstIngredientsSelect.index2].position.y + nodeParent.offset.y + 1
 						gui_heaume4[lstIngredientsSelect.index2].scale = Vector2(0.58, 0.68)
@@ -3587,6 +3624,7 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.item2 = "vide"
 					
 					if lstIngredientsSelect.item2 == "heaume_5":
+						gui_items_resultat["heaume_6"].visible = false
 						gui_heaume5[lstIngredientsSelect.index2].offset.x = childSlot[lstIngredientsSelect.index2].position.x + nodeParent.offset.x + 2
 						gui_heaume5[lstIngredientsSelect.index2].offset.y = childSlot[lstIngredientsSelect.index2].position.y + nodeParent.offset.y + 1
 						gui_heaume5[lstIngredientsSelect.index2].scale = Vector2(0.58, 0.68)
@@ -3601,6 +3639,7 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.item2 = "vide"
 					
 					if lstIngredientsSelect.item2 == "sword_1":
+						gui_items_resultat["sword_2"].visible = false
 						gui_sword1[lstIngredientsSelect.index2].offset.x = childSlot[lstIngredientsSelect.index2].position.x + nodeParent.offset.x + 2
 						gui_sword1[lstIngredientsSelect.index2].offset.y = childSlot[lstIngredientsSelect.index2].position.y + nodeParent.offset.y + 1
 						gui_sword1[lstIngredientsSelect.index2].scale = Vector2(0.58, 0.68)
@@ -3608,6 +3647,7 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.item2 = "vide"
 					
 					if lstIngredientsSelect.item2 == "sword_2":
+						gui_items_resultat["sword_3"].visible = false
 						gui_sword2[lstIngredientsSelect.index2].offset.x = childSlot[lstIngredientsSelect.index2].position.x + nodeParent.offset.x + 2
 						gui_sword2[lstIngredientsSelect.index2].offset.y = childSlot[lstIngredientsSelect.index2].position.y + nodeParent.offset.y + 1
 						gui_sword2[lstIngredientsSelect.index2].scale = Vector2(0.58, 0.68)
@@ -3615,6 +3655,7 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.item2 = "vide"
 					
 					if lstIngredientsSelect.item2 == "sword_3":
+						gui_items_resultat["sword_4"].visible = false
 						gui_sword3[lstIngredientsSelect.index2].offset.x = childSlot[lstIngredientsSelect.index2].position.x + nodeParent.offset.x + 2
 						gui_sword3[lstIngredientsSelect.index2].offset.y = childSlot[lstIngredientsSelect.index2].position.y + nodeParent.offset.y + 1
 						gui_sword3[lstIngredientsSelect.index2].scale = Vector2(0.58, 0.68)
@@ -3622,6 +3663,7 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.item2 = "vide"
 					
 					if lstIngredientsSelect.item2 == "sword_4":
+						gui_items_resultat["sword_5"].visible = false
 						gui_sword4[lstIngredientsSelect.index2].offset.x = childSlot[lstIngredientsSelect.index2].position.x + nodeParent.offset.x + 2
 						gui_sword4[lstIngredientsSelect.index2].offset.y = childSlot[lstIngredientsSelect.index2].position.y + nodeParent.offset.y + 1
 						gui_sword4[lstIngredientsSelect.index2].scale = Vector2(0.58, 0.68)
@@ -3629,6 +3671,7 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.item2 = "vide"
 					
 					if lstIngredientsSelect.item2 == "sword_5":
+						gui_items_resultat["sword_6"].visible = false
 						gui_sword5[lstIngredientsSelect.index2].offset.x = childSlot[lstIngredientsSelect.index2].position.x + nodeParent.offset.x + 2
 						gui_sword5[lstIngredientsSelect.index2].offset.y = childSlot[lstIngredientsSelect.index2].position.y + nodeParent.offset.y + 1
 						gui_sword5[lstIngredientsSelect.index2].scale = Vector2(0.58, 0.68)
@@ -3636,6 +3679,7 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.item2 = "vide"
 					
 					if lstIngredientsSelect.item2 == "sword_6":
+						gui_items_resultat["sword_7"].visible = false
 						gui_sword6[lstIngredientsSelect.index2].offset.x = childSlot[lstIngredientsSelect.index2].position.x + nodeParent.offset.x + 2
 						gui_sword6[lstIngredientsSelect.index2].offset.y = childSlot[lstIngredientsSelect.index2].position.y + nodeParent.offset.y + 1
 						gui_sword6[lstIngredientsSelect.index2].scale = Vector2(0.58, 0.68)
@@ -3643,6 +3687,7 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.item2 = "vide"
 					
 					if lstIngredientsSelect.item2 == "sword_7":
+						gui_items_resultat["sword_8"].visible = false
 						gui_sword7[lstIngredientsSelect.index2].offset.x = childSlot[lstIngredientsSelect.index2].position.x + nodeParent.offset.x + 2
 						gui_sword7[lstIngredientsSelect.index2].offset.y = childSlot[lstIngredientsSelect.index2].position.y + nodeParent.offset.y + 1
 						gui_sword7[lstIngredientsSelect.index2].scale = Vector2(0.58, 0.68)
@@ -3861,6 +3906,7 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.item1 = "vide"
 					
 					if lstIngredientsSelect.item1 == "heaume_1":
+						gui_items_resultat["heaume_2"].visible = false
 						gui_heaume1[lstIngredientsSelect.index1].offset.x = childSlot[lstIngredientsSelect.index1].position.x + nodeParent.offset.x + 2
 						gui_heaume1[lstIngredientsSelect.index1].offset.y = childSlot[lstIngredientsSelect.index1].position.y + nodeParent.offset.y + 1
 						gui_heaume1[lstIngredientsSelect.index1].scale = Vector2(0.58, 0.68)
@@ -3868,6 +3914,7 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.item1 = "vide"
 					
 					if lstIngredientsSelect.item1 == "heaume_2":
+						gui_items_resultat["heaume_3"].visible = false
 						gui_heaume2[lstIngredientsSelect.index1].offset.x = childSlot[lstIngredientsSelect.index1].position.x + nodeParent.offset.x + 2
 						gui_heaume2[lstIngredientsSelect.index1].offset.y = childSlot[lstIngredientsSelect.index1].position.y + nodeParent.offset.y + 1
 						gui_heaume2[lstIngredientsSelect.index1].scale = Vector2(0.58, 0.68)
@@ -3875,6 +3922,7 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.item1 = "vide"
 					
 					if lstIngredientsSelect.item1 == "heaume_3":
+						gui_items_resultat["heaume_4"].visible = false
 						gui_heaume3[lstIngredientsSelect.index1].offset.x = childSlot[lstIngredientsSelect.index1].position.x + nodeParent.offset.x + 2
 						gui_heaume3[lstIngredientsSelect.index1].offset.y = childSlot[lstIngredientsSelect.index1].position.y + nodeParent.offset.y + 1
 						gui_heaume3[lstIngredientsSelect.index1].scale = Vector2(0.58, 0.68)
@@ -3882,6 +3930,7 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.item1 = "vide"
 					
 					if lstIngredientsSelect.item1 == "heaume_4":
+						gui_items_resultat["heaume_5"].visible = false
 						gui_heaume4[lstIngredientsSelect.index1].offset.x = childSlot[lstIngredientsSelect.index1].position.x + nodeParent.offset.x + 2
 						gui_heaume4[lstIngredientsSelect.index1].offset.y = childSlot[lstIngredientsSelect.index1].position.y + nodeParent.offset.y + 1
 						gui_heaume4[lstIngredientsSelect.index1].scale = Vector2(0.58, 0.68)
@@ -3889,6 +3938,7 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.item1 = "vide"
 					
 					if lstIngredientsSelect.item1 == "heaume_5":
+						gui_items_resultat["heaume_6"].visible = false
 						gui_heaume5[lstIngredientsSelect.index1].offset.x = childSlot[lstIngredientsSelect.index1].position.x + nodeParent.offset.x + 2
 						gui_heaume5[lstIngredientsSelect.index1].offset.y = childSlot[lstIngredientsSelect.index1].position.y + nodeParent.offset.y + 1
 						gui_heaume5[lstIngredientsSelect.index1].scale = Vector2(0.58, 0.68)
@@ -3903,6 +3953,7 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.item1 = "vide"
 					
 					if lstIngredientsSelect.item1 == "sword_1":
+						gui_items_resultat["sword_2"].visible = false
 						gui_sword1[lstIngredientsSelect.index1].offset.x = childSlot[lstIngredientsSelect.index1].position.x + nodeParent.offset.x + 2
 						gui_sword1[lstIngredientsSelect.index1].offset.y = childSlot[lstIngredientsSelect.index1].position.y + nodeParent.offset.y + 1
 						gui_sword1[lstIngredientsSelect.index1].scale = Vector2(0.58, 0.68)
@@ -3910,6 +3961,7 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.item1 = "vide"
 					
 					if lstIngredientsSelect.item1 == "sword_2":
+						gui_items_resultat["sword_3"].visible = false
 						gui_sword2[lstIngredientsSelect.index1].offset.x = childSlot[lstIngredientsSelect.index1].position.x + nodeParent.offset.x + 2
 						gui_sword2[lstIngredientsSelect.index1].offset.y = childSlot[lstIngredientsSelect.index1].position.y + nodeParent.offset.y + 1
 						gui_sword2[lstIngredientsSelect.index1].scale = Vector2(0.58, 0.68)
@@ -3917,6 +3969,7 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.item1 = "vide"
 					
 					if lstIngredientsSelect.item1 == "sword_3":
+						gui_items_resultat["sword_4"].visible = false
 						gui_sword3[lstIngredientsSelect.index1].offset.x = childSlot[lstIngredientsSelect.index1].position.x + nodeParent.offset.x + 2
 						gui_sword3[lstIngredientsSelect.index1].offset.y = childSlot[lstIngredientsSelect.index1].position.y + nodeParent.offset.y + 1
 						gui_sword3[lstIngredientsSelect.index1].scale = Vector2(0.58, 0.68)
@@ -3924,6 +3977,7 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.item1 = "vide"
 					
 					if lstIngredientsSelect.item1 == "sword_4":
+						gui_items_resultat["sword_5"].visible = false
 						gui_sword4[lstIngredientsSelect.index1].offset.x = childSlot[lstIngredientsSelect.index1].position.x + nodeParent.offset.x + 2
 						gui_sword4[lstIngredientsSelect.index1].offset.y = childSlot[lstIngredientsSelect.index1].position.y + nodeParent.offset.y + 1
 						gui_sword4[lstIngredientsSelect.index1].scale = Vector2(0.58, 0.68)
@@ -3931,6 +3985,7 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.item1 = "vide"
 					
 					if lstIngredientsSelect.item1 == "sword_5":
+						gui_items_resultat["sword_6"].visible = false
 						gui_sword5[lstIngredientsSelect.index1].offset.x = childSlot[lstIngredientsSelect.index1].position.x + nodeParent.offset.x + 2
 						gui_sword5[lstIngredientsSelect.index1].offset.y = childSlot[lstIngredientsSelect.index1].position.y + nodeParent.offset.y + 1
 						gui_sword5[lstIngredientsSelect.index1].scale = Vector2(0.58, 0.68)
@@ -3938,6 +3993,7 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.item1 = "vide"
 					
 					if lstIngredientsSelect.item1 == "sword_6":
+						gui_items_resultat["sword_7"].visible = false
 						gui_sword6[lstIngredientsSelect.index1].offset.x = childSlot[lstIngredientsSelect.index1].position.x + nodeParent.offset.x + 2
 						gui_sword6[lstIngredientsSelect.index1].offset.y = childSlot[lstIngredientsSelect.index1].position.y + nodeParent.offset.y + 1
 						gui_sword6[lstIngredientsSelect.index1].scale = Vector2(0.58, 0.68)
@@ -3945,6 +4001,7 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.item1 = "vide"
 					
 					if lstIngredientsSelect.item1 == "sword_7":
+						gui_items_resultat["sword_8"].visible = false
 						gui_sword7[lstIngredientsSelect.index1].offset.x = childSlot[lstIngredientsSelect.index1].position.x + nodeParent.offset.x + 2
 						gui_sword7[lstIngredientsSelect.index1].offset.y = childSlot[lstIngredientsSelect.index1].position.y + nodeParent.offset.y + 1
 						gui_sword7[lstIngredientsSelect.index1].scale = Vector2(0.58, 0.68)
