@@ -99,7 +99,7 @@ var gui_sword7 = []
 var gui_sword8 = []
 
 var lstIngredientsSelect = { item1 = "vide", item2 = "vide", index1 = -1, index2 = -1 }
-var lstTextCraftFinal = {}
+var lstTextCraftFinal = { etat = "tuto" }
 
 var nbCompteurPotionVie = 0
 var nbCompteurPotionMana = 0
@@ -1621,16 +1621,77 @@ func _on_mouse_exited_sword():
 func _ready() -> void:
 	
 	lstTextCraftFinal["TUTO"] = {}
-	lstTextCraftFinal["TUTO"].titre = ""
-	lstTextCraftFinal["TUTO"].descrition = ""
+	lstTextCraftFinal["TUTO"].create = {}
+	lstTextCraftFinal["TUTO"].titre = "Tuto"
+	lstTextCraftFinal["TUTO"].description = "Pour créer un nouvel \n item, \n assemblez deux items \n identiques. \n L'item obtenu sera \n de qualité supérieure."
 	
 	lstTextCraftFinal["APERCU"] = {}
-	lstTextCraftFinal["APERCU"].titre = ""
+	lstTextCraftFinal["APERCU"].create = {}
+	lstTextCraftFinal["APERCU"].titre = "Statistiques"
 	lstTextCraftFinal["APERCU"].description = ""
+	lstTextCraftFinal["APERCU"].stat1 = "Stat : 1"
+	lstTextCraftFinal["APERCU"].stat2 = "Stat : 2"
+	lstTextCraftFinal["APERCU"].description2 = "Qualité : II"
 	
 	lstTextCraftFinal["MINI_JEU"] = {}
-	lstTextCraftFinal["MINI_JEU"].titre = ""
+	lstTextCraftFinal["MINI_JEU"].create = null
+	lstTextCraftFinal["MINI_JEU"].titre = "Forge parfaite..."
 	lstTextCraftFinal["MINI_JEU"].description = ""
+	
+	lstTextCraftFinal["TUTO"].create[0] = GuiTextUi.instantiate()
+	add_child(lstTextCraftFinal["TUTO"].create[0])
+	lstTextCraftFinal["TUTO"].create[0].visible = true
+	var childTextUi_1 = lstTextCraftFinal["TUTO"].create[0].get_node("labelGuiTextFenetre")
+	childTextUi_1.text = lstTextCraftFinal["TUTO"].titre
+	#childTextUi_1.scale = Vector2(2, 2)
+	childTextUi_1.position.x = 660
+	childTextUi_1.position.y = 240
+	childTextUi_1.add_theme_font_size_override("font_size", 40)
+	childTextUi_1.add_theme_color_override("font_color", Color(1.0, 0.22, 0.0, 1.0) )
+	
+	lstTextCraftFinal["TUTO"].create[1] = GuiTextUi.instantiate()
+	add_child(lstTextCraftFinal["TUTO"].create[1])
+	lstTextCraftFinal["TUTO"].create[1].visible = true
+	var childTextUi_2 = lstTextCraftFinal["TUTO"].create[1].get_node("labelGuiTextFenetre")
+	childTextUi_2.text = lstTextCraftFinal["TUTO"].description
+	childTextUi_2.position.x = 640
+	childTextUi_2.position.y = 280
+	
+	lstTextCraftFinal["APERCU"].create[0] = GuiTextUi.instantiate()
+	add_child(lstTextCraftFinal["APERCU"].create[0])
+	lstTextCraftFinal["APERCU"].create[0].visible = false
+	var childTextUiApercu_1 = lstTextCraftFinal["APERCU"].create[0].get_node("labelGuiTextFenetre")
+	childTextUiApercu_1.text = lstTextCraftFinal["APERCU"].titre
+	childTextUiApercu_1.position.x = 642
+	childTextUiApercu_1.position.y = 240
+	childTextUiApercu_1.add_theme_font_size_override("font_size", 28)
+	childTextUiApercu_1.add_theme_color_override("font_color", Color(1.0, 0.22, 0.0, 1.0) )
+	
+	lstTextCraftFinal["APERCU"].create[1] = GuiTextUi.instantiate()
+	add_child(lstTextCraftFinal["APERCU"].create[1])
+	lstTextCraftFinal["APERCU"].create[1].visible = false
+	var childTextUiApercu_2 = lstTextCraftFinal["APERCU"].create[1].get_node("labelGuiTextFenetre")
+	childTextUiApercu_2.text = lstTextCraftFinal["APERCU"].stat1
+	childTextUiApercu_2.position.x = 650
+	childTextUiApercu_2.position.y = 280
+	
+	lstTextCraftFinal["APERCU"].create[2] = GuiTextUi.instantiate()
+	add_child(lstTextCraftFinal["APERCU"].create[2])
+	lstTextCraftFinal["APERCU"].create[2].visible = false
+	var childTextUiApercu_3 = lstTextCraftFinal["APERCU"].create[2].get_node("labelGuiTextFenetre")
+	childTextUiApercu_3.text = lstTextCraftFinal["APERCU"].stat2
+	childTextUiApercu_3.position.x = 650
+	childTextUiApercu_3.position.y = 300
+	
+	lstTextCraftFinal["APERCU"].create[3] = GuiTextUi.instantiate()
+	add_child(lstTextCraftFinal["APERCU"].create[3])
+	lstTextCraftFinal["APERCU"].create[3].visible = false
+	var childTextUiApercu_4 = lstTextCraftFinal["APERCU"].create[3].get_node("labelGuiTextFenetre")
+	childTextUiApercu_4.text = lstTextCraftFinal["APERCU"].description2
+	childTextUiApercu_4.position.x = 650
+	childTextUiApercu_4.position.y = 335
+	childTextUiApercu_4.add_theme_font_size_override("font_size", 23)
+	childTextUiApercu_4.add_theme_color_override("font_color", Color(0.0, 0.656, 0.532, 1.0) )
 	
 	#gui_items_resultat.resize(32)
 	
@@ -1781,7 +1842,6 @@ func _ready() -> void:
 	gui_items_resultat["sword_7"].visible = false
 	gui_items_resultat["sword_8"].visible = false
 	
-	#PLUS CAS METTRE TOUT CA A TRUE QUAND LES DEUX ITEMS SONT IDENTIQUES ET AUSSI FAUDRA CHANGER LA POSITION X ET Y
 	
 	childSlot[0] = nodeParent.get_node("panel_slot1")
 	childSlot[1] = nodeParent.get_node("panel_slot2")
