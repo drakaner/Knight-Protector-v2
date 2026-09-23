@@ -52,6 +52,7 @@ var GuiSword8 = preload("res://Objets/gui_sword_8.tscn")
 @onready var childSlotResultat
 @onready var childButtonFlecheLeft
 @onready var childButtonFlecheRight
+@onready var childButtonCreation
 
 var gui_items_resultat = {}
 
@@ -1628,10 +1629,10 @@ func _ready() -> void:
 	lstTextCraftFinal["APERCU"] = {}
 	lstTextCraftFinal["APERCU"].create = {}
 	lstTextCraftFinal["APERCU"].titre = "Statistiques"
-	lstTextCraftFinal["APERCU"].description = ""
+	lstTextCraftFinal["APERCU"].description1 = "name item"
 	lstTextCraftFinal["APERCU"].stat1 = "Stat : 1"
 	lstTextCraftFinal["APERCU"].stat2 = "Stat : 2"
-	lstTextCraftFinal["APERCU"].description2 = "Qualité : II"
+	lstTextCraftFinal["APERCU"].description2 = "Qualité 2"
 	
 	lstTextCraftFinal["MINI_JEU"] = {}
 	lstTextCraftFinal["MINI_JEU"].create = null
@@ -1672,16 +1673,16 @@ func _ready() -> void:
 	lstTextCraftFinal["APERCU"].create[1].visible = false
 	var childTextUiApercu_2 = lstTextCraftFinal["APERCU"].create[1].get_node("labelGuiTextFenetre")
 	childTextUiApercu_2.text = lstTextCraftFinal["APERCU"].stat1
-	childTextUiApercu_2.position.x = 650
-	childTextUiApercu_2.position.y = 280
+	childTextUiApercu_2.position.x = 640
+	childTextUiApercu_2.position.y = 300
 	
 	lstTextCraftFinal["APERCU"].create[2] = GuiTextUi.instantiate()
 	add_child(lstTextCraftFinal["APERCU"].create[2])
 	lstTextCraftFinal["APERCU"].create[2].visible = false
 	var childTextUiApercu_3 = lstTextCraftFinal["APERCU"].create[2].get_node("labelGuiTextFenetre")
 	childTextUiApercu_3.text = lstTextCraftFinal["APERCU"].stat2
-	childTextUiApercu_3.position.x = 650
-	childTextUiApercu_3.position.y = 300
+	childTextUiApercu_3.position.x = 640
+	childTextUiApercu_3.position.y = 320
 	
 	lstTextCraftFinal["APERCU"].create[3] = GuiTextUi.instantiate()
 	add_child(lstTextCraftFinal["APERCU"].create[3])
@@ -1689,9 +1690,17 @@ func _ready() -> void:
 	var childTextUiApercu_4 = lstTextCraftFinal["APERCU"].create[3].get_node("labelGuiTextFenetre")
 	childTextUiApercu_4.text = lstTextCraftFinal["APERCU"].description2
 	childTextUiApercu_4.position.x = 650
-	childTextUiApercu_4.position.y = 335
+	childTextUiApercu_4.position.y = 355
 	childTextUiApercu_4.add_theme_font_size_override("font_size", 23)
 	childTextUiApercu_4.add_theme_color_override("font_color", Color(0.0, 0.656, 0.532, 1.0) )
+	
+	lstTextCraftFinal["APERCU"].create[4] = GuiTextUi.instantiate()
+	add_child(lstTextCraftFinal["APERCU"].create[4])
+	lstTextCraftFinal["APERCU"].create[4].visible = false
+	var childTextUiApercu_5 = lstTextCraftFinal["APERCU"].create[4].get_node("labelGuiTextFenetre")
+	childTextUiApercu_5.text = lstTextCraftFinal["APERCU"].description1
+	childTextUiApercu_5.position.x = 640
+	childTextUiApercu_5.position.y = 280
 	
 	#gui_items_resultat.resize(32)
 	
@@ -1869,6 +1878,8 @@ func _ready() -> void:
 	childSlotIngredient[1] = nodeParent.get_node("panel_slot_ingredient2")
 	
 	childSlotResultat = nodeParent.get_node("panel_slot_resultat")
+	
+	childButtonCreation = nodeParent.get_node("panel_button_creation")
 	
 	childButtonFlecheLeft = nodeParent.get_node("panel_fleche_gauche")
 	childButtonFlecheRight = nodeParent.get_node("panel_fleche_droite")
@@ -2694,6 +2705,353 @@ func _process(delta: float) -> void:
 			if nbPage <= 0:
 				nbPage = 2
 			#print("-page : ", nbPage)
+	
+	if lstTextCraftFinal.etat == "tuto":
+		lstTextCraftFinal["TUTO"].create[0].visible = true
+		lstTextCraftFinal["TUTO"].create[1].visible = true
+		lstTextCraftFinal["APERCU"].create[0].visible = false
+		lstTextCraftFinal["APERCU"].create[1].visible = false
+		lstTextCraftFinal["APERCU"].create[2].visible = false
+		lstTextCraftFinal["APERCU"].create[3].visible = false
+		lstTextCraftFinal["APERCU"].create[4].visible = false
+	elif lstTextCraftFinal.etat == "stats":
+		lstTextCraftFinal["TUTO"].create[0].visible = false
+		lstTextCraftFinal["TUTO"].create[1].visible = false
+		lstTextCraftFinal["APERCU"].create[0].visible = true
+		lstTextCraftFinal["APERCU"].create[1].visible = true
+		lstTextCraftFinal["APERCU"].create[2].visible = true
+		lstTextCraftFinal["APERCU"].create[3].visible = true
+		lstTextCraftFinal["APERCU"].create[4].visible = true
+		if mouse_pos.x - nodeParent.offset.x >= childButtonCreation.position.x and mouse_pos.x - nodeParent.offset.x <= childButtonCreation.position.x + 91 and mouse_pos.y - nodeParent.offset.y >= childButtonCreation.position.y and mouse_pos.y - nodeParent.offset.y <= childButtonCreation.position.y + 27:
+			if Input.is_action_just_pressed("button_left"):
+				print("Je clic sur le craft car jai deux items identique aussi faut pas oublier la condition en gold !")
+	
+	if lstIngredientsSelect.item1 == "bague_1" and lstIngredientsSelect.item2 == "bague_1" or lstIngredientsSelect.item1 == "bague_2" and lstIngredientsSelect.item2 == "bague_2" or lstIngredientsSelect.item1 == "bottes_1" and lstIngredientsSelect.item2 == "bottes_1" or lstIngredientsSelect.item1 == "bottes_2" and lstIngredientsSelect.item2 == "bottes_2" or lstIngredientsSelect.item1 == "bottes_3" and lstIngredientsSelect.item2 == "bottes_3" or lstIngredientsSelect.item1 == "bottes_4" and lstIngredientsSelect.item2 == "bottes_4" or lstIngredientsSelect.item1 == "bottes_5" and lstIngredientsSelect.item2 == "bottes_5" or lstIngredientsSelect.item1 == "bouclier_1" and lstIngredientsSelect.item2 == "bouclier_1" or lstIngredientsSelect.item1 == "bouclier_2" and lstIngredientsSelect.item2 == "bouclier_2" or lstIngredientsSelect.item1 == "bouclier_3" and lstIngredientsSelect.item2 == "bouclier_3" or lstIngredientsSelect.item1 == "bouclier_4" and lstIngredientsSelect.item2 == "bouclier_4" or lstIngredientsSelect.item1 == "bouclier_5" and lstIngredientsSelect.item2 == "bouclier_5" or lstIngredientsSelect.item1 == "bouclier_6" and lstIngredientsSelect.item2 == "bouclier_6" or lstIngredientsSelect.item1 == "casque_1" and lstIngredientsSelect.item2 == "casque_1" or lstIngredientsSelect.item1 == "casque_2" and lstIngredientsSelect.item2 == "casque_2" or lstIngredientsSelect.item1 == "casque_3" and lstIngredientsSelect.item2 == "casque_3" or lstIngredientsSelect.item1 == "casque_4" and lstIngredientsSelect.item2 == "casque_4" or lstIngredientsSelect.item1 == "casque_5" and lstIngredientsSelect.item2 == "casque_5" or lstIngredientsSelect.item1 == "collier_1" and lstIngredientsSelect.item2 == "collier_1" or lstIngredientsSelect.item1 == "collier_2" and lstIngredientsSelect.item2 == "collier_2" or lstIngredientsSelect.item1 == "heaume_1" and lstIngredientsSelect.item2 == "heaume_1" or lstIngredientsSelect.item1 == "heaume_2" and lstIngredientsSelect.item2 == "heaume_2" or lstIngredientsSelect.item1 == "heaume_3" and lstIngredientsSelect.item2 == "heaume_3" or lstIngredientsSelect.item1 == "heaume_4" and lstIngredientsSelect.item2 == "heaume_4" or lstIngredientsSelect.item1 == "heaume_5" and lstIngredientsSelect.item2 == "heaume_5" or lstIngredientsSelect.item1 == "sword_1" and lstIngredientsSelect.item2 == "sword_1" or lstIngredientsSelect.item1 == "sword_2" and lstIngredientsSelect.item2 == "sword_2" or lstIngredientsSelect.item1 == "sword_3" and lstIngredientsSelect.item2 == "sword_3" or lstIngredientsSelect.item1 == "sword_4" and lstIngredientsSelect.item2 == "sword_4" or lstIngredientsSelect.item1 == "sword_5" and lstIngredientsSelect.item2 == "sword_5" or lstIngredientsSelect.item1 == "sword_6" and lstIngredientsSelect.item2 == "sword_6" or lstIngredientsSelect.item1 == "sword_7" and lstIngredientsSelect.item2 == "sword_7" :
+		lstTextCraftFinal.etat = "stats"
+	else:
+		lstTextCraftFinal.etat = "tuto"
+	
+	if lstTextCraftFinal.etat == "stats":
+		if lstIngredientsSelect.item1 == "bague_1" and lstIngredientsSelect.item2 == "bague_1":
+			lstTextCraftFinal["APERCU"].description1 = "Nom : " + gui_items_resultat["bague_2"].txt_name
+			var childName = lstTextCraftFinal["APERCU"].create[4].get_node("labelGuiTextFenetre")
+			childName.text = lstTextCraftFinal["APERCU"].description1
+			lstTextCraftFinal["APERCU"].stat1 = "Puissance : " + str(gui_items_resultat["bague_2"].nb_puissance)
+			var childStat1 = lstTextCraftFinal["APERCU"].create[1].get_node("labelGuiTextFenetre")
+			childStat1.text = lstTextCraftFinal["APERCU"].stat1
+			lstTextCraftFinal["APERCU"].stat2 = "Mana : " + str(gui_items_resultat["bague_2"].nb_mana)
+			var childStat2 = lstTextCraftFinal["APERCU"].create[2].get_node("labelGuiTextFenetre")
+			childStat2.text = lstTextCraftFinal["APERCU"].stat2
+		elif lstIngredientsSelect.item1 == "bague_2" and lstIngredientsSelect.item2 == "bague_2":
+			lstTextCraftFinal["APERCU"].description1 = "Nom : " + gui_items_resultat["bague_3"].txt_name
+			var childName = lstTextCraftFinal["APERCU"].create[4].get_node("labelGuiTextFenetre")
+			childName.text = lstTextCraftFinal["APERCU"].description1
+			lstTextCraftFinal["APERCU"].stat1 = "Puissance : " + str(gui_items_resultat["bague_3"].nb_puissance)
+			var childStat1 = lstTextCraftFinal["APERCU"].create[1].get_node("labelGuiTextFenetre")
+			childStat1.text = lstTextCraftFinal["APERCU"].stat1
+			lstTextCraftFinal["APERCU"].stat2 = "Mana : " + str(gui_items_resultat["bague_3"].nb_mana)
+			var childStat2 = lstTextCraftFinal["APERCU"].create[2].get_node("labelGuiTextFenetre")
+			childStat2.text = lstTextCraftFinal["APERCU"].stat2
+		elif lstIngredientsSelect.item1 == "bottes_1" and lstIngredientsSelect.item2 == "bottes_1":
+			lstTextCraftFinal["APERCU"].description1 = "Nom : " + gui_items_resultat["bottes_2"].txt_name
+			var childName = lstTextCraftFinal["APERCU"].create[4].get_node("labelGuiTextFenetre")
+			childName.text = lstTextCraftFinal["APERCU"].description1
+			lstTextCraftFinal["APERCU"].stat1 = "Vie : " + str(gui_items_resultat["bottes_2"].nb_vie)
+			var childStat1 = lstTextCraftFinal["APERCU"].create[1].get_node("labelGuiTextFenetre")
+			childStat1.text = lstTextCraftFinal["APERCU"].stat1
+			lstTextCraftFinal["APERCU"].stat2 = "Défense : " + str(gui_items_resultat["bottes_2"].nb_defense)
+			var childStat2 = lstTextCraftFinal["APERCU"].create[2].get_node("labelGuiTextFenetre")
+			childStat2.text = lstTextCraftFinal["APERCU"].stat2
+		elif lstIngredientsSelect.item1 == "bottes_2" and lstIngredientsSelect.item2 == "bottes_2":
+			lstTextCraftFinal["APERCU"].description1 = "Nom : " + gui_items_resultat["bottes_3"].txt_name
+			var childName = lstTextCraftFinal["APERCU"].create[4].get_node("labelGuiTextFenetre")
+			childName.text = lstTextCraftFinal["APERCU"].description1
+			lstTextCraftFinal["APERCU"].stat1 = "Vie : " + str(gui_items_resultat["bottes_3"].nb_vie)
+			var childStat1 = lstTextCraftFinal["APERCU"].create[1].get_node("labelGuiTextFenetre")
+			childStat1.text = lstTextCraftFinal["APERCU"].stat1
+			lstTextCraftFinal["APERCU"].stat2 = "Défense : " + str(gui_items_resultat["bottes_3"].nb_defense)
+			var childStat2 = lstTextCraftFinal["APERCU"].create[2].get_node("labelGuiTextFenetre")
+			childStat2.text = lstTextCraftFinal["APERCU"].stat2
+		elif lstIngredientsSelect.item1 == "bottes_3" and lstIngredientsSelect.item2 == "bottes_3":
+			lstTextCraftFinal["APERCU"].description1 = "Nom : " + gui_items_resultat["bottes_4"].txt_name
+			var childName = lstTextCraftFinal["APERCU"].create[4].get_node("labelGuiTextFenetre")
+			childName.text = lstTextCraftFinal["APERCU"].description1
+			lstTextCraftFinal["APERCU"].stat1 = "Vie : " + str(gui_items_resultat["bottes_4"].nb_vie)
+			var childStat1 = lstTextCraftFinal["APERCU"].create[1].get_node("labelGuiTextFenetre")
+			childStat1.text = lstTextCraftFinal["APERCU"].stat1
+			lstTextCraftFinal["APERCU"].stat2 = "Défense : " + str(gui_items_resultat["bottes_4"].nb_defense)
+			var childStat2 = lstTextCraftFinal["APERCU"].create[2].get_node("labelGuiTextFenetre")
+			childStat2.text = lstTextCraftFinal["APERCU"].stat2
+		elif lstIngredientsSelect.item1 == "bottes_4" and lstIngredientsSelect.item2 == "bottes_4":
+			lstTextCraftFinal["APERCU"].description1 = "Nom : " + gui_items_resultat["bottes_5"].txt_name
+			var childName = lstTextCraftFinal["APERCU"].create[4].get_node("labelGuiTextFenetre")
+			childName.text = lstTextCraftFinal["APERCU"].description1
+			lstTextCraftFinal["APERCU"].stat1 = "Vie : " + str(gui_items_resultat["bottes_5"].nb_vie)
+			var childStat1 = lstTextCraftFinal["APERCU"].create[1].get_node("labelGuiTextFenetre")
+			childStat1.text = lstTextCraftFinal["APERCU"].stat1
+			lstTextCraftFinal["APERCU"].stat2 = "Défense : " + str(gui_items_resultat["bottes_5"].nb_defense)
+			var childStat2 = lstTextCraftFinal["APERCU"].create[2].get_node("labelGuiTextFenetre")
+			childStat2.text = lstTextCraftFinal["APERCU"].stat2
+		elif lstIngredientsSelect.item1 == "bottes_5" and lstIngredientsSelect.item2 == "bottes_5":
+			lstTextCraftFinal["APERCU"].description1 = "Nom : " + gui_items_resultat["bottes_6"].txt_name
+			var childName = lstTextCraftFinal["APERCU"].create[4].get_node("labelGuiTextFenetre")
+			childName.text = lstTextCraftFinal["APERCU"].description1
+			lstTextCraftFinal["APERCU"].stat1 = "Vie : " + str(gui_items_resultat["bottes_6"].nb_vie)
+			var childStat1 = lstTextCraftFinal["APERCU"].create[1].get_node("labelGuiTextFenetre")
+			childStat1.text = lstTextCraftFinal["APERCU"].stat1
+			lstTextCraftFinal["APERCU"].stat2 = "Défense : " + str(gui_items_resultat["bottes_6"].nb_defense)
+			var childStat2 = lstTextCraftFinal["APERCU"].create[2].get_node("labelGuiTextFenetre")
+			childStat2.text = lstTextCraftFinal["APERCU"].stat2
+		elif lstIngredientsSelect.item1 == "bouclier_1" and lstIngredientsSelect.item2 == "bouclier_1":
+			lstTextCraftFinal["APERCU"].description1 = "Nom : " + gui_items_resultat["bouclier_2"].txt_name
+			var childName = lstTextCraftFinal["APERCU"].create[4].get_node("labelGuiTextFenetre")
+			childName.text = lstTextCraftFinal["APERCU"].description1
+			lstTextCraftFinal["APERCU"].stat1 = "Vie : " + str(gui_items_resultat["bouclier_2"].nb_vie)
+			var childStat1 = lstTextCraftFinal["APERCU"].create[1].get_node("labelGuiTextFenetre")
+			childStat1.text = lstTextCraftFinal["APERCU"].stat1
+			lstTextCraftFinal["APERCU"].stat2 = "Défense : " + str(gui_items_resultat["bouclier_2"].nb_defense)
+			var childStat2 = lstTextCraftFinal["APERCU"].create[2].get_node("labelGuiTextFenetre")
+			childStat2.text = lstTextCraftFinal["APERCU"].stat2
+		elif lstIngredientsSelect.item1 == "bouclier_2" and lstIngredientsSelect.item2 == "bouclier_2":
+			lstTextCraftFinal["APERCU"].description1 = "Nom : " + gui_items_resultat["bouclier_3"].txt_name
+			var childName = lstTextCraftFinal["APERCU"].create[4].get_node("labelGuiTextFenetre")
+			childName.text = lstTextCraftFinal["APERCU"].description1
+			lstTextCraftFinal["APERCU"].stat1 = "Vie : " + str(gui_items_resultat["bouclier_3"].nb_vie)
+			var childStat1 = lstTextCraftFinal["APERCU"].create[1].get_node("labelGuiTextFenetre")
+			childStat1.text = lstTextCraftFinal["APERCU"].stat1
+			lstTextCraftFinal["APERCU"].stat2 = "Défense : " + str(gui_items_resultat["bouclier_3"].nb_defense)
+			var childStat2 = lstTextCraftFinal["APERCU"].create[2].get_node("labelGuiTextFenetre")
+			childStat2.text = lstTextCraftFinal["APERCU"].stat2
+		elif lstIngredientsSelect.item1 == "bouclier_3" and lstIngredientsSelect.item2 == "bouclier_3":
+			lstTextCraftFinal["APERCU"].description1 = "Nom : " + gui_items_resultat["bouclier_4"].txt_name
+			var childName = lstTextCraftFinal["APERCU"].create[4].get_node("labelGuiTextFenetre")
+			childName.text = lstTextCraftFinal["APERCU"].description1
+			lstTextCraftFinal["APERCU"].stat1 = "Vie : " + str(gui_items_resultat["bouclier_4"].nb_vie)
+			var childStat1 = lstTextCraftFinal["APERCU"].create[1].get_node("labelGuiTextFenetre")
+			childStat1.text = lstTextCraftFinal["APERCU"].stat1
+			lstTextCraftFinal["APERCU"].stat2 = "Défense : " + str(gui_items_resultat["bouclier_4"].nb_defense)
+			var childStat2 = lstTextCraftFinal["APERCU"].create[2].get_node("labelGuiTextFenetre")
+			childStat2.text = lstTextCraftFinal["APERCU"].stat2
+		elif lstIngredientsSelect.item1 == "bouclier_4" and lstIngredientsSelect.item2 == "bouclier_4":
+			lstTextCraftFinal["APERCU"].description1 = "Nom : " + gui_items_resultat["bouclier_5"].txt_name
+			var childName = lstTextCraftFinal["APERCU"].create[4].get_node("labelGuiTextFenetre")
+			childName.text = lstTextCraftFinal["APERCU"].description1
+			lstTextCraftFinal["APERCU"].stat1 = "Vie : " + str(gui_items_resultat["bouclier_5"].nb_vie)
+			var childStat1 = lstTextCraftFinal["APERCU"].create[1].get_node("labelGuiTextFenetre")
+			childStat1.text = lstTextCraftFinal["APERCU"].stat1
+			lstTextCraftFinal["APERCU"].stat2 = "Défense : " + str(gui_items_resultat["bouclier_5"].nb_defense)
+			var childStat2 = lstTextCraftFinal["APERCU"].create[2].get_node("labelGuiTextFenetre")
+			childStat2.text = lstTextCraftFinal["APERCU"].stat2
+		elif lstIngredientsSelect.item1 == "bouclier_5" and lstIngredientsSelect.item2 == "bouclier_5":
+			lstTextCraftFinal["APERCU"].description1 = "Nom : " + gui_items_resultat["bouclier_6"].txt_name
+			var childName = lstTextCraftFinal["APERCU"].create[4].get_node("labelGuiTextFenetre")
+			childName.text = lstTextCraftFinal["APERCU"].description1
+			lstTextCraftFinal["APERCU"].stat1 = "Vie : " + str(gui_items_resultat["bouclier_6"].nb_vie)
+			var childStat1 = lstTextCraftFinal["APERCU"].create[1].get_node("labelGuiTextFenetre")
+			childStat1.text = lstTextCraftFinal["APERCU"].stat1
+			lstTextCraftFinal["APERCU"].stat2 = "Défense : " + str(gui_items_resultat["bouclier_6"].nb_defense)
+			var childStat2 = lstTextCraftFinal["APERCU"].create[2].get_node("labelGuiTextFenetre")
+			childStat2.text = lstTextCraftFinal["APERCU"].stat2
+		elif lstIngredientsSelect.item1 == "bouclier_6" and lstIngredientsSelect.item2 == "bouclier_6":
+			lstTextCraftFinal["APERCU"].description1 = "Nom : " + gui_items_resultat["bouclier_7"].txt_name
+			var childName = lstTextCraftFinal["APERCU"].create[4].get_node("labelGuiTextFenetre")
+			childName.text = lstTextCraftFinal["APERCU"].description1
+			lstTextCraftFinal["APERCU"].stat1 = "Vie : " + str(gui_items_resultat["bouclier_7"].nb_vie)
+			var childStat1 = lstTextCraftFinal["APERCU"].create[1].get_node("labelGuiTextFenetre")
+			childStat1.text = lstTextCraftFinal["APERCU"].stat1
+			lstTextCraftFinal["APERCU"].stat2 = "Défense : " + str(gui_items_resultat["bouclier_7"].nb_defense)
+			var childStat2 = lstTextCraftFinal["APERCU"].create[2].get_node("labelGuiTextFenetre")
+			childStat2.text = lstTextCraftFinal["APERCU"].stat2
+		elif lstIngredientsSelect.item1 == "casque_1" and lstIngredientsSelect.item2 == "casque_1":
+			lstTextCraftFinal["APERCU"].description1 = "Nom : " + gui_items_resultat["casque_2"].txt_name
+			var childName = lstTextCraftFinal["APERCU"].create[4].get_node("labelGuiTextFenetre")
+			childName.text = lstTextCraftFinal["APERCU"].description1
+			lstTextCraftFinal["APERCU"].stat1 = "Vie : " + str(gui_items_resultat["casque_2"].nb_vie)
+			var childStat1 = lstTextCraftFinal["APERCU"].create[1].get_node("labelGuiTextFenetre")
+			childStat1.text = lstTextCraftFinal["APERCU"].stat1
+			lstTextCraftFinal["APERCU"].stat2 = "Défense : " + str(gui_items_resultat["casque_2"].nb_defense)
+			var childStat2 = lstTextCraftFinal["APERCU"].create[2].get_node("labelGuiTextFenetre")
+			childStat2.text = lstTextCraftFinal["APERCU"].stat2
+		elif lstIngredientsSelect.item1 == "casque_2" and lstIngredientsSelect.item2 == "casque_2":
+			lstTextCraftFinal["APERCU"].description1 = "Nom : " + gui_items_resultat["casque_3"].txt_name
+			var childName = lstTextCraftFinal["APERCU"].create[4].get_node("labelGuiTextFenetre")
+			childName.text = lstTextCraftFinal["APERCU"].description1
+			lstTextCraftFinal["APERCU"].stat1 = "Vie : " + str(gui_items_resultat["casque_3"].nb_vie)
+			var childStat1 = lstTextCraftFinal["APERCU"].create[1].get_node("labelGuiTextFenetre")
+			childStat1.text = lstTextCraftFinal["APERCU"].stat1
+			lstTextCraftFinal["APERCU"].stat2 = "Défense : " + str(gui_items_resultat["casque_3"].nb_defense)
+			var childStat2 = lstTextCraftFinal["APERCU"].create[2].get_node("labelGuiTextFenetre")
+			childStat2.text = lstTextCraftFinal["APERCU"].stat2
+		elif lstIngredientsSelect.item1 == "casque_3" and lstIngredientsSelect.item2 == "casque_3":
+			lstTextCraftFinal["APERCU"].description1 = "Nom : " + gui_items_resultat["casque_4"].txt_name
+			var childName = lstTextCraftFinal["APERCU"].create[4].get_node("labelGuiTextFenetre")
+			childName.text = lstTextCraftFinal["APERCU"].description1
+			lstTextCraftFinal["APERCU"].stat1 = "Vie : " + str(gui_items_resultat["casque_4"].nb_vie)
+			var childStat1 = lstTextCraftFinal["APERCU"].create[1].get_node("labelGuiTextFenetre")
+			childStat1.text = lstTextCraftFinal["APERCU"].stat1
+			lstTextCraftFinal["APERCU"].stat2 = "Défense : " + str(gui_items_resultat["casque_4"].nb_defense)
+			var childStat2 = lstTextCraftFinal["APERCU"].create[2].get_node("labelGuiTextFenetre")
+			childStat2.text = lstTextCraftFinal["APERCU"].stat2
+		elif lstIngredientsSelect.item1 == "casque_4" and lstIngredientsSelect.item2 == "casque_4":
+			lstTextCraftFinal["APERCU"].description1 = "Nom : " + gui_items_resultat["casque_5"].txt_name
+			var childName = lstTextCraftFinal["APERCU"].create[4].get_node("labelGuiTextFenetre")
+			childName.text = lstTextCraftFinal["APERCU"].description1
+			lstTextCraftFinal["APERCU"].stat1 = "Vie : " + str(gui_items_resultat["casque_5"].nb_vie)
+			var childStat1 = lstTextCraftFinal["APERCU"].create[1].get_node("labelGuiTextFenetre")
+			childStat1.text = lstTextCraftFinal["APERCU"].stat1
+			lstTextCraftFinal["APERCU"].stat2 = "Défense : " + str(gui_items_resultat["casque_5"].nb_defense)
+			var childStat2 = lstTextCraftFinal["APERCU"].create[2].get_node("labelGuiTextFenetre")
+			childStat2.text = lstTextCraftFinal["APERCU"].stat2
+		elif lstIngredientsSelect.item1 == "casque_5" and lstIngredientsSelect.item2 == "casque_5":
+			lstTextCraftFinal["APERCU"].description1 = "Nom : " + gui_items_resultat["casque_6"].txt_name
+			var childName = lstTextCraftFinal["APERCU"].create[4].get_node("labelGuiTextFenetre")
+			childName.text = lstTextCraftFinal["APERCU"].description1
+			lstTextCraftFinal["APERCU"].stat1 = "Vie : " + str(gui_items_resultat["casque_6"].nb_vie)
+			var childStat1 = lstTextCraftFinal["APERCU"].create[1].get_node("labelGuiTextFenetre")
+			childStat1.text = lstTextCraftFinal["APERCU"].stat1
+			lstTextCraftFinal["APERCU"].stat2 = "Défense : " + str(gui_items_resultat["casque_6"].nb_defense)
+			var childStat2 = lstTextCraftFinal["APERCU"].create[2].get_node("labelGuiTextFenetre")
+			childStat2.text = lstTextCraftFinal["APERCU"].stat2
+		elif lstIngredientsSelect.item1 == "collier_1" and lstIngredientsSelect.item2 == "collier_1":
+			lstTextCraftFinal["APERCU"].description1 = "Nom : " + gui_items_resultat["collier_2"].txt_name
+			var childName = lstTextCraftFinal["APERCU"].create[4].get_node("labelGuiTextFenetre")
+			childName.text = lstTextCraftFinal["APERCU"].description1
+			lstTextCraftFinal["APERCU"].stat1 = "Puissance : " + str(gui_items_resultat["collier_2"].nb_puissance)
+			var childStat1 = lstTextCraftFinal["APERCU"].create[1].get_node("labelGuiTextFenetre")
+			childStat1.text = lstTextCraftFinal["APERCU"].stat1
+			lstTextCraftFinal["APERCU"].stat2 = "Endurance : " + str(gui_items_resultat["collier_2"].nb_endurance)
+			var childStat2 = lstTextCraftFinal["APERCU"].create[2].get_node("labelGuiTextFenetre")
+			childStat2.text = lstTextCraftFinal["APERCU"].stat2
+		elif lstIngredientsSelect.item1 == "collier_2" and lstIngredientsSelect.item2 == "collier_2":
+			lstTextCraftFinal["APERCU"].description1 = "Nom : " + gui_items_resultat["collier_3"].txt_name
+			var childName = lstTextCraftFinal["APERCU"].create[4].get_node("labelGuiTextFenetre")
+			childName.text = lstTextCraftFinal["APERCU"].description1
+			lstTextCraftFinal["APERCU"].stat1 = "Puissance : " + str(gui_items_resultat["collier_3"].nb_puissance)
+			var childStat1 = lstTextCraftFinal["APERCU"].create[1].get_node("labelGuiTextFenetre")
+			childStat1.text = lstTextCraftFinal["APERCU"].stat1
+			lstTextCraftFinal["APERCU"].stat2 = "Endurance : " + str(gui_items_resultat["collier_3"].nb_endurance)
+			var childStat2 = lstTextCraftFinal["APERCU"].create[2].get_node("labelGuiTextFenetre")
+			childStat2.text = lstTextCraftFinal["APERCU"].stat2
+		elif lstIngredientsSelect.item1 == "heaume_1" and lstIngredientsSelect.item2 == "heaume_1":
+			lstTextCraftFinal["APERCU"].description1 = "Nom : " + gui_items_resultat["heaume_2"].txt_name
+			var childName = lstTextCraftFinal["APERCU"].create[4].get_node("labelGuiTextFenetre")
+			childName.text = lstTextCraftFinal["APERCU"].description1
+			lstTextCraftFinal["APERCU"].stat1 = "Vie : " + str(gui_items_resultat["heaume_2"].nb_vie)
+			var childStat1 = lstTextCraftFinal["APERCU"].create[1].get_node("labelGuiTextFenetre")
+			childStat1.text = lstTextCraftFinal["APERCU"].stat1
+			lstTextCraftFinal["APERCU"].stat2 = "Défense : " + str(gui_items_resultat["heaume_2"].nb_defense)
+			var childStat2 = lstTextCraftFinal["APERCU"].create[2].get_node("labelGuiTextFenetre")
+			childStat2.text = lstTextCraftFinal["APERCU"].stat2
+		elif lstIngredientsSelect.item1 == "heaume_2" and lstIngredientsSelect.item2 == "heaume_2":
+			lstTextCraftFinal["APERCU"].description1 = "Nom : " + gui_items_resultat["heaume_3"].txt_name
+			var childName = lstTextCraftFinal["APERCU"].create[4].get_node("labelGuiTextFenetre")
+			childName.text = lstTextCraftFinal["APERCU"].description1
+			lstTextCraftFinal["APERCU"].stat1 = "Vie : " + str(gui_items_resultat["heaume_3"].nb_vie)
+			var childStat1 = lstTextCraftFinal["APERCU"].create[1].get_node("labelGuiTextFenetre")
+			childStat1.text = lstTextCraftFinal["APERCU"].stat1
+			lstTextCraftFinal["APERCU"].stat2 = "Défense : " + str(gui_items_resultat["heaume_3"].nb_defense)
+			var childStat2 = lstTextCraftFinal["APERCU"].create[2].get_node("labelGuiTextFenetre")
+			childStat2.text = lstTextCraftFinal["APERCU"].stat2
+		elif lstIngredientsSelect.item1 == "heaume_3" and lstIngredientsSelect.item2 == "heaume_3":
+			lstTextCraftFinal["APERCU"].description1 = "Nom : " + gui_items_resultat["heaume_4"].txt_name
+			var childName = lstTextCraftFinal["APERCU"].create[4].get_node("labelGuiTextFenetre")
+			childName.text = lstTextCraftFinal["APERCU"].description1
+			lstTextCraftFinal["APERCU"].stat1 = "Vie : " + str(gui_items_resultat["heaume_4"].nb_vie)
+			var childStat1 = lstTextCraftFinal["APERCU"].create[1].get_node("labelGuiTextFenetre")
+			childStat1.text = lstTextCraftFinal["APERCU"].stat1
+			lstTextCraftFinal["APERCU"].stat2 = "Défense : " + str(gui_items_resultat["heaume_4"].nb_defense)
+			var childStat2 = lstTextCraftFinal["APERCU"].create[2].get_node("labelGuiTextFenetre")
+			childStat2.text = lstTextCraftFinal["APERCU"].stat2
+		elif lstIngredientsSelect.item1 == "heaume_4" and lstIngredientsSelect.item2 == "heaume_4":
+			lstTextCraftFinal["APERCU"].description1 = "Nom : " + gui_items_resultat["heaume_5"].txt_name
+			var childName = lstTextCraftFinal["APERCU"].create[4].get_node("labelGuiTextFenetre")
+			childName.text = lstTextCraftFinal["APERCU"].description1
+			lstTextCraftFinal["APERCU"].stat1 = "Vie : " + str(gui_items_resultat["heaume_5"].nb_vie)
+			var childStat1 = lstTextCraftFinal["APERCU"].create[1].get_node("labelGuiTextFenetre")
+			childStat1.text = lstTextCraftFinal["APERCU"].stat1
+			lstTextCraftFinal["APERCU"].stat2 = "Défense : " + str(gui_items_resultat["heaume_5"].nb_defense)
+			var childStat2 = lstTextCraftFinal["APERCU"].create[2].get_node("labelGuiTextFenetre")
+			childStat2.text = lstTextCraftFinal["APERCU"].stat2
+		elif lstIngredientsSelect.item1 == "heaume_5" and lstIngredientsSelect.item2 == "heaume_5":
+			lstTextCraftFinal["APERCU"].description1 = "Nom : " + gui_items_resultat["heaume_6"].txt_name
+			var childName = lstTextCraftFinal["APERCU"].create[4].get_node("labelGuiTextFenetre")
+			childName.text = lstTextCraftFinal["APERCU"].description1
+			lstTextCraftFinal["APERCU"].stat1 = "Vie : " + str(gui_items_resultat["heaume_6"].nb_vie)
+			var childStat1 = lstTextCraftFinal["APERCU"].create[1].get_node("labelGuiTextFenetre")
+			childStat1.text = lstTextCraftFinal["APERCU"].stat1
+			lstTextCraftFinal["APERCU"].stat2 = "Défense : " + str(gui_items_resultat["heaume_6"].nb_defense)
+			var childStat2 = lstTextCraftFinal["APERCU"].create[2].get_node("labelGuiTextFenetre")
+			childStat2.text = lstTextCraftFinal["APERCU"].stat2
+		elif lstIngredientsSelect.item1 == "sword_1" and lstIngredientsSelect.item2 == "sword_1":
+			lstTextCraftFinal["APERCU"].description1 = "Nom : " + gui_items_resultat["sword_2"].txt_name
+			var childName = lstTextCraftFinal["APERCU"].create[4].get_node("labelGuiTextFenetre")
+			childName.text = lstTextCraftFinal["APERCU"].description1
+			lstTextCraftFinal["APERCU"].stat1 = "Attaque : " + str(gui_items_resultat["sword_2"].nb_attaque)
+			var childStat1 = lstTextCraftFinal["APERCU"].create[1].get_node("labelGuiTextFenetre")
+			childStat1.text = lstTextCraftFinal["APERCU"].stat1
+			lstTextCraftFinal["APERCU"].stat2 = " "
+			var childStat2 = lstTextCraftFinal["APERCU"].create[2].get_node("labelGuiTextFenetre")
+			childStat2.text = lstTextCraftFinal["APERCU"].stat2
+		elif lstIngredientsSelect.item1 == "sword_2" and lstIngredientsSelect.item2 == "sword_2":
+			lstTextCraftFinal["APERCU"].description1 = "Nom : " + gui_items_resultat["sword_3"].txt_name
+			var childName = lstTextCraftFinal["APERCU"].create[4].get_node("labelGuiTextFenetre")
+			childName.text = lstTextCraftFinal["APERCU"].description1
+			lstTextCraftFinal["APERCU"].stat1 = "Attaque : " + str(gui_items_resultat["sword_3"].nb_attaque)
+			var childStat1 = lstTextCraftFinal["APERCU"].create[1].get_node("labelGuiTextFenetre")
+			childStat1.text = lstTextCraftFinal["APERCU"].stat1
+			lstTextCraftFinal["APERCU"].stat2 = " "
+			var childStat2 = lstTextCraftFinal["APERCU"].create[2].get_node("labelGuiTextFenetre")
+			childStat2.text = lstTextCraftFinal["APERCU"].stat2
+		elif lstIngredientsSelect.item1 == "sword_3" and lstIngredientsSelect.item2 == "sword_3":
+			lstTextCraftFinal["APERCU"].description1 = "Nom : " + gui_items_resultat["sword_4"].txt_name
+			var childName = lstTextCraftFinal["APERCU"].create[4].get_node("labelGuiTextFenetre")
+			childName.text = lstTextCraftFinal["APERCU"].description1
+			lstTextCraftFinal["APERCU"].stat1 = "Attaque : " + str(gui_items_resultat["sword_4"].nb_attaque)
+			var childStat1 = lstTextCraftFinal["APERCU"].create[1].get_node("labelGuiTextFenetre")
+			childStat1.text = lstTextCraftFinal["APERCU"].stat1
+			lstTextCraftFinal["APERCU"].stat2 = " "
+			var childStat2 = lstTextCraftFinal["APERCU"].create[2].get_node("labelGuiTextFenetre")
+			childStat2.text = lstTextCraftFinal["APERCU"].stat2
+		elif lstIngredientsSelect.item1 == "sword_4" and lstIngredientsSelect.item2 == "sword_4":
+			lstTextCraftFinal["APERCU"].description1 = "Nom : " + gui_items_resultat["sword_5"].txt_name
+			var childName = lstTextCraftFinal["APERCU"].create[4].get_node("labelGuiTextFenetre")
+			childName.text = lstTextCraftFinal["APERCU"].description1
+			lstTextCraftFinal["APERCU"].stat1 = "Attaque : " + str(gui_items_resultat["sword_5"].nb_attaque)
+			var childStat1 = lstTextCraftFinal["APERCU"].create[1].get_node("labelGuiTextFenetre")
+			childStat1.text = lstTextCraftFinal["APERCU"].stat1
+			lstTextCraftFinal["APERCU"].stat2 = " "
+			var childStat2 = lstTextCraftFinal["APERCU"].create[2].get_node("labelGuiTextFenetre")
+			childStat2.text = lstTextCraftFinal["APERCU"].stat2
+		elif lstIngredientsSelect.item1 == "sword_5" and lstIngredientsSelect.item2 == "sword_5":
+			lstTextCraftFinal["APERCU"].description1 = "Nom : " + gui_items_resultat["sword_6"].txt_name
+			var childName = lstTextCraftFinal["APERCU"].create[4].get_node("labelGuiTextFenetre")
+			childName.text = lstTextCraftFinal["APERCU"].description1
+			lstTextCraftFinal["APERCU"].stat1 = "Attaque : " + str(gui_items_resultat["sword_6"].nb_attaque)
+			var childStat1 = lstTextCraftFinal["APERCU"].create[1].get_node("labelGuiTextFenetre")
+			childStat1.text = lstTextCraftFinal["APERCU"].stat1
+			lstTextCraftFinal["APERCU"].stat2 = " "
+			var childStat2 = lstTextCraftFinal["APERCU"].create[2].get_node("labelGuiTextFenetre")
+			childStat2.text = lstTextCraftFinal["APERCU"].stat2
+		elif lstIngredientsSelect.item1 == "sword_6" and lstIngredientsSelect.item2 == "sword_6":
+			lstTextCraftFinal["APERCU"].description1 = "Nom : " + gui_items_resultat["sword_7"].txt_name
+			var childName = lstTextCraftFinal["APERCU"].create[4].get_node("labelGuiTextFenetre")
+			childName.text = lstTextCraftFinal["APERCU"].description1
+			lstTextCraftFinal["APERCU"].stat1 = "Attaque : " + str(gui_items_resultat["sword_7"].nb_attaque)
+			var childStat1 = lstTextCraftFinal["APERCU"].create[1].get_node("labelGuiTextFenetre")
+			childStat1.text = lstTextCraftFinal["APERCU"].stat1
+			lstTextCraftFinal["APERCU"].stat2 = " "
+			var childStat2 = lstTextCraftFinal["APERCU"].create[2].get_node("labelGuiTextFenetre")
+			childStat2.text = lstTextCraftFinal["APERCU"].stat2
+		elif lstIngredientsSelect.item1 == "sword_7" and lstIngredientsSelect.item2 == "sword_7":
+			lstTextCraftFinal["APERCU"].description1 = "Nom : " + gui_items_resultat["sword_8"].txt_name
+			var childName = lstTextCraftFinal["APERCU"].create[4].get_node("labelGuiTextFenetre")
+			childName.text = lstTextCraftFinal["APERCU"].description1
+			lstTextCraftFinal["APERCU"].stat1 = "Attaque : " + str(gui_items_resultat["sword_8"].nb_attaque)
+			var childStat1 = lstTextCraftFinal["APERCU"].create[1].get_node("labelGuiTextFenetre")
+			childStat1.text = lstTextCraftFinal["APERCU"].stat1
+			lstTextCraftFinal["APERCU"].stat2 = " "
+			var childStat2 = lstTextCraftFinal["APERCU"].create[2].get_node("labelGuiTextFenetre")
+			childStat2.text = lstTextCraftFinal["APERCU"].stat2
 	
 	for n in range(21):
 		

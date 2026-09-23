@@ -201,4 +201,11 @@ offset_top = 135.0
 offset_right = 140.0
 offset_bottom = 152.0
 
+[node name="panel_button_creation" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 169.0
+offset_top = 160.0
+offset_right = 260.0
+offset_bottom = 187.0
+
 [connection signal="gui_input" from="panel_retour" to="." method="_on_panel_retour_gui_input"]
