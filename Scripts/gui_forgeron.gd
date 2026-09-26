@@ -2724,7 +2724,141 @@ func _process(delta: float) -> void:
 		lstTextCraftFinal["APERCU"].create[4].visible = true
 		if mouse_pos.x - nodeParent.offset.x >= childButtonCreation.position.x and mouse_pos.x - nodeParent.offset.x <= childButtonCreation.position.x + 91 and mouse_pos.y - nodeParent.offset.y >= childButtonCreation.position.y and mouse_pos.y - nodeParent.offset.y <= childButtonCreation.position.y + 27:
 			if Input.is_action_just_pressed("button_left"):
-				print("Je clic sur le craft car jai deux items identique aussi faut pas oublier la condition en gold !")
+				if DataSave.hero.gold >= nbPrixCraft:
+					DataSave.hero.gold -= nbPrixCraft
+					
+					if gui_items_resultat["bague_2"].visible == true:
+						DataSave.items_posession.bague1 -= 2
+						DataSave.items_posession.bague2 += 1
+						nbCompteurBague1 -= 2
+						var childTxtGold = txtNbGold.get_node("labelGuiTextFenetre")
+						childTxtGold.text = str(DataSave.hero.gold)
+						gui_items_resultat["bague_2"].visible = false
+						txtNbGoldTotalIngredients.visible = false
+						gui_bague1[lstIngredientsSelect.index2].queue_free()
+						gui_bague1[lstIngredientsSelect.index1].queue_free()
+						txtItemType[lstIngredientsSelect.index1] = "vide"
+						txtItemType[lstIngredientsSelect.index2] = "vide"
+						isSlot_libre[lstIngredientsSelect.index1] = true
+						isSlot_libre[lstIngredientsSelect.index2] = true
+						lstIngredientsSelect.item1 = "vide"
+						lstIngredientsSelect.item2 = "vide"
+						lstIngredientsSelect.index1 = -1
+						lstIngredientsSelect.index2 = -1
+					
+					if gui_items_resultat["bague_3"].visible == true:
+						DataSave.items_posession.bague2 -= 2
+						DataSave.items_posession.bague3 += 1
+						nbCompteurBague2 -= 2
+						var childTxtGold = txtNbGold.get_node("labelGuiTextFenetre")
+						childTxtGold.text = str(DataSave.hero.gold)
+						gui_items_resultat["bague_3"].visible = false
+						txtNbGoldTotalIngredients.visible = false
+						gui_bague2[lstIngredientsSelect.index2].queue_free()
+						gui_bague2[lstIngredientsSelect.index1].queue_free()
+						txtItemType[lstIngredientsSelect.index1] = "vide"
+						txtItemType[lstIngredientsSelect.index2] = "vide"
+						isSlot_libre[lstIngredientsSelect.index1] = true
+						isSlot_libre[lstIngredientsSelect.index2] = true
+						lstIngredientsSelect.item1 = "vide"
+						lstIngredientsSelect.item2 = "vide"
+						lstIngredientsSelect.index1 = -1
+						lstIngredientsSelect.index2 = -1
+					
+					if gui_items_resultat["casque_2"].visible == true:
+						DataSave.items_posession.casque1 -= 2
+						DataSave.items_posession.casque2 += 1
+						nbCompteurCasque1 -= 2
+						var childTxtGold = txtNbGold.get_node("labelGuiTextFenetre")
+						childTxtGold.text = str(DataSave.hero.gold)
+						gui_items_resultat["casque_2"].visible = false
+						txtNbGoldTotalIngredients.visible = false
+						gui_casque1[lstIngredientsSelect.index2].queue_free()
+						gui_casque1[lstIngredientsSelect.index1].queue_free()
+						txtItemType[lstIngredientsSelect.index1] = "vide"
+						txtItemType[lstIngredientsSelect.index2] = "vide"
+						isSlot_libre[lstIngredientsSelect.index1] = true
+						isSlot_libre[lstIngredientsSelect.index2] = true
+						lstIngredientsSelect.item1 = "vide"
+						lstIngredientsSelect.item2 = "vide"
+						lstIngredientsSelect.index1 = -1
+						lstIngredientsSelect.index2 = -1
+					
+					if gui_items_resultat["casque_3"].visible == true:
+						DataSave.items_posession.casque2 -= 2
+						DataSave.items_posession.casque3 += 1
+						nbCompteurCasque2 -= 2
+						var childTxtGold = txtNbGold.get_node("labelGuiTextFenetre")
+						childTxtGold.text = str(DataSave.hero.gold)
+						gui_items_resultat["casque_3"].visible = false
+						txtNbGoldTotalIngredients.visible = false
+						gui_casque2[lstIngredientsSelect.index2].queue_free()
+						gui_casque2[lstIngredientsSelect.index1].queue_free()
+						txtItemType[lstIngredientsSelect.index1] = "vide"
+						txtItemType[lstIngredientsSelect.index2] = "vide"
+						isSlot_libre[lstIngredientsSelect.index1] = true
+						isSlot_libre[lstIngredientsSelect.index2] = true
+						lstIngredientsSelect.item1 = "vide"
+						lstIngredientsSelect.item2 = "vide"
+						lstIngredientsSelect.index1 = -1
+						lstIngredientsSelect.index2 = -1
+					
+					if gui_items_resultat["casque_4"].visible == true:
+						DataSave.items_posession.casque3 -= 2
+						DataSave.items_posession.casque4 += 1
+						nbCompteurCasque3 -= 2
+						var childTxtGold = txtNbGold.get_node("labelGuiTextFenetre")
+						childTxtGold.text = str(DataSave.hero.gold)
+						gui_items_resultat["casque_4"].visible = false
+						txtNbGoldTotalIngredients.visible = false
+						gui_casque3[lstIngredientsSelect.index2].queue_free()
+						gui_casque3[lstIngredientsSelect.index1].queue_free()
+						txtItemType[lstIngredientsSelect.index1] = "vide"
+						txtItemType[lstIngredientsSelect.index2] = "vide"
+						isSlot_libre[lstIngredientsSelect.index1] = true
+						isSlot_libre[lstIngredientsSelect.index2] = true
+						lstIngredientsSelect.item1 = "vide"
+						lstIngredientsSelect.item2 = "vide"
+						lstIngredientsSelect.index1 = -1
+						lstIngredientsSelect.index2 = -1
+					
+					if gui_items_resultat["casque_5"].visible == true:
+						DataSave.items_posession.casque4 -= 2
+						DataSave.items_posession.casque5 += 1
+						nbCompteurCasque4 -= 2
+						var childTxtGold = txtNbGold.get_node("labelGuiTextFenetre")
+						childTxtGold.text = str(DataSave.hero.gold)
+						gui_items_resultat["casque_5"].visible = false
+						txtNbGoldTotalIngredients.visible = false
+						gui_casque4[lstIngredientsSelect.index2].queue_free()
+						gui_casque4[lstIngredientsSelect.index1].queue_free()
+						txtItemType[lstIngredientsSelect.index1] = "vide"
+						txtItemType[lstIngredientsSelect.index2] = "vide"
+						isSlot_libre[lstIngredientsSelect.index1] = true
+						isSlot_libre[lstIngredientsSelect.index2] = true
+						lstIngredientsSelect.item1 = "vide"
+						lstIngredientsSelect.item2 = "vide"
+						lstIngredientsSelect.index1 = -1
+						lstIngredientsSelect.index2 = -1
+					# continuer au dela de casque 6 en bas et m'inspirer de ce que j'ai deja fait si jamais j'oublie.
+					if gui_items_resultat["casque_6"].visible == true:
+						DataSave.items_posession.casque5 -= 2
+						DataSave.items_posession.casque6 += 1
+						nbCompteurCasque5 -= 2
+						var childTxtGold = txtNbGold.get_node("labelGuiTextFenetre")
+						childTxtGold.text = str(DataSave.hero.gold)
+						gui_items_resultat["casque_6"].visible = false
+						txtNbGoldTotalIngredients.visible = false
+						gui_casque5[lstIngredientsSelect.index2].queue_free()
+						gui_casque5[lstIngredientsSelect.index1].queue_free()
+						txtItemType[lstIngredientsSelect.index1] = "vide"
+						txtItemType[lstIngredientsSelect.index2] = "vide"
+						isSlot_libre[lstIngredientsSelect.index1] = true
+						isSlot_libre[lstIngredientsSelect.index2] = true
+						lstIngredientsSelect.item1 = "vide"
+						lstIngredientsSelect.item2 = "vide"
+						lstIngredientsSelect.index1 = -1
+						lstIngredientsSelect.index2 = -1
 	
 	if lstIngredientsSelect.item1 == "bague_1" and lstIngredientsSelect.item2 == "bague_1" or lstIngredientsSelect.item1 == "bague_2" and lstIngredientsSelect.item2 == "bague_2" or lstIngredientsSelect.item1 == "bottes_1" and lstIngredientsSelect.item2 == "bottes_1" or lstIngredientsSelect.item1 == "bottes_2" and lstIngredientsSelect.item2 == "bottes_2" or lstIngredientsSelect.item1 == "bottes_3" and lstIngredientsSelect.item2 == "bottes_3" or lstIngredientsSelect.item1 == "bottes_4" and lstIngredientsSelect.item2 == "bottes_4" or lstIngredientsSelect.item1 == "bottes_5" and lstIngredientsSelect.item2 == "bottes_5" or lstIngredientsSelect.item1 == "bouclier_1" and lstIngredientsSelect.item2 == "bouclier_1" or lstIngredientsSelect.item1 == "bouclier_2" and lstIngredientsSelect.item2 == "bouclier_2" or lstIngredientsSelect.item1 == "bouclier_3" and lstIngredientsSelect.item2 == "bouclier_3" or lstIngredientsSelect.item1 == "bouclier_4" and lstIngredientsSelect.item2 == "bouclier_4" or lstIngredientsSelect.item1 == "bouclier_5" and lstIngredientsSelect.item2 == "bouclier_5" or lstIngredientsSelect.item1 == "bouclier_6" and lstIngredientsSelect.item2 == "bouclier_6" or lstIngredientsSelect.item1 == "casque_1" and lstIngredientsSelect.item2 == "casque_1" or lstIngredientsSelect.item1 == "casque_2" and lstIngredientsSelect.item2 == "casque_2" or lstIngredientsSelect.item1 == "casque_3" and lstIngredientsSelect.item2 == "casque_3" or lstIngredientsSelect.item1 == "casque_4" and lstIngredientsSelect.item2 == "casque_4" or lstIngredientsSelect.item1 == "casque_5" and lstIngredientsSelect.item2 == "casque_5" or lstIngredientsSelect.item1 == "collier_1" and lstIngredientsSelect.item2 == "collier_1" or lstIngredientsSelect.item1 == "collier_2" and lstIngredientsSelect.item2 == "collier_2" or lstIngredientsSelect.item1 == "heaume_1" and lstIngredientsSelect.item2 == "heaume_1" or lstIngredientsSelect.item1 == "heaume_2" and lstIngredientsSelect.item2 == "heaume_2" or lstIngredientsSelect.item1 == "heaume_3" and lstIngredientsSelect.item2 == "heaume_3" or lstIngredientsSelect.item1 == "heaume_4" and lstIngredientsSelect.item2 == "heaume_4" or lstIngredientsSelect.item1 == "heaume_5" and lstIngredientsSelect.item2 == "heaume_5" or lstIngredientsSelect.item1 == "sword_1" and lstIngredientsSelect.item2 == "sword_1" or lstIngredientsSelect.item1 == "sword_2" and lstIngredientsSelect.item2 == "sword_2" or lstIngredientsSelect.item1 == "sword_3" and lstIngredientsSelect.item2 == "sword_3" or lstIngredientsSelect.item1 == "sword_4" and lstIngredientsSelect.item2 == "sword_4" or lstIngredientsSelect.item1 == "sword_5" and lstIngredientsSelect.item2 == "sword_5" or lstIngredientsSelect.item1 == "sword_6" and lstIngredientsSelect.item2 == "sword_6" or lstIngredientsSelect.item1 == "sword_7" and lstIngredientsSelect.item2 == "sword_7" :
 		lstTextCraftFinal.etat = "stats"
