@@ -2765,6 +2765,215 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.index1 = -1
 						lstIngredientsSelect.index2 = -1
 					
+					if gui_items_resultat["bottes_2"].visible == true:
+						DataSave.items_posession.bottes1 -= 2
+						DataSave.items_posession.bottes2 += 1
+						nbCompteurBottes1 -= 2
+						var childTxtGold = txtNbGold.get_node("labelGuiTextFenetre")
+						childTxtGold.text = str(DataSave.hero.gold)
+						gui_items_resultat["bottes_2"].visible = false
+						txtNbGoldTotalIngredients.visible = false
+						gui_bottes1[lstIngredientsSelect.index2].queue_free()
+						gui_bottes1[lstIngredientsSelect.index1].queue_free()
+						txtItemType[lstIngredientsSelect.index1] = "vide"
+						txtItemType[lstIngredientsSelect.index2] = "vide"
+						isSlot_libre[lstIngredientsSelect.index1] = true
+						isSlot_libre[lstIngredientsSelect.index2] = true
+						lstIngredientsSelect.item1 = "vide"
+						lstIngredientsSelect.item2 = "vide"
+						lstIngredientsSelect.index1 = -1
+						lstIngredientsSelect.index2 = -1
+					
+					if gui_items_resultat["bottes_3"].visible == true:
+						DataSave.items_posession.bottes2 -= 2
+						DataSave.items_posession.bottes3 += 1
+						nbCompteurBottes2 -= 2
+						var childTxtGold = txtNbGold.get_node("labelGuiTextFenetre")
+						childTxtGold.text = str(DataSave.hero.gold)
+						gui_items_resultat["bottes_3"].visible = false
+						txtNbGoldTotalIngredients.visible = false
+						gui_bottes2[lstIngredientsSelect.index2].queue_free()
+						gui_bottes2[lstIngredientsSelect.index1].queue_free()
+						txtItemType[lstIngredientsSelect.index1] = "vide"
+						txtItemType[lstIngredientsSelect.index2] = "vide"
+						isSlot_libre[lstIngredientsSelect.index1] = true
+						isSlot_libre[lstIngredientsSelect.index2] = true
+						lstIngredientsSelect.item1 = "vide"
+						lstIngredientsSelect.item2 = "vide"
+						lstIngredientsSelect.index1 = -1
+						lstIngredientsSelect.index2 = -1
+					
+					if gui_items_resultat["bottes_4"].visible == true:
+						DataSave.items_posession.bottes3 -= 2
+						DataSave.items_posession.bottes4 += 1
+						nbCompteurBottes3 -= 2
+						var childTxtGold = txtNbGold.get_node("labelGuiTextFenetre")
+						childTxtGold.text = str(DataSave.hero.gold)
+						gui_items_resultat["bottes_4"].visible = false
+						txtNbGoldTotalIngredients.visible = false
+						gui_bottes3[lstIngredientsSelect.index2].queue_free()
+						gui_bottes3[lstIngredientsSelect.index1].queue_free()
+						txtItemType[lstIngredientsSelect.index1] = "vide"
+						txtItemType[lstIngredientsSelect.index2] = "vide"
+						isSlot_libre[lstIngredientsSelect.index1] = true
+						isSlot_libre[lstIngredientsSelect.index2] = true
+						lstIngredientsSelect.item1 = "vide"
+						lstIngredientsSelect.item2 = "vide"
+						lstIngredientsSelect.index1 = -1
+						lstIngredientsSelect.index2 = -1
+					
+					if gui_items_resultat["bottes_5"].visible == true:
+						DataSave.items_posession.bottes4 -= 2
+						DataSave.items_posession.bottes5 += 1
+						nbCompteurBottes4 -= 2
+						var childTxtGold = txtNbGold.get_node("labelGuiTextFenetre")
+						childTxtGold.text = str(DataSave.hero.gold)
+						gui_items_resultat["bottes_5"].visible = false
+						txtNbGoldTotalIngredients.visible = false
+						gui_bottes4[lstIngredientsSelect.index2].queue_free()
+						gui_bottes4[lstIngredientsSelect.index1].queue_free()
+						txtItemType[lstIngredientsSelect.index1] = "vide"
+						txtItemType[lstIngredientsSelect.index2] = "vide"
+						isSlot_libre[lstIngredientsSelect.index1] = true
+						isSlot_libre[lstIngredientsSelect.index2] = true
+						lstIngredientsSelect.item1 = "vide"
+						lstIngredientsSelect.item2 = "vide"
+						lstIngredientsSelect.index1 = -1
+						lstIngredientsSelect.index2 = -1
+					
+					if gui_items_resultat["bottes_6"].visible == true:
+						DataSave.items_posession.bottes5 -= 2
+						DataSave.items_posession.bottes6 += 1
+						nbCompteurBottes5 -= 2
+						var childTxtGold = txtNbGold.get_node("labelGuiTextFenetre")
+						childTxtGold.text = str(DataSave.hero.gold)
+						gui_items_resultat["bottes_6"].visible = false
+						txtNbGoldTotalIngredients.visible = false
+						gui_bottes5[lstIngredientsSelect.index2].queue_free()
+						gui_bottes5[lstIngredientsSelect.index1].queue_free()
+						txtItemType[lstIngredientsSelect.index1] = "vide"
+						txtItemType[lstIngredientsSelect.index2] = "vide"
+						isSlot_libre[lstIngredientsSelect.index1] = true
+						isSlot_libre[lstIngredientsSelect.index2] = true
+						lstIngredientsSelect.item1 = "vide"
+						lstIngredientsSelect.item2 = "vide"
+						lstIngredientsSelect.index1 = -1
+						lstIngredientsSelect.index2 = -1
+					
+					if gui_items_resultat["bouclier_2"].visible == true:
+						DataSave.items_posession.bouclier1 -= 2
+						DataSave.items_posession.bouclier2 += 1
+						nbCompteurBouclier1 -= 2
+						var childTxtGold = txtNbGold.get_node("labelGuiTextFenetre")
+						childTxtGold.text = str(DataSave.hero.gold)
+						gui_items_resultat["bouclier_2"].visible = false
+						txtNbGoldTotalIngredients.visible = false
+						gui_bouclier1[lstIngredientsSelect.index2].queue_free()
+						gui_bouclier1[lstIngredientsSelect.index1].queue_free()
+						txtItemType[lstIngredientsSelect.index1] = "vide"
+						txtItemType[lstIngredientsSelect.index2] = "vide"
+						isSlot_libre[lstIngredientsSelect.index1] = true
+						isSlot_libre[lstIngredientsSelect.index2] = true
+						lstIngredientsSelect.item1 = "vide"
+						lstIngredientsSelect.item2 = "vide"
+						lstIngredientsSelect.index1 = -1
+						lstIngredientsSelect.index2 = -1
+					
+					if gui_items_resultat["bouclier_3"].visible == true:
+						DataSave.items_posession.bouclier2 -= 2
+						DataSave.items_posession.bouclier3 += 1
+						nbCompteurBouclier2 -= 2
+						var childTxtGold = txtNbGold.get_node("labelGuiTextFenetre")
+						childTxtGold.text = str(DataSave.hero.gold)
+						gui_items_resultat["bouclier_3"].visible = false
+						txtNbGoldTotalIngredients.visible = false
+						gui_bouclier2[lstIngredientsSelect.index2].queue_free()
+						gui_bouclier2[lstIngredientsSelect.index1].queue_free()
+						txtItemType[lstIngredientsSelect.index1] = "vide"
+						txtItemType[lstIngredientsSelect.index2] = "vide"
+						isSlot_libre[lstIngredientsSelect.index1] = true
+						isSlot_libre[lstIngredientsSelect.index2] = true
+						lstIngredientsSelect.item1 = "vide"
+						lstIngredientsSelect.item2 = "vide"
+						lstIngredientsSelect.index1 = -1
+						lstIngredientsSelect.index2 = -1
+					
+					if gui_items_resultat["bouclier_4"].visible == true:
+						DataSave.items_posession.bouclier3 -= 2
+						DataSave.items_posession.bouclier4 += 1
+						nbCompteurBouclier3 -= 2
+						var childTxtGold = txtNbGold.get_node("labelGuiTextFenetre")
+						childTxtGold.text = str(DataSave.hero.gold)
+						gui_items_resultat["bouclier_4"].visible = false
+						txtNbGoldTotalIngredients.visible = false
+						gui_bouclier3[lstIngredientsSelect.index2].queue_free()
+						gui_bouclier3[lstIngredientsSelect.index1].queue_free()
+						txtItemType[lstIngredientsSelect.index1] = "vide"
+						txtItemType[lstIngredientsSelect.index2] = "vide"
+						isSlot_libre[lstIngredientsSelect.index1] = true
+						isSlot_libre[lstIngredientsSelect.index2] = true
+						lstIngredientsSelect.item1 = "vide"
+						lstIngredientsSelect.item2 = "vide"
+						lstIngredientsSelect.index1 = -1
+						lstIngredientsSelect.index2 = -1
+					
+					if gui_items_resultat["bouclier_5"].visible == true:
+						DataSave.items_posession.bouclier4 -= 2
+						DataSave.items_posession.bouclier5 += 1
+						nbCompteurBouclier4 -= 2
+						var childTxtGold = txtNbGold.get_node("labelGuiTextFenetre")
+						childTxtGold.text = str(DataSave.hero.gold)
+						gui_items_resultat["bouclier_5"].visible = false
+						txtNbGoldTotalIngredients.visible = false
+						gui_bouclier4[lstIngredientsSelect.index2].queue_free()
+						gui_bouclier4[lstIngredientsSelect.index1].queue_free()
+						txtItemType[lstIngredientsSelect.index1] = "vide"
+						txtItemType[lstIngredientsSelect.index2] = "vide"
+						isSlot_libre[lstIngredientsSelect.index1] = true
+						isSlot_libre[lstIngredientsSelect.index2] = true
+						lstIngredientsSelect.item1 = "vide"
+						lstIngredientsSelect.item2 = "vide"
+						lstIngredientsSelect.index1 = -1
+						lstIngredientsSelect.index2 = -1
+					
+					if gui_items_resultat["bouclier_6"].visible == true:
+						DataSave.items_posession.bouclier5 -= 2
+						DataSave.items_posession.bouclier6 += 1
+						nbCompteurBouclier5 -= 2
+						var childTxtGold = txtNbGold.get_node("labelGuiTextFenetre")
+						childTxtGold.text = str(DataSave.hero.gold)
+						gui_items_resultat["bouclier_6"].visible = false
+						txtNbGoldTotalIngredients.visible = false
+						gui_bouclier5[lstIngredientsSelect.index2].queue_free()
+						gui_bouclier5[lstIngredientsSelect.index1].queue_free()
+						txtItemType[lstIngredientsSelect.index1] = "vide"
+						txtItemType[lstIngredientsSelect.index2] = "vide"
+						isSlot_libre[lstIngredientsSelect.index1] = true
+						isSlot_libre[lstIngredientsSelect.index2] = true
+						lstIngredientsSelect.item1 = "vide"
+						lstIngredientsSelect.item2 = "vide"
+						lstIngredientsSelect.index1 = -1
+						lstIngredientsSelect.index2 = -1
+					
+					if gui_items_resultat["bouclier_7"].visible == true:
+						DataSave.items_posession.bouclier6 -= 2
+						DataSave.items_posession.bouclier7 += 1
+						nbCompteurBouclier6 -= 2
+						var childTxtGold = txtNbGold.get_node("labelGuiTextFenetre")
+						childTxtGold.text = str(DataSave.hero.gold)
+						gui_items_resultat["bouclier_7"].visible = false
+						txtNbGoldTotalIngredients.visible = false
+						gui_bouclier6[lstIngredientsSelect.index2].queue_free()
+						gui_bouclier6[lstIngredientsSelect.index1].queue_free()
+						txtItemType[lstIngredientsSelect.index1] = "vide"
+						txtItemType[lstIngredientsSelect.index2] = "vide"
+						isSlot_libre[lstIngredientsSelect.index1] = true
+						isSlot_libre[lstIngredientsSelect.index2] = true
+						lstIngredientsSelect.item1 = "vide"
+						lstIngredientsSelect.item2 = "vide"
+						lstIngredientsSelect.index1 = -1
+						lstIngredientsSelect.index2 = -1
+					
 					if gui_items_resultat["casque_2"].visible == true:
 						DataSave.items_posession.casque1 -= 2
 						DataSave.items_posession.casque2 += 1
@@ -2840,7 +3049,7 @@ func _process(delta: float) -> void:
 						lstIngredientsSelect.item2 = "vide"
 						lstIngredientsSelect.index1 = -1
 						lstIngredientsSelect.index2 = -1
-					# continuer au dela de casque 6 en bas et m'inspirer de ce que j'ai deja fait si jamais j'oublie.
+					
 					if gui_items_resultat["casque_6"].visible == true:
 						DataSave.items_posession.casque5 -= 2
 						DataSave.items_posession.casque6 += 1
@@ -2851,6 +3060,272 @@ func _process(delta: float) -> void:
 						txtNbGoldTotalIngredients.visible = false
 						gui_casque5[lstIngredientsSelect.index2].queue_free()
 						gui_casque5[lstIngredientsSelect.index1].queue_free()
+						txtItemType[lstIngredientsSelect.index1] = "vide"
+						txtItemType[lstIngredientsSelect.index2] = "vide"
+						isSlot_libre[lstIngredientsSelect.index1] = true
+						isSlot_libre[lstIngredientsSelect.index2] = true
+						lstIngredientsSelect.item1 = "vide"
+						lstIngredientsSelect.item2 = "vide"
+						lstIngredientsSelect.index1 = -1
+						lstIngredientsSelect.index2 = -1
+					
+					if gui_items_resultat["collier_2"].visible == true:
+						DataSave.items_posession.collier1 -= 2
+						DataSave.items_posession.collier2 += 1
+						nbCompteurCollier1 -= 2
+						var childTxtGold = txtNbGold.get_node("labelGuiTextFenetre")
+						childTxtGold.text = str(DataSave.hero.gold)
+						gui_items_resultat["collier_2"].visible = false
+						txtNbGoldTotalIngredients.visible = false
+						gui_collier1[lstIngredientsSelect.index2].queue_free()
+						gui_collier1[lstIngredientsSelect.index1].queue_free()
+						txtItemType[lstIngredientsSelect.index1] = "vide"
+						txtItemType[lstIngredientsSelect.index2] = "vide"
+						isSlot_libre[lstIngredientsSelect.index1] = true
+						isSlot_libre[lstIngredientsSelect.index2] = true
+						lstIngredientsSelect.item1 = "vide"
+						lstIngredientsSelect.item2 = "vide"
+						lstIngredientsSelect.index1 = -1
+						lstIngredientsSelect.index2 = -1
+					
+					if gui_items_resultat["collier_3"].visible == true:
+						DataSave.items_posession.collier2 -= 2
+						DataSave.items_posession.collier3 += 1
+						nbCompteurCollier2 -= 2
+						var childTxtGold = txtNbGold.get_node("labelGuiTextFenetre")
+						childTxtGold.text = str(DataSave.hero.gold)
+						gui_items_resultat["collier_3"].visible = false
+						txtNbGoldTotalIngredients.visible = false
+						gui_collier2[lstIngredientsSelect.index2].queue_free()
+						gui_collier2[lstIngredientsSelect.index1].queue_free()
+						txtItemType[lstIngredientsSelect.index1] = "vide"
+						txtItemType[lstIngredientsSelect.index2] = "vide"
+						isSlot_libre[lstIngredientsSelect.index1] = true
+						isSlot_libre[lstIngredientsSelect.index2] = true
+						lstIngredientsSelect.item1 = "vide"
+						lstIngredientsSelect.item2 = "vide"
+						lstIngredientsSelect.index1 = -1
+						lstIngredientsSelect.index2 = -1
+					
+					if gui_items_resultat["heaume_2"].visible == true:
+						DataSave.items_posession.heaume1 -= 2
+						DataSave.items_posession.heaume2 += 1
+						nbCompteurHeaume1 -= 2
+						var childTxtGold = txtNbGold.get_node("labelGuiTextFenetre")
+						childTxtGold.text = str(DataSave.hero.gold)
+						gui_items_resultat["heaume_2"].visible = false
+						txtNbGoldTotalIngredients.visible = false
+						gui_heaume1[lstIngredientsSelect.index2].queue_free()
+						gui_heaume1[lstIngredientsSelect.index1].queue_free()
+						txtItemType[lstIngredientsSelect.index1] = "vide"
+						txtItemType[lstIngredientsSelect.index2] = "vide"
+						isSlot_libre[lstIngredientsSelect.index1] = true
+						isSlot_libre[lstIngredientsSelect.index2] = true
+						lstIngredientsSelect.item1 = "vide"
+						lstIngredientsSelect.item2 = "vide"
+						lstIngredientsSelect.index1 = -1
+						lstIngredientsSelect.index2 = -1
+					
+					if gui_items_resultat["heaume_3"].visible == true:
+						DataSave.items_posession.heaume2 -= 2
+						DataSave.items_posession.heaume3 += 1
+						nbCompteurHeaume2 -= 2
+						var childTxtGold = txtNbGold.get_node("labelGuiTextFenetre")
+						childTxtGold.text = str(DataSave.hero.gold)
+						gui_items_resultat["heaume_3"].visible = false
+						txtNbGoldTotalIngredients.visible = false
+						gui_heaume2[lstIngredientsSelect.index2].queue_free()
+						gui_heaume2[lstIngredientsSelect.index1].queue_free()
+						txtItemType[lstIngredientsSelect.index1] = "vide"
+						txtItemType[lstIngredientsSelect.index2] = "vide"
+						isSlot_libre[lstIngredientsSelect.index1] = true
+						isSlot_libre[lstIngredientsSelect.index2] = true
+						lstIngredientsSelect.item1 = "vide"
+						lstIngredientsSelect.item2 = "vide"
+						lstIngredientsSelect.index1 = -1
+						lstIngredientsSelect.index2 = -1
+					
+					if gui_items_resultat["heaume_4"].visible == true:
+						DataSave.items_posession.heaume3 -= 2
+						DataSave.items_posession.heaume4 += 1
+						nbCompteurHeaume3 -= 2
+						var childTxtGold = txtNbGold.get_node("labelGuiTextFenetre")
+						childTxtGold.text = str(DataSave.hero.gold)
+						gui_items_resultat["heaume_4"].visible = false
+						txtNbGoldTotalIngredients.visible = false
+						gui_heaume3[lstIngredientsSelect.index2].queue_free()
+						gui_heaume3[lstIngredientsSelect.index1].queue_free()
+						txtItemType[lstIngredientsSelect.index1] = "vide"
+						txtItemType[lstIngredientsSelect.index2] = "vide"
+						isSlot_libre[lstIngredientsSelect.index1] = true
+						isSlot_libre[lstIngredientsSelect.index2] = true
+						lstIngredientsSelect.item1 = "vide"
+						lstIngredientsSelect.item2 = "vide"
+						lstIngredientsSelect.index1 = -1
+						lstIngredientsSelect.index2 = -1
+					
+					if gui_items_resultat["heaume_5"].visible == true:
+						DataSave.items_posession.heaume4 -= 2
+						DataSave.items_posession.heaume5 += 1
+						nbCompteurHeaume4 -= 2
+						var childTxtGold = txtNbGold.get_node("labelGuiTextFenetre")
+						childTxtGold.text = str(DataSave.hero.gold)
+						gui_items_resultat["heaume_5"].visible = false
+						txtNbGoldTotalIngredients.visible = false
+						gui_heaume4[lstIngredientsSelect.index2].queue_free()
+						gui_heaume4[lstIngredientsSelect.index1].queue_free()
+						txtItemType[lstIngredientsSelect.index1] = "vide"
+						txtItemType[lstIngredientsSelect.index2] = "vide"
+						isSlot_libre[lstIngredientsSelect.index1] = true
+						isSlot_libre[lstIngredientsSelect.index2] = true
+						lstIngredientsSelect.item1 = "vide"
+						lstIngredientsSelect.item2 = "vide"
+						lstIngredientsSelect.index1 = -1
+						lstIngredientsSelect.index2 = -1
+					
+					if gui_items_resultat["heaume_6"].visible == true:
+						DataSave.items_posession.heaume5 -= 2
+						DataSave.items_posession.heaume6 += 1
+						nbCompteurHeaume5 -= 2
+						var childTxtGold = txtNbGold.get_node("labelGuiTextFenetre")
+						childTxtGold.text = str(DataSave.hero.gold)
+						gui_items_resultat["heaume_6"].visible = false
+						txtNbGoldTotalIngredients.visible = false
+						gui_heaume5[lstIngredientsSelect.index2].queue_free()
+						gui_heaume5[lstIngredientsSelect.index1].queue_free()
+						txtItemType[lstIngredientsSelect.index1] = "vide"
+						txtItemType[lstIngredientsSelect.index2] = "vide"
+						isSlot_libre[lstIngredientsSelect.index1] = true
+						isSlot_libre[lstIngredientsSelect.index2] = true
+						lstIngredientsSelect.item1 = "vide"
+						lstIngredientsSelect.item2 = "vide"
+						lstIngredientsSelect.index1 = -1
+						lstIngredientsSelect.index2 = -1
+					
+					if gui_items_resultat["sword_2"].visible == true:
+						DataSave.items_posession.sword1 -= 2
+						DataSave.items_posession.sword2 += 1
+						nbCompteurSword1 -= 2
+						var childTxtGold = txtNbGold.get_node("labelGuiTextFenetre")
+						childTxtGold.text = str(DataSave.hero.gold)
+						gui_items_resultat["sword_2"].visible = false
+						txtNbGoldTotalIngredients.visible = false
+						gui_sword1[lstIngredientsSelect.index2].queue_free()
+						gui_sword1[lstIngredientsSelect.index1].queue_free()
+						txtItemType[lstIngredientsSelect.index1] = "vide"
+						txtItemType[lstIngredientsSelect.index2] = "vide"
+						isSlot_libre[lstIngredientsSelect.index1] = true
+						isSlot_libre[lstIngredientsSelect.index2] = true
+						lstIngredientsSelect.item1 = "vide"
+						lstIngredientsSelect.item2 = "vide"
+						lstIngredientsSelect.index1 = -1
+						lstIngredientsSelect.index2 = -1
+					
+					if gui_items_resultat["sword_3"].visible == true:
+						DataSave.items_posession.sword2 -= 2
+						DataSave.items_posession.sword3 += 1
+						nbCompteurSword2 -= 2
+						var childTxtGold = txtNbGold.get_node("labelGuiTextFenetre")
+						childTxtGold.text = str(DataSave.hero.gold)
+						gui_items_resultat["sword_3"].visible = false
+						txtNbGoldTotalIngredients.visible = false
+						gui_sword2[lstIngredientsSelect.index2].queue_free()
+						gui_sword2[lstIngredientsSelect.index1].queue_free()
+						txtItemType[lstIngredientsSelect.index1] = "vide"
+						txtItemType[lstIngredientsSelect.index2] = "vide"
+						isSlot_libre[lstIngredientsSelect.index1] = true
+						isSlot_libre[lstIngredientsSelect.index2] = true
+						lstIngredientsSelect.item1 = "vide"
+						lstIngredientsSelect.item2 = "vide"
+						lstIngredientsSelect.index1 = -1
+						lstIngredientsSelect.index2 = -1
+					
+					if gui_items_resultat["sword_4"].visible == true:
+						DataSave.items_posession.sword3 -= 2
+						DataSave.items_posession.sword4 += 1
+						nbCompteurSword3 -= 2
+						var childTxtGold = txtNbGold.get_node("labelGuiTextFenetre")
+						childTxtGold.text = str(DataSave.hero.gold)
+						gui_items_resultat["sword_4"].visible = false
+						txtNbGoldTotalIngredients.visible = false
+						gui_sword3[lstIngredientsSelect.index2].queue_free()
+						gui_sword3[lstIngredientsSelect.index1].queue_free()
+						txtItemType[lstIngredientsSelect.index1] = "vide"
+						txtItemType[lstIngredientsSelect.index2] = "vide"
+						isSlot_libre[lstIngredientsSelect.index1] = true
+						isSlot_libre[lstIngredientsSelect.index2] = true
+						lstIngredientsSelect.item1 = "vide"
+						lstIngredientsSelect.item2 = "vide"
+						lstIngredientsSelect.index1 = -1
+						lstIngredientsSelect.index2 = -1
+					
+					if gui_items_resultat["sword_5"].visible == true:
+						DataSave.items_posession.sword4 -= 2
+						DataSave.items_posession.sword5 += 1
+						nbCompteurSword4 -= 2
+						var childTxtGold = txtNbGold.get_node("labelGuiTextFenetre")
+						childTxtGold.text = str(DataSave.hero.gold)
+						gui_items_resultat["sword_5"].visible = false
+						txtNbGoldTotalIngredients.visible = false
+						gui_sword4[lstIngredientsSelect.index2].queue_free()
+						gui_sword4[lstIngredientsSelect.index1].queue_free()
+						txtItemType[lstIngredientsSelect.index1] = "vide"
+						txtItemType[lstIngredientsSelect.index2] = "vide"
+						isSlot_libre[lstIngredientsSelect.index1] = true
+						isSlot_libre[lstIngredientsSelect.index2] = true
+						lstIngredientsSelect.item1 = "vide"
+						lstIngredientsSelect.item2 = "vide"
+						lstIngredientsSelect.index1 = -1
+						lstIngredientsSelect.index2 = -1
+					
+					if gui_items_resultat["sword_6"].visible == true:
+						DataSave.items_posession.sword5 -= 2
+						DataSave.items_posession.sword6 += 1
+						nbCompteurSword5 -= 2
+						var childTxtGold = txtNbGold.get_node("labelGuiTextFenetre")
+						childTxtGold.text = str(DataSave.hero.gold)
+						gui_items_resultat["sword_6"].visible = false
+						txtNbGoldTotalIngredients.visible = false
+						gui_sword5[lstIngredientsSelect.index2].queue_free()
+						gui_sword5[lstIngredientsSelect.index1].queue_free()
+						txtItemType[lstIngredientsSelect.index1] = "vide"
+						txtItemType[lstIngredientsSelect.index2] = "vide"
+						isSlot_libre[lstIngredientsSelect.index1] = true
+						isSlot_libre[lstIngredientsSelect.index2] = true
+						lstIngredientsSelect.item1 = "vide"
+						lstIngredientsSelect.item2 = "vide"
+						lstIngredientsSelect.index1 = -1
+						lstIngredientsSelect.index2 = -1
+					
+					if gui_items_resultat["sword_7"].visible == true:
+						DataSave.items_posession.sword6 -= 2
+						DataSave.items_posession.sword7 += 1
+						nbCompteurSword6 -= 2
+						var childTxtGold = txtNbGold.get_node("labelGuiTextFenetre")
+						childTxtGold.text = str(DataSave.hero.gold)
+						gui_items_resultat["sword_7"].visible = false
+						txtNbGoldTotalIngredients.visible = false
+						gui_sword6[lstIngredientsSelect.index2].queue_free()
+						gui_sword6[lstIngredientsSelect.index1].queue_free()
+						txtItemType[lstIngredientsSelect.index1] = "vide"
+						txtItemType[lstIngredientsSelect.index2] = "vide"
+						isSlot_libre[lstIngredientsSelect.index1] = true
+						isSlot_libre[lstIngredientsSelect.index2] = true
+						lstIngredientsSelect.item1 = "vide"
+						lstIngredientsSelect.item2 = "vide"
+						lstIngredientsSelect.index1 = -1
+						lstIngredientsSelect.index2 = -1
+					
+					if gui_items_resultat["sword_8"].visible == true:
+						DataSave.items_posession.sword7 -= 2
+						DataSave.items_posession.sword8 += 1
+						nbCompteurSword7 -= 2
+						var childTxtGold = txtNbGold.get_node("labelGuiTextFenetre")
+						childTxtGold.text = str(DataSave.hero.gold)
+						gui_items_resultat["sword_8"].visible = false
+						txtNbGoldTotalIngredients.visible = false
+						gui_sword7[lstIngredientsSelect.index2].queue_free()
+						gui_sword7[lstIngredientsSelect.index1].queue_free()
 						txtItemType[lstIngredientsSelect.index1] = "vide"
 						txtItemType[lstIngredientsSelect.index2] = "vide"
 						isSlot_libre[lstIngredientsSelect.index1] = true

@@ -1487,6 +1487,7 @@ func _ready() -> void:
 	DataSave.items_posession.heaume6 = 2
 	DataSave.items_posession.sword7 = 3
 	DataSave.items_posession.sword8 = 3
+	DataSave.hero.gold = 1996
 	
 	txt_gold = GuiTextUi.instantiate()
 	add_child(txt_gold)
