@@ -4414,7 +4414,7 @@ func _process(delta: float) -> void:
 	update_inventaires_visibility()
 	
 	#Remise des items dans l'inventaire de forge 
-	
+	#POUR LE COPIER COLLER AVEC LALCHIMIE JE SUIS A LA EN BAS PUIS NOUBLIE PAS DE REMONTER EN HAUT SUR LAUTRE COMMENTAIRE QUE JAI FAIT POUR CONTINUER LE COPIER COLLER C'EST TOUJOURS DANS LA FUNCTION PROCESS
 	for n in range(21): 
 		if lstIngredientsSelect.index2 != -1:
 			if mouse_pos.x - nodeParent.offset.x >= childSlotIngredient[1].position.x and mouse_pos.x - nodeParent.offset.x <= childSlotIngredient[1].position.x + 30 and mouse_pos.y - nodeParent.offset.y >= childSlotIngredient[1].position.y and mouse_pos.y - nodeParent.offset.y <= childSlotIngredient[1].position.y + 30:

@@ -353,7 +353,128 @@ func update_inventaires_visibility():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	var mouse_pos = get_viewport().get_mouse_position()
+	
+	if mouse_pos.x - nodeParent.offset.x >= childButtonFlecheRight.position.x and mouse_pos.x - nodeParent.offset.x <= childButtonFlecheRight.position.x + 9 and mouse_pos.y - nodeParent.offset.y >= childButtonFlecheRight.position.y and mouse_pos.y - nodeParent.offset.y <= childButtonFlecheRight.position.y + 17:
+		if Input.is_action_just_pressed("button_left"):
+			nbPage += 1
+			if nbPage >= 3:
+				nbPage = 1
+			#print("+page : ", nbPage)
+	
+	if mouse_pos.x - nodeParent.offset.x >= childButtonFlecheLeft.position.x and mouse_pos.x - nodeParent.offset.x <= childButtonFlecheLeft.position.x + 9 and mouse_pos.y - nodeParent.offset.y >= childButtonFlecheLeft.position.y and mouse_pos.y - nodeParent.offset.y <= childButtonFlecheLeft.position.y + 17:
+		if Input.is_action_just_pressed("button_left"):
+			nbPage -= 1
+			if nbPage <= 0:
+				nbPage = 2
+			#print("-page : ", nbPage)
+	
+	if lstTextCraftFinal.etat == "tuto":
+		lstTextCraftFinal["TUTO"].create[0].visible = true
+		lstTextCraftFinal["TUTO"].create[1].visible = true
+		lstTextCraftFinal["APERCU"].create[0].visible = false
+		lstTextCraftFinal["APERCU"].create[1].visible = false
+		lstTextCraftFinal["APERCU"].create[2].visible = false
+		lstTextCraftFinal["APERCU"].create[3].visible = false
+		lstTextCraftFinal["APERCU"].create[4].visible = false
+	elif lstTextCraftFinal.etat == "stats":
+		lstTextCraftFinal["TUTO"].create[0].visible = false
+		lstTextCraftFinal["TUTO"].create[1].visible = false
+		lstTextCraftFinal["APERCU"].create[0].visible = true
+		lstTextCraftFinal["APERCU"].create[1].visible = true
+		lstTextCraftFinal["APERCU"].create[2].visible = true
+		lstTextCraftFinal["APERCU"].create[3].visible = true
+		lstTextCraftFinal["APERCU"].create[4].visible = true
+		if mouse_pos.x - nodeParent.offset.x >= childButtonCreation.position.x and mouse_pos.x - nodeParent.offset.x <= childButtonCreation.position.x + 91 and mouse_pos.y - nodeParent.offset.y >= childButtonCreation.position.y and mouse_pos.y - nodeParent.offset.y <= childButtonCreation.position.y + 27:
+			if Input.is_action_just_pressed("button_left"):
+				if DataSave.hero.gold >= nbPrixCraft:
+					DataSave.hero.gold -= nbPrixCraft
+					
+					#Coder la suite de cette condition que je suit ...
+	
+	if lstIngredientsSelect.item1 == "potion_vie" and lstIngredientsSelect.item2 == "potion_mana" or lstIngredientsSelect.item1 == "potion_mana" and lstIngredientsSelect.item2 == "potion_vie":
+		lstTextCraftFinal.etat = "stats"
+	else:
+		lstTextCraftFinal.etat = "tuto"
+	
+	
+	if lstTextCraftFinal.etat == "stats":
+		if lstIngredientsSelect.item1 == "potion_vie" and lstIngredientsSelect.item2 == "potion_mana" or lstIngredientsSelect.item1 == "potion_mana" and lstIngredientsSelect.item2 == "potion_vie":
+			lstTextCraftFinal["APERCU"].description1 = "Nom : " + gui_items_resultat["potion_elixir"].txt_name
+			var childName = lstTextCraftFinal["APERCU"].create[4].get_node("labelGuiTextFenetre")
+			childName.text = lstTextCraftFinal["APERCU"].description1
+			lstTextCraftFinal["APERCU"].stat1 = "Puissance : " + str(gui_items_resultat["potion_elixir"].nb_puissance)
+			var childStat1 = lstTextCraftFinal["APERCU"].create[1].get_node("labelGuiTextFenetre")
+			childStat1.text = lstTextCraftFinal["APERCU"].stat1
+			lstTextCraftFinal["APERCU"].stat2 = "Mana : " + str(gui_items_resultat["potion_elixir"].nb_mana)
+			var childStat2 = lstTextCraftFinal["APERCU"].create[2].get_node("labelGuiTextFenetre")
+			childStat2.text = lstTextCraftFinal["APERCU"].stat2
+	
+	for n in range(21):
+		
+		if lstIngredientsSelect.item1 != "vide" and lstIngredientsSelect.item2 != "vide":
+			if lstIngredientsSelect.item1 == txtItemType[n] and lstIngredientsSelect.item2 == lstIngredientsSelect.item1:
+				if txtNbGoldTotalIngredients.visible == false:
+					txtNbGoldTotalIngredients.visible = true
+					var childTxtGold = txtNbGoldTotalIngredients.get_node("labelGuiTextFenetre")
+					childTxtGold.position.x = 545
+					childTxtGold.position.y = 313
+					if lstIngredientsSelect.item1 == "potion_vie" and lstIngredientsSelect.item2 == "potion_mana" or lstIngredientsSelect.item1 == "potion_mana" and lstIngredientsSelect.item2 == "potion_vie" :
+						nbPrixCraft = 100
+						if gui_items_resultat["potion_elixir"].visible == false:
+							gui_items_resultat["potion_elixir"].visible = true  
+							gui_items_resultat["potion_elixir"].offset.x = nodeParent.offset.x + childSlotResultat.position.x
+							gui_items_resultat["potion_elixir"].offset.y = nodeParent.offset.y + childSlotResultat.position.y
+							gui_items_resultat["potion_elixir"].scale = Vector2(0.80, 0.80)
+					else:
+						nbPrixCraft = 0
+					
+					childTxtGold.text = str(nbPrixCraft)
+					childTxtGold.add_theme_font_size_override("font_size", 27)
+					childTxtGold.add_theme_color_override("font_color", Color(1.0, 0.443, 0.0, 1.0) )
+					print("on affiche le prix et on va rendre possible le crafting !")
+		
+		if isSlot_libre[n] == true:
+			if DataSave.items_posession.potionVie != nbCompteurPotionVie and txtItemType[n] == "vide":
+				gui_potion_vie[n] = GuiPotionVie.instantiate()
+				add_child(gui_potion_vie[n])
+				var child_potionVie = gui_potion_vie[n].get_node("texturePotionVie")
+				child_potionVie.connect("mouse_entered", Callable(self, "_on_mouse_entered_potion_vie"))
+				child_potionVie.connect("mouse_exited", Callable(self, "_on_mouse_exited"))
+				gui_potion_vie[n].scale = Vector2(0.58, 0.68)
+				gui_potion_vie[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
+				gui_potion_vie[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
+				nbCompteurPotionVie += 1
+				isSlot_libre[n] = false
+				txtItemType[n] = "potion_vie"
+			
+			if DataSave.items_posession.potionMana != nbCompteurPotionMana and txtItemType[n] == "vide":
+				gui_potion_mana[n] = GuiPotionMana.instantiate()
+				add_child(gui_potion_mana[n])
+				var child_potionMana = gui_potion_mana[n].get_node("texturePotionMana")
+				child_potionMana.connect("mouse_entered", Callable(self, "_on_mouse_entered_potion_mana"))
+				child_potionMana.connect("mouse_exited", Callable(self, "_on_mouse_exited"))
+				gui_potion_mana[n].scale = Vector2(0.58, 0.68)
+				gui_potion_mana[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
+				gui_potion_mana[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
+				nbCompteurPotionMana += 1
+				isSlot_libre[n] = false
+				txtItemType[n] = "potion_mana"
+			
+			if DataSave.items_posession.potionElixir != nbCompteurPotionElixir and txtItemType[n] == "vide":
+				gui_potion_elixir[n] = GuiPotionElixir.instantiate()
+				add_child(gui_potion_elixir[n])
+				var child_potionElixir = gui_potion_elixir[n].get_node("texturePotionElixir")
+				child_potionElixir.connect("mouse_entered", Callable(self, "_on_mouse_entered_potion_elixir"))
+				child_potionElixir.connect("mouse_exited", Callable(self, "_on_mouse_exited"))
+				gui_potion_elixir[n].scale = Vector2(0.58, 0.68)
+				gui_potion_elixir[n].offset.x = childSlot[n].position.x + nodeParent.offset.x + 2
+				gui_potion_elixir[n].offset.y = childSlot[n].position.y + nodeParent.offset.y + 1
+				nbCompteurPotionElixir += 1
+				isSlot_libre[n] = false
+				txtItemType[n] = "potion_elixir"
+			
+	update_inventaires_visibility()
 
 
 func _on_panel_retour_gui_input(event: InputEvent) -> void:
