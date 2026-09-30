@@ -230,35 +230,42 @@ func _ready() -> void:
 	childSlot.resize(21)
 	childSlotIngredient.resize(2)
 	
+	gui_items_resultat["potion_vie"] = GuiPotionVie.instantiate()
+	add_child(gui_items_resultat["potion_vie"])
+	gui_items_resultat["potion_vie"].visible = false
+	
+	gui_items_resultat["potion_mana"] = GuiPotionMana.instantiate()
+	add_child(gui_items_resultat["potion_mana"])
+	gui_items_resultat["potion_mana"].visible = false
+	
 	gui_items_resultat["potion_elixir"] = GuiPotionElixir.instantiate()
 	add_child(gui_items_resultat["potion_elixir"])
-	
 	gui_items_resultat["potion_elixir"].visible = false
 	
-	childSlot[0] = nodeParent.get_node("panel_slot1")
-	childSlot[1] = nodeParent.get_node("panel_slot2")
-	childSlot[2] = nodeParent.get_node("panel_slot3")
-	childSlot[3] = nodeParent.get_node("panel_slot4")
-	childSlot[4] = nodeParent.get_node("panel_slot5")
-	childSlot[5] = nodeParent.get_node("panel_slot6")
-	childSlot[6] = nodeParent.get_node("panel_slot7")
-	childSlot[7] = nodeParent.get_node("panel_slot8")
-	childSlot[8] = nodeParent.get_node("panel_slot9")
-	childSlot[9] = nodeParent.get_node("panel_slot10")
-	childSlot[10] = nodeParent.get_node("panel_slot11")
-	childSlot[11] = nodeParent.get_node("panel_slot12")
-	childSlot[12] = nodeParent.get_node("panel_slot13")
-	childSlot[13] = nodeParent.get_node("panel_slot14")
-	childSlot[14] = nodeParent.get_node("panel_slot15")
-	childSlot[15] = nodeParent.get_node("panel_slot16")
-	childSlot[16] = nodeParent.get_node("panel_slot17")
-	childSlot[17] = nodeParent.get_node("panel_slot18")
-	childSlot[18] = nodeParent.get_node("panel_slot19")
-	childSlot[19] = nodeParent.get_node("panel_slot20")
-	childSlot[20] = nodeParent.get_node("panel_slot21")
+	childSlot[0] = nodeParent.get_node("panel_slot_1")
+	childSlot[1] = nodeParent.get_node("panel_slot_2")
+	childSlot[2] = nodeParent.get_node("panel_slot_3")
+	childSlot[3] = nodeParent.get_node("panel_slot_4")
+	childSlot[4] = nodeParent.get_node("panel_slot_5")
+	childSlot[5] = nodeParent.get_node("panel_slot_6")
+	childSlot[6] = nodeParent.get_node("panel_slot_7")
+	childSlot[7] = nodeParent.get_node("panel_slot_8")
+	childSlot[8] = nodeParent.get_node("panel_slot_9")
+	childSlot[9] = nodeParent.get_node("panel_slot_10")
+	childSlot[10] = nodeParent.get_node("panel_slot_11")
+	childSlot[11] = nodeParent.get_node("panel_slot_12")
+	childSlot[12] = nodeParent.get_node("panel_slot_13")
+	childSlot[13] = nodeParent.get_node("panel_slot_14")
+	childSlot[14] = nodeParent.get_node("panel_slot_15")
+	childSlot[15] = nodeParent.get_node("panel_slot_16")
+	childSlot[16] = nodeParent.get_node("panel_slot_17")
+	childSlot[17] = nodeParent.get_node("panel_slot_18")
+	childSlot[18] = nodeParent.get_node("panel_slot_19")
+	childSlot[19] = nodeParent.get_node("panel_slot_20")
+	childSlot[20] = nodeParent.get_node("panel_slot_21")
 	
-	childSlotIngredient[0] = nodeParent.get_node("panel_slot_ingredient1")
-	childSlotIngredient[1] = nodeParent.get_node("panel_slot_ingredient2")
+	childSlotIngredient[0] = nodeParent.get_node("panel_ingredient1")
+	childSlotIngredient[1] = nodeParent.get_node("panel_ingredient2")
 	
 	childSlotResultat = nodeParent.get_node("panel_slot_resultat")
 	
@@ -288,15 +295,15 @@ func _ready() -> void:
 func update_inventaires_visibility():
 	for potion_vie in gui_potion_vie:
 		if potion_vie != null:
-			gui_potion_vie.visible = true
+			potion_vie.visible = true
 	
 	for potion_mana in gui_potion_mana:
 		if potion_mana != null:
-			gui_potion_mana.visible = true
+			potion_mana.visible = true
 	
 	for potion_elixir in gui_potion_elixir:
 		if potion_elixir != null:
-			gui_potion_elixir.visible = true
+			potion_elixir.visible = true
 	
 	if nbPage == 1:
 		for n in range(15, gui_potion_vie.size()):
@@ -390,6 +397,33 @@ func _process(delta: float) -> void:
 				if DataSave.hero.gold >= nbPrixCraft:
 					DataSave.hero.gold -= nbPrixCraft
 					
+					if gui_items_resultat["potion_elixir"].visible == true:
+						DataSave.items_posession.potionVie -= 1
+						DataSave.items_posession.potionMana -= 1
+						DataSave.items_posession.potionElixir += 1
+						nbCompteurPotionVie -= 1
+						nbCompteurPotionMana -= 1
+						var childTxtGold = txtNbGold.get_node("labelGuiTextFenetre")
+						childTxtGold.text = str(DataSave.hero.gold)
+						gui_items_resultat["potion_elixir"].visible = false
+						txtNbGoldTotalIngredients.visible = false
+						if gui_potion_vie[lstIngredientsSelect.index2] != null:
+							gui_potion_vie[lstIngredientsSelect.index2].queue_free()
+						if gui_potion_mana[lstIngredientsSelect.index2] != null:
+							gui_potion_mana[lstIngredientsSelect.index2].queue_free()
+						if gui_potion_vie[lstIngredientsSelect.index1] != null:
+							gui_potion_vie[lstIngredientsSelect.index1].queue_free()
+						if gui_potion_mana[lstIngredientsSelect.index1] != null:
+							gui_potion_mana[lstIngredientsSelect.index1].queue_free()
+						txtItemType[lstIngredientsSelect.index1] = "vide"
+						txtItemType[lstIngredientsSelect.index2] = "vide"
+						isSlot_libre[lstIngredientsSelect.index1] = true
+						isSlot_libre[lstIngredientsSelect.index2] = true
+						lstIngredientsSelect.item1 = "vide"
+						lstIngredientsSelect.item2 = "vide"
+						lstIngredientsSelect.index1 = -1
+						lstIngredientsSelect.index2 = -1
+					
 					#Coder la suite de cette condition que je suit ...
 	
 	if lstIngredientsSelect.item1 == "potion_vie" and lstIngredientsSelect.item2 == "potion_mana" or lstIngredientsSelect.item1 == "potion_mana" and lstIngredientsSelect.item2 == "potion_vie":
@@ -403,12 +437,9 @@ func _process(delta: float) -> void:
 			lstTextCraftFinal["APERCU"].description1 = "Nom : " + gui_items_resultat["potion_elixir"].txt_name
 			var childName = lstTextCraftFinal["APERCU"].create[4].get_node("labelGuiTextFenetre")
 			childName.text = lstTextCraftFinal["APERCU"].description1
-			lstTextCraftFinal["APERCU"].stat1 = "Puissance : " + str(gui_items_resultat["potion_elixir"].nb_puissance)
+			lstTextCraftFinal["APERCU"].stat1 = gui_items_resultat["potion_elixir"].txt_description
 			var childStat1 = lstTextCraftFinal["APERCU"].create[1].get_node("labelGuiTextFenetre")
 			childStat1.text = lstTextCraftFinal["APERCU"].stat1
-			lstTextCraftFinal["APERCU"].stat2 = "Mana : " + str(gui_items_resultat["potion_elixir"].nb_mana)
-			var childStat2 = lstTextCraftFinal["APERCU"].create[2].get_node("labelGuiTextFenetre")
-			childStat2.text = lstTextCraftFinal["APERCU"].stat2
 	
 	for n in range(21):
 		
@@ -475,6 +506,110 @@ func _process(delta: float) -> void:
 				txtItemType[n] = "potion_elixir"
 			
 	update_inventaires_visibility()
+	
+	for n in range(21): 
+		if lstIngredientsSelect.index2 != -1:
+			if mouse_pos.x - nodeParent.offset.x >= childSlotIngredient[1].position.x and mouse_pos.x - nodeParent.offset.x <= childSlotIngredient[1].position.x + 30 and mouse_pos.y - nodeParent.offset.y >= childSlotIngredient[1].position.y and mouse_pos.y - nodeParent.offset.y <= childSlotIngredient[1].position.y + 30:
+				if Input.is_action_just_pressed("button_left"):
+					
+					if txtNbGoldTotalIngredients.visible == true:
+						txtNbGoldTotalIngredients.visible = false
+					
+					if lstIngredientsSelect.item2 == "potion_vie":
+						gui_items_resultat["potion_vie"].visible = false
+						gui_potion_vie[lstIngredientsSelect.index2].offset.x = childSlot[lstIngredientsSelect.index2].position.x + nodeParent.offset.x + 2
+						gui_potion_vie[lstIngredientsSelect.index2].offset.y = childSlot[lstIngredientsSelect.index2].position.y + nodeParent.offset.y + 1
+						gui_potion_vie[lstIngredientsSelect.index2].scale = Vector2(0.58, 0.68)
+						lstIngredientsSelect.index2 = -1
+						lstIngredientsSelect.item2 = "vide"
+					
+					if lstIngredientsSelect.item2 == "potion_mana":
+						gui_items_resultat["potion_mana"].visible = false
+						gui_potion_mana[lstIngredientsSelect.index2].offset.x = childSlot[lstIngredientsSelect.index2].position.x + nodeParent.offset.x + 2
+						gui_potion_mana[lstIngredientsSelect.index2].offset.y = childSlot[lstIngredientsSelect.index2].position.y + nodeParent.offset.y + 1
+						gui_potion_mana[lstIngredientsSelect.index2].scale = Vector2(0.58, 0.68)
+						lstIngredientsSelect.index2 = -1
+						lstIngredientsSelect.item2 = "vide"
+	
+		if lstIngredientsSelect.index1 != -1:
+			if mouse_pos.x - nodeParent.offset.x >= childSlotIngredient[0].position.x and mouse_pos.x - nodeParent.offset.x <= childSlotIngredient[0].position.x + 30 and mouse_pos.y - nodeParent.offset.y >= childSlotIngredient[0].position.y and mouse_pos.y - nodeParent.offset.y <= childSlotIngredient[0].position.y + 30:
+				if Input.is_action_just_pressed("button_left"):
+					if txtNbGoldTotalIngredients.visible == true:
+						txtNbGoldTotalIngredients.visible = false
+					
+					if lstIngredientsSelect.item1 == "potion_vie":
+						gui_items_resultat["potion_vie"].visible = false
+						gui_potion_vie[lstIngredientsSelect.index1].offset.x = childSlot[lstIngredientsSelect.index1].position.x + nodeParent.offset.x + 2
+						gui_potion_vie[lstIngredientsSelect.index1].offset.y = childSlot[lstIngredientsSelect.index1].position.y + nodeParent.offset.y + 1
+						gui_potion_vie[lstIngredientsSelect.index1].scale = Vector2(0.58, 0.68)
+						lstIngredientsSelect.index1 = -1
+						lstIngredientsSelect.item1 = "vide"
+					
+					if lstIngredientsSelect.item1 == "potion_mana":
+						gui_items_resultat["potion_mana"].visible = false
+						gui_potion_mana[lstIngredientsSelect.index1].offset.x = childSlot[lstIngredientsSelect.index1].position.x + nodeParent.offset.x + 2
+						gui_potion_mana[lstIngredientsSelect.index1].offset.y = childSlot[lstIngredientsSelect.index1].position.y + nodeParent.offset.y + 1
+						gui_potion_mana[lstIngredientsSelect.index1].scale = Vector2(0.58, 0.68)
+						lstIngredientsSelect.index1 = -1
+						lstIngredientsSelect.item1 = "vide"
+	
+	if nbPage == 1:
+		for n in range(15): 
+			if mouse_pos.x - nodeParent.offset.x >= childSlot[n].position.x and mouse_pos.x - nodeParent.offset.x <= childSlot[n].position.x + 30 and mouse_pos.y - nodeParent.offset.y >= childSlot[n].position.y and mouse_pos.y - nodeParent.offset.y <= childSlot[n].position.y + 30:
+				if Input.is_action_just_pressed("button_left"):
+					if lstIngredientsSelect.item1 != "vide" and lstIngredientsSelect.item2 == "vide":
+						if n != lstIngredientsSelect.index1:
+							lstIngredientsSelect.item2 = txtItemType[n]
+							lstIngredientsSelect.index2 = n
+					if lstIngredientsSelect.item1 == "vide":
+						if n != lstIngredientsSelect.index2:
+							lstIngredientsSelect.item1 = txtItemType[n]
+							lstIngredientsSelect.index1 = n
+					print("le type clic : ", txtItemType[n])
+	
+	if nbPage == 2:
+		for n in range(15, 21): 
+			if mouse_pos.x - nodeParent.offset.x >= childSlot[n].position.x and mouse_pos.x - nodeParent.offset.x <= childSlot[n].position.x + 30 and mouse_pos.y - nodeParent.offset.y >= childSlot[n].position.y and mouse_pos.y - nodeParent.offset.y <= childSlot[n].position.y + 30:
+				if Input.is_action_just_pressed("button_left"):
+					if lstIngredientsSelect.item1 != "vide" and lstIngredientsSelect.item2 == "vide":
+						if n != lstIngredientsSelect.index1:
+							lstIngredientsSelect.item2 = txtItemType[n]
+							lstIngredientsSelect.index2 = n
+					if lstIngredientsSelect.item1 == "vide":
+						if n != lstIngredientsSelect.index2:
+							lstIngredientsSelect.item1 = txtItemType[n]
+							lstIngredientsSelect.index1 = n
+					print("le type clic2 : ", txtItemType[n])
+	
+	if lstIngredientsSelect.item1 == "potion_vie":
+		gui_potion_vie[lstIngredientsSelect.index1].offset.x = childSlotIngredient[0].position.x + nodeParent.offset.x
+		gui_potion_vie[lstIngredientsSelect.index1].offset.y = childSlotIngredient[0].position.y + nodeParent.offset.y
+		gui_potion_vie[lstIngredientsSelect.index1].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item1 == "potion_mana":
+		gui_potion_mana[lstIngredientsSelect.index1].offset.x = childSlotIngredient[0].position.x + nodeParent.offset.x
+		gui_potion_mana[lstIngredientsSelect.index1].offset.y = childSlotIngredient[0].position.y + nodeParent.offset.y
+		gui_potion_mana[lstIngredientsSelect.index1].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item1 == "potion_elixir":
+		gui_potion_elixir[lstIngredientsSelect.index1].offset.x = childSlotIngredient[0].position.x + nodeParent.offset.x
+		gui_potion_elixir[lstIngredientsSelect.index1].offset.y = childSlotIngredient[0].position.y + nodeParent.offset.y
+		gui_potion_elixir[lstIngredientsSelect.index1].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item2 == "potion_vie":
+		gui_potion_vie[lstIngredientsSelect.index2].offset.x = childSlotIngredient[1].position.x + nodeParent.offset.x
+		gui_potion_vie[lstIngredientsSelect.index2].offset.y = childSlotIngredient[1].position.y + nodeParent.offset.y
+		gui_potion_vie[lstIngredientsSelect.index2].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item2 == "potion_mana":
+		gui_potion_mana[lstIngredientsSelect.index2].offset.x = childSlotIngredient[1].position.x + nodeParent.offset.x
+		gui_potion_mana[lstIngredientsSelect.index2].offset.y = childSlotIngredient[1].position.y + nodeParent.offset.y
+		gui_potion_mana[lstIngredientsSelect.index2].scale = Vector2(0.68, 0.78)
+	
+	if lstIngredientsSelect.item2 == "potion_elixir":
+		gui_potion_elixir[lstIngredientsSelect.index2].offset.x = childSlotIngredient[1].position.x + nodeParent.offset.x
+		gui_potion_elixir[lstIngredientsSelect.index2].offset.y = childSlotIngredient[1].position.y + nodeParent.offset.y
+		gui_potion_elixir[lstIngredientsSelect.index2].scale = Vector2(0.68, 0.78)
 
 
 func _on_panel_retour_gui_input(event: InputEvent) -> void:
