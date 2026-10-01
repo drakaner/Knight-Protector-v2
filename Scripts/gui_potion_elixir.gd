@@ -3,7 +3,7 @@ extends CanvasLayer
 var nb_prix = 30
 
 var txt_name = "potion élixir"
-var txt_description = "récupère la \r totalité de ses points \r de vie et mana"
+var txt_description = "Restaure entièrement \n vos points de vie \n et de mana."
 var txt_composant = "alchimie"
 var txt_type = "items"
 

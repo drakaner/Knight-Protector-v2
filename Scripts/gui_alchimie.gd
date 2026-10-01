@@ -142,15 +142,15 @@ func _ready() -> void:
 	lstTextCraftFinal["TUTO"] = {}
 	lstTextCraftFinal["TUTO"].create = {}
 	lstTextCraftFinal["TUTO"].titre = "Tuto"
-	lstTextCraftFinal["TUTO"].description = "Pour créer un nouvel \n item, \n assemblez deux items \n identiques. \n L'item obtenu sera \n de qualité supérieure."
+	lstTextCraftFinal["TUTO"].description = "Pour créer un elixir, \n \n assemblez une potion \n de vie. \n Et une potion de mana"
 	
 	lstTextCraftFinal["APERCU"] = {}
 	lstTextCraftFinal["APERCU"].create = {}
 	lstTextCraftFinal["APERCU"].titre = "Statistiques"
 	lstTextCraftFinal["APERCU"].description1 = "name item"
 	lstTextCraftFinal["APERCU"].stat1 = "Stat : 1"
-	lstTextCraftFinal["APERCU"].stat2 = "Stat : 2"
-	lstTextCraftFinal["APERCU"].description2 = "Qualité 2"
+	lstTextCraftFinal["APERCU"].stat2 = ""
+	lstTextCraftFinal["APERCU"].description2 = ""
 	
 	lstTextCraftFinal["MINI_JEU"] = {}
 	lstTextCraftFinal["MINI_JEU"].create = null
@@ -267,9 +267,9 @@ func _ready() -> void:
 	childSlotIngredient[0] = nodeParent.get_node("panel_ingredient1")
 	childSlotIngredient[1] = nodeParent.get_node("panel_ingredient2")
 	
-	childSlotResultat = nodeParent.get_node("panel_slot_resultat")
+	childSlotResultat = nodeParent.get_node("panel_resultat")
 	
-	childButtonCreation = nodeParent.get_node("panel_button_creation")
+	childButtonCreation = nodeParent.get_node("panel_craft")
 	
 	childButtonFlecheLeft = nodeParent.get_node("panel_fleche_gauche")
 	childButtonFlecheRight = nodeParent.get_node("panel_fleche_droite")
@@ -444,7 +444,7 @@ func _process(delta: float) -> void:
 	for n in range(21):
 		
 		if lstIngredientsSelect.item1 != "vide" and lstIngredientsSelect.item2 != "vide":
-			if lstIngredientsSelect.item1 == txtItemType[n] and lstIngredientsSelect.item2 == lstIngredientsSelect.item1:
+			if lstIngredientsSelect.item1 == "potion_vie" and lstIngredientsSelect.item2 == "potion_mana" or lstIngredientsSelect.item1 == "potion_mana" and lstIngredientsSelect.item2 == "potion_vie":
 				if txtNbGoldTotalIngredients.visible == false:
 					txtNbGoldTotalIngredients.visible = true
 					var childTxtGold = txtNbGoldTotalIngredients.get_node("labelGuiTextFenetre")
@@ -457,6 +457,7 @@ func _process(delta: float) -> void:
 							gui_items_resultat["potion_elixir"].offset.x = nodeParent.offset.x + childSlotResultat.position.x
 							gui_items_resultat["potion_elixir"].offset.y = nodeParent.offset.y + childSlotResultat.position.y
 							gui_items_resultat["potion_elixir"].scale = Vector2(0.80, 0.80)
+							print("NDEJNDNJDNJD POTION ELIXIR ")
 					else:
 						nbPrixCraft = 0
 					
@@ -517,6 +518,7 @@ func _process(delta: float) -> void:
 					
 					if lstIngredientsSelect.item2 == "potion_vie":
 						gui_items_resultat["potion_vie"].visible = false
+						gui_items_resultat["potion_elixir"].visible = false
 						gui_potion_vie[lstIngredientsSelect.index2].offset.x = childSlot[lstIngredientsSelect.index2].position.x + nodeParent.offset.x + 2
 						gui_potion_vie[lstIngredientsSelect.index2].offset.y = childSlot[lstIngredientsSelect.index2].position.y + nodeParent.offset.y + 1
 						gui_potion_vie[lstIngredientsSelect.index2].scale = Vector2(0.58, 0.68)
@@ -525,9 +527,18 @@ func _process(delta: float) -> void:
 					
 					if lstIngredientsSelect.item2 == "potion_mana":
 						gui_items_resultat["potion_mana"].visible = false
+						gui_items_resultat["potion_elixir"].visible = false
 						gui_potion_mana[lstIngredientsSelect.index2].offset.x = childSlot[lstIngredientsSelect.index2].position.x + nodeParent.offset.x + 2
 						gui_potion_mana[lstIngredientsSelect.index2].offset.y = childSlot[lstIngredientsSelect.index2].position.y + nodeParent.offset.y + 1
 						gui_potion_mana[lstIngredientsSelect.index2].scale = Vector2(0.58, 0.68)
+						lstIngredientsSelect.index2 = -1
+						lstIngredientsSelect.item2 = "vide"
+					
+					if lstIngredientsSelect.item2 == "potion_elixir":
+						gui_items_resultat["potion_elixir"].visible = false
+						gui_potion_elixir[lstIngredientsSelect.index2].offset.x = childSlot[lstIngredientsSelect.index2].position.x + nodeParent.offset.x + 2
+						gui_potion_elixir[lstIngredientsSelect.index2].offset.y = childSlot[lstIngredientsSelect.index2].position.y + nodeParent.offset.y + 1
+						gui_potion_elixir[lstIngredientsSelect.index2].scale = Vector2(0.58, 0.68)
 						lstIngredientsSelect.index2 = -1
 						lstIngredientsSelect.item2 = "vide"
 	
@@ -539,6 +550,7 @@ func _process(delta: float) -> void:
 					
 					if lstIngredientsSelect.item1 == "potion_vie":
 						gui_items_resultat["potion_vie"].visible = false
+						gui_items_resultat["potion_elixir"].visible = false
 						gui_potion_vie[lstIngredientsSelect.index1].offset.x = childSlot[lstIngredientsSelect.index1].position.x + nodeParent.offset.x + 2
 						gui_potion_vie[lstIngredientsSelect.index1].offset.y = childSlot[lstIngredientsSelect.index1].position.y + nodeParent.offset.y + 1
 						gui_potion_vie[lstIngredientsSelect.index1].scale = Vector2(0.58, 0.68)
@@ -547,9 +559,18 @@ func _process(delta: float) -> void:
 					
 					if lstIngredientsSelect.item1 == "potion_mana":
 						gui_items_resultat["potion_mana"].visible = false
+						gui_items_resultat["potion_elixir"].visible = false
 						gui_potion_mana[lstIngredientsSelect.index1].offset.x = childSlot[lstIngredientsSelect.index1].position.x + nodeParent.offset.x + 2
 						gui_potion_mana[lstIngredientsSelect.index1].offset.y = childSlot[lstIngredientsSelect.index1].position.y + nodeParent.offset.y + 1
 						gui_potion_mana[lstIngredientsSelect.index1].scale = Vector2(0.58, 0.68)
+						lstIngredientsSelect.index1 = -1
+						lstIngredientsSelect.item1 = "vide"
+					
+					if lstIngredientsSelect.item1 == "potion_elixir":
+						gui_items_resultat["potion_elixir"].visible = false
+						gui_potion_elixir[lstIngredientsSelect.index1].offset.x = childSlot[lstIngredientsSelect.index1].position.x + nodeParent.offset.x + 2
+						gui_potion_elixir[lstIngredientsSelect.index1].offset.y = childSlot[lstIngredientsSelect.index1].position.y + nodeParent.offset.y + 1
+						gui_potion_elixir[lstIngredientsSelect.index1].scale = Vector2(0.58, 0.68)
 						lstIngredientsSelect.index1 = -1
 						lstIngredientsSelect.item1 = "vide"
 	

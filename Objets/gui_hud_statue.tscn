@@ -19,4 +19,11 @@ offset_top = 17.0
 offset_right = 288.0
 offset_bottom = 53.0
 
+[node name="panel_sauvegarde" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 57.0
+offset_top = 101.0
+offset_right = 248.0
+offset_bottom = 138.0
+
 [connection signal="gui_input" from="panel_retour" to="." method="_on_panel_retour_gui_input"]
