@@ -116,6 +116,9 @@ func _process(delta: float) -> void:
 		if not Animated.animation == "dash" and not Input.is_action_pressed("ui_up") and not Input.is_action_pressed("ui_right") and not Input.is_action_pressed("ui_down") and not Input.is_action_pressed("ui_left"):
 			vx = 0
 			vy = 0
+			DataSave.hero.endurance += DataSave.hero.regene_endurance*delta
+			if DataSave.hero.endurance >= DataSave.hero.enduranceMax:
+				DataSave.hero.endurance = DataSave.hero.enduranceMax
 			if old_animations == "up":
 				_etat_anime("idle_up", true)
 			if old_animations == "right":
@@ -129,9 +132,10 @@ func _process(delta: float) -> void:
 			if isCollide.up == false:
 				vy = 100
 			position.y -= vy*delta
-			if Input.is_action_pressed("Shift"):
+			if Input.is_action_pressed("Shift") and DataSave.hero.endurance > 0:
 				if isCollide.up == false:
 					vy = 200
+					DataSave.hero.endurance -= delta*2
 				position.y -= vy*delta
 				_etat_anime("run_up", true)
 				if Input.is_action_just_pressed("ui_up"):
@@ -147,9 +151,10 @@ func _process(delta: float) -> void:
 			if isCollide.right == false:
 				vx = 100
 			position.x += vx*delta
-			if Input.is_action_pressed("Shift"):
+			if Input.is_action_pressed("Shift") and DataSave.hero.endurance > 0:
 				if isCollide.right == false:
 					vx = 200
+					DataSave.hero.endurance -= delta*2
 				position.x += vx*delta
 				_etat_anime("run_right", true)
 				if Input.is_action_just_pressed("ui_right"):
@@ -165,9 +170,10 @@ func _process(delta: float) -> void:
 			if isCollide.down == false:
 				vy = 100
 			position.y += vy*delta
-			if Input.is_action_pressed("Shift"):
+			if Input.is_action_pressed("Shift") and DataSave.hero.endurance > 0:
 				if isCollide.down == false:
 					vy = 200
+					DataSave.hero.endurance -= delta*2
 				position.y += vy*delta
 				_etat_anime("run_down", true)
 				if Input.is_action_just_pressed("ui_down"):
@@ -183,9 +189,10 @@ func _process(delta: float) -> void:
 			if isCollide.left == false:
 				vx = 100
 			position.x -= vx*delta
-			if Input.is_action_pressed("Shift"):
+			if Input.is_action_pressed("Shift") and DataSave.hero.endurance > 0:
 				if isCollide.left == false:
 					vx = 200
+					DataSave.hero.endurance -= delta*2
 				position.x -= vx*delta
 				_etat_anime("run_left", true)
 				if Input.is_action_just_pressed("ui_left"):
@@ -200,7 +207,7 @@ func _process(delta: float) -> void:
 	
 	#DASH
 	#if Animated.animation == "idle_up" or Animated.animation == "idle_right" or Animated.animation == "idle_down" or Animated.animation == "idle_left" or Animated.animation == "walk_up" or Animated.animation == "walk_right" or Animated.animation == "walk_down" or Animated.animation == "walk_left" or Animated.animation == "run_up" or Animated.animation == "run_right" or Animated.animation == "run_down" or Animated.animation == "run_left":
-		if Input.is_action_pressed("m") and isGuiOpen == false:
+		if Input.is_action_pressed("m") and isGuiOpen == false and DataSave.hero.endurance > 0:
 			if Input.is_action_just_pressed("m"):
 				_etat_anime("dash", true)
 				snd_dash.play()
@@ -210,12 +217,16 @@ func _process(delta: float) -> void:
 				print("c'est diff de dash donc je rentre dans cette condition de secours !")
 			if Input.is_action_pressed("ui_up"):
 				position.y -= 300*delta
+				DataSave.hero.endurance -= delta*20
 			if Input.is_action_pressed("ui_right"):
 				position.x += 300*delta
+				DataSave.hero.endurance -= delta*20
 			if Input.is_action_pressed("ui_down"):
 				position.y += 300*delta
+				DataSave.hero.endurance -= delta*20
 			if Input.is_action_pressed("ui_left"):
 				position.x -= 300*delta
+				DataSave.hero.endurance -= delta*20
 			#print("dash ! ")
 		elif not Input.is_action_pressed("m") and Animated.animation == "dash":
 			_etat_anime("idle_down", true)

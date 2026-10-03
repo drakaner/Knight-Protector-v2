@@ -86,7 +86,8 @@ func demarreJeu():
 		DataSave.hero.manaMax = 15
 		DataSave.hero.mana = DataSave.hero.manaMax
 		DataSave.hero.puissance = 10
-		DataSave.hero.endurance = 70
+		DataSave.hero.enduranceMax = 70
+		DataSave.hero.endurance = DataSave.hero.enduranceMax
 		DataSave.hero.regene_endurance = 2
 		DataSave.hero.attaque = 9
 		DataSave.hero.defense = 9
@@ -98,7 +99,8 @@ func demarreJeu():
 		DataSave.hero.manaMax = 15
 		DataSave.hero.mana = DataSave.hero.manaMax
 		DataSave.hero.puissance = 10
-		DataSave.hero.endurance = 25
+		DataSave.hero.enduranceMax = 25
+		DataSave.hero.endurance = DataSave.hero.enduranceMax
 		DataSave.hero.regene_endurance = 1
 		DataSave.hero.attaque = 5
 		DataSave.hero.defense = 15
@@ -110,7 +112,8 @@ func demarreJeu():
 		DataSave.hero.manaMax = 15
 		DataSave.hero.mana = DataSave.hero.manaMax
 		DataSave.hero.puissance = 20
-		DataSave.hero.endurance = 90
+		DataSave.hero.enduranceMax = 90
+		DataSave.hero.endurance = DataSave.hero.enduranceMax
 		DataSave.hero.regene_endurance = 3
 		DataSave.hero.attaque = 15
 		DataSave.hero.defense = 5
