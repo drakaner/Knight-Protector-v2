@@ -254,17 +254,21 @@ func _process(delta: float) -> void:
 				_etat_anime("attack_left", false)
 			
 	if Animated.animation == "attack_up" or Animated.animation == "attack_right" or Animated.animation == "attack_down" or Animated.animation == "attack_left":
-		if Input.is_action_just_pressed("button_right") and Animated.animation == "attack_up":
+		if Input.is_action_just_pressed("button_right") and Animated.animation == "attack_up" and DataSave.hero.mana > 0:
 				_etat_anime("sort_up", false)
+				DataSave.hero.mana -= DataSave.hero.puissance / 2
 				lst_endSort.isStart = true
-		if Input.is_action_just_pressed("button_right") and Animated.animation == "attack_right":
+		if Input.is_action_just_pressed("button_right") and Animated.animation == "attack_right" and DataSave.hero.mana > 0:
 				_etat_anime("sort_right", false)
+				DataSave.hero.mana -= DataSave.hero.puissance / 2
 				lst_endSort.isStart = true
-		if Input.is_action_just_pressed("button_right") and Animated.animation == "attack_down":
+		if Input.is_action_just_pressed("button_right") and Animated.animation == "attack_down" and DataSave.hero.mana > 0:
 				_etat_anime("sort_down", false)
+				DataSave.hero.mana -= DataSave.hero.puissance / 2
 				lst_endSort.isStart = true
-		if Input.is_action_just_pressed("button_right") and Animated.animation == "attack_left":
+		if Input.is_action_just_pressed("button_right") and Animated.animation == "attack_left" and DataSave.hero.mana > 0:
 				_etat_anime("sort_left", false)
+				DataSave.hero.mana -= DataSave.hero.puissance / 2
 				lst_endSort.isStart = true
 
 
@@ -340,3 +344,19 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 	print("...")
 	if area.is_in_group("collide"):
 		print("je quitte se putain d'area ma gueule")
+
+
+func _on_area_attack_area_entered(area: Area2D) -> void:
+	print("test collide attack up hero 3")
+
+
+func _on_area_attack_right_h_3_area_entered(area: Area2D) -> void:
+	print("test collide attack right hero 3")
+
+
+func _on_area_attack_left_h_3_area_entered(area: Area2D) -> void:
+	print("test collide attack left hero 3")
+
+
+func _on_area_attack_down_h_3_area_entered(area: Area2D) -> void:
+	print("test collide attack down hero 3")

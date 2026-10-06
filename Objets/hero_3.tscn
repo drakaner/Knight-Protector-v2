@@ -1,4 +1,4 @@
-[gd_scene load_steps=201 format=3 uid="uid://6wsonujxre3g"]
+[gd_scene load_steps=205 format=3 uid="uid://6wsonujxre3g"]
 
 [ext_resource type="Script" uid="uid://beyys8dy80kpe" path="res://Scripts/hero_3.gd" id="1_dto3k"]
 [ext_resource type="Texture2D" uid="uid://dyombqtdhbt5" path="res://Ressources/img_hero_attack_3.png" id="1_rdfgv"]
@@ -16,6 +16,9 @@
 [ext_resource type="AudioStream" uid="uid://0v2rsdu2b0qc" path="res://Sons/dead_2.wav" id="14_dboih"]
 [ext_resource type="AudioStream" uid="uid://b17pywrtelh77" path="res://Sons/dash.wav" id="15_np230"]
 [ext_resource type="AudioStream" uid="uid://d4cvjtcckjlnk" path="res://Sons/HIT LIGHT (2).wav" id="16_2s76i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dto3k"]
+size = Vector2(43, 15)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2gyl4"]
 atlas = ExtResource("1_rdfgv")
@@ -1448,17 +1451,34 @@ animations = [{
 radius = 8.0
 height = 26.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4454x"]
+size = Vector2(14, 28.9375)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_txayw"]
+size = Vector2(17.5, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_so0jm"]
+size = Vector2(43, 17)
+
 [node name="hero_3" type="Node2D"]
 script = ExtResource("1_dto3k")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_enabled = true
 
+[node name="area_attack" type="Area2D" parent="."]
+
+[node name="collide_attack" type="CollisionShape2D" parent="area_attack"]
+position = Vector2(-1.5, -8.5)
+shape = SubResource("RectangleShape2D_dto3k")
+
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_q2uef")
+animation = &"attack_down"
+frame = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-1, 0)
@@ -1490,7 +1510,29 @@ stream = ExtResource("15_np230")
 [node name="coupSword_audio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("16_2s76i")
 
+[node name="area_attack_right_h3" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area_attack_right_h3"]
+position = Vector2(11, -1.46875)
+shape = SubResource("RectangleShape2D_4454x")
+
+[node name="area_attack_left_h3" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area_attack_left_h3"]
+position = Vector2(-10.25, -1)
+shape = SubResource("RectangleShape2D_txayw")
+
+[node name="area_attack_down_h3" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area_attack_down_h3"]
+position = Vector2(2.5, 7.5)
+shape = SubResource("RectangleShape2D_so0jm")
+
+[connection signal="area_entered" from="area_attack" to="." method="_on_area_attack_area_entered"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
 [connection signal="animation_finished" from="Area2D/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="finished" from="walk_audio" to="." method="_on_walk_audio_finished"]
+[connection signal="area_entered" from="area_attack_right_h3" to="." method="_on_area_attack_right_h_3_area_entered"]
+[connection signal="area_entered" from="area_attack_left_h3" to="." method="_on_area_attack_left_h_3_area_entered"]
+[connection signal="area_entered" from="area_attack_down_h3" to="." method="_on_area_attack_down_h_3_area_entered"]

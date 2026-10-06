@@ -1,4 +1,4 @@
-[gd_scene load_steps=201 format=3 uid="uid://c2xbvhu1mtksy"]
+[gd_scene load_steps=205 format=3 uid="uid://c2xbvhu1mtksy"]
 
 [ext_resource type="Texture2D" uid="uid://dy520sv24bty3" path="res://Ressources/img_hero_attack_2.png" id="1_oa23r"]
 [ext_resource type="Script" uid="uid://cwp3dd5vwgwaj" path="res://Scripts/hero_2.gd" id="1_u2e4w"]
@@ -1448,6 +1448,18 @@ animations = [{
 radius = 9.0
 height = 26.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u2e4w"]
+size = Vector2(46, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_or2dt"]
+size = Vector2(31, 46)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ux1k"]
+size = Vector2(31, 42)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_77oec"]
+size = Vector2(46, 21.5)
+
 [node name="hero_2" type="Node2D"]
 script = ExtResource("1_u2e4w")
 
@@ -1459,7 +1471,8 @@ position_smoothing_enabled = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_5g7qx")
-animation = &"sort_down"
+animation = &"attack_up"
+frame = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-1, 0)
@@ -1491,6 +1504,34 @@ stream = ExtResource("14_12wqj")
 [node name="coupSword_audio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("15_7epui")
 
+[node name="area_attack_down_h2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area_attack_down_h2"]
+position = Vector2(-1, 14.5)
+shape = SubResource("RectangleShape2D_u2e4w")
+
+[node name="area_attack_right_h2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area_attack_right_h2"]
+position = Vector2(16.5, 0)
+shape = SubResource("RectangleShape2D_or2dt")
+
+[node name="area_attack_left_h2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area_attack_left_h2"]
+position = Vector2(-14.5, -1)
+shape = SubResource("RectangleShape2D_5ux1k")
+
+[node name="area_attack_up_h2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area_attack_up_h2"]
+position = Vector2(-1, -11.75)
+shape = SubResource("RectangleShape2D_77oec")
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="animation_finished" from="Area2D/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="finished" from="walk_audio" to="." method="_on_walk_audio_finished"]
+[connection signal="area_entered" from="area_attack_down_h2" to="." method="_on_area_attack_down_h_2_area_entered"]
+[connection signal="area_entered" from="area_attack_right_h2" to="." method="_on_area_attack_right_h_2_area_entered"]
+[connection signal="area_entered" from="area_attack_left_h2" to="." method="_on_area_attack_left_h_2_area_entered"]
+[connection signal="area_entered" from="area_attack_up_h2" to="." method="_on_area_attack_up_h_2_area_entered"]
