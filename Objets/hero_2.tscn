@@ -1531,7 +1531,3 @@ shape = SubResource("RectangleShape2D_77oec")
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="animation_finished" from="Area2D/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="finished" from="walk_audio" to="." method="_on_walk_audio_finished"]
-[connection signal="area_entered" from="area_attack_down_h2" to="." method="_on_area_attack_down_h_2_area_entered"]
-[connection signal="area_entered" from="area_attack_right_h2" to="." method="_on_area_attack_right_h_2_area_entered"]
-[connection signal="area_entered" from="area_attack_left_h2" to="." method="_on_area_attack_left_h_2_area_entered"]
-[connection signal="area_entered" from="area_attack_up_h2" to="." method="_on_area_attack_up_h_2_area_entered"]

@@ -77,9 +77,19 @@ func _ready() -> void:
 	
 	
 
+func _detect_collide_ennemy_hero(delta: float):
+
+	var rect1 = $area_attack_down_h3/CollisionShape2D.shape.get_rect()
+	var rect2 = $Area2D/CollisionShape2D.shape.get_rect()
+
+	if rect1.intersects(rect2):
+		if Animated.animation == "attack_down":
+			print("Collision !!!!!!!!!!!!!!!!!!!!!!!!!!!", rect2)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	_detect_collide_ennemy_hero(delta)
+	
 	if not Input.is_action_pressed("ui_up"):
 		if isCollide.up == true:
 			isCollide.up = false
@@ -344,19 +354,3 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 	print("...")
 	if area.is_in_group("collide"):
 		print("je quitte se putain d'area ma gueule")
-
-
-func _on_area_attack_area_entered(area: Area2D) -> void:
-	print("test collide attack up hero 3")
-
-
-func _on_area_attack_right_h_3_area_entered(area: Area2D) -> void:
-	print("test collide attack right hero 3")
-
-
-func _on_area_attack_left_h_3_area_entered(area: Area2D) -> void:
-	print("test collide attack left hero 3")
-
-
-func _on_area_attack_down_h_3_area_entered(area: Area2D) -> void:
-	print("test collide attack down hero 3")
