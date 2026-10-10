@@ -11,6 +11,9 @@ var GUIItems = preload("res://Objets/gui_boutique_items.tscn")
 var GUIAlchimie = preload("res://Objets/gui_alchimie.tscn")
 var GUIInventaire = preload("res://Objets/gui_inventaire.tscn")
 var GUIEquipement = preload("res://Objets/gui_hud_equipement.tscn")
+var EnnemySlime3 = preload("res://Objets/slime_3.tscn")
+
+var lst_ennemy = { "rect": {} }
 
 var hero = { rnd=randi_range(1, 3), img={}, current=0, gold=500 }
 var gui_statue
@@ -123,6 +126,11 @@ func demarreJeu():
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	demarreJeu()
+	lst_ennemy[0] = EnnemySlime3.instantiate()
+	add_child(lst_ennemy[0])
+	lst_ennemy[0].position.x = 300
+	
+	
 	hero.img[hero.current].connect("guiStatueOpen", Callable(self, "_Sgui_open"))
 	hero.img[hero.current].connect("guiCoffreStockage", Callable(self, "_Sgui_open"))
 	hero.img[hero.current].connect("guiForgeronOpen", Callable(self, "_Sgui_open"))
@@ -179,4 +187,39 @@ func gestuinInterfaceUI():
 			gui_equipement.queue_free()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
+	hero.img[0].get_node("area_attack_down_h1").global_position.x
+	hero.img[0].get_node("area_attack_down_h1").global_position.y
+	hero.img[0].get_node("area_attack_left_h1").global_position.x
+	hero.img[0].get_node("area_attack_left_h1").global_position.y
+	hero.img[0].get_node("area_attack_right_h1").global_position.x
+	hero.img[0].get_node("area_attack_right_h1").global_position.y
+	hero.img[0].get_node("area_attack_up_h1").global_position.x
+	hero.img[0].get_node("area_attack_up_h1").global_position.y
+	
+	hero.img[1].get_node("area_attack_down_h2").global_position.x
+	hero.img[1].get_node("area_attack_down_h2").global_position.y
+	hero.img[1].get_node("area_attack_left_h2").global_position.x
+	hero.img[1].get_node("area_attack_left_h2").global_position.y
+	hero.img[1].get_node("area_attack_right_h2").global_position.x
+	hero.img[1].get_node("area_attack_right_h2").global_position.y
+	hero.img[1].get_node("area_attack_up_h2").global_position.x
+	hero.img[1].get_node("area_attack_up_h2").global_position.y
+	
+	hero.img[2].get_node("area_attack_down_h3").global_position.x
+	hero.img[2].get_node("area_attack_down_h3").global_position.y
+	hero.img[2].get_node("area_attack_left_h3").global_position.x
+	hero.img[2].get_node("area_attack_left_h3").global_position.y
+	hero.img[2].get_node("area_attack_right_h3").global_position.x
+	hero.img[2].get_node("area_attack_right_h3").global_position.y
+	hero.img[2].get_node("area_attack").global_position.x
+	hero.img[2].get_node("area_attack").global_position.y
+	
+	#Et la verifier de si sa collide a la methode gamecodeur en utilisant les global position des area concerner a lennemy puis verifier sil attaque et tout 
+	
+	if hero.current == 2:
+		print("la position x du hero en cours : ", hero.img[hero.current].position.x)
+		print("la position x du hero en cours + le area attack : ", hero.img[hero.current].position.x + hero.img[hero.current].get_node("area_attack").global_position.x)
+		print("le area attack x : ", hero.img[hero.current].get_node("area_attack").global_position.x)
+	
 	gestuinInterfaceUI()

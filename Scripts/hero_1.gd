@@ -75,19 +75,9 @@ func _ready() -> void:
 	#snd_dead2.volume_db = 0
 	#snd_dead2.play()
 	
-	
-func _detect_collide_ennemy_hero(delta: float):
-
-	var rect1 = $area_attack_down_h1/CollisionShape2D.shape.get_rect()
-	var rect2 = $Area2D/CollisionShape2D.shape.get_rect()
-
-	if rect1.intersects(rect2):
-		if Animated.animation == "attack_down":
-			print("Collision !!!!!!!!!!!!!!!!!!!!!!!!!!!", rect2)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	_detect_collide_ennemy_hero(delta)
 	
 	if not Input.is_action_pressed("ui_up"):
 		if isCollide.up == true:

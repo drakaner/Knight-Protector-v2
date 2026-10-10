@@ -53,6 +53,7 @@ var GuiSword8 = preload("res://Objets/gui_sword_8.tscn")
 @onready var childButtonFlecheLeft
 @onready var childButtonFlecheRight
 @onready var childButtonCreation
+@onready var nodeGamePlay = get_parent()
 
 var gui_items_resultat = {}
 
@@ -1620,7 +1621,6 @@ func _on_mouse_exited_sword():
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
 	lstTextCraftFinal["TUTO"] = {}
 	lstTextCraftFinal["TUTO"].create = {}
 	lstTextCraftFinal["TUTO"].titre = "Tuto"

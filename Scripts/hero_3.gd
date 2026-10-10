@@ -7,6 +7,7 @@ signal guiArsenalOpen
 signal guiItemOpen
 signal guiAlchimieOpen
 
+@onready var NodeGameplay = get_parent().get_parent()
 @onready var Animated = get_node_or_null("Area2D/AnimatedSprite2D")
 @onready var snd_walk = get_node_or_null("walk_audio")
 @onready var snd_dash = get_node_or_null("dash_audio")
@@ -71,24 +72,15 @@ func _etat_anime(pAnime, pLoop):
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	#print("TTTTTTTTTTT : tt :  f:", NodeGameplay)
 	_etat_anime("idle_down", true)
 	#snd_dead2.volume_db = 0
 	#snd_dead2.play()
 	
 	
 
-func _detect_collide_ennemy_hero(delta: float):
-
-	var rect1 = $area_attack_down_h3/CollisionShape2D.shape.get_rect()
-	var rect2 = $Area2D/CollisionShape2D.shape.get_rect()
-
-	if rect1.intersects(rect2):
-		if Animated.animation == "attack_down":
-			print("Collision !!!!!!!!!!!!!!!!!!!!!!!!!!!", rect2)
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	_detect_collide_ennemy_hero(delta)
 	
 	if not Input.is_action_pressed("ui_up"):
 		if isCollide.up == true:
