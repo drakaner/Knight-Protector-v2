@@ -13,7 +13,7 @@ var GUIInventaire = preload("res://Objets/gui_inventaire.tscn")
 var GUIEquipement = preload("res://Objets/gui_hud_equipement.tscn")
 var EnnemySlime3 = preload("res://Objets/slime_3.tscn")
 
-var lst_ennemy = { "rect": {} }
+var lst_ennemy = {}
 
 var hero = { rnd=randi_range(1, 3), img={}, current=0, gold=500 }
 var gui_statue
@@ -217,35 +217,45 @@ func _process(delta: float) -> void:
 	if hero.current == 0:
 		h0_atk_down_x = hero.img[0].get_node("area_attack_down_h1").global_position.x
 		h0_atk_down_y = hero.img[0].get_node("area_attack_down_h1").global_position.y
-		hero.img[0].get_node("area_attack_left_h1").global_position.x
-		hero.img[0].get_node("area_attack_left_h1").global_position.y
-		hero.img[0].get_node("area_attack_right_h1").global_position.x
-		hero.img[0].get_node("area_attack_right_h1").global_position.y
-		hero.img[0].get_node("area_attack_up_h1").global_position.x
-		hero.img[0].get_node("area_attack_up_h1").global_position.y
+		h0_atk_left_x = hero.img[0].get_node("area_attack_left_h1").global_position.x
+		h0_atk_left_y = hero.img[0].get_node("area_attack_left_h1").global_position.y
+		h0_atk_right_x = hero.img[0].get_node("area_attack_right_h1").global_position.x
+		h0_atk_right_y = hero.img[0].get_node("area_attack_right_h1").global_position.y
+		h0_atk_up_x = hero.img[0].get_node("area_attack_up_h1").global_position.x
+		h0_atk_up_y = hero.img[0].get_node("area_attack_up_h1").global_position.y
 	
 	if hero.current == 1:
-		hero.img[1].get_node("area_attack_down_h2").global_position.x
-		hero.img[1].get_node("area_attack_down_h2").global_position.y
-		hero.img[1].get_node("area_attack_left_h2").global_position.x
-		hero.img[1].get_node("area_attack_left_h2").global_position.y
-		hero.img[1].get_node("area_attack_right_h2").global_position.x
-		hero.img[1].get_node("area_attack_right_h2").global_position.y
-		hero.img[1].get_node("area_attack_up_h2").global_position.x
-		hero.img[1].get_node("area_attack_up_h2").global_position.y
+		h1_atk_down_x = hero.img[1].get_node("area_attack_down_h2").global_position.x
+		h1_atk_down_y = hero.img[1].get_node("area_attack_down_h2").global_position.y
+		h1_atk_left_x = hero.img[1].get_node("area_attack_left_h2").global_position.x
+		h1_atk_left_y = hero.img[1].get_node("area_attack_left_h2").global_position.y
+		h1_atk_right_x = hero.img[1].get_node("area_attack_right_h2").global_position.x
+		h1_atk_right_y = hero.img[1].get_node("area_attack_right_h2").global_position.y
+		h1_atk_up_x = hero.img[1].get_node("area_attack_up_h2").global_position.x
+		h1_atk_up_y = hero.img[1].get_node("area_attack_up_h2").global_position.y
 	
 	if hero.current == 2:
-		hero.img[2].get_node("area_attack_down_h3").global_position.x
-		hero.img[2].get_node("area_attack_down_h3").global_position.y
-		hero.img[2].get_node("area_attack_left_h3").global_position.x
-		hero.img[2].get_node("area_attack_left_h3").global_position.y
-		hero.img[2].get_node("area_attack_right_h3").global_position.x
-		hero.img[2].get_node("area_attack_right_h3").global_position.y
-		hero.img[2].get_node("area_attack").global_position.x
-		hero.img[2].get_node("area_attack").global_position.y
+		h2_atk_down_x = hero.img[2].get_node("area_attack_down_h3").global_position.x
+		h2_atk_down_y = hero.img[2].get_node("area_attack_down_h3").global_position.y
+		h2_atk_left_x = hero.img[2].get_node("area_attack_left_h3").global_position.x
+		h2_atk_left_y = hero.img[2].get_node("area_attack_left_h3").global_position.y
+		h2_atk_right_x = hero.img[2].get_node("area_attack_right_h3").global_position.x
+		h2_atk_right_y = hero.img[2].get_node("area_attack_right_h3").global_position.y
+		h2_atk_up_x = hero.img[2].get_node("area_attack").global_position.x
+		h2_atk_up_y = hero.img[2].get_node("area_attack").global_position.y
 	
 	#Et la verifier de si sa collide a la methode gamecodeur en utilisant les global position des area concerner a lennemy puis verifier sil attaque et tout 
 	
+	if Input.is_action_just_pressed("button_left"):
+		if h0_atk_down_x >= lst_ennemy[0].get_node("area_slime_3").global_position.x and h0_atk_down_x <= lst_ennemy[0].get_node("area_slime_3").global_position.x + 17 and h0_atk_down_y >= lst_ennemy[0].get_node("area_slime_3").global_position.y and h0_atk_down_y <= lst_ennemy[0].get_node("area_slime_3").global_position.y + 15 :
+			print("je touche le slime") 
+			#SI TU AS OUBLIER REGARDE LA CONSOLE AVEC LES PRINT EN GROS LE GLOBAL POSITION CEST COMME LE HERO DONC SA SERT A RIEN ET FAUT FAIRE HERO NORMAL PLUS LE DECALAGE DE LA POSITION LOCAL DU COLLIDE ET PAS DE AREA 
+			print("position de latk down en x ", hero.img[0].get_node("area_attack_down_h1/CollisionShape2D").position.x)
+			print("position de latk down en y ", hero.img[0].get_node("area_attack_down_h1/CollisionShape2D").position.y)
+			print("position de hero en x ", hero.img[0].position.x)
+			print("position de hero en y ", hero.img[0].position.y)
+			print("position slim en x ", lst_ennemy[0].get_node("area_slime_3").global_position.x)
+			print("position slim en y ", lst_ennemy[0].get_node("area_slime_3").global_position.y)
 	
 	if hero.current == 2:
 		print("la position x du hero en cours : ", hero.img[hero.current].position.x)
