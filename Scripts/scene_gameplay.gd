@@ -187,38 +187,65 @@ func gestuinInterfaceUI():
 			gui_equipement.queue_free()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	var h0_atk_down_x
+	var h0_atk_down_y
+	var h0_atk_left_x
+	var h0_atk_left_y
+	var h0_atk_right_x
+	var h0_atk_right_y
+	var h0_atk_up_x
+	var h0_atk_up_y
 	
-	hero.img[0].get_node("area_attack_down_h1").global_position.x
-	hero.img[0].get_node("area_attack_down_h1").global_position.y
-	hero.img[0].get_node("area_attack_left_h1").global_position.x
-	hero.img[0].get_node("area_attack_left_h1").global_position.y
-	hero.img[0].get_node("area_attack_right_h1").global_position.x
-	hero.img[0].get_node("area_attack_right_h1").global_position.y
-	hero.img[0].get_node("area_attack_up_h1").global_position.x
-	hero.img[0].get_node("area_attack_up_h1").global_position.y
+	var h1_atk_down_x
+	var h1_atk_down_y
+	var h1_atk_left_x
+	var h1_atk_left_y
+	var h1_atk_right_x
+	var h1_atk_right_y
+	var h1_atk_up_x
+	var h1_atk_up_y
 	
-	hero.img[1].get_node("area_attack_down_h2").global_position.x
-	hero.img[1].get_node("area_attack_down_h2").global_position.y
-	hero.img[1].get_node("area_attack_left_h2").global_position.x
-	hero.img[1].get_node("area_attack_left_h2").global_position.y
-	hero.img[1].get_node("area_attack_right_h2").global_position.x
-	hero.img[1].get_node("area_attack_right_h2").global_position.y
-	hero.img[1].get_node("area_attack_up_h2").global_position.x
-	hero.img[1].get_node("area_attack_up_h2").global_position.y
+	var h2_atk_down_x
+	var h2_atk_down_y
+	var h2_atk_left_x
+	var h2_atk_left_y
+	var h2_atk_right_x
+	var h2_atk_right_y
+	var h2_atk_up_x
+	var h2_atk_up_y
 	
-	hero.img[2].get_node("area_attack_down_h3").global_position.x
-	hero.img[2].get_node("area_attack_down_h3").global_position.y
-	hero.img[2].get_node("area_attack_left_h3").global_position.x
-	hero.img[2].get_node("area_attack_left_h3").global_position.y
-	hero.img[2].get_node("area_attack_right_h3").global_position.x
-	hero.img[2].get_node("area_attack_right_h3").global_position.y
-	hero.img[2].get_node("area_attack").global_position.x
-	hero.img[2].get_node("area_attack").global_position.y
+	if hero.current == 0:
+		h0_atk_down_x = hero.img[0].get_node("area_attack_down_h1").global_position.x
+		h0_atk_down_y = hero.img[0].get_node("area_attack_down_h1").global_position.y
+		hero.img[0].get_node("area_attack_left_h1").global_position.x
+		hero.img[0].get_node("area_attack_left_h1").global_position.y
+		hero.img[0].get_node("area_attack_right_h1").global_position.x
+		hero.img[0].get_node("area_attack_right_h1").global_position.y
+		hero.img[0].get_node("area_attack_up_h1").global_position.x
+		hero.img[0].get_node("area_attack_up_h1").global_position.y
+	
+	if hero.current == 1:
+		hero.img[1].get_node("area_attack_down_h2").global_position.x
+		hero.img[1].get_node("area_attack_down_h2").global_position.y
+		hero.img[1].get_node("area_attack_left_h2").global_position.x
+		hero.img[1].get_node("area_attack_left_h2").global_position.y
+		hero.img[1].get_node("area_attack_right_h2").global_position.x
+		hero.img[1].get_node("area_attack_right_h2").global_position.y
+		hero.img[1].get_node("area_attack_up_h2").global_position.x
+		hero.img[1].get_node("area_attack_up_h2").global_position.y
+	
+	if hero.current == 2:
+		hero.img[2].get_node("area_attack_down_h3").global_position.x
+		hero.img[2].get_node("area_attack_down_h3").global_position.y
+		hero.img[2].get_node("area_attack_left_h3").global_position.x
+		hero.img[2].get_node("area_attack_left_h3").global_position.y
+		hero.img[2].get_node("area_attack_right_h3").global_position.x
+		hero.img[2].get_node("area_attack_right_h3").global_position.y
+		hero.img[2].get_node("area_attack").global_position.x
+		hero.img[2].get_node("area_attack").global_position.y
 	
 	#Et la verifier de si sa collide a la methode gamecodeur en utilisant les global position des area concerner a lennemy puis verifier sil attaque et tout 
 	
-	
-	#test  gittt 
 	
 	if hero.current == 2:
 		print("la position x du hero en cours : ", hero.img[hero.current].position.x)
