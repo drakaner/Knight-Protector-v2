@@ -217,6 +217,9 @@ func _process(delta: float) -> void:
 	
 	#Et la verifier de si sa collide a la methode gamecodeur en utilisant les global position des area concerner a lennemy puis verifier sil attaque et tout 
 	
+	
+	#test  gittt 
+	
 	if hero.current == 2:
 		print("la position x du hero en cours : ", hero.img[hero.current].position.x)
 		print("la position x du hero en cours + le area attack : ", hero.img[hero.current].position.x + hero.img[hero.current].get_node("area_attack").global_position.x)
