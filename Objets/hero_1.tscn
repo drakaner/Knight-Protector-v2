@@ -1513,8 +1513,8 @@ position_smoothing_enabled = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D_Hero1"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_ilxcd")
-animation = &"attack_up"
-frame = 5
+animation = &"attack_down"
+frame = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D_Hero1"]
 position = Vector2(-1, 0)
