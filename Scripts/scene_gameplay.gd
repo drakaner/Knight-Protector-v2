@@ -185,6 +185,28 @@ func gestuinInterfaceUI():
 		if gui_equipement.isPanelClose == true:
 			hero.img[hero.current].isGuiOpen = false
 			gui_equipement.queue_free()
+
+
+func gestion_collide_heros(delta: float, pH_A_D_x, pH_A_D_y, pH_A_L_x, pH_A_L_y, pH_A_U_x, pH_A_U_y, pH_A_R_x, pH_A_R_y, pHeroCurrent):
+	if Input.is_action_just_pressed("button_left"):
+		if (hero.img[pHeroCurrent].position.x + pH_A_D_x) >= lst_ennemy[0].get_node("area_slime_3").global_position.x - 10 and (hero.img[pHeroCurrent].position.x + pH_A_D_x) <= lst_ennemy[0].get_node("area_slime_3").global_position.x + 17 and (hero.img[pHeroCurrent].position.y + pH_A_D_y) >= lst_ennemy[0].get_node("area_slime_3").global_position.y - 17 and (hero.img[pHeroCurrent].position.y + pH_A_D_y) <= lst_ennemy[0].get_node("area_slime_3").global_position.y + 12 :
+			if hero.img[pHeroCurrent].Animated.animation == "idle_down" or hero.img[pHeroCurrent].Animated.animation == "walk_down" or hero.img[pHeroCurrent].Animated.animation == "run_down" or hero.img[pHeroCurrent].Animated.animation == "attack_down" or hero.img[pHeroCurrent].Animated.animation == "dash" or hero.img[pHeroCurrent].Animated.animation == "sort_down": 
+				print("je touche le slime") 
+				#Faut mettre -10 dans les conditions superieur ou egal pour le x et y et sur le inferieur ne rien soustraire de plus car c'est sur quand on verifie la partie superieur ou egal ou la il a un decalage chelou 
+				#SI TU AS OUBLIER REGARDE LA CONSOLE AVEC LES PRINT EN GROS LE GLOBAL POSITION CEST COMME LE HERO DONC SA SERT A RIEN ET FAUT FAIRE HERO NORMAL PLUS LE DECALAGE DE LA POSITION LOCAL DU COLLIDE ET PAS DE AREA 
+		
+		if (hero.img[pHeroCurrent].position.x + pH_A_L_x) >= lst_ennemy[0].get_node("area_slime_3").global_position.x - 10 and (hero.img[pHeroCurrent].position.x + pH_A_L_x) <= lst_ennemy[0].get_node("area_slime_3").global_position.x + 17 and (hero.img[pHeroCurrent].position.y + pH_A_L_y) >= lst_ennemy[0].get_node("area_slime_3").global_position.y - 17 and (hero.img[pHeroCurrent].position.y + pH_A_L_y) <= lst_ennemy[0].get_node("area_slime_3").global_position.y + 12 :
+			if hero.img[pHeroCurrent].Animated.animation == "idle_left" or hero.img[pHeroCurrent].Animated.animation == "walk_left" or hero.img[pHeroCurrent].Animated.animation == "run_left" or hero.img[pHeroCurrent].Animated.animation == "attack_left" or hero.img[pHeroCurrent].Animated.animation == "dash" or hero.img[pHeroCurrent].Animated.animation == "sort_left":
+				print("test sur la position du petit variable : ", pH_A_L_x)
+		
+		if (hero.img[pHeroCurrent].position.x + pH_A_U_x) >= lst_ennemy[0].get_node("area_slime_3").global_position.x - 10 and (hero.img[pHeroCurrent].position.x + pH_A_U_x) <= lst_ennemy[0].get_node("area_slime_3").global_position.x + 17 and (hero.img[pHeroCurrent].position.y + pH_A_U_y) >= lst_ennemy[0].get_node("area_slime_3").global_position.y - 17 and (hero.img[pHeroCurrent].position.y + pH_A_U_y) <= lst_ennemy[0].get_node("area_slime_3").global_position.y + 12 :
+			if hero.img[pHeroCurrent].Animated.animation == "idle_up" or hero.img[pHeroCurrent].Animated.animation == "walk_up" or hero.img[pHeroCurrent].Animated.animation == "run_up" or hero.img[pHeroCurrent].Animated.animation == "attack_up" or hero.img[pHeroCurrent].Animated.animation == "dash" or hero.img[pHeroCurrent].Animated.animation == "sort_up":
+				print("test sur la position du petit variable : ", pH_A_U_x)
+		
+		if (hero.img[pHeroCurrent].position.x + pH_A_R_x) >= lst_ennemy[0].get_node("area_slime_3").global_position.x - 10 and (hero.img[pHeroCurrent].position.x + pH_A_R_x) <= lst_ennemy[0].get_node("area_slime_3").global_position.x + 17 and (hero.img[pHeroCurrent].position.y + pH_A_R_y) >= lst_ennemy[0].get_node("area_slime_3").global_position.y - 17 and (hero.img[pHeroCurrent].position.y + pH_A_R_y) <= lst_ennemy[0].get_node("area_slime_3").global_position.y + 12 :
+			if hero.img[pHeroCurrent].Animated.animation == "idle_right" or hero.img[pHeroCurrent].Animated.animation == "walk_right" or hero.img[pHeroCurrent].Animated.animation == "run_right" or hero.img[pHeroCurrent].Animated.animation == "attack_right" or hero.img[pHeroCurrent].Animated.animation == "dash" or hero.img[pHeroCurrent].Animated.animation == "sort_right":
+				print("test sur la position du petit variable : ", pH_A_R_x)
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	var h0_atk_down_x
@@ -223,6 +245,8 @@ func _process(delta: float) -> void:
 		h0_atk_right_y = hero.img[0].get_node("area_attack_right_h1/CollisionShape2D").position.y
 		h0_atk_up_x = hero.img[0].get_node("area_attack_up_h1/CollisionShape2D").position.x
 		h0_atk_up_y = hero.img[0].get_node("area_attack_up_h1/CollisionShape2D").position.y
+		gestion_collide_heros(delta, h0_atk_down_x, h0_atk_down_y, h0_atk_left_x, h0_atk_left_y, h0_atk_up_x, h0_atk_up_y, h0_atk_right_x, h0_atk_right_y, hero.current)
+		
 	
 	if hero.current == 1:
 		h1_atk_down_x = hero.img[1].get_node("area_attack_down_h2/CollisionShape2D").position.x
@@ -233,6 +257,8 @@ func _process(delta: float) -> void:
 		h1_atk_right_y = hero.img[1].get_node("area_attack_right_h2/CollisionShape2D").position.y
 		h1_atk_up_x = hero.img[1].get_node("area_attack_up_h2/CollisionShape2D").position.x
 		h1_atk_up_y = hero.img[1].get_node("area_attack_up_h2/CollisionShape2D").position.y
+		gestion_collide_heros(delta, h1_atk_down_x, h1_atk_down_y, h1_atk_left_x, h1_atk_left_y, h1_atk_up_x, h1_atk_up_y, h1_atk_right_x, h1_atk_right_y, hero.current)
+	
 	
 	if hero.current == 2:
 		h2_atk_down_x = hero.img[2].get_node("area_attack_down_h3/CollisionShape2D").position.x
@@ -243,25 +269,7 @@ func _process(delta: float) -> void:
 		h2_atk_right_y = hero.img[2].get_node("area_attack_right_h3/CollisionShape2D").position.y
 		h2_atk_up_x = hero.img[2].get_node("area_attack/collide_attack").position.x
 		h2_atk_up_y = hero.img[2].get_node("area_attack/collide_attack").position.y
+		gestion_collide_heros(delta, h2_atk_down_x, h2_atk_down_y, h2_atk_left_x, h2_atk_left_y, h2_atk_up_x, h2_atk_up_y, h2_atk_right_x, h2_atk_right_y, hero.current)
 	
-	#Et la verifier de si sa collide a la methode gamecodeur en utilisant les global position des area concerner a lennemy puis verifier sil attaque et tout 
-	
-	if Input.is_action_just_pressed("button_left"):
-		if (hero.img[0].position.x + h0_atk_down_x) >= lst_ennemy[0].get_node("area_slime_3").global_position.x - 10 and (hero.img[0].position.x + h0_atk_down_x) <= lst_ennemy[0].get_node("area_slime_3").global_position.x + 17 and (hero.img[0].position.y + h0_atk_down_y) >= lst_ennemy[0].get_node("area_slime_3").global_position.y - 17 and (hero.img[0].position.y + h0_atk_down_y) <= lst_ennemy[0].get_node("area_slime_3").global_position.y + 12 :
-			if hero.img[0].Animated.animation == "idle_down" or hero.img[0].Animated.animation == "walk_down" or hero.img[0].Animated.animation == "run_down" or hero.img[0].Animated.animation == "attack_down" or hero.img[0].Animated.animation == "dash" or hero.img[0].Animated.animation == "sort_down": 
-				print("je touche le slime") 
-				#Faut mettre -10 dans les conditions superieur ou egal pour le x et y et sur le inferieur ne rien soustraire de plus car c'est sur quand on verifie la partie superieur ou egal ou la il a un decalage chelou 
-				#SI TU AS OUBLIER REGARDE LA CONSOLE AVEC LES PRINT EN GROS LE GLOBAL POSITION CEST COMME LE HERO DONC SA SERT A RIEN ET FAUT FAIRE HERO NORMAL PLUS LE DECALAGE DE LA POSITION LOCAL DU COLLIDE ET PAS DE AREA 
-				print("position de latk down en x ", hero.img[0].get_node("area_attack_down_h1/CollisionShape2D").position.x)
-				print("position de latk down en y ", hero.img[0].get_node("area_attack_down_h1/CollisionShape2D").position.y)
-				print("position de hero en x ", hero.img[0].position.x)
-				print("position de hero en y ", hero.img[0].position.y)
-				print("position slim en x ", lst_ennemy[0].get_node("area_slime_3").global_position.x)
-				print("position slim en y ", lst_ennemy[0].get_node("area_slime_3").global_position.y)
-	
-	if hero.current == 2:
-		print("la position x du hero en cours : ", hero.img[hero.current].position.x)
-		print("la position x du hero en cours + le area attack : ", hero.img[hero.current].position.x + hero.img[hero.current].get_node("area_attack").global_position.x)
-		print("le area attack x : ", hero.img[hero.current].get_node("area_attack").global_position.x)
-	
+	#Maintenant faire en sorte que le code rentre une seule fois, puis soustraire la vie du monstre, puis le faire animer bouger pour voir si ca marche toujours puis creer une factory a la gamecodeur pour creer des ennemy dynamiquement puis faire pareils avec les autres monstres et boss du jeu 
 	gestuinInterfaceUI()
