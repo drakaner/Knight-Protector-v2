@@ -248,15 +248,16 @@ func _process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("button_left"):
 		if (hero.img[0].position.x + h0_atk_down_x) >= lst_ennemy[0].get_node("area_slime_3").global_position.x - 10 and (hero.img[0].position.x + h0_atk_down_x) <= lst_ennemy[0].get_node("area_slime_3").global_position.x + 17 and (hero.img[0].position.y + h0_atk_down_y) >= lst_ennemy[0].get_node("area_slime_3").global_position.y - 17 and (hero.img[0].position.y + h0_atk_down_y) <= lst_ennemy[0].get_node("area_slime_3").global_position.y + 12 :
-			print("je touche le slime") 
-			#Faut mettre -10 dans les conditions superieur ou egal pour le x et y et sur le inferieur ne rien soustraire de plus car c'est sur quand on verifie la partie superieur ou egal ou la il a un decalage chelou 
-			#SI TU AS OUBLIER REGARDE LA CONSOLE AVEC LES PRINT EN GROS LE GLOBAL POSITION CEST COMME LE HERO DONC SA SERT A RIEN ET FAUT FAIRE HERO NORMAL PLUS LE DECALAGE DE LA POSITION LOCAL DU COLLIDE ET PAS DE AREA 
-			print("position de latk down en x ", hero.img[0].get_node("area_attack_down_h1/CollisionShape2D").position.x)
-			print("position de latk down en y ", hero.img[0].get_node("area_attack_down_h1/CollisionShape2D").position.y)
-			print("position de hero en x ", hero.img[0].position.x)
-			print("position de hero en y ", hero.img[0].position.y)
-			print("position slim en x ", lst_ennemy[0].get_node("area_slime_3").global_position.x)
-			print("position slim en y ", lst_ennemy[0].get_node("area_slime_3").global_position.y)
+			if hero.img[0].Animated.animation == "idle_down" or hero.img[0].Animated.animation == "walk_down" or hero.img[0].Animated.animation == "run_down" or hero.img[0].Animated.animation == "attack_down" or hero.img[0].Animated.animation == "dash" or hero.img[0].Animated.animation == "sort_down": 
+				print("je touche le slime") 
+				#Faut mettre -10 dans les conditions superieur ou egal pour le x et y et sur le inferieur ne rien soustraire de plus car c'est sur quand on verifie la partie superieur ou egal ou la il a un decalage chelou 
+				#SI TU AS OUBLIER REGARDE LA CONSOLE AVEC LES PRINT EN GROS LE GLOBAL POSITION CEST COMME LE HERO DONC SA SERT A RIEN ET FAUT FAIRE HERO NORMAL PLUS LE DECALAGE DE LA POSITION LOCAL DU COLLIDE ET PAS DE AREA 
+				print("position de latk down en x ", hero.img[0].get_node("area_attack_down_h1/CollisionShape2D").position.x)
+				print("position de latk down en y ", hero.img[0].get_node("area_attack_down_h1/CollisionShape2D").position.y)
+				print("position de hero en x ", hero.img[0].position.x)
+				print("position de hero en y ", hero.img[0].position.y)
+				print("position slim en x ", lst_ennemy[0].get_node("area_slime_3").global_position.x)
+				print("position slim en y ", lst_ennemy[0].get_node("area_slime_3").global_position.y)
 	
 	if hero.current == 2:
 		print("la position x du hero en cours : ", hero.img[hero.current].position.x)
