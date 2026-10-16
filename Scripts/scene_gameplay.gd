@@ -25,6 +25,8 @@ var gui_alchimie
 var gui_inventaire
 var gui_equipement
 
+var isAttaque = false
+
 @onready var gui_hero = get_node("gui_hudHero")
 
 func _Sgui_open(pTypeGui):
@@ -188,7 +190,10 @@ func gestuinInterfaceUI():
 
 
 func gestion_collide_heros(delta: float, pH_A_D_x, pH_A_D_y, pH_A_L_x, pH_A_L_y, pH_A_U_x, pH_A_U_y, pH_A_R_x, pH_A_R_y, pHeroCurrent):
-	if Input.is_action_just_pressed("button_left"):
+	if hero.img[pHeroCurrent].Animated. :
+		isAttaque = false
+	if Input.is_action_just_pressed("button_left") and isAttaque == false:
+		isAttaque = true
 		if (hero.img[pHeroCurrent].position.x + pH_A_D_x) >= lst_ennemy[0].get_node("area_slime_3").global_position.x - 10 and (hero.img[pHeroCurrent].position.x + pH_A_D_x) <= lst_ennemy[0].get_node("area_slime_3").global_position.x + 17 and (hero.img[pHeroCurrent].position.y + pH_A_D_y) >= lst_ennemy[0].get_node("area_slime_3").global_position.y - 17 and (hero.img[pHeroCurrent].position.y + pH_A_D_y) <= lst_ennemy[0].get_node("area_slime_3").global_position.y + 12 :
 			if hero.img[pHeroCurrent].Animated.animation == "idle_down" or hero.img[pHeroCurrent].Animated.animation == "walk_down" or hero.img[pHeroCurrent].Animated.animation == "run_down" or hero.img[pHeroCurrent].Animated.animation == "attack_down" or hero.img[pHeroCurrent].Animated.animation == "dash" or hero.img[pHeroCurrent].Animated.animation == "sort_down": 
 				print("je touche le slime") 
