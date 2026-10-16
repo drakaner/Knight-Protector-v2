@@ -29,6 +29,14 @@ var isAttaque = false
 
 @onready var gui_hero = get_node("gui_hudHero")
 
+func CreateEnnemy(pX, pY):
+	var ennemy = {}
+	
+	ennemy.x = pX
+	ennemy.y = pY
+	#a voir plus tard comment creer des ennemy dynamiquement
+	
+
 func _Sgui_open(pTypeGui):
 	var sizeScreen = get_viewport().get_visible_rect().size
 	if pTypeGui == "statue":
@@ -190,8 +198,9 @@ func gestuinInterfaceUI():
 
 
 func gestion_collide_heros(delta: float, pH_A_D_x, pH_A_D_y, pH_A_L_x, pH_A_L_y, pH_A_U_x, pH_A_U_y, pH_A_R_x, pH_A_R_y, pHeroCurrent):
-	if hero.img[pHeroCurrent].Animated. :
-		isAttaque = false
+	if hero.img[pHeroCurrent].Animated.animation == "attack_down" or hero.img[pHeroCurrent].Animated.animation == "attack_left" or hero.img[pHeroCurrent].Animated.animation == "attack_up" or hero.img[pHeroCurrent].Animated.animation == "attack_right" :
+		if hero.img[pHeroCurrent].Animated.frame == hero.img[pHeroCurrent].Animated.sprite_frames.get_frame_count("attack_down") - 1:
+			isAttaque = false
 	if Input.is_action_just_pressed("button_left") and isAttaque == false:
 		isAttaque = true
 		if (hero.img[pHeroCurrent].position.x + pH_A_D_x) >= lst_ennemy[0].get_node("area_slime_3").global_position.x - 10 and (hero.img[pHeroCurrent].position.x + pH_A_D_x) <= lst_ennemy[0].get_node("area_slime_3").global_position.x + 17 and (hero.img[pHeroCurrent].position.y + pH_A_D_y) >= lst_ennemy[0].get_node("area_slime_3").global_position.y - 17 and (hero.img[pHeroCurrent].position.y + pH_A_D_y) <= lst_ennemy[0].get_node("area_slime_3").global_position.y + 12 :
