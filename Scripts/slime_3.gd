@@ -1,7 +1,10 @@
 extends Node2D
 
 @onready var Animated = get_node("area_slime_3/AnimatedSprite2D_slime3")
-#faut plus qu'il puisse traverser les murs donc inspire toi du code sur le hero
+@onready var NodeGamePlay = get_parent()
+
+var isCollide = { up = false, right = false, down = false, left = false }
+
 #idle / move / run / attack / hurt / dead
 var etat_ennemy = ""
 var etat_time = 0
@@ -23,6 +26,13 @@ func _etat_anime(pAnime, pLoop):
 	Animated.play()
 
 func _machine_a_etat(delta: float):
+	var dx = NodeGamePlay.hero.img[NodeGamePlay.hero.current].position.x - position.x
+	var dy = NodeGamePlay.hero.img[NodeGamePlay.hero.current].position.y - position.y
+	
+	var distance = sqrt( dx * dx + dy * dy)
+	
+	#print("la distance entre le hero et le slime est de : ", distance)
+	
 	if etat_ennemy == "idle_down" or etat_ennemy == "idle_left" or etat_ennemy == "idle_up" or etat_ennemy == "idle_right" :
 		etat_vx = 0
 		etat_vy = 0
@@ -39,6 +49,11 @@ func _machine_a_etat(delta: float):
 			etat_bool = true
 		
 		etat_time -= delta
+		
+		if distance < 200:
+			etat_ennemy = "poursuite"
+			etat_bool = false
+		
 		if etat_time <= 0:
 			rnd_etat = randi_range(1, 4)
 			etat_bool = false
@@ -71,6 +86,11 @@ func _machine_a_etat(delta: float):
 		position += Vector2(etat_vx, etat_vy)*delta
 		
 		etat_time -= delta
+		
+		if distance < 200:
+			etat_ennemy = "poursuite"
+			etat_bool = false
+		
 		if etat_time <= 0:
 			rnd_etat = randi_range(1, 4)
 			etat_bool = false
@@ -83,6 +103,22 @@ func _machine_a_etat(delta: float):
 			elif rnd_etat == 4:
 				etat_ennemy = "idle_left"
 	
+	elif etat_ennemy == "poursuite":
+		if NodeGamePlay.hero.img[NodeGamePlay.hero.current].position.x > position.x:
+			_etat_anime("run_right", true)
+			etat_vx = 140
+		elif NodeGamePlay.hero.img[NodeGamePlay.hero.current].position.x < position.x:
+			_etat_anime("run_left", true)
+			etat_vx = -140
+		
+		if NodeGamePlay.hero.img[NodeGamePlay.hero.current].position.y > position.y:
+			_etat_anime("run_down", true)
+			etat_vy = 140
+		elif NodeGamePlay.hero.img[NodeGamePlay.hero.current].position.y < position.y:
+			_etat_anime("run_up", true)
+			etat_vy = -140
+		
+		position += Vector2(etat_vx, etat_vy)*delta
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -91,8 +127,37 @@ func _ready() -> void:
 	etat_ennemy = "idle_down"
 	
 	_etat_anime("idle_down", true)
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	_machine_a_etat(delta)
+
+
+func _on_area_slime_3_area_entered(area: Area2D) -> void:
+	if area.is_in_group("collide"):
+		if Animated.animation == "idle_right" or Animated.animation == "walk_right" or Animated.animation == "run_right":
+			isCollide.right = true
+			etat_vx = 0
+			position.x -= 10
+			etat_ennemy = "idle_right"
+			etat_bool = false
+		if Animated.animation == "idle_down" or Animated.animation == "walk_down" or Animated.animation == "run_down":
+			isCollide.down = true
+			etat_vy = 0
+			position.y -= 10
+			etat_ennemy = "idle_down"
+			etat_bool = false
+		if Animated.animation == "idle_left" or Animated.animation == "walk_left" or Animated.animation == "run_left":
+			isCollide.left = true
+			etat_vx = 0
+			position.x += 10
+			etat_ennemy = "idle_left"
+			etat_bool = false
+		if Animated.animation == "idle_up" or Animated.animation == "walk_up" or Animated.animation == "run_up":
+			isCollide.up = true
+			etat_vy = 0
+			position.y += 10
+			etat_ennemy = "idle_up"
+			etat_bool = false
