@@ -26,6 +26,15 @@ func _etat_anime(pAnime, pLoop):
 		Animated.speed_scale = 1
 	Animated.play()
 
+func _choisir_direction_poursuite() -> String:
+	var cible = NodeGamePlay.hero.img[NodeGamePlay.hero.current].position
+	var diff = cible - position
+
+	if abs(diff.x) > abs(diff.y):
+		return "run_right" if diff.x > 0 else "run_left"
+	else:
+		return "run_down" if diff.y > 0 else "run_up"
+
 func _machine_a_etat(delta: float):
 	var dx = NodeGamePlay.hero.img[NodeGamePlay.hero.current].position.x - position.x
 	var dy = NodeGamePlay.hero.img[NodeGamePlay.hero.current].position.y - position.y
@@ -115,52 +124,46 @@ func _machine_a_etat(delta: float):
 		if NodeGamePlay.hero.img[NodeGamePlay.hero.current].position.y < position.y:
 			etat_ennemy = "run_up"
 		
-		position += Vector2(etat_vx, etat_vy)*delta
 	
-	elif etat_ennemy == "run_up":
-		etat_vy = -140
-		if etat_bool ==  false:
-			_etat_anime("run_up", true)
-			etat_bool = true
+	elif etat_ennemy.begins_with("run_"):
 		etat_timePoursuite -= delta
 		
 		if etat_timePoursuite <= 0:
-			etat_ennemy = "poursuite"
-			etat_bool = false
-	
-	elif etat_ennemy == "run_right":
-		etat_vx = 140
-		if etat_bool ==  false:
-			_etat_anime("run_right", true)
-			etat_bool = true
-		etat_timePoursuite -= delta
-		
-		if etat_timePoursuite <= 0:
-			etat_ennemy = "poursuite"
-			etat_bool = false
-	
-	elif etat_ennemy == "run_down":
-		etat_vy = 140
-		if etat_bool ==  false:
-			_etat_anime("run_down", true)
-			etat_bool = true
-		etat_timePoursuite -= delta
-		
-		if etat_timePoursuite <= 0:
-			etat_ennemy = "poursuite"
-			etat_bool = false
-	
-	elif etat_ennemy == "run_left":
-		etat_vx = -140
-		if etat_bool ==  false:
-			_etat_anime("run_left", true)
-			etat_bool = true
-		etat_timePoursuite -= delta
-		
-		if etat_timePoursuite <= 0:
-			etat_ennemy = "poursuite"
-			etat_bool = false
+			etat_timePoursuite = 0.2
+			var nouvel_etat = _choisir_direction_poursuite()
+			if nouvel_etat != etat_ennemy:
+				etat_ennemy = nouvel_etat
+				etat_bool = false
 
+		match etat_ennemy:
+			"run_up":    position += Vector2(0, -140) * delta
+			"run_down":  position += Vector2(0, 140) * delta
+			"run_left":  position += Vector2(-140, 0) * delta
+			"run_right": position += Vector2(140, 0) * delta
+
+		if etat_bool == false:
+			_etat_anime(etat_ennemy, true)
+			etat_bool = true
+		
+		if distance <= 20:
+			etat_ennemy = "attack"
+			etat_bool = false
+			etat_timePoursuite = 0.2
+			etat_time = 1
+		
+		if distance > 250:
+			etat_ennemy = "idle_down"
+			etat_bool = false
+			etat_timePoursuite = 0.2
+			etat_time = 1
+	
+	elif etat_ennemy == "attack":
+		if etat_bool == false:
+			_etat_anime("attack_down", true)
+			etat_bool = true
+		position += Vector2(etat_vx, etat_vy)*delta
+		etat_vx = 0
+		etat_vy = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
