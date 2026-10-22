@@ -19,7 +19,7 @@ func _etat_anime(pAnime, pLoop):
 	Animated.sprite_frames.set_animation_loop(pAnime, pLoop)
 	Animated.animation = pAnime
 	if pAnime == "attack_up" or pAnime == "attack_right" or pAnime == "attack_down" or pAnime == "attack_left":
-		Animated.speed_scale = 2
+		Animated.speed_scale = 5
 	elif pAnime == "run_up" or pAnime == "run_right" or pAnime == "run_down" or pAnime == "run_left":
 		Animated.speed_scale = 3
 	else:
@@ -146,7 +146,14 @@ func _machine_a_etat(delta: float):
 			etat_bool = true
 		
 		if distance <= 20:
-			etat_ennemy = "attack"
+			if etat_ennemy == "run_up":
+				etat_ennemy = "attack_up"
+			elif etat_ennemy == "run_right":
+				etat_ennemy = "attack_right"
+			elif etat_ennemy == "run_down":
+				etat_ennemy = "attack_down"
+			elif etat_ennemy == "run_left":
+				etat_ennemy = "attack_left"
 			etat_bool = false
 			etat_timePoursuite = 0.2
 			etat_time = 1
@@ -157,13 +164,20 @@ func _machine_a_etat(delta: float):
 			etat_timePoursuite = 0.2
 			etat_time = 1
 	
-	elif etat_ennemy == "attack":
+	elif etat_ennemy == "attack_up" or etat_ennemy == "attack_right" or etat_ennemy == "attack_down" or etat_ennemy == "attack_left" :
 		if etat_bool == false:
-			_etat_anime("attack_down", true)
+			_etat_anime(etat_ennemy, false)
 			etat_bool = true
 		position += Vector2(etat_vx, etat_vy)*delta
 		etat_vx = 0
 		etat_vy = 0
+		if $area_slime_3/AnimatedSprite2D_slime3.frame >= 8:
+			print("l'animation est finie !")
+			etat_ennemy = "idle_down"
+			etat_time = 3
+			etat_timePoursuite = 0.5
+			etat_bool = false
+			#Ajouter un etat second pour eviter que le slime enchaine ses attaques 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
