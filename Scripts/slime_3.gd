@@ -14,6 +14,11 @@ var rnd_etat = 0
 var etat_vx = 0
 var etat_vy = 0
 
+var nb_stat_attaque = 20
+var nb_stat_vie = 100
+var nb_stat_defense = 0
+var nb_gain_xp = 10
+
 func _etat_anime(pAnime, pLoop):
 	
 	Animated.sprite_frames.set_animation_loop(pAnime, pLoop)
@@ -173,11 +178,22 @@ func _machine_a_etat(delta: float):
 		etat_vy = 0
 		if $area_slime_3/AnimatedSprite2D_slime3.frame >= 8:
 			print("l'animation est finie !")
-			etat_ennemy = "idle_down"
-			etat_time = 3
+			etat_ennemy = "reflexion"
+			$area_slime_3/AnimatedSprite2D_slime3.frame = 0
+			DataSave.hero.vie -= nb_stat_attaque
+			etat_time = randi_range(1, 3)
 			etat_timePoursuite = 0.5
 			etat_bool = false
-			#Ajouter un etat second pour eviter que le slime enchaine ses attaques 
+	
+	elif etat_ennemy == "reflexion":
+		if etat_bool == false:
+			_etat_anime("idle_down", true)
+			etat_bool = true
+		etat_time -= delta
+		if etat_time <= 0:
+			etat_ennemy = "idle_down"
+			etat_bool = false
+			etat_time = randi_range(1, 2)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

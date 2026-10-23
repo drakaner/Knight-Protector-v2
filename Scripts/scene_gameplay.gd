@@ -11,9 +11,6 @@ var GUIItems = preload("res://Objets/gui_boutique_items.tscn")
 var GUIAlchimie = preload("res://Objets/gui_alchimie.tscn")
 var GUIInventaire = preload("res://Objets/gui_inventaire.tscn")
 var GUIEquipement = preload("res://Objets/gui_hud_equipement.tscn")
-var EnnemySlime3 = preload("res://Objets/slime_3.tscn")
-
-var lst_ennemy = {}
 
 var hero = { rnd=randi_range(1, 3), img={}, current=0, gold=500 }
 var gui_statue
@@ -25,16 +22,23 @@ var gui_alchimie
 var gui_inventaire
 var gui_equipement
 
+var lst_ennemy = []
+
 var isAttaque = false
 
 @onready var gui_hero = get_node("gui_hudHero")
 
-func CreateEnnemy(pX, pY):
-	var ennemy = {}
-	
-	ennemy.x = pX
-	ennemy.y = pY
-	#a voir plus tard comment creer des ennemy dynamiquement
+var scenes_ennemis = {
+	"slime_3": preload("res://Objets/slime_3.tscn"),
+	# "slime_1": preload("res://Objets/slime_1.tscn"),
+}
+
+func create_ennemi(type: String, pos: Vector2) -> Node2D:
+	var ennemi = scenes_ennemis[type].instantiate()
+	ennemi.position = pos
+	add_child(ennemi)          # ou un nœud conteneur dédié
+	ennemi.add_to_group("ennemis")
+	return ennemi
 	
 
 func _Sgui_open(pTypeGui):
@@ -145,9 +149,8 @@ func demarreJeu():
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	demarreJeu()
-	lst_ennemy[0] = EnnemySlime3.instantiate()
-	add_child(lst_ennemy[0])
-	lst_ennemy[0].position.x = 300
+	lst_ennemy.append( create_ennemi("slime_3", Vector2(300, 200)))
+	#Bon la creation dynamique à l'air de marcher, maintenant la prochaine fois faut que je code le système de suppression d'objet avec la recommandation de claude car faut le retirer de la liste avec la methode que je connait plus il faut faire un queuefree() pour retirer l'objet du jeu c'est une double suppression a faire 
 	
 	
 	hero.img[hero.current].connect("guiStatueOpen", Callable(self, "_Sgui_open"))
