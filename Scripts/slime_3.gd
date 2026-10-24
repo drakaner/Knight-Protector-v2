@@ -14,6 +14,8 @@ var rnd_etat = 0
 var etat_vx = 0
 var etat_vy = 0
 
+var area = ""
+
 var nb_stat_attaque = 20
 var nb_stat_vie = 100
 var nb_stat_defense = 0
@@ -181,7 +183,7 @@ func _machine_a_etat(delta: float):
 			etat_ennemy = "reflexion"
 			$area_slime_3/AnimatedSprite2D_slime3.frame = 0
 			DataSave.hero.vie -= nb_stat_attaque
-			etat_time = randi_range(1, 3)
+			etat_time = randi_range(2, 5)
 			etat_timePoursuite = 0.5
 			etat_bool = false
 	
