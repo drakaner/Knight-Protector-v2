@@ -1085,7 +1085,7 @@ script = ExtResource("1_acune")
 [node name="AnimatedSprite2D_slime3" type="AnimatedSprite2D" parent="area_slime_3"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_kkm5p")
-animation = &"attack_down"
+animation = &"dead"
 
 [node name="collide_slime_3" type="CollisionShape2D" parent="area_slime_3"]
 position = Vector2(0.5, 0.5)

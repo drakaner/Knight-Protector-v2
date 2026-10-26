@@ -13,6 +13,8 @@ var etat_bool = false
 var rnd_etat = 0
 var etat_vx = 0
 var etat_vy = 0
+var b_death = false
+var b_bool_death = false
 
 var area = ""
 
@@ -209,7 +211,13 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	_machine_a_etat(delta)
+	if b_death == false:
+		_machine_a_etat(delta)
+	
+	if b_death == true:
+		_etat_anime("dead", false)
+		if $area_slime_3/AnimatedSprite2D_slime3.frame >= 9:
+			b_bool_death = true
 
 
 func _on_area_slime_3_area_entered(area: Area2D) -> void:

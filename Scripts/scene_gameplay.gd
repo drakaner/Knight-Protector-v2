@@ -119,6 +119,7 @@ func demarreJeu():
 		DataSave.hero.defense = 9
 		DataSave.hero.xp = 0
 		DataSave.hero.xpMax = 100
+		DataSave.hero.level = 1
 	elif hero.rnd == 2:
 		hero.img[1] = HeroScene2.instantiate()
 		hero.current = 1
@@ -135,6 +136,7 @@ func demarreJeu():
 		DataSave.hero.defense = 15
 		DataSave.hero.xp = 0
 		DataSave.hero.xpMax = 100
+		DataSave.hero.level = 1
 	elif hero.rnd == 3:
 		hero.img[2] = HeroScene3.instantiate()
 		hero.current = 2
@@ -151,6 +153,7 @@ func demarreJeu():
 		DataSave.hero.defense = 5
 		DataSave.hero.xp = 0
 		DataSave.hero.xpMax = 100
+		DataSave.hero.level = 1
 	
 	$YSortHeros.add_child(hero.img[hero.current])
 	print("Le hero rnd choisie est : ",hero.rnd)
@@ -227,27 +230,28 @@ func gestion_collide_heros(delta: float, pH_A_D_x, pH_A_D_y, pH_A_L_x, pH_A_L_y,
 			if lst_ennemy != null:
 				for e in range(0, lst_ennemy.size()):
 					var ennemy = lst_ennemy[e]
-					if (hero.img[pHeroCurrent].position.x + pH_A_D_x) >= lst_ennemy[e].get_node_or_null(ennemy.area).global_position.x - 15 and (hero.img[pHeroCurrent].position.x + pH_A_D_x) <= lst_ennemy[e].get_node_or_null(ennemy.area).global_position.x + 17 and (hero.img[pHeroCurrent].position.y + pH_A_D_y) >= lst_ennemy[e].get_node_or_null(ennemy.area).global_position.y - 25 and (hero.img[pHeroCurrent].position.y + pH_A_D_y) <= lst_ennemy[e].get_node_or_null(ennemy.area).global_position.y + 12 :
-						if hero.img[pHeroCurrent].Animated.animation == "idle_down" or hero.img[pHeroCurrent].Animated.animation == "walk_down" or hero.img[pHeroCurrent].Animated.animation == "run_down" or hero.img[pHeroCurrent].Animated.animation == "attack_down" or hero.img[pHeroCurrent].Animated.animation == "dash" or hero.img[pHeroCurrent].Animated.animation == "sort_down": 
-							print("COTER HAUT !:! je touche le slime")
-							hero_hit() 
-							#Faut mettre -10 dans les conditions superieur ou egal pour le x et y et sur le inferieur ne rien soustraire de plus car c'est sur quand on verifie la partie superieur ou egal ou la il a un decalage chelou 
-							#SI TU AS OUBLIER REGARDE LA CONSOLE AVEC LES PRINT EN GROS LE GLOBAL POSITION CEST COMME LE HERO DONC SA SERT A RIEN ET FAUT FAIRE HERO NORMAL PLUS LE DECALAGE DE LA POSITION LOCAL DU COLLIDE ET PAS DE AREA 
-					
-					if (hero.img[pHeroCurrent].position.x + pH_A_L_x) >= lst_ennemy[e].get_node_or_null(ennemy.area).global_position.x - 10 and (hero.img[pHeroCurrent].position.x + pH_A_L_x) <= lst_ennemy[e].get_node_or_null(ennemy.area).global_position.x + 24 and (hero.img[pHeroCurrent].position.y + pH_A_L_y) >= lst_ennemy[e].get_node_or_null(ennemy.area).global_position.y - 17 and (hero.img[pHeroCurrent].position.y + pH_A_L_y) <= lst_ennemy[e].get_node_or_null(ennemy.area).global_position.y + 17 :
-						if hero.img[pHeroCurrent].Animated.animation == "idle_left" or hero.img[pHeroCurrent].Animated.animation == "walk_left" or hero.img[pHeroCurrent].Animated.animation == "run_left" or hero.img[pHeroCurrent].Animated.animation == "attack_left" or hero.img[pHeroCurrent].Animated.animation == "dash" or hero.img[pHeroCurrent].Animated.animation == "sort_left":
-							print("COTER DROIT !:! test sur la position du petit variable : ", pH_A_L_x)
-							hero_hit()
-					
-					if (hero.img[pHeroCurrent].position.x + pH_A_U_x) >= lst_ennemy[e].get_node_or_null(ennemy.area).global_position.x - 20 and (hero.img[pHeroCurrent].position.x + pH_A_U_x) <= lst_ennemy[e].get_node_or_null(ennemy.area).global_position.x + 17 and (hero.img[pHeroCurrent].position.y + pH_A_U_y) >= lst_ennemy[e].get_node_or_null(ennemy.area).global_position.y - 17 and (hero.img[pHeroCurrent].position.y + pH_A_U_y) <= lst_ennemy[e].get_node_or_null(ennemy.area).global_position.y + 17 :
-						if hero.img[pHeroCurrent].Animated.animation == "idle_up" or hero.img[pHeroCurrent].Animated.animation == "walk_up" or hero.img[pHeroCurrent].Animated.animation == "run_up" or hero.img[pHeroCurrent].Animated.animation == "attack_up" or hero.img[pHeroCurrent].Animated.animation == "dash" or hero.img[pHeroCurrent].Animated.animation == "sort_up":
-							print("COTER BAS !:! test sur la position du petit variable : ", pH_A_U_x)
-							hero_hit()
-					
-					if (hero.img[pHeroCurrent].position.x + pH_A_R_x) >= lst_ennemy[e].get_node_or_null(ennemy.area).global_position.x - 21 and (hero.img[pHeroCurrent].position.x + pH_A_R_x) <= lst_ennemy[e].get_node_or_null(ennemy.area).global_position.x + 17 and (hero.img[pHeroCurrent].position.y + pH_A_R_y) >= lst_ennemy[e].get_node_or_null(ennemy.area).global_position.y - 17 and (hero.img[pHeroCurrent].position.y + pH_A_R_y) <= lst_ennemy[e].get_node_or_null(ennemy.area).global_position.y + 12 :
-						if hero.img[pHeroCurrent].Animated.animation == "idle_right" or hero.img[pHeroCurrent].Animated.animation == "walk_right" or hero.img[pHeroCurrent].Animated.animation == "run_right" or hero.img[pHeroCurrent].Animated.animation == "attack_right" or hero.img[pHeroCurrent].Animated.animation == "dash" or hero.img[pHeroCurrent].Animated.animation == "sort_right":
-							print("COTER GAUCHE !:! test sur la position du petit variable : ", pH_A_R_x)
-							hero_hit()
+					if ennemy.b_death == false:
+						if (hero.img[pHeroCurrent].position.x + pH_A_D_x) >= lst_ennemy[e].get_node_or_null(ennemy.area).global_position.x - 15 and (hero.img[pHeroCurrent].position.x + pH_A_D_x) <= lst_ennemy[e].get_node_or_null(ennemy.area).global_position.x + 17 and (hero.img[pHeroCurrent].position.y + pH_A_D_y) >= lst_ennemy[e].get_node_or_null(ennemy.area).global_position.y - 25 and (hero.img[pHeroCurrent].position.y + pH_A_D_y) <= lst_ennemy[e].get_node_or_null(ennemy.area).global_position.y + 12 :
+							if hero.img[pHeroCurrent].Animated.animation == "idle_down" or hero.img[pHeroCurrent].Animated.animation == "walk_down" or hero.img[pHeroCurrent].Animated.animation == "run_down" or hero.img[pHeroCurrent].Animated.animation == "attack_down" or hero.img[pHeroCurrent].Animated.animation == "dash" or hero.img[pHeroCurrent].Animated.animation == "sort_down": 
+								print("COTER HAUT !:! je touche le slime")
+								hero_hit() 
+								#Faut mettre -10 dans les conditions superieur ou egal pour le x et y et sur le inferieur ne rien soustraire de plus car c'est sur quand on verifie la partie superieur ou egal ou la il a un decalage chelou 
+								#SI TU AS OUBLIER REGARDE LA CONSOLE AVEC LES PRINT EN GROS LE GLOBAL POSITION CEST COMME LE HERO DONC SA SERT A RIEN ET FAUT FAIRE HERO NORMAL PLUS LE DECALAGE DE LA POSITION LOCAL DU COLLIDE ET PAS DE AREA 
+						
+						if (hero.img[pHeroCurrent].position.x + pH_A_L_x) >= lst_ennemy[e].get_node_or_null(ennemy.area).global_position.x - 10 and (hero.img[pHeroCurrent].position.x + pH_A_L_x) <= lst_ennemy[e].get_node_or_null(ennemy.area).global_position.x + 24 and (hero.img[pHeroCurrent].position.y + pH_A_L_y) >= lst_ennemy[e].get_node_or_null(ennemy.area).global_position.y - 17 and (hero.img[pHeroCurrent].position.y + pH_A_L_y) <= lst_ennemy[e].get_node_or_null(ennemy.area).global_position.y + 17 :
+							if hero.img[pHeroCurrent].Animated.animation == "idle_left" or hero.img[pHeroCurrent].Animated.animation == "walk_left" or hero.img[pHeroCurrent].Animated.animation == "run_left" or hero.img[pHeroCurrent].Animated.animation == "attack_left" or hero.img[pHeroCurrent].Animated.animation == "dash" or hero.img[pHeroCurrent].Animated.animation == "sort_left":
+								print("COTER DROIT !:! test sur la position du petit variable : ", pH_A_L_x)
+								hero_hit()
+						
+						if (hero.img[pHeroCurrent].position.x + pH_A_U_x) >= lst_ennemy[e].get_node_or_null(ennemy.area).global_position.x - 20 and (hero.img[pHeroCurrent].position.x + pH_A_U_x) <= lst_ennemy[e].get_node_or_null(ennemy.area).global_position.x + 17 and (hero.img[pHeroCurrent].position.y + pH_A_U_y) >= lst_ennemy[e].get_node_or_null(ennemy.area).global_position.y - 17 and (hero.img[pHeroCurrent].position.y + pH_A_U_y) <= lst_ennemy[e].get_node_or_null(ennemy.area).global_position.y + 17 :
+							if hero.img[pHeroCurrent].Animated.animation == "idle_up" or hero.img[pHeroCurrent].Animated.animation == "walk_up" or hero.img[pHeroCurrent].Animated.animation == "run_up" or hero.img[pHeroCurrent].Animated.animation == "attack_up" or hero.img[pHeroCurrent].Animated.animation == "dash" or hero.img[pHeroCurrent].Animated.animation == "sort_up":
+								print("COTER BAS !:! test sur la position du petit variable : ", pH_A_U_x)
+								hero_hit()
+						
+						if (hero.img[pHeroCurrent].position.x + pH_A_R_x) >= lst_ennemy[e].get_node_or_null(ennemy.area).global_position.x - 21 and (hero.img[pHeroCurrent].position.x + pH_A_R_x) <= lst_ennemy[e].get_node_or_null(ennemy.area).global_position.x + 17 and (hero.img[pHeroCurrent].position.y + pH_A_R_y) >= lst_ennemy[e].get_node_or_null(ennemy.area).global_position.y - 17 and (hero.img[pHeroCurrent].position.y + pH_A_R_y) <= lst_ennemy[e].get_node_or_null(ennemy.area).global_position.y + 12 :
+							if hero.img[pHeroCurrent].Animated.animation == "idle_right" or hero.img[pHeroCurrent].Animated.animation == "walk_right" or hero.img[pHeroCurrent].Animated.animation == "run_right" or hero.img[pHeroCurrent].Animated.animation == "attack_right" or hero.img[pHeroCurrent].Animated.animation == "dash" or hero.img[pHeroCurrent].Animated.animation == "sort_right":
+								print("COTER GAUCHE !:! test sur la position du petit variable : ", pH_A_R_x)
+								hero_hit()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -282,8 +286,17 @@ func _process(delta: float) -> void:
 	for i in range(lst_ennemy.size() - 1, -1, -1):
 		var e = lst_ennemy[i]
 		if e.nb_stat_vie <= 0:
-			lst_ennemy.remove_at(i)
-			e.queue_free()
+			e.b_death = true
+			if e.b_bool_death == true:
+				DataSave.hero.xp += e.nb_gain_xp
+				lst_ennemy.remove_at(i)
+				e.queue_free() 
+	
+	if DataSave.hero.xp >= DataSave.hero.xpMax:
+		DataSave.hero.xp = 0
+		DataSave.hero.level += 1
+		print("level up !")
+		#Je laisse comme ça pour le moment mais faudra l'améliorer
 	
 	if hero.current == 0:
 		h0_atk_down_x = hero.img[0].get_node("area_attack_down_h1/CollisionShape2D").position.x

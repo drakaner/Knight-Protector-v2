@@ -3,7 +3,7 @@ extends Node
 #FAIRE UNE ADDITION DE TOUTE LES DATA ITEMS GENRE POTION + SWORD ET TOUT PUIS FAIRE LE TOTAL AVEC UNE NOUVELLE VARIABLE DATASAVE PUIS SI JAMAIS CEST EGAL A SE NOMBRE ALORS LINVENTAIRE EST PLEIN
 
 var hero = { gold = 500, vie = 1, vieMax = 1, mana = 1, manaMax = 1, puissance = 1, 
-endurance = 1, enduranceMax = 1, regene_endurance  = 1, attaque = 1, defense = 1, xp = 1, xpMax = 1, current = -1  }
+endurance = 1, enduranceMax = 1, regene_endurance  = 1, attaque = 1, defense = 1, xp = 1, xpMax = 1, level = 1, current = -1  }
 
 var items_posession = { potionVie = 0, potionMana = 0, bague1 = 0, bague2 = 0, bague3 = 0, bottes1 = 0,
 bottes2 = 0, bottes3 = 0, bottes4 = 0, bottes5 = 0, bottes6 = 0, bouclier1 = 0, bouclier2 = 0,
@@ -69,6 +69,7 @@ func load_data():
 	hero.defense = config.get_value("player", "defense", 1)
 	hero.xp = config.get_value("player", "xp", 1)
 	hero.xpMax = config.get_value("player", "xp_max", 1)
+	hero.level = config.get_value("player", "level", 1)
 	hero.current = config.get_value("player", "current", -1)
 	items_posession.potionVie = config.get_value("items", "potion_vie", 0)
 	items_posession.potionMana = config.get_value("items", "potion_mana", 0)
@@ -221,6 +222,7 @@ func save_data():
 	config.set_value("player", "defense", hero.defense)
 	config.set_value("player", "xp", hero.xp)
 	config.set_value("player", "xp_max", hero.xpMax)
+	config.set_value("player", "level", hero.level)
 	config.set_value("player", "current", hero.current)
 	config.set_value("items", "potion_vie", items_posession.potionVie)
 	config.set_value("items", "potion_mana", items_posession.potionMana)
