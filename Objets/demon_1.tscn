@@ -1005,7 +1005,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e5fu3"]
-size = Vector2(25, 34)
+size = Vector2(25, 41)
 
 [node name="demon_1" type="Node2D"]
 script = ExtResource("1_455ym")
@@ -1018,7 +1018,7 @@ sprite_frames = SubResource("SpriteFrames_oyg3x")
 animation = &"dead"
 
 [node name="collide_demon_1" type="CollisionShape2D" parent="area_demon_1"]
-position = Vector2(-0.5, -1)
+position = Vector2(-0.5, 2.5)
 shape = SubResource("RectangleShape2D_e5fu3")
 
 [connection signal="area_entered" from="area_demon_1" to="." method="_on_area_demon_1_area_entered"]

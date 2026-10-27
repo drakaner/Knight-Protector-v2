@@ -161,8 +161,8 @@ func demarreJeu():
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	demarreJeu()
-	lst_ennemy.append( create_ennemi("slime_3", "area_slime_3", Vector2(300, 200)))
-	lst_ennemy.append( create_ennemi("demon_1", "area_demon_1", Vector2(500, 20)))
+	#lst_ennemy.append( create_ennemi("slime_3", "area_slime_3", Vector2(300, 200)))
+	lst_ennemy.append( create_ennemi("demon_1", "area_demon_1", Vector2(500, -100)))
 	#Bon la creation dynamique à l'air de marcher, maintenant la prochaine fois faut que je code le système de suppression d'objet avec la recommandation de claude car faut le retirer de la liste avec la methode que je connait plus il faut faire un queuefree() pour retirer l'objet du jeu c'est une double suppression a faire 
 	
 	

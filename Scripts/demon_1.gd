@@ -67,10 +67,10 @@ func _machine_a_etat(delta: float):
 			etat_time = randi_range(2, 3)
 			etat_bool = true
 		
-		etat_time -= delta
+		#etat_time -= delta
 		
 		if distance < 200:
-			etat_ennemy = "poursuite"
+			#etat_ennemy = "poursuite"
 			etat_bool = false
 		
 		if etat_time <= 0:
