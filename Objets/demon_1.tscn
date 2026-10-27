@@ -1,5 +1,6 @@
-[gd_scene load_steps=138 format=3 uid="uid://by0djbdmu25xk"]
+[gd_scene load_steps=139 format=3 uid="uid://by0djbdmu25xk"]
 
+[ext_resource type="Script" uid="uid://dyd35o82bmm1e" path="res://Scripts/demon_1.gd" id="1_455ym"]
 [ext_resource type="Texture2D" uid="uid://c7b0gh4e6f8qc" path="res://Ressources/Demon1_Attack_with_shadow.png" id="1_ewpvu"]
 [ext_resource type="Texture2D" uid="uid://cvivl0isukv1k" path="res://Ressources/Demon1_Idle_with_shadow.png" id="1_je327"]
 [ext_resource type="Texture2D" uid="uid://bpn6x4rlxdmn3" path="res://Ressources/Demon1_Death_with_shadow.png" id="2_e5fu3"]
@@ -1007,15 +1008,17 @@ animations = [{
 size = Vector2(25, 34)
 
 [node name="demon_1" type="Node2D"]
+script = ExtResource("1_455ym")
 
 [node name="area_demon_1" type="Area2D" parent="."]
 
 [node name="AnimatedSprite2_demon1" type="AnimatedSprite2D" parent="area_demon_1"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_oyg3x")
-animation = &"hurt"
-frame_progress = 0.024999531
+animation = &"dead"
 
 [node name="collide_demon_1" type="CollisionShape2D" parent="area_demon_1"]
 position = Vector2(-0.5, -1)
 shape = SubResource("RectangleShape2D_e5fu3")
+
+[connection signal="area_entered" from="area_demon_1" to="." method="_on_area_demon_1_area_entered"]
