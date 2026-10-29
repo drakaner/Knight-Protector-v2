@@ -1075,7 +1075,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8iyb6"]
-size = Vector2(32, 15)
+size = Vector2(17, 16.5)
 
 [node name="slime_3" type="Node2D"]
 script = ExtResource("1_acune")
@@ -1088,6 +1088,7 @@ sprite_frames = SubResource("SpriteFrames_kkm5p")
 animation = &"dead"
 
 [node name="collide_slime_3" type="CollisionShape2D" parent="area_slime_3"]
+position = Vector2(0.5, 0.75)
 shape = SubResource("RectangleShape2D_8iyb6")
 
 [connection signal="area_entered" from="area_slime_3" to="." method="_on_area_slime_3_area_entered"]
