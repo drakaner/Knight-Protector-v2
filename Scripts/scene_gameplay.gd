@@ -38,6 +38,7 @@ func create_ennemi(type: String, pArea: String, pos: Vector2) -> Node2D:
 	var ennemi = scenes_ennemis[type].instantiate()
 	ennemi.position = pos
 	ennemi.area = pArea
+	
 	add_child(ennemi)          # ou un nœud conteneur dédié
 	ennemi.add_to_group("ennemis")
 	return ennemi
@@ -156,7 +157,7 @@ func demarreJeu():
 func _ready() -> void:
 	demarreJeu()
 	lst_ennemy.append( create_ennemi("slime_3", "area_slime_3", Vector2(300, -200)))
-	lst_ennemy.append( create_ennemi("demon_1", "area_demon_1", Vector2(500, -0)))
+	lst_ennemy.append( create_ennemi("demon_1", "area_demon_1", Vector2(500, -100)))
 	#Bon la creation dynamique à l'air de marcher, maintenant la prochaine fois faut que je code le système de suppression d'objet avec la recommandation de claude car faut le retirer de la liste avec la methode que je connait plus il faut faire un queuefree() pour retirer l'objet du jeu c'est une double suppression a faire 
 	
 	
@@ -234,17 +235,17 @@ func gestion_collide_heros(delta: float, pH_A_D_x, pH_A_D_y, pH_A_L_x, pH_A_L_y,
 								#Faut mettre -10 dans les conditions superieur ou egal pour le x et y et sur le inferieur ne rien soustraire de plus car c'est sur quand on verifie la partie superieur ou egal ou la il a un decalage chelou 
 								#SI TU AS OUBLIER REGARDE LA CONSOLE AVEC LES PRINT EN GROS LE GLOBAL POSITION CEST COMME LE HERO DONC SA SERT A RIEN ET FAUT FAIRE HERO NORMAL PLUS LE DECALAGE DE LA POSITION LOCAL DU COLLIDE ET PAS DE AREA 
 						
-						if (hero.img[pHeroCurrent].position.x + pH_A_L_x) >= lst_ennemy[e].get_node_or_null(ennemy.area).global_position.x - 10 and (hero.img[pHeroCurrent].position.x + pH_A_L_x) <= lst_ennemy[e].get_node_or_null(ennemy.area).global_position.x + 34 and (hero.img[pHeroCurrent].position.y + pH_A_L_y) >= lst_ennemy[e].get_node_or_null(ennemy.area).global_position.y - 30 and (hero.img[pHeroCurrent].position.y + pH_A_L_y) <= lst_ennemy[e].get_node_or_null(ennemy.area).global_position.y + 17 :
+						if (hero.img[pHeroCurrent].position.x + pH_A_L_x) >= lst_ennemy[e].get_node_or_null(ennemy.area).global_position.x - 10 and (hero.img[pHeroCurrent].position.x + pH_A_L_x) <= lst_ennemy[e].get_node_or_null(ennemy.area).global_position.x + 34 and (hero.img[pHeroCurrent].position.y + pH_A_L_y) >= lst_ennemy[e].get_node_or_null(ennemy.area).global_position.y - 44 and (hero.img[pHeroCurrent].position.y + pH_A_L_y) <= lst_ennemy[e].get_node_or_null(ennemy.area).global_position.y + 31 :
 							if hero.img[pHeroCurrent].Animated.animation == "idle_left" or hero.img[pHeroCurrent].Animated.animation == "walk_left" or hero.img[pHeroCurrent].Animated.animation == "run_left" or hero.img[pHeroCurrent].Animated.animation == "attack_left" or hero.img[pHeroCurrent].Animated.animation == "dash" or hero.img[pHeroCurrent].Animated.animation == "sort_left":
 								print("COTER DROIT !:! test sur la position du petit variable : ", pH_A_L_x)
 								ennemy.nb_stat_vie -= DataSave.hero.attaque
 						
-						if (hero.img[pHeroCurrent].position.x + pH_A_U_x) >= lst_ennemy[e].get_node_or_null(ennemy.area).global_position.x - 27 and (hero.img[pHeroCurrent].position.x + pH_A_U_x) <= lst_ennemy[e].get_node_or_null(ennemy.area).global_position.x + 24 and (hero.img[pHeroCurrent].position.y + pH_A_U_y) >= lst_ennemy[e].get_node_or_null(ennemy.area).global_position.y - 17 and (hero.img[pHeroCurrent].position.y + pH_A_U_y) <= lst_ennemy[e].get_node_or_null(ennemy.area).global_position.y + 30 :
+						if (hero.img[pHeroCurrent].position.x + pH_A_U_x) >= lst_ennemy[e].get_node_or_null(ennemy.area).global_position.x - 38 and (hero.img[pHeroCurrent].position.x + pH_A_U_x) <= lst_ennemy[e].get_node_or_null(ennemy.area).global_position.x + 35 and (hero.img[pHeroCurrent].position.y + pH_A_U_y) >= lst_ennemy[e].get_node_or_null(ennemy.area).global_position.y - 17 and (hero.img[pHeroCurrent].position.y + pH_A_U_y) <= lst_ennemy[e].get_node_or_null(ennemy.area).global_position.y + 43 :
 							if hero.img[pHeroCurrent].Animated.animation == "idle_up" or hero.img[pHeroCurrent].Animated.animation == "walk_up" or hero.img[pHeroCurrent].Animated.animation == "run_up" or hero.img[pHeroCurrent].Animated.animation == "attack_up" or hero.img[pHeroCurrent].Animated.animation == "dash" or hero.img[pHeroCurrent].Animated.animation == "sort_up":
 								print("COTER BAS !:! test sur la position du petit variable : ", pH_A_U_x)
 								ennemy.nb_stat_vie -= DataSave.hero.attaque
 						
-						if (hero.img[pHeroCurrent].position.x + pH_A_R_x) >= lst_ennemy[e].get_node_or_null(ennemy.area).global_position.x - 29 and (hero.img[pHeroCurrent].position.x + pH_A_R_x) <= lst_ennemy[e].get_node_or_null(ennemy.area).global_position.x + 17 and (hero.img[pHeroCurrent].position.y + pH_A_R_y) >= lst_ennemy[e].get_node_or_null(ennemy.area).global_position.y - 27 and (hero.img[pHeroCurrent].position.y + pH_A_R_y) <= lst_ennemy[e].get_node_or_null(ennemy.area).global_position.y + 22 :
+						if (hero.img[pHeroCurrent].position.x + pH_A_R_x) >= lst_ennemy[e].get_node_or_null(ennemy.area).global_position.x - 31 and (hero.img[pHeroCurrent].position.x + pH_A_R_x) <= lst_ennemy[e].get_node_or_null(ennemy.area).global_position.x + 17 and (hero.img[pHeroCurrent].position.y + pH_A_R_y) >= lst_ennemy[e].get_node_or_null(ennemy.area).global_position.y - 44 and (hero.img[pHeroCurrent].position.y + pH_A_R_y) <= lst_ennemy[e].get_node_or_null(ennemy.area).global_position.y + 31 :
 							if hero.img[pHeroCurrent].Animated.animation == "idle_right" or hero.img[pHeroCurrent].Animated.animation == "walk_right" or hero.img[pHeroCurrent].Animated.animation == "run_right" or hero.img[pHeroCurrent].Animated.animation == "attack_right" or hero.img[pHeroCurrent].Animated.animation == "dash" or hero.img[pHeroCurrent].Animated.animation == "sort_right":
 								print("COTER GAUCHE !:! test sur la position du petit variable : ", pH_A_R_x)
 								ennemy.nb_stat_vie -= DataSave.hero.attaque

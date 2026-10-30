@@ -18,6 +18,30 @@ var b_bool_death = false
 
 var area = ""
 
+
+#Les points de collisions 
+
+const HAUT_X_NEGATIF = 31
+const HAUT_X_POSITIF = 31
+const HAUT_Y_NEGATIF = 29
+const HAUT_Y_POSITIF = 12
+
+const DROIT_X_NEGATIF = 10
+const DROIT_X_POSITIF = 24
+const DROIT_Y_NEGATIF = 30
+const DROIT_Y_POSITIF = 17
+
+const BAS_X_NEGATIF = 27
+const BAS_X_POSITIF = 24
+const BAS_Y_NEGATIF = 17
+const BAS_Y_POSITIF = 30
+
+const GAUCHE_X_NEGATIF = 29
+const GAUCHE_X_POSITIF = 17
+const GAUCHE_Y_NEGATIF = 27
+const GAUCHE_Y_POSITIF = 22
+
+
 var nb_stat_attaque = 20
 var nb_stat_vie = 100
 var nb_stat_defense = 0
