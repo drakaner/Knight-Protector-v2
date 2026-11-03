@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=3 uid="uid://bhhqu3id1k7w7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_26k24"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"attack_down",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"attack_left",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"attack_right",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"attack_up",
+"speed": 5.0
+}]
+
+[node name="demon_2" type="Node2D"]
+
+[node name="area_demon_2" type="Area2D" parent="."]
+
+[node name="AnimatedSprite2D_demon2" type="AnimatedSprite2D" parent="area_demon_2"]
+sprite_frames = SubResource("SpriteFrames_26k24")
+animation = &"attack_up"
+
+[node name="collide_demon_2" type="CollisionShape2D" parent="area_demon_2"]

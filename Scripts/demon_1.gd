@@ -42,10 +42,10 @@ const GAUCHE_Y_NEGATIF = 44
 const GAUCHE_Y_POSITIF = 31
 
 
-var nb_stat_attaque = 20
-var nb_stat_vie = 100
-var nb_stat_defense = 0
-var nb_gain_xp = 10
+var nb_stat_attaque = 31
+var nb_stat_vie = 75
+var nb_stat_defense = 5
+var nb_gain_xp = 17
 
 func _etat_anime(pAnime, pLoop):
 	
@@ -204,7 +204,7 @@ func _machine_a_etat(delta: float):
 		position += Vector2(etat_vx, etat_vy)*delta
 		etat_vx = 0
 		etat_vy = 0
-		if $area_demon_1/AnimatedSprite2_demon1.frame >= 8:
+		if $area_demon_1/AnimatedSprite2_demon1.frame >= 9:
 			print("l'animation est finie !")
 			etat_ennemy = "reflexion"
 			$area_demon_1/AnimatedSprite2_demon1.frame = 0
@@ -240,7 +240,7 @@ func _process(delta: float) -> void:
 	
 	if b_death == true:
 		_etat_anime("dead", false)
-		if $area_demon_1/AnimatedSprite2_demon1.frame >= 9:
+		if $area_demon_1/AnimatedSprite2_demon1.frame >= 12:
 			b_bool_death = true
 
 
