@@ -1057,8 +1057,10 @@ script = ExtResource("1_7ksm4")
 [node name="AnimatedSprite2D_vampire2" type="AnimatedSprite2D" parent="area_vampire_2"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_ksyy2")
-animation = &"idle_down"
+animation = &"dead"
 
 [node name="collide_vampire_2" type="CollisionShape2D" parent="area_vampire_2"]
 position = Vector2(-0.5, -1)
 shape = SubResource("RectangleShape2D_6elgm")
+
+[connection signal="area_entered" from="area_vampire_2" to="." method="_on_area_vampire_2_area_entered"]
