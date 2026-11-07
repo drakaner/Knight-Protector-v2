@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://xnkumhj0q143"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r3jup"]
+
+[node name="golem_2" type="Node2D"]
+
+[node name="area_golem_2" type="Area2D" parent="."]
+
+[node name="AnimatedSprite2D_golem2" type="AnimatedSprite2D" parent="area_golem_2"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_r3jup")
+
+[node name="collide_golem_2" type="CollisionShape2D" parent="area_golem_2"]
