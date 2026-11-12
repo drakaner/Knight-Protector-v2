@@ -39,6 +39,7 @@ var scenes_ennemis = {
 	"vampire_2": preload("res://Objets/vampire_2.tscn"),
 	"goblin_1": preload("res://Objets/goblin_1.tscn"),
 	"golem_1": preload("res://Objets/golem_1.tscn"),
+	"golem_2": preload("res://Objets/golem_2.tscn"),
 	# "slime_1": preload("res://Objets/slime_1.tscn"),
 }
 
@@ -174,6 +175,7 @@ func _ready() -> void:
 	lst_ennemy.append( create_ennemi("vampire_2", "area_vampire_2", Vector2(250, -400)))
 	lst_ennemy.append( create_ennemi("goblin_1", "area_goblin_1", Vector2(400, -400)))
 	lst_ennemy.append( create_ennemi("golem_1", "area_golem_1", Vector2(400, -300)))
+	lst_ennemy.append( create_ennemi("golem_2", "area_golem_2", Vector2(520, -300)))
 	#Bon la creation dynamique à l'air de marcher, maintenant la prochaine fois faut que je code le système de suppression d'objet avec la recommandation de claude car faut le retirer de la liste avec la methode que je connait plus il faut faire un queuefree() pour retirer l'objet du jeu c'est une double suppression a faire 
 	
 	
