@@ -21,22 +21,22 @@ var area = ""
 
 #Les points de collisions 
 
-const HAUT_X_NEGATIF = 35
+const HAUT_X_NEGATIF = 39
 const HAUT_X_POSITIF = 35
-const HAUT_Y_NEGATIF = 54
+const HAUT_Y_NEGATIF = 49
 const HAUT_Y_POSITIF = 12
 
 const DROIT_X_NEGATIF = 10
 const DROIT_X_POSITIF = 47
 const DROIT_Y_NEGATIF = 49
-const DROIT_Y_POSITIF = 43
+const DROIT_Y_POSITIF = 30
 
 const BAS_X_NEGATIF = 51
 const BAS_X_POSITIF = 44
 const BAS_Y_NEGATIF = 19
-const BAS_Y_POSITIF = 43
+const BAS_Y_POSITIF = 37
 
-const GAUCHE_X_NEGATIF = 43
+const GAUCHE_X_NEGATIF = 40
 const GAUCHE_X_POSITIF = 17
 const GAUCHE_Y_NEGATIF = 44
 const GAUCHE_Y_POSITIF = 37
