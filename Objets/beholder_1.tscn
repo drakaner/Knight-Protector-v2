@@ -1,0 +1,134 @@
+[gd_scene load_steps=16 format=3 uid="uid://dmlb60xsox38s"]
+
+[ext_resource type="Texture2D" uid="uid://cyg62qi71cwcf" path="res://Ressources/Beholder1_Attack_with_shadow.png" id="1_7sveh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tnqxu"]
+atlas = ExtResource("1_7sveh")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_piunr"]
+atlas = ExtResource("1_7sveh")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yohr0"]
+atlas = ExtResource("1_7sveh")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m1tnh"]
+atlas = ExtResource("1_7sveh")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mlxr4"]
+atlas = ExtResource("1_7sveh")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rj771"]
+atlas = ExtResource("1_7sveh")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l14xe"]
+atlas = ExtResource("1_7sveh")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lkm4q"]
+atlas = ExtResource("1_7sveh")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aqtfd"]
+atlas = ExtResource("1_7sveh")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ir70a"]
+atlas = ExtResource("1_7sveh")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dbpwc"]
+atlas = ExtResource("1_7sveh")
+region = Rect2(640, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_isv6m"]
+atlas = ExtResource("1_7sveh")
+region = Rect2(704, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7i1g5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tnqxu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_piunr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yohr0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m1tnh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mlxr4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rj771")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l14xe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lkm4q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aqtfd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ir70a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dbpwc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_isv6m")
+}],
+"loop": true,
+"name": &"attack_down",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"attack_left",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"attack_right",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"attack_up",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f8gdb"]
+
+[node name="beholder_1" type="Node2D"]
+
+[node name="area_beholder_1" type="Area2D" parent="."]
+
+[node name="AnimatedSprite2D_beholder1" type="AnimatedSprite2D" parent="area_beholder_1"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_7i1g5")
+animation = &"attack_down"
+
+[node name="collide_beholder_1" type="CollisionShape2D" parent="area_beholder_1"]
+shape = SubResource("RectangleShape2D_f8gdb")
