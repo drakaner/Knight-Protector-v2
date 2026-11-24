@@ -1336,7 +1336,9 @@ script = ExtResource("1_fsmuj")
 [node name="AnimatedSprite2D_beholder3" type="AnimatedSprite2D" parent="area_beholder_3"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_4rlj6")
-animation = &"run_down"
+animation = &"dead"
 
 [node name="collide_beholder_3" type="CollisionShape2D" parent="area_beholder_3"]
 shape = SubResource("RectangleShape2D_jyj62")
+
+[connection signal="area_entered" from="area_beholder_3" to="." method="_on_area_beholder_3_area_entered"]
