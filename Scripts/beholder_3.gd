@@ -27,19 +27,19 @@ const HAUT_Y_NEGATIF = 44
 const HAUT_Y_POSITIF = 12
 
 const DROIT_X_NEGATIF = 10
-const DROIT_X_POSITIF = 33
+const DROIT_X_POSITIF = 38
 const DROIT_Y_NEGATIF = 40
-const DROIT_Y_POSITIF = 33
+const DROIT_Y_POSITIF = 37
 
-const BAS_X_NEGATIF = 40
-const BAS_X_POSITIF = 34
+const BAS_X_NEGATIF = 45
+const BAS_X_POSITIF = 39
 const BAS_Y_NEGATIF = 19
-const BAS_Y_POSITIF = 32
+const BAS_Y_POSITIF = 42
 
-const GAUCHE_X_NEGATIF = 33
+const GAUCHE_X_NEGATIF = 43
 const GAUCHE_X_POSITIF = 17
 const GAUCHE_Y_NEGATIF = 44
-const GAUCHE_Y_POSITIF = 34
+const GAUCHE_Y_POSITIF = 38
 
 
 var nb_stat_attaque = 180
